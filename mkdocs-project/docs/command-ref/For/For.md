@@ -1,0 +1,56 @@
+# Learn GeoProcessor / Command / For #
+
+* [Overview](#overview)
+* [Command Editor](#command-editor)
+* [Command Syntax](#command-syntax)
+* [Examples](#examples)
+* [Troubleshooting](#troubleshooting)
+
+-------------------------
+
+## Overview ##
+
+The `For` command iterates through a block of commands between `For` and matching `EndFor`
+commands. A processor property is set to the value of the iteration property and can be used by other
+commands that support properties, using the `${Property}` notation.
+`For` commands can iterate over:
+
+* a list of supplied values (**not yet implemented**)
+* a sequence of integers or floating-point double precision numbers specified with start, end, and increment
+* values from a table column (**not yet implemented**)
+
+`For` commands can be nested. Status messages for the run mode are accumulated in each command.
+A limitation of using `For` with properties is that command when edited may show GeoLayer
+identifiers and other command parameters as `${Property}` values, rather than actual data, because the
+values get expanded at run-time. This provides increased processing power but errors may not be evident
+until commands are run.
+
+## Command Editor ##
+
+The following dialog is used to edit the command and illustrates the command syntax.
+
+**Need to implement UI.**
+
+## Command Syntax ##
+
+The command syntax is as follows:
+
+```text
+For(Parameter="Value",...)
+```
+**<p style="text-align: center;">
+Command Parameters
+</p>**
+
+| **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| --------------|-----------------|----------------- |
+| `Name` | The name of the for loop, which will be matched with the name of an `EndFor` command to indicate the block of commands in the loop. | None - must be specified. |
+| `IteratorProperty` | The processor property that will be set to the iterator property. The object type will depend on that used to provide the iteration property list. For example, if a sequence of integers is being iterated, the property will contain an integer. | Same as `Name`.
+| `SequenceStart` | Starting value when a sequence is specified for iteration, an integer or floating-point number (with decimal). | No default if sequence is used. |
+| `SequenceEnd` | Ending value when a sequence is specified for iteration, an integer or floating-point number (with decimal). | No default if sequence is used. |
+| `SequenceIncrement` | Increment for sequence iterator. | `1` or `1.0` depending on type for `SequenceStart`. |
+
+
+## Examples ##
+
+## Troubleshooting ##
