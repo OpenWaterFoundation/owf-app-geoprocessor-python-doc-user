@@ -16,6 +16,9 @@ pages:
   - For: command-ref/For/For.md
   - If: command-ref/If/If.md
   - Message: command-ref/Message/Message.md
+  - ReadGeoLayerFromGeoJSON: command-ref/ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md
+  - ReadGeoLayerFromShapefile: command-ref/ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile.md
+  - ReadGeoLayersFromFolder: command-ref/ReadGeoLayersFromFolder/ReadGeoLayersFromFolder.md
   - RemoveFile: command-ref/RemoveFile/RemoveFile.md
   - SetProperty: command-ref/SetProperty/SetProperty.md
   - StartLog: command-ref/StartLog/StartLog.md
