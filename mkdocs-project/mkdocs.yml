@@ -10,6 +10,7 @@ pages:
 - Getting Started: getting-started.md
 - Command Reference:
   - Overview: command-ref/overview.md
+  - CompareFiles: command-ref/CompareFiles/CompareFiles.md
   - CopyFile: command-ref/CopyFile/CopyFile.md
   - EndFor: command-ref/EndFor/EndFor.md
   - EndIf: command-ref/EndIf/EndIf.md
