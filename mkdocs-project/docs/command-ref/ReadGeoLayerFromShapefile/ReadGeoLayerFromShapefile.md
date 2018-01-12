@@ -33,8 +33,8 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `SpatialDataFile` <br>  **_required_**| The Esri Shapefile to read (relative or absolute path; must end in `.shp`). [`${Property}` syntax](../../input-formatting-ref/$property-syntax/$property-syntax.md) is recognized.| None - must be specified. |
-| `GeoLayerID` <br> *optional*| A GeoLayer identifier. [Formatting characters](../../input-formatting-ref/formatting-characters/formatting-characters.md) are recognized.| The shapefile filename without the leading path and without the file extension. (Formatting character `%f`)|
+| `SpatialDataFile` <br>  **_required_**| The Esri Shapefile to read (relative or absolute path; must end in `.shp`). [`${Property}` syntax](../../text-formatting-ref/text-formatting/#property-syntax) is recognized.| None - must be specified. |
+| `GeoLayerID` <br> *optional*| A GeoLayer identifier. [Formatting characters](../../text-formatting-ref/text-formatting/#formatting-characters) are recognized. Refer to [documentation](../../best-practices/naming-geolayer-identifiers/naming-geolayer-identifiers.md) for best practices on naming GeoLayer identifiers.| The shapefile filename without the leading path and without the file extension. (Formatting character `%f`)|
 |`IfGeoLayerIDExists`<br> *optional*|The action that occurs if the `GeoLayerID` already exists within the GeoProcessor. <br><br> `Replace` : The existing GeoLayer within the GeoProcessor will be overwritten with the new GeoLayer. No warning will be logged.<br><br> `Warn` : The existing GeoLayer within the GeoProcessor will be overwritten with the new GeoLayer. A warning will be logged. <br><br> `Fail` : The new GeoLayer will not be read. A fail message will be logged. | `Replace` | 
 
 

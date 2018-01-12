@@ -31,10 +31,10 @@ pages:
   - Esri File Geodatabase: spatial-data-format-ref/EsriFileGeodatabase/EsriFileGeodatabase.md
   - Esri Shapefile: spatial-data-format-ref/EsriShapefile/EsriShapefile.md
   - GeoJSON: spatial-data-format-ref/GeoJSON/GeoJSON.md
-- Input Formatting Reference:
-  - Overview: input-formatting-ref/overview.md
-  - ${Property} Syntax: input-formatting-ref/$property-syntax/$property-syntax.md
-  - Formatting Characters: input-formatting-ref/formatting-characters/formatting-characters.md
+- Text Formatting Reference:
+  - Text Formatting: text-formatting-ref/text-formatting.md
+- Best Practices:
+  - Naming GeoLayer Identifiers: best-practices/naming-geolayer-identifiers/naming-geolayer-identifiers.md
 - Resources: resources.md
 - Troubleshooting: troubleshooting.md
 # ------- configuration properties ---------------

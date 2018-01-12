@@ -35,7 +35,7 @@ Command Parameters
 | `GeoLayerID` <br>  **_required_**| The identifier of the GeoLayer to write.| None - must be specified. |
 | `OutputFile` <br> **_required_**| The output GeoJSON file (relative or absolute path). [`${Property}` syntax](../../input-formatting-ref/$property-syntax/$property-syntax.md) is recognized. | None - must be specified. |
 |`OutputCRS`<br> *optional*|The coordinate reference system (CRS) of the output GeoJSON file. [EPSG or ESRI code format](http://spatialreference.org/ref/epsg/) required. <br><br>If the output CRS is different than the CRS of the GeoLayer, the output GeoJSON file will be reprojected to the new CRS.|The GeoLayer's CRS.| 
-|`OutputPrecision`<br> *optional*| The number of decimal points to include in the output GeoJSON file's coordinates. Must be a positive, whole number at or between 0 and 15. A higher value increases the output GeoJSON filesize and increases the geometry's precision.| 5 | 
+|`OutputPrecision`<br> *optional*| The number of decimal points to include in the output GeoJSON file's coordinates. Must be a positive, whole number at or between 0 and 15. A higher value increases the output GeoJSON file size and increases the geometry's precision.| 5 | 
 
 
 ## Examples ##
@@ -125,7 +125,7 @@ After running the command lines, the following GeoJSON files will be writen to t
 **ExampleFile1_05.geojson File Content**
 
 `{"type":"FeatureCollection",` <br>
-`"name":"ExampleFile1_01",` <br>
+`"name":"ExampleFile1_05",` <br>
 `"crs":{ "type":"name", "properties":{ "name": "urn:ogc:def:crs:OGC:1.3:CRS84"}},` <br>
 `"features":[` <br> 
 `{"type": "Feature", "properties": {"id":1},` <br>

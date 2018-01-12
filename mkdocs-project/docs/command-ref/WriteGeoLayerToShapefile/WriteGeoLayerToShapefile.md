@@ -59,7 +59,7 @@ GeoProcessor
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`GeoLayerID = "ExampleGeoLayer2",`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`OutputFile = "C:/Users/User/Example/ExampleFile1")`<br>
 
-After running the command lines, the following Esri Shapefiles will be writen to the `C:/Users/User/Example` folder.[^1] 
+After running the command lines, the following Esri Shapefiles will be written to the `C:/Users/User/Example` folder.[^1] 
 [^1]: Although not listed, note that the component shapefile files (`.shx`, `.dbf`, etc.) will also be present in the output folder. 
 
 **<p style="text-align: left;">
@@ -83,7 +83,7 @@ C:/Users/User/Example
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`OutputFile = "C:/Users/User/Example/ExampleFile1",`<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`OutputCRS = "EPSG:4326")`<br>
 
-After running the command lines, the following Esri Shapefiles will be writen to the `C:/Users/User/Example` folder[^1]. 
+After running the command lines, the following Esri Shapefiles will be written to the `C:/Users/User/Example` folder[^1]. 
 
 **<p style="text-align: left;">
 C:/Users/User/Example
