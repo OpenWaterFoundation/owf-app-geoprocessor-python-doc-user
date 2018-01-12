@@ -20,12 +20,21 @@ pages:
   - ReadGeoLayerFromGeoJSON: command-ref/ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md
   - ReadGeoLayerFromShapefile: command-ref/ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile.md
   - ReadGeoLayersFromFolder: command-ref/ReadGeoLayersFromFolder/ReadGeoLayersFromFolder.md
+  - ReadGeoLayersFromFGDB: command-ref/ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB.md
   - RemoveFile: command-ref/RemoveFile/RemoveFile.md
   - SetProperty: command-ref/SetProperty/SetProperty.md
   - StartLog: command-ref/StartLog/StartLog.md
+  - WriteGeoLayerToGeoJSON: command-ref/WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON.md
+  - WriteGeolayerToShapefile: command-ref/WriteGeoLayerToShapefile/WriteGeolayerToShapefile.md
 - Spatial Data Format Reference:
   - Overview: spatial-data-format-ref/overview.md
+  - Esri File Geodatabase: spatial-data-format-ref/EsriFileGeodatabase/EsriFileGeodatabase.md
+  - Esri Shapefile: spatial-data-format-ref/EsriShapefile/EsriShapefile.md
   - GeoJSON: spatial-data-format-ref/GeoJSON/GeoJSON.md
+- Input Formatting Reference:
+  - Overview: input-formatting-ref/overview.md
+  - ${Property} Syntax: input-formatting-ref/$property-syntax/$property-syntax.md
+  - Formatting Characters: input-formatting-ref/formatting-characters/formatting-characters.md
 - Resources: resources.md
 - Troubleshooting: troubleshooting.md
 # ------- configuration properties ---------------
@@ -40,3 +49,5 @@ copyright:  Copyright Open Water Foundation
 # Use extra CSS to customize styles, based on theme
 extra_css:
   - 'css/extra-material-theme.css'
+markdown_extensions:
+  - footnotes

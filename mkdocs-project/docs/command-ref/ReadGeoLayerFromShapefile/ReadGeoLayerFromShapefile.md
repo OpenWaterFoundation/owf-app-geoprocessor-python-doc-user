@@ -5,12 +5,14 @@
 * [Command Syntax](#command-syntax)
 * [Examples](#examples)
 * [Troubleshooting](#troubleshooting)
+* [See Also](#see-also)
 
 -------------------------
 
 ## Overview ##
 
-The `ReadGeoLayerFromShapefile` command reads a [GeoLayer](../../introduction#geolayer) from a file in shapefile format. 
+The `ReadGeoLayerFromShapefile` command reads a [GeoLayer](../../introduction#geolayer) from a file in [Esri Shapefile format](../../spatial-data-format-ref/EsriShapefile/EsriShapefile). The coordinate reference system and the attribute field 
+names of the shapefile are retained within the GeoLayer.
 
 ## Command Editor ##
 
@@ -29,13 +31,69 @@ ReadGeoLayerFromShapefile(Parameter="Value",...)
 Command Parameters
 </p>**
 
-| **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+|**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `SpatialDataFile` | The shapefile (`.shp`) to read . | None - must be specified. |
-| `GeoLayerID` | The GeoLayer identifier.| The shapefile filename (without the `.shp` extension). |
+| `SpatialDataFile` <br>  **_required_**| The Esri Shapefile to read (relative or absolute path; must end in `.shp`). [`${Property}` syntax](../../input-formatting-ref/$property-syntax/$property-syntax.md) is recognized.| None - must be specified. |
+| `GeoLayerID` <br> *optional*| A GeoLayer identifier. [Formatting characters](../../input-formatting-ref/formatting-characters/formatting-characters.md) are recognized.| The shapefile filename without the leading path and without the file extension. (Formatting character `%f`)|
+|`IfGeoLayerIDExists`<br> *optional*|The action that occurs if the `GeoLayerID` already exists within the GeoProcessor. <br><br> `Replace` : The existing GeoLayer within the GeoProcessor will be overwritten with the new GeoLayer. No warning will be logged.<br><br> `Warn` : The existing GeoLayer within the GeoProcessor will be overwritten with the new GeoLayer. A warning will be logged. <br><br> `Fail` : The new GeoLayer will not be read. A fail message will be logged. | `Replace` | 
 
 
 
 ## Examples ##
 
+For the following examples, the contents of a mock data folder `C:/Users/User/Example` are listed below.
+
+**<p style="text-align: left;">
+C:/Users/User/Example
+</p>**
+
+|Filename|File Type|
+| ---- | ----|
+| ExampleFile1.shp     | Shapefile	|
+| ExampleFile1.shx		| Shapefile component file|
+| ExampleFile1.dbf		| Shapefile component file |
+| ExampleFile1.prj 		| Shapefile component file |
+
+### Example 1: Read a GeoLayer from a Shapefile ###
+
+`ReadGeoLayerFromShapefile(`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`SpatialDataFile = "C:/Users/User/Example/ExampleFile1.shp")`<br>
+
+After running the command line, the following GeoLayer IDs will be registered within the GeoProcessor. 
+
+|Registered GeoLayer IDs|
+|------|
+|ExampleFile1|
+
+### Example 2: Assign a Unique GeoLayer ID  ###
+
+`ReadGeoLayerFromShapefile(`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`SpatialDataFile = "C:/Users/User/Example/ExampleFile1.shp",`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`GeoLayerID = "StateBoundary")`<br>
+
+After running the command line, the following GeoLayer IDs will be registered within the GeoProcessor. 
+
+|Registered GeoLayer IDs|
+|------|
+|StateBoundary|
+
+### Example 3: Invalid SpatialDataFile Value ###
+
+`ReadGeoLayerFromShapefile(` <br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`SpatialDataFile = "C:/Users/User/Example/ExampleFile1.shx",`<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`GeoLayerID = "StateBoundary")`<br>
+
+After running the command line, no GeoLayerIDs will be registered within the GeoProcessor because the `SpatialDataFile` directs to a `.shx` file rather than a `.shp` file. 
+
+|Registered GeoLayer IDs|
+|------|
+||
+
+
+
+
 ## Troubleshooting ##
+
+## See Also ##
+
+The GeoLayer is read using the [`QGIS QgsVectorLayer Class`](https://qgis.org/api/classQgsVectorLayer.html).
