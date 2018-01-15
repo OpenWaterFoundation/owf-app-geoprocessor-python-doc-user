@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / SetProperty #
+# Learn GeoProcessor / Command / SetGeoLayerProperty #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)
@@ -11,11 +11,12 @@
 
 ## Overview ##
 
-The `SetProperty` command sets the value of a property used by the processor. The
-property will be available to subsequent commands that support using `${Property}` notation in
-parameters, for example to specify filenames more dynamically or use with `If` commands. This
-command should not be confused with the `SetGeoLayerProperty` command, which sets a
-property on specific GeoLayer. The following functionality is provided:
+The `SetGeoLayerProperty` command sets the value of a property on the GeoLayer.
+The property will be available to subsequent commands that support using `${gl:Property}` notation in parameters.
+One use for GeoLayer properties is to pass a layer property to the processor using
+[`SetPropertyFromGeoLayer`](../SetPropertyFromGeoLayer/SetPropertyFromGeoLayer) commands to control processing logic.
+GeoLayer properties may not be supported by spatial data formats and therefore may only be useful to control processing.
+The following functionality is provided:
 
 * Set a property to a specified value, where the property can be a Python primitive type: `bool`, `float`,
 `int`, or `str`.
@@ -31,7 +32,7 @@ The following dialog is used to edit the command and illustrates the command syn
 The command syntax is as follows:
 
 ```text
-SetProperty(Parameter="Value",...)
+SetGeoLayerProperty(Parameter="Value",...)
 ```
 **<p style="text-align: center;">
 Command Parameters
@@ -39,6 +40,7 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
+| `GeoLayerID` | The GeoLayer identifier, can use `${Property}`. | None - must be specified. |
 | `PropertyName` | The property name. | None - must be specified. |
 | `PropertyType` | The property type as `bool`, `float`, `int`, or `str`. | None - must be specified. |
 | `PropertyValue` | The property value, as a string that can convert to the given type. | None - must be specified. |
@@ -46,10 +48,10 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/SetProperty).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/SetGeoLayerProperty).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* [SetPropertyFromGeoLayer](../SetPropertyFromGeoLayer/SetPropertyFromGeoLayer) command
+* [SetPropertyFromGeoLayer](../SetPropertyFromGeoLayer/SetPropertyFromGeoLayer) command.
