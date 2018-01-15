@@ -39,6 +39,8 @@ Command Parameters
 
 ## Examples ##
 
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/WriteGeoLayerToShapefile).
+
 For the following examples, the GeoLayers of a mock GeoProcessor are listed below.
 
 **<p style="text-align: left;">
@@ -52,12 +54,10 @@ GeoProcessor
 
 ### Example 1: Write a GeoLayer to a Shapefile ###
 
-`WriteGeoLayerToShapefile(`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`GeoLayerID = "ExampleGeoLayer1",`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`OutputFile = "C:/Users/User/Example/ExampleFile1")`<br>
-`WriteGeoLayerToShapefile(`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`GeoLayerID = "ExampleGeoLayer2",`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`OutputFile = "C:/Users/User/Example/ExampleFile1")`<br>
+```
+WriteGeoLayerToShapefile(GeoLayerID = "ExampleGeoLayer1", OutputFile = "C:/Users/User/Example/ExampleFile1")
+WriteGeoLayerToShapefile(GeoLayerID = "ExampleGeoLayer2", OutputFile = "C:/Users/User/Example/ExampleFile2")
+```
 
 After running the command lines, the following Esri Shapefiles will be written to the `C:/Users/User/Example` folder.[^1] 
 [^1]: Although not listed, note that the component shapefile files (`.shx`, `.dbf`, etc.) will also be present in the output folder. 
@@ -74,14 +74,10 @@ C:/Users/User/Example
 
 ### Example 2: Reproject the Output Shapefile###
 
-`WriteGeoLayerToShapefile(`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`GeoLayerID = "ExampleGeoLayer1",`<br> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`OutputFile = "C:/Users/User/Example/ExampleFile1",`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`OutputCRS = "ESRI:102003")`<br>
-`WriteGeoLayerToShapefile(`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`GeoLayerID = "ExampleGeoLayer2",`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`OutputFile = "C:/Users/User/Example/ExampleFile1",`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`OutputCRS = "EPSG:4326")`<br>
+```
+WriteGeoLayerToShapefile(GeoLayerID = "ExampleGeoLayer1", OutputFile = "C:/Users/User/Example/ExampleFile1", OutputCRS = "ESRI:102003")
+WriteGeoLayerToShapefile(GeoLayerID = "ExampleGeoLayer2", OutputFile = "C:/Users/User/Example/ExampleFile2", OutputCRS = "EPSG:4326")
+```
 
 After running the command lines, the following Esri Shapefiles will be written to the `C:/Users/User/Example` folder[^1]. 
 
@@ -102,4 +98,5 @@ C:/Users/User/Example
 
 ## See Also ##
 
-The GeoLayer is written using the [`QGIS QgsVectorFileWriter Class`](https://qgis.org/api/classQgsVectorFileWriter.html).
+- The GeoLayer is written using the [`QGIS QgsVectorFileWriter Class`](https://qgis.org/api/classQgsVectorFileWriter.html). See [documentation](https://docs.qgis.org/2.14/en/docs/pyqgis_developer_cookbook/vector.html#writing-vector-layers) for examples on utilizing the `QGSVectorFileWriter` class in the PyQGIS environment.
+- See parallel GeoProcessor command [ReadGeoLayerFromShapefile](../ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile)

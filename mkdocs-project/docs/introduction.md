@@ -93,14 +93,14 @@ in the features.
 * Currently the GeoProcessor only handles vector layers.
 The ability to process rasters (grids) may be added in the future.
 
+#### GeoLayer Property Format Specifiers ####
+
 Some commands that process GeoLayers allow the parameter values to contain format specifiers
 that will be expanded to GeoLayer property values.
 This is initially being used to provide functionality to use spatial data layer filename parts in parameter values.
 In the future, additional specifiers may be added to process GeoLayer properties.
 The following table summarizes format specifiers.
 Command documentation will indicate whether format specifiers are supported by the command.
-
-**<p style="text-align: center;">GeoLayer Property Format Specifiers</p>**
 
 |**Format Specifier**|**Description**|**Example**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 |---------------| ------------------|-------|

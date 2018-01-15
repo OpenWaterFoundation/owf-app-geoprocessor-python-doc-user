@@ -11,7 +11,7 @@
 
 ## Overview ##
 
-The `ReadGeoLayersFromFolder` command reads one or many [GeoLayer(s)](../../introduction#geolayer) from a local folder. By default, each spatial data file ([GeoJSON]((../../spatial-data-format-ref/GeoJSON/GeoJSON)) or [Esri Shapefile](../../spatial-data-format-ref/EsriShapefile/EsriShapefile)) within the folder is read as a single GeoLayer.
+The `ReadGeoLayersFromFolder` command reads one or more [GeoLayer(s)](../../introduction#geolayer) from a local folder. By default, each spatial data file ([GeoJSON]((../../spatial-data-format-ref/GeoJSON/GeoJSON)) or [Esri Shapefile](../../spatial-data-format-ref/EsriShapefile/EsriShapefile)) within the folder is read as a single GeoLayer.
 
 ## Command Editor ##
 
@@ -34,11 +34,13 @@ Command Parameters
 | --------------|-----------------|----------------- |
 | `SpatialDataFolder` <br>  **_required_**| The folder to read. | None - must be specified. |
 | `GeoLayerID_prefix`  <br> *optional* | A GeoLayer identifier prefix. <br><br> GeoLayers read from a folder have an identifier in the `GeoLayerID_prefix`_`Filename` format.| No prefix is used. The GeoLayerID is the spatial data filename without the leading path and without the file extension ([Formatting character `%f`](../../text-formatting-ref/text-formatting/#formatting-characters)). |
-| `Subset_Pattern` 	 <br> *optional*| The [glob-style](https://en.wikipedia.org/wiki/Glob_(programming)) pattern of spatial data files to read from the folder.| No pattern is used. All spatial data files (`.shp` and `.geojson`) within the folder are read.|
+| `Subset_Pattern` 	 <br> *optional*| The [glob-style](https://en.wikipedia.org/wiki/Glob_(programming)) pattern (e.g., `CO_*` or `*_[MC]O`) of spatial data files to read from the folder.| No pattern is used. All spatial data files (`.shp` and `.geojson`) within the folder are read.|
 |`IfGeoLayerIDExists`<br> *optional*|The action that occurs if the `GeoLayerID` already exists within the GeoProcessor. <br><br> `Replace` : The existing GeoLayer within the GeoProcessor will be overwritten with the new GeoLayer. No warning will be logged.<br><br> `Warn` : The existing GeoLayer within the GeoProcessor will be overwritten with the new GeoLayer. A warning will be logged. <br><br> `Fail` : The new GeoLayer will not be read. A fail message will be logged. | `Replace` |
 
 
 ## Examples ##
+
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ReadGeoLayersFromFolder).
 
 For the following examples, the contents of a mock data folder `C:/Users/User/Example` are listed below.
 
@@ -58,8 +60,9 @@ C:/Users/User/Example
 
 ### Example 1: Read All Spatial Data Files from a Folder ###
 
-`ReadGeoLayersFromFolder(`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`SpatialDataFolder = "C:/Users/User/Example")`<br>
+```
+ReadGeoLayersFromFolder(SpatialDataFolder = "C:/Users/User/Example")
+```
 
 After running the command line, the following GeoLayer IDs will be registered within the GeoProcessor. ExampleFile3 is not included within the registered GeoLayer IDs because `ExampleFile3.txt` is not a [supported spatial data file](../../spatial-data-format-ref/overview). 
 
@@ -71,9 +74,9 @@ After running the command line, the following GeoLayer IDs will be registered wi
 
 ### Example 2: Add a Prefix to the GeoLayer IDs###
 
-`ReadGeoLayersFromFolder(`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`SpatialDataFolder = "C:/Users/User/Example",`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`GeoLayerID_Prefix = "StateData")`<br>
+```
+ReadGeoLayersFromFolder(SpatialDataFolder = "C:/Users/User/Example", GeoLayerID_Prefix = "StateData")
+```
 
 After running the command line, the following GeoLayer IDs will be registered within the GeoProcessor. Each of the registered GeoLayer IDs include the `StateData` prefix.
 
@@ -85,9 +88,9 @@ After running the command line, the following GeoLayer IDs will be registered wi
 
 ### Example 3: Read a Subset of Spatial Data Files from a Folder ###
 
-`ReadGeoLayersFromFolder(`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`SpatialDataFolder = "C:/Users/User/Example",`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`Subset_Pattern = "*.geojson")`<br>
+```
+ReadGeoLayersFromFolder(SpatialDataFolder = "C:/Users/User/Example", Subset_Pattern = "*.geojson")
+```
 
 After running the command line, the following GeoLayer IDs will be registered within the GeoProcessor. ExampleFile4 is not included in the registered GeoLayer IDs becasue the `Subset_Pattern` parameter only includes files that end in `.geojson`. 
 
@@ -97,9 +100,8 @@ After running the command line, the following GeoLayer IDs will be registered wi
 |ExampleFile2|
 
 
-
 ## Troubleshooting ##
 
 ## See Also ##
 
-The GeoLayers are read using the [`QGIS QgsVectorLayer Class`](https://qgis.org/api/classQgsVectorLayer.html).
+- The GeoLayers are read using the [`QGIS QgsVectorLayer Class`](https://qgis.org/api/classQgsVectorLayer.html). See [documentation](https://docs.qgis.org/2.14/en/docs/pyqgis_developer_cookbook/loadlayer.html#vector-layers) for examples on utilizing the `QgsVectorLayer` class in the PyQGIS environment.

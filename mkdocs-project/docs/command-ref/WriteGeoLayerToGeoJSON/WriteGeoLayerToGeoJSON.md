@@ -40,6 +40,8 @@ Command Parameters
 
 ## Examples ##
 
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/WriteGeoLayerToGeoJSON).
+
 For the following examples, the GeoLayers of a mock GeoProcessor are listed below.
 
 **<p style="text-align: left;">
@@ -53,12 +55,10 @@ GeoProcessor
 
 ### Example 1: Write a GeoLayer to a GeoJSON File ###
 
-`WriteGeoLayerToGeoJSON(`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`GeoLayerID = "ExampleGeoLayer1",`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`OutputFile = "C:/Users/User/Example/ExampleFile1")`<br>
-`WriteGeoLayerToGeoJSON(`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`GeoLayerID = "ExampleGeoLayer2",`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`OutputFile = "C:/Users/User/Example/ExampleFile1")`<br>
+```
+WriteGeoLayerToGeoJSON(GeoLayerID = "ExampleGeoLayer1", OutputFile = "C:/Users/User/Example/ExampleFile1")
+WriteGeoLayerToGeoJSON(GeoLayerID = "ExampleGeoLayer2",OutputFile = "C:/Users/User/Example/ExampleFile1")
+```
 
 After running the command lines, the following GeoJSON files will be writen to the `C:/Users/User/Example` folder. 
 
@@ -73,14 +73,10 @@ C:/Users/User/Example
 
 ### Example 2: Reproject the Output GeoJSON File###
 
-`WriteGeoLayerToGeoJSON(`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`GeoLayerID = "ExampleGeoLayer1",`<br> 
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`OutputFile = "C:/Users/User/Example/ExampleFile1",`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`OutputCRS = "ESRI:102003")`<br>
-`WriteGeoLayerToGeoJSON(`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`GeoLayerID = "ExampleGeoLayer2",`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`OutputFile = "C:/Users/User/Example/ExampleFile1",`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`OutputCRS = "EPSG:4326")`<br>
+```
+WriteGeoLayerToGeoJSON(GeoLayerID = "ExampleGeoLayer1", OutputFile = "C:/Users/User/Example/ExampleFile1", OutputCRS = "ESRI:102003")
+WriteGeoLayerToGeoJSON(GeoLayerID = "ExampleGeoLayer2", OutputFile = "C:/Users/User/Example/ExampleFile1", OutputCRS = "EPSG:4326")
+```
 
 After running the command lines, the following GeoJSON files will be writen to the `C:/Users/User/Example` folder. 
 
@@ -95,13 +91,10 @@ C:/Users/User/Example
 
 ### Example 3: Specify the Coordinate Precision###
 
-`WriteGeoLayerToGeoJSON(`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`GeoLayerID = "ExampleGeoLayer1",`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`OutputFile = "C:/Users/User/Example/ExampleFile1_01",`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`OutputPrecision = "1")`<br>
-`WriteGeoLayerToGeoJSON(`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`GeoLayerID = "ExampleGeoLayer1",`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`OutputFile = "C:/Users/User/Example/ExampleFile1_05")`<br>
+```
+WriteGeoLayerToGeoJSON(GeoLayerID = "ExampleGeoLayer1", OutputFile = "C:/Users/User/Example/ExampleFile1_01",`OutputPrecision = "1")
+WriteGeoLayerToGeoJSON(GeoLayerID = "ExampleGeoLayer1", OutputFile = "C:/Users/User/Example/ExampleFile1_05")
+```
 
 After running the command lines, the following GeoJSON files will be writen to the `C:/Users/User/Example` folder. 
 
@@ -113,27 +106,36 @@ After running the command lines, the following GeoJSON files will be writen to t
 ---
 **ExampleFile1_01.geojson File Content**
 
-`{"type":"FeatureCollection",` <br>
-`"name":"ExampleFile1_01",` <br>
-`"crs":{ "type":"name", "properties":{ "name": "urn:ogc:def:crs:OGC:1.3:CRS84"}},` <br>
-`"features":[` <br> 
-`{"type": "Feature", "properties": {"id":1},` <br>
-`"geometry":{"type": "Point", "coordinates": [ -1.3, 0.5]}}]}`
+```
+{
+"type":"FeatureCollection",
+"name":"ExampleFile1_01",
+"crs":{ "type":"name", "properties":{ "name": "urn:ogc:def:crs:OGC:1.3:CRS84"}},
+"features":[
+{"type": "Feature", "properties": {"id":1},
+"geometry":{"type": "Point", "coordinates": [ -1.3, 0.5]}}]
+}
+```
 ---
 
 ---
 **ExampleFile1_05.geojson File Content**
 
-`{"type":"FeatureCollection",` <br>
-`"name":"ExampleFile1_05",` <br>
-`"crs":{ "type":"name", "properties":{ "name": "urn:ogc:def:crs:OGC:1.3:CRS84"}},` <br>
-`"features":[` <br> 
-`{"type": "Feature", "properties": {"id":1},` <br>
-`"geometry":{"type": "Point", "coordinates": [ -1.33333, 0.52194]}}]}`
+```
+{
+"type":"FeatureCollection",
+"name":"ExampleFile1_05",
+"crs":{ "type":"name", "properties":{ "name": "urn:ogc:def:crs:OGC:1.3:CRS84"}},
+"features":[
+{"type": "Feature", "properties": {"id":1},
+"geometry":{"type": "Point", "coordinates": [ -1.33333, 0.52194]}}]
+}
+```
 ---
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-The GeoLayer is written using the [`QGIS QgsVectorFileWriter Class`](https://qgis.org/api/classQgsVectorFileWriter.html).
+- The GeoLayer is written using the [`QGIS QgsVectorFileWriter Class`](https://qgis.org/api/classQgsVectorFileWriter.html). See [documentation](https://docs.qgis.org/2.14/en/docs/pyqgis_developer_cookbook/vector.html#writing-vector-layers) for examples on utilizing the `QGSVectorFileWriter` class in the PyQGIS environment.
+- See parallel GeoProcessor command [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON)

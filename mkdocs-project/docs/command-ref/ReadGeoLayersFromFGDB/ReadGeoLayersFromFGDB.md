@@ -11,7 +11,7 @@
 
 ## Overview ##
 
-The `ReadGeoLayersFromFGDB` command reads one or many [GeoLayer(s)](../../introduction#geolayer) from an [Esri File Geodatabase](../../spatial-data-format-ref/EsriFileGeodatabase/EsriFileGeodatabase). By default, each feature class within the file geodatabase is read as a single GeoLayer.
+The `ReadGeoLayersFromFGDB` command reads one or more [GeoLayer(s)](../../introduction#geolayer) from an [Esri File Geodatabase](../../spatial-data-format-ref/EsriFileGeodatabase/EsriFileGeodatabase). By default, each feature class within the file geodatabase is read as a single GeoLayer.
 
 ## Command Editor ##
 
@@ -34,7 +34,7 @@ Command Parameters
 | --------------|-----------------|----------------- |
 | `SpatialDataFolder` <br>  **_required_**| The file geodatabse to read (must end in `.gdb`). | None - must be specified. |
 | `GeoLayerID_prefix`  <br> *optional* | A GeoLayer identifier prefix. <br><br> GeoLayers read from a file geodatabase have an identifier in the `GeoLayerID_prefix`_`FeatureClass` format.| No prefix is used. The GeoLayerID is the name of the feature class. |
-| `Subset_Pattern` 	 <br> *optional*| The [glob-style](https://en.wikipedia.org/wiki/Glob_(programming)) pattern of feature classes to read from the file geodatabase.| No pattern is used. All feature classes within the file geodatabase are read.|
+| `Subset_Pattern` 	 <br> *optional*| The [glob-style](https://en.wikipedia.org/wiki/Glob_(programming)) pattern (e.g., `CO_*` or `*_[MC]O`) of feature classes to read from the file geodatabase.| No pattern is used. All feature classes within the file geodatabase are read.|
 |`IfGeoLayerIDExists`<br> *optional*|The action that occurs if the `GeoLayerID` already exists within the GeoProcessor. <br><br> `Replace` : The existing GeoLayer within the GeoProcessor will be overwritten with the new GeoLayer. No warning will be logged.<br><br> `Warn` : The existing GeoLayer within the GeoProcessor will be overwritten with the new GeoLayer. A warning will be logged. <br><br> `Fail` : The new GeoLayer will not be read. A fail message will be logged. | `Replace` |
 
 ## Examples ##
@@ -61,8 +61,11 @@ ExampleFileGDB.gdb
 
 ### Example 1: Read All Feature Classes from a File Geodatabse ###
 
-`ReadGeoLayersFromFGDB(`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`SpatialDataFolder = "C:/Users/User/Example/ExampleFileGDB.gdb")`<br>
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ReadGeoLayersFromFGDB).
+
+```
+ReadGeoLayersFromFGDB(SpatialDataFolder = "C:/Users/User/Example/ExampleFileGDB.gdb")
+```
 
 After running the command line, the following GeoLayer IDs will be registered within the GeoProcessor. 
 
@@ -74,9 +77,9 @@ After running the command line, the following GeoLayer IDs will be registered wi
 
 ### Example 2: Add a Prefix to the GeoLayer IDs ###
 
-`ReadGeoLayersFromFGDB(`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`SpatialDataFolder = "C:/Users/User/Example/ExampleFileGDB.gdb",`<br>
-&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;`GeoLayerID_Prefix = "StateData")`<br>
+```
+ReadGeoLayersFromFGDB(SpatialDataFolder = "C:/Users/User/Example/ExampleFileGDB.gdb", GeoLayerID_Prefix = "StateData")
+```
 
 After running the command line, the following GeoLayer IDs will be registered within the GeoProcessor. Each of the registered GeoLayer IDs include the `StateData` prefix.
 
@@ -108,4 +111,4 @@ After running the command line, the following GeoLayer IDs will be registered wi
 
 ## See Also ##
 
-The GeoLayer is read using the [`QGIS QgsVectorLayer Class`](https://qgis.org/api/classQgsVectorLayer.html).
+- The GeoLayers are read using the [`QGIS QgsVectorLayer Class`](https://qgis.org/api/classQgsVectorLayer.html). See [documentation](https://docs.qgis.org/2.14/en/docs/pyqgis_developer_cookbook/loadlayer.html#vector-layers) for examples on utilizing the `QgsVectorLayer` class in the PyQGIS environment.
