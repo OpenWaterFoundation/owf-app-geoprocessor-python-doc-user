@@ -8,6 +8,7 @@ by the GeoProcessor, as listed below.
 * [Commands to Control Running](#commands-to-control-running)
 * [Commands for Handling Files](#commands-for-handling-files)
 * [Commands for Messages and Logging](#commands-for-messages-and-logging)
+* [Commands for Testing](#commands-for-testing)
 * [Utility Commands](#utility-commands)
 
 ---------------------------
@@ -48,6 +49,7 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 * [ReadGeoLayerFromShapefile](ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile) - read a GeoLayer from a file in Shapefile format
 * [ReadGeoLayersFromFGDB](ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB) - read GeoLayers from a file geodatabase
 * [ReadGeoLayersFromFolder](ReadGeoLayersFromFolder/ReadGeoLayersFromFolder) - read GeoLayers from a folder
+* [SetGeoLayerProperty](SetGeoLayerProperty/SetGeoLayerProperty) - set a GeoGeoLayer property
 
 ## Commands to Control Running ##
 
@@ -59,6 +61,7 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 * [For](For/For) - indicate the start of a `For` block
 * [If](If/If) - indicate the start of an `If` block
 * [SetProperty](SetProperty/SetProperty) - set a GeoProcessor property
+* [SetPropertyFromGeoLayer](SetPropertyFromGeoLayer/SetPropertyFromGeoLayer) - set a GeoProcessor property from a GeoLayer property
 
 ## Commands for Handling Files ##
 
@@ -69,6 +72,10 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 
 * [Message](Message/Message) - print a message to the log file
 * [StartLog](StartLog/StartLog) - start a new log file
+
+## Commands for Testing ##
+
+* [CompareFiles](CompareFiles/CompareFiles) - compare files and optionally warn/fail if different/same
 
 ## Utility Commands ##
 

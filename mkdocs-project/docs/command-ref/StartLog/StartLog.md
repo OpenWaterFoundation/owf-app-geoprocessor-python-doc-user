@@ -5,6 +5,7 @@
 * [Command Syntax](#command-syntax)
 * [Examples](#examples)
 * [Troubleshooting](#troubleshooting)
+* [See Also](#see-also)
 
 -------------------------
 
@@ -40,4 +41,10 @@ Command Parameters
 
 ## Examples ##
 
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/StartLog).
+
 ## Troubleshooting ##
+
+## See Also ##
+
+* [Message](../Message/Message) command - can be used to write messages to the log file
