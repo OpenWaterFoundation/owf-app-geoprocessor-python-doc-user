@@ -45,11 +45,14 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 
 ## Commands for Processing Spatial Data Layers ##
 
+* [ClipGeoLayer](ClipGeoLayer/ClipGeoLayer) - clip a GeoLayer by the boundary of another GeoLayer 
 * [ReadGeoLayerFromGeoJSON](ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON) - read a GeoLayer from a file in GeoJSON format
 * [ReadGeoLayerFromShapefile](ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile) - read a GeoLayer from a file in Shapefile format
 * [ReadGeoLayersFromFGDB](ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB) - read GeoLayers from a file geodatabase
 * [ReadGeoLayersFromFolder](ReadGeoLayersFromFolder/ReadGeoLayersFromFolder) - read GeoLayers from a folder
 * [SetGeoLayerProperty](SetGeoLayerProperty/SetGeoLayerProperty) - set a GeoGeoLayer property
+* [WriteGeoLayerToGeoJSON](WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON) - write GeoLayer to a file in GeoJSON format
+* [WriteGeoLayerToShapefile](WriteGeoLayerToShapefile/WriteGeoLayerToShapefile) - write GeoLayer to a file in Shapefile format
 
 ## Commands to Control Running ##
 
