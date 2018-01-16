@@ -33,7 +33,7 @@ Command Parameters
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
 | `GeoLayerID` <br>  **_required_**| The identifier of the GeoLayer to write.| None - must be specified. |
-| `OutputFile` <br> **_required_**| The output GeoJSON file (relative or absolute path). [`${Property}` syntax](../../input-formatting-ref/$property-syntax/$property-syntax.md) is recognized. | None - must be specified. |
+| `OutputFile` <br> **_required_**| The output GeoJSON file (relative or absolute path). [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized. | None - must be specified. |
 |`OutputCRS`<br> *optional*|The coordinate reference system (CRS) of the output GeoJSON file. [EPSG or ESRI code format](http://spatialreference.org/ref/epsg/) required. <br><br>If the output CRS is different than the CRS of the GeoLayer, the output GeoJSON file will be reprojected to the new CRS.|The GeoLayer's CRS.| 
 |`OutputPrecision`<br> *optional*| The number of decimal points to include in the output GeoJSON file's coordinates. Must be a positive, whole number at or between 0 and 15. A higher value increases the output GeoJSON file size and increases the geometry's precision.| 5 | 
 

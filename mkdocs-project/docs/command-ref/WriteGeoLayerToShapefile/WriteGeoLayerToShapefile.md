@@ -33,7 +33,7 @@ Command Parameters
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
 | `GeoLayerID` <br>  **_required_**| The identifier of the GeoLayer to write.| None - must be specified. |
-| `OutputFile` <br> **_required_**| The output Esri Shapefile (relative or absolute path). [`${Property}` syntax](../../input-formatting-ref/$property-syntax/$property-syntax.md) is recognized. | None - must be specified. |
+| `OutputFile` <br> **_required_**| The output Esri Shapefile (relative or absolute path). [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized. | None - must be specified. |
 |`OutputCRS`<br> *optional*|The coordinate reference system (CRS) of the output shapefile. [EPSG or ESRI code format](http://spatialreference.org/ref/epsg/) required. <br><br>If the output CRS is different than the CRS of the GeoLayer, the output shapefile will be reprojected to the new CRS.|The GeoLayer's CRS.| 
 
 
