@@ -11,7 +11,11 @@
 
 ## Overview ##
 
-The `WriteGeoLayerToGeoJSON` command writes a [GeoLayer](../../introduction#geolayer) to a file in [GeoJSON format](../../spatial-data-format-ref/GeoJSON/GeoJSON). The attribute field names of the GeoLayer are retained within the output GeoJSON file. The coordinate reference system and the coordinate precision can be changed within the output GeoJSON file. 
+The `WriteGeoLayerToGeoJSON` command writes a [GeoLayer](../../introduction#geolayer) to a file in [GeoJSON format](../../spatial-data-format-ref/GeoJSON/GeoJSON). 
+
+* The attributes of the GeoLayer are retained within the output GeoJSON file. 
+* The coordinate reference system can be specified. 
+* The coordinate precision can be specified. 
 
 ## Command Editor ##
 
@@ -34,21 +38,23 @@ Command Parameters
 | --------------|-----------------|----------------- |
 | `GeoLayerID` <br>  **_required_**| The identifier of the GeoLayer to write.| None - must be specified. |
 | `OutputFile` <br> **_required_**| The output GeoJSON file (relative or absolute path). [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized. | None - must be specified. |
-|`OutputCRS`<br> *optional*|The coordinate reference system (CRS) of the output GeoJSON file. [EPSG or ESRI code format](http://spatialreference.org/ref/epsg/) required. <br><br>If the output CRS is different than the CRS of the GeoLayer, the output GeoJSON file will be reprojected to the new CRS.|The GeoLayer's CRS.| 
-|`OutputPrecision`<br> *optional*| The number of decimal points to include in the output GeoJSON file's coordinates. Must be a positive, whole number at or between 0 and 15. A higher value increases the output GeoJSON file size and increases the geometry's precision.| 5 | 
+|`OutputCRS`<br> *optional*|The [coordinate reference system](https://en.wikipedia.org/wiki/Spatial_reference_system) of the output GeoJSON. [EPSG or ESRI code format](http://spatialreference.org/ref/epsg/) required (e.g. [`EPSG:4326`](http://spatialreference.org/ref/epsg/4326/), [`EPSG:26913`](http://spatialreference.org/ref/epsg/nad83-utm-zone-13n/), [`ESRI:102003`](http://spatialreference.org/ref/esri/usa-contiguous-albers-equal-area-conic/)). <br><br>If the output CRS is different than the CRS of the GeoLayer, the output GeoJSON is reprojected to the new CRS.|The GeoLayer's CRS.|  
+|`OutputPrecision`<br> *optional*| The number of decimal points to include in the output GeoJSON file's coordinates. Must be a positive [integer](https://en.wikipedia.org/wiki/Integer) at or between 0 and 15. <br><br> The precision of coordinate values can greatly impact the size of the file and precision of drawing the features. For example, a higher `OutputPrecision` value increases the output GeoJSON file size and increases the geometry's precision.[^1]| 5 | 
 
+[^1]: For further explanation, look at the chart under the *Precision* section of the [Decimal degrees Wikipedia page](https://en.wikipedia.org/wiki/Decimal_degrees).
 
 ## Examples ##
 
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/WriteGeoLayerToGeoJSON).
 
-For the following examples, the GeoLayers of a mock GeoProcessor are listed below.
+The following GeoLayer data are used in the examples[^2]. 
+[^2]: The examples assume that the `ExampleGeoLayer1` and `ExampleGeoLayer2` GeoLayers have *already* been read into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON) command.
 
 **<p style="text-align: left;">
-GeoProcessor
+Example GeoLayer Data
 </p>**
 
-|GeoLayerID|Coordinate Reference System (CRS)|
+|GeoLayerID|Coordinate Refrence System (CRS)|
 | ---- | ----|
 | ExampleGeoLayer1  | EPGS:4326	(WGS84) |
 | ExampleGeoLayer2	| EPSG:26913 (NAD83 UTM Zone 13N) |
@@ -56,14 +62,14 @@ GeoProcessor
 ### Example 1: Write a GeoLayer to a GeoJSON File ###
 
 ```
-WriteGeoLayerToGeoJSON(GeoLayerID = "ExampleGeoLayer1", OutputFile = "C:/Users/User/Example/ExampleFile1")
-WriteGeoLayerToGeoJSON(GeoLayerID = "ExampleGeoLayer2",OutputFile = "C:/Users/User/Example/ExampleFile1")
+WriteGeoLayerToGeoJSON(GeoLayerID = "ExampleGeoLayer1", OutputFile = "ExampleOutputFolder/ExampleFile1")
+WriteGeoLayerToGeoJSON(GeoLayerID = "ExampleGeoLayer2",OutputFile = "ExampleOutputFolder/ExampleFile2")
 ```
 
-After running the command lines, the following GeoJSON files will be writen to the `C:/Users/User/Example` folder. 
+After running the commands, the following GeoJSON files are written to the `ExampleOutputFolder` folder. 
 
 **<p style="text-align: left;">
-C:/Users/User/Example
+ExampleOutputFolder
 </p>**
 
 |Filename|File Type|CRS|Coordinate Precision|
@@ -74,14 +80,14 @@ C:/Users/User/Example
 ### Example 2: Reproject the Output GeoJSON File###
 
 ```
-WriteGeoLayerToGeoJSON(GeoLayerID = "ExampleGeoLayer1", OutputFile = "C:/Users/User/Example/ExampleFile1", OutputCRS = "ESRI:102003")
-WriteGeoLayerToGeoJSON(GeoLayerID = "ExampleGeoLayer2", OutputFile = "C:/Users/User/Example/ExampleFile1", OutputCRS = "EPSG:4326")
+WriteGeoLayerToGeoJSON(GeoLayerID = "ExampleGeoLayer1", OutputFile = "ExampleOutputFolder/ExampleFile1", OutputCRS = "ESRI:102003")
+WriteGeoLayerToGeoJSON(GeoLayerID = "ExampleGeoLayer2", OutputFile = "ExampleOutputFolder/ExampleFile2", OutputCRS = "EPSG:4326")
 ```
 
-After running the command lines, the following GeoJSON files will be writen to the `C:/Users/User/Example` folder. 
+After running the commands, the following GeoJSON files are written to the `ExampleOutputFolder` folder. 
 
 **<p style="text-align: left;">
-C:/Users/User/Example
+ExampleOutputFolder
 </p>**
 
 |Filename|File Type|CRS|Coordinate Precision|
@@ -92,11 +98,11 @@ C:/Users/User/Example
 ### Example 3: Specify the Coordinate Precision###
 
 ```
-WriteGeoLayerToGeoJSON(GeoLayerID = "ExampleGeoLayer1", OutputFile = "C:/Users/User/Example/ExampleFile1_01",`OutputPrecision = "1")
-WriteGeoLayerToGeoJSON(GeoLayerID = "ExampleGeoLayer1", OutputFile = "C:/Users/User/Example/ExampleFile1_05")
+WriteGeoLayerToGeoJSON(GeoLayerID = "ExampleGeoLayer1", OutputFile = "ExampleOutputFolder/ExampleFile1_01",`OutputPrecision = "1")
+WriteGeoLayerToGeoJSON(GeoLayerID = "ExampleGeoLayer1", OutputFile = "ExampleOutputFolder/ExampleFile1_05")
 ```
 
-After running the command lines, the following GeoJSON files will be writen to the `C:/Users/User/Example` folder. 
+After running the commands, the following GeoJSON files are written to the `ExampleOutputFolder` folder. 
 
 |Filename|File Type|CRS|Coordinate Precision|
 |------|---|---|---|

@@ -70,6 +70,7 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 
 * [CopyFile](CopyFile/CopyFile) - copy a file to a new file
 * [RemoveFile](RemoveFile/RemoveFile) - remove a file
+* [WebGet](WebGet/WebGet) - download a file from URL
 
 ## Commands for Messages and Logging ##
 

@@ -11,7 +11,10 @@
 
 ## Overview ##
 
-The `WriteGeoLayerToShapefile` command writes a [GeoLayer](../../introduction#geolayer) to a file in [Esri Shapefile format](../../spatial-data-format-ref/EsriShapefile/EsriShapefile). The attribute field names of the GeoLayer are retained within the output shapefile. The coordinate reference system can be changed within the output shapefile. 
+The `WriteGeoLayerToShapefile` command writes a [GeoLayer](../../introduction#geolayer) to a file in [Esri Shapefile format](../../spatial-data-format-ref/EsriShapefile/EsriShapefile). 
+
+* The attributes of the GeoLayer are retained within the output shapefile. 
+* The coordinate reference system can be specified. 
 
 ## Command Editor ##
 
@@ -34,20 +37,21 @@ Command Parameters
 | --------------|-----------------|----------------- |
 | `GeoLayerID` <br>  **_required_**| The identifier of the GeoLayer to write.| None - must be specified. |
 | `OutputFile` <br> **_required_**| The output Esri Shapefile (relative or absolute path). [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized. | None - must be specified. |
-|`OutputCRS`<br> *optional*|The coordinate reference system (CRS) of the output shapefile. [EPSG or ESRI code format](http://spatialreference.org/ref/epsg/) required. <br><br>If the output CRS is different than the CRS of the GeoLayer, the output shapefile will be reprojected to the new CRS.|The GeoLayer's CRS.| 
+|`OutputCRS`<br> *optional*|The [coordinate reference system](https://en.wikipedia.org/wiki/Spatial_reference_system) of the output shapefile. [EPSG or ESRI code format](http://spatialreference.org/ref/epsg/) required (e.g. [`EPSG:4326`](http://spatialreference.org/ref/epsg/4326/), [`EPSG:26913`](http://spatialreference.org/ref/epsg/nad83-utm-zone-13n/), [`ESRI:102003`](http://spatialreference.org/ref/esri/usa-contiguous-albers-equal-area-conic/)). <br><br>If the output CRS is different than the CRS of the GeoLayer, the output shapefile is reprojected to the new CRS.|The GeoLayer's CRS.| 
 
 
 ## Examples ##
 
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/WriteGeoLayerToShapefile).
 
-For the following examples, the GeoLayers of a mock GeoProcessor are listed below.
+The following GeoLayer data are used in the examples[^1]. 
+[^1]: The examples assume that the `ExampleGeoLayer1` and `ExampleGeoLayer2` GeoLayers have *already* been read into the GeoProcessor with the [ReadGeoLayerFromShapefile](../ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile) command.
 
 **<p style="text-align: left;">
-GeoProcessor
+Example GeoLayer Data
 </p>**
 
-|GeoLayerID|Coordinate Reference System (CRS)|
+|GeoLayerID|Coordinate Refrence System (CRS)|
 | ---- | ----|
 | ExampleGeoLayer1  | EPGS:4326	(WGS84) |
 | ExampleGeoLayer2	| EPSG:26913 (NAD83 UTM Zone 13N) |
@@ -55,44 +59,41 @@ GeoProcessor
 ### Example 1: Write a GeoLayer to a Shapefile ###
 
 ```
-WriteGeoLayerToShapefile(GeoLayerID = "ExampleGeoLayer1", OutputFile = "C:/Users/User/Example/ExampleFile1")
-WriteGeoLayerToShapefile(GeoLayerID = "ExampleGeoLayer2", OutputFile = "C:/Users/User/Example/ExampleFile2")
+WriteGeoLayerToShapefile(GeoLayerID = "ExampleGeoLayer1", OutputFile = "ExampleOutputFolder/ExampleFile1")
+WriteGeoLayerToShapefile(GeoLayerID = "ExampleGeoLayer2", OutputFile = "ExampleOutputFolder/ExampleFile2")
 ```
 
-After running the command lines, the following Esri Shapefiles will be written to the `C:/Users/User/Example` folder.[^1] 
-[^1]: Although not listed, note that the component shapefile files (`.shx`, `.dbf`, etc.) will also be present in the output folder. 
+After running the commands, the following Esri Shapefiles are written to the `ExampleOutputFolder` folder.[^2] 
+[^2]: Although not listed, note that the component shapefile files (`.shx`, `.dbf`, etc.) will also be present in the output folder. 
 
 **<p style="text-align: left;">
-C:/Users/User/Example
+ExampleOutputFolder
 </p>**
 
-|Filename|File Type|CRS|Coordinate Precision|
-|------|---|---|---|
-|ExampleFile1.shp|Esri Shapefile|EPSG:4326	(WGS84)|5|
-|ExampleFile2.shp|Esri Shapefile|EPSG:26913 (NAD83 UTM Zone 13N)|5|
+|Filename|File Type|CRS|
+|------|---|---|
+|ExampleFile1.shp|Esri Shapefile|EPSG:4326	(WGS84)|
+|ExampleFile2.shp|Esri Shapefile|EPSG:26913 (NAD83 UTM Zone 13N)|
 
 
 ### Example 2: Reproject the Output Shapefile###
 
 ```
-WriteGeoLayerToShapefile(GeoLayerID = "ExampleGeoLayer1", OutputFile = "C:/Users/User/Example/ExampleFile1", OutputCRS = "ESRI:102003")
-WriteGeoLayerToShapefile(GeoLayerID = "ExampleGeoLayer2", OutputFile = "C:/Users/User/Example/ExampleFile2", OutputCRS = "EPSG:4326")
+WriteGeoLayerToShapefile(GeoLayerID = "ExampleGeoLayer1", OutputFile = "ExampleOutputFolder/ExampleFile1", OutputCRS = "ESRI:102003")
+WriteGeoLayerToShapefile(GeoLayerID = "ExampleGeoLayer2", OutputFile = "ExampleOutputFolder/ExampleFile2", OutputCRS = "EPSG:4326")
 ```
 
-After running the command lines, the following Esri Shapefiles will be written to the `C:/Users/User/Example` folder[^1]. 
+After running the commands, the following Esri Shapefiles are written to the `ExampleOutputFolder` folder[^2]. 
 
 **<p style="text-align: left;">
-C:/Users/User/Example
+ExampleOutputFolder
 </p>**
 
-|Filename|File Type|CRS|Coordinate Precision|
-|------|---|---|---|
-|ExampleFile1.shp|Esri Shapefile|ESRI:102003 (USA Contiguous Albers Equal Area Conic)|5|
-|ExampleFile2.shp|Esri Shapefile|EPSG:4326 (WGS84)|5|
+|Filename|File Type|CRS|
+|------|---|---|
+|ExampleFile1.shp|Esri Shapefile|ESRI:102003 (USA Contiguous Albers Equal Area Conic)|
+|ExampleFile2.shp|Esri Shapefile|EPSG:4326 (WGS84)|
 
-
-
----
 
 ## Troubleshooting ##
 
