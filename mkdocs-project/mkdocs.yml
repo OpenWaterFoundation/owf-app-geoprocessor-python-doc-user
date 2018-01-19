@@ -13,6 +13,7 @@ pages:
   - ClipGeoLayer: command-ref/ClipGeoLayer/ClipGeoLayer.md
   - CompareFiles: command-ref/CompareFiles/CompareFiles.md
   - CopyFile: command-ref/CopyFile/CopyFile.md
+  - CopyGeoLayer: command-ref/CopyGeoLayer/CopyGeoLayer.md
   - EndFor: command-ref/EndFor/EndFor.md
   - EndIf: command-ref/EndIf/EndIf.md
   - For: command-ref/For/For.md

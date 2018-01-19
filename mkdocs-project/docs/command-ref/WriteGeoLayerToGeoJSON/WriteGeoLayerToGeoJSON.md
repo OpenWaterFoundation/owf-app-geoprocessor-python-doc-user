@@ -54,7 +54,7 @@ The following GeoLayer data are used in the examples[^2].
 Example GeoLayer Data
 </p>**
 
-|GeoLayerID|Coordinate Refrence System (CRS)|
+|GeoLayerID|Coordinate Reference System (CRS)|
 | ---- | ----|
 | ExampleGeoLayer1  | EPGS:4326	(WGS84) |
 | ExampleGeoLayer2	| EPSG:26913 (NAD83 UTM Zone 13N) |
