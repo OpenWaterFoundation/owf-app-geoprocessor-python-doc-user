@@ -81,8 +81,11 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 ## Commands for Testing ##
 
 * [CompareFiles](CompareFiles/CompareFiles) - compare files and optionally warn/fail if different/same
+* [WriteGeoLayerPropertiesToFile](WriteGeoLayerPropertiesToFile/WriteGeoLayerPropertiesToFile) - write GeoLayer properties to file
+* [WritePropertiesToFile](WritePropertiesToFile/WritePropertiesToFile) - write properties to file
 
 ## Utility Commands ##
 
-* [BlankCommand](BlankCommand/BlankCommand) - used for blank lines
+* [# Comment](Comment/Comment) - single line comments
+* [Blank](Blank/Blank) - used for blank lines
 * [UnknownCommand](UnknownCommand/UnknownCommand) - used when the command is not recognized

@@ -10,7 +10,9 @@ pages:
 - Getting Started: getting-started.md
 - Command Reference:
   - Overview: command-ref/overview.md
+  - Blank: command-ref/Blank/Blank.md
   - ClipGeoLayer: command-ref/ClipGeoLayer/ClipGeoLayer.md
+  - Comment: command-ref/Comment/Comment.md
   - CompareFiles: command-ref/CompareFiles/CompareFiles.md
   - CopyFile: command-ref/CopyFile/CopyFile.md
   - CopyGeoLayer: command-ref/CopyGeoLayer/CopyGeoLayer.md
@@ -28,9 +30,12 @@ pages:
   - SetProperty: command-ref/SetProperty/SetProperty.md
   - SetPropertyFromGeoLayer: command-ref/SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md
   - StartLog: command-ref/StartLog/StartLog.md
+  - UnknownCommand: command-ref/UnknownCommand/UnknownCommand.md
   - WebGet: command-ref/WebGet/WebGet.md
+  - WriteGeoLayerPropertiesToFile: command-ref/WriteGeoLayerPropertiesToFile/WriteGeoLayerPropertiesToFile.md
   - WriteGeoLayerToGeoJSON: command-ref/WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON.md
   - WriteGeoLayerToShapefile: command-ref/WriteGeoLayerToShapefile/WriteGeolayerToShapefile.md
+  - WritePropertiesToFile: command-ref/WritePropertiesToFile/WritePropertiesToFile.md
 - Spatial Data Format Reference:
   - Overview: spatial-data-format-ref/overview.md
   - Esri File Geodatabase: spatial-data-format-ref/EsriFileGeodatabase/EsriFileGeodatabase.md

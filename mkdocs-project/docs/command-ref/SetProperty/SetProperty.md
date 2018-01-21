@@ -53,3 +53,4 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 ## See Also ##
 
 * [SetPropertyFromGeoLayer](../SetPropertyFromGeoLayer/SetPropertyFromGeoLayer) command
+* [WritePropertiesToFile](../WritePropertiesToFile/WritePropertiesToFile) command
