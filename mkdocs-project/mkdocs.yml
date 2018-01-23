@@ -10,6 +10,7 @@ pages:
 - Getting Started: getting-started.md
 - Command Reference:
   - Overview: command-ref/overview.md
+  - AddGeoLayerAttribute: command-ref/AddGeoLayerAttribute/AddGeoLayerAttribute.md
   - Blank: command-ref/Blank/Blank.md
   - ClipGeoLayer: command-ref/ClipGeoLayer/ClipGeoLayer.md
   - Comment: command-ref/Comment/Comment.md
@@ -26,6 +27,8 @@ pages:
   - ReadGeoLayersFromFGDB: command-ref/ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB.md
   - ReadGeoLayersFromFolder: command-ref/ReadGeoLayersFromFolder/ReadGeoLayersFromFolder.md
   - RemoveFile: command-ref/RemoveFile/RemoveFile.md
+  - RemoveGeoLayerAttribute: command-ref/RemoveGeoLayerAttribute/RemoveGeoLayerAttribute.md
+  - RenameGeoLayerAttribute: command-ref/RenameGeoLayerAttribute/RenameGeoLayerAttribute.md
   - SetGeoLayerProperty: command-ref/SetGeoLayerProperty/SetGeoLayerProperty.md
   - SetProperty: command-ref/SetProperty/SetProperty.md
   - SetPropertyFromGeoLayer: command-ref/SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md
