@@ -87,7 +87,7 @@ After running the commands, the ExampleGeoLayer has the following attribute tabl
 ## Troubleshooting ##
 
 * Currently, this command does not work with in-memory GeoLayers. An error is not thrown but the attribute is not added. This bug should be fixed shortly.
-* More options can be included for the `AttributeType` parameter. Contact the [Open Water Foundation](http://openwaterfoundation.org/) if the current optiosns for the `AttributeType` parameter do not meet your needs.
+* More options can be included for the `AttributeType` parameter. Contact the [Open Water Foundation](http://openwaterfoundation.org/) if the current options for the `AttributeType` parameter do not meet your needs.
 
 ## See Also ##
 
