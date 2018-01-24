@@ -42,7 +42,7 @@ Command Parameters
 | `InputGeoLayerID` <br>  **_required_**| The ID of the input GeoLayer.| None - must be specified. |
 | `ClippingGeoLayerID` <br> **_required_**| The ID of the clipping GeoLayer. The clipping GeoLayer must be contain polygon geometry.| None - must be specified. |
 | `OutputGeoLayerID` <br> *optional*| A GeoLayer identifier for the output GeoLayer. Refer to [documentation](../../best-practices/geolayer-identifiers.md) for best practices on naming GeoLayer identifiers.| `InputGeoLayerID` \_clippedBy\_ `ClippingGeoLayerID`|
-|`IfGeoLayerIDExists`<br> *optional*|The action that occurs if the `OutputGeoLayerID` already exists within the GeoProcessor. <br><br> `Replace` : The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. No warning is logged.<br><br> `Warn` : The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. A warning is logged. <br><br> `Fail` : The new GeoLayer is not read. A fail message is logged. | `Replace` | 
+|`IfGeoLayerIDExists`<br> *optional*|The action that occurs if the `OutputGeoLayerID` already exists within the GeoProcessor. <br><br> `Replace` : The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. No warning is logged.<br><br> `ReplaceAndWarn`: The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. A warning is logged.<br><br>`Warn` : The ClipGeoLayer command does not run. A warning is logged. <br><br> `Fail` : The ClipGeoLayer command does not run. A fail message is logged. | `Replace` | 
 
 
 ## Examples ##
