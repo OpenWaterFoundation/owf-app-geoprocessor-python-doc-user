@@ -20,6 +20,7 @@ pages:
   - EndFor: command-ref/EndFor/EndFor.md
   - EndIf: command-ref/EndIf/EndIf.md
   - For: command-ref/For/For.md
+  - FreeGeoLayer: command-ref/FreeGeoLayer/FreeGeoLayer.md
   - If: command-ref/If/If.md
   - Message: command-ref/Message/Message.md
   - ReadGeoLayerFromGeoJSON: command-ref/ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md
