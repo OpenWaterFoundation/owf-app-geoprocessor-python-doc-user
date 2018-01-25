@@ -56,7 +56,7 @@ The following GeoLayer data are used in the examples[^1].
 Example GeoLayer Data
 </p>**
 
-|GeoLayerID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Description|Image|
+|GeoLayer ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Description|Image|
 | ---- |  ----- | ----|
 | `floodplains-FEMA-CO-4326` |Colorado floodplains provided by the Federal Emergency Management Agency (FEMA). Projected in WGS84 (EPSG:4326).|![co_floodplains](images/floodplains-FEMA-CO-4326.PNG)|
 | `countyBoundary-CDPHE-Park-4326`	| Park County Boundary provided by the Colorado Department of Public Health and Environment (CDPHE). Projected in WGS84 (EPSG:4326).|![park_county](images/countyboundary-CDPHE-Park-4326.PNG)|
@@ -69,7 +69,7 @@ ClipGeoLayer(InputGeoLayerID = "floodplains-FEMA-CO-4326", ClippingGeoLayerID = 
 
 After running the command, the following GeoLayer IDs are registered within the GeoProcessor. 
 
-|GeoLayerID|Description|Image|
+|GeoLayer ID|Description|Image|
 | ---- |  ----- | ---- |
 | `floodplains-FEMA-CO-4326` |The input GeoLayer. Colorado floodplains provided by FEMA. Projected in WGS84 (EPSG:4326).|![co_floodplains](images/floodplains-FEMA-CO-4326.PNG)|
 | `countyBoundary-CDPHE-Park-4326`	|The clipping GeoLayer. Park County Boundary provided by CDPHE. Projected in WGS84 (EPSG:4326).|![park_county](images/countyboundary-CDPHE-Park-4326.PNG)|
@@ -95,7 +95,7 @@ ClipGeoLayer(InputGeoLayerID = "floodplains-FEMA-CO-4326", ClippingGeoLayerID = 
 
 After running the command, the following GeoLayer IDs are registered within the GeoProcessor. 
 
-|GeoLayerID|Description|Image|
+|GeoLayer ID|Description|Image|
 | ---- |  ----- | ---- |
 | `floodplains-FEMA-CO-4326` |The input GeoLayer. Colorado floodplains provided by FEMA. Projected in WGS84 (EPSG:4326).|![co_floodplains](images/floodplains-FEMA-CO-4326.PNG)|
 | `countyBoundary-CDPHE-Park-4326`	|The clipping GeoLayer. Park County Boundary provided by CDPHE. Projected in WGS84 (EPSG:4326).|![park_county](images/countyboundary-CDPHE-Park-4326.PNG)|
