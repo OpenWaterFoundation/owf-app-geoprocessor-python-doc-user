@@ -21,6 +21,8 @@ The `MergeGeoLayers` command merges multiple [GeoLayers](../../introduction#geol
 * The attribute names of the output GeoLayer can be specified. See `AttributeMap` parameter. 
 * The value `0` will be assigned as the attribute value to features in the output GeoLayer attribute table that do not have attribute values. 
 
+![MergeGeoLayers](images/MergeGeoLayers_input_output.PNG)
+
 ## Command Editor ##
 
 The following dialog is used to edit the command and illustrates the command syntax.
