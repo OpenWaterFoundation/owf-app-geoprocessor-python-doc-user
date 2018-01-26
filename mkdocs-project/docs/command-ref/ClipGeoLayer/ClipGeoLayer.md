@@ -50,7 +50,7 @@ Command Parameters
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ClipGeoLayer).
 
 The following GeoLayer data are used in the examples[^1]. 
-[^1]: The examples assume that the `floodplains-FEMA-CO-4326` and `countyBoundary-CDPHE-Park-4326` GeoLayers have *already* been read into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON) command.
+[^1]: The examples assume that the `floodplains-FEMA-CO-4326` and `countyBoundary-CDOT-Park-4326` GeoLayers have *already* been read into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON) command.
 
 **<p style="text-align: left;">
 Example GeoLayer Data
@@ -59,12 +59,12 @@ Example GeoLayer Data
 |GeoLayer ID&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|Description|Image|
 | ---- |  ----- | ----|
 | `floodplains-FEMA-CO-4326` |Colorado floodplains provided by the Federal Emergency Management Agency (FEMA). Projected in WGS84 (EPSG:4326).|![co_floodplains](images/floodplains-FEMA-CO-4326.PNG)|
-| `countyBoundary-CDPHE-Park-4326`	| Park County Boundary provided by the Colorado Department of Public Health and Environment (CDPHE). Projected in WGS84 (EPSG:4326).|![park_county](images/countyboundary-CDPHE-Park-4326.PNG)|
+| `countyBoundary-CDOT-Park-4326`	| Park County Boundary provided by the Colorado Department of Transportation (CDOT). Projected in WGS84 (EPSG:4326).|![park_county](images/countyboundary-CDOT-Park-4326.PNG)|
 
 ### Example 1: Clip a GeoLayer###
 
 ```
-ClipGeoLayer(InputGeoLayerID = "floodplains-FEMA-CO-4326", ClippingGeoLayerID = "countyBoundary-CDPHE-Park-4326")
+ClipGeoLayer(InputGeoLayerID = "floodplains-FEMA-CO-4326", ClippingGeoLayerID = "countyBoundary-CDOT-Park-4326")
 ```
 
 After running the command, the following GeoLayer IDs are registered within the GeoProcessor. 
@@ -72,8 +72,8 @@ After running the command, the following GeoLayer IDs are registered within the 
 |GeoLayer ID|Description|Image|
 | ---- |  ----- | ---- |
 | `floodplains-FEMA-CO-4326` |The input GeoLayer. Colorado floodplains provided by FEMA. Projected in WGS84 (EPSG:4326).|![co_floodplains](images/floodplains-FEMA-CO-4326.PNG)|
-| `countyBoundary-CDPHE-Park-4326`	|The clipping GeoLayer. Park County Boundary provided by CDPHE. Projected in WGS84 (EPSG:4326).|![park_county](images/countyboundary-CDPHE-Park-4326.PNG)|
-| `floodplains-FEMA-CO-4326_clippedBy_countyBoundary-CDPHE-Park-4326`|The output (clipped) GeoLayer. Park County floodplains provided by FEMA. Projected in WGS84 (EPSG:4326).|![park_floodplains](images/floodplains-FEMA-Park-4326.PNG)|
+| `countyBoundary-CDOT-Park-4326`	|The clipping GeoLayer. Park County Boundary provided by CDOT. Projected in WGS84 (EPSG:4326).|![park_county](images/countyboundary-CDOT-Park-4326.PNG)|
+| `floodplains-FEMA-CO-4326_clippedBy_countyBoundary-CDOT-Park-4326`|The output (clipped) GeoLayer. Park County floodplains provided by FEMA. Projected in WGS84 (EPSG:4326).|![park_floodplains](images/floodplains-FEMA-Park-4326.PNG)|
 
 Below is an image of the input and output products of the `ClipGeoLayer` command. 
 
@@ -90,7 +90,7 @@ Below is an image of the input and output products of the `ClipGeoLayer` command
 In Example 1, the ClipGeoLayer command clipped the Colorado floodplain layer to the Park country boundary layer. The default output GeoLayerID, however, is quite long and does not follow the [GeoLayer ID best practices](../../best-practices/geolayer-identifiers). In this example, the same ClipGeoLayer command user the `OutputGeoLayerID` parameter to specify the GeoLayer ID for hte new output GeoLayer.  
 
 ```
-ClipGeoLayer(InputGeoLayerID = "floodplains-FEMA-CO-4326", ClippingGeoLayerID = "countyBoundary-CDPHE-Park-4326", OutputGeoLayerID = "floodplains-FEMA-Park-4326")
+ClipGeoLayer(InputGeoLayerID = "floodplains-FEMA-CO-4326", ClippingGeoLayerID = "countyBoundary-CDOT-Park-4326", OutputGeoLayerID = "floodplains-FEMA-Park-4326")
 ```
 
 After running the command, the following GeoLayer IDs are registered within the GeoProcessor. 
@@ -98,7 +98,7 @@ After running the command, the following GeoLayer IDs are registered within the 
 |GeoLayer ID|Description|Image|
 | ---- |  ----- | ---- |
 | `floodplains-FEMA-CO-4326` |The input GeoLayer. Colorado floodplains provided by FEMA. Projected in WGS84 (EPSG:4326).|![co_floodplains](images/floodplains-FEMA-CO-4326.PNG)|
-| `countyBoundary-CDPHE-Park-4326`	|The clipping GeoLayer. Park County Boundary provided by CDPHE. Projected in WGS84 (EPSG:4326).|![park_county](images/countyboundary-CDPHE-Park-4326.PNG)|
+| `countyBoundary-CDOT-Park-4326`	|The clipping GeoLayer. Park County Boundary provided by CDOT. Projected in WGS84 (EPSG:4326).|![park_county](images/countyboundary-CDOT-Park-4326.PNG)|
 | `floodplains-FEMA-Park-4326`|The output (clipped) GeoLayer. Park County floodplains provided by FEMA. Projected in WGS84 (EPSG:4326).|![park_floodplains](images/floodplains-FEMA-Park-4326.PNG)|
 
 ## Troubleshooting ##

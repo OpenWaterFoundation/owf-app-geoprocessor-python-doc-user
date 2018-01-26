@@ -3,6 +3,7 @@
 * [Overview](#overview)
 * [Command Editor](#command-editor)
 * [Command Syntax](#command-syntax)
+* [Attribute Map](#attribute-map)
 * [Examples](#examples)
 * [Troubleshooting](#troubleshooting)
 * [See Also](#see-also)
@@ -41,7 +42,7 @@ Command Parameters
 | --------------|-----------------|----------------- |
 |`GeoLayerIDs` <br>  **_required_**| The identifiers of the GeoLayers to merge. List syntax.| None - must be specified. |
 |`OutputGeoLayerID` <br> **_required_**| A GeoLayer identifier for the output GeoLayer. Refer to [documentation](../../best-practices/geolayer-identifiers.md) for best practices on naming GeoLayer identifiers.|None - must be specified. |
-|`AttributeMap` <br> _optional_| A dictionary object used to map the input GeoLayers' attributes to the output GeoLayer attribute table. Dictionary of Lists syntax. See the [Attribute Map]($attribute-map) section for more information.|Empty dictionary. <br> All attributes in input GeoLayers are retained within the output GeoLayer.|
+|`AttributeMap` <br> _optional_| A dictionary object used to map the input GeoLayers' attributes to the output GeoLayer attribute table. Dictionary of Lists syntax. See the [Attribute Map](#attribute-map) section for more information.|Empty dictionary. <br> All attributes in input GeoLayers are retained within the output GeoLayer.|
 |`IfGeoLayerIDExists`<br> *optional*|The action that occurs if the `OutputGeoLayerID` already exists within the GeoProcessor. <br><br> `Replace` : The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. No warning is logged.<br><br> `ReplaceAndWarn`: The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. A warning is logged.<br><br>`Warn` : The MergeGeoLayers command does not run. A warning is logged. <br><br> `Fail` : The MergeGeoLayers command does not run. A fail message is logged. | `Replace` | 
 
 **<p style="text-align: center;">
@@ -58,8 +59,7 @@ Special Parameter Syntax
 
 The `MergeGeoLayers` command merges multiple GeoLayers into one GeoLayer. 
 
-* The features are merged.
-* The input attribute tables are merged into one attribute table. 
+* The input attribute tables are merged into one output attribute table. 
 * By default, if the attribute tables from the input GeoLayers are different, the attribute table of the output GeoLayer will contain the attributes from **ALL** input layers. See [Example 1](#example-1-merge-without-an-attribute-map). 
 
 There are times, however, when attributes with *different* names from *different* input GeoLayers should be converged. 
@@ -80,9 +80,9 @@ AttributeMap = "KEY1=VALUE1; KEY2=VALUE2"
 * Each `VALUE` represents a *list* of attribute names from the `INPUT` GeoLayers that will be renamed to the `KEY` value.
 * The `VALUE` is a *list* that can contain one or more attribute names. 
 ```
-AttributeMap = "KEY1=ITEM1,ITEM2,ITEM3; KEY2=ITEM3, ITEM4"
+AttributeMap = "KEY1=ITEM1,ITEM2,ITEM3; KEY2=ITEM3; KEY3=ITEM4,ITEM5"
 ```
-* If an attribute name from a `INPUT` GeoLayer is not listed in any of the attribute map's `VALUES`, the attribute name will be retained in the `OUTPUT MERGED` GeoLayer.
+* If an attribute name from an `INPUT` GeoLayer is not listed in any of the attribute map's `VALUES`, the attribute name will be retained in the `OUTPUT MERGED` GeoLayer.
 
 
 ## Examples ##
@@ -156,9 +156,9 @@ Attribute Table of `MergedOutput`
 MergeGeoLayers(GeoLayerIDs = "ExampleGeoLayer1, ExampleGeoLayer2", OutputGeoLayerID = "MergedOutput", AttributeMap = "ID=id; School=high_sch, elem_sch; Mascot=mascot")
 ```
 
-After running the commands, the following GeoJSON files are written to the `ExampleOutputFolder` folder. 
+After running the command, the following the following GeoLayer IDs are registered within the GeoProcessor. 
 
-|GeoLayerID|
+|GeoLayer ID|
 | ---- |
 | ExampleGeoLayer1| 
 | ExampleGeoLayer2|
