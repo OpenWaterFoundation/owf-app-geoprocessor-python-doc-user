@@ -30,7 +30,7 @@ pages:
   - ReadGeoLayersFromFGDB: command-ref/ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB.md
   - ReadGeoLayersFromFolder: command-ref/ReadGeoLayersFromFolder/ReadGeoLayersFromFolder.md
   - RemoveFile: command-ref/RemoveFile/RemoveFile.md
-  - RemoveGeoLayerAttribute: command-ref/RemoveGeoLayerAttribute/RemoveGeoLayerAttribute.md
+  - RemoveGeoLayerAttributes: command-ref/RemoveGeoLayerAttributes/RemoveGeoLayerAttributes.md
   - RenameGeoLayerAttribute: command-ref/RenameGeoLayerAttribute/RenameGeoLayerAttribute.md
   - RunCommands: command-ref/RunCommands/RunCommands.md
   - SetGeoLayerProperty: command-ref/SetGeoLayerProperty/SetGeoLayerProperty.md

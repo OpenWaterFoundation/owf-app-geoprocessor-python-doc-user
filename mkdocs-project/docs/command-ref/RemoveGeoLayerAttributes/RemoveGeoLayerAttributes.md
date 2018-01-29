@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / RemoveGeoLayerAttribute #
+# Learn GeoProcessor / Command / RemoveGeoLayerAttributes #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)
@@ -11,7 +11,7 @@
 
 ## Overview ##
 
-The `RemoveGeoLayerAttribute` command removes a single attribute from a GeoLayer.
+The `RemoveGeoLayerAttributes` command removes one or more attributes from a GeoLayer.
 
 ## Command Editor ##
 
@@ -24,7 +24,7 @@ The following dialog is used to edit the command and illustrates the command syn
 The command syntax is as follows:
 
 ```text
-RemoveGeoLayerAttribute(Parameter="Value",...)
+RemoveGeoLayerAttributes(Parameter="Value",...)
 ```
 **<p style="text-align: center;">
 Command Parameters
@@ -33,13 +33,13 @@ Command Parameters
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
 | `GeoLayerID` <br> **_required_** | The ID of the GeoLayer with the attribute to be removed. | None - must be specified. |
-| `AttributeName` <br> **_required_** | The name of the attribute to be removed. Case-specific.| None - must be specified. |
+| `AttributeNames` <br> **_required_** | The names of the attributes to be removed. Separated by commas. Case-specific.| None - must be specified. |
 
 
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/RemoveGeoLayerAttribute).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/RemoveGeoLayerAttributes).
 
 The following GeoLayer data is used in the example[^2]. 
 [^2]: The example assumes that the `ExampleGeoLayer` GeoLayer has *already* been read into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON) command.
@@ -62,19 +62,19 @@ ExampleGeoLayer's Attribute Table
 |2|Bright|Gators|304|24|
 |3|Gunn|Colts|567|43|
 
-### Example 1: Remove an Attribute###
+### Example 1: Remove Attributes###
 
 ```
-RemoveGeoLayerAttribute(GeoLayerID="ExampleGeoLayer", AttributeName="mascot")
+RemoveGeoLayerAttributes(GeoLayerID="ExampleGeoLayer", AttributeNames="mascot, students")
 ```
 
 After running the command, the ExampleGeoLayer has the following attribute table.
 
-|id|school|students|faculty|
-|----|----|-----|-----|
-|1|Hill|546|42|
-|2|Bright|304|24|
-|3|Gunn|567|43|
+|id|school|faculty|
+|----|----|-----|
+|1|Hill|42|
+|2|Bright|24|
+|3|Gunn|43|
 
 
 ## Troubleshooting ##

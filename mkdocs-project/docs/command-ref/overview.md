@@ -54,7 +54,7 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 * [ReadGeoLayerFromShapefile](ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile) - read a GeoLayer from a file in Shapefile format
 * [ReadGeoLayersFromFGDB](ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB) - read GeoLayers from a file geodatabase
 * [ReadGeoLayersFromFolder](ReadGeoLayersFromFolder/ReadGeoLayersFromFolder) - read GeoLayers from a folder
-* [RemoveGeoLayerAttribute](RemoveGeoLayerAttribute/RemoveGeoLayerAttribute) - remove an attribute from a GeoLayer
+* [RemoveGeoLayerAttributes](RemoveGeoLayerAttributes/RemoveGeoLayerAttributes) - remove one or more attributes from a GeoLayer
 * [RenameGeoLayerAttribute](RenameGeoLayerAttribute/RenameGeoLayerAttribute) - rename a GeoLayer's attribute
 * [SetGeoLayerProperty](SetGeoLayerProperty/SetGeoLayerProperty) - set a GeoGeoLayer property
 * [WriteGeoLayerToGeoJSON](WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON) - write GeoLayer to a file in GeoJSON format
