@@ -69,6 +69,7 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 * [EndFor](EndFor/EndFor) - indicate the end of a `For` block
 * [For](For/For) - indicate the start of a `For` block
 * [If](If/If) - indicate the start of an `If` block
+* [RunCommands](RunCommands/RunCommands) - run a command file, useful to automate running all tests or a multi-step workflow
 * [SetProperty](SetProperty/SetProperty) - set a GeoProcessor property
 * [SetPropertyFromGeoLayer](SetPropertyFromGeoLayer/SetPropertyFromGeoLayer) - set a GeoProcessor property from a GeoLayer property
 
@@ -86,6 +87,9 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 ## Commands for Testing ##
 
 * [CompareFiles](CompareFiles/CompareFiles) - compare files and optionally warn/fail if different/same
+* [CreateRegressionTestCommandFile](CreateRegressionTestCommandFile/CreateRegressionTestCommandFile) - create a master command file to automate running all tests
+* [StartRegressionTestResultsReport](StartRegressionTestResultsReport/StartRegressionTestResultsReport) - start (open) a file to receive regression test results
+* [WriteCommandSummaryToFile](WriteCommandSummaryToFile/WriteCommandSummaryToFile) - write a summary of command log messages to a file
 * [WriteGeoLayerPropertiesToFile](WriteGeoLayerPropertiesToFile/WriteGeoLayerPropertiesToFile) - write GeoLayer properties to file
 * [WritePropertiesToFile](WritePropertiesToFile/WritePropertiesToFile) - write properties to file
 
