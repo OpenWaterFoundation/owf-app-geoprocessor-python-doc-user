@@ -25,6 +25,7 @@ pages:
   - If: command-ref/If/If.md
   - MergeGeoLayers: command-ref/MergeGeoLayers/MergeGeoLayers.md
   - Message: command-ref/Message/Message.md
+  - ReadGeoLayerFromDelimitedFile: command-ref/ReadGeoLayerFromDelimitedFile/ReadGeoLayerFromDelimitedFile.md
   - ReadGeoLayerFromGeoJSON: command-ref/ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md
   - ReadGeoLayerFromShapefile: command-ref/ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile.md
   - ReadGeoLayersFromFGDB: command-ref/ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB.md
@@ -43,6 +44,7 @@ pages:
   - WebGet: command-ref/WebGet/WebGet.md
   - WriteCommandSummaryToFile: command-ref/WriteCommandSummaryToFile/WriteCommandSummaryToFile.md
   - WriteGeoLayerPropertiesToFile: command-ref/WriteGeoLayerPropertiesToFile/WriteGeoLayerPropertiesToFile.md
+  - WriteGeoLayerToDelimitedFile: command-ref/WriteGeoLayerToDelimitedFile/WriteGeoLayerToDelimitedFile.md
   - WriteGeoLayerToGeoJSON: command-ref/WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON.md
   - WriteGeoLayerToShapefile: command-ref/WriteGeoLayerToShapefile/WriteGeolayerToShapefile.md
   - WritePropertiesToFile: command-ref/WritePropertiesToFile/WritePropertiesToFile.md

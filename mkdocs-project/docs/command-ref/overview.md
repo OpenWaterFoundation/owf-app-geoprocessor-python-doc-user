@@ -48,8 +48,9 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 * [AddGeoLayerAttribute](AddGeoLayerAttribute/AddGeoLayerAttribute) - add an attribute to a GeoLayer
 * [ClipGeoLayer](ClipGeoLayer/ClipGeoLayer) - clip a GeoLayer by the boundary of another GeoLayer 
 * [CopyGeoLayer](CopyGeoLayer/CopyGeoLayer) - copy a GeoLayer to a new GeoLayer
-* [FreeGeoLayer](FreeGeoLayer/FreeGeoLayer) - removes a GeoLayer from the GeoProcessor
-* [MergeGeoLayers](MergeGeoLayers/MergeGeoLayers) - merges multiple GeoLayers into one GeoLayer
+* [FreeGeoLayer](FreeGeoLayer/FreeGeoLayer) - remove a GeoLayer from the GeoProcessor
+* [MergeGeoLayers](MergeGeoLayers/MergeGeoLayers) - merge multiple GeoLayers into one GeoLayer
+* [ReadGeoLayerFromDelimitedFile](ReadGeoLayerFromDelimitedFile/ReadGeoLayerFromDelimitedFile) - read a GeoLayer from a file in delimited file format
 * [ReadGeoLayerFromGeoJSON](ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON) - read a GeoLayer from a file in GeoJSON format
 * [ReadGeoLayerFromShapefile](ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile) - read a GeoLayer from a file in Shapefile format
 * [ReadGeoLayersFromFGDB](ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB) - read GeoLayers from a file geodatabase
@@ -58,6 +59,7 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 * [RenameGeoLayerAttribute](RenameGeoLayerAttribute/RenameGeoLayerAttribute) - rename a GeoLayer's attribute
 * [SetGeoLayerCRS](SetGeoLayerCRS/SetGeoLayerCRS) - sets a GeoLayer's coordinate reference system
 * [SetGeoLayerProperty](SetGeoLayerProperty/SetGeoLayerProperty) - set a GeoGeoLayer property
+* [WriteGeoLayerToDelimitedFile](WriteGeoLayerToDelimitedFile/WriteGeoLayerToDelimitedFile) - write GeoLayer to a file in delimited file format
 * [WriteGeoLayerToGeoJSON](WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON) - write GeoLayer to a file in GeoJSON format
 * [WriteGeoLayerToShapefile](WriteGeoLayerToShapefile/WriteGeoLayerToShapefile) - write GeoLayer to a file in Shapefile format
 
