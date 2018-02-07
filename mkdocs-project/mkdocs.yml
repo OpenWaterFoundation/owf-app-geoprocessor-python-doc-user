@@ -38,6 +38,7 @@ pages:
   - SetGeoLayerProperty: command-ref/SetGeoLayerProperty/SetGeoLayerProperty.md
   - SetProperty: command-ref/SetProperty/SetProperty.md
   - SetPropertyFromGeoLayer: command-ref/SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md
+  - SimplifyGeoLayerGeometry: command-ref/SimplifyGeoLayerGeometry/SimplifyGeoLayerGeometry.md
   - StartLog: command-ref/StartLog/StartLog.md
   - StartRegressionTestResultsReport: command-ref/StartRegressionTestResultsReport/StartRegressionTestResultsReport.md
   - UnknownCommand: command-ref/UnknownCommand/UnknownCommand.md
