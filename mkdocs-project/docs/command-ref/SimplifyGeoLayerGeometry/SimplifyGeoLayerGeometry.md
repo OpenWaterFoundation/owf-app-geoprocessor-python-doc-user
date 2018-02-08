@@ -3,6 +3,7 @@
 * [Overview](#overview)
 * [Command Editor](#command-editor)
 * [Command Syntax](#command-syntax)
+* [Douglas–Peucker Algorithm](#douglaspeucker-algorithm)
 * [Examples](#examples)
 * [Troubleshooting](#troubleshooting)
 * [See Also](#see-also)
@@ -11,9 +12,12 @@
 
 ## Overview ##
 
-The `SimplifyGeoLayerGeometry` command decreases the number of verticies within the geometries of a [GeoLayer](../../introduction#geolayer).
+The `SimplifyGeoLayerGeometry` command decreases the number of verticies within the geometries for each feature of a [GeoLayer](../../introduction#geolayer). This command is useful when the filesize of a GeoLayer is too large. 
 
 * This command is designed to simplify GeoLayers with `LINE` or `POLYGON` geometry. GeoLayers with `POINT` geometry *cannot* be simplified with this command.
+* The filesize of the simplified GeoLayer will be smaller than the input GeoLayer.
+* The spatial accuracy of the simplified GeoLayer be less precise than the input GeoLayer. 
+
 
 ## Command Editor ##
 
@@ -32,39 +36,33 @@ SimplifyGeoLayerGeometry(Parameter="Value",...)
 Command Parameters
 </p>**
 
-|**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+|**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
 | `GeoLayerID` <br>  **_required_**| The ID of the GeoLayer to be simplified.| None - must be specified. |
-| `Tolerance`  <br>  **_required_**| The `ε` variable in the `Douglas–Peucker algorithm`. Units are the same as those used in GeoLayer's coordinate reference system. <br><br> Refer to the [Douglas–Peucker Algorithm](#douglas-peuker-algorithim) section for more information. |None - must be specified. |
+| `Tolerance`  <br>  **_required_**| The `ε` variable in the `Douglas–Peucker algorithm`. <br><br>Units are the same as the distance units of the GeoLayer's coordinate reference system. For example, `WGS84 EPSG:4326` uses decimal degrees and `NAD83 Zone13N EPSG:26913` uses meters. [^1] <br><br> Refer to the [Douglas–Peucker Algorithm](#douglas-peuker-algorithim) section for more information. |None - must be specified. |
+| `SimplifiedGeoLayerID` <br> *optional* | A GeoLayer identifier for the output simplified GeoLayer. Refer to [documentation](http://127.0.0.1:8000/best-practices/geolayer-identifiers/) for best practices on naming GeoLayer identifiers.|`GeoLayerID`\_simple\_`Tolerance`|
+|`IfGeoLayerIDExists`<br> *optional*|The action that occurs if the `SimplifiedGeoLayerID` already exists within the GeoProcessor. <br><br> `Replace` : The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. No warning is logged.<br><br> `ReplaceAndWarn`: The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. A warning is logged.<br><br>`Warn` : The SimplifyGeoLayerGeometry command does not run. A warning is logged. <br><br> `Fail` : The SimplifyGeoLayerGeometry command does not run. A fail message is logged. | `Replace` | 
 
+[^1]: Units for common coordinate reference systems can be looked up at the [epsg.io site](http://epsg.io/). 
 
 ## Douglas–Peucker Algorithm
 
-The `SimplifyGeoLayerGeometry` command simplifies the features of a GeoLayer with the [`Douglas–Peucker algorithim`]("https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm"). A point is discarded along a line or polygon if the point "does not deviate significantly from its surrounding points". [(E&B Software)](https://www.eandbsoftware.org/reducing-a-map-path-using-douglas-peucker-algorithm/). The significance level is determined by the `Tolerance` parameter value. 
+The `SimplifyGeoLayerGeometry` command simplifies the features of a GeoLayer with the [`Douglas–Peucker algorithim`](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm). 
 
-```
-TODO egiles 2018-02-07 Steve, I need help understanding how detailed I should explain this algorithm. It is quite complicated and I do not want to over-complicate things. Below are some sources that attempt to explain how this algorithm simplifies a line or polygon. 
-```
+A line is specified by multiple points (coordinates) in sequence.  The algorithm discards points as long as the resulting shift in the line connecting remaining points does not exceed the tolerance.  A very small tolerance would only discard points that are "extra" points along a straight line.
 
-* [http://www.tankonyvtar.hu/hu/tartalom/tamop425/0027_SAN1/ch01s05.html](http://www.tankonyvtar.hu/hu/tartalom/tamop425/0027_SAN1/ch01s05.html)
-* [https://www.eandbsoftware.org/reducing-a-map-path-using-douglas-peucker-algorithm/](https://www.eandbsoftware.org/reducing-a-map-path-using-douglas-peucker-algorithm/)
-* [https://www.codeproject.com/Articles/114797/Polyline-Simplification](https://www.codeproject.com/Articles/114797/Polyline-Simplification)
+#### Addtional Resources
 
-
-||Original GeoLayer|Simplified GeoLayer: `LARGE` Tolerance Value|Simplified GeoLayer: `SMALL` Tolerance Value|
-|----|:---:|:---:|:---:|
-|Number of points *significantly* deviating from the surrounding points|`NONE`|`MORE`|`LESS`|
-|Number of points that will be removed from the GeoLayer|`NONE`|`MORE`|`LESS`|
-|Geometry Precision|`PRECISE`|`LESS PRECISE`|`EVEN LESS PRECISE`|
-|Output file size of the simplified GeoLayer|`LARGE`|`LESS LARGE`|`EVEN LESS LARGE`|
-
+* [Spatial Analysis 1., Spatial Data Handling](http://www.tankonyvtar.hu/hu/tartalom/tamop425/0027_SAN1/ch01s05.html) 
+* [Reducing a Map Path Using Douglas-Peucker Algorithm](https://www.eandbsoftware.org/reducing-a-map-path-using-douglas-peucker-algorithm/)
+* [Polyline Simplification](https://www.codeproject.com/Articles/114797/Polyline-Simplification)
 
 ## Examples ##
 
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/SimplifyGeoLayerGeometry).
 
-The following GeoLayer data are used in the examples[^1] Note that these examples are referencing the results of the automated tests. 
-[^1]: The examples assume that the GeoLayer has *already* been read into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON) command.
+The following GeoLayer data are used in the examples[^2] Note that these examples correspond to the automated tests. 
+[^2]: The examples assume that the GeoLayer has *already* been read into the GeoProcessor from a file. 
 
 **<p style="text-align: left;">
 Example GeoLayer Data
@@ -72,26 +70,28 @@ Example GeoLayer Data
 
 |GeoLayer ID|CRS|File Size (if written out to GeoJSON)|
 | ---- | ---|---|
-| `polygon_summit_co_nad83_utm_z13n` |EPSG:26913 (NAD83 UTM Zone 13N)|90 KB|
+|`SummitCounty`[^3]|EPSG:26913 (NAD83 UTM Zone 13N)|90 KB|
+[^3]: This example GeoLayer is from the `polygon_summit_co_nad83_utm_z13n.geojson` test data file.
 
-| polygon_summit_co_nad83_utm_z13n|
+|`SummitCounty`|
 |-|
 |![Original_GeoLayer](images\Original_Polgyon.PNG)|
 
 
-### Example 1: Simplify a GeoLayer (Smaller Tolerance)###
+### Example 1: Simplify a GeoLayer (Small Tolerance)###
 
 ```
-SimplifyGeoLayerGeometry(GeoLayerID = "polygon_summit_co_nad83_utm_z13n", Tolerance = "100")
+SimplifyGeoLayerGeometry(GeoLayerID = "SummitCounty", Tolerance = "100", SimplifiedGeoLayerID = "Summit_simple100" )
 ```
 
 After running the command, the following GeoLayer IDs are registered within the GeoProcessor. 
 
-|GeoLayer ID|CRS|File Size (if written out to GeoJSON)|
-| ---- | ---|---|
-| `polygon_summit_co_nad83_utm_z13n` |EPSG:26913 (NAD83 UTM Zone 13N)|11 KB|
+|GeoLayer ID|File Size (if written out to GeoJSON)|
+| ---- | ---|
+|`SummitCounty`|90 KB|
+|`Summit_simple100`|11 KB|
 
-|polygon_summit_co_nad83_utm_z13n (simplified)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tolerance Value: 100 |
+|`Summit_simple100`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tolerance Value: 100 meters |
 |-|
 |![Simplified_GeoLayer_100](images\Simplified_Polygon_100.PNG)|
 
@@ -100,19 +100,20 @@ After running the command, the following GeoLayer IDs are registered within the 
 |![Original_Simplified_Overlay](images\Original_Simplified100_Overlay.PNG)|
 
 
-### Example 2: Simplify a GeoLayer (Larger Tolerance)###
+### Example 2: Simplify a GeoLayer (Large Tolerance)###
 
 ```
-SimplifyGeoLayerGeometry(GeoLayerID = "polygon_summit_co_nad83_utm_z13n", Tolerance = "1000")
+SimplifyGeoLayerGeometry(GeoLayerID = "SummitCounty", Tolerance = "1000")
 ```
 
 After running the command, the following GeoLayer IDs are registered within the GeoProcessor. 
 
-|GeoLayer ID|CRS|File Size (if written out to GeoJSON)|
-| ---- | ---|---|
-| `polygon_summit_co_nad83_utm_z13n` |EPSG:26913 (NAD83 UTM Zone 13N)|2 KB|
+|GeoLayer ID|File Size (if written out to GeoJSON)|
+| ---- | ---|
+| `SummitCounty` |90 KB|
+|`SummitCounty_simple_1000`|2 KB|
 
-|polygon_summit_co_nad83_utm_z13n (simplified)&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tolerance Value: 1000 |
+|`SummitCounty_simple_1000` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tolerance Value: 1000 meters |
 |-|
 |![Simplified_GeoLayer_100](images\Simplified_Polygon_1000.PNG)|
 
