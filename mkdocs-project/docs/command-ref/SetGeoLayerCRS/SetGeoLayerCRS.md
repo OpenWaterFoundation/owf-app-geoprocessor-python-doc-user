@@ -11,10 +11,13 @@
 
 ## Overview ##
 
-The `SetGeoLayerCRS` command sets the [coordinate reference system](https://en.wikipedia.org/wiki/Spatial_reference_system) of a [GeoLayer](../../introduction#geolayer). 
+The `SetGeoLayerCRS` command sets the [coordinate reference system (CRS)](https://en.wikipedia.org/wiki/Spatial_reference_system) of a [GeoLayer](../../introduction#geolayer). 
 
-* If the GeoLayer already has a coordinate reference system, this command will reproject the GeoLayer with the input CRS.
-* If the GeoLayer does **not** have a coordinate reference system, this command will define the CRS of the GeoLayer with the input CRS. 
+
+|This command:|
+|-|
+|Defines a coordinate reference system of a GeoLayer that has an `undefined` coordinate reference system.|
+|Reprojects a GeoLayer with a `defined` coordinate reference system to a different coordinate reference system.|
 
 ## Command Editor ##
 
@@ -44,7 +47,7 @@ Command Parameters
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/SetGeoLayerCRS).
 
 The following GeoLayer data are used in the example[^1]. 
-[^1]: The example assume that the GeoLayers have *already* been read into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON) command.
+[^1]: The examples assume that the GeoLayers have *already* been read into the GeoProcessor from a file.
 
 **<p style="text-align: left;">
 Example GeoLayer Data
