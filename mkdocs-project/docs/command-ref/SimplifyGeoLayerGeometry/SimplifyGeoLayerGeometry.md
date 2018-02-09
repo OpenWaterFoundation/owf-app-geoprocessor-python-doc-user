@@ -12,10 +12,10 @@
 
 ## Overview ##
 
-The `SimplifyGeoLayerGeometry` command decreases the number of verticies within the geometries for each feature of a [GeoLayer](../../introduction#geolayer). This command is useful when the filesize of a GeoLayer is too large. 
+The `SimplifyGeoLayerGeometry` command decreases the number of vertices within the geometries for each feature of a [GeoLayer](../../introduction#geolayer). This command is useful when the file size of a GeoLayer is too large. 
 
 * This command is designed to simplify GeoLayers with `LINE` or `POLYGON` geometry. GeoLayers with `POINT` geometry *cannot* be simplified with this command.
-* The filesize of the simplified GeoLayer will be smaller than the input GeoLayer.
+* The file size of the simplified GeoLayer will be smaller than the input GeoLayer.
 * The spatial accuracy of the simplified GeoLayer be less precise than the input GeoLayer. 
 
 
@@ -51,7 +51,7 @@ The `SimplifyGeoLayerGeometry` command simplifies the features of a GeoLayer wit
 
 A line is specified by multiple points (coordinates) in sequence.  The algorithm discards points as long as the resulting shift in the line connecting remaining points does not exceed the tolerance.  A very small tolerance would only discard points that are "extra" points along a straight line.
 
-#### Addtional Resources
+#### Additional Resources
 
 * [Spatial Analysis 1., Spatial Data Handling](http://www.tankonyvtar.hu/hu/tartalom/tamop425/0027_SAN1/ch01s05.html) 
 * [Reducing a Map Path Using Douglas-Peucker Algorithm](https://www.eandbsoftware.org/reducing-a-map-path-using-douglas-peucker-algorithm/)

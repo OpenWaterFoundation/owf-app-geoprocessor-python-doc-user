@@ -48,6 +48,7 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 * [AddGeoLayerAttribute](AddGeoLayerAttribute/AddGeoLayerAttribute) - add an attribute to a GeoLayer
 * [ClipGeoLayer](ClipGeoLayer/ClipGeoLayer) - clip a GeoLayer by the boundary of another GeoLayer 
 * [CopyGeoLayer](CopyGeoLayer/CopyGeoLayer) - copy a GeoLayer to a new GeoLayer
+* [CreateGeoLayer](CreateGeoLayer/CreateGeoLayer) - create a GeoLayer 
 * [FreeGeoLayer](FreeGeoLayer/FreeGeoLayer) - remove a GeoLayer from the GeoProcessor
 * [MergeGeoLayers](MergeGeoLayers/MergeGeoLayers) - merge multiple GeoLayers into one GeoLayer
 * [ReadGeoLayerFromDelimitedFile](ReadGeoLayerFromDelimitedFile/ReadGeoLayerFromDelimitedFile) - read a GeoLayer from a file in delimited file format
