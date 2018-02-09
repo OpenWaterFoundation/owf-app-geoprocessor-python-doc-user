@@ -66,12 +66,12 @@ After running the command, the following GeoLayer is registered within the GeoPr
 
 |BoundingBoxExample: displayed in red (transparent)|
 |-|
-|![BoundingBoxExample](images/BoundingBoxExample.PNG)
+|![BoundingBoxExample-WGS84](images/BoundingBoxExample_WGS84.PNG)
 
 ### Example 2: Create a Bounding Box GeoLayer - NAD83 Zone 14N ###
 
 ```
-CreateGeoLayer(GeoLayerID="BoundingBoxExample", GeometryFormat="BoundingBox", GeometryInput = "3573598.19, 630371.46, 3690139.42, 756001.46", CRS=" EPSG:26914")
+CreateGeoLayer(GeoLayerID="BoundingBoxExample", GeometryFormat="BoundingBox", GeometryInput = "611903, 3580541, 757772, 3688789", CRS=" EPSG:26914")
 ```
 
 After running the command, the following GeoLayer is registered within the GeoProcessor.
@@ -83,7 +83,7 @@ After running the command, the following GeoLayer is registered within the GeoPr
 
 |BoundingBoxExample: displayed in red (transparent)|
 |-|
-|![BoundingBoxExample](images/BoundingBoxExample.PNG)
+|![BoundingBoxExample-NAD83UTMZ14N](images/BoundingBoxExample_UTMZ14N.PNG)
 
 
 ## Troubleshooting ##
