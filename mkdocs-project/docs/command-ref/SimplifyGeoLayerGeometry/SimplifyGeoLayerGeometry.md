@@ -61,7 +61,7 @@ A line is specified by multiple points (coordinates) in sequence.  The algorithm
 
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/SimplifyGeoLayerGeometry).
 
-The following GeoLayer data are used in the examples[^2] Note that these examples correspond to the automated tests. 
+The following GeoLayer data are used in the examples[^2]. Note that these examples correspond to the automated tests. 
 [^2]: The examples assume that the GeoLayer has *already* been read into the GeoProcessor from a file. 
 
 **<p style="text-align: left;">

@@ -17,7 +17,7 @@ pages:
   - CompareFiles: command-ref/CompareFiles/CompareFiles.md
   - CopyFile: command-ref/CopyFile/CopyFile.md
   - CopyGeoLayer: command-ref/CopyGeoLayer/CopyGeoLayer.md
-  - CreateGeoLayer: command-ref/CreateGeoLayer/CreateGeoLayer.md
+  - CreateGeoLayerFromGeometry: command-ref/CreateGeoLayerFromGeometry/CreateGeoLayerFromGeometry.md
   - CreateRegressionTestCommandFile: command-ref/CreateRegressionTestCommandFile/CreateRegressionTestCommandFile.md
   - EndFor: command-ref/EndFor/EndFor.md
   - EndIf: command-ref/EndIf/EndIf.md
