@@ -37,11 +37,18 @@ Command Parameters
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
 | `GeoLayerID` <br> **_required_** | The ID of the GeoLayer to be copied. | None - must be specified. |
-| `IncludeAttributes` <br>*optional* | A list of the attributes to include in the copied GeoLayer. All attributes not listed will not be copied. <br><br> `IncludeAttributes` and `ExcludeAttributes` must not both be enabled. *Choose one or none.*| All attributes are copied.|
-| `ExcludeAttributes` <br>*optional* | A list of the attributes to exclude in the copied GeoLayer. All attributes not listed will be copied. <br><br> `ExcludeAttributes` and `IncludeAttributes` must not both be enabled. *Choose one or none.*| All attributes are copied. |  
+| `IncludeAttributes` <br>*optional* |  A comma-separated list of the [glob-sytle patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which attributes to include in the copied GeoLayer. <br><br> See [Determining which Attributes to Copy](#determining-which-attributes-to-copy).|`*` <br><br> All attributes are copied.|
+| `ExcludeAttributes` <br>*optional* | A comma-separated list of the [glob-sytle patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which attributes to exclude in the copied GeoLayer. <br><br> See [Determining which Attributes to Copy](#determining-which-attributes-to-copy).| `'' (empty string)` <br><br> All attributes are copied. |  
 |`IncludeFeaturesIf` <br>*optional* | An attribute query specifying features to include in the copied GeoLayer. Expression syntax and capabilities follows [QGIS Expression](https://docs.qgis.org/2.8/en/docs/user_manual/working_with_vector/expression.html) standards.|All features are copied.|
 | `CopiedGeoLayerID` <br>*optional* | The ID of the copied GeoLayer. | `GeoLayerID`_copy |
 |`IfGeoLayerIDExists`<br> *optional*|The action that occurs if the `CopiedGeoLayerID` already exists within the GeoProcessor. <br><br> `Replace` : The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. No warning is logged.<br><br> `ReplaceAndWarn`: The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. A warning is logged. <br><br> `Warn` : The new GeoLayer is not created. A warning is logged. <br><br> `Fail` : The new GeoLayer is not created. A fail message is logged. | `Replace` | 
+
+
+### Determining Which Attributes to Copy
+
+* The `IncludeAttributes` paramter is always calculated first. The`ExcludeAttributes` parameter is always calculated second. 
+	* The `IncludeAttributes` *selects* all of the GeoLayer's attributes that follow the given patterns. By default (`*`) all of the GeoLayer's attributes are included. 
+	* The `ExcludeAttributes` *removes* all of the attributes *previously selected from the `IncludeAttributes` parameter* that follow the given patterns. 
 
 
 ## Examples ##
@@ -96,10 +103,45 @@ After running the command, the following GeoLayers are registered within the Geo
 | copiedExample|
 
 
-### Example 3: Copy A GeoLayer - Include a Subset of Attributes ###
+### Example 3: Include a Subset of Attributes ###
 
 ```
-CopyGeoLayer(GeoLayerID="ExampleGeoLayer", IncludeAttributes="id, mascot")
+CopyGeoLayer(GeoLayerID="ExampleGeoLayer", IncludeAttributes="id, mascot", CopiedGeoLayerID="ExampleGeoLayer_output1")
+CopyGeoLayer(GeoLayerID="ExampleGeoLayer", IncludeAttributes="s*, *d", CopiedGeoLayerID="ExampleGeoLayer_output2")
+```
+
+After running the command, the following GeoLayers are registered within the GeoProcessor.
+
+|GeoLayerID|
+| ---- |
+| ExampleGeoLayer| 
+| ExampleGeoLayer_output1|
+| ExampleGeoLayer_output2|
+
+**<p style="text-align: left;">
+ExampleGeoLayer_output1 Attribute Table
+</p>**
+
+|id|mascot|
+|----|-----|
+|1|Bulldogs|
+|2|Gators|
+|3|Colts|
+
+**<p style="text-align: left;">
+ExampleGeoLayer_output2 Attribute Table
+</p>**
+
+|id|school|students|
+|----|----|-----|
+|1|Hill|546|
+|2|Bright|304|
+|3|Gunn|567|
+
+### Example 4: Exclude a Subset of the Attributes to Include 
+
+```
+CopyGeoLayer(GeoLayerID="ExampleGeoLayer", IncludeAttributes="s*", ExcludeAttributes="*l"
 ```
 
 After running the command, the following GeoLayers are registered within the GeoProcessor.
@@ -113,13 +155,15 @@ After running the command, the following GeoLayers are registered within the Geo
 ExampleGeoLayer_copy Attribute Table
 </p>**
 
-|id|mascot|
-|----|-----|
-|1|Bulldogs|
-|2|Gators|
-|3|Colts|
+|students|
+|----|
+|546|
+|304|
+|567|
 
-### Example 4: Copy A GeoLayer - Include a Subset of Features ###
+
+
+### Example 5: Include a Subset of Features ###
 
 ```
 CopyGeoLayer(GeoLayerID="ExampleGeoLayer", IncludeFeaturesIf="students > 400")
