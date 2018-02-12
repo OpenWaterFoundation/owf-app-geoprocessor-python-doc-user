@@ -35,6 +35,7 @@ pages:
   - RemoveGeoLayerAttributes: command-ref/RemoveGeoLayerAttributes/RemoveGeoLayerAttributes.md
   - RenameGeoLayerAttribute: command-ref/RenameGeoLayerAttribute/RenameGeoLayerAttribute.md
   - RunCommands: command-ref/RunCommands/RunCommands.md
+  - RunProgram: command-ref/RunProgram/RunProgram.md
   - SetGeoLayerCRS: command-ref/SetGeoLayerCRS/SetGeoLayerCRS.md
   - SetGeoLayerProperty: command-ref/SetGeoLayerProperty/SetGeoLayerProperty.md
   - SetProperty: command-ref/SetProperty/SetProperty.md

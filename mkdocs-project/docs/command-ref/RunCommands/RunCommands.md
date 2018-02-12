@@ -11,7 +11,7 @@
 
 ## Overview ##
 
-The `RunCommands` command command runs a command file using a separate command processor as a “child” of the main processor.
+The `RunCommands` command runs a command file using a separate command processor as a “child” of the main processor.
 This command can be used to manage workflow where multiple commands files are run,
 and is also used extensively for testing, where a test suite consists of running separate test case command files.
 
@@ -65,5 +65,6 @@ Command Parameters
 ## See Also ##
 
 * [CreateRegressionTestCommandFile](../CreateRegressionTestCommandFile/CreateRegressionTestCommandFile) command
+* [RunProgram](../RunProgram/RunProgram) command
 * [StartRegressionTestResultsReport](../StartRegressionTestResultsReport/StartRegressionTestResultsReport) command
 * [WriteCommandSummaryToFile](../WriteCommandSummaryToFile/WriteCommandSummaryToFile) command
