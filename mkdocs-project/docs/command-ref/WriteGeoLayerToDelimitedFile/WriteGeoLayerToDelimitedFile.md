@@ -41,7 +41,7 @@ Command Parameters
 | `GeoLayerID` <br>  **_required_**| The identifier of the GeoLayer to write.| None - must be specified. |
 | `OutputFile` <br> **_required_**| The output delimited file (relative or absolute path). The file extension is not required. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized. | None - must be specified. |
 |`OutputCRS`<br> *optional*|The [coordinate reference system](https://en.wikipedia.org/wiki/Spatial_reference_system) of the output delimited file. [EPSG or ESRI code format](http://spatialreference.org/ref/epsg/) required (e.g. [`EPSG:4326`](http://spatialreference.org/ref/epsg/4326/), [`EPSG:26913`](http://spatialreference.org/ref/epsg/nad83-utm-zone-13n/), [`ESRI:102003`](http://spatialreference.org/ref/esri/usa-contiguous-albers-equal-area-conic/)). <br><br>If the output CRS is different than the CRS of the GeoLayer, the geometries of the output delimited file are reprojected to the new CRS.|The GeoLayer's CRS.|  
-|`OutputGeometryFormat`<br> *optional*| The geometry representation. Must be one of the following options:  <br><br> `AS_WKT`: The geometry is stored in one column in its [Well Known Text  (WKT)](https://en.wikipedia.org/wiki/Well-known_text) representation. <br>This type of geometry can represent 2D and 3D `POINTS`, `LINES` or `POLYGONS`.  <br><br> `AS_XY`: The geometry is stored in two columns as X and Y coordinates. <br>This type of geometry can only represent 2D `POINTS`. The `X` column is before the `Y` column.<br><br> `AS_YX`: The geometry is stored in two columns as X and Y coordinates. <br>This type of geometry can only represent 2D `POINTS`. The `Y` column is before the `X` column.<br><br> `AS_XYZ`: The geometry is stored in three columns as X, Y, and Z coordinates. <br>This type of geometry can only represent 3D `POINTS`.|`AS_XY`|
+|`OutputGeometryFormat`<br> *optional*| The geometry representation. Must be one of the following options:  <br><br> `WKT`: The geometry is stored in one column in its [Well Known Text  (WKT)](https://en.wikipedia.org/wiki/Well-known_text) representation. <br>This type of geometry can represent 2D and 3D `POINTS`, `LINES` or `POLYGONS`.  <br><br> `XY`: The geometry is stored in two columns as X and Y coordinates. <br>This type of geometry can only represent 2D `POINTS`. The `X` column is before the `Y` column.<br><br> `YX`: The geometry is stored in two columns as X and Y coordinates. <br>This type of geometry can only represent 2D `POINTS`. The `Y` column is before the `X` column.<br><br> `XYZ`: The geometry is stored in three columns as X, Y, and Z coordinates. <br>This type of geometry can only represent 3D `POINTS`.|`XY`|
 |`OutputDelimiter` <br> *optional*| The delimiter of the output delimited file. Must be one of the following options:  <br><br> `COMMA`: the comma (`,`) <br> `SEMICOLON`: the semicolon (`;`) <br> `TAB`: a tab character <br> `SPACE`: a space character|`COMMA`|
 
 ## Examples ##
@@ -113,7 +113,7 @@ X, Y, Id, Color, Landmark
 ### Example 2: Write a Polygon GeoLayer to a Delimited File ###
 
 ```
-WriteGeoLayerToDelimitedFile(GeoLayerID = "ExampleGeoLayer2", OutputFile = "ExampleOutputFolder/ExampleFile2", OutputGeometry="AS_WKT")
+WriteGeoLayerToDelimitedFile(GeoLayerID = "ExampleGeoLayer2", OutputFile = "ExampleOutputFolder/ExampleFile2", OutputGeometry="WKT")
 ```
 
 ---

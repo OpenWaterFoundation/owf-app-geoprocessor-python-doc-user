@@ -14,7 +14,7 @@
 
 The `SimplifyGeoLayerGeometry` command decreases the number of vertices within the geometries for each feature of a [GeoLayer](../../introduction#geolayer). This command is useful when the file size of a GeoLayer is too large. 
 
-* This command is designed to simplify GeoLayers with `LINE` or `POLYGON` geometry. GeoLayers with `POINT` geometry *cannot* be simplified with this command.
+* This command is designed to simplify GeoLayers with `LINE` or `POLYGON` geometry by removing unnecessary vertices. GeoLayers with `POINT` geometry *cannot* be simplified with this command.
 * The file size of the simplified GeoLayer will be smaller than the input GeoLayer.
 * The spatial accuracy of the simplified GeoLayer be less precise than the input GeoLayer. 
 
@@ -40,6 +40,7 @@ Command Parameters
 | --------------|-----------------|----------------- |
 | `GeoLayerID` <br>  **_required_**| The ID of the GeoLayer to be simplified.| None - must be specified. |
 | `Tolerance`  <br>  **_required_**| The `ε` variable in the `Douglas–Peucker algorithm`. <br><br>Units are the same as the distance units of the GeoLayer's coordinate reference system. For example, `WGS84 EPSG:4326` uses decimal degrees and `NAD83 Zone13N EPSG:26913` uses meters. [^1] <br><br> Refer to the [Douglas–Peucker Algorithm](#douglas-peuker-algorithim) section for more information. |None - must be specified. |
+| `SimplifyMethod` <br> *optional* | The simplification method used to simplify the GeoLayer. <br><br> `DouglasPeucker` : Use the [Douglas-Peucker algorithm](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm) to simplify the GeoLayer.|`DouglasPeucker`|
 | `SimplifiedGeoLayerID` <br> *optional* | A GeoLayer identifier for the output simplified GeoLayer. Refer to [documentation](http://127.0.0.1:8000/best-practices/geolayer-identifiers/) for best practices on naming GeoLayer identifiers.|`GeoLayerID`\_simple\_`Tolerance`|
 |`IfGeoLayerIDExists`<br> *optional*|The action that occurs if the `SimplifiedGeoLayerID` already exists within the GeoProcessor. <br><br> `Replace` : The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. No warning is logged.<br><br> `ReplaceAndWarn`: The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. A warning is logged.<br><br>`Warn` : The SimplifyGeoLayerGeometry command does not run. A warning is logged. <br><br> `Fail` : The SimplifyGeoLayerGeometry command does not run. A fail message is logged. | `Replace` | 
 
