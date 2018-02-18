@@ -16,12 +16,13 @@ commands. A processor property is set to the value of the iteration property and
 commands that support properties, using the `${Property}` notation.
 `For` commands can iterate over:
 
-* a list of supplied values (**not yet implemented**)
-* a sequence of integers or floating-point double precision numbers specified with start, end, and increment
+* a list of supplied values (specify using `ListProperty` parameter)
+* a sequence of integers or floating-point double precision numbers specified with start (`SequenceStart` parameter),
+end (`SequenceEnd` parameter), and increment (`SequenceIncrement` parameter)
 * values from a table column (**not yet implemented**)
 
 `For` commands can be nested. Status messages for the run mode are accumulated in each command.
-A limitation of using `For` with properties is that command when edited may show GeoLayer
+A limitation of using `For` with properties is that the command when edited may show GeoLayer
 identifiers and other command parameters as `${Property}` values, rather than actual data, because the
 values get expanded at run-time. This provides increased processing power but errors may not be evident
 until commands are run.
@@ -47,6 +48,7 @@ Command Parameters
 | --------------|-----------------|----------------- |
 | `Name` | The name of the for loop, which will be matched with the name of an `EndFor` command to indicate the block of commands in the loop. | None - must be specified. |
 | `IteratorProperty` | The processor property that will be set to the iterator property. The object type will depend on that used to provide the iteration property list. For example, if a sequence of integers is being iterated, the property will contain an integer. | Same as `Name`.
+| `ListProperty` | Specify if the list is iterating over a property that contains a list of strings. | Specify this or `Sequence*` parameters. |
 | `SequenceStart` | Starting value when a sequence is specified for iteration, an integer or floating-point number (with decimal). | No default if sequence is used. |
 | `SequenceEnd` | Ending value when a sequence is specified for iteration, an integer or floating-point number (with decimal). | No default if sequence is used. |
 | `SequenceIncrement` | Increment for sequence iterator. | `1` or `1.0` depending on type for `SequenceStart`. |
@@ -61,3 +63,4 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 ## See Also ##
 
 * [`EndFor`](../EndFor/EndFor) command
+* [`SetProperty`](../SetProperty/SetProperty) command (can be used to set list of strings for iteration)

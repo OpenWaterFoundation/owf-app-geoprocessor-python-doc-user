@@ -19,6 +19,7 @@ property on specific GeoLayer. The following functionality is provided:
 
 * Set a property to a specified value, where the property can be a Python primitive type: `bool`, `float`,
 `int`, or `str`.
+* Set a property as a list of `str`.
 
 ## Command Editor ##
 
@@ -39,9 +40,10 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `PropertyName` | The property name. | None - must be specified. |
-| `PropertyType` | The property type as `bool`, `float`, `int`, or `str`. | None - must be specified. |
-| `PropertyValue` | The property value, as a string that can convert to the given type. | None - must be specified. |
+| `PropertyName`<br>**required** | The property name. | None - must be specified. |
+| `PropertyType`<br>**required** | The property type as `bool`, `float`, `int`, or `str`. | None - must be specified. |
+| `PropertyValue` | The property value, as a string that can convert to the given type. | Either `PropertyValue` or `PropertyValues` must be specified. |
+| `PropertyValues` | The property values, as a list of string.  Currently, comma-separated values are supported with optional surrounding `[  ]`. In the future single-quoted strings will be supported to allow commas in the strings.  Strings are stripped of surrounding whitespace. | Either `PropertyValue` or `PropertyValues` must be specified. |
 
 
 ## Examples ##
