@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / Comment #
+# Learn GeoProcessor / Command / Comment `#` #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)
@@ -13,6 +13,7 @@
 
 Single-line comments start with `#`.
 Spaces and tabs before the comment character is allowed.
+Comments cannot be added after commands - comments must exist on their own command line.
 
 ## Command Editor ##
 
@@ -38,3 +39,5 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
+* [CommentBlockStart - `/*`](../CommentBlockEnd/CommentBlockStart) command
+* [CommentBlockEnd - `*/`](../CommentBlockEnd/CommentBlockEnd) command

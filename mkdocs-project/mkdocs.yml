@@ -14,6 +14,8 @@ pages:
   - Blank: command-ref/Blank/Blank.md
   - ClipGeoLayer: command-ref/ClipGeoLayer/ClipGeoLayer.md
   - Comment: command-ref/Comment/Comment.md
+  - CommentBlockStart: command-ref/CommentBlockStart/CommentBlockStart.md
+  - CommentBlockEnd: command-ref/CommentBlockEnd/CommentBlockEnd.md
   - CompareFiles: command-ref/CompareFiles/CompareFiles.md
   - CopyFile: command-ref/CopyFile/CopyFile.md
   - CopyGeoLayer: command-ref/CopyGeoLayer/CopyGeoLayer.md
