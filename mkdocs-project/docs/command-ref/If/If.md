@@ -43,6 +43,12 @@ a warning or failure status should occur as the result of the `If`.
 The [`SetProperty`](../SetProperty/SetProperty) command can also be used to set a property to indicate
 the result of evaluating an `If` block.
 
+Future enhancements to the `If` command may include:
+
+* Test whether a property is defined (or not).
+* Test whether a GeoLayerID is available.
+* Compare GeoLayer properties with other properties and values.
+
 ## Command Editor ##
 
 The following dialog is used to edit the command and illustrates the command syntax.
