@@ -11,8 +11,6 @@
 
 ## Overview ##
 
-**This command is not fully implemented.**
-
 The `EndIf` command ends a block of commands that start with an `If` command. The `If` and
 `EndIf` commands must have the same value for the `Name` parameter to allow the command processor to determine the
 start and end of the block.
@@ -36,7 +34,7 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `Name` | The name that will be matched with the name of an `If` command to indicate the block of commands in the if condition. | None - must be specified. |
+| `Name`<br>**required** | The name that will be matched with the name of an `If` command to indicate the block of commands in the if condition. | None - must be specified. |
 
 
 ## Examples ##
