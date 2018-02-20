@@ -76,6 +76,16 @@ Command Parameters
 
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/If).
 
+### Example to Check Number Against Property ###
+
+```text
+# Some previous command will have set an error count
+If(Name="ExampleIf",Condition="${ErrorCount} > 1")
+  Message(Message="Have ${ErrorCount} errors.  Stopping.")
+  Exit()
+EndIf(Name="ExampleIf")
+```
+
 ## Troubleshooting ##
 
 ## See Also ##

@@ -58,9 +58,31 @@ Command Parameters
 
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/For).
 
+### Example to process data for a list of counties ###
+
+This simple example illustrates how to process a list of GeoLayers corresponding to counties:
+
+* The list of counties is specified as a property `CountyList`.
+Other commands can also be used to create a list.
+* The `For` command uses this property via its `ListProperty="CountyList"` parameter.
+* The `For` command `IteratorProperty="County"` parameter indicates which property will be used
+to iterate through the list items.
+The property value is set to the values in the list for each iteration.
+* Other commands can then use the syntax `${County}` to dynamically fill filenames, etc.
+In this example the county name is used in GeoLayer filenames.
+
+```text
+SetProperty(PropertyName="CountyList",PropertyType="str",PropertyValues="Adams,Washington,Jefferson")
+For(Name="Counties",IteratorProperty="County",ListProperty="CountyList")
+  # Process a file for each county
+  ReadGeoLayerFromGeoJSON(SpatialDataFile="${County}-census.geojson",GeoLayerID=${County}-census-population")
+EndFor(Name="Counties")
+```
+
 ## Troubleshooting ##
 
 ## See Also ##
 
 * [`EndFor`](../EndFor/EndFor) command
+* [`ListFiles`](../ListFiles/ListFiles) command
 * [`SetProperty`](../SetProperty/SetProperty) command (can be used to set list of strings for iteration)
