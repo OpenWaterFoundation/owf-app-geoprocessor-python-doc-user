@@ -37,8 +37,17 @@ Currently a manual installation process is used:
 	+ List the contents of the GeoProcessor distribution, to confirm understanding of
 	contents (`-t` means list the file contents):  `tar -tzvf /path/to/gp-site-package.tar.gz`.
 	+ Install the contents of the GeoProcessor distribution (`-x` means extract the files):  `tar -xzvf /path/to/gp-site-package.tar.gz`.
-* The `gp.bat` file is used to run the GeoProcessor by running Python with the geoprocessor module
-and needs to be installed somewhere appropriate.
+* The `gp.bat` file is used to run the GeoProcessor in a Windows command shell window
+	by running Python with the geoprocessor module
+	+ Installed somewhere appropriate (**this is being evaluated**):
+		+ Check the `PATH` environment variable to see what folders are searched to find software, and
+		copy the `gp.bat` to one of the folders:  `echo %PATH%`.
+		+ One option is to install in the QGIS `bin` folder, for example `C:\OSGeo4W64\bin`;
+		however, this folder may not be in the `PATH` (may only be found from QGIS UI).
+		The folder can be added to the `PATH`.
+		+ Run the script manually from wherever it is installed.
+		+ A software folder will be added for the program when the GeoProcessor UI is added
+		and is configured for Windows start menu.
 	+ The script assumes a location for the QGIS install and its embedded Python.
 	If the location of the QGIS installation does not match the script it may need to be edited.
 	+ The QGIS Python will locate the `gp.py` file by specifying the `-m geoprocessor.app.gp` command parameter.
