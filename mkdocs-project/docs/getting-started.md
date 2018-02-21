@@ -7,8 +7,9 @@ The following are basic tasks to use the GeoProcessor:
 
 * [Conceptualize a Workflow](#conceptualize-a-workflow)
 * [Create a Command File](#create-a-command-file)
-	+ [Best Practices](#best-practices)
+	+ [Best Practices for Command Files](#best-practices-for-command-files)
 * [Run the Command File](#run-the-command-file)
+* [Use the Test Framework Version of the GeoProcessor](#use-the-test-framework-version-of-the-geoprocessor](
 
 ---------------
 
@@ -21,15 +22,23 @@ It is best to conceptualize the workflow without thinking about software limitat
 For example, the following workflow describes a common task:
 
 1. Read in a GeoLayer from a shapefile.
-2. Define a region for clipping (state boundary extent).
+2. Define a region for clipping (for example, state boundary extent).
 3. Clip the layer to the region.
 4. Write the clipped GeoLayer to a new format, for example GeoJSON.
 
 ## Create a Command File ##
 
 Once the conceptual workflow has been determined, corresponding GeoProcessor
-commands can be used to do the work.
-Refer to the [Command Reference](../command-ref/overview).
+commands can be used to do the work by creating a "command file" that can be run by the GeoProcessor.
+Refer to the [Command Reference](../command-ref/overview) to learn which
+commands to use for specific work tasks.  For example, the following commands
+are suitable to perform the above conceptual work tasks:
+
+1. [ReadGeoLayerFromShapefile](http://learn.openwaterfoundation.org/owf-app-geoprocessor-python-doc-user/command-ref/ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile/)
+2. [CreateGeoLayerFromGeometry](http://learn.openwaterfoundation.org/owf-app-geoprocessor-python-doc-user/command-ref/CreateGeoLayerFromGeometry/CreateGeoLayerFromGeometry/)
+3. [ClipGeoLayer](http://learn.openwaterfoundation.org/owf-app-geoprocessor-python-doc-user/command-ref/ClipGeoLayer/ClipGeoLayer/)
+4. [WriteGeoLayerToGeoJSON](http://learn.openwaterfoundation.org/owf-app-geoprocessor-python-doc-user/command-ref/WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON/)
+
 The GeoProcessor will continue to be enhanced to add new commands as necessary.
 
 The command file can be created with a text editor.
@@ -38,7 +47,7 @@ In the future, a graphical user interface will be available to edit and run comm
 See also the [GeoProcessor test repository](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test),
 which has simple examples for all commands.
 
-### Best Practices ###
+### Best Practices for Command Files ###
 
 Best practices for command files are:
 
@@ -47,16 +56,18 @@ Best practices for command files are:
 3. Organize data files logically, for example, put data into a `data` folder.
 4. Organize process files logically, for example, if multiple command files are used,
 consider creating multiple folders, with numbers to cause the folders to sort in sequential order.
-5. Use relative paths for file references.
+5. Use relative paths for file references, for example `data/somefile` and `../data/somefile`.
 The command file folder will be set as the working folder (working directory) when the command file is read.
 All other file locations should be specified relative to that folder.
-This will allow the files to be shared with others without having to change file paths.
+This allows the files to be shared with others without having to change file paths.
 6. Name GeoProcessor command files with `.gp` file extension.
 7. Use the [`StartLog`](command-ref/StartLog/StartLog) command to troubleshoot.
+This creates a local log file that is managed with command file and related files.
+The command can be commented out if it significantly slows down processing or creates a large log file.
 
 ## Run the Command File ##
 
-The GeoProcessor is run by using the `gp.bat` (Windows) or `gp.sh` (Linux, Cygwin, Git/MinGW Bash) program.
+The GeoProcessor is run by using `gp.bat` (Windows) or `gp.sh` (Linux, Cygwin, Git/MinGW Bash).
 Run from a command shell.
 The `gp` program allows running the GeoProcessor in one of the following modes:
 
@@ -77,3 +88,14 @@ Errors will be indicated:
 * in the command shell window
 * the log file created by the [`StartLog`](command-ref/StartLog/StartLog) command
 * the default log file found in the `.owf-gp/log` folder (closed when the [`StartLog`](command-ref/StartLog/StartLog) command is run)
+
+## Use the Test Framework Version of the GeoProcessor ##
+
+The GeoProcessor includes a test framework, which is used to test the GeoProcessor itself
+(see the [Developer Documentation](http://learn.openwaterfoundation.org/owf-app-geoprocessor-python-doc-dev/dev-tasks/#functional-tests).
+The test framework can be used to automate tests for command file workflows.
+
+The normal GeoProcessor and run program (`gp.bat` and `gp.sh`) assume that the QGIS software is installed,
+and provide full access to geoprocessing commands.
+However, the testing framework included in the GeoProcessor is also useful in stand-alone mode without relying on QGIS.
+The [installation instructions](install) explain how to install the test framework version (`gptest.bat` and `gptest.sh`)
