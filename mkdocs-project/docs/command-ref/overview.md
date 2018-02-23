@@ -83,6 +83,7 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 ## Commands for Handling Files ##
 
 * [CopyFile](CopyFile/CopyFile) - copy a file to a new file
+* [ListFiles](ListFiles/ListFiles) - list the files and folder within a folder or a URL
 * [RemoveFile](RemoveFile/RemoveFile) - remove a file
 * [WebGet](WebGet/WebGet) - download a file from URL
 
