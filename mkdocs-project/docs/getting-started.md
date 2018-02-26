@@ -9,7 +9,7 @@ The following are basic tasks to use the GeoProcessor:
 * [Create a Command File](#create-a-command-file)
 	+ [Best Practices for Command Files](#best-practices-for-command-files)
 * [Run the Command File](#run-the-command-file)
-* [Use the Test Framework Version of the GeoProcessor](#use-the-test-framework-version-of-the-geoprocessor](
+* [Use the Test Framework Version of the GeoProcessor](#use-the-test-framework-version-of-the-geoprocessor)
 
 ---------------
 
@@ -95,7 +95,8 @@ The GeoProcessor includes a test framework, which is used to test the GeoProcess
 (see the [Developer Documentation](http://learn.openwaterfoundation.org/owf-app-geoprocessor-python-doc-dev/dev-tasks/#functional-tests).
 The test framework can be used to automate tests for command file workflows.
 
-The normal GeoProcessor and run program (`gp.bat` and `gp.sh`) assume that the QGIS software is installed,
+The normal GeoProcessor run programs (`gp.bat` on Windows and `gp.sh` on Linux) assume that the QGIS software is installed,
 and provide full access to geoprocessing commands.
 However, the testing framework included in the GeoProcessor is also useful in stand-alone mode without relying on QGIS.
-The [installation instructions](install) explain how to install the test framework version (`gptest.bat` and `gptest.sh`)
+The [installation instructions](install) explain how to install the test framework version
+(`gptest.bat` on Windows and `gptest.sh` on Linux)

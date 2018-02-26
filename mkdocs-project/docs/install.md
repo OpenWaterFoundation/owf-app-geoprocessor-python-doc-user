@@ -15,20 +15,21 @@ The GeoProcessor is distributed in two versions:
 
 * Full GeoProcessor/QGIS version:
 	+ Used for geospatial data processing.
-	+ Depends on Python packaged with QGIS.
+	+ Uses Python packaged with QGIS.
 	+ GeoProcessor run program:
 		- ![Windows](images/windows-32.png) Windows: `gp.bat`
 		- ![Linux](images/linux-32.png) Linux: `gp.sh`
-	+ Install GeoProcessor `geoprocessor` package in folders that are searched by Python:
+	+ Install GeoProcessor `geoprocessor` package in folders that are searched by QGIS Python:
 		- ![Windows](images/windows-32.png) Windows: Install from `gp-sitepackage.zip`
 		- ![Linux](images/linux-32.png) Linux: Install from `gp-sitepackage.tar.gz`
 * Test framework version (no QGIS):
-	+ Used to automate tests for software and processing workflows.
-	+ Includes a test framework, which is used to test the GeoProcessor itself.
+	+ Includes the GeoProcessor test framework, which is used to test the GeoProcessor itself.
+	+ Can be used to automate tests for software and processing workflows.
 	+ Can be used without QGIS, using run program:
 		- ![Windows](images/windows-32.png) Windows: `gptest.bat`
 		- ![Linux](images/linux-32.png) Linux: `gptest.sh`
 	+ See the [Developer Documentation](http://learn.openwaterfoundation.org/owf-app-geoprocessor-python-doc-dev/dev-tasks/#functional-tests)
+	for how to use the software to implement functional tests.
 	+ Install GeoProcessor `geoprocessor` package in folders that are searched by Python:
 		- ![Windows](images/windows-32.png) Windows: Install from `gptest-sitepackage.zip`
 		- ![Linux](images/linux-32.png) Linux: Install from `gptest-sitepackage.tar.gz`
