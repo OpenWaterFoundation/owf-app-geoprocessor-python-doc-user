@@ -47,6 +47,7 @@ pages:
   - StartLog: command-ref/StartLog/StartLog.md
   - StartRegressionTestResultsReport: command-ref/StartRegressionTestResultsReport/StartRegressionTestResultsReport.md
   - UnknownCommand: command-ref/UnknownCommand/UnknownCommand.md
+  - UnzipFile: command-ref/UnzipFile/UnzipFile.md
   - WebGet: command-ref/WebGet/WebGet.md
   - WriteCommandSummaryToFile: command-ref/WriteCommandSummaryToFile/WriteCommandSummaryToFile.md
   - WriteGeoLayerPropertiesToFile: command-ref/WriteGeoLayerPropertiesToFile/WriteGeoLayerPropertiesToFile.md

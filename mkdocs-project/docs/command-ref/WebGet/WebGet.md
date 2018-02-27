@@ -34,9 +34,8 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `FileURL` <br>  **_required_**| The URL of the file to download. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.| None - must be specified. |
+| `URL` <br>  **_required_**| The URL of the file to download. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.| None - must be specified. |
 | `OutputFile` <br> **_required_**| The output file path without the extension (relative or absolute path). The extension of the downloaded file will be retained in the output file. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized. [Formatting character (%f)](../../introduction/#geolayer-property-format-specifiers) is recognized.| None - must be specified. |
-|`IfZipFile`<br> *optional*|The action that occurs if the file to download is a `.zip` file. <br><br> `UnzipAndRemove`: The contents of the `.zip` file are extracted. If configured, the filename of each extracted archive file is renamed. The `.zip` file is not saved. <br><br> `UnzipAndSave`: The contents of the `.zip` file are extracted. If configured, the filename of each extracted archived file is renamed. The `.zip` file is saved. If configured, the filename of the `.zip` file is renamed. The archived files of the saved `.zip` file keep their original name. <br><br> `KeepZipped`: The `.zip` file is saved. If configured, the filename of the `.zip` file is renamed. The archived files of the saved `.zip` file keep their original name.|`KeepZipped`|
 
 
 ## Examples ##
@@ -46,7 +45,7 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 ### Example 1: Using the `%f` Formatting Character in the `OutputFile` Parameter###
 
 ```
-WebGet(FileURL = "https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.cpg", OutputFile = "ExampleOutputFolder/%f")
+WebGet(URL = "https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.cpg", OutputFile = "ExampleOutputFolder/%f")
 WebGet(GeoLayerID = "https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.cpg", OutputFile = "ExampleOutputFolder/NewFilename")
 ```
 
@@ -66,15 +65,14 @@ ExampleOutputFolder
 |fl_mystery_hammock_wf_20150817_0000_dd83.cpg|First command (with %f formatter)|
 |NewFilename.cpg|Second command (with unique filename)|
 
-### Example 2: Using the default `IfZipFile` Parameter###
+### Example 2: Downloading a .zip file ###
 
 ```
-WebGet(FileURL = "https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.zip", OutputFile = "ExampleOutputFolder/NewFilename")
+WebGet(URL = "https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.zip", OutputFile = "ExampleOutputFolder/NewFilename")
 ```
 
 The command is downloading [a `.zip` file](https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.zip). 
 
-- By default the `IfZipFile` parameter is set to `UnzipAndSave`. 
 - The `OutputFile` parameter value is supplying the unique filename `NewFilename`.
 
 After running the command, the following files are downloaded to `ExampleOutputFolder` folder. Note that the archived files of the `NewFilename.zip` keep their original name even though a unique filename is provided by the `OutputFile` parameter.
