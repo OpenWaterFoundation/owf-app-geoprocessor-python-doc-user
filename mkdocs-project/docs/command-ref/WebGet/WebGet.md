@@ -11,9 +11,10 @@
 
 ## Overview ##
 
-The `WebGet` command downloads a file from a URL source. 
+The `WebGet` command downloads a file or other web resource from a URL source. Common uses of this command are:
 
-* Zip files can be downloaded. 
+* Download data files
+* Query web services 
 
 ## Command Editor ##
 
@@ -34,8 +35,8 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `URL` <br>  **_required_**| The URL of the file to download. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.| None - must be specified. |
-| `OutputFile` <br> **_required_**| The output file path without the extension (relative or absolute path). The extension of the downloaded file will be retained in the output file. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized. [Formatting character (%f)](../../introduction/#geolayer-property-format-specifiers) is recognized.| None - must be specified. |
+| `URL` <br>  **_required_**| The URL of the resource to download. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.| None - must be specified. |
+| `OutputFile` <br> *optional*| The output file path (relative or absolute). [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized. [Formatting character (%f)](../../introduction/#geolayer-property-format-specifiers) is recognized. If already existing, the output file will be overwritten.| Same filename as source. Saved to the parent folder of the `.gp` workflow. |
 
 
 ## Examples ##
@@ -45,16 +46,18 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 ### Example 1: Using the `%f` Formatting Character in the `OutputFile` Parameter###
 
 ```
+WebGet(URL = "https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.cpg", OutputFile = "ExampleOutputFolder/NewFilename")
 WebGet(URL = "https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.cpg", OutputFile = "ExampleOutputFolder/%f")
-WebGet(GeoLayerID = "https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.cpg", OutputFile = "ExampleOutputFolder/NewFilename")
+
 ```
 
 The two commands download the same [data file](https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.cpg). 
 
-- The first command utilizes the `%f` [formatting character](../../introduction/#geolayer-property-format-specifiers) in the `OutputFile` parameter.
-- The second command utilizes a unique filename in the `OutputFile` parameter.
+- The first command specifies a different filename using the `OutputFile` parameter. The name of the downloaded file is renamed to the specified filename. 
+- The second command utilizes the `%f` [formatting character](../../introduction/#geolayer-property-format-specifiers) in the `OutputFile` parameter. The name of the downloaded file is the same as the URL filename.
 
-After running the commands, the following files are downloaded to the `ExampleOutputFolder` folder. The 
+
+After running the commands, the following files are downloaded to the `ExampleOutputFolder` folder. 
 
 **<p style="text-align: left;">
 ExampleOutputFolder
@@ -62,50 +65,8 @@ ExampleOutputFolder
 
 |Filename|Command Responsible for Output|
 |------|---|
-|fl_mystery_hammock_wf_20150817_0000_dd83.cpg|First command (with %f formatter)|
-|NewFilename.cpg|Second command (with unique filename)|
-
-### Example 2: Downloading a .zip file ###
-
-```
-WebGet(URL = "https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.zip", OutputFile = "ExampleOutputFolder/NewFilename")
-```
-
-The command is downloading [a `.zip` file](https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.zip). 
-
-- The `OutputFile` parameter value is supplying the unique filename `NewFilename`.
-
-After running the command, the following files are downloaded to `ExampleOutputFolder` folder. Note that the archived files of the `NewFilename.zip` keep their original name even though a unique filename is provided by the `OutputFile` parameter.
-
-**<p style="text-align: left;">
-ExampleOutputFolder
-</p>**
-
-|File|
-|------|
-|NewFilename.cpg|
-|NewFilename.dbf|
-|NewFilename.prj|
-|NewFilename.sbn|
-|NewFilename.sbx|
-|NewFilename.shp|
-|NewFilename.shx|
-|NewFilename.zip|
-
-**<p style="text-align: left;">
-Contents of `NewFilename.zip`
-</p>**
-
-|Archived File|
-|------|
-|fl_mystery_hammock_wf_20150817_0000_dd83.cpg|
-|fl_mystery_hammock_wf_20150817_0000_dd83.dbf|
-|fl_mystery_hammock_wf_20150817_0000_dd83.prj|
-|fl_mystery_hammock_wf_20150817_0000_dd83.sbn|
-|fl_mystery_hammock_wf_20150817_0000_dd83.sbx|
-|fl_mystery_hammock_wf_20150817_0000_dd83.shp|
-|fl_mystery_hammock_wf_20150817_0000_dd83.shx|
-
+|NewFilename.cpg|First command|
+|fl_mystery_hammock_wf_20150817_0000_dd83.cpg|Second command|
 
 
 ## Troubleshooting ##
@@ -113,3 +74,4 @@ Contents of `NewFilename.zip`
 ## See Also ##
 
 - The files are downloaded using the Python [Requests](http://docs.python-requests.org/en/master/) library.
+* [ListFiles](../ListFiles/ListFiles) command

@@ -13,6 +13,7 @@
 
 The `UnzipFile` command unzips a compressed file. 
 
+* The compressed file can contain one or more files and/or folders. 
 * Can unzip numerous types of [compressed files](https://en.wikipedia.org/wiki/List_of_archive_formats) (not specific to `.zip` files.)
 
 ## Command Editor ##
@@ -32,12 +33,12 @@ UnzipFile(Parameter="Value",...)
 Command Parameters
 </p>**
 
-|**Parameter**&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+|**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
 | `File` <br>  **_required_**| The file to be unzipped (relative or absolute path). [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.| None - must be specified. |
-| `FileType` <br>  *optional*|The file format of the input `File`. The following file formats are currently accepted. <br><br> `TAR`: a [.tar file](https://en.wikipedia.org/wiki/Tar_(computing)). <br> `ZIP`: A [.zip file](https://en.wikipedia.org/wiki/Zip_(file_format)).| `ZIP` |
+| `FileType` <br>  *optional*|The file format of the input `File`. The following file formats are currently accepted. <br><br> `TAR`: a [.tar file](https://en.wikipedia.org/wiki/Tar_(computing)). <br> `ZIP`: A [.zip file](https://en.wikipedia.org/wiki/Zip_(file_format)).| Determined from the `File`'s extension. |
 |`OutputFolder`  <br>  *optional*|The name of the destination folder. The extracted files are saved here. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.|The parent folder of the `File`.|
-|`DeleteFile` <br>  *optional*|Boolean. <br><br> If `True`, the compressed file is deleted after the extraction. <br> If `False`, the compressed file remains after the extraction. |`True`|
+|`DeleteFile` <br>  *optional*|Boolean. <br><br> If `True`, the compressed file is deleted after the extraction. <br> If `False`, the compressed file remains after the extraction. |`False`|
 
 
 ## Examples ##
@@ -72,33 +73,20 @@ Archived contents of ExampleFile.zip
 UnzipFile(File = "ExampleFolder/ExampleFile.zip")
 ```
 
-After running the command, the following files are written to the `ExampleFolder`. Note that, by default, the original zipped file is removed after the extraction. 
+After running the command, the following files are written to the `ExampleFolder`. Note that, by default, the original zipped file remains after the extraction. 
 
 |ExampleFolder|
 |------|
 |ExampleFile1.geojson|
 |ExampleFile2.txt|
-|ExampleSubFolder|
-
-### Example 2: Unzip a Zip File - Keep the Compressed File ###
-
-```
-UnzipFile(File = "ExampleFolder/ExampleFile.zip", DeleteFile = "False")
-```
-
-After running the command, the following files are written to the `ExampleFolder`. 
-
-|ExampleFolder|
-|------|
 |ExampleFile.zip |
 |ExampleSubFolder|
-|ExampleFile1.geojson|
-|ExampleFile2.txt|
 
-### Example 3: Unzip a Zip File to a Different Folder ###
+
+### Example 2: Unzip a Zip File to a Different Folder ###
 
 ```
-UnzipFile(File = "ExampleFolder/ExampleFile.zip", OutputFolder = "ExampleFolder/ExampleSubFolder", DeleteFile = "False")
+UnzipFile(File = "ExampleFolder/ExampleFile.zip", OutputFolder = "ExampleFolder/ExampleSubFolder")
 ```
 
 After running the command, the following files are written to the `ExampleFolder`. 
@@ -121,3 +109,5 @@ After running the command, the following files are written to the `ExampleSubFol
 ## Troubleshooting ##
 
 ## See Also ##
+
+* [WebGet](../WebGet/WebGet) command
