@@ -8,8 +8,9 @@ The following are basic tasks to use the GeoProcessor:
 * [Conceptualize a Workflow](#conceptualize-a-workflow)
 * [Create a Command File](#create-a-command-file)
 	+ [Best Practices for Command Files](#best-practices-for-command-files)
-* [Run the Command File](#run-the-command-file)
+* [Run the Command File using the GeoProcessor](#run-the-command-file-using-the-geoprocessor)
 * [Use the Test Framework Version of the GeoProcessor](#use-the-test-framework-version-of-the-geoprocessor)
+* [GeoProcessor Program Options](#geoprocessor-program-options)
 
 ---------------
 
@@ -65,7 +66,7 @@ This allows the files to be shared with others without having to change file pat
 This creates a local log file that is managed with command file and related files.
 The command can be commented out if it significantly slows down processing or creates a large log file.
 
-## Run the Command File ##
+## Run the Command File Using the GeoProcessor ##
 
 The GeoProcessor is run by using `gp.bat` (Windows) or `gp.sh` (Linux, Cygwin, Git/MinGW Bash).
 Run from a command shell.
@@ -86,8 +87,11 @@ After running successfully, the output files should have been created.
 Errors will be indicated:
 
 * in the command shell window
-* the log file created by the [`StartLog`](command-ref/StartLog/StartLog) command
-* the default log file found in the `.owf-gp/log` folder (closed when the [`StartLog`](command-ref/StartLog/StartLog) command is run)
+* the log file created by the [`StartLog`](command-ref/StartLog/StartLog) command, if the command is used
+* the default log file found in the `.owf-gp/log` folder in the user's files
+	+ `C:\Users\user\.owf-gp\log` on Windows
+	+ `/home/user/.owf-gp/log` on Linux
+	+ this file is closed when the [`StartLog`](command-ref/StartLog/StartLog) command is run
 
 ## Use the Test Framework Version of the GeoProcessor ##
 
@@ -100,3 +104,18 @@ and provide full access to geoprocessing commands.
 However, the testing framework included in the GeoProcessor is also useful in stand-alone mode without relying on QGIS.
 The [installation instructions](install) explain how to install the test framework version
 (`gptest.bat` on Windows and `gptest.sh` on Linux)
+
+## GeoProcessor Program Options ##
+
+The GeoProcessor programs recognize the following command line parameters that control how the software runs:
+
+**<p style="text-align: center;">
+GeoProcessor Program Options
+</p>**
+
+| **Option**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| --------------|-----------------|----------------- |
+| `--commands command-file` | The command file to run. A path relative to current folder can specified or specify an absolute path. | Start the interactive command shell. |
+| `-http` | Start the GeoProcessor in HTTP mode. **Under development.**| Start the interactive command shell. |
+| `-p PropName=PropVal` | Specify environment property values to be passed to the geoprocessor.  These properties will always be defined when the processor runs. | No environment properties are defined. |
+| `-ui` | Start the GeoProcessor user interface. **Under development.**| Start the interactive command shell. |
