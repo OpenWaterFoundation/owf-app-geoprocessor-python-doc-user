@@ -50,7 +50,7 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 * [ClipGeoLayer](ClipGeoLayer/ClipGeoLayer) - clip a GeoLayer by the boundary of another GeoLayer 
 * [CopyGeoLayer](CopyGeoLayer/CopyGeoLayer) - copy a GeoLayer to a new GeoLayer
 * [CreateGeoLayerFromGeometry](CreateGeoLayerFromGeometry/CreateGeoLayerFromGeometry) - create a GeoLayer from input geometry data
-* [FreeGeoLayer](FreeGeoLayer/FreeGeoLayer) - remove a GeoLayer from the GeoProcessor
+* [FreeGeoLayers](FreeGeoLayers/FreeGeoLayers) - removes one or more GeoLayers from the GeoProcessor
 * [MergeGeoLayers](MergeGeoLayers/MergeGeoLayers) - merge multiple GeoLayers into one GeoLayer
 * [ReadGeoLayerFromDelimitedFile](ReadGeoLayerFromDelimitedFile/ReadGeoLayerFromDelimitedFile) - read a GeoLayer from a file in delimited file format
 * [ReadGeoLayerFromGeoJSON](ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON) - read a GeoLayer from a file in GeoJSON format

@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / FreeGeoLayer #
+# Learn GeoProcessor / Command / FreeGeoLayers #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)
@@ -11,7 +11,7 @@
 
 ## Overview ##
 
-The `FreeGeoLayer` command removes a [GeoLayer](../../introduction#geolayer) from the GeoProcessor. 
+The `FreeGeoLayers` command removes one or more [GeoLayers](../../introduction#geolayer) from the GeoProcessor. 
 
 * This command is used to save processing time and memory. 
 
@@ -26,7 +26,7 @@ The following dialog is used to edit the command and illustrates the command syn
 The command syntax is as follows:
 
 ```text
-FreeGeoLayer(Parameter="Value",...)
+FreeGeoLayers(Parameter="Value",...)
 ```
 **<p style="text-align: center;">
 Command Parameters
@@ -34,12 +34,12 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `GeoLayerID` <br>  **_required_**| The ID of the GeoLayer to free.| None - must be specified. |
+| `GeoLayerIDs` <br>  **_required_**| A comma-separated list of the IDs of the GeoLayers to free. <br><br> Can also be `*` where all GeoLayers registered within the GeoProcessor are removed.| None - must be specified. |
 
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/FreeGeoLayer).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/FreeGeoLayers).
 
 The following GeoLayer data are used in the example[^1]. 
 [^1]: The example assume that the GeoLayers have *already* been read into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON) command.
@@ -54,10 +54,10 @@ Example GeoLayer Data
 | ExampleGeoLayer2	| 
 | ExampleGeoLayer3 	|
 
-### Example 1: Free a GeoLayer###
+### Example 1: Free GeoLayers###
 
 ```
-FreeGeoLayer(GeoLayerID = "ExampleGeoLayer2")
+FreeGeoLayers(GeoLayerIDs = "ExampleGeoLayer2, ExampleGeoLayer3")
 ```
 
 After running the command, the following GeoLayer IDs are registered within the GeoProcessor. 
@@ -65,7 +65,6 @@ After running the command, the following GeoLayer IDs are registered within the 
 |GeoLayer ID|
 | ---- |
 | ExampleGeoLayer1  |
-| ExampleGeoLayer3 	|
 
 
 ## Troubleshooting ##
