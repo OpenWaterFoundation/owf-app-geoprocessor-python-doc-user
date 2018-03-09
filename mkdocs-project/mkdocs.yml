@@ -26,6 +26,7 @@ pages:
   - For: command-ref/For/For.md
   - FreeGeoLayers: command-ref/FreeGeoLayers/FreeGeoLayers.md
   - If: command-ref/If/If.md
+  - IntersectGeoLayer: command-ref/IntersectGeoLayer/IntersectGeoLayer.md
   - ListFiles: command-ref/ListFiles/ListFiles.md
   - MergeGeoLayers: command-ref/MergeGeoLayers/MergeGeoLayers.md
   - Message: command-ref/Message/Message.md

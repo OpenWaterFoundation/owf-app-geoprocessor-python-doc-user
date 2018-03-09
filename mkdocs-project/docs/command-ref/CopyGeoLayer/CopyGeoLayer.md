@@ -37,7 +37,7 @@ Command Parameters
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
 | `GeoLayerID` <br> **_required_** | The ID of the GeoLayer to be copied. | None - must be specified. |
-| `IncludeAttributes` <br>*optional* |  A comma-separated list of the [glob-sytle patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which attributes to include in the copied GeoLayer. <br><br> See [Determining which Attributes to Copy](#determining-which-attributes-to-copy).|`*` <br><br> All attributes are copied.|
+| `IncludeAttributes` <br>*optional* |  A comma-separated list of the [glob-style patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which attributes to include in the copied GeoLayer. <br><br> See [Determining which Attributes to Copy](#determining-which-attributes-to-copy).|`*` <br><br> All attributes are copied.|
 | `ExcludeAttributes` <br>*optional* | A comma-separated list of the [glob-sytle patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which attributes to exclude in the copied GeoLayer. <br><br> See [Determining which Attributes to Copy](#determining-which-attributes-to-copy).| `'' (empty string)` <br><br> All attributes are copied. |  
 |`IncludeFeaturesIf` <br>*optional* | An attribute query specifying features to include in the copied GeoLayer. Expression syntax and capabilities follows [QGIS Expression](https://docs.qgis.org/2.8/en/docs/user_manual/working_with_vector/expression.html) standards.|All features are copied.|
 | `CopiedGeoLayerID` <br>*optional* | The ID of the copied GeoLayer. | `GeoLayerID`_copy |
@@ -46,7 +46,7 @@ Command Parameters
 
 ### Determining Which Attributes to Copy
 
-* The `IncludeAttributes` paramter is always calculated first. The`ExcludeAttributes` parameter is always calculated second. 
+* The `IncludeAttributes` parameter is always calculated first. The`ExcludeAttributes` parameter is always calculated second. 
 	* The `IncludeAttributes` *selects* all of the GeoLayer's attributes that follow the given patterns. By default (`*`) all of the GeoLayer's attributes are included. 
 	* The `ExcludeAttributes` *removes* all of the attributes *previously selected from the `IncludeAttributes` parameter* that follow the given patterns. 
 
