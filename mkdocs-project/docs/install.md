@@ -13,7 +13,7 @@ The GeoProcess installation requires that the following components are installed
 
 The GeoProcessor is distributed in two versions:
 
-* Full GeoProcessor/QGIS version:
+* **Full GeoProcessor/QGIS version**:
 	+ Used for geospatial data processing.
 	+ Uses Python packaged with QGIS.
 	+ GeoProcessor run program:
@@ -22,7 +22,7 @@ The GeoProcessor is distributed in two versions:
 	+ Install GeoProcessor `geoprocessor` package in folders that are searched by QGIS Python:
 		- ![Windows](images/windows-32.png) Windows: Install from `gp-sitepackage.zip`
 		- ![Linux](images/linux-32.png) Linux: Install from `gp-sitepackage.tar.gz`
-* Test framework version (no QGIS):
+* **Test framework version (no QGIS)**:
 	+ Includes the GeoProcessor test framework, which is used to test the GeoProcessor itself.
 	+ Can be used to automate tests for software and processing workflows.
 	+ Can be used without QGIS, using run program:
@@ -38,7 +38,15 @@ The GeoProcessor is distributed in two versions:
 
 The full GeoProcessor installation requires that QGIS is installed.
 See the [Resources](resources#QGIS) information for how to install QGIS.
-It is recommended that QGIS be installed in the default location to minimize configuration issues.
+It is recommended that the current QGIS version is installed in the default location to minimize configuration issues.
+As of March, 2018, the default QGIS installer installs QGIS 3.x,
+which does not appear to be ready for full production use, and the GeoProcessor relies on QGIS 2.x and Python 2.
+Therefore, when installing the current QGIS, use the ***Advanced Install*** feature of the installer and
+select the "stable long-term release (LTR)" for installation.
+This will install the latest stable QGIS 2 in addition to the QGIS 3 version.
+The GeoProcessor will then automatically run using the Python 2 QGIS in the LTR release.
+
+The QGIS installation procedure is likely to change as QGIS 3 becomes more stable.
 
 ## Install Python (Optional) ##
 
@@ -46,7 +54,8 @@ The GeoProcessor requires Python 2.7+.
 The `gp` program (see next section) that runs the GeoProcessor typically uses the Python distributed with QGIS.
 
 In the future the GeoProcessor may be distributed with a Python virtual environment.
-However, this is currently not done because of dependence on the QGIS installation.
+However, this is currently not complete because of dependence on the QGIS installation.
+**Advice on this topic from the developer community is welcomed.**
 
 ## Install GeoProcessor ##
 
