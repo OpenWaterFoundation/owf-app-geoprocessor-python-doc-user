@@ -1,30 +1,66 @@
 # Learn GeoProcessor / Introduction #
 
-There is often a need to automate processing of spatial data, ranging from simple to complex tasks.
-For example, the Open Water Foundation often processes spatial data related to water resources,
-such as processing river basin data.
-Although open source and commercial Geographic Information Systems (GIS) software tools are available,
-the features of these tools are limited and in some cases are expensive to purchase.
-There is a need for tools that can automate spatial data processing without requiring extensive GIS skills.
-
-The OWF GeoProcessor software is free and open source and leverages the spatial processing components
-in open source QGIS software, while providing automation features that are suitable for
-water resources data processing.
+This section of the documentation provides background information about the GeoProcessor and
+concepts that are used throughout the documentation.
 
 The current GeoProcessor software only runs in batch mode from the command line.
 However, an interactive user interface is planned.
 Currently, GeoProcessor command files must be edited with a text editor.
 
+
+* [Need for the GeoProcessor](#need-for-the-geoprocessor)
 * [Concepts](#concepts)
 	+ [GeoProcessor Commands and Workflows](#geoprocessor-commands-and-workflows)
 	+ [GeoProcessor Properties - `${Property}`](#geoprocessor-properties-property)
 	+ [Spatial Data Sources and Formats](#spatial-data-sources-and-formats)
 	+ [GeoLayer](#geolayer)
-	+ [GeoLayer Lists](#geolayer-lists)
 * [Alternatives to the GeoProcessor](#alternatives-to-the-geoprocessor)
 * [Next Steps](#next-steps)
 
 --------------
+
+## Need for the GeoProcessor ##
+
+The GeoProcessor has been created to meet several needs within the Geographic Information System sector,
+and in particular focusing on natural resources and more specifically water resources.
+
+* There is often a need to automate processing of spatial data, ranging from simple to complex tasks.
+Existing tools can be complex to understand and may not provide needed functionality.
+
+* There is a need to support "programming" without having to learn a programming language.
+The GeoProcessor allows people to program a workflow using pre-built commands that do not
+require programming Python or another language.
+The GeoProcessor workflow language is "programming by convention" that relies on using
+unique identifiers for data objects, and common processing commands.
+
+* There is often a need to share and version control workflows.
+GeoProcessor workflows are simple text files that can be shared, for example by email or zip file.
+Because workflows are text files, they can also be version-controlled in software such as Git,
+and easily viewed on GitHub or other version control cloud platforms.
+
+* There is a need to easily scale processing.
+The GeoProcessor is designed to handle large datasets and workflows,
+with features to evaluate and troubleshoot performance.
+
+* The cost of commercial software may be a major barrier,
+in particular for organizations that use the software on a limited basis.
+The GeoProcessor is intended as a production tool for those who use free open source QGIS software.
+OWF is also developing an ArcGIS version of the GeoProcessor.
+
+* There is a need for tools that can automate spatial data processing without requiring extensive GIS skills.
+The GeoProcessor is designed to present geoprocessing workflows using terminology
+that make sense even without extensive GIS experience.
+
+* There is also a need to "normalize" geospatial data processing,
+meaning do the same task whether or not QGIS or ArcGIS are used.
+The QGIS and ArcGIS versions of the GeoProcessor are being developed to provide the same (or very similar)
+functionality using a common command language that can be used with either GIS product.
+
+* There is a need to facilitate testing and validation of workflows.
+The GeoProcessor has a built-in functional test feature that allows
+workflows used by developers to be the same as for users.
+Consequently, testing in different environments is simplified.
+This allows the software and workflows to be tested.
 
 ## Concepts ##
 
@@ -36,9 +72,10 @@ A command file can be run multiple times to perform the same task on new data.
 
 Each command performs a unit of work and by design the functionality of each command is limited.
 This allows commands to be used in various sequences to achieve maximum flexibility.
-The commands are documented in the [Command Reference](command-ref/overview).
+The commands are documented in the [Command Reference](command-ref/overview)
+(see also the list of commands under the Command Reference in the page navigation on the left).
 
-A common workflow is as follows:
+A typical workflow is as follows:
 
 1. Read GeoLayers from one or more sources.
 2. Perform geospatial processing and/or analysis on the GeoLayers.
@@ -46,7 +83,21 @@ A common workflow is as follows:
 
 The above simple workflow can be scaled to process large amounts of data.
 
-**Need to insert an example workflow here.**
+For example, the following workflow, taken from a
+[GeoProcessor test](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/blob/master/test/commands/ClipGeoLayer/test-ClipGeoLayer-linesAsInput.gp),
+illustrates how to clip a spatial data layer (GeoLayer) to a boundary:
+
+```
+# Read the lines geojson (input GeoLayer) and the polygon geojson (clipping GeoLayer)
+ReadGeoLayerFromGeoJSON(SpatialDataFile="data/input_lines.geojson")
+ReadGeoLayerFromGeoJSON(SpatialDataFile="data/clipping_polygon.geojson")
+# Clip the lines GeoLayerID by the clippling polygon 
+ClipGeoLayer(InputGeoLayerID="input_lines", ClippingGeoLayerID="clipping_polygon")
+WriteGeoLayerToGeoJSON(GeoLayerID="input_lines_clippedBy_clipping_polygon", OutputFile="results/test-ClipGeoLayer-linesAsInput-out")
+```
+
+The syntax of commands is simple and flexible, which allows new commands to be added,
+and new parameters to be added to existing commands.
 
 ### GeoProcessor Properties - `${Property}` ###
 
@@ -92,6 +143,7 @@ See [best practices for GeoLayer identifiers](best-practices/geolayer-identifier
 in the features.
 * Currently the GeoProcessor only handles vector layers.
 The ability to process rasters (grids) may be added in the future.
+Much of the existing documentation will apply to the ArcGIS version of the GeoProcessor.
 
 #### GeoLayer Property Format Specifiers ####
 
@@ -109,28 +161,17 @@ Command documentation will indicate whether format specifiers are supported by t
 |`%P`| Filename with leading path and with file extension.| `C:/Users/user/Desktop/example.geojson`|
 |`%p`| Leading path without filename and without file extension.| `C:/Users/user/Desktop`|
 
-
-### GeoLayer Lists ###
-
-**Need to update this section to reflect current design.**
-
-It is often helpful to process multiple layers at once.
-Therefore, the GeoProcessor implements the concept of "lists of GeoLayers" or GeoLayerList.
-To work with lists, commands use lists of the GeoLayer identifiers.
-GeoLayer lists have the following characteristics:
-
-* A list has a unique identifier.
-* The list maintains a list of GeoLayer, which allows multiple GeoLayers to be processed at once.
-	+ Alternatively, each GeoLayer in the list could be processed separately.
-	+ Some commands require GeoLayer lists as input because of the processing being performed.
-
 ## Alternatives to the GeoProcessor ##
 
 Alternatives to the GeoProcessor should be considered where the GeoProcessor does not satisfy requirements.
 The goal of the GeoProcessor is to provide significant automated geoprocessing functionality that scales to large workflows. 
 
-* [QGIS processing framework](https://docs.qgis.org/2.8/en/docs/user_manual/processing/index.html) - the GeoProcessor does leverage these modules
-* [Esri ArcGIS Model Builder](http://pro.arcgis.com/en/pro-app/help/analysis/geoprocessing/modelbuilder/modelbuilder-tutorial.htm)
+* ArcGIS GeoProcessor - OWF is developing an ArcGIS version of the GeoProcessor,
+which is envisioned to be very similar to the QGIS version of the GeoProcessor.
+More information will be provided in the future.
+* [QGIS processing framework](https://docs.qgis.org/2.8/en/docs/user_manual/processing/index.html) - the built-in QGIS workflow environment
+* [Esri ArcGIS Model Builder](http://pro.arcgis.com/en/pro-app/help/analysis/geoprocessing/modelbuilder/modelbuilder-tutorial.htm) - the
+built-in ArcGIS workflow environment
 
 ## Next Steps
 

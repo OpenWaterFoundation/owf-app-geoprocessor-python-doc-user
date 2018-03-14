@@ -42,11 +42,19 @@ are suitable to perform the above conceptual work tasks:
 
 The GeoProcessor will continue to be enhanced to add new commands as necessary.
 
-The command file can be created with a text editor.
+The command file can be created with a text editor, with contents similar to those shown below.
 In the future, a graphical user interface will be available to edit and run commands.
+The following workflow is a simplified version of a
+[GeoProcessor test](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/blob/master/test/commands/ClipGeoLayer/test-ClipGeoLayer-linesAsInput.gp).
 
-See also the [GeoProcessor test repository](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test),
-which has simple examples for all commands.
+```
+# Read the lines geojson (input GeoLayer) and the polygon geojson (clipping GeoLayer)
+ReadGeoLayerFromGeoJSON(SpatialDataFile="data/input_lines.geojson")
+ReadGeoLayerFromGeoJSON(SpatialDataFile="data/clipping_polygon.geojson")
+# Clip the lines GeoLayerID by the clippling polygon 
+ClipGeoLayer(InputGeoLayerID="input_lines", ClippingGeoLayerID="clipping_polygon")
+WriteGeoLayerToGeoJSON(GeoLayerID="input_lines_clippedBy_clipping_polygon", OutputFile="results/test-ClipGeoLayer-linesAsInput-out")
+```
 
 ### Best Practices for Command Files ###
 
@@ -96,7 +104,7 @@ Errors will be indicated:
 ## Use the Test Framework Version of the GeoProcessor ##
 
 The GeoProcessor includes a test framework, which is used to test the GeoProcessor itself
-(see the [Developer Documentation](http://learn.openwaterfoundation.org/owf-app-geoprocessor-python-doc-dev/dev-tasks/#functional-tests).
+(see the [Developer Documentation](http://learn.openwaterfoundation.org/owf-app-geoprocessor-python-doc-dev/dev-tasks/#functional-tests)).
 The test framework can be used to automate tests for command file workflows.
 
 The normal GeoProcessor run programs (`gp.bat` on Windows and `gp.sh` on Linux) assume that the QGIS software is installed,
