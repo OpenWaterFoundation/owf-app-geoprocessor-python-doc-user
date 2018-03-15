@@ -82,5 +82,5 @@ After running the command, the ExampleGeoLayer has the following attribute table
 
 ## See Also ##
 
-- GeoLayer attributes are removed using the [`QGIS QGSVectorDataProvider Class`](https://qgis.org/api/classQgsVectorDataProvider.html). See [documentation](https://docs.qgis.org/2.14/en/docs/pyqgis_developer_cookbook/vector.html#adding-and-removing-fields) for examples on utilizing the `QgsVectorDataProvider` class in the PyQGIS environment.
+- GeoLayer attributes are removed using the [`QGIS QGSVectorDataProvider Class`](https://qgis.org/api/classQgsVectorDataProvider.html). See [documentation](https://docs.qgis.org/latest/en/docs/pyqgis_developer_cookbook/vector.html#adding-and-removing-fields) for examples on utilizing the `QgsVectorDataProvider` class in the PyQGIS environment.
 - See parallel GeoProcessor command [AddGeoLayerAttribute](../AddGeoLayerAttribute/AddGeoLayerAttribute)

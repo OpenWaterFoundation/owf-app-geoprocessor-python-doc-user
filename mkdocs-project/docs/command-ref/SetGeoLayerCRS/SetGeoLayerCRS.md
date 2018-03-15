@@ -91,5 +91,5 @@ After running the command, the following GeoLayer IDs are registered within the 
 
 ## See Also ##
 
-- The GeoLayer is reprojected using the QGIS processing algorithm  [`qgis:reprojectlayer`](https://docs.qgis.org/2.8/en/docs/user_manual/processing_algs/qgis/vector_general_tools/reprojectlayer.html). 
+- The GeoLayer is reprojected using the QGIS processing algorithm  [`qgis:reprojectlayer`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vector_general_tools.html#reproject-layer). 
 - The GeoLayer's CRS is defined using the QGIS processing algorithm  `qgis:definecurrentprojection`.

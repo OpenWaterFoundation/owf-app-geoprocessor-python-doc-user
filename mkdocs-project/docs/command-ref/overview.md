@@ -113,20 +113,21 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 
 ## QGIS Cross-Reference ##
 
-QGIS provides [algorithms](https://docs.qgis.org/2.8/en/docs/user_manual/processing/console.html) and [plugins](https://plugins.qgis.org/) to process spatial data. Below is a table relating the existing QGIS algorithms to the equivalent GeoProcessor command. 
+QGIS provides [algorithms](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/index.html) and [plugins](https://plugins.qgis.org/) to process spatial data. Below is a table relating the existing QGIS algorithms to the equivalent GeoProcessor command. 
 
 |QGIS Algorithm/Plugin| `A`lgorithm or `P`lugin |Description|Equivalent GeoProcessor Command(s)|Comment/Status|
 |----|:---:|---|---|---|
-|[Add field to attributes table](https://docs.qgis.org/2.8/en/docs/user_manual/processing_algs/qgis/vector_table_tools/addfieldtoattributestable.html)|A|Add an attribute/attribute field to a layer.| [AddGeoLayerAttribute](AddGeoLayerAttribute/AddGeoLayerAttribute) | Completed|
-|[Clip](https://docs.qgis.org/2.14/en/docs/user_manual/processing_algs/qgis/vector_overlay_tools.html)|A| Extract features from a layer that fall within, or partially within, the boundaries of features in another layer.|[ClipGeoLayer](ClipGeoLayer/ClipGeoLayer)|Completed|
+|[Add field to attributes table](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vector_table_tools.html#add-field-to-attributes-table)|A|Add an attribute/attribute field to a layer.| [AddGeoLayerAttribute](AddGeoLayerAttribute/AddGeoLayerAttribute) | Completed|
+|[Clip](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vector_overlay_tools.html#clip)|A| Extract features from a layer that fall within, or partially within, the boundaries of features in another layer.|[ClipGeoLayer](ClipGeoLayer/ClipGeoLayer)|Completed|
 |Define current projection (qgis:definecurrentprojection)|A|Assign a projection to a layer that has an unassigned coordinate reference system.|[SetGeoLayerCRS](SetGeoLayerCRS/SetGeoLayerCRS)|Completed|
-|[Delete Column](https://docs.qgis.org/2.8/en/docs/user_manual/processing_algs/qgis/vector_table_tools/deletecolumn.html)|A|Remove an attribute/attribute field from a layer.|[CopyGeoLayer](CopyGeoLayer/CopyGeoLayer) and [RemoveGeoLayerAttributes](RemoveGeoLayerAttributes/RemoveGeoLayerAttributes)|Completed|
-|[DissolveGeoLayer](https://docs.qgis.org/2.8/en/docs/user_manual/processing_algs/qgis/vector_geometry_tools/dissolve.html)|A|Dissolve adjacent polygon features into a single polygon feature.|MergeGeoLayerFeatures|In Queue
-|[Extract by attribute](https://docs.qgis.org/2.8/en/docs/user_manual/processing_algs/qgis/vector_selection_tools/extractbyattribute.html)|A|Extracts features from a layer that match the input attribute query.| [CopyGeoLayer](CopyGeoLayer/CopyGeoLayer)| Completed|
-|[Merge vector layers](https://docs.qgis.org/2.8/en/docs/user_manual/processing_algs/qgis/vector_general_tools/mergevectorlayers.html)|A|Combine multiple vector layers of the same geometry type into a single vector layer. | [MergeGeoLayers](MergeGeoLayers/MergeGeoLayers)| Under construction|
+|[Delete Column](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vector_table_tools.html#delete-column)|A|Remove an attribute/attribute field from a layer.|[CopyGeoLayer](CopyGeoLayer/CopyGeoLayer) and [RemoveGeoLayerAttributes](RemoveGeoLayerAttributes/RemoveGeoLayerAttributes)|Completed|
+|[DissolveGeoLayer](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vector_geometry_tools.html#dissolve)|A|Dissolve adjacent polygon features into a single polygon feature.|MergeGeoLayerFeatures|In Queue
+|[Extract by attribute](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vector_selection_tools.html#extract-by-attribute)|A|Extracts features from a layer that match the input attribute query.| [CopyGeoLayer](CopyGeoLayer/CopyGeoLayer)| Completed|
+|[Intersection](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vector_overlay_tools.html#intersection)|A|Output features that intersect two layers.|[IntersectGeoLayer](IntersectGeoLayer/IntersectGeoLayer)|Completed|
+|[Merge vector layers](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vector_general_tools.html#merge-vector-layers)|A|Combine multiple vector layers of the same geometry type into a single vector layer. | [MergeGeoLayers](MergeGeoLayers/MergeGeoLayers)| Under construction|
 |[QChainage](https://plugins.qgis.org/plugins/qchainage/)|P|Create points along a line layer at a set distance.|CreatePointsAlongALine|In Queue|
-|[Reproject Layer](https://docs.qgis.org/2.8/en/docs/user_manual/processing_algs/qgis/vector_general_tools/reprojectlayer.html)|A| Reproject a layer that already has an assigned coordinate reference system.|[SetGeoLayerCRS](SetGeoLayerCRS/SetGeoLayerCRS)|Completed|
-|[Simplify Geometries](https://docs.qgis.org/2.8/en/docs/user_manual/processing_algs/qgis/vector_geometry_tools/simplifygeometries.html)|A|Simplify the geometries of a line or polygon layer by removing unnecessary vertices.| [SimplifyGeoLayerGeometry](SimplifyGeoLayerGeometry/SimplifyGeoLayerGeometry)|Completed|
+|[Reproject Layer](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vector_general_tools.html#reproject-layer)|A| Reproject a layer that already has an assigned coordinate reference system.|[SetGeoLayerCRS](SetGeoLayerCRS/SetGeoLayerCRS)|Completed|
+|[Simplify Geometries](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vector_geometry_tools.html#simplify-geometries)|A|Simplify the geometries of a line or polygon layer by removing unnecessary vertices.| [SimplifyGeoLayerGeometry](SimplifyGeoLayerGeometry/SimplifyGeoLayerGeometry)|Completed|
 |[Web Service Geocode](https://plugins.qgis.org/plugins/GeoCoding/)|P|Convert addresses in csv file to a layer.|Geocode|In Queue|
 
 

@@ -123,4 +123,4 @@ After running the command, the following GeoLayer IDs are registered within the 
 
 ## See Also ##
 
-- The GeoLayer is simplified using the QGIS processing algorithm  [`qgis:simplifygeometries`](https://docs.qgis.org/2.8/en/docs/user_manual/processing_algs/qgis/vector_geometry_tools/simplifygeometries.html). 
+- The GeoLayer is simplified using the QGIS processing algorithm  [`qgis:simplifygeometries`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vector_geometry_tools.html#simplify-geometries). 

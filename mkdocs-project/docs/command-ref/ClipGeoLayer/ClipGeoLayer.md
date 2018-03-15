@@ -109,4 +109,4 @@ After running the command, the following GeoLayer IDs are registered within the 
 
 ## See Also ##
 
-- The ClipGeoLayer command uses the QGIS processing algorithm [`qgis:clip`](https://docs.qgis.org/2.14/en/docs/user_manual/processing_algs/qgis/vector_overlay_tools.html#clip). 
+- The ClipGeoLayer command uses the QGIS processing algorithm [`qgis:clip`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vector_overlay_tools.html#clip). 

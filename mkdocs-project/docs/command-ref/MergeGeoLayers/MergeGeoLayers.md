@@ -172,4 +172,4 @@ Attribute Table of `MergedOutput`
 
 ## See Also ##
 
-- The MergeGeoLayers command uses the QGIS processing algorithm [`qgis:mergevectorlayers`](https://docs.qgis.org/2.8/en/docs/user_manual/processing_algs/qgis/vector_general_tools/mergevectorlayers.html). 
+- The MergeGeoLayers command uses the QGIS processing algorithm [`qgis:mergevectorlayers`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vector_general_tools.html#merge-vector-layers). 

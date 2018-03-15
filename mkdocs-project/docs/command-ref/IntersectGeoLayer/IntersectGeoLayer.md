@@ -125,6 +125,5 @@ After running the command, the following GeoLayer IDs are registered within the 
 
 ## See Also ##
 
-- The IntersectGeoLayer command uses the QGIS processing algorithm [`qgis:intersection`](
-https://docs.qgis.org/2.18/en/docs/user_manual/processing_algs/qgis/vector_overlay_tools.html#intersection)
+- The IntersectGeoLayer command uses the QGIS processing algorithm [`qgis:intersection`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vector_overlay_tools.html#intersection)
 
