@@ -54,6 +54,7 @@ pages:
   - WriteGeoLayerPropertiesToFile: command-ref/WriteGeoLayerPropertiesToFile/WriteGeoLayerPropertiesToFile.md
   - WriteGeoLayerToDelimitedFile: command-ref/WriteGeoLayerToDelimitedFile/WriteGeoLayerToDelimitedFile.md
   - WriteGeoLayerToGeoJSON: command-ref/WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON.md
+  - WriteGeoLayerToKML: command-ref/WriteGeoLayerToKML/WriteGeoLayerToKML.md
   - WriteGeoLayerToShapefile: command-ref/WriteGeoLayerToShapefile/WriteGeolayerToShapefile.md
   - WritePropertiesToFile: command-ref/WritePropertiesToFile/WritePropertiesToFile.md
 - Spatial Data Format Reference:

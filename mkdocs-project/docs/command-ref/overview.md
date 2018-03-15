@@ -65,6 +65,7 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 * [SimplifyGeoLayerGeometry](SimplifyGeoLayerGeometry/SimplifyGeoLayerGeometry) - decreases the verticies in a polygon or line GeoLayer 
 * [WriteGeoLayerToDelimitedFile](WriteGeoLayerToDelimitedFile/WriteGeoLayerToDelimitedFile) - write GeoLayer to a file in delimited file format
 * [WriteGeoLayerToGeoJSON](WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON) - write GeoLayer to a file in GeoJSON format
+* [WriteGeoLayerToKML](WriteGeoLayerToKML/WriteGeoLayerToKML) - write GeoLayer to a file in KML format
 * [WriteGeoLayerToShapefile](WriteGeoLayerToShapefile/WriteGeoLayerToShapefile) - write GeoLayer to a file in Shapefile format
 
 ## Commands to Control Running ##
