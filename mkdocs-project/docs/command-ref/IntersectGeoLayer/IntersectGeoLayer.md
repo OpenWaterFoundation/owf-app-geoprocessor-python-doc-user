@@ -18,11 +18,12 @@ The `IntersectGeoLayer` command extracts the overlapping portions of features in
 * Features from the input GeoLayer that intersect multiple features of the intersect GeoLayer are clipped by the intersect features. Consequently, the output will have 2+ features that correspond to parts of the original input feature.
 * Only GeoLayers with certain geometry type can be intersected. See the table below. 
 
-| |The input GeoLayer geometry is a  <br>`POLYGON`|The input GeoLayer geometry is a  <br>`LINE`|The input GeoLayer geometry is a  <br>`POINT`|
+
+| |The input GeoLayer geometry is <br>`POINT`|The input GeoLayer geometry is <br>`LINE`|The input GeoLayer geometry is <br>`POLGON`|
 |:-:|:-:|:-:|:-:|
-|The intersect GeoLayer is a  <br>`POLYGON`|<span style="color:green">Supported</span>. <br>The output GeoLayer contains the intersecting polygons.|<span style="color:green">Supported</span>. <br>The output GeoLayer contains the lines intersecting the polygons.|<span style="color:green">Supported</span>. <br>The output GeoLayer contains the points intersecting the polygons.|
-|The intersect GeoLayer is a  <br>`LINE`|<span style="color:red">Not Supported</span>.  <br> The intersecting lines cannot be written to polygon geometry.|<span style="color:green">Supported</span>. <br>The output GeoLayer contains the intersecting lines. (The point intersections are not included.)|<span style="color:green">Supported</span>. <br>The output GeoLayer contains the points intersecting the lines.|
-|The intersect GeoLayer is a  <br>`POINT`|<span style="color:red">Not Supported</span>. <br>The intersecting points cannot be written to polygon geometry.|<span style="color:red">Not Supported</span>. <br>The intersecting points cannot be written to line geometry.|<span style="color:green">Supported</span>. <br>The output GeoLayer contains the intersecting points.|
+|The intersect GeoLayer is <br>`POINT`|<span style="color:green">Supported</span>. <br>The output GeoLayer contains the intersecting points.|<span style="color:red">Not Supported</span>. <br>The intersecting points cannot be written to line geometry.|<span style="color:red">Not Supported</span>. <br>The intersecting points cannot be written to polygon geometry.|
+|The intersect GeoLayer is <br>`LINE`|<span style="color:green">Supported</span>. <br>The output GeoLayer contains the points intersecting the lines.|<span style="color:green">Supported</span>. <br>The output GeoLayer contains the intersecting lines. (The point intersections are not included.)|<span style="color:red">Not Supported</span>.  <br> The intersecting lines cannot be written to polygon geometry.|
+|The intersect GeoLayer is <br>`POLYGON`|<span style="color:green">Supported</span>. <br>The output GeoLayer contains the points intersecting the polygons.|<span style="color:green">Supported</span>. <br>The output GeoLayer contains the lines intersecting the polygons.|<span style="color:green">Supported</span>. <br>The output GeoLayer contains the intersecting polygons.|
 
 
 ## Command Editor ##
@@ -44,7 +45,7 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 | --------------|-----------------|----------------- |
-|`GeoLayerID` <br>  **_required_**| The ID of the input GeoLayer which will be intersected.| None - must be specified. |
+|`GeoLayerID` <br>  **_required_**| The ID of the input GeoLayer that will be intersected.| None - must be specified. |
 |`IntersectGeoLayerID`<br>  **_required_**| The ID of the intersect GeoLayer.| None - must be specified. |
 | `IncludeIntersectAttributes` <br>*optional* |  A comma-separated list of the [glob-style patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which attributes from the intersect GeoLayer to include in the output GeoLayer. <br><br> See [Determining which Attributes to Copy](#determining-which-attributes-to-copy).|All attributes are included.|
 | `ExcludeIntersectAttributes` <br>*optional* | A comma-separated list of the [glob-style patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which attributes from the intersect Geolayer to exclude in the output GeoLayer. <br><br> See [Determining which Attributes to Copy](#determining-which-attributes-to-copy).|No attributes are excluded.|  
@@ -53,7 +54,7 @@ Command Parameters
 
 ### Determining Which Attributes to Copy
 
-* The `IncludeIntersectAttributes` parameter is always calculated first. The`ExcludeIntersectAttributes` parameter is always calculated second. 
+* The `IncludeIntersectAttributes` parameter is always processed first. The`ExcludeIntersectAttributes` parameter is always processed second. 
 	* The `IncludeIntersectAttributes` *selects* all of the GeoLayer's attributes that follow the given patterns. By default (`*`) all of the GeoLayer's attributes are included. 
 	* The `ExcludeIntersectAttributes` *removes* all of the attributes *previously selected* from the `IncludeIntersectAttributes` parameter* that follow the given patterns. 
 
@@ -94,11 +95,13 @@ After running the command, the following GeoLayer IDs are registered within the 
 |-|
 |![point_intersectPolygons_beforeCommand](images/point_intersect_polygon_before.PNG)|
 
-|The `intersected_points` GeoLayer (represented by red stars) and the `polygon-co-counties` GeoLayer (displayed in light blue).|
+|The `intersected_points` GeoLayer (represented by red stars) and the `polygon-co-counties` GeoLayer (displayed in light blue). Note that point features outside of the polygon features are excluded.|
 |-|
 |![point_intersectPolygons_afterCommand](images/point_intersect_polygon_after.PNG)|
 
-### Example 2: Utilize the `IncludeIntersectAttributes` Parameter ###
+### Example 2: Use the `IncludeIntersectAttributes` Parameter ###
+
+It can be useful to limit the attributes from the intersect GeoLayer to be included in the output GeoLayer. The `IncludeIntersectAttributes` and `ExcludeIntersectAttributes` parameters allow the user to specify which attributes from the intersect GeoLayer to include in the output GeoLayer.
 
 ```
 IntersectGeoLayer(GeoLayerID = "input_lines", IntersectGeoLayerID = "countyBoundary-CDOT-Park-4326", OutputGeoLayerID = "intersected_lines", IncludeIntersectAttributes="county, state")
@@ -115,7 +118,7 @@ After running the command, the following GeoLayer IDs are registered within the 
 |-|
 |![line_intersectPolygons_beforeCommand](images/line_intersect_polygon_before.PNG)|
 
-|The `intersected_lines` GeoLayer (represented in various colors to display the created features) and the `polygon-co-counties` GeoLayer (displayed in light blue).|
+|The `intersected_lines` GeoLayer (represented in various colors to display the created features) and the `polygon-co-counties` GeoLayer (displayed in light blue). Note that each line crossing polygon boundaries have been split into two features. |
 |-|
 |![point_intersectPolygons_afterCommand](images/line_intersect_polygon_after.PNG)|
 

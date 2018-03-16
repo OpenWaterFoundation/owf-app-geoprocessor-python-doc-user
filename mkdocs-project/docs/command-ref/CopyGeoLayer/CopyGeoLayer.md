@@ -46,7 +46,7 @@ Command Parameters
 
 ### Determining Which Attributes to Copy
 
-* The `IncludeAttributes` parameter is always calculated first. The`ExcludeAttributes` parameter is always calculated second. 
+* The `IncludeAttributes` parameter is always processed first. The`ExcludeAttributes` parameter is always processed second. 
 	* The `IncludeAttributes` *selects* all of the GeoLayer's attributes that follow the given patterns. By default (`*`) all of the GeoLayer's attributes are included. 
 	* The `ExcludeAttributes` *removes* all of the attributes *previously selected from the `IncludeAttributes` parameter* that follow the given patterns. 
 

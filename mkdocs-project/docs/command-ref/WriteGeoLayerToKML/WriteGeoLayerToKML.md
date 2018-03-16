@@ -16,8 +16,10 @@ The `WriteGeoLayerToKML` command writes a [GeoLayer](../../introduction#geolayer
 * The attributes of the GeoLayer are retained within the output KML file. 	
 * The coordinate reference system of the output KML file will always be projected in `WGS84` `(EPSG:4326)`. 
 	* `Note that KML by specification uses only a single projection, EPSG:4326. All OGR KML output will be presented in EPSG:4326. As such OGR will create layers in the correct coordinate system and transform any geometries.` - [`GDAL KML Driver Specifications`](http://www.gdal.org/drv_kml.html)
-* The KML `<name>` element can be specified.
-* The KML `<description>` element can be specified.
+* Each GeoLayer feature is converted into a KML [placemark](https://developers.google.com/kml/documentation/kmlreference#description_146).
+	* The placemark `<name>` elements can be specified by the values of a GeoLayer attribute.
+	* The placemark `<description>` elements can be specified by the values of a GeoLayer attribute.
+* Symbology cannot be specified at this time. Additional control over symbology will be added in the future. The KML will adopt the default symbology of the program that is ingesting the file. 
 
 ## Command Editor ##
 
@@ -36,12 +38,12 @@ WriteGeoLayerToKML(Parameter="Value",...)
 Command Parameters
 </p>**
 
-|**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+|**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
 | `GeoLayerID` <br>  **_required_**| The identifier of the GeoLayer to write.| None - must be specified. |
 | `OutputFile` <br> **_required_**| The output KML file (relative or absolute path). <br> [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized. | None - must be specified. |  
-|`OutputNameAttribute`<br> *optional*| The GeoLayer attribute to use for the KML `<name>` element. <br><br> For further explanation, look at the example KML document under the *Structure* section of the [Keyhole Markup Language Wikipedia page](https://en.wikipedia.org/wiki/Keyhole_Markup_Language#Structure).|The output KML will not have a `<name>` element.|
-|`OutputDescriptionAttribute`<br> *optional*|The GeoLayer attribute to use for the KML `<description>` element. <br><br> For further explanation, look at the example KML document under the *Structure* section of the [Keyhole Markup Language Wikipedia page](https://en.wikipedia.org/wiki/Keyhole_Markup_Language#Structure). <br><br>  | The output KML will not have a `<description>` element.|
+|`PlacemarkNameAttribute`<br> *optional*| The GeoLayer attribute to populate the output KML's placemark `<name>` elements. <br><br> Each GeoLayer feature is coverted into a KML [placemark](https://developers.google.com/kml/documentation/kmlreference#description_146). Each placemark can have a `<name>` element. The attribute values within the `PlacemarkNameAttribute` will populate each placemark's `name`. <br><br> For further explanation, look at the example KML document under the *Structure* section of the [Keyhole Markup Language Wikipedia page](https://en.wikipedia.org/wiki/Keyhole_Markup_Language#Structure).|The output KML placemarks will not have a `<name>` element.|
+|`PlacemarkDescriptionAttribute`<br> *optional*|The GeoLayer attribute to populate the output KML's placemark `<description>` elements. <br><br> Each GeoLayer feature is coverted into a KML [placemark](https://developers.google.com/kml/documentation/kmlreference#description_146). Each placemark can have a `<description>` element. The attribute values within the `PlacemarkDescriptionAttribute` will populate each placemark's `description`. <br><br> For further explanation, look at the example KML document under the *Structure* section of the [Keyhole Markup Language Wikipedia page](https://en.wikipedia.org/wiki/Keyhole_Markup_Language#Structure). <br><br>  | The output KML placemarks will not have a `<description>` element.|
  
 
 ## Examples ##
@@ -81,7 +83,7 @@ ExampleOutputFolder
 
 ## Troubleshooting ##
 
-- If an `OutputDescriptionAttribute` is specified, the other GeoLayer attributes will not automatically display in a Google Earth pop-up. See [Stack Exchange - ExtendedData and Description coexisting in the same placemark?](https://gis.stackexchange.com/questions/157964/extendeddata-and-description-coexisting-in-the-same-placemark) 
+- If an `PlacemarkDescriptionAttribute` is specified, the other GeoLayer attributes will not automatically display in a Google Earth pop-up. See [Stack Exchange - ExtendedData and Description coexisting in the same placemark?](https://gis.stackexchange.com/questions/157964/extendeddata-and-description-coexisting-in-the-same-placemark) 
 
 ## See Also ##
 
