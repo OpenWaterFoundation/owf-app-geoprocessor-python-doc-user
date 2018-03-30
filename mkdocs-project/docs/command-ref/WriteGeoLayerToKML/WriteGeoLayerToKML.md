@@ -11,7 +11,7 @@
 
 ## Overview ##
 
-The `WriteGeoLayerToKML` command writes a [GeoLayer](../../introduction#geolayer) to a file in [KML format](https://en.wikipedia.org/wiki/Keyhole_Markup_Language). 
+The `WriteGeoLayerToKML` command writes a [GeoLayer](../../introduction#geolayer) to a file in [KML format](../../spatial-data-format-ref/KML/KML). 
 
 * The attributes of the GeoLayer are retained within the output KML file. 	
 * The coordinate reference system of the output KML file will always be projected in `WGS84` `(EPSG:4326)`. 

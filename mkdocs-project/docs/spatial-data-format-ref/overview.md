@@ -9,4 +9,4 @@ The following are listed in alphabetical order.
 * [(Esri) File Geodatabase](FileGeodatabase/FileGeodatabase) - supported
 * [(Esri) Shapefile](Shapefile/Shapefile) - supported
 * [GeoJSON](GeoJSON/GeoJSON) - supported
-* KML - not yet supported
+* [KML](KML/KML) - supported

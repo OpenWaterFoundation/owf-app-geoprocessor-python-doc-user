@@ -62,6 +62,7 @@ pages:
   - Esri File Geodatabase: spatial-data-format-ref/EsriFileGeodatabase/EsriFileGeodatabase.md
   - Esri Shapefile: spatial-data-format-ref/EsriShapefile/EsriShapefile.md
   - GeoJSON: spatial-data-format-ref/GeoJSON/GeoJSON.md
+  - KML: spatial-data-format-ref/KML/KML.md
 - Best Practices:
   - GeoLayer Identifiers: best-practices/geolayer-identifiers.md
 - Resources: resources.md
