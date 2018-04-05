@@ -31,10 +31,12 @@ pages:
   - MergeGeoLayers: command-ref/MergeGeoLayers/MergeGeoLayers.md
   - Message: command-ref/Message/Message.md
   - ReadGeoLayerFromDelimitedFile: command-ref/ReadGeoLayerFromDelimitedFile/ReadGeoLayerFromDelimitedFile.md
+  - ReadGeoLayerFromFGDB: command-ref/ReadGeoLayerFromFGDB/ReadGeoLayerFromFGDB.md
   - ReadGeoLayerFromGeoJSON: command-ref/ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md
   - ReadGeoLayerFromShapefile: command-ref/ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile.md
   - ReadGeoLayersFromFGDB: command-ref/ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB.md
   - ReadGeoLayersFromFolder: command-ref/ReadGeoLayersFromFolder/ReadGeoLayersFromFolder.md
+  - ReadTableFromExcel: command-ref/ReadTableFromExcel/ReadTableFromExcel.md
   - RemoveFile: command-ref/RemoveFile/RemoveFile.md
   - RemoveGeoLayerAttributes: command-ref/RemoveGeoLayerAttributes/RemoveGeoLayerAttributes.md
   - RenameGeoLayerAttribute: command-ref/RenameGeoLayerAttribute/RenameGeoLayerAttribute.md
@@ -56,6 +58,7 @@ pages:
   - WriteGeoLayerToGeoJSON: command-ref/WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON.md
   - WriteGeoLayerToKML: command-ref/WriteGeoLayerToKML/WriteGeoLayerToKML.md
   - WriteGeoLayerToShapefile: command-ref/WriteGeoLayerToShapefile/WriteGeolayerToShapefile.md
+  - WriteTableToExcel: command-ref/WriteTableToExcel/WriteTableToExcel.md
   - WritePropertiesToFile: command-ref/WritePropertiesToFile/WritePropertiesToFile.md
 - Spatial Data Format Reference:
   - Overview: spatial-data-format-ref/overview.md

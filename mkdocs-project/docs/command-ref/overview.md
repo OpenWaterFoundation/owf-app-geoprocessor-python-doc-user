@@ -54,9 +54,10 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 * [IntersectGeoLayer](IntersectGeoLayer/IntersectGeoLayer) - intersects a GeoLayer by another GeoLayer
 * [MergeGeoLayers](MergeGeoLayers/MergeGeoLayers) - merge multiple GeoLayers into one GeoLayer
 * [ReadGeoLayerFromDelimitedFile](ReadGeoLayerFromDelimitedFile/ReadGeoLayerFromDelimitedFile) - read a GeoLayer from a file in delimited file format
+* [ReadGeoLayerFromFGDB](ReadGeoLayerFromFGDB/ReadGeoLayerFromFGDB) - read a single GeoLayer from a file geodatabase
 * [ReadGeoLayerFromGeoJSON](ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON) - read a GeoLayer from a file in GeoJSON format
 * [ReadGeoLayerFromShapefile](ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile) - read a GeoLayer from a file in Shapefile format
-* [ReadGeoLayersFromFGDB](ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB) - read GeoLayers from a file geodatabase
+* [ReadGeoLayersFromFGDB](ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB) - read one or more GeoLayers from a file geodatabase
 * [ReadGeoLayersFromFolder](ReadGeoLayersFromFolder/ReadGeoLayersFromFolder) - read GeoLayers from a folder
 * [RemoveGeoLayerAttributes](RemoveGeoLayerAttributes/RemoveGeoLayerAttributes) - remove one or more attributes from a GeoLayer
 * [RenameGeoLayerAttribute](RenameGeoLayerAttribute/RenameGeoLayerAttribute) - rename a GeoLayer's attribute
@@ -67,6 +68,11 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 * [WriteGeoLayerToGeoJSON](WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON) - write GeoLayer to a file in GeoJSON format
 * [WriteGeoLayerToKML](WriteGeoLayerToKML/WriteGeoLayerToKML) - write GeoLayer to a file in KML format
 * [WriteGeoLayerToShapefile](WriteGeoLayerToShapefile/WriteGeoLayerToShapefile) - write GeoLayer to a file in Shapefile format
+
+## Commands for Processing Tabular Data ##
+
+* [ReadTableFromExcel](ReadTableFromExcel/ReadTableFromExcel) - read a Table from an Excel file
+* [WriteTableToExcel](WriteTableToExcel/WriteTableToExcel) - write a Table to an Excel file
 
 ## Commands to Control Running ##
 
