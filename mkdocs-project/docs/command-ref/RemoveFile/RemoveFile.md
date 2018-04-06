@@ -38,6 +38,7 @@ Command Parameters
 | --------------|-----------------|----------------- |
 | `SourceFile` | The name of the file to delete.  Can be specified using `${Property}`. | None - must be specified. |
 | `IfSourceFileNotFound` | Indicate an action if the source file is not found:  `Ignore` (ignore the missing file and do not warn), `Warn` (generate a warning message), `Fail` (generate a failure message) | `Warn` |
+| `RemoveIfFolder` | Boolean. If `TRUE` and the `SourceFile` is a folder/file geodatabase, it will be removed. If `FALSE` and the `SourceFile` is a folder/file geodatabase, it will not be removed.| `False`|
 
 
 ## Examples ##
