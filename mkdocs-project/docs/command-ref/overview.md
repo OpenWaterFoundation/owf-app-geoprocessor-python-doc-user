@@ -71,7 +71,9 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 
 ## Commands for Processing Tabular Data ##
 
+* [ReadTableFromDelimitedFile](ReadTableFromDelimitedFile/ReadTableFromDelimitedFile) - read a Table from a delimited file
 * [ReadTableFromExcel](ReadTableFromExcel/ReadTableFromExcel) - read a Table from an Excel file
+* [WriteTableToDelimitedFile](WriteTableToDelimitedFile/WriteTableToDelimitedFile) - write a Table to a delimited file
 * [WriteTableToExcel](WriteTableToExcel/WriteTableToExcel) - write a Table to an Excel file
 
 ## Commands to Control Running ##

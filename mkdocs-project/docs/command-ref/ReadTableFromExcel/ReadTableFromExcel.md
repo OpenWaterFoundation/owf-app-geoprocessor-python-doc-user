@@ -35,9 +35,9 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `File` <br>  **_required_**| The Excel workbook file (`.xls` or `.xlsx`) with the Excel worksheet to read (relative or absolute path). [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.| None - must be specified. |
-| `SheetName` <br> *optional*| The name of the Excel worksheet within the Excel workbook to read.|The first worksheet in the Excel workbook.|
-| `TableID` <br> *optional*| A Table identifier. Refer to [documentation](../../best-practices/table-identifiers.md) for best practices on naming Table identifiers.|The `SheetName`.|
+| `InputFile` <br>  **_required_**| The Excel workbook file (`.xls` or `.xlsx`) with the Excel worksheet to read (relative or absolute path). [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.| None - must be specified. |
+| `Worksheet` <br> *optional*| The name of the Excel worksheet within the Excel workbook to read.|The first worksheet in the Excel workbook.|
+| `TableID` <br> *optional*| A Table identifier. Refer to [documentation](../../best-practices/table-identifiers.md) for best practices on naming Table identifiers.|The `Worksheet`.|
 |`IfTableIDExists`<br> *optional*|The action that occurs if the `TableID` already exists within the GeoProcessor. <br><br> `Replace` : The existing Table within the GeoProcessor is overwritten with the new Table. No warning is logged.<br><br> `ReplaceAndWarn`: The existing Table within the GeoProcessor is overwritten with the new Table. A warning is logged. <br><br> `Warn` : The new Table is not created. A warning is logged. <br><br> `Fail` : The new Table is not created. A fail message is logged. | `Replace` | 
 
 
@@ -70,7 +70,7 @@ ExampleFile1 Excel Workbook
 ### Example 1: Read a Table from the first Worksheet of an Excel File ###
 
 ```
-ReadTableFromExcel(File = "ExampleFolder/ExampleFile1.xlsx")
+ReadTableFromExcel(InputFile = "ExampleFolder/ExampleFile1.xlsx")
 ```
 
 After running the command, the following Table IDs are registered within the GeoProcessor. 
@@ -82,7 +82,7 @@ After running the command, the following Table IDs are registered within the Geo
 ### Example 2: Assign a Unique Table ID###
 
 ```
-ReadTableFromExcel(File = "ExampleFolder/ExampleFile1.geojson", TableID = "Client-Table")
+ReadTableFromExcel(InputFile = "ExampleFolder/ExampleFile1.geojson", TableID = "Client-Table")
 ```
 
 After running the command, the following Table IDs are registered within the GeoProcessor. 
@@ -94,7 +94,7 @@ After running the command, the following Table IDs are registered within the Geo
 ### Example 3: Read a Table from a Specific Worksheet of an Excel File ###
 
 ```
-ReadTableFromExcel(File = "ExampleFolder/ExampleFile1.geojson", SheetName="Products")
+ReadTableFromExcel(InputFile = "ExampleFolder/ExampleFile1.geojson", Worksheet="Products")
 ```
 
 After running the command, the following Table IDs are registered within the GeoProcessor. 

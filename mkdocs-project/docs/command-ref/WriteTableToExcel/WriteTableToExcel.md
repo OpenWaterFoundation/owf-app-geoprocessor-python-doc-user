@@ -14,7 +14,7 @@
 The `WriteTableToExcel` command reads a [Table](../../introduction#table) from an Excel file. 
 
 * Can write to a new Excel workbook file or to an existing Excel workbook file. 
-* An Excel worksheet will be overwritten if the `OutputSheetName` is the same as an existing worksheet name. 
+* An Excel worksheet will be overwritten if the `OutputWorksheet` parameter value is the same as an existing worksheet name. 
 
 ## Command Editor ##
 
@@ -37,7 +37,7 @@ Command Parameters
 | --------------|-----------------|----------------- |
 | `TableID` <br>  **_required_**| The identifier of the Table to write.| None - must be specified. |
 | `OutputFile` <br>  **_required_**| The name of the Excel workbook to write to (relative or absolute path). [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized. <br><br> Can be an existing or non-existing excel file. If non-existing, the Excel workbook file (`.xlsx`) is created. | None - must be specified. |
-| `OutputSheetName` <br>  **_required_**| The name of the worksheet that the Table will be written to. Can be an existing or non-existing worksheet. If existing, the worksheet will be overwritten with the Table data. |None - must be specified. |
+| `OutputWorksheet` <br>  **_required_**| The name of the worksheet that the Table will be written to. Can be an existing or non-existing worksheet. If existing, the worksheet will be overwritten with the Table data. |None - must be specified. |
 
 
 ## Examples ##
@@ -69,7 +69,7 @@ ExampleFolder
 ### Example 1: Write a Table to an Existing Excel Workbook (New Worksheet) ###
 
 ```
-WriteTableToExcel(TableID = "ExampleTable1", OutputFile = "ExampleFolder/ExampleFile1.xlsx", OutputSheetName = "Locations")
+WriteTableToExcel(TableID = "ExampleTable1", OutputFile = "ExampleFolder/ExampleFile1.xlsx", OutputWorksheet = "Locations")
 ```
 
 After running the command, the following Excel workbook files are within the ExampleFolder. 
@@ -82,7 +82,7 @@ After running the command, the following Excel workbook files are within the Exa
 ### Example 2: Write a Table to an Existing Excel Workbook (Existing Worksheet) ###
 
 ```
-WriteTableToExcel(TableID = "ExampleTable2", OutputFile = "ExampleFolder/ExampleFile1.xlsx", OutputSheetName = "Products")
+WriteTableToExcel(TableID = "ExampleTable2", OutputFile = "ExampleFolder/ExampleFile1.xlsx", OutputWorksheet = "Products")
 ```
 
 After running the command, the following Excel workbook files are within the ExampleFolder. Note that the `Products` worksheet is overwritten with the data from the `ExampleTable2` table.
@@ -94,7 +94,7 @@ After running the command, the following Excel workbook files are within the Exa
 ### Example 3: Write a Table to an New Excel Workbook ###
 
 ```
-WriteTableToExcel(TableID = "ExampleTable1", OutputFile = "ExampleFolder/ExampleFile2.xlsx", OutputSheetName = "Locations")
+WriteTableToExcel(TableID = "ExampleTable1", OutputFile = "ExampleFolder/ExampleFile2.xlsx", OutputWorksheet = "Locations")
 ```
 
 After running the command, the following Excel workbook files are within the ExampleFolder. 

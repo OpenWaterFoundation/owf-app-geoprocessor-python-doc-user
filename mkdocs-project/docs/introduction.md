@@ -14,6 +14,7 @@ Currently, GeoProcessor command files must be edited with a text editor.
 	+ [GeoProcessor Properties - `${Property}`](#geoprocessor-properties-property)
 	+ [Spatial Data Sources and Formats](#spatial-data-sources-and-formats)
 	+ [GeoLayer](#geolayer)
+	+ [Table](#table)
 * [Alternatives to the GeoProcessor](#alternatives-to-the-geoprocessor)
 * [Next Steps](#next-steps)
 
@@ -160,6 +161,16 @@ Command documentation will indicate whether format specifiers are supported by t
 |`%f`| Filename without leading path and without file extension.| `example`|
 |`%P`| Filename with leading path and with file extension.| `C:/Users/user/Desktop/example.geojson`|
 |`%p`| Leading path without filename and without file extension.| `C:/Users/user/Desktop`|
+
+### Table ###
+
+Another important GeoProcessor data object is the Table, which corresponds to tabular data files such as a comma separated values file or an Excel file. 
+A table is a collection of related data organized by columns and rows. 
+
+* The GeoProcessor commands assign unique identifiers to Tables as they are read so that
+commands can use the identifiers to access Tables.
+See [best practices for Table identifiers](best-practices/table-identifiers/).
+* The [For](../command-ref/For/For/) command can iterate over the rows of a Table and assign column values to GeoProcessor properties. 
 
 ## Alternatives to the GeoProcessor ##
 

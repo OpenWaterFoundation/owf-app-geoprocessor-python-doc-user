@@ -36,6 +36,7 @@ pages:
   - ReadGeoLayerFromShapefile: command-ref/ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile.md
   - ReadGeoLayersFromFGDB: command-ref/ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB.md
   - ReadGeoLayersFromFolder: command-ref/ReadGeoLayersFromFolder/ReadGeoLayersFromFolder.md
+  - ReadTableFromDelimitedFile: command-ref/ReadTableFromDelimitedFile/ReadTableFromDelimitedFile.md
   - ReadTableFromExcel: command-ref/ReadTableFromExcel/ReadTableFromExcel.md
   - RemoveFile: command-ref/RemoveFile/RemoveFile.md
   - RemoveGeoLayerAttributes: command-ref/RemoveGeoLayerAttributes/RemoveGeoLayerAttributes.md
@@ -58,6 +59,7 @@ pages:
   - WriteGeoLayerToGeoJSON: command-ref/WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON.md
   - WriteGeoLayerToKML: command-ref/WriteGeoLayerToKML/WriteGeoLayerToKML.md
   - WriteGeoLayerToShapefile: command-ref/WriteGeoLayerToShapefile/WriteGeolayerToShapefile.md
+  - WriteTableToDelimitedFile: command-ref/WriteTableToDelimitedFile/WriteTableToDelimitedFile.md
   - WriteTableToExcel: command-ref/WriteTableToExcel/WriteTableToExcel.md
   - WritePropertiesToFile: command-ref/WritePropertiesToFile/WritePropertiesToFile.md
 - Spatial Data Format Reference:
@@ -68,6 +70,7 @@ pages:
   - KML: spatial-data-format-ref/KML/KML.md
 - Best Practices:
   - GeoLayer Identifiers: best-practices/geolayer-identifiers.md
+  - Table Identifiers: best-practices/table-identifiers.md
 - Resources: resources.md
 - Troubleshooting: troubleshooting.md
 # ------- configuration properties ---------------
