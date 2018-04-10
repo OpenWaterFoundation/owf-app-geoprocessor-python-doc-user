@@ -106,6 +106,8 @@ After running the command, the following Table IDs are registered within the Geo
 
 ## Troubleshooting ##
 
+- By default, an index column is *added* to the Table when a table is read from an Excel file with the `ReadTableFromExcel` command. The added index column (row labels) has no column name and is a sequential list of integers (starting at 0). Set the `WriteIndexColumn` to `FALSE` when writing the Table out of the GeoProcessor to exclude this column. 
+
 ## See Also ##
 
 - The Tables are read using the [`Pandas Python library`](https://pandas.pydata.org/). 

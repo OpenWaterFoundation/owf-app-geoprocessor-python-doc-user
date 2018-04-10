@@ -15,6 +15,8 @@ The `WriteTableToDelimitedFile` command writes a [Table](../../introduction#tabl
 
 * The entire table is written to the output file.
 * The delimiter can be specified.
+* Can specify to include or exclude the Table's header row from the output delimited file. 
+* Can specify to include or exclude the Table's index column from the output delimited file. 
 
 ## Command Editor ##
 
@@ -38,6 +40,8 @@ Command Parameters
 | `TableID` <br>  **_required_**| The identifier of the Table to write.| None - must be specified. |
 | `OutputFile` <br> **_required_**| The output delimited file (relative or absolute path). The file extension is not required. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized. | None - must be specified. |
 |`Delimiter` <br> *optional*| The delimiter of the output delimited file. Must be a single character. |`,`|
+|`WriteHeaderRow`<br> *optional*| Boolean. <br><br> If `TRUE`, the Table's header row is *included* in the output delimited file. <br> If `FALSE`, the Table's header row is *not included* in the output delimited file.|`TRUE`|
+|`WriteIndexColumn`<br> *optional*| Boolean. <br><br> If `TRUE`, the Table's index column is *included* in the output delimited file. <br> If `FALSE`, the Table's index column is *not included* in the output delimited file.|`TRUE`|
 
 ## Examples ##
 
