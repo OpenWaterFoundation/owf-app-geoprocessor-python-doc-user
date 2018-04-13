@@ -11,11 +11,15 @@
 
 ## Overview ##
 
-The `CopyGeoLayer` command copies a GeoLayer to a new GeoLayer.
+The `CopyGeoLayer` command copies a GeoLayer to a new GeoLayer, optionally contstraining the copy to a subset of the original features.
 
 * The input GeoLayer's coordinate reference system is retained in the copied GeoLayer. 
 * The input GeoLayer's attributes are retained in the copied GeoLayer. 
 * The copied GeoLayer's source path is an empty string. 
+* The CopyGeoLayer command has **querying** capabilities. 
+	* The copied GeoLayer can retain a subset of the original GeoLayer's features.
+	* The copied GeoLayer can retain a subset of the original GeoLayer's attributes.
+
 
 ## Command Editor ##
 

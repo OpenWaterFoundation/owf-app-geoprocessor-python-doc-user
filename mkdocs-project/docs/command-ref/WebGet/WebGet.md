@@ -15,6 +15,7 @@ The `WebGet` command downloads a file or other web resource from a URL source. C
 
 * Download data files
 * Query web services 
+* Can specify a username and password if the url is privately secured.
 
 ## Command Editor ##
 
@@ -37,6 +38,8 @@ Command Parameters
 | --------------|-----------------|----------------- |
 | `URL` <br>  **_required_**| The URL of the resource to download. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.| None - must be specified. |
 | `OutputFile` <br> *optional*| The output file path (relative or absolute). [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized. [Formatting character (%f)](../../introduction/#geolayer-property-format-specifiers) is recognized. If already existing, the output file will be overwritten.| Same filename as source. Saved to the parent folder of the `.gp` workflow. |
+|`Username` <br> *optional*| A valid username to access a private URL file.|`None` - the URL is downloaded as a public file.|
+|`Password` <br> *optional*| A valid password to access a private URL file.|`None` - the URL is downloaded as a public file.|
 
 
 ## Examples ##

@@ -48,13 +48,12 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 
 * [AddGeoLayerAttribute](AddGeoLayerAttribute/AddGeoLayerAttribute) - add an attribute to a GeoLayer
 * [ClipGeoLayer](ClipGeoLayer/ClipGeoLayer) - clip a GeoLayer by the boundary of another GeoLayer 
-* [CopyGeoLayer](CopyGeoLayer/CopyGeoLayer) - copy a GeoLayer to a new GeoLayer
+* [CopyGeoLayer](CopyGeoLayer/CopyGeoLayer) - copy a GeoLayer to a new GeoLayer, optionally constraining the copy to a subset of the original features/attributes
 * [CreateGeoLayerFromGeometry](CreateGeoLayerFromGeometry/CreateGeoLayerFromGeometry) - create a GeoLayer from input geometry data
 * [FreeGeoLayers](FreeGeoLayers/FreeGeoLayers) - removes one or more GeoLayers from the GeoProcessor
 * [IntersectGeoLayer](IntersectGeoLayer/IntersectGeoLayer) - intersects a GeoLayer by another GeoLayer
 * [MergeGeoLayers](MergeGeoLayers/MergeGeoLayers) - merge multiple GeoLayers into one GeoLayer
 * [ReadGeoLayerFromDelimitedFile](ReadGeoLayerFromDelimitedFile/ReadGeoLayerFromDelimitedFile) - read a GeoLayer from a file in delimited file format
-* [ReadGeoLayerFromFGDB](ReadGeoLayerFromFGDB/ReadGeoLayerFromFGDB) - read a single GeoLayer from a file geodatabase
 * [ReadGeoLayerFromGeoJSON](ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON) - read a GeoLayer from a file in GeoJSON format
 * [ReadGeoLayerFromShapefile](ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile) - read a GeoLayer from a file in Shapefile format
 * [ReadGeoLayersFromFGDB](ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB) - read one or more GeoLayers from a file geodatabase
