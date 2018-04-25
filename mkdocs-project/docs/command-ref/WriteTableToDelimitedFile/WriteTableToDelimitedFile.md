@@ -15,7 +15,7 @@ The `WriteTableToDelimitedFile` command writes a [Table](../../introduction#tabl
 
 * The entire table is written to the output file.
 * The delimiter can be specified.
-* Can specify to include or exclude the Table's header row from the output delimited file. 
+* Can specify which Table columns to write to the delimited file. 
 * Can specify to include or exclude the Table's index column from the output delimited file. 
 
 ## Command Editor ##
@@ -38,10 +38,17 @@ Command Parameters
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
 | `TableID` <br>  **_required_**| The identifier of the Table to write.| None - must be specified. |
-| `OutputFile` <br> **_required_**| The output delimited file (relative or absolute path). The file extension is not required. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized. | None - must be specified. |
+| `OutputFile` <br> **_required_**| The output delimited file (relative or absolute path). [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized. | None - must be specified. |
 |`Delimiter` <br> *optional*| The delimiter of the output delimited file. Must be a single character. |`,`|
-|`WriteHeaderRow`<br> *optional*| Boolean. <br><br> If `TRUE`, the Table's header row is *included* in the output delimited file. <br> If `FALSE`, the Table's header row is *not included* in the output delimited file.|`TRUE`|
+|`ColumnsToInclude`<br> *optional*| A comma-separated list of the [glob-sytle patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which columns to include in the delimited file. <br><br> See [Determining Which Columns to Write](#determining-which-columns-to-write).| `*` <br><br> All columns are written. |  
+|`ColumnsToExclude`<br> *optional*| A comma-separated list of the [glob-sytle patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which columns to exclude in the delimited file. <br><br> See [Determining Which Columns to Write](#determining-which-columns-to-write).| `'' (empty string)` <br><br> All columns are written. |
 |`WriteIndexColumn`<br> *optional*| Boolean. <br><br> If `TRUE`, the Table's index column is *included* in the output delimited file. <br> If `FALSE`, the Table's index column is *not included* in the output delimited file.|`TRUE`|
+
+### Determining Which Columns to Write
+
+* The `ColumnsToInclude` parameter is always processed first. The`ColumnsToExclude` parameter is always processed second. 
+	* The `ColumnsToInclude` *selects* all of the Table's columns that follow the given patterns. By default (`*`) all of the Table's columns are included. 
+	* The `ColumnsToExclude` *removes* all of the columns *previously selected from the `ColumnsToInclude` parameter* that follow the given patterns. 
 
 ## Examples ##
 
@@ -94,6 +101,46 @@ ExampleOutputFolder
 **ExampleFile1_comma.csv File Content**
 
 ```
+,Id,Color,Landmark
+0,1,Blue,River Crossing
+1,2,Blue,Courthouse
+2,3,Red,Farmhouse
+3,4,Blue,Bakery
+```
+---
+
+---
+**ExampleFile1_semicolon.csv File Content**
+
+```
+;Id;Color;Landmark
+0;1;Blue;River Crossing
+1;2;Blue;Courthouse
+2;3;Red;Farmhouse
+3;4;Blue;Bakery
+```
+---
+
+### Example 2: Write a Table to a Delimited File (Exclude Index Column)
+
+```
+WriteTableToDelimitedFile(TableID = "ExampleTable", OutputFile = "ExampleOutputFolder/ExampleFile1", WriteIndexColumn="False")
+```
+
+After running the commands the following delimited file is written to the `ExampleOutputFolder` folder. 
+
+**<p style="text-align: left;">
+ExampleOutputFolder
+</p>**
+
+|Filename|Delimiter|
+|------|---|
+|ExampleFile1.csv|`,`|
+
+---
+**ExampleFile1.csv File Content**
+
+```
 Id,Color,Landmark
 1,Blue,River Crossing
 2,Blue,Courthouse
@@ -102,15 +149,45 @@ Id,Color,Landmark
 ```
 ---
 
----
-**ExampleFile1_semicolon.csv File Content**
+### Example 3: Write a Table to a Delimited File (Write a Subset of Columns)
 
 ```
-Id;Color;Landmark
-1;Blue;River Crossing
-2;Blue;Courthouse
-3;Red;Farmhouse
-4;Blue;Bakery
+WriteTableToDelimitedFile(TableID = "ExampleTable", OutputFile = "ExampleOutputFolder/ExampleFile1_ID", WriteIndexColumn="False", ColumnsToInclude="Id")
+WriteTableToDelimitedFile(TableID = "ExampleTable", OutputFile = "ExampleOutputFolder/ExampleFile2_noID", WriteIndexColumn="False", ColumnsToExclude="Id")
+```
+
+After running the commands the following delimited files are written to the `ExampleOutputFolder` folder. 
+
+**<p style="text-align: left;">
+ExampleOutputFolder
+</p>**
+
+|Filename|Delimiter|
+|------|---|
+|ExampleFile1_ID.csv|`,`|
+|ExampleFile2_noID.csv|`,`|
+
+---
+**ExampleFile1_ID.csv File Content**
+
+```
+Id
+1
+2
+3
+4
+```
+---
+
+---
+**ExampleFile2_noID.csv File Content**
+
+```
+Color,Landmark
+Blue,River Crossing
+Blue,Courthouse
+Red,Farmhouse
+Blue,Bakery
 ```
 ---
 

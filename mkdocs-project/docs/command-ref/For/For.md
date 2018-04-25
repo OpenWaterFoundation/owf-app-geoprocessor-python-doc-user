@@ -46,15 +46,18 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `Name` | The name of the for loop, which will be matched with the name of an `EndFor` command to indicate the block of commands in the loop. | None - must be specified. |
-| `IteratorProperty` | The processor property that will be set to the iterator property. The object type will depend on that used to provide the iteration property list. For example, if a sequence of integers is being iterated, the property will contain an integer. | Same as `Name`.
+| `Name` <br> ***required***| The name of the for loop, which will be matched with the name of an `EndFor` command to indicate the block of commands in the loop. | None - must be specified. |
+| `IteratorProperty` | The processor property that will be set to the iterator property. The object type will depend on that used to provide the iteration property list. For example, if a sequence of integers is being iterated, the property will contain an integer. | Same as `Name`.|
+||If iterating over a **LIST** ...|
 | `ListProperty` | Specify if the list is iterating over a property that contains a list of strings. | Specify this or `Sequence*` parameters. |
+||If iterating over a **SEQUENCE** ...|
 | `SequenceStart` | Starting value when a sequence is specified for iteration, an integer or floating-point number (with decimal). | No default if sequence is used. |
 | `SequenceEnd` | Ending value when a sequence is specified for iteration, an integer or floating-point number (with decimal). | No default if sequence is used. |
 | `SequenceIncrement` | Increment for sequence iterator. | `1` or `1.0` depending on type for `SequenceStart`. |
+||If iterating over a **TABLE** ...|
 | `TableID`|The table identifier, when specifying the iterator as a column from a table. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.|No default if table is used. |
 | `TableColumn`|The table column name, when specifying the iterator as a column from a table. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.|No default if table is used. |
-| `TablePropertyMap`|Specify the names of column names and corresponding processor property names to set. This allows other commands to access the values of those properties using [`${Property}` syntax](../../introduction/#geoprocessor-properties-property). <br><br> Specify using format: <br> ColumnName1:PropertyName1,ColumnName2:PropertyName2|None - only the iterator column value will be set as a property using `IteratorProperty`.|
+| `TablePropertyMap`|Specify the names of column names and corresponding processor property names to set. This allows other commands to access the values of those properties using [`${Property}` syntax](../../introduction/#geoprocessor-properties-property). <br><br> Specify using format: <br> `ColumnName1:PropertyName1,ColumnName2:PropertyName2`|None - only the iterator column value will be set as a property using `IteratorProperty`.|
 
 
 ## Examples ##

@@ -5,6 +5,7 @@ by the GeoProcessor, as listed below.
 
 * [Command Overview](#command-overview)
 * [Commands for Processing Spatial Data Layers](#commands-for-processing-spatial-data-layers)
+* [Commands for Processing Tabular Data](#commands-for-processing-tabular-data)
 * [Commands to Control Running](#commands-to-control-running)
 * [Commands for Handling Files](#commands-for-handling-files)
 * [Commands for Messages and Logging](#commands-for-messages-and-logging)

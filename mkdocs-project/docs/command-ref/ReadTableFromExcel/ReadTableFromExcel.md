@@ -37,7 +37,7 @@ Command Parameters
 | --------------|-----------------|----------------- |
 | `InputFile` <br>  **_required_**| The Excel workbook file (`.xls` or `.xlsx`) with the Excel worksheet to read (relative or absolute path). [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.| None - must be specified. |
 | `Worksheet` <br> *optional*| The name of the Excel worksheet within the Excel workbook to read.|The first worksheet in the Excel workbook.|
-| `TableID` <br> *optional*| A Table identifier. Refer to [documentation](../../best-practices/table-identifiers.md) for best practices on naming Table identifiers.|The `Worksheet`.|
+| `TableID` <br> *optional*| A Table identifier. Refer to [documentation](../../best-practices/table-identifiers.md) for best practices for naming Table identifiers.|The `Worksheet`.|
 |`IfTableIDExists`<br> *optional*|The action that occurs if the `TableID` already exists within the GeoProcessor. <br><br> `Replace` : The existing Table within the GeoProcessor is overwritten with the new Table. No warning is logged.<br><br> `ReplaceAndWarn`: The existing Table within the GeoProcessor is overwritten with the new Table. A warning is logged. <br><br> `Warn` : The new Table is not created. A warning is logged. <br><br> `Fail` : The new Table is not created. A fail message is logged. | `Replace` | 
 
 
@@ -106,7 +106,6 @@ After running the command, the following Table IDs are registered within the Geo
 
 ## Troubleshooting ##
 
-- By default, an index column is *added* to the Table when a table is read from an Excel file with the `ReadTableFromExcel` command. The added index column (row labels) has no column name and is a sequential list of integers (starting at 0). Set the `WriteIndexColumn` to `FALSE` when writing the Table out of the GeoProcessor to exclude this column. 
 
 ## See Also ##
 

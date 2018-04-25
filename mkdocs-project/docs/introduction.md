@@ -164,13 +164,17 @@ Command documentation will indicate whether format specifiers are supported by t
 
 ### Table ###
 
-Another important GeoProcessor data object is the Table, which corresponds to tabular data files such as a comma separated values file or an Excel file. 
+Another important GeoProcessor data object is the Table, which corresponds to tabular data files such as comma separated value (csv) files, Excel worksheets and database tables. 
 A table is a collection of related data organized by columns and rows. 
+
+A Table object contains column names. Each column contains data of a single data type (integer, string, double, boolean, etc.).
+
+A Table object always has an index column that is created once a tabular dataset is read into the GeoProcessor. The added index column (row labels) has no column name and is a sequential list of integers (starting at 0). It is used as the row identifiers in the GeoProcessor. All commands that write a Table from the GeoProcessor to a tabular format include a `WriteIndexColumn` parameter. Set this parameter to `TRUE` to include this added index column in the output data file. Set this parameter to `FALSE` to exclude this added index column in the output data file. 
 
 * The GeoProcessor commands assign unique identifiers to Tables as they are read so that
 commands can use the identifiers to access Tables.
 See [best practices for Table identifiers](best-practices/table-identifiers/).
-* The [For](../command-ref/For/For/) command can iterate over the rows of a Table and assign column values to GeoProcessor properties. 
+* The [For](../command-ref/For/For/) command can iterate over the rows of a Table and assign column cell values to GeoProcessor properties. 
 
 ## Alternatives to the GeoProcessor ##
 
