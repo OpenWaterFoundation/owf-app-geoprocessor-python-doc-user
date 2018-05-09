@@ -34,7 +34,9 @@ The GeoProcessor is distributed in two versions:
 		- ![Windows](images/windows-32.png) Windows: Install from `gptest-sitepackage.zip`
 		- ![Linux](images/linux-32.png) Linux: Install from `gptest-sitepackage.tar.gz`
 
-## Install QGIS ##
+## Install Full GeoProcessor/QGIS version ##
+		
+### Install QGIS ###
 
 The full GeoProcessor installation requires that QGIS is installed.
 See the [Resources](resources#QGIS) information for how to install QGIS.
@@ -48,7 +50,7 @@ The GeoProcessor will then automatically run using the Python 2 QGIS in the LTR 
 
 The QGIS installation procedure is likely to change as QGIS 3 becomes more stable.
 
-## Install Python (Optional) ##
+### Install Python (Optional) ###
 
 The GeoProcessor requires Python 2.7+.
 The `gp` program (see next section) that runs the GeoProcessor typically uses the Python distributed with QGIS.
@@ -57,13 +59,16 @@ In the future the GeoProcessor may be distributed with a Python virtual environm
 However, this is currently not complete because of dependence on the QGIS installation.
 **Advice on this topic from the developer community is welcomed.**
 
-## Install GeoProcessor ##
+### Install GeoProcessor ###
 
 The GeoProcessor installation does not currently use the standard Python `pip` or `pipenv`
 installation tools (this will be implemented in the future).
 Currently a manual installation process is used:
 
 ### Install GeoProcessor `geoprocessor` Python Package ###
+
+The GeoProcessor Python modules need to be installed in a folder where the Python interpreter can find the files.
+Candidate locations will vary depending on how Python 2 is installed on the computer.
 
 The GeoProcessor Python modules need to be installed in a folder where the Python interpreter can find the files.
 Candidate locations will vary depending on how Python 2 is installed on the computer.
@@ -122,3 +127,35 @@ using the `-m geoprocessor.app.gp` Python command line parameter.
 If the GeoProcessor package was installed in a folder (such as `site-packages`) that is known to the
 Python interpreter, the GeoProcessor software will be found and will run.
 Otherwise, an error will be displayed about the module not being found and installation locations need to be reviewed.
+
+### Additional Python Packages - QGIS on Windows Version
+
+Additional Python packages, listed in the table below, are required to be installed to run all features of the GeoProcessor. Currently, these packages must be installed manually after the GeoProcessor is installed. In the future, these Python packages will be packaged within the GeoProcessor install so that users will not have to include this step in the install process. 
+
+To install on Windows QGIS version of GeoProcessor:
+
+1. Open `OSGeo4W shell`. 
+2. Use `cd` to navigate to the QGIS-version `Python27` directory. Example: `cd OSGeo4W64\apps\Python27`. 
+3. Enter the software package pip command (located in the `Pip Command` column of the table below).
+
+|Software Package Name|Source Link(s)|How Used Within GeoProcessor|Pip Command|
+|-|-|-|-|
+|pandas|[https://pandas.pydata.org/](https://pandas.pydata.org/)|Child object class for Table objects. Holds and manipulates Table data.|`pip install pandas`|
+|OpenPyXL|[https://openpyxl.readthedocs.io/en/stable/](https://openpyxl.readthedocs.io/en/stable/)|Reads and writes Excel 2010 xlsx/xlsm files to and from Table objects.|`pip install openpyxl`|
+|requests (extended package)|[http://docs.python-requests.org/en/master/](http://docs.python-requests.org/en/master/)<br><br> [https://pypi.org/project/requests/](https://pypi.org/project/requests/)|Downloads online data files within the WebGet() command. <br><br>The `requests[security]` extension package is preferred over the core `requests` package to avoid an error that would occur when downloading a file over `https` with the WebGet() command. The error that occurred when using the core `requests` package printed:<br>`requests.exceptions.SSLError: [Errno 1] _ssl.c:503: error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol`. <br>This error does not occur when utilizing the `requests[security]` extension package. | `pip install requests[security]`|
+
+
+### Additional Python Packages - Linux Test Framework Version
+
+Additional Python packages, listed in the table below, are required to be installed to run all features of the GeoProcessor. Currently, these packages must be installed manually after the GeoProcessor is installed. In the future, these Python packages will be packaged within the GeoProcessor install so that users will not have to include this step in the install process. 
+
+To install on Linux test framework version of GeoProcessor:
+
+1. Open a terminal. 
+2. Enter the software package apt-get command (located in the `apt-get Command` column of the table below).
+
+|Software Package Name|Source Link(s)|How Used Within GeoProcessor|apt-get Command|
+|-|-|-|-|
+|pandas|[https://pandas.pydata.org/](https://pandas.pydata.org/)|Child object class for Table objects. Holds and manipulates Table data.|`sudo apt-get install python-pandas`|
+|OpenPyXL|[https://openpyxl.readthedocs.io/en/stable/](https://openpyxl.readthedocs.io/en/stable/)|Reads and writes Excel 2010 xlsx/xlsm files to and from Table objects.|No need to install - already packaged on Linux python.|
+|requests (extended package)|[http://docs.python-requests.org/en/master/](http://docs.python-requests.org/en/master/)<br><br> [https://pypi.org/project/requests/](https://pypi.org/project/requests/)|Downloads online data files within the WebGet() command. <br><br>The `requests[security]` extension package is preferred over the core `requests` package to avoid an error that would occur when downloading a file over `https` with the WebGet() command. The error that occurred when using the core `requests` package printed:<br>`requests.exceptions.SSLError: [Errno 1] _ssl.c:503: error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol`. <br>This error does not occur when utilizing the `requests[security]` extension package. |No need to install - already packaged on Linux python.|
