@@ -57,21 +57,14 @@ Installation for each version is described in separate sections to avoid confusi
 		
 ### Install QGIS ###
 
-The full GeoProcessor installation for QGIS requires that QGIS is installed.
+The full GeoProcessor installation for QGIS requires that QGIS (Version 3) is installed.
 See the [Resources](resources#QGIS) information for how to install QGIS.
 It is recommended that the current QGIS version is installed in the default location to minimize configuration issues.
-As of March, 2018, the default QGIS installer installs QGIS 3.x,
-which does not appear to be ready for full production use, and the GeoProcessor relies on QGIS 2.x and Python 2.
-Therefore, when installing the current QGIS, use the ***Advanced Install*** feature of the installer and
-select the "stable long-term release (LTR)" for installation.
-This will install the latest stable QGIS 2 in addition to the QGIS 3 version.
-The GeoProcessor will then automatically run using the Python 2 QGIS in the LTR release.
 
-The QGIS installation procedure is likely to change as QGIS 3 becomes more stable.
 
 ### Install Python for QGIS (Optional) ###
 
-The GeoProcessor requires Python 2.7+.
+The GeoProcessor requires Python 3.6+.
 The `gp` program (see next section) that runs the GeoProcessor typically uses the Python distributed with QGIS.
 
 In the future the GeoProcessor may be distributed with a Python virtual environment.
@@ -97,7 +90,7 @@ now files may be distributed by email**).
 		2. `gptest-sitepackage.tar.gz` - test framework GeoProcessor (no QGIS)
 2. Determine candidate install locations:
 	1. ![Windows](images/windows-32.png) Windows QGIS version:
-		1. For QGIS 2.18 (or similar), is typically `C:\OSGeo4W64\apps\Python27\Lib\site-packages`.
+		1. For QGIS 3.1 (or similar), is typically `C:\OSGeo4W64\apps\Python36\Lib\site-packages`.
 3. Remove previous installation.  Delete the `geoprocessor` folder from the location determined in the previous step.
 4. Install the GeoProcessor package (`geoprocessor` folder and everything included in that folder).
 	1. ![Windows](images/windows-32.png) Windows QGIS version:
@@ -109,7 +102,7 @@ Simple scripts are provided for Windows (`gp.bat` and `gptest.bat`) and Linux (`
 to configure the GeoProcessor Python environment and run the GeoProcessor.
 The programs should be installed in a location that facilitates running the GeoProcessor.
 The Windows `gp.bat` and Linux `gp.sh` scripts assume a location for the QGIS install and its embedded Python.
-The Windows `gptest.bat` and Linux `gptest.sh` scripts check for Python 2 on the system
+The Windows `gptest.bat` and Linux `gptest.sh` scripts check for Python 3 on the system
 (because QGIS Python is not used).
 If the location of the Python interpreter does not match the location in the script,
 then the script may need to be edited to specify the actual Python interpreter location.
@@ -148,7 +141,7 @@ The test framework is automatically installed when the QGIS and ArcGIS versions 
 
 ### Install Python for GeoProcessor Test Framework (Optional) ###
 
-The test framework version of the  GeoProcessor currently requires Python 2.7+ (version 3.x is not yet supported).
+The test framework version of the  GeoProcessor currently requires Python 3.6+.
 
 In the future the GeoProcessor may be distributed with a Python virtual environment.
 However, this is currently not implemented.
@@ -162,7 +155,7 @@ Currently a manual installation process is used:
 ### Install `geoprocessor` Python Package for Test Framework ###
 
 The GeoProcessor Python modules need to be installed in a folder where the Python interpreter can find the files.
-Candidate locations will vary depending on how Python 2 is installed on the computer.
+Candidate locations will vary depending on how Python 3 is installed on the computer.
 
 1. Download GeoProcessor package installer (**standard download website needs to be implemented - for
 now files may be distributed by email**).
@@ -172,9 +165,9 @@ now files may be distributed by email**).
 		1. `gptest-sitepackage.tar.gz` - test framework GeoProcessor (no QGIS)
 2. Determine candidate install locations:
 	1. ![Cygwin](images/cygwin-32.png) Linux test framework version:
-		1. For Cygwin, is typically `/usr/lib/python2.7/site-packages`.
+		1. For Cygwin, is typically `/usr/lib/python3.6/site-packages`.
 	2. ![Linux](images/linux-32.png) Linux test framework version:
-		2. For Debian Linux, is typically `/usr/local/lib/python2.7/dist-packages`.
+		2. For Debian Linux, is typically `/usr/local/lib/python3.6/dist-packages`.
 3. Remove previous installation.  Delete the `geoprocessor` folder from the location determined in the previous step.
 4. Install the GeoProcessor package (`geoprocessor` folder and everything included in that folder).
 	1. ![Linux](images/linux-32.png) Linux test framework version:
@@ -185,7 +178,7 @@ now files may be distributed by email**).
 A simple script is provided for Windows (`gptest.bat`) and Linux (`gptest.sh`)
 to configure the GeoProcessor Python environment and run the GeoProcessor.
 The programs should be installed in a location that facilitates running the GeoProcessor.
-The Windows `gptest.bat` and Linux `gptest.sh` scripts check for Python 2 on the system (because QGIS and ArcGIS Python are not used).
+The Windows `gptest.bat` and Linux `gptest.sh` scripts check for Python 3 on the system (because QGIS and ArcGIS Python are not used).
 If the location of the Python interpreter does not match the location in the script,
 then the script may need to be edited to specify the actual Python interpreter location.
 
@@ -216,14 +209,14 @@ so that users will not have to include this step in the install process.
 To install on Windows QGIS version of GeoProcessor:
 
 1. Open `OSGeo4W shell`. 
-2. Use `cd` to navigate to the QGIS-version `Python27` directory. Example: `cd OSGeo4W64\apps\Python27`. 
-3. Enter the software package pip command (located in the `Pip Command` column of the table below).
+2. Enter `set PYTHONHOME=C:\OSGeo4W64\apps\Python36`
+3. Enter the software package command (located in the `Command` column of the table below).
 
-|**Software Package Name**|**Source Link(s)**|**How Used Within GeoProcessor**|**Pip Command**|
+|**Software Package Name**|**Source Link(s)**|**How Used Within GeoProcessor**|** Command**|
 |-|-|-|-|
-|pandas|[https://pandas.pydata.org/](https://pandas.pydata.org/)|Holds and manipulates Table data.|`pip install pandas`|
-|OpenPyXL|[https://openpyxl.readthedocs.io/en/stable/](https://openpyxl.readthedocs.io/en/stable/)|Reads and writes Excel 2010 xlsx/xlsm files to and from Table objects.|`pip install openpyxl`|
-|requests (extended package)|[http://docs.python-requests.org/en/master/](http://docs.python-requests.org/en/master/)<br><br> [https://pypi.org/project/requests/](https://pypi.org/project/requests/)|Downloads data files within the [`WebGet`](../command-ref/WebGet/WebGet) command. <br><br>The `requests[security]` extension package is preferred over the core `requests` package to avoid an error that would occur when downloading a file over `https` with the [`WebGet`](../command-ref/WebGet/WebGet) command. The error that occurred when using the core `requests` package printed:<br>`requests.exceptions.SSLError: [Errno 1] _ssl.c:503: error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol`. <br>This error does not occur when utilizing the `requests[security]` extension package. | `pip install requests[security]`|
+|pandas|[https://pandas.pydata.org/](https://pandas.pydata.org/)|Holds and manipulates Table data.|`py -m pip install pandas`|
+|OpenPyXL|[https://openpyxl.readthedocs.io/en/stable/](https://openpyxl.readthedocs.io/en/stable/)|Reads and writes Excel 2010 xlsx/xlsm files to and from Table objects.|`py -m pip install openpyxl`|
+|requests (extended package)|[http://docs.python-requests.org/en/master/](http://docs.python-requests.org/en/master/)<br><br> [https://pypi.org/project/requests/](https://pypi.org/project/requests/)|Downloads data files within the [`WebGet`](../command-ref/WebGet/WebGet) command. <br><br>The `requests[security]` extension package is preferred over the core `requests` package to avoid an error that would occur when downloading a file over `https` with the [`WebGet`](../command-ref/WebGet/WebGet) command. The error that occurred when using the core `requests` package printed:<br>`requests.exceptions.SSLError: [Errno 1] _ssl.c:503: error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol`. <br>This error does not occur when utilizing the `requests[security]` extension package. | `py -m pip install requests[security]`|
 
 ### Linux Test Framework Version ###
 
@@ -233,9 +226,11 @@ To install additional packages on for the Linux test framework version of GeoPro
 2. Enter the software package `apt-get` command (located in the `apt-get Command` column of the table below).
 
 The following has been tested on Jessian 64-bit Debian Linux.
-
-|**Software Package Name**|**Source Link(s)**|**How Used Within GeoProcessor**|**`apt-get` Command**|
+|**Software Package Name**|**Source Link(s)**|**How Used Within GeoProcessor**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|**Command**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 |-|-|-|-|
-|pandas|[https://pandas.pydata.org/](https://pandas.pydata.org/)|Holds and manipulates Table data.|`sudo apt-get install python-pandas`|
-|OpenPyXL|[https://openpyxl.readthedocs.io/en/stable/](https://openpyxl.readthedocs.io/en/stable/)|Reads and writes Excel 2010 xlsx/xlsm files to and from Table objects.|No need to install - already packaged on Linux Python.|
-|requests (extended package)|[http://docs.python-requests.org/en/master/](http://docs.python-requests.org/en/master/)<br><br> [https://pypi.org/project/requests/](https://pypi.org/project/requests/)|Downloads online data files within the [`WebGet`](../command-ref/WebGet/WebGet) command. <br><br>The `requests[security]` extension package is preferred over the core `requests` package to avoid an error that would occur when downloading a file over `https` with the [`WebGet`](../command-ref/WebGet/WebGet) command. The error that occurred when using the core `requests` package printed:<br>`requests.exceptions.SSLError: [Errno 1] _ssl.c:503: error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol`. <br>This error does not occur when utilizing the `requests[security]` extension package. |No need to install - already packaged on Linux python.|
+|PyQt5|[https://pypi.org/project/PyQt5/](https://pypi.org/project/PyQt5/)|Builds the user interface.|`sudo apt-get install python3-pyqt5`|
+|pandas|[https://pandas.pydata.org/](https://pandas.pydata.org/)|Holds and manipulates Table data.|`sudo apt-get install python3-pandas`|
+|pip|[https://pypi.org/project/pip/](https://pypi.org/project/pip/)|Installs packages dependent on pip installers.|`sudo apt-get install python3-pip`|
+|OpenPyXL|[https://openpyxl.readthedocs.io/en/stable/](https://openpyxl.readthedocs.io/en/stable/)|Reads and writes Excel 2010 xlsx/xlsm files to and from Table objects.|`sudo pip3 install openpyxl`|
+|xlwt|[https://pypi.org/project/xlwt/](https://pypi.org/project/xlwt/)|Add compatibility to create spreadsheet files (Microsoft Excel versions 95 to 2003)|`sudo pip3 install xlwt`|
+
