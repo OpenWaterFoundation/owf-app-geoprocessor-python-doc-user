@@ -15,6 +15,7 @@ Currently, GeoProcessor command files must be edited with a text editor.
 	+ [Spatial Data Sources and Formats](#spatial-data-sources-and-formats)
 	+ [GeoLayer](#geolayer)
 	+ [Table](#table)
+	+ [DataStore](#datastore)
 * [Alternatives to the GeoProcessor](#alternatives-to-the-geoprocessor)
 * [Next Steps](#next-steps)
 
@@ -175,6 +176,12 @@ A Table object always has an index column that is created once a tabular dataset
 commands can use the identifiers to access Tables.
 See [best practices for Table identifiers](best-practices/table-identifiers/).
 * The [For](../command-ref/For/For/) command can iterate over the rows of a Table and assign column cell values to GeoProcessor properties. 
+
+### DataStore ###
+
+A DataStore is a connection to allow access to the data within a database.
+
+**TODO egiles 2018/06/05 Steve needs to fill this section out with a brief but descriptive explanation of a DataStore.**
 
 ## Alternatives to the GeoProcessor ##
 
