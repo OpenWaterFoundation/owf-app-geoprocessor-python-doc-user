@@ -6,6 +6,7 @@ by the GeoProcessor, as listed below.
 * [Command Overview](#command-overview)
 * [Commands for Processing Spatial Data Layers](#commands-for-processing-spatial-data-layers)
 * [Commands for Processing Tabular Data](#commands-for-processing-tabular-data)
+* [Commands for Processing Datastores](#commands-for-processing--datastores)
 * [Commands to Control Running](#commands-to-control-running)
 * [Commands for Handling Files](#commands-for-handling-files)
 * [Commands for Messages and Logging](#commands-for-messages-and-logging)
@@ -71,13 +72,17 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 
 ## Commands for Processing Tabular Data ##
 
-* [OpenDataStore](OpenDataStore/OpenDataStore) - create a DataStore connection
-* [ReadTableFromDataStore](ReadTableFromDataStore/ReadTableFromDataStore) - read a Tabel from a DataStore
+* [ReadTableFromDataStore](ReadTableFromDataStore/ReadTableFromDataStore) - read a table from a DataStore
 * [ReadTableFromDelimitedFile](ReadTableFromDelimitedFile/ReadTableFromDelimitedFile) - read a Table from a delimited file
 * [ReadTableFromExcel](ReadTableFromExcel/ReadTableFromExcel) - read a Table from an Excel file
 * [WriteTableToDataStore](WriteTableToDataStore/WriteTableToDataStore) - write a Table to a DataStore
 * [WriteTableToDelimitedFile](WriteTableToDelimitedFile/WriteTableToDelimitedFile) - write a Table to a delimited file
 * [WriteTableToExcel](WriteTableToExcel/WriteTableToExcel) - write a Table to an Excel file
+
+## Commands for Processing Datastores ##
+
+* [OpenDataStore](OpenDataStore/OpenDataStore) - create a DataStore connection
+* [ReadTableFromDataStore](ReadTableFromDataStore/ReadTableFromDataStore) - read a table from a DataStore
 
 ## Commands to Control Running ##
 

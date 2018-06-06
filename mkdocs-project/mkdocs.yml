@@ -33,13 +33,16 @@ pages:
     - WriteGeoLayerToKML: command-ref/WriteGeoLayerToKML/WriteGeoLayerToKML.md
     - WriteGeoLayerToShapefile: command-ref/WriteGeoLayerToShapefile/WriteGeolayerToShapefile.md
   - Tabular Data:
-    - OpenDataStore: command-ref/OpenDataStore/OpenDataStore.md
     - ReadTableFromDataStore: command-ref/ReadTableFromDataStore/ReadTableFromDataStore.md
     - ReadTableFromDelimitedFile: command-ref/ReadTableFromDelimitedFile/ReadTableFromDelimitedFile.md
     - ReadTableFromExcel: command-ref/ReadTableFromExcel/ReadTableFromExcel.md
     - WriteTableToDataStore: command-ref/WriteTableToDataStore/WriteTableToDataStore.md
     - WriteTableToDelimitedFile: command-ref/WriteTableToDelimitedFile/WriteTableToDelimitedFile.md
     - WriteTableToExcel: command-ref/WriteTableToExcel/WriteTableToExcel.md
+  - DataStore Processing:
+    - OpenDataStore: command-ref/OpenDataStore/OpenDataStore.md
+    - ReadTableFromDataStore: command-ref/ReadTableFromDataStore/ReadTableFromDataStore.md
+    - WriteTableToDataStore: command-ref/WriteTableToDataStore/WriteTableToDataStore.md
   - Control Running: 
     - EndFor: command-ref/EndFor/EndFor.md
     - EndIf: command-ref/EndIf/EndIf.md

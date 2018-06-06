@@ -11,7 +11,32 @@
 
 ## Overview ##
 
-The `OpenDataStore` command creates a new [DataStore](../../introduction#datastore) allowing access to a database's data.
+The `OpenDataStore` command creates a new generic [DataStore](../../introduction#datastore) to provide
+data access from:
+
+* a database
+* a web service
+
+Datastore features in the GeoProcessor currently focus on relational databases that can
+be queried to return tabular datasets.
+In the future, support for web services will be added.
+
+For security reasons, the account name and password used for the connection should generally **not** be directly
+included in the command parameters.  This is less of an issue for read-only `guest` accounts.
+To allow flexibility, use the `${env:Property}` notation to specify that the parameter value
+is taken from an environment variable, and set the environment variable dynamically in the
+run-time environment.
+
+Database datastores are implemented using Pandas Python package Dataframe and appropriate database driver software.
+The following are supported database types:
+
+**<p style="text-align: center;">
+Supported Database Types
+</p>**
+
+|**`DatabaseType` Parameter**|**Notes**|
+|--|--|
+|`PostgreSQL`|Requires ?? to be installed.  See [installation instructions](../../install/#install-additional-python-packages).|
 
 ## Command Editor ##
 
@@ -30,14 +55,15 @@ OpenDataStore(Parameter="Value",...)
 Command Parameters
 </p>**
 
-|**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+|**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 | --------------|-----------------|----------------- |
-|`Host` <br> **_required_**| The database host name.| None - must be specified.|
-|`DatabaseName` <br> **_required_**| The name of the database.|None - must be specified.|
-|`User`<br> **_required_**|The database user.|None - must be specified.|
-|`Password`<br> **_required_**|The database password.|None - must be specified.|
-|`Port` <br> **_required_**|The database port.|None - must be specified.|
-|`DataStoreID`<br> *optional*|Identifier to assign to the DataStore. This allows the DataStore to be used with other commands. A new DataStore will be created.|The `DatabaseName` value is used as the DataStore ID.|
+|`DatabaseType`<br>**_required_**| The database type, used to format the database connection URL for the matching database driver software.  Currently the following are supported: `PostgreSQL`.| None - must be specified.|
+|`DatabaseServer`<br>**_required_**| The database server name or IP address.  Can be specified using `${Property}`.| None - must be specified.|
+|`DatabaseName`<br>**_required_**| The name of the database.  Can be specified using `${Property}`.|None - must be specified.|
+|`DatabaseUser`<br>**_required_**|The database user.  A read-only "guest" (or similar) account should be used for read-only operations, if possible.  Can be specified using `${Property}`.|None - must be specified.|
+|`DatabasePassword`<br>**_required_**|The database password.  Can be specified using `${Property}`.|None - must be specified.|
+|`DatabasePort`<br>|The database port.|Will default to the default port used for `DatabaseType` software.|
+|`DataStoreID`|Identifier to assign to the DataStore. This allows the DataStore to be used with other commands. A new DataStore will be created.  If the identifier matches an existing opened datastore, the old datastore is closed before opening the new datastore.  Can be specified using `${Property}`.|`DatabaseName` value is used as the `DataStoreID`.|
 
 ## Examples ##
 
@@ -50,3 +76,6 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 ## Troubleshooting ##
 
 ## See Also ##
+
+* [`ReadTableFromDataStore`](../ReadTableFromDataStore/ReadTableFromDataStore) - read a table from a datastore
+* [`WriteTableToDataStore`](../WriteTableToDataStore/WriteTableToDataStore) - write a table to a datastore
