@@ -123,6 +123,10 @@ Processor properties provide additional flexibility in controlling workflows.
 Properties are fundamental to workflow logic commands such as 
 by commands such as [`For`](command-ref/For/For) and [`If`](command-ref/If/If). 
 
+The following are variants of property notation:
+
+* `${env:Property} will look up the property value using the environment variable named `Property`.
+
 ### Spatial Data Sources and Formats ###
 
 The GeoProcessor reads spatial data from multiple sources (e.g., files, geodatabases, web services) and
@@ -179,9 +183,28 @@ See [best practices for Table identifiers](best-practices/table-identifiers/).
 
 ### DataStore ###
 
-A DataStore is a connection to allow access to the data within a database.
+A DataStore (also called "datastore" and "data store"; mixed case "DataStore" is used in GeoProcessor for readability)
+is a persistent storage component that stores tabular and other data.
+Currently, the concept of datastores in the GeoProcessor focuses on databases and web services
+that store tabular datad.
+Database datastores use a database connection, typically using
+[Open Database Connectivity](https://en.wikipedia.org/wiki/Open_Database_Connectivity) standard,
+and web service datastores typically use a
+[REST web service API](https://en.wikipedia.org/wiki/Representational_state_transfer).
+Datastores have the following characteristics:
 
-**TODO egiles 2018/06/05 Steve needs to fill this section out with a brief but descriptive explanation of a DataStore.**
+* Datastore ID is used for identification.
+* Datastore also has a descriptive name.
+* Connection information such as database server name and port number are used for databases.
+* Web service requires root URL for start of API URLs.
+* Datastores may require credentials to access data.
+* Datastores are opened to establish a connection and can be closed to free resources.
+
+The GeoProcessor provides the [`OpenDataStore`](../command-ref/OpenDataStore/OpenDataStore) command to open a datastore connection at run-time,
+and other commands are used to read from and write to datastores.
+This is useful to run automated workflows.
+In the future, the ability to configure datastore connections for use at software startup will be enabled,
+which is useful to interactively browse datastore resources.
 
 ## Alternatives to the GeoProcessor ##
 
@@ -192,8 +215,10 @@ The goal of the GeoProcessor is to provide significant automated geoprocessing f
 which is envisioned to be very similar to the QGIS version of the GeoProcessor.
 More information will be provided in the future.
 * [QGIS processing framework](https://docs.qgis.org/2.8/en/docs/user_manual/processing/index.html) - the built-in QGIS workflow environment
-* [Esri ArcGIS Model Builder](http://pro.arcgis.com/en/pro-app/help/analysis/geoprocessing/modelbuilder/modelbuilder-tutorial.htm) - the
-built-in ArcGIS workflow environment
+* [Esri ArcGIS Desktop Model Builder](http://pro.arcgis.com/en/pro-app/help/analysis/geoprocessing/modelbuilder/modelbuilder-tutorial.htm) - the
+built-in ArcGIS Desktop workflow environment
+* [Esri ArcGIS Pro Model Builder](http://pro.arcgis.com/en/pro-app/help/analysis/geoprocessing/modelbuilder/modelbuilder-changes-in-arcgis-pro.htm) - the
+built-in ArcGIS Pro workflow environment
 
 ## Next Steps
 
