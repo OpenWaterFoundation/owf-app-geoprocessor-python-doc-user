@@ -62,8 +62,8 @@ Command Parameters
 |`DatabaseName`<br>**_required_**| The name of the database.  Can be specified using `${Property}`.|None - must be specified.|
 |`DatabaseUser`<br>**_required_**|The database user.  A read-only "guest" (or similar) account should be used for read-only operations, if possible.  Can be specified using `${Property}`.|None - must be specified.|
 |`DatabasePassword`<br>**_required_**|The database password.  Can be specified using `${Property}`.|None - must be specified.|
-|`DatabasePort`<br>|The database port.|Will default to the default port used for `DatabaseType` software.|
-|`DataStoreID`|Identifier to assign to the DataStore. This allows the DataStore to be used with other commands. A new DataStore will be created.  If the identifier matches an existing opened datastore, the old datastore is closed before opening the new datastore.  Can be specified using `${Property}`.|`DatabaseName` value is used as the `DataStoreID`.|
+|`DatabasePort`<br> *optional*|The database port.<br><br>**Default Ports**<br>PostgreSQL: `5432`|Will default to the default port used for `DatabaseType` software.|
+|`DataStoreID`<br> *optional*|Identifier to assign to the DataStore. This allows the DataStore to be used with other commands. A new DataStore will be created.  If the identifier matches an existing opened datastore, the old datastore is closed before opening the new datastore.  Can be specified using `${Property}`.|`DatabaseName` value is used as the `DataStoreID`.|
 
 ## Examples ##
 

@@ -125,7 +125,7 @@ by commands such as [`For`](command-ref/For/For) and [`If`](command-ref/If/If).
 
 The following are variants of property notation:
 
-* `${env:Property} will look up the property value using the environment variable named `Property`.
+* `${env:Property}` will look up the property value using the environment variable named `Property`.
 
 ### Spatial Data Sources and Formats ###
 
@@ -186,7 +186,7 @@ See [best practices for Table identifiers](best-practices/table-identifiers/).
 A DataStore (also called "datastore" and "data store"; mixed case "DataStore" is used in GeoProcessor for readability)
 is a persistent storage component that stores tabular and other data.
 Currently, the concept of datastores in the GeoProcessor focuses on databases and web services
-that store tabular datad.
+that store tabular data.
 Database datastores use a database connection, typically using
 [Open Database Connectivity](https://en.wikipedia.org/wiki/Open_Database_Connectivity) standard,
 and web service datastores typically use a

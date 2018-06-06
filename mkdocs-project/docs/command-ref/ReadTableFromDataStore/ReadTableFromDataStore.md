@@ -20,7 +20,7 @@ One of the following three selection methods can be specified:
 	* Specify a table within the DataStore database. 
 	* Currently, all columns from the selected table will be read into the Table. 
 	* Parameters will added in the future to select specific columns within a database table.
-	* **Need a `Top` parameter to limit the number of rows.  Otherwise, very large results may exceed available memory.  see TSTool command.**
+	* Use the `Top` parameter to limit the number of rows added to the Table. 
 2. **Specify a SQL select statement**
 	* SQL must be valid for the database (syntax may vary based on database software).
 	* SQL syntax is not checked for validity and error messages from the database
@@ -55,6 +55,7 @@ Command Parameters
 |`Sql`|The SQL string that will be used to query the database. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.<br><br> If specified, do not specify `DataStoreTable` or `SqlFile`.|None|
 |`SqlFile`|The name of the file containing an SQL string to execute. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.<br><br>If specified, do not specify `DataStoreTable` or `Sql`.|None|
 |`TableID` <br> **_required_**| A Table identifier for the table to be created to contain results. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.  Refer to [documentation](../../best-practices/table-identifiers.md) for best practices on naming Table identifiers.|None - must be specified. |
+|`Top` <br> *optional*| An integer to indicate the number of rows that should be returned. Must be a positive integer. <br><br> *This parameter is only used when `DataStoreTable` is enabled. The `Top` value is ignored if the `Sql` or `SqlFile` parameters are enabled.*|All rows are returned.|
 |`IfTableIDExists`<br> *optional*|The action that occurs if the `TableID` already exists within the GeoProcessor. <br><br> `Replace` : The existing Table within the GeoProcessor is overwritten with the new Table. No warning is logged.<br><br> `ReplaceAndWarn`: The existing Table within the GeoProcessor is overwritten with the new Table. A warning is logged. <br><br> `Warn` : The new Table is not created. A warning is logged. <br><br> `Fail` : The new Table is not created. A fail message is logged. | `Replace` | 
 
 ## Examples ##

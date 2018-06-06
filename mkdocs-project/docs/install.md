@@ -231,6 +231,8 @@ The following has been tested on Jessie 64-bit Debian Linux.
 |-|-|-|-|
 |PyQt5|[https://pypi.org/project/PyQt5/](https://pypi.org/project/PyQt5/)|Builds the user interface.|`sudo apt-get install python3-pyqt5`|
 |pandas|[https://pandas.pydata.org/](https://pandas.pydata.org/)|Holds and manipulates Table data.|`sudo apt-get install python3-pandas`|
+|Psycopg|[http://initd.org/psycopg/](http://initd.org/psycopg/)|Enables connections to PostgreSQL databases.|`sudo apt-get install python3-psycopg2`|
 |pip|[https://pypi.org/project/pip/](https://pypi.org/project/pip/)|Installs packages dependent on pip installers.|`sudo apt-get install python3-pip`|
 |OpenPyXL|[https://openpyxl.readthedocs.io/en/stable/](https://openpyxl.readthedocs.io/en/stable/)|Reads and writes Excel 2010 xlsx/xlsm files to and from Table objects.|`sudo pip3 install openpyxl`|
 |xlwt|[https://pypi.org/project/xlwt/](https://pypi.org/project/xlwt/)|Add compatibility to create spreadsheet files (Microsoft Excel versions 95 to 2003)|`sudo pip3 install xlwt`|
+
