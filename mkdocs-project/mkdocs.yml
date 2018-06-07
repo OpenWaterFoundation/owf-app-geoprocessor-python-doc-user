@@ -40,8 +40,10 @@ pages:
     - WriteTableToDelimitedFile: command-ref/WriteTableToDelimitedFile/WriteTableToDelimitedFile.md
     - WriteTableToExcel: command-ref/WriteTableToExcel/WriteTableToExcel.md
   - DataStore Processing:
+    - CloseDataStore: command-ref/CloseDataStore/CloseDataStore.md
     - OpenDataStore: command-ref/OpenDataStore/OpenDataStore.md
     - ReadTableFromDataStore: command-ref/ReadTableFromDataStore/ReadTableFromDataStore.md
+    - RunSql: command-ref/RunSql/RunSql.md
     - WriteTableToDataStore: command-ref/WriteTableToDataStore/WriteTableToDataStore.md
   - Control Running: 
     - EndFor: command-ref/EndFor/EndFor.md
