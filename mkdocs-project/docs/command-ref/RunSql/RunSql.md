@@ -11,7 +11,7 @@
 
 ## Overview ##
 
-The RunSql command executes a [Structured Query Language (SQL)](https://en.wikipedia.org/wiki/SQL) statement on the specified [DataStore](../../introduction#datastore). 
+The RunSql command executes a [Structured Query Language (SQL)](https://en.wikipedia.org/wiki/SQL) statement on the specified [DataStore](../../introduction#datastore).
 
 - This command cannot be used with web service datastores because the underlying software relies on a database to execute the SQL statement. 
 - This command is useful when a database task needs to be automated in sequence with other GeoProcessor commands. 
@@ -35,7 +35,7 @@ General constraints on executing the statement are as follows:
 - The table, views, and procedures being queried must be readable (some databases restrict direct access to data and require using stored procedures).
 - Any SQL statement can be run; consequently, suitable authentication and permissions should be in place to protect against unintended changes to the database
 - SQL syntax varies between database software so care should be take to use standard SQL if possible.
-- Results from the statement currently are not displayed, although errors will be shown and added to the log file. 
+- Results from the statement such as rows modified currently are not displayed, although status and errors will be shown and added to the log file. 
 Use the [ReadTableFromDataStore](../ReadTableFromDataStore/ReadTableFromDataStore) command to process statements that return a result set.
 
 ## Command Editor ##
@@ -75,6 +75,7 @@ Command Parameters
 
 ## See Also ##
 
+* [OpenDataStore](../OpenDataStore/OpenDataStore) command
 * [ReadTableFromDataStore](../ReadTableFromDataStore/ReadTableFromDataStore) command
 * [WriteTableToDataStore](../WriteTableToDataStore/WriteTableToDataStore) command
-* [SetProperty](../SetProperty/SetProperty) command
+* [W3schools SQL Tutorial](https://www.w3schools.com/sql/)

@@ -20,6 +20,11 @@ data access from:
 Datastore features in the GeoProcessor currently focus on relational databases that can
 be queried to return tabular datasets.
 In the future, support for web services will be added.
+See also the [`CloseDataStore`](../CloseDataStore/CloseDataStore) command to close a datastore.
+
+This command can be used to control datastore connections in a workflow.
+The GeoProcessor is being enhanced to open datastores at software startup,
+for cases where a datastore needs to be available for the entire software session.
 
 For security reasons, the account name and password used for the connection should generally **not** be directly
 included in the command parameters.  This is less of an issue for read-only `guest` accounts.
@@ -77,5 +82,6 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
+* [`CloseDataStore`](../CloseDataStore/CloseDataStore) - close a datastore
 * [`ReadTableFromDataStore`](../ReadTableFromDataStore/ReadTableFromDataStore) - read a table from a datastore
 * [`WriteTableToDataStore`](../WriteTableToDataStore/WriteTableToDataStore) - write a table to a datastore
