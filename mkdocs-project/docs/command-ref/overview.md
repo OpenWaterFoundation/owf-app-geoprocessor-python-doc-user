@@ -85,6 +85,7 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 * [OpenDataStore](OpenDataStore/OpenDataStore) - create a DataStore connection
 * [ReadTableFromDataStore](ReadTableFromDataStore/ReadTableFromDataStore) - read a table from a DataStore
 * [RunSql](RunSql/RunSql) - execute a SQL statement on a DataStore
+* [WriteTableToDataStore](WriteTableToDataStore/WriteTableToDataStore) - write a Table to a DataStore
 
 ## Commands to Control Running ##
 
