@@ -11,20 +11,20 @@
 
 ## Overview ##
 
-The `OpenDataStore` command creates a new generic [DataStore](../../introduction#datastore) to provide
+The `OpenDataStore` command creates a new generic [DataStore](../../introduction#DataStore) to provide
 data access from:
 
 * a database
 * a web service
 
-Datastore features in the GeoProcessor currently focus on relational databases that can
+DataStore features in the GeoProcessor currently focus on relational databases that can
 be queried to return tabular datasets.
 In the future, support for web services will be added.
-See also the [`CloseDataStore`](../CloseDataStore/CloseDataStore) command to close a datastore.
+See also the [`CloseDataStore`](../CloseDataStore/CloseDataStore) command to close a DataStore.
 
-This command can be used to control datastore connections in a workflow.
-The GeoProcessor is being enhanced to open datastores at software startup,
-for cases where a datastore needs to be available for the entire software session.
+This command can be used to control DataStore connections in a workflow.
+The GeoProcessor is being enhanced to open DataStores at software startup,
+for cases where a DataStore needs to be available for the entire software session.
 
 For security reasons, the account name and password used for the connection should generally **not** be directly
 included in the command parameters.  This is less of an issue for read-only `guest` accounts.
@@ -32,7 +32,7 @@ To allow flexibility, use the `${env:Property}` notation to specify that the par
 is taken from an environment variable, and set the environment variable dynamically in the
 run-time environment.
 
-Database datastores are implemented using Pandas Python package Dataframe and appropriate database driver software.
+Database DataStores are implemented using Pandas Python package Data Frame and appropriate database driver software.
 The following are supported database dialects:
 
 **<p style="text-align: center;">
@@ -70,11 +70,11 @@ Command Parameters
 |`DatabaseUser`<br>**_required_**|The database user.  A read-only "guest" (or similar) account should be used for read-only operations, if possible.  Can be specified using `${Property}`.|None - must be specified.|
 |`DatabasePassword`<br>**_required_**|The database password.  Can be specified using `${Property}`.|None - must be specified.|
 |`DatabasePort`<br> *optional*|The database port.<br><br>**Default Ports**<br>PostgreSQL: `5432`|Will default to the default port used for `DatabaseDialect` software.|
-|`DataStoreID`<br> *optional*|Identifier to assign to the DataStore. This allows the DataStore to be used with other commands. A new DataStore will be created.  If the identifier matches an existing opened datastore, the old datastore is closed before opening the new datastore.  Can be specified using `${Property}`.|`DatabaseName` value is used as the `DataStoreID`.|
+|`DataStoreID`<br> *optional*|Identifier to assign to the DataStore. This allows the DataStore to be used with other commands. A new DataStore will be created.  If the identifier matches an existing opened DataStore, the old DataStore is closed before opening the new DataStore.  Can be specified using `${Property}`.|`DatabaseName` value is used as the `DataStoreID`.|
 |`IfDataStoreIDExists`<br> *optional*|The action that occurs if the `DataStoreID` already exists within the GeoProcessor. <br><br> `Replace` : The existing DataStore within the GeoProcessor is overwritten with the new DataStore. No warning is logged.<br><br> `ReplaceAndWarn`: The existing DataStore within the GeoProcessor is overwritten with the new DataStore. A warning is logged. <br><br> `Warn` : The new DataStore is not created. A warning is logged. <br><br> `Fail` : The new DataStore is not created. A fail message is logged. | `Replace` | 
 ||**IF THE `NewByFile` MODE IS SELECTED ... **||
-|`File` <br>**_required_**|The path (relative or absolute) to the file containing the DataBase configurations.|None - must be specified.|
-|`DataStoreID`<br> *optional*|Identifier to assign to the DataStore. This allows the DataStore to be used with other commands. A new DataStore will be created.  If the identifier matches an existing opened datastore, the old datastore is closed before opening the new datastore.  Can be specified using `${Property}`.|`DatabaseName` value is used as the `DataStoreID`.|
+|`File` <br>**_required_**|The path (relative or absolute) to the file containing the database configurations.|None - must be specified.|
+|`DataStoreID`<br> *optional*|Identifier to assign to the DataStore. This allows the DataStore to be used with other commands. A new DataStore will be created.  If the identifier matches an existing opened DataStore, the old DataStore is closed before opening the new DataStore.  Can be specified using `${Property}`.|`DatabaseName` value is used as the `DataStoreID`.|
 |`IfDataStoreIDExists`<br> *optional*|The action that occurs if the `DataStoreID` already exists within the GeoProcessor. <br><br> `Replace` : The existing DataStore within the GeoProcessor is overwritten with the new DataStore. No warning is logged.<br><br> `ReplaceAndWarn`: The existing DataStore within the GeoProcessor is overwritten with the new DataStore. A warning is logged. <br><br> `Warn` : The new DataStore is not created. A warning is logged. <br><br> `Fail` : The new DataStore is not created. A fail message is logged. | `Replace` | 
 ||**IF THE `ExistingByID` MODE IS SELECTED ... **||
 |`DataStoreID`<br>**_required_**|Identifier of the existing DataStore to open. Can be specified using `${Property}`.|None - must be specified.|
@@ -91,6 +91,6 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [`CloseDataStore`](../CloseDataStore/CloseDataStore) - close a datastore
-* [`ReadTableFromDataStore`](../ReadTableFromDataStore/ReadTableFromDataStore) - read a table from a datastore
-* [`WriteTableToDataStore`](../WriteTableToDataStore/WriteTableToDataStore) - write a table to a datastore
+* [`CloseDataStore`](../CloseDataStore/CloseDataStore) - close a DataStore
+* [`ReadTableFromDataStore`](../ReadTableFromDataStore/ReadTableFromDataStore) - read a table from a DataStore
+* [`WriteTableToDataStore`](../WriteTableToDataStore/WriteTableToDataStore) - write a table to a DataStore
