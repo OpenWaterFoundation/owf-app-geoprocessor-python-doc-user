@@ -11,11 +11,30 @@
 
 ## Overview ##
 
-The `OpenDataStore` command creates a new generic [DataStore](../../introduction#DataStore) to provide
+The `OpenDataStore` command creates a generic [DataStore](../../introduction#DataStore) to provide
 data access from:
 
 * a database
 * a web service
+
+<a name="parameters"></a>
+<a name="configfile"></a>
+
+The `OpenDataStore` command can also be used to open an existing DataStore previously closed with the [`CloseDataStore`](../CloseDataStore/CloseDataStore) command. 
+
+- Set the `DataStoreID` parameter to the ID of the closed DataStore. 
+- Set the `IfDataStoreIDExists` parameter to `Open`. 
+	
+A new DataStore can be opened in 2 ways: 
+
+1. Parameters configure datastore
+	- the DataStore configurations (*Database Dialect, Database Server, etc.*) are set via command parameters  
+	- the `DataStoreID`, `DatabaseServer`, `DatabaseDialect`, `DatabaseName`, `DatabaseUser` and `DatabasePassword` parameters are **_required_**
+	- the `IfDataStoreIDExists` and `DatabasePort` parameters are *optional*
+2. Configuration file configures datastore 
+	- the DataStore configurations (*Database Dialect, Database Server, etc.*) are set via a configuration file
+	- the `DataStoreID` and `ConfigFile` parameters are **_required_**
+	- the `IfDataStoreIDExists` parameter is *optional*
 
 DataStore features in the GeoProcessor currently focus on relational databases that can
 be queried to return tabular datasets.
@@ -32,16 +51,24 @@ To allow flexibility, use the `${env:Property}` notation to specify that the par
 is taken from an environment variable, and set the environment variable dynamically in the
 run-time environment.
 
-Database DataStores are implemented using Pandas Python package Data Frame and appropriate database driver software.
-The following are supported database dialects:
+Database DataStores are implemented using [Pandas Python](https://pandas.pydata.org/)  package
+[Data Frame](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame), 
+[SQLAlchemy](https://www.sqlalchemy.org/) package and appropriate database driver software.
 
-**<p style="text-align: center;">
-Supported Database Dialects
-</p>**
+### SQLAlchemy Database Dialects ###
 
-|**`DatabaseDialect` Parameter**|
-|--|
-|`PostgreSQL`|
+**The following are the available SQLAlchemy database dialects:**
+
+|`DatabaseDialect` Parameter|Default Port|Supported in the GeoProcessor?|
+|-|:-:|-|
+|[`PostgreSQL`](http://docs.sqlalchemy.org/en/latest/dialects/postgresql.html)|5432|Supported|
+|[`Firebird`](http://docs.sqlalchemy.org/en/latest/dialects/firebird.html)|3050|Not Supported|
+|[`Microsoft SQL Server`](http://docs.sqlalchemy.org/en/latest/dialects/mssql.html)|1433|Not Supported|
+|[`MySQL`](http://docs.sqlalchemy.org/en/latest/dialects/mysql.html)|3306|Not Supported|
+|[`Oracle`](http://docs.sqlalchemy.org/en/latest/dialects/oracle.html)|-|Not Supported|
+|[`SQLite`](http://docs.sqlalchemy.org/en/latest/dialects/sqlite.html)|-|Not Supported|
+|[`Sybase`](http://docs.sqlalchemy.org/en/latest/dialects/sybase.html)|5000|Not Supported|
+
 
 ## Command Editor ##
 
@@ -60,24 +87,19 @@ OpenDataStore(Parameter="Value",...)
 Command Parameters
 </p>**
 
-|**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
-| --------------|-----------------|----------------- |
-|`OpenMode` <br>**_required_**|The method used to open the DataStore. Must choose one of the three options.<br><br>1. `NewByParameters`: Open a **new** DataStore by entering *parameters* in the required fields.<br>2 `NewByFile`: Open a **new** DataStore by supplying a *file* that has the required configurations.<br>3. `ExistingByID`: Open an **existing but closed** DataStore by entering the *DataStore ID*.<br><br>*The `NewByFile` mode is currently disabled.*|None - must be specified.|
-||**IF THE `NewByParameters` MODE IS SELECTED ... **||
-|`DatabaseDialect`<br>**_required_**| The database dialect, used to format the database connection URL for the matching database driver software. <br><br>Currently the following are supported: `PostgreSQL`.| None - must be specified.|
-|`DatabaseServer`<br>**_required_**| The database server name or IP address.  Can be specified using `${Property}`.| None - must be specified.|
-|`DatabaseName`<br>**_required_**| The name of the database.  Can be specified using `${Property}`.|None - must be specified.|
-|`DatabaseUser`<br>**_required_**|The database user.  A read-only "guest" (or similar) account should be used for read-only operations, if possible.  Can be specified using `${Property}`.|None - must be specified.|
-|`DatabasePassword`<br>**_required_**|The database password.  Can be specified using `${Property}`.|None - must be specified.|
-|`DatabasePort`<br> *optional*|The database port.<br><br>**Default Ports**<br>PostgreSQL: `5432`|Will default to the default port used for `DatabaseDialect` software.|
-|`DataStoreID`<br> *optional*|Identifier to assign to the DataStore. This allows the DataStore to be used with other commands. A new DataStore will be created.  If the identifier matches an existing opened DataStore, the old DataStore is closed before opening the new DataStore.  Can be specified using `${Property}`.|`DatabaseName` value is used as the `DataStoreID`.|
-|`IfDataStoreIDExists`<br> *optional*|The action that occurs if the `DataStoreID` already exists within the GeoProcessor. <br><br> `Replace` : The existing DataStore within the GeoProcessor is overwritten with the new DataStore. No warning is logged.<br><br> `ReplaceAndWarn`: The existing DataStore within the GeoProcessor is overwritten with the new DataStore. A warning is logged. <br><br> `Warn` : The new DataStore is not created. A warning is logged. <br><br> `Fail` : The new DataStore is not created. A fail message is logged. | `Replace` | 
-||**IF THE `NewByFile` MODE IS SELECTED ... **||
-|`File` <br>**_required_**|The path (relative or absolute) to the file containing the database configurations.|None - must be specified.|
-|`DataStoreID`<br> *optional*|Identifier to assign to the DataStore. This allows the DataStore to be used with other commands. A new DataStore will be created.  If the identifier matches an existing opened DataStore, the old DataStore is closed before opening the new DataStore.  Can be specified using `${Property}`.|`DatabaseName` value is used as the `DataStoreID`.|
-|`IfDataStoreIDExists`<br> *optional*|The action that occurs if the `DataStoreID` already exists within the GeoProcessor. <br><br> `Replace` : The existing DataStore within the GeoProcessor is overwritten with the new DataStore. No warning is logged.<br><br> `ReplaceAndWarn`: The existing DataStore within the GeoProcessor is overwritten with the new DataStore. A warning is logged. <br><br> `Warn` : The new DataStore is not created. A warning is logged. <br><br> `Fail` : The new DataStore is not created. A fail message is logged. | `Replace` | 
-||**IF THE `ExistingByID` MODE IS SELECTED ... **||
-|`DataStoreID`<br>**_required_**|Identifier of the existing DataStore to open. Can be specified using `${Property}`.|None - must be specified.|
+|**Parameter Scope**|**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
+|----| --------------|-----------------|----------------- |
+|All|`DataStoreID`<br>**_required_**|Identifier to assign to the DataStore. This allows the DataStore to be used with other commands. Can be specified using `${Property}`.|None - must be specified.|
+|All|`IfDataStoreIDExists`<br>*optional*|The action that occurs if the `DataStoreID` already exists within the GeoProcessor. <br><br> `Replace`: The existing DataStore within the GeoProcessor is overwritten with the new DataStore. No warning is logged.<br><br> `Open`: The existing DataStore is opened if closed. No warning is logged. <br><br>`ReplaceAndWarn`: The existing DataStore within the GeoProcessor is overwritten with the new DataStore. A warning is logged. <br><br> `Warn` : The new DataStore is not created. A warning is logged. <br><br> `Fail` : The new DataStore is not created. A fail message is logged.  | `Replace` | 
+|[Parameters configure datastore](#parameters)|`DatabaseServer`<br>**_required_**| The database server name or IP address.  Can be specified using `${Property}`.| None - must be specified.|
+|[Parameters configure datastore](#parameters)|`DatabaseDialect`<br>**_required_**| The database dialect, used to format the database connection URL for the matching database driver software. <br><br>See the [table](#sqlalchemy-database-dialects) above for a list of supported dialects.| None - must be specified.|
+|[Parameters configure datastore](#parameters)|`DatabaseName`<br>**_required_**| The name of the database.  Can be specified using `${Property}`.|None - must be specified.|
+|[Parameters configure datastore](#parameters)|`DatabaseUser`<br>**_required_**|The database user.  A read-only "guest" (or similar) account should be used for read-only operations, if possible.  Can be specified using `${Property}`.|None - must be specified.|
+|[Parameters configure datastore](#parameters)|`DatabasePassword`<br>**_required_**|The database password.  Can be specified using `${Property}`.|None - must be specified.|
+|[Parameters configure datastore](#parameters)|`DatabasePort`<br>*optional*|The database port.<br><br>See the [table](#sqlalchemy-database-dialects) above for the database default ports.|The default port for the `DatabaseDialect`.|
+|[Configuration file configures datastore](#configfile)|`ConfigFile`<br>**_required_**|The path (relative or absolute) to the file containing the database configurations.|None - must be specified.|
+
+
 
 ## Examples ##
 
