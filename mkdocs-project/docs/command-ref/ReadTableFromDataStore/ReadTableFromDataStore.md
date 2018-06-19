@@ -29,6 +29,20 @@ One of the following three selection methods can be specified:
 	* Similar to the above option; however, the SQL statement is read from a file. 
 	* This is useful if the SQL statement is also used by other tools, is long, or contains special characters such as
 	double quotes that have meaning in command syntax.
+	
+Limitations 
+
+* pandas DataFrame objects cannot gracefully handle *null* values in columns representing integer or Boolean data. 
+	- [Tables](../../introduction#table) are built on [pandas DataFrame objects](https://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html). 
+The pandas DataFrame object cannot handle *null* values in integer columns or Boolean columns. 
+To solve this issue, pandas software casts the integer and Boolean columns with *null* values into other column types that can gracefully handle *null* values. 
+See [Pandas - Missing data casting rules and indexing](https://pandas.pydata.org/pandas-docs/stable/missing_data.html#missing-data-casting-rules-and-indexing) for more information.
+		- integer columns are casted to float columns	
+		- Boolean columns are casted to string/object columns
+	- **NEED to include information about how the GeoProcessor provides flexibility to this issue with the `IntNullHandleMethod` parameter**
+	- **NEED to include that there is not yet a solution built within the GeoProcessor to gracefully handle the Boolean columns with *null* values**
+	
+		
 
 ## Command Editor ##
 
@@ -56,9 +70,12 @@ Command Parameters
 |`SqlFile`|The name of the file containing an SQL string to execute. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.<br><br>If specified, do not specify `DataStoreTable` or `Sql`.|None|
 |`TableID` <br> **_required_**| A Table identifier for the table to be created to contain results. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.  Refer to [documentation](../../best-practices/table-identifiers.md) for best practices on naming Table identifiers.|None - must be specified. |
 |`Top` <br> *optional*| An integer to indicate the number of rows that should be returned. Must be a positive integer. <br><br> *This parameter is only used when `DataStoreTable` is enabled. The `Top` value is ignored if the `Sql` or `SqlFile` parameters are enabled.*|All rows are returned.|
+|`IntNullHandleMethod` <br> *optional*| The method to use if the DataStoreTable has one or more integer columns containing *null* values. Must be one of the following: <br><br> `ToFloat`: Convert all integer columns with null values into float data. Null values are retained. <br><br>`UseMissingIntValue`: Convert all null values in the integer column to `-9999`. Column data type (int) is retained. <br><br> *This parameter is only used when `DataStoreTable` is enabled. The `IntNullHandleMethod` value is ignored if the `Sql` or `SqlFile` parameters are enabled.*|`ToFloat`|
 |`IfTableIDExists`<br> *optional*|The action that occurs if the `TableID` already exists within the GeoProcessor. <br><br> `Replace` : The existing Table within the GeoProcessor is overwritten with the new Table. No warning is logged.<br><br> `ReplaceAndWarn`: The existing Table within the GeoProcessor is overwritten with the new Table. A warning is logged. <br><br> `Warn` : The new Table is not created. A warning is logged. <br><br> `Fail` : The new Table is not created. A fail message is logged. | `Replace` | 
 
 ## Examples ##
+
+**NEED to give an example of how to use the `COALESCE` function in a user-provide SQL statement (`Sql` or `SqlFile`) to immitate the `IntNullHandleMethod=UseMissingIntValue` paramter setting. **
 
 **The automated tests for this command have not yet been created.**
 
