@@ -18,6 +18,9 @@ The `WriteTableToDelimitedFile` command writes a [Table](../../introduction#tabl
 * Can specify which Table columns to write to the delimited file. 
 * Can specify to include or exclude the Table's index column from the output delimited file. 
 
+If the Table was read from a DataStore with the [ReadTableFromDataStore](../ReadTableFromDataStore/ReadTableFromDataStore) command 
+and the `IntNullHandleMethod` parameter was set to `UseIntNullValue` then the `IntNullValue` will automatically be set an empty string.
+
 ## Command Editor ##
 
 The following dialog is used to edit the command and illustrates the command syntax.
@@ -43,6 +46,7 @@ Command Parameters
 |`ColumnsToInclude`<br> *optional*| A comma-separated list of the [glob-sytle patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which columns to include in the delimited file. <br><br> See [Determining Which Columns to Write](#determining-which-columns-to-write).| `*` <br><br> All columns are written. |  
 |`ColumnsToExclude`<br> *optional*| A comma-separated list of the [glob-sytle patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which columns to exclude in the delimited file. <br><br> See [Determining Which Columns to Write](#determining-which-columns-to-write).| `'' (empty string)` <br><br> All columns are written. |
 |`WriteIndexColumn`<br> *optional*| Boolean. <br><br> If `TRUE`, the Table's index column is *included* in the output delimited file. <br> If `FALSE`, the Table's index column is *not included* in the output delimited file.|`TRUE`|
+|`UseSquareBrackets`<br> *optional*| Boolean. <br><br> If `TRUE`, table column *array* values are written as a string with *square* brackets (`[]`).<br> If `FALSE`, table column *array* values are written as a string with *curly* brackets (`{}`).|`TRUE`|
 
 ### Determining Which Columns to Write
 
