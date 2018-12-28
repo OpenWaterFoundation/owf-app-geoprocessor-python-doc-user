@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / RemoveFile #
+# GeoProcessor / Command / RemoveFile #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

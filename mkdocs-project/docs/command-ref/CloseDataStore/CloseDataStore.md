@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / CloseDataStore #
+# GeoProcessor / Command / CloseDataStore #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / SetGeoLayerCRS #
+# GeoProcessor / Command / SetGeoLayerCRS #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

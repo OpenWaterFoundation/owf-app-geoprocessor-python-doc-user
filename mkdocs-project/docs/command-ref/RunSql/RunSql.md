@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / RunSql#
+# GeoProcessor / Command / RunSql#
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

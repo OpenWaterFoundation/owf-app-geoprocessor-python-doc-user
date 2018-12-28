@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / CreateRegressionTestCommandFile #
+# GeoProcessor / Command / CreateRegressionTestCommandFile #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

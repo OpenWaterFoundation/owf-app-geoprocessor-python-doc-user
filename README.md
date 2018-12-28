@@ -1,7 +1,5 @@
 # owf-app-geoprocessor-python-doc-user #
 
-**The GeoProcessor software is under development - this documentation is provided to facilicate coordination and review during development.**
-
 This repository contains the [Open Water Foundation (OWF)](http://openwaterfoundation.org/) GeoProcessor software user documentation.
 The documentation is written for the layperson in order to encourage use of the OWF GeoProcessor.
 
@@ -11,8 +9,9 @@ See the deployed [OWF / Learn GeoProcessor](http://learn.openwaterfoundation.org
 
 The OWF GeoProcessor software is a Python application and supporting modules that runs [QGIS](https://qgis.org) Python modules
 and other code to process spatial data.  The OWF GeoProcessor is under development and is being tested internally at OWF,
-with the expectation that it will be released publicly as an open source project in the first half of 2018.
-Documentation and tests are being provided in public repositories to evaluate opportunities to use on projects.
+with the expectation that it will be released publicly as an open source project in early 2019 and gain functionality and maturity in 2019.
+The priority of development is the testing framework, GeoProcessor for QGIS, and then GeoProcessor for ArcGIS Pro,
+due to project demands and resource limitations.
 The OWF GeoProcessor is designed to provide the following functionality:
 
 1. Command-based workflow language similar to [TSTool Software](http://openwaterfoundation.org/software-tools/tstool),
@@ -23,7 +22,7 @@ and support for processor properties to allow dynamic scripting.
 and coordinate system conversion.
 	1. Leverage QGIS functionality.
 	2. Commands beyond what QGIS provides.
-3. Built-in test framework, which is used to run functional tests, suitable for software developers and also
+3. Built-in testing framework, which is used to run functional tests, suitable for software developers and also
 non-programmers who want to validate processing workflows.
 4. Multiple run modes including batch, command shell interpreter, user interface, HTTP server.
 5. Integration with other tools to leverage the strengths of those tools.
@@ -53,7 +52,7 @@ mkdocs-project/       Typical MkDocs project for this documentation.
 ## Development Environment ##
 
 The development environment for contributing to this project requires installation of Python, MkDocs, and Material MkDocs theme.
-Python 2 has been used for development.
+Python 3 has been used for development.
 See the [OWF / Learn MkDocs](http://learn.openwaterfoundation.org/owf-learn-mkdocs/)
 documentation for information about installing these tools.
 
@@ -79,15 +78,19 @@ with the goal of keeping formatting simple in favor of focusing on useful conten
 * Use triple-tick formatting for code blocks, with language specifier.
 * Use ***bold italics*** when referencing UI components such as menus.
 * Use slashes to indicate ***Menu / SubMenu***.
-* Place images in a folder with the same name as the content file and include `-images` at the end of the folder name.
+* Place images in a folder named `images`.
 * Minimize the use of inlined HTML, but use it where Markdown formatting is limited.
 * Although the Material them provides site and page navigation sidebars,
 provide in-line table of contents on pages, where appropriate, to facilitate review of page content.
 
 ## License ##
 
-This documentation is licensed under the
-[Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0).
+Copyright by the Open Water Foundation (2017-2019).
+The documentation is licensed under the
+[Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
+
+The GeoProcessor software is licensed using the GPL v3 (or later) license
+See the [GeoProcessor software repository](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python) for more information.
 
 ## Contributing ##
 
@@ -100,15 +103,19 @@ Contribute to the documentation as follows:
 
 This repository is maintained by the [Open Water Foundation](http://openwaterfoundation.org/).
 
+* Steve Malers, Open Water Foundation (@smalers)
+* Justin Rentie, Open Water Foundation (@jurentie)
+
 ## Contributors ##
 
-Steve Malers, Open Water Foundation (@smalers)
-Emma Giles, Open Water Foundation (@egiles16)
+Contributors in addition to the maintainers include:
+
+* Emma Giles (@egiles16)
 
 ## Release Notes ##
 
-The following release notes indicate the update history for documentation, with GitHub repository issue indicated,
-if applicable (links to issues via README.md are not cleanly supported by GitHub so use the repository issues page to find).
+The following release notes indicate the update history for documentation, with GitHub repository issue indicated, if applicable.
 
+* 2018-12-26 - significant updates based on full review
 * 2018-01-08 - [1] add documentation for `CompareFiles` command.
 * 2018-01-02 - Initial content.

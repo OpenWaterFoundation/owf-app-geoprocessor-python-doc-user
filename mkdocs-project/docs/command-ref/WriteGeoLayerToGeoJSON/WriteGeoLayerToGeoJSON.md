@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / WriteGeoLayerToGeoJSON #
+# GeoProcessor / Command / WriteGeoLayerToGeoJSON #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

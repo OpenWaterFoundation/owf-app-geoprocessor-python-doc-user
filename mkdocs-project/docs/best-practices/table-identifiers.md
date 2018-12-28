@@ -1,4 +1,6 @@
-# Learn GeoProcessor / Best Practices / Table Identifiers #
+# GeoProcessor / Best Practices / Table Identifiers #
+
+This documentation provides best practices for table identifiers
 
 ## Overview ##
 
@@ -26,14 +28,12 @@ The following naming convention (or similar) is recommended:
 ```
 DataType-SourceAgency-EffectiveDate-Scenario
 ```
-
 where: 
 
 * `DataType` indicates the content of the tabular data
 * `SourceAgency` is the acronym of the agency that developed the spatial data, if available
 * `EffectiveDate` is the date that the tabular data is effective (a publishing date or version may also be appropriate)
 * `Scenario` is an additional identifier part to indicate a scenario, if appropriate
-
 
 The above parts can be used in combination as appropriate, with parts omitted if not relevant or redundant.
 Dashes are used instead of spaces and uppercase/lowercase can be used for readability.

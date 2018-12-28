@@ -1,4 +1,6 @@
-# Learn GeoProcessor / Best Practices / GeoLayer Identifiers #
+# GeoProcessor / Best Practices / GeoLayer Identifiers #
+
+This documentation provides best practices for GeoLayer identifiers.
 
 ## Overview ##
 

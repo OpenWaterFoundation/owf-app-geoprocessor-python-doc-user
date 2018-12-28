@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / RenameGeoLayerAttribute #
+# GeoProcessor / Command / RenameGeoLayerAttribute #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

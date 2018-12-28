@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / UnknownCommand #
+# GeoProcessor / Command / UnknownCommand #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

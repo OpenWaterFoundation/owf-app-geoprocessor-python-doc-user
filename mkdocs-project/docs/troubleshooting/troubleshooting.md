@@ -1,8 +1,20 @@
-# Learn GeoProcessor / Troubleshooting #
+# GeoProcessor / Troubleshooting #
 
-The GeoProcessor is a Python application that uses Python modules developed as part of the GeoProcessor,
-and Python modules and software that are part of the QGIS software.
+The GeoProcessor is a Python application that uses Python modules:
+
+* GeoProcessor components such as commands
+* software that is part of the underlying GIS software (QGIS and ArcGIS Pro, depending on GeoProcessor version)
+* third-party Python packages
+
 Consequently, errors can occur in various software components.
+The following topics are useful for troubleshooting software issues:
+
+* [Log File](#log-file)
+* [Command Status/Log](#command-statuslog)
+* [Specific Issues](#specific-issues)
+* [Repository Issue Tracking](#repository-issue-tracking)
+
+--------------------
 
 ## Log File ##
 
@@ -51,15 +63,42 @@ INFO|geoprocessor|gp line 190|OutputYearType = None
 INFO|geoprocessor|gp line 190|UserHomeDirURL = file:///C:/Users/sam
 INFO|geoprocessor|gp line 190|ProgramVersionNumber = None
 ```
+The GeoProcessor UI allows the log file to be displayed using the ***Tools / View Log File*** menu.
+
+Log files created by the [StartLog](../command-ref/StartLog/StartLog) command
+are also typically listed in ***Results / Output Files***.
 
 ## Command Status/Log ##
 
-The GeoProcessor user interface (under development) displays command-specific warning messages,
+The GeoProcessor user interface displays command-specific warning messages,
 which indicate problems that need to be resolved.
 A command flagged with red X or yellow warning symbol can be reviewed to determine problems.
 
-Pending user interface implementation, the GeoProcessor may be enhanced to add a file to write the command messages.
+![ui-warnings](images/ui-with-warnings.png)
+**<p style="text-align: center;">
+GeoProcessor User Interface showing Warning and Failure Indicators
+</p>**
+
+A command's log can be displayed by mousing over the icon at the left of the commands list or
+right-clicking on a command and selecting the
+***Show Command Status*** menu, which will display a summary similar to the following.
+Initialization issues occur when a command is first parsed.
+Discovery issues are not currently used but may be implemented in the future to indicate partial-run issues - discovery
+mode is used to generation information used by other command editors.
+Run issues are generated when a command is run.
+
+![ui-warnings](images/command-status.png)
+**<p style="text-align: center;">
+Command Status Log Summary
+</p>**
 
 ## Specific Issues ##
 
-Insert here troubleshooting information for specific issues as such issues are identified.
+Insert here troubleshooting information for specific known issues as such issues are identified.
+
+## Repository Issue Tracking ##
+
+An issue may be due to a software bug or planned enhancement.
+See the [GeoProcessor GitHub repository issues](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python/issues)
+for a list of know issues.
+New issues can be added to alert developers.

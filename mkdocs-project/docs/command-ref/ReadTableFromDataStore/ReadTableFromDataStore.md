@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / ReadTableFromDataStore #
+# GeoProcessor / Command / ReadTableFromDataStore #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

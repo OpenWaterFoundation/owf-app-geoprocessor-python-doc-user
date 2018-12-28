@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / ReadTableFromExcel #
+# GeoProcessor / Command / ReadTableFromExcel #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

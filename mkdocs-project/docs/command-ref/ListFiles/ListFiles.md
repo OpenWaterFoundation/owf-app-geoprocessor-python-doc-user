@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / ListFiles #
+# GeoProcessor / Command / ListFiles #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

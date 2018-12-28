@@ -1,4 +1,4 @@
-# Learn GeoProcessor / GeoJSON
+# GeoProcessor / GeoJSON
 
 * [Overview](#overview)
 * [GeoJSON Files and Standard GeoLayer Properties](#geojson-files-and-standard-geolayer-properties)

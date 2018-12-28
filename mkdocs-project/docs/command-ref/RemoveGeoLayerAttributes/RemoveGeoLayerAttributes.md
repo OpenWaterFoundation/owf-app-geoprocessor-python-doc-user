@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / RemoveGeoLayerAttributes #
+# GeoProcessor / Command / RemoveGeoLayerAttributes #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

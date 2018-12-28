@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / CreateGeoLayerFromGeometry #
+# GeoProcessor / Command / CreateGeoLayerFromGeometry #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

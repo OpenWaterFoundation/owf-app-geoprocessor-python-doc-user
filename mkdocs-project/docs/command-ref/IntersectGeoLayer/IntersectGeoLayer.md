@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / IntersectGeoLayer #
+# GeoProcessor / Command / IntersectGeoLayer #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

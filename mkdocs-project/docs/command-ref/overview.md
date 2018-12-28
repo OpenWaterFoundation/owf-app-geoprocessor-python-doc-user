@@ -1,11 +1,10 @@
-# Learn GeoProcessor / Command Reference / Overview #
+# Command Reference / Overview #
 
-This reference section of the documentation provides information about commands that are provided
-by the GeoProcessor, as listed below.
+This reference section of the documentation provides information about GeoProcessor commands.
 
 * [Command Overview](#command-overview)
 * [Commands for Processing Spatial Data Layers](#commands-for-processing-spatial-data-layers)
-* [Commands for Processing Tabular Data](#commands-for-processing-tabular-data)
+* [Commands for Processing Tables](#commands-for-processing-tables)
 * [ Commands for Processing DataStores](#commands-for-processing-datastores)
 * [Commands to Control Running](#commands-to-control-running)
 * [Commands for Handling Files](#commands-for-handling-files)
@@ -39,96 +38,112 @@ The only exceptions are:
 3. Command and parameter names use mixed case where the first letter of each word is capitalized.
 4. Parameter values must generally be surrounded by double quotes, regardless of type.
 This convention may be relaxed in the future.
-5. Each command must exist on a single line.
+5. Each command must exist on a single line.  [`#`](Comment/Comment) comment blocks can be edited as multiple lines.
 6. Spaces at the front of a command for indentation are allowed to improve logic presentation,
-such as code levels for `For` and `If` blocks.
+such as code levels for [`For`](For/For) and [`If`](If/If) blocks.
 Tabs used for indentation are discouraged and may be prohibited in the future because tab width is ambiguous between different users and tools.
-7. Blank lines are allowed and will be handled as `BlankCommand` commands.
-8. Unknown commands are handled as `UnknownCommand` commands.
+7. Blank lines are allowed and will be handled as [`Blank`](Blank/Blank) commands.
+8. Unknown commands are handled as [`UnknownCommand`](UnknownCommand/UnknownCommand) commands.
 
 ## Commands for Processing Spatial Data Layers ##
 
-* [AddGeoLayerAttribute](AddGeoLayerAttribute/AddGeoLayerAttribute) - add an attribute to a GeoLayer
-* [ClipGeoLayer](ClipGeoLayer/ClipGeoLayer) - clip a GeoLayer by the boundary of another GeoLayer 
-* [CopyGeoLayer](CopyGeoLayer/CopyGeoLayer) - copy a GeoLayer to a new GeoLayer, optionally constraining the copy to a subset of the original features/attributes
-* [CreateGeoLayerFromGeometry](CreateGeoLayerFromGeometry/CreateGeoLayerFromGeometry) - create a GeoLayer from input geometry data
-* [FreeGeoLayers](FreeGeoLayers/FreeGeoLayers) - removes one or more GeoLayers from the GeoProcessor
-* [IntersectGeoLayer](IntersectGeoLayer/IntersectGeoLayer) - intersects a GeoLayer by another GeoLayer
-* [MergeGeoLayers](MergeGeoLayers/MergeGeoLayers) - merge multiple GeoLayers into one GeoLayer
-* [ReadGeoLayerFromDelimitedFile](ReadGeoLayerFromDelimitedFile/ReadGeoLayerFromDelimitedFile) - read a GeoLayer from a file in delimited file format
-* [ReadGeoLayerFromGeoJSON](ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON) - read a GeoLayer from a file in GeoJSON format
-* [ReadGeoLayerFromShapefile](ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile) - read a GeoLayer from a file in Shapefile format
-* [ReadGeoLayersFromFGDB](ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB) - read one or more GeoLayers from a file geodatabase
-* [ReadGeoLayersFromFolder](ReadGeoLayersFromFolder/ReadGeoLayersFromFolder) - read GeoLayers from a folder
-* [RemoveGeoLayerAttributes](RemoveGeoLayerAttributes/RemoveGeoLayerAttributes) - remove one or more attributes from a GeoLayer
-* [RenameGeoLayerAttribute](RenameGeoLayerAttribute/RenameGeoLayerAttribute) - rename a GeoLayer's attribute
-* [SetGeoLayerCRS](SetGeoLayerCRS/SetGeoLayerCRS) - sets a GeoLayer's coordinate reference system
-* [SetGeoLayerProperty](SetGeoLayerProperty/SetGeoLayerProperty) - set a GeoGeoLayer property
-* [SimplifyGeoLayerGeometry](SimplifyGeoLayerGeometry/SimplifyGeoLayerGeometry) - decreases the verticies in a polygon or line GeoLayer 
-* [WriteGeoLayerToDelimitedFile](WriteGeoLayerToDelimitedFile/WriteGeoLayerToDelimitedFile) - write GeoLayer to a file in delimited file format
-* [WriteGeoLayerToGeoJSON](WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON) - write GeoLayer to a file in GeoJSON format
-* [WriteGeoLayerToKML](WriteGeoLayerToKML/WriteGeoLayerToKML) - write GeoLayer to a file in KML format
-* [WriteGeoLayerToShapefile](WriteGeoLayerToShapefile/WriteGeoLayerToShapefile) - write GeoLayer to a file in Shapefile format
+| **Command Name**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** |
+| ---------------- | --------------- |
+| [`AddGeoLayerAttribute`](AddGeoLayerAttribute/AddGeoLayerAttribute) | Add an attribute to a GeoLayer. |
+| [`ClipGeoLayer`](ClipGeoLayer/ClipGeoLayer) | Clip a GeoLayer by the boundary of another GeoLayer. |
+| [`CopyGeoLayer`](CopyGeoLayer/CopyGeoLayer) | Copy a GeoLayer to a new GeoLayer, optionally constraining the copy to a subset of the original features/attributes. |
+| [`CreateGeoLayerFromGeometry`](CreateGeoLayerFromGeometry/CreateGeoLayerFromGeometry) | Create a GeoLayer from input geometry data. |
+| [`FreeGeoLayers`](FreeGeoLayers/FreeGeoLayers) | Removes one or more GeoLayers from the GeoProcessor. |
+| [`IntersectGeoLayer`](IntersectGeoLayer/IntersectGeoLayer) | Intersects a GeoLayer by another GeoLayer. |
+| [`MergeGeoLayers`](MergeGeoLayers/MergeGeoLayers) | Merge multiple GeoLayers into one GeoLayer. |
+| [`ReadGeoLayerFromDelimitedFile`](ReadGeoLayerFromDelimitedFile/ReadGeoLayerFromDelimitedFile) | Read a GeoLayer from a file in delimited file format. |
+| [`ReadGeoLayerFromGeoJSON`](ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON) | Read a GeoLayer from a file in GeoJSON format. |
+| [`ReadGeoLayerFromShapefile`](ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile) | Read a GeoLayer from a file in Shapefile format. |
+| [`ReadGeoLayersFromFGDB`](ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB) | Read one or more GeoLayers from a file geodatabase. |
+| [`ReadGeoLayersFromFolder`](ReadGeoLayersFromFolder/ReadGeoLayersFromFolder) | Read GeoLayers from a folder. |
+| [`RemoveGeoLayerAttributes`](RemoveGeoLayerAttributes/RemoveGeoLayerAttributes) | Remove one or more attributes from a GeoLayer. |
+| [`RenameGeoLayerAttribute`](RenameGeoLayerAttribute/RenameGeoLayerAttribute) | Rename a GeoLayer's attribute. |
+| [`SetGeoLayerCRS`](SetGeoLayerCRS/SetGeoLayerCRS) | Sets a GeoLayer's coordinate reference system. |
+| [`SetGeoLayerProperty`](SetGeoLayerProperty/SetGeoLayerProperty) | Set a GeoGeoLayer property. |
+| [`SimplifyGeoLayerGeometry`](SimplifyGeoLayerGeometry/SimplifyGeoLayerGeometry) | Decreases the verticies in a polygon or line GeoLayer.  |
+| [`WriteGeoLayerToDelimitedFile`](WriteGeoLayerToDelimitedFile/WriteGeoLayerToDelimitedFile) | Write GeoLayer to a file in delimited file format. |
+| [`WriteGeoLayerToGeoJSON`](WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON) | Write GeoLayer to a file in GeoJSON format. |
+| [`WriteGeoLayerToKML`](WriteGeoLayerToKML/WriteGeoLayerToKML) | Write GeoLayer to a file in KML format. |
+| [`WriteGeoLayerToShapefile`](WriteGeoLayerToShapefile/WriteGeoLayerToShapefile) | Write GeoLayer to a file in Shapefile format. |
 
-## Commands for Processing Tabular Data ##
+## Commands for Processing Tables ##
 
-* [ReadTableFromDataStore](ReadTableFromDataStore/ReadTableFromDataStore) - read a table from a DataStore
-* [ReadTableFromDelimitedFile](ReadTableFromDelimitedFile/ReadTableFromDelimitedFile) - read a Table from a delimited file
-* [ReadTableFromExcel](ReadTableFromExcel/ReadTableFromExcel) - read a Table from an Excel file
-* [WriteTableToDataStore](WriteTableToDataStore/WriteTableToDataStore) - write a Table to a DataStore
-* [WriteTableToDelimitedFile](WriteTableToDelimitedFile/WriteTableToDelimitedFile) - write a Table to a delimited file
-* [WriteTableToExcel](WriteTableToExcel/WriteTableToExcel) - write a Table to an Excel file
+| **Command Name**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** |
+| ---------------- | --------------- |
+| [`ReadTableFromDataStore`](ReadTableFromDataStore/ReadTableFromDataStore) | Read a table from a DataStore. |
+| [`ReadTableFromDelimitedFile`](ReadTableFromDelimitedFile/ReadTableFromDelimitedFile) | Read a Table from a delimited file. |
+| [`ReadTableFromExcel`](ReadTableFromExcel/ReadTableFromExcel) | Read a Table from an Excel file. |
+| [`WriteTableToDataStore`](WriteTableToDataStore/WriteTableToDataStore) | Write a Table to a DataStore. |
+| [`WriteTableToDelimitedFile`](WriteTableToDelimitedFile/WriteTableToDelimitedFile) | Write a Table to a delimited file. |
+| [`WriteTableToExcel`](WriteTableToExcel/WriteTableToExcel) | Write a Table to an Excel file. |
 
 ## Commands for Processing DataStores ##
 
-* [CloseDataStore](CloseDataStore/CloseDataStore) - close a DataStore connection
-* [OpenDataStore](OpenDataStore/OpenDataStore) - create a DataStore connection
-* [ReadTableFromDataStore](ReadTableFromDataStore/ReadTableFromDataStore) - read a table from a DataStore
-* [RunSql](RunSql/RunSql) - execute a SQL statement on a DataStore
-* [WriteTableToDataStore](WriteTableToDataStore/WriteTableToDataStore) - write a Table to a DataStore
+| **Command Name**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** |
+| ---------------- | --------------- |
+| [`CloseDataStore`](CloseDataStore/CloseDataStore) | Close a DataStore connection. |
+| [`OpenDataStore`](OpenDataStore/OpenDataStore) | Create a DataStore connection. |
+| [`ReadTableFromDataStore`](ReadTableFromDataStore/ReadTableFromDataStore) | Read a table from a DataStore. |
+| [`RunSql`](RunSql/RunSql) | Execute a SQL statement on a DataStore. |
+| [`WriteTableToDataStore`](WriteTableToDataStore/WriteTableToDataStore) | Write a Table to a DataStore. |
 
 ## Commands to Control Running ##
 
-* [\# comment](HashComment/HashComment) - single line comment
-* [/\* comment block start](CommentBlockStart/CommentBlockStart) - start of multi-line comment block
-* [\*/ comment block end](CommentBlockEnd/CommentBlockEnd) - end of multi-line comment block
-* [EndIf](EndIf/EndIf) - indicate the end of an `If` block
-* [EndFor](EndFor/EndFor) - indicate the end of a `For` block
-* [For](For/For) - indicate the start of a `For` block
-* [If](If/If) - indicate the start of an `If` block
-* [RunCommands](RunCommands/RunCommands) - run a command file, useful to automate running all tests or a multi-step workflow
-* [RunProgram](RunProgram/RunProgram) - run a program
-* [SetProperty](SetProperty/SetProperty) - set a GeoProcessor property
-* [SetPropertyFromGeoLayer](SetPropertyFromGeoLayer/SetPropertyFromGeoLayer) - set a GeoProcessor property from a GeoLayer property
+| **Command Name**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** |
+| ---------------- | --------------- |
+| [`# comment`](HashComment/HashComment) | Single line comment. |
+| [`/* comment block start`](CommentBlockStart/CommentBlockStart) | Start of multi-line comment block. |
+| [`*/ comment block end`](CommentBlockEnd/CommentBlockEnd) | End of multi-line comment block. |
+| [`EndIf`](EndIf/EndIf) | Indicate the end of an `If` block. |
+| [`EndFor`](EndFor/EndFor) | Indicate the end of a `For` block. |
+| [`For`](For/For) | Indicate the start of a `For` block. |
+| [`If`](If/If) | Indicate the start of an `If` block. |
+| [`RunCommands`](RunCommands/RunCommands) | Run a command file, useful to automate running all tests or a multi-step workflow. |
+| [`RunProgram`](RunProgram/RunProgram) | Run a program. |
+| [`SetProperty`](SetProperty/SetProperty) | Set a GeoProcessor property. |
+| [`SetPropertyFromGeoLayer`](SetPropertyFromGeoLayer/SetPropertyFromGeoLayer) | Set a GeoProcessor property from a GeoLayer property. |
 
 ## Commands for Handling Files ##
 
-* [CopyFile](CopyFile/CopyFile) - copy a file to a new file
-* [ListFiles](ListFiles/ListFiles) - list the files and folder within a folder or a URL
-* [RemoveFile](RemoveFile/RemoveFile) - remove a file
-* [UnzipFile](UnzipFile/UnzipFile) - unzip a file
-* [WebGet](WebGet/WebGet) - download a file from URL
+| **Command Name**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** |
+| ---------------- | --------------- |
+| [`CopyFile`](CopyFile/CopyFile) | Copy a file to a new file. |
+| [`ListFiles`](ListFiles/ListFiles) | List the files and folder within a folder or a URL. |
+| [`RemoveFile`](RemoveFile/RemoveFile) | Remove a file. |
+| [`UnzipFile`](UnzipFile/UnzipFile) | Unzip a file. |
+| [`WebGet`](WebGet/WebGet) | Download a file from URL. |
 
 ## Commands for Messages and Logging ##
 
-* [Message](Message/Message) - print a message to the log file
-* [StartLog](StartLog/StartLog) - start a new log file
+| **Command Name**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** |
+| ---------------- | --------------- |
+| [`Message`](Message/Message) | Print a message to the log file. |
+| [`StartLog`](StartLog/StartLog) | Start a new log file. |
 
 ## Commands for Testing ##
 
-* [CompareFiles](CompareFiles/CompareFiles) - compare files and optionally warn/fail if different/same
-* [CreateRegressionTestCommandFile](CreateRegressionTestCommandFile/CreateRegressionTestCommandFile) - create a master command file to automate running all tests
-* [RunCommands](RunCommands/RunCommands) - used when running a test suite
-* [StartRegressionTestResultsReport](StartRegressionTestResultsReport/StartRegressionTestResultsReport) - start (open) a file to receive regression test results
-* [WriteCommandSummaryToFile](WriteCommandSummaryToFile/WriteCommandSummaryToFile) - write a summary of command log messages to a file
-* [WriteGeoLayerPropertiesToFile](WriteGeoLayerPropertiesToFile/WriteGeoLayerPropertiesToFile) - write GeoLayer properties to file
-* [WritePropertiesToFile](WritePropertiesToFile/WritePropertiesToFile) - write properties to file
+| **Command Name**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** |
+| ---------------- | --------------- |
+| [`CompareFiles`](CompareFiles/CompareFiles) | Compare files and optionally warn/fail if different/same. |
+| [`CreateRegressionTestCommandFile`](CreateRegressionTestCommandFile/CreateRegressionTestCommandFile) | Create a master command file to automate running all tests. |
+| [`RunCommands`](RunCommands/RunCommands) | Used when running a test suite. |
+| [`StartRegressionTestResultsReport`](StartRegressionTestResultsReport/StartRegressionTestResultsReport) | Start (open) a file to receive regression test results. |
+| [`WriteCommandSummaryToFile`](WriteCommandSummaryToFile/WriteCommandSummaryToFile) | Write a summary of command log messages to a file. |
+| [`WriteGeoLayerPropertiesToFile`](WriteGeoLayerPropertiesToFile/WriteGeoLayerPropertiesToFile) | Write GeoLayer properties to file. |
+| [`WritePropertiesToFile`](WritePropertiesToFile/WritePropertiesToFile) | Write properties to file. |
 
 ## Utility Commands ##
 
-* [# Comment](Comment/Comment) - single line comments
-* [Blank](Blank/Blank) - used for blank lines
-* [UnknownCommand](UnknownCommand/UnknownCommand) - used when the command is not recognized
+| **Command Name**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** |
+| ---------------- | --------------- |
+| [`# Comment`](Comment/Comment) | Single line comments. |
+| [`Blank`](Blank/Blank) | Used for blank lines. |
+| [`UnknownCommand`](UnknownCommand/UnknownCommand) | Used when the command is not recognized. |
 
 ## QGIS Cross-Reference ##
 

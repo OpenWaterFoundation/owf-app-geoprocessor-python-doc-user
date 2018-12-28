@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / UnzipFile #
+# GeoProcessor / Command / UnzipFile #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

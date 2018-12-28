@@ -2,13 +2,23 @@
 # Use hash-comments to comment out pages have not been written
 # Reference: http://www.mkdocs.org/user-guide/configuration/
 #
-site_name: Learn / OWF GeoProcessor
+site_name: GeoProcessor
 pages:
 - Home: index.md
-- Introduction: introduction.md
-- Install GeoProcessor: install.md
-- Getting Started: getting-started.md
-- Command Reference:
+- Introduction: introduction/introduction.md
+- Getting Started: getting-started/getting-started.md
+- Running the GeoProcessor:
+  - Overview: running/overview.md
+  - User Interface (UI): running/ui.md
+  - Command Line (Batch): running/cl-batch.md
+  - Command Line (Interpreter): running/cl-interpreter.md
+  - Testing Framework (Batch & UI): running/gptest.md
+- Best Practices:
+  - Command Files: best-practices/command-files.md
+  - GeoLayer Identifiers: best-practices/geolayer-identifiers.md
+  - Table Identifiers: best-practices/table-identifiers.md
+- Troubleshooting: troubleshooting/troubleshooting.md
+- Reference - Commands:
   - Overview: command-ref/overview.md
   - AddGeoLayerAttribute: command-ref/AddGeoLayerAttribute/AddGeoLayerAttribute.md
   - Blank: command-ref/Blank/Blank.md  
@@ -66,24 +76,24 @@ pages:
   - WriteTableToDataStore: command-ref/WriteTableToDataStore/WriteTableToDataStore.md
   - WriteTableToDelimitedFile: command-ref/WriteTableToDelimitedFile/WriteTableToDelimitedFile.md
   - WriteTableToExcel: command-ref/WriteTableToExcel/WriteTableToExcel.md  
-- Spatial Data Format Reference:
+- Reference - Datastores and Spatial Data Formats:
   - Overview: spatial-data-format-ref/overview.md
   - Esri File Geodatabase: spatial-data-format-ref/EsriFileGeodatabase/EsriFileGeodatabase.md
   - Esri Shapefile: spatial-data-format-ref/EsriShapefile/EsriShapefile.md
   - GeoJSON: spatial-data-format-ref/GeoJSON/GeoJSON.md
   - KML: spatial-data-format-ref/KML/KML.md
-- Best Practices:
-  - GeoLayer Identifiers: best-practices/geolayer-identifiers.md
-  - Table Identifiers: best-practices/table-identifiers.md
-- Resources: resources.md
-- Troubleshooting: troubleshooting.md
+- Reference - Resources: resources/resources.md
+- Appendix - Installing: appendix-install/install.md
+- Appendix - Release Notes:
+  - Release Notes: appendix-release-notes/release-notes.md
+  - Version 1: appendix-release-notes/release-notes-1.md
 # ------- configuration properties ---------------
 # Use Material theme
 # - installation notes:  https://github.com/squidfunk/mkdocs-material
 theme: material
 # Don't enable the repo URL because irritating edit icons are shown when editing really isn't allowed
 #repo_url:  https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-doc-user
-site_description:  Open Water Foundation Learn GeoProcessor
+site_description:  Open Water Foundation GeoProcessor
 site_author:  Open Water Foundation
 site_favicon:  'images/OWF-Logo-Favicon-32x32.png'
 copyright:  Copyright Open Water Foundation

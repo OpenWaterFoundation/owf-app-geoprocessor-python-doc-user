@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / ClipGeoLayer #
+# GeoProcessor / Command / ClipGeoLayer #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

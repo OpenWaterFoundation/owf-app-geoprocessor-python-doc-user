@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / ReadGeoLayerFromShapefile #
+# GeoProcessor / Command / ReadGeoLayerFromShapefile #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

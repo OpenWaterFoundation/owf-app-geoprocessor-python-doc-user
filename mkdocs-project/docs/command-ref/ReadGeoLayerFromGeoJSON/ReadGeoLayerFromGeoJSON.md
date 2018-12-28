@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / ReadGeoLayerFromGeoJSON #
+# GeoProcessor / Command / ReadGeoLayerFromGeoJSON #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / WriteGeoLayerPropertiesToFile #
+# GeoProcessor / Command / WriteGeoLayerPropertiesToFile #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

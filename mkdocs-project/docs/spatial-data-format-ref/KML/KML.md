@@ -1,4 +1,4 @@
-# Learn GeoProcessor / KML
+# GeoProcessor / KML
 
 * [Overview](#overview)
 * [Limitations](#limitations)

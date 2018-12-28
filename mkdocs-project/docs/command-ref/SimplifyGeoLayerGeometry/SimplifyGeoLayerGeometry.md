@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / SimplifyGeoLayerGeometry #
+# GeoProcessor / Command / SimplifyGeoLayerGeometry #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

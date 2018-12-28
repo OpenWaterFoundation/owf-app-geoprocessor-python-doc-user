@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / ReadGeoLayersFromFGDB #
+# GeoProcessor / Command / ReadGeoLayersFromFGDB #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

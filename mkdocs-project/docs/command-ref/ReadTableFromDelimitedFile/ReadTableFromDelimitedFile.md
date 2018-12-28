@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / ReadTableFromDelimitedFile #
+# GeoProcessor / Command / ReadTableFromDelimitedFile #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

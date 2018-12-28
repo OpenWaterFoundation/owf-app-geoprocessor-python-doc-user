@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / RunProgram #
+# GeoProcessor / Command / RunProgram #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)
@@ -55,6 +55,11 @@ Command Parameters
 | --------------|-----------------|----------------- |
 | `CommandLine`<br>**required** | The full program command line, with arguments.  If the program executable is found in the `PATH` environment variable, then only the program name needs to be specified.  Otherwise, specify an absolute path to the program or run the GeoProcessor from a command shell in the same directory.  The command string can contain redirection and pipe characters.<br><br>The `${WorkingDir}` property can be used in the command line to indicate the working directory (command file location) when specifying file names.  Other `${Property}` names can also be used. | None - must be specified. |
 | `UseCommandShell` | If specified as `True`, the program will be run using a command shell.  A command shell is needed if the program is a script (batch file), a shell command, or uses `>`, `|`, etc. | `False`. |
+| `IncludeParentEnvVars` | Indicate whether the parent environment variables should be passed to the program run environment by specifying (`True`) or ignore all parent environment variable (`False`).  Other parameters can be used to add additional environment variables or remove environment variables from the program run environment. | `True`. |
+| `IncludeEnvVars` | Specify environment variables to be defined for the program run environment, using format `EnvVarName1=EnvVarValue1;EnvVarName2=EnvVarValue2;...`.  Other parameters can be used to add additional environment variables or remove environment variables from the program run environment. | |
+| `ExcludeEnvVars` | Specify environment variables to be removed from the program run environment, using format `EnvVarName1,EnvVarName2,...`.  This parameter is processed after the parameters that define environment variables in the run environment.  Other parameters can be used to add additional environment variables or remove environment variables from the program run environment. | |
+| `IncludeEnvVarName1` ... `IncludeEnvVarName5` | Specify the name of as single environment variable to be defined for the program run environment.  Use this parameter with corresponding `IncludeEnvVarValue1` (through `IncludeEnvVarValue5`) as an alternative to the `IncludeEnvVars` parameter includes formatting that is difficult to parse due to special characters, etc.  Other parameters can be used to add additional environment variables or remove environment variables from the program run environment. |  |
+| `IncludeEnvVarValue1` ... `IncludeEnvVarValue5` | Specify the value of as single environment variable to be defined for the program run environment.  Use this parameter with corresponding `IncludeEnvVarName1` (through `IncludeEnvVarName5`) as an alternative to the `IncludeEnvVars` parameter includes formatting that is difficult to parse due to special characters, etc.  Other parameters can be used to add additional environment variables or remove environment variables from the program run environment. |  |
 
 ## Examples ##
 

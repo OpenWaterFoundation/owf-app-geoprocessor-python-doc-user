@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / Comment Block End `*/` #
+# GeoProcessor / Command / Comment Block End `*/` #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

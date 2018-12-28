@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / WriteGeoLayerToKML #
+# GeoProcessor / Command / WriteGeoLayerToKML #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

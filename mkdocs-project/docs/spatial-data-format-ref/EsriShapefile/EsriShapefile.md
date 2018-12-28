@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Esri Shapefile 
+# GeoProcessor / Esri Shapefile 
 
 * [Overview](#overview)
 * [Esri Shapefiles and Standard GeoLayer Properties](#esri-shapefiles-and-standard-geolayer-properties)
