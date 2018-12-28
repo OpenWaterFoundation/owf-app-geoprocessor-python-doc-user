@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / SetProperty #
+# GeoProcessor / Command / SetProperty #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

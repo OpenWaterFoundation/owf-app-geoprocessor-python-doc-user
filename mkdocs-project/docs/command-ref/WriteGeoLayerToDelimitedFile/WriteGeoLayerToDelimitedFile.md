@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / WriteGeoLayerToDelimitedFile #
+# GeoProcessor / Command / WriteGeoLayerToDelimitedFile #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

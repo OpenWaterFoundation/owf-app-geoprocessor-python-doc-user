@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / CopyFile #
+# GeoProcessor / Command / CopyFile #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

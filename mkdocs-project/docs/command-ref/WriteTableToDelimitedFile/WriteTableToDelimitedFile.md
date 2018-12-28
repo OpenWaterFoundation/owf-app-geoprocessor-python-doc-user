@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / WriteTableToDelimitedFile #
+# GeoProcessor / Command / WriteTableToDelimitedFile #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

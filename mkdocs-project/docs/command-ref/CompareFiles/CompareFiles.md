@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / CompareFiles #
+# GeoProcessor / Command / CompareFiles #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

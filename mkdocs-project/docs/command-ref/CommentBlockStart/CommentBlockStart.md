@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / Comment Block Start `/*` #
+# GeoProcessor / Command / Comment Block Start `/*` #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

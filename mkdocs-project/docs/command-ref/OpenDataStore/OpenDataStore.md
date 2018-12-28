@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / OpenDataStore #
+# GeoProcessor / Command / OpenDataStore #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

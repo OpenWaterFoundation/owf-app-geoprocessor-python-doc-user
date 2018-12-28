@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / WriteCommandSummaryToFile #
+# GeoProcessor / Command / WriteCommandSummaryToFile #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

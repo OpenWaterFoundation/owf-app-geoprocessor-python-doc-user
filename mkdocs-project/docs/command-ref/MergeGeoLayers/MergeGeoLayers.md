@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / MergeGeoLayers #
+# GeoProcessor / Command / MergeGeoLayers #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

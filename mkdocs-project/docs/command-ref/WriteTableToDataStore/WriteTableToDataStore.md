@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / WriteTableToDataStore #
+# GeoProcessor / Command / WriteTableToDataStore #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

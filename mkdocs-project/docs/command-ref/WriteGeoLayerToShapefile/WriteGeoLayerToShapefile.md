@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / WriteGeoLayerToShapefile #
+# GeoProcessor / Command / WriteGeoLayerToShapefile #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / StartLog #
+# GeoProcessor / Command / StartLog #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

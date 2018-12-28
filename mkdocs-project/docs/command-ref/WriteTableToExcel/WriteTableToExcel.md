@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / WriteTableToExcel #
+# GeoProcessor / Command / WriteTableToExcel #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

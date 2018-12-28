@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Esri File Geodatabase
+# GeoProcessor / Esri File Geodatabase
 
 * [Overview](#overview)
 * [Esri File Geodatabase and Standard GeoLayer Properties](#esri-file-geodatabase-and-standard-geolayer-properties)

@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / For #
+# GeoProcessor / Command / For #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / WritePropertiesToFile #
+# GeoProcessor / Command / WritePropertiesToFile #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

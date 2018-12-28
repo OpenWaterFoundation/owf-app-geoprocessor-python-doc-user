@@ -1,6 +1,6 @@
-# Learn GeoProcessor / Resources #
+# GeoProcessor / Resources #
 
-The following are useful resources.
+The following are useful resources, in alphabetical order.
 
 ## QGIS ##
 

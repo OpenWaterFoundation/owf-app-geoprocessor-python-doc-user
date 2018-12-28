@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / WebGet #
+# GeoProcessor / Command / WebGet #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)

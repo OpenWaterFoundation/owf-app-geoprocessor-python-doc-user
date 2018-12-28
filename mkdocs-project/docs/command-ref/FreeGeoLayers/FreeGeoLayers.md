@@ -1,4 +1,4 @@
-# Learn GeoProcessor / Command / FreeGeoLayers #
+# GeoProcessor / Command / FreeGeoLayers #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)
