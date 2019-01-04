@@ -79,17 +79,17 @@ The GeoProcessor Python modules need to be installed in a folder where the QGIS 
 
 1. Download GeoProcessor package installer (**standard download website needs to be implemented - for
 now files may be distributed by email**).
-	1. ![Windows](images/windows-32.png) Windows, typically will be saved to user's `Downloads` folder:
+	1. ![Windows](../images/windows-32.png) Windows, typically will be saved to user's `Downloads` folder:
 		1. `gp-sitepackage.zip` - full QGIS GeoProcessor
-	2. ![Linux](images/linux-32.png) Linux, may be saved to users' `Downloads` folder or `/tmp`:
+	2. ![Linux](../images/linux-32.png) Linux, may be saved to users' `Downloads` folder or `/tmp`:
 		1. `gp-sitepackage.tar.gz` - full QGIS GeoProcessor
 		2. `gptest-sitepackage.tar.gz` - test framework GeoProcessor (no QGIS)
 2. Determine candidate install locations:
-	1. ![Windows](images/windows-32.png) Windows QGIS version:
+	1. ![Windows](../images/windows-32.png) Windows QGIS version:
 		1. For QGIS 3.1 (or similar), is typically `C:\OSGeo4W64\apps\Python36\Lib\site-packages`.
 3. Remove previous installation.  Delete the `geoprocessor` folder from the location determined in the previous step.
 4. Install the GeoProcessor package (`geoprocessor` folder and everything included in that folder).
-	1. ![Windows](images/windows-32.png) Windows QGIS version:
+	1. ![Windows](../images/windows-32.png) Windows QGIS version:
 		1. Use Windows Explorer to copy the contents of the zip file (not the zip file itself) to the above folder.
 
 #### Install GeoProcessor Run Programs for QGIS ####
@@ -111,13 +111,13 @@ Potential locations to install the run scripts include:
 * Check the `PATH` environment variable to see what folders are searched to find software, and
 copy the programs to one of the folders.  Determine the folders in the path by running the follows command
 in a shell:
-	+ ![Windows](images/windows-32.png) Windows command shell: `echo %PATH%`
-	+ ![Linux](images/linux-32.png) Linux shell window: `echo $PATH`
+	+ ![Windows](../images/windows-32.png) Windows command shell: `echo %PATH%`
+	+ ![Linux](../images/linux-32.png) Linux shell window: `echo $PATH`
 * User-defined folder in `PATH` (currently recommended).
-	+ ![Linux](images/linux-32.png) Linux user programs, for example: `$HOME/user/bin`
+	+ ![Linux](../images/linux-32.png) Linux user programs, for example: `$HOME/user/bin`
 * Install in the QGIS `bin` folder, for example as shown below.
 However, this folder may not be in the `PATH` because QGIS may be run from its user interface via system menus.
-	+ ![Windows](images/windows-32.png) Windows: `C:\OSGeo4W64\bin`
+	+ ![Windows](../images/windows-32.png) Windows: `C:\OSGeo4W64\bin`
 
 The `gp.py` file is run by the run scripts and specifies the Python GeoProcessor module to run
 using the `-m geoprocessor.app.gp` Python command line parameter.
@@ -276,7 +276,7 @@ To install on Windows QGIS version of GeoProcessor:
 |pandas|[https://pandas.pydata.org/](https://pandas.pydata.org/)|Holds and manipulates Table data.|`py -m pip install pandas`|
 |OpenPyXL|[https://openpyxl.readthedocs.io/en/stable/](https://openpyxl.readthedocs.io/en/stable/)|Reads and writes Excel 2010 xlsx/xlsm files to and from Table objects.|`py -m pip install openpyxl`|
 |requests (extended package)|[http://docs.python-requests.org/en/master/](http://docs.python-requests.org/en/master/)<br><br> [https://pypi.org/project/requests/](https://pypi.org/project/requests/)|Downloads data files within the [`WebGet`](../command-ref/WebGet/WebGet) command. <br><br>The `requests[security]` extension package is preferred over the core `requests` package to avoid an error that would occur when downloading a file over `https` with the [`WebGet`](../command-ref/WebGet/WebGet) command. The error that occurred when using the core `requests` package printed:<br>`requests.exceptions.SSLError: [Errno 1] _ssl.c:503: error:140770FC:SSL routines:SSL23_GET_SERVER_HELLO:unknown protocol`. <br>This error does not occur when utilizing the `requests[security]` extension package. | `py -m pip install requests[security]`|
-|SQLAlchemy|[http://www.sqlalchemy.org/](http://www.sqlalchemy.org/)|Enables connections to databases.|`py -m pip SQLAlchemy`|
+|SQLAlchemy|[http://www.sqlalchemy.org/](http://www.sqlalchemy.org/)|Enables connections to databases.|`py -m install pip SQLAlchemy`|
 
 ### Linux Test Framework Version ###
 
