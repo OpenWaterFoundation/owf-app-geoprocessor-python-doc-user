@@ -9,7 +9,8 @@ therefore installation steps must be run from the command line.
 * [Install Full GeoProcessor, for use with QGIS](#install-full-geoprocessor-for-use-with-qgis)
 * [Install Full GeoProcessor, for use with ArcGIS Pro](#install-full-geoprocessor-for-use-with-arcgis-pro)
 * [Install GeoProcessor Testing Framework](#install-geoprocessor-testing-framework)
-* [Install Additional Python Packages](#install-additional-python-packages)
+* [Troubleshooting Installation](#troubleshooting-installation)
+* [Obsolete: Install Additional Python Packages](#obsolete-install-additional-python-packages)
 	+ [QGIS on Windows Version](#qgis-on-windows-version)
 	+ [Linux Test Framework Version](#linux-test-framework-version)
 
@@ -43,8 +44,6 @@ however, installing multiple versions of QGIS and ArcGIS Pro on the same compute
 
 ## Install Full GeoProcessor, for use with QGIS ##
 
-**This section needs to be updated.  The initial focus has been on the testing framework.**
-
 1. [Install QGIS](#install-qgis)
 2. [Install Python for QGIS (Optional)](#install-python-for-qgis-optional)
 3. [Install GeoProcessor for QGIS](#install-geoprocessor-for-qgis)
@@ -53,77 +52,17 @@ however, installing multiple versions of QGIS and ArcGIS Pro on the same compute
 
 ### Install QGIS ###
 
-The full GeoProcessor installation for QGIS requires that QGIS (Version 3) is installed.
-See the [Resources](resources#QGIS) information for how to install QGIS.
+The full GeoProcessor installation for QGIS requires that QGIS (Version 3) is installed,
+generally the most recent available.
+See the [OWF / Learn QGIS](http://learn.openwaterfoundation.org/owf-learn-qgis/install-qgis/install-qgis/) documentation for how to install QGIS.
 It is recommended that the current QGIS version is installed in the default location to minimize configuration issues.
-
-
-### Install Python for QGIS (Optional) ###
-
-The GeoProcessor requires Python 3.6+.
-The `gp` program (see next section) that runs the GeoProcessor typically uses the Python distributed with QGIS.
-
-In the future the GeoProcessor may be distributed with a Python virtual environment.
-However, this is currently not complete because of dependence on the QGIS installation.
-**Advice on this topic from the developer community is welcomed.**
+The GeoProcessor software will default to running the most recent standalone QGIS installation and if not found
+will search for OSGeo4W installation of QGIS.
 
 ### Install GeoProcessor for QGIS ###
 
-The GeoProcessor installation does not currently use the standard Python `pip` or `pipenv`
-installation tools (this will be implemented in the future).
-Currently a manual installation process is used:
-
-#### Install `geoprocessor` Python Package for QGIS ####
-
-The GeoProcessor Python modules need to be installed in a folder where the QGIS Python interpreter can find the files.
-
-1. Download GeoProcessor package installer (**standard download website needs to be implemented - for
-now files may be distributed by email**).
-	1. ![Windows](../images/windows-32.png) Windows, typically will be saved to user's `Downloads` folder:
-		1. `gp-sitepackage.zip` - full QGIS GeoProcessor
-	2. ![Linux](../images/linux-32.png) Linux, may be saved to users' `Downloads` folder or `/tmp`:
-		1. `gp-sitepackage.tar.gz` - full QGIS GeoProcessor
-		2. `gptest-sitepackage.tar.gz` - test framework GeoProcessor (no QGIS)
-2. Determine candidate install locations:
-	1. ![Windows](../images/windows-32.png) Windows QGIS version:
-		1. For QGIS 3.1 (or similar), is typically `C:\OSGeo4W64\apps\Python36\Lib\site-packages`.
-3. Remove previous installation.  Delete the `geoprocessor` folder from the location determined in the previous step.
-4. Install the GeoProcessor package (`geoprocessor` folder and everything included in that folder).
-	1. ![Windows](../images/windows-32.png) Windows QGIS version:
-		1. Use Windows Explorer to copy the contents of the zip file (not the zip file itself) to the above folder.
-
-#### Install GeoProcessor Run Programs for QGIS ####
-
-Simple scripts are provided for Windows (`gp.bat` and `gptest.bat`) and Linux (`gp.sh` and `gptest.sh`)
-to configure the GeoProcessor Python environment and run the GeoProcessor.
-The programs should be installed in a location that facilitates running the GeoProcessor.
-The Windows `gp.bat` and Linux `gp.sh` scripts assume a location for the QGIS install and its embedded Python.
-The Windows `gptest.bat` and Linux `gptest.sh` scripts check for Python 3 on the system
-(because QGIS Python is not used).
-If the location of the Python interpreter does not match the location in the script,
-then the script may need to be edited to specify the actual Python interpreter location.
-
-Potential locations to install the run scripts include:
-
-* Standard GeoProcessor software installation folder, accessed using system menus:
-	+ **This is not yet enabled but will be the default when the user interface is implemented.**
-* Run the script manually from wherever it is installed.
-* Check the `PATH` environment variable to see what folders are searched to find software, and
-copy the programs to one of the folders.  Determine the folders in the path by running the follows command
-in a shell:
-	+ ![Windows](../images/windows-32.png) Windows command shell: `echo %PATH%`
-	+ ![Linux](../images/linux-32.png) Linux shell window: `echo $PATH`
-* User-defined folder in `PATH` (currently recommended).
-	+ ![Linux](../images/linux-32.png) Linux user programs, for example: `$HOME/user/bin`
-* Install in the QGIS `bin` folder, for example as shown below.
-However, this folder may not be in the `PATH` because QGIS may be run from its user interface via system menus.
-	+ ![Windows](../images/windows-32.png) Windows: `C:\OSGeo4W64\bin`
-
-The `gp.py` file is run by the run scripts and specifies the Python GeoProcessor module to run
-using the `-m geoprocessor.app.gp` Python command line parameter.
-If the GeoProcessor package was installed in a folder (such as `site-packages`) that is known to the
-Python interpreter, the GeoProcessor software will be found and will run.
-Otherwise, an error will be displayed about the module not being found and installation locations need to be reviewed.
+The GeoProcessor software is currently distributed as a `zip` file (Windows) and `tar.gz` file (Cygwin and Linux).
+See the [GeoProcessor Download](http://software.openwaterfoundation.org/geoprocessor/) page, which includes basic installation instructions.
 
 ## Install Full GeoProcessor, for use with ArcGIS Pro ##
 
@@ -150,7 +89,7 @@ Currently, installation uses the command line but in the future a graphical inst
 ### 1. Download GeoProcessor Installer Script ###
 
 The GeoProcessor testing framework is distributed as a Python virtual environment in a `tar.gz` file (Linux)
-or zipped file (Windows).
+or `zip` file (Windows).
 This allows the testing framework to be isolated from other Python installations on the computer.
 Download and installation is facilitated by first downloading and running a small installer script
 that will help with the installation.
@@ -246,7 +185,50 @@ To make it easier to run the scripts, add the folder to the `PATH`,
 define symbolic links in a folder that is already in the `PATH`, or define a shell alias.
 Otherwise type the path to the program to run.
 
-## Install Additional Python Packages ##
+## Troubleshooting Installation ##
+
+The following are cases that have been encountered during installation, with recommendations to resolve each issue.
+
+### ![Windows](../images/windows-32.png) Error running GeoProcessor:  `ModuleNotFoundError:  No module named 'pandas._libs.tslib' ###
+
+The following error may be encountered running the `gpui.bat` batch file on Windows:
+
+```
+Running "C:\OSGEO4~1\apps\Python36\python" -m geoprocessor.app.gp --ui
+Traceback (most recent call last):
+  File "C:\Users\sam\gp-1.2.0dev-win-venv\Lib\site-packages\pandas\__init__.py", line 26, in <module>
+    from pandas._libs import (hashtable as _hashtable,
+  File "C:\Users\sam\gp-1.2.0dev-win-venv\Lib\site-packages\pandas\_libs\__init__.py", line 4, in <module>
+    from .tslib import iNaT, NaT, Timestamp, Timedelta, OutOfBoundsDatetime
+ModuleNotFoundError: No module named 'pandas._libs.tslib'
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\OSGEO4~1\apps\Python36\lib\runpy.py", line 193, in _run_module_as_main
+    "__main__", mod_spec)
+  File "C:\OSGEO4~1\apps\Python36\lib\runpy.py", line 85, in _run_code
+    exec(code, run_globals)
+  File "C:\Users\sam\gp-1.2.0dev-win-venv\Lib\site-packages\geoprocessor\app\gp.py", line 39, in <module>
+    from geoprocessor.commands.testing.StartRegressionTestResultsReport import StartRegressionTestResultsReport
+  File "C:\Users\sam\gp-1.2.0dev-win-venv\Lib\site-packages\geoprocessor\commands\testing\StartRegressionTestResultsReport.py", line 29, in <module>
+    import geoprocessor.util.validator_util as validators
+  File "C:\Users\sam\gp-1.2.0dev-win-venv\Lib\site-packages\geoprocessor\util\validator_util.py", line 35, in <module>
+    import geoprocessor.util.pandas_util as pandas_util
+  File "C:\Users\sam\gp-1.2.0dev-win-venv\Lib\site-packages\geoprocessor\util\pandas_util.py", line 21, in <module>
+    import pandas as pd
+  File "C:\Users\sam\gp-1.2.0dev-win-venv\Lib\site-packages\pandas\__init__.py", line 35, in <module>
+    "the C extensions first.".format(module))
+ImportError: C extension: No module named 'pandas._libs.tslib' not built. If you want to import pandas from the source directory, you may need to run 'python setup.py build_ext --inplace --force' to b
+uild the C extensions first.
+```
+
+The solution was to install the latest QGIS standalone version (3.4.3).
+The previous QGIS version was significantly out of date (3.0.0) and apparently there were some
+incompatibilities between the GeoProcessor and QGIS.
+This required first uninstalling the previous QGIS software.
+
+## Obsolete: Install Additional Python Packages ##
 
 **This section is retained as a temporary artifact and will be removed after other documentation is updated.
 Add-on Python packages are included in the distributed GeoProcessor virtual environment.
