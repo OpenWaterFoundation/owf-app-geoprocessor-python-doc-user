@@ -57,7 +57,9 @@ GeoProcessor Version History Summary (most current at top)
 
 |**GeoProcessor Version(s)**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|**Summary of Major Changes in Version**|**Release Date**|
 |--|--|--|
-|1.0.0|Initial release with core geoprocessing functionality and testing framework.|2019-01-??|
+|1.2.0|Fix Windows installer bugs, enable comment editing, various cleanup.|2019-01-10|
+|1.1.0|Add Windows installer, various cleanup.|          |
+|1.0.0|Initial release with core geoprocessing functionality and testing framework.|          |
 
 ## Known Limitations ##
 
