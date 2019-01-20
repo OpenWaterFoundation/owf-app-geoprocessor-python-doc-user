@@ -24,7 +24,11 @@ differences are detected.
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![CompareFiles](CompareFiles.png)
+
+**<p style="text-align: center;">
+`CompareFiles` Command Editor (<a href="../CompareFiles.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

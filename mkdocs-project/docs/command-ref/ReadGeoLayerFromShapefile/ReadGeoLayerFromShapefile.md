@@ -20,7 +20,11 @@ The `ReadGeoLayerFromShapefile` command reads a [GeoLayer](../../introduction#ge
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![ReadGeoLayerFromShapefile](ReadGeoLayerFromShapefile.png)
+
+**<p style="text-align: center;">
+`ReadGeoLayerFromShapefile` Command Editor (<a href="../ReadGeoLayerFromShapefile.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

@@ -23,7 +23,6 @@ The goal is to have all tests pass before software is released and not retain br
 
 The following table lists tags (annotations) that can be placed in `#` comments in command files to provide information for testing, for example:
 
-
 **<p style="text-align: center;">
 Property File Formats
 </p>**
@@ -37,7 +36,11 @@ Property File Formats
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![CreateRegressionTestCommandFile](CreateRegressionTestCommandFile.png)
+
+**<p style="text-align: center;">
+`CreateRegressionTestCommandFile` Command Editor (<a href="../CreateRegressionTestCommandFile.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 
