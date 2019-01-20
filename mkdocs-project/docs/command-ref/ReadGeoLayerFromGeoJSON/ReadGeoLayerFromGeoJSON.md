@@ -20,7 +20,11 @@ The `ReadGeoLayerFromGeoJSON` command reads a [GeoLayer](../../introduction#geol
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![ReadGeoLayerFromGeoJSON](ReadGeoLayerFromGeoJSON.png)
+
+**<p style="text-align: center;">
+`ReadGeoLayerFromGeoJSON` Command Editor (<a href="../ReadGeoLayerFromGeoJSON.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

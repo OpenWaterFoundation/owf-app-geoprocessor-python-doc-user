@@ -21,7 +21,11 @@ The `WebGet` command downloads a file or other web resource from a URL source. C
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![WebGet](WebGet.png)
+
+**<p style="text-align: center;">
+`WebGet` Command Editor (<a href="../WebGet.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

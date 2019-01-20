@@ -36,9 +36,14 @@ Limitations of the command are as follows and will be addressed in future softwa
 
 ## Command Editor ##
 
-The following dialog is used to edit the command and illustrates the command syntax.
+The following dialog is used to edit the command and illustrates the command syntax
+when running a program in a command shell configured with environment variables.
 
-**Need to implement UI.**
+![RunProgram](RunProgram.png)
+
+**<p style="text-align: center;">
+`RunProgram` Command Editor (<a href="../RunProgram.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

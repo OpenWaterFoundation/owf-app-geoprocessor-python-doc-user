@@ -21,7 +21,11 @@ processing. See also the [`If`](../If/If) command, which can be used to check fo
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![Message](Message.png)
+
+**<p style="text-align: center;">
+`Message` Command Editor (<a href="../Message.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

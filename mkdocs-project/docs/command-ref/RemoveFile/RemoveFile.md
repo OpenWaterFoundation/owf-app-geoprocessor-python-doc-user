@@ -21,7 +21,11 @@ the file is being used by another process).
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![RemoveFile](RemoveFile.png)
+
+**<p style="text-align: center;">
+`RemoveFile` Command Editor (<a href="../RemoveFile.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 
