@@ -11,8 +11,8 @@
 
 ## Overview ##
 
-The `ReadTableFromDataStore` command reads a [Table](../../introduction#table) from a database 
-[DataStore](../../introduction#datastore) using [Structured Query Language](https://en.wikipedia.org/wiki/SQL) (SQL).
+The `ReadTableFromDataStore` command reads a [Table](../../introduction/introduction.md#table) from a database 
+[DataStore](../../introduction/introduction.md#datastore) using [Structured Query Language](https://en.wikipedia.org/wiki/SQL) (SQL).
 Support for web service datastores may be added in the future. 
 
 Selection criteria must be specified to indicate which data from the DataStore should be read into the Table. 
@@ -52,12 +52,12 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-|`DataStoreID` <br> **_required_**| The ID of a database DataStore to read. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized. | None - must be specified. |
+|`DataStoreID` <br> **_required_**| The ID of a database DataStore to read. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized. | None - must be specified. |
 ||**MUST SELECT `1` OF THE FOLLOWING `3` PARAMETERS ... **||
-|`DataStoreTable` | The name of the database table to read when querying a single table. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.<br><br>If specified, do not specify `Sql` or `SqlFile`.|None|
-|`Sql`|The SQL string that will be used to query the database. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.<br><br> If specified, do not specify `DataStoreTable` or `SqlFile`.|None|
-|`SqlFile`|The name of the file containing an SQL string to execute. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.<br><br>If specified, do not specify `DataStoreTable` or `Sql`.|None|
-|`TableID` <br> **_required_**| A Table identifier for the table to be created to contain results. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.  Refer to [documentation](../../best-practices/table-identifiers.md) for best practices on naming Table identifiers.|None - must be specified. |
+|`DataStoreTable` | The name of the database table to read when querying a single table. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.<br><br>If specified, do not specify `Sql` or `SqlFile`.|None|
+|`Sql`|The SQL string that will be used to query the database. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.<br><br> If specified, do not specify `DataStoreTable` or `SqlFile`.|None|
+|`SqlFile`|The name of the file containing an SQL string to execute. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.<br><br>If specified, do not specify `DataStoreTable` or `Sql`.|None|
+|`TableID` <br> **_required_**| A Table identifier for the table to be created to contain results. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.  Refer to [documentation](../../best-practices/table-identifiers.md) for best practices on naming Table identifiers.|None - must be specified. |
 |`Top` <br> *optional*| An integer to indicate the number of rows that should be returned. Must be a positive integer. <br><br> *This parameter is only used when `DataStoreTable` is specified. The `Top` value is ignored if the `Sql` or `SqlFile` parameters are specified. The SQL to be executed can include `Top` to achieve a similar result.*|All rows are returned.|
 |`IncludeColumns` <br> *optional*|A list of glob-style patterns to determine the DataStore table columns to read. <br><br> See [Determining which Columns to Read](#determining-which-columns-to-read).<br><br> *This parameter is only used when `DataStoreTable` is specified. The `IncludeColumns` value is ignored if the `Sql` or `SqlFile` parameters are specified.*|`*` <br><br> All columns are read.|
 |`ExcludeColumns` <br> *optional*|A list of glob-style patterns to determine the DataStore table columns to NOT read. <br><br> See [Determining which Columns to Read](#determining-which-columns-to-read).<br><br> *This parameter is only used when `DataStoreTable` is specified. The `ExcludeColumns` value is ignored if the `Sql` or `SqlFile` parameters are specified.*|No columns are excluded.|
@@ -66,7 +66,7 @@ Command Parameters
 ### Determining Which Columns to Read
 * The `IncludeColumns` parameter is always processed first. The`ExcludeColumns` parameter is always processed second. 
 	* The `IncludeColumns` *selects* all of the DataStore's database table columns that follow the given patterns. By default (`*`) all of the database's table columns are read.
-	* The `ExcludeColumns` *removes* all of the columns *previously selected from the `IncludeColumns` parameter* that follow the given patterns. 
+	* The `ExcludeColumns` *removes* all of the columns previously selected from the `IncludeColumns` parameter that follow the given patterns. 
 	By default, none of the *previously selected* columns are removed.
 	
 ## Examples ##
@@ -76,7 +76,6 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 **The automated tests for this command have not yet been created.**
 
 ** Currently in development queue.**
-
 
 ## Troubleshooting ##
 

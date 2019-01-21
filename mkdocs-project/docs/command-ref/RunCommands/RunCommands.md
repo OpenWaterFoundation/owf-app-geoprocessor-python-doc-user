@@ -64,7 +64,7 @@ Command Parameters
 
 ## See Also ##
 
-* [CreateRegressionTestCommandFile](../CreateRegressionTestCommandFile/CreateRegressionTestCommandFile) command
-* [RunProgram](../RunProgram/RunProgram) command
-* [StartRegressionTestResultsReport](../StartRegressionTestResultsReport/StartRegressionTestResultsReport) command
-* [WriteCommandSummaryToFile](../WriteCommandSummaryToFile/WriteCommandSummaryToFile) command
+* [CreateRegressionTestCommandFile](../CreateRegressionTestCommandFile/CreateRegressionTestCommandFile.md) command
+* [RunProgram](../RunProgram/RunProgram.md) command
+* [StartRegressionTestResultsReport](../StartRegressionTestResultsReport/StartRegressionTestResultsReport.md) command
+* [WriteCommandSummaryToFile](../WriteCommandSummaryToFile/WriteCommandSummaryToFile.md) command

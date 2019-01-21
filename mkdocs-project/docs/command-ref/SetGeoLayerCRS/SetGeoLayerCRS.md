@@ -11,7 +11,7 @@
 
 ## Overview ##
 
-The `SetGeoLayerCRS` command sets the [coordinate reference system (CRS)](https://en.wikipedia.org/wiki/Spatial_reference_system) of a [GeoLayer](../../introduction#geolayer). 
+The `SetGeoLayerCRS` command sets the [coordinate reference system (CRS)](https://en.wikipedia.org/wiki/Spatial_reference_system) of a [GeoLayer](../../introduction/introduction.md#geolayer). 
 
 
 |This command:|
@@ -58,7 +58,6 @@ Example GeoLayer Data
 | ExampleGeoLayer1 |EPSG:4326 (WGS84)|
 | ExampleGeoLayer2	|`None`|
 
-
 ### Example 1: Reproject a GeoLayer###
 
 ```
@@ -84,8 +83,6 @@ After running the command, the following GeoLayer IDs are registered within the 
 | ---- |---|
 | ExampleGeoLayer1  |EPSG:4326 (WGS84)|
 | ExampleGeoLayer2	|EPSG:4326 (WGS84)|
-
-
 
 ## Troubleshooting ##
 

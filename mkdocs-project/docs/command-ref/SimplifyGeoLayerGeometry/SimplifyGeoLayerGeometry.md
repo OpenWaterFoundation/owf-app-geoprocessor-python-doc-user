@@ -12,7 +12,7 @@
 
 ## Overview ##
 
-The `SimplifyGeoLayerGeometry` command decreases the number of vertices within the geometries for each feature of a [GeoLayer](../../introduction#geolayer). This command is useful when the file size of a GeoLayer is too large. 
+The `SimplifyGeoLayerGeometry` command decreases the number of vertices within the geometries for each feature of a [GeoLayer](../../introduction/introduction.md#geolayer). This command is useful when the file size of a GeoLayer is too large. 
 
 * This command is designed to simplify GeoLayers with `LINE` or `POLYGON` geometry by removing unnecessary vertices. GeoLayers with `POINT` geometry *cannot* be simplified with this command.
 * The file size of the simplified GeoLayer will be smaller than the input GeoLayer.
@@ -76,7 +76,7 @@ Example GeoLayer Data
 
 |`SummitCounty`|
 |-|
-|![Original_GeoLayer](images\Original_Polgyon.PNG)|
+|![Original_GeoLayer](images/Original_Polgyon.png)|
 
 
 ### Example 1: Simplify a GeoLayer (Small Tolerance)###
@@ -94,12 +94,11 @@ After running the command, the following GeoLayer IDs are registered within the 
 
 |`Summit_simple100`&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tolerance Value: 100 meters |
 |-|
-|![Simplified_GeoLayer_100](images\Simplified_Polygon_100.PNG)|
+|![Simplified_GeoLayer_100](images/Simplified_Polygon_100.png)|
 
 |The simplified GeoLayer looks similar to the original GeoLayer. Below is an image of the two GeoLayers at a larger scale. |
 |--|
-|![Original_Simplified_Overlay](images\Original_Simplified100_Overlay.PNG)|
-
+|![Original_Simplified_Overlay](images/Original_Simplified100_Overlay.png)|
 
 ### Example 2: Simplify a GeoLayer (Large Tolerance)###
 
@@ -116,8 +115,7 @@ After running the command, the following GeoLayer IDs are registered within the 
 
 |`SummitCounty_simple_1000` &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tolerance Value: 1000 meters |
 |-|
-|![Simplified_GeoLayer_100](images\Simplified_Polygon_1000.PNG)|
-
+|![Simplified_GeoLayer_100](images/Simplified_Polygon_1000.png)|
 
 ## Troubleshooting ##
 

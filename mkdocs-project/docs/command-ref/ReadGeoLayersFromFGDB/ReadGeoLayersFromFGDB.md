@@ -11,7 +11,7 @@
 
 ## Overview ##
 
-The `ReadGeoLayersFromFGDB` command reads one or more [GeoLayer(s)](../../introduction#geolayer) from an [Esri File Geodatabase](../../spatial-data-format-ref/EsriFileGeodatabase/EsriFileGeodatabase). 
+The `ReadGeoLayersFromFGDB` command reads one or more [GeoLayer(s)](../../introduction/introduction.md#geolayer) from an [Esri File Geodatabase](../../spatial-data-format-ref/EsriFileGeodatabase/EsriFileGeodatabase.md).
 
 ## Command Editor ##
 
@@ -36,8 +36,8 @@ Command Parameters
 | `ReadOnlyOneFeatureClass` <br>  **_required_**| Boolean <br><br> If `TRUE`, only **one** feature class will be read as a GeoLayer. Must specify a valid feature class name. <br> If `FALSE`, **one or more** feature classes will be read as GeoLayers. Can specify the `Subset_Pattern` to select which feature classes to read.|
 |`IfGeoLayerIDExists`<br> *optional*|The action that occurs if the `GeoLayerID` already exists within the GeoProcessor. <br><br> `Replace` : The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. No warning is logged.<br><br> `ReplaceAndWarn`: The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. A warning is logged. <br><br> `Warn` : The new GeoLayer is not created. A warning is logged. <br><br> `Fail` : The new GeoLayer is not created. A fail message is logged.| `Replace` |
 ||**IF** `ReadOnlyOneFeatureClass` **is TRUE ...**||
-| `Feature Class` <br>  **_required_**| The name of the feature class within the file geodatabase to read. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.| None - must be specified. |
-| `GeoLayerID`  <br> **_required_**| A GeoLayer identifier. [Formatting characters](../../introduction/#geolayer-property-format-specifiers) and [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) are recognized. Refer to [documentation](../../best-practices/geolayer-identifiers.md) for best practices on naming GeoLayer identifiers.| None - must be specified. |
+| `Feature Class` <br>  **_required_**| The name of the feature class within the file geodatabase to read. [`${Property}` syntax](../../introduction/introducion.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
+| `GeoLayerID`  <br> **_required_**| A GeoLayer identifier. [Formatting characters](../../introduction/introducion.md#geolayer-property-format-specifiers) and [`${Property}` syntax](../../introduction/introducion.md#geoprocessor-properties-property) are recognized. Refer to [documentation](../../best-practices/geolayer-identifiers.md) for best practices on naming GeoLayer identifiers.| None - must be specified. |
 ||**IF** `ReadOnlyOneFeatureClass` **is FALSE ...**||
 | `GeoLayerID_prefix`  <br> *optional* | A GeoLayer identifier prefix. <br><br> GeoLayers read from a file geodatabase have an identifier in the `GeoLayerID_prefix`_`FeatureClass` format.| No prefix is used. The GeoLayerID is the name of the feature class. |
 | `Subset_Pattern` 	 <br> *optional*| The [glob-style](https://en.wikipedia.org/wiki/Glob_(programming)) pattern (e.g., `CO_*` or `*_[MC]O`) of feature classes to read from the file geodatabase.| No pattern is used. All feature classes within the file geodatabase are read.|
@@ -47,7 +47,7 @@ Command Parameters
 
 The following folder, `ExampleFolder`[^1], and its contents are used for the examples. 
 
-[^1]: *The `ExampleFolder` is not an actual existing folder. It is used in this documentation to explain how the `ReadGeoLayerFromFGDB` command interacts with similar, existing folders on your local machine.*
+[^1]: *The `ExampleFolder` is not an actual existing folder. It is used in this documentation to explain how the `ReadGeoLayersFromFGDB` command interacts with similar, existing folders on your local machine.*
 
 **<p style="text-align: left;">
 ExampleFolder
@@ -109,15 +109,12 @@ After running the command, the following GeoLayer IDs are registered within the 
 |------|
 |ExampleFeatureClass3|
 
-
 ## Troubleshooting ##
 
 - Requires GDAL/OGR 1.11.0+
 - Requires [ESRI FileGDB driver](http://www.gdal.org/drv_filegdb.html) to be installed within QGIS environment
 - TODO egiles 2018-01-12 Link to QGIS install instructions that clarify how to install OGR_FileGDB library from [this resource](https://gis.stackexchange.com/questions/26285/file-geodatabase-gdb-support-in-qgis) -- this should be in the install/deploy instructions
 
-
 ## See Also ##
 
 - The GeoLayers are read using the [`QGIS QgsVectorLayer Class`](https://qgis.org/api/classQgsVectorLayer.html). See [documentation](https://docs.qgis.org/2.14/en/docs/pyqgis_developer_cookbook/loadlayer.html#vector-layers) for examples on utilizing the `QgsVectorLayer` class in the PyQGIS environment.
-- Use the [`ReadGeoLayerFromFGDB`](../ReadGeoLayerFromFGDB/ReadGeoLayerFromFGDB) command to read a single GeoLayer from a file geodatabase. 

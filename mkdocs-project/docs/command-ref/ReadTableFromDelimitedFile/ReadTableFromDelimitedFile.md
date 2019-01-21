@@ -11,7 +11,7 @@
 
 ## Overview ##
 
-The `ReadTableFromDelimitedFile` command reads a [Table](../../introduction#table) from a [delimited file](https://en.wikipedia.org/wiki/Delimiter-separated_values).
+The `ReadTableFromDelimitedFile` command reads a [Table](../../introduction/introduction.md#table) from a [delimited file](https://en.wikipedia.org/wiki/Delimiter-separated_values).
 
 * All rows and columns from the delimited file are read into the Table.
 * Use the `Delimiter` parameter to specify the delimiter of the delimited file. 
@@ -37,7 +37,7 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-|`InputFile` <br> **_required_**| The delimited file (relative or absolute path) to read. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized. | None - must be specified. |
+|`InputFile` <br> **_required_**| The delimited file (relative or absolute path) to read. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized. | None - must be specified. |
 |`TableID` <br> *required*| A Table identifier. Refer to [documentation](../../best-practices/table-identifiers.md) for best practices on naming Table identifiers.|None - must be specified. |
 |`Delimiter` <br> *optional*| The delimiter character of the input delimited file.|`,` (*comma*)|
 |`HeaderLines` <br> *optional*|The number of rows representing non-data comments. These columns are not included in the output Table data values.|`0`|
@@ -53,4 +53,3 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 ## See Also ##
 
 - [WriteTableToDelimitedFile](../WriteTableToDelimitedFile/WriteTableToDelimitedFile.md) command
-

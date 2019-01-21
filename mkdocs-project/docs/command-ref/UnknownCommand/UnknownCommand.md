@@ -31,4 +31,4 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [BlankCommand](../BlankCommand/BlankCommand) command - used for commands that only contain whitespace
+* [Blank](../Blank/Blank.md) command - used for commands that only contain whitespace

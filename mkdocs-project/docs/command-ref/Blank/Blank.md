@@ -31,4 +31,4 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [UnknownCommand](../UnknownCommand/UnknownCommand) command - unknown commands that are not empty lines
+* [UnknownCommand](../UnknownCommand/UnknownCommand.md) command - unknown commands that are not empty lines

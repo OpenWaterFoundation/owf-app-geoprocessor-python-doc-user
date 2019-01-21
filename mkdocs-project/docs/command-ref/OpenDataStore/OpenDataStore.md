@@ -11,7 +11,7 @@
 
 ## Overview ##
 
-The `OpenDataStore` command creates a generic [DataStore](../../introduction#DataStore) to provide
+The `OpenDataStore` command creates a generic [DataStore](../../introduction/introduction.md#datastore) to provide
 data access from:
 
 * a database
@@ -20,7 +20,7 @@ data access from:
 <a name="parameters"></a>
 <a name="configfile"></a>
 
-The `OpenDataStore` command can also be used to open an existing DataStore previously closed with the [`CloseDataStore`](../CloseDataStore/CloseDataStore) command. 
+The `OpenDataStore` command can also be used to open an existing DataStore previously closed with the [`CloseDataStore`](../CloseDataStore/CloseDataStore.md) command. 
 
 - Set the `DataStoreID` parameter to the ID of the closed DataStore. 
 - Set the `IfDataStoreIDExists` parameter to `Open`. 
@@ -39,7 +39,7 @@ A new DataStore can be opened in 2 ways:
 DataStore features in the GeoProcessor currently focus on relational databases that can
 be queried to return tabular datasets.
 In the future, support for web services will be added.
-See also the [`CloseDataStore`](../CloseDataStore/CloseDataStore) command to close a DataStore.
+See also the [`CloseDataStore`](../CloseDataStore/CloseDataStore.md) command to close a DataStore.
 
 This command can be used to control DataStore connections in a workflow.
 The GeoProcessor is being enhanced to open DataStores at software startup,
@@ -105,7 +105,7 @@ Command Parameters
 
 **The automated tests for this command have not yet been created.**
 
-** Currently in development queue.**
+**Currently in development queue.**
 
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/OpenDataStore).
 
@@ -113,6 +113,6 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [`CloseDataStore`](../CloseDataStore/CloseDataStore) - close a DataStore
-* [`ReadTableFromDataStore`](../ReadTableFromDataStore/ReadTableFromDataStore) - read a table from a DataStore
-* [`WriteTableToDataStore`](../WriteTableToDataStore/WriteTableToDataStore) - write a table to a DataStore
+* [`CloseDataStore`](../CloseDataStore/CloseDataStore.md) - close a DataStore
+* [`ReadTableFromDataStore`](../ReadTableFromDataStore/ReadTableFromDataStore.md) - read a table from a DataStore
+* [`WriteTableToDataStore`](../WriteTableToDataStore/WriteTableToDataStore.md) - write a table to a DataStore

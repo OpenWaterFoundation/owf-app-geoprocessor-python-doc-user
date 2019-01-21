@@ -11,7 +11,7 @@
 
 ## Overview ##
 
-The `FreeGeoLayers` command removes one or more [GeoLayers](../../introduction#geolayer) from the GeoProcessor. 
+The `FreeGeoLayers` command removes one or more [GeoLayers](../../introduction/introduction.md#geolayer) from the GeoProcessor. 
 
 * This command is used to save processing time and memory. 
 
@@ -42,7 +42,7 @@ Command Parameters
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/FreeGeoLayers).
 
 The following GeoLayer data are used in the example[^1]. 
-[^1]: The example assume that the GeoLayers have *already* been read into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON) command.
+[^1]: The example assume that the GeoLayers have *already* been read into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) command.
 
 **<p style="text-align: left;">
 Example GeoLayer Data

@@ -52,5 +52,5 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [SetProperty](../SetProperty/SetProperty) command
-* [SetGeoLayerProperty](../SetGeoLayerProperty/SetGeoLayerProperty) command
+* [SetProperty](../SetProperty/SetProperty.md) command
+* [SetGeoLayerProperty](../SetGeoLayerProperty/SetGeoLayerProperty.md) command

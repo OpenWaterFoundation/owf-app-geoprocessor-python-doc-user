@@ -4,7 +4,7 @@ This documentation provides best practices for table identifiers
 
 ## Overview ##
 
-[Tables](../../introduction#table) are GeoProcessor objects that store related data in tabular format. 
+[Tables](../introduction/introduction.md#table) are GeoProcessor objects that store related data in tabular format. 
 
 1. The GeoProcessor reads in Tables.
 2. The GeoProcessor manipulates Tables. 

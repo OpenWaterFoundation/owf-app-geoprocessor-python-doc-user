@@ -1,8 +1,8 @@
 # GeoProcessor / Getting Started #
 
 This page explains how to get started using the GeoProcessor.
-It is assumed that the software has been installed as per the [Install GeoProcessor](../appendix-install/install) documentation.
-See also the section on [Running the GeoProcessor](../running/overview) for how to start the software,
+It is assumed that the software has been installed as per the [Install GeoProcessor](../appendix-install/install.md) documentation.
+See also the section on [Running the GeoProcessor](../running/overview.md) for how to start the software,
 in particular [running the user interface (UI)](../running/ui.md).
 
 The following are basic tasks to use the GeoProcessor:
@@ -39,14 +39,14 @@ and then filling in the logic blanks, as described in the next section.
 
 Once the conceptual workflow has been determined, corresponding GeoProcessor
 commands can be used to do the work by creating a "command file" that can be run by the GeoProcessor.
-Refer to the [Command Reference](../command-ref/overview) to learn which commands to use for specific work tasks.
+Refer to the [Command Reference](../command-ref/overview.md) to learn which commands to use for specific work tasks.
 Commands are also grouped in menus in the GeoProcessor UI.
 For example, the following commands are suitable to perform the above conceptual work tasks:
 
-1. [ReadGeoLayerFromShapefile](../command-ref/ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile/) - reads the layer to be processed
-2. [CreateGeoLayerFromGeometry](../command-ref/CreateGeoLayerFromGeometry/CreateGeoLayerFromGeometry/) - creates a temporary layer as the clipping extent
-3. [ClipGeoLayer](../command-ref/ClipGeoLayer/ClipGeoLayer/) - clip the first layer using the clipping extent layer
-4. [WriteGeoLayerToGeoJSON](../command-ref/WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON/) - write the result to a GeoJSON file
+1. [ReadGeoLayerFromShapefile](../command-ref/ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile.md) - reads the layer to be processed
+2. [CreateGeoLayerFromGeometry](../command-ref/CreateGeoLayerFromGeometry/CreateGeoLayerFromGeometry.md) - creates a temporary layer as the clipping extent
+3. [ClipGeoLayer](../command-ref/ClipGeoLayer/ClipGeoLayer.md) - clip the first layer using the clipping extent layer
+4. [WriteGeoLayerToGeoJSON](../command-ref/WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON.md) - write the result to a GeoJSON file
 
 The GeoProcessor will continue to be enhanced to add new commands as necessary.
 The goal is to provide enough commands to perform common tasks, either by themselves or in conjunction with other commands.
@@ -71,8 +71,8 @@ See the section on [Best Practices / Command Files](../best-practices/command-fi
 
 ## Run the Command Workflow Using the GeoProcessor ##
 
-See the [Running the GeoProcessor Overview](../running/overview) section for information about running the GeoProcessor.
-The UI is typically run when creating a workflow (see the [Running UI](../running/ui) section of the documentation).
+See the [Running the GeoProcessor Overview](../running/overview.md) section for information about running the GeoProcessor.
+The UI is typically run when creating a workflow (see the [Running UI](../running/ui.md) section of the documentation).
 A command file that is read using ***File / Open / Command File...*** or commands that are added to the ***Commands***
 area of the UI can be run using the ***Run Selected Commands*** and ***Run All Commands*** buttons at the bottom
 of the ***Commands*** area.
@@ -86,14 +86,14 @@ to see a summary of the issues or left-click on a command in the command list an
 ![ui-command-list-errors](images/ui-command-list-errors.png)
 
 * in the command shell window if run in batch mode - use the scrollbar to review warning messages
-* the log file created by the [`StartLog`](../command-ref/StartLog/StartLog) command, if the command is used
+* the log file created by the [`StartLog`](../command-ref/StartLog/StartLog.md) command, if the command is used
 * the default log file found in the `.owf-gp/log` folder in the user's files
 	+ `C:\Users\user\.owf-gp\log` on Windows
 	+ `/home/user/.owf-gp/log` on Linux
 	+ `/cygdrive/C/Users/user/.owf-gp/log` on Cygdrive
-	+ this file is closed when the [`StartLog`](../command-ref/StartLog/StartLog) command is run
+	+ this file is closed when the [`StartLog`](../command-ref/StartLog/StartLog.md) command is run
 
-See also the [Troubleshooting](../troubleshooting/troubleshooting) section of the documentation.
+See also the [Troubleshooting](../troubleshooting/troubleshooting.md) section of the documentation.
 
 ## View Results ##
 
@@ -102,7 +102,7 @@ for example:
 
 1. Testing focus - if the focus of the workflow is testing, then important results are the warning and failure indicators
 and the test summary output from commands like
-[`StartRegressionTestResultsReport`](../command-ref/StartRegressionTestResultsReport/StartRegressionTestResultsReport)
+[`StartRegressionTestResultsReport`](../command-ref/StartRegressionTestResultsReport/StartRegressionTestResultsReport.md)
 (output files are listed in the ***Results / Output Files*** tab).
 2. Spatial data layers focus - if the focus of the workflow is to create spatial data layers,
 then it may be most effective to view the layers in the ***Results / GeoLayers*** tab.
@@ -117,5 +117,5 @@ ensure that the workflow is correct and that results are useful.
 ## Refine the Command Workflow ##
 
 Once a command workflow has been created, it can be refined to add additional functionality and error-handling.
-For example, use the [`If`](../command-ref/If/If) command to check for issues and use the
-[`Message`](../command-ref/Message/Message) and check commands to generate warnings.
+For example, use the [`If`](../command-ref/If/If.md) command to check for issues and use the
+[`Message`](../command-ref/Message/Message.md) and check commands to generate warnings.

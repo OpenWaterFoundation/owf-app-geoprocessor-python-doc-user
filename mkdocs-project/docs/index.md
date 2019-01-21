@@ -26,7 +26,7 @@ organizations, different operating systems, and different GIS environments.
 The GeoProcessor is also useful for completing one-off tasks, prototyping workflows,
 and checking other software tools and processes.
 
-Additional product information can be found in the [Introduction](introduction/introduction).
+Additional product information can be found in the [Introduction](introduction/introduction.md).
 
 ## About the Open Water Foundation ##
 
@@ -44,7 +44,7 @@ References are provided for GeoProcessor commands and spatial data formats that 
 This documentation is not intended to be a full reference for GIS concepts technologies.
 The documentation serves as a reference for GeoProcessor features, explains relevant concepts,
 and provides examples to get started.
-See the [Resources section](resources/resources) for additional information from other sources.
+See the [Resources section](resources/resources.md) for additional information from other sources.
 
 Use the navigation menu provided on the left side of the page to navigate the documentation sections within the full document.
 Use the navigation menu provided on the right side of the page to navigate the documentation sections with a page.

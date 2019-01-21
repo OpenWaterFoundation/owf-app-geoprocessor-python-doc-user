@@ -45,4 +45,4 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [RemoveFile](../RemoveFile/RemoveFile) command
+* [RemoveFile](../RemoveFile/RemoveFile.md) command

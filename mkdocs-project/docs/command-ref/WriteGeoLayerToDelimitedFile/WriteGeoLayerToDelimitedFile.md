@@ -11,7 +11,7 @@
 
 ## Overview ##
 
-The `WriteGeoLayerToDelimitedFile` command writes a [GeoLayer](../../introduction#geolayer) to a [delimited file](https://en.wikipedia.org/wiki/Delimiter-separated_values).
+The `WriteGeoLayerToDelimitedFile` command writes a [GeoLayer](../../introduction/introduction.md#geolayer) to a [delimited file](https://en.wikipedia.org/wiki/Delimiter-separated_values).
 
 * Each attribute of the GeoLayer is retained in a separate column of the output file. 
 * The geometry of the GeoLayer is retained in one or more columns of the output file. 
@@ -39,7 +39,7 @@ Command Parameters
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
 | `GeoLayerID` <br>  **_required_**| The identifier of the GeoLayer to write.| None - must be specified. |
-| `OutputFile` <br> **_required_**| The output delimited file (relative or absolute path). The file extension is not required. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized. | None - must be specified. |
+| `OutputFile` <br> **_required_**| The output delimited file (relative or absolute path). The file extension is not required. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized. | None - must be specified. |
 |`OutputCRS`<br> *optional*|The [coordinate reference system](https://en.wikipedia.org/wiki/Spatial_reference_system) of the output delimited file. [EPSG or ESRI code format](http://spatialreference.org/ref/epsg/) required (e.g. [`EPSG:4326`](http://spatialreference.org/ref/epsg/4326/), [`EPSG:26913`](http://spatialreference.org/ref/epsg/nad83-utm-zone-13n/), [`ESRI:102003`](http://spatialreference.org/ref/esri/usa-contiguous-albers-equal-area-conic/)). <br><br>If the output CRS is different than the CRS of the GeoLayer, the geometries of the output delimited file are reprojected to the new CRS.|The GeoLayer's CRS.|  
 |`OutputGeometryFormat`<br> *optional*| The geometry representation. Must be one of the following options:  <br><br> `WKT`: The geometry is stored in one column in its [Well Known Text  (WKT)](https://en.wikipedia.org/wiki/Well-known_text) representation. <br>This type of geometry can represent 2D and 3D `POINTS`, `LINES` or `POLYGONS`.  <br><br> `XY`: The geometry is stored in two columns as X and Y coordinates. <br>This type of geometry can only represent 2D `POINTS`. The `X` column is before the `Y` column.<br><br> `YX`: The geometry is stored in two columns as X and Y coordinates. <br>This type of geometry can only represent 2D `POINTS`. The `Y` column is before the `X` column.<br><br> `XYZ`: The geometry is stored in three columns as X, Y, and Z coordinates. <br>This type of geometry can only represent 3D `POINTS`.|`XY`|
 |`OutputDelimiter` <br> *optional*| The delimiter of the output delimited file. Must be one of the following options:  <br><br> `COMMA`: the comma (`,`) <br> `SEMICOLON`: the semicolon (`;`) <br> `TAB`: a tab character <br> `SPACE`: a space character|`COMMA`|
@@ -78,7 +78,6 @@ ExampleGeoLayer2 Attribute Table
 |Id|LakeName|AreaAcre|
 |---|---|---|
 |1|Arlington|1939|
-
 
 ### Example 1: Write a GeoLayer to a Delimited File ###
 
@@ -126,10 +125,9 @@ WKT, LakeName, AreaAcre
 ```
 ---
 
-
 ## Troubleshooting ##
 
 ## See Also ##
 
 - The GeoLayer is written using the [`QGIS QgsVectorFileWriter Class`](https://qgis.org/api/classQgsVectorFileWriter.html). See [documentation](https://docs.qgis.org/2.14/en/docs/pyqgis_developer_cookbook/vector.html#writing-vector-layers) for examples on utilizing the `QGSVectorFileWriter` class in the PyQGIS environment.
-- See parallel GeoProcessor command [ReadGeoLayerFromDelimitedFile](../ReadGeoLayerFromDelimitedFile/ReadGeoLayerFromDelimitedFile)
+- See parallel GeoProcessor command [ReadGeoLayerFromDelimitedFile](../ReadGeoLayerFromDelimitedFile/ReadGeoLayerFromDelimitedFile.md)

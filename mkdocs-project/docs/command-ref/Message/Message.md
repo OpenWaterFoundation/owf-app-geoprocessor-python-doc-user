@@ -14,7 +14,7 @@
 The `Message` command prints a status message to the log file.  Optionally, the
 `CommandStatus` parameter can be used to control the status level for the command, for example to
 generate a warning or failure status for the command.  This command is useful for troubleshooting
-processing. See also the [`If`](../If/If) command, which can be used to check for a condition and by using
+processing. See also the [`If`](../If/If.md) command, which can be used to check for a condition and by using
 `Message` print a message to warn the user.
 
 ## Command Editor ##
@@ -52,4 +52,4 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [StartLog](../StartLog/StartLog) command - controls log file where messages are written
+* [StartLog](../StartLog/StartLog.md) command - controls log file where messages are written

@@ -40,11 +40,10 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `URL` <br>  **_required_**| The URL of the resource to download. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.| None - must be specified. |
-| `OutputFile` <br> *optional*| The output file path (relative or absolute). [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized. [Formatting character (%f)](../../introduction/#geolayer-property-format-specifiers) is recognized. If already existing, the output file will be overwritten.| Same filename as source. Saved to the parent folder of the `.gp` workflow. |
+| `URL` <br>  **_required_**| The URL of the resource to download. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
+| `OutputFile` <br> *optional*| The output file path (relative or absolute). [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized. [Formatting character (%f)](../../introduction/introduction.md#geolayer-property-format-specifiers) is recognized. If already existing, the output file will be overwritten.| Same filename as source. Saved to the parent folder of the `.gp` workflow. |
 |`Username` <br> *optional*| A valid username to access a private URL file.|`None` - the URL is downloaded as a public file.|
 |`Password` <br> *optional*| A valid password to access a private URL file.|`None` - the URL is downloaded as a public file.|
-
 
 ## Examples ##
 
@@ -61,8 +60,7 @@ WebGet(URL = "https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/M
 The two commands download the same [data file](https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.cpg). 
 
 - The first command specifies a different filename using the `OutputFile` parameter. The name of the downloaded file is renamed to the specified filename. 
-- The second command utilizes the `%f` [formatting character](../../introduction/#geolayer-property-format-specifiers) in the `OutputFile` parameter. The name of the downloaded file is the same as the URL filename.
-
+- The second command utilizes the `%f` [formatting character](../../introduction/introduction.md#geolayer-property-format-specifiers) in the `OutputFile` parameter. The name of the downloaded file is the same as the URL filename.
 
 After running the commands, the following files are downloaded to the `ExampleOutputFolder` folder. 
 
@@ -75,10 +73,9 @@ ExampleOutputFolder
 |NewFilename.cpg|First command|
 |fl_mystery_hammock_wf_20150817_0000_dd83.cpg|Second command|
 
-
 ## Troubleshooting ##
 
 ## See Also ##
 
 - The files are downloaded using the Python [Requests](http://docs.python-requests.org/en/master/) library.
-* [ListFiles](../ListFiles/ListFiles) command
+* [ListFiles](../ListFiles/ListFiles.md) command

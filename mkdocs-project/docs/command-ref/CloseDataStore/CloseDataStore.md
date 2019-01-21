@@ -11,7 +11,7 @@
 
 ## Overview ##
 
-The `CloseDataStore` command closes a [DataStore's](../../introduction#datastore) database connection.
+The `CloseDataStore` command closes a [DataStore's](../../introduction/introduction.md#datastore) database connection.
 Closing the connection will cause subsequent interactions with the datastore's database to fail. 
 This command can be used to:
 
@@ -59,4 +59,4 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [`OpenDataStore`](../OpenDataStore/OpenDataStore) command
+* [`OpenDataStore`](../OpenDataStore/OpenDataStore.md) command

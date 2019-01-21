@@ -13,8 +13,8 @@
 
 The `CreateRegressionTestCommandFile` command is used for software testing and validation of workflow processes.
 The command creates a command file that includes a
-[StartRegressionTestResultsReport](../StartRegressionTestResultsReport/StartRegressionTestResultsReport) and multiple
-[RunCommands](../RunCommand/RunCommand) commands.
+[StartRegressionTestResultsReport](../StartRegressionTestResultsReport/StartRegressionTestResultsReport.md) and multiple
+[RunCommands](../RunCommands/RunCommands.md) commands.
 A starting search folder is provided and all files that match the given pattern (by convention `test-*.gp`)
 are assumed to be command files that can be run to test the software.
 The resulting command file is a test suite comprised of all the individual tests and can be used
@@ -67,6 +67,6 @@ Command Parameters
 
 ## See Also ##
 
-* [RunCommands](../RunCommands/RunCommands) command
-* [StartRegressionTestResultsReport](../StartRegressionTestResultsReport/StartRegressionTestResultsReport) command
-* [WriteCommandSummaryToFile](../WriteCommandSummaryToFile/WriteCommandSummaryToFile) command
+* [RunCommands](../RunCommands/RunCommands.md) command
+* [StartRegressionTestResultsReport](../StartRegressionTestResultsReport/StartRegressionTestResultsReport.md) command
+* [WriteCommandSummaryToFile](../WriteCommandSummaryToFile/WriteCommandSummaryToFile.md) command

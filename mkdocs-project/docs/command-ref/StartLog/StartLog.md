@@ -51,4 +51,4 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [Message](../Message/Message) command - can be used to write messages to the log file
+* [Message](../Message/Message.md) command - can be used to write messages to the log file

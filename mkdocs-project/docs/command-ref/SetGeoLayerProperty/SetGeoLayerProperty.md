@@ -14,7 +14,7 @@
 The `SetGeoLayerProperty` command sets the value of a property on the GeoLayer.
 The property will be available to subsequent commands that support using `${gl:Property}` notation in parameters.
 One use for GeoLayer properties is to pass a layer property to the processor using
-[`SetPropertyFromGeoLayer`](../SetPropertyFromGeoLayer/SetPropertyFromGeoLayer) commands to control processing logic.
+[`SetPropertyFromGeoLayer`](../SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md) commands to control processing logic.
 GeoLayer properties may not be supported by spatial data formats and therefore may only be useful to control processing.
 The following functionality is provided:
 
@@ -54,4 +54,4 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [SetPropertyFromGeoLayer](../SetPropertyFromGeoLayer/SetPropertyFromGeoLayer) command.
+* [SetPropertyFromGeoLayer](../SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md) command.

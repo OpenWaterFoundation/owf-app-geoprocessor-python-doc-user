@@ -15,7 +15,6 @@ The following are resources that explain the specification:
 * [Google's KML Reference Guide](https://developers.google.com/kml/documentation/kmlreference)
 * [OGC KML Standards](http://www.opengeospatial.org/standards/kml)
 
-
 ## Limitations ##
 
 The following are limitations of KML files:

@@ -38,9 +38,9 @@ future). For Booleans, False is less than True. For strings, A is less than Z, e
 All nested `If` commands must evaluate to true to execute the commands within the deepest level of
 nesting. Some commands set a property that
 can be used for checks, for example to see if the number of features in a GeoLayer is nonzero.
-It is helpful to use the [`Message`](../../Message/Message) command to print a message to the log file and help control whether
+It is helpful to use the [`Message`](../../Message/Message.md) command to print a message to the log file and help control whether
 a warning or failure status should occur as the result of the `If`.
-The [`SetProperty`](../SetProperty/SetProperty) command can also be used to set a property to indicate
+The [`SetProperty`](../SetProperty/SetProperty.md) command can also be used to set a property to indicate
 the result of evaluating an `If` block.
 
 Future enhancements to the `If` command may include:
@@ -90,5 +90,5 @@ EndIf(Name="ExampleIf")
 
 ## See Also ##
 
-* [`EndIf`](../EndIf/EndIf) command
-* [`SetProperty`](../SetProperty/SetProperty) command
+* [`EndIf`](../EndIf/EndIf.md) command
+* [`SetProperty`](../SetProperty/SetProperty.md) command

@@ -11,7 +11,7 @@
 
 ## Overview ##
 
-The RunSql command executes a [Structured Query Language (SQL)](https://en.wikipedia.org/wiki/SQL) statement on the specified [DataStore](../../introduction#datastore).
+The RunSql command executes a [Structured Query Language (SQL)](https://en.wikipedia.org/wiki/SQL) statement on the specified [DataStore](../../introduction/introduction.md#datastore).
 
 - This command cannot be used with web service datastores because the underlying software relies on a database to execute the SQL statement. 
 - This command is useful when a database task needs to be automated in sequence with other GeoProcessor commands. 
@@ -36,7 +36,7 @@ General constraints on executing the statement are as follows:
 - Any SQL statement can be run; consequently, suitable authentication and permissions should be in place to protect against unintended changes to the database
 - SQL syntax varies between database software so care should be take to use standard SQL if possible.
 - Results from the statement such as rows modified currently are not displayed, although status and errors will be shown and added to the log file. 
-Use the [ReadTableFromDataStore](../ReadTableFromDataStore/ReadTableFromDataStore) command to process statements that return a result set.
+Use the [ReadTableFromDataStore](../ReadTableFromDataStore/ReadTableFromDataStore.md) command to process statements that return a result set.
 
 ## Command Editor ##
 
@@ -57,10 +57,10 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `DataStoreID`<br>**required** | The ID of a DataStore to process. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized. | None - must be specified. |
+| `DataStoreID`<br>**required** | The ID of a DataStore to process. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized. | None - must be specified. |
 ||**MUST SELECT `1` OF THE FOLLOWING `3` PARAMETERS ... **||
-| `Sql` | The SQL statement text that will be executed. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.<br><br>If specified, do not specify `SqlFile` or `DataStoreProcedure`.|None|
-|`SqlFile`|The name of the file containing the SQL statement text to execute. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.<br><br>If specified, do not specify `DataStoreProcedure` or `Sql`.|None|
+| `Sql` | The SQL statement text that will be executed. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.<br><br>If specified, do not specify `SqlFile` or `DataStoreProcedure`.|None|
+|`SqlFile`|The name of the file containing the SQL statement text to execute. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.<br><br>If specified, do not specify `DataStoreProcedure` or `Sql`.|None|
 |`DataStoreProcedure`|The name of the database procedure to run. *This parameter is currently disabled.* <br><br>If specified, do not specify `Sql` or `SqlFile`.|None|
 
 ## Examples ##
@@ -75,7 +75,7 @@ Command Parameters
 
 ## See Also ##
 
-* [OpenDataStore](../OpenDataStore/OpenDataStore) command
-* [ReadTableFromDataStore](../ReadTableFromDataStore/ReadTableFromDataStore) command
-* [WriteTableToDataStore](../WriteTableToDataStore/WriteTableToDataStore) command
+* [OpenDataStore](../OpenDataStore/OpenDataStore.md) command
+* [ReadTableFromDataStore](../ReadTableFromDataStore/ReadTableFromDataStore.md) command
+* [WriteTableToDataStore](../WriteTableToDataStore/WriteTableToDataStore.md) command
 * [W3schools SQL Tutorial](https://www.w3schools.com/sql/)

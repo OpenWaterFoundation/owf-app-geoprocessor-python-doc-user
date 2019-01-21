@@ -9,9 +9,9 @@ More detailed information is available for each format.
 Support for additional formats will be added over time and some commands may support additional
 formats due to underlying software features.
 
-| **Format Name**                                                    | **Type**        | **Comment** |
-| ------------------------------------------------------------------ | --------------- | ----------- |
-| [(Esri) File Geodatabase](EsriFileGeodatabase/EsriFileGeodatabase) | Custom database | |
-| [(Esri) Shapefile](EsriShapefile/EsriShapefile)                    | Binary file     | |
-| [GeoJSON](GeoJSON/GeoJSON)                                         | Text file       | |
-| [KML](KML/KML)                                                     | Text file       | |
+| **Format Name**                                                       | **Type**        | **Comment** |
+| --------------------------------------------------------------------- | --------------- | ----------- |
+| [(Esri) File Geodatabase](EsriFileGeodatabase/EsriFileGeodatabase.md) | Custom database | |
+| [(Esri) Shapefile](EsriShapefile/EsriShapefile.md)                    | Binary file     | |
+| [GeoJSON](GeoJSON/GeoJSON.md)                                         | Text file       | |
+| [KML](KML/KML.md)                                                     | Text file       | |

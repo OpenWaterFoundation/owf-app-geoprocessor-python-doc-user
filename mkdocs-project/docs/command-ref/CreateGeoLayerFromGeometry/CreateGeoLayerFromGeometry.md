@@ -66,7 +66,7 @@ After running the command, the following GeoLayer is registered within the GeoPr
 
 |BoundingBoxExample: displayed in red (transparent)|
 |-|
-|![BoundingBoxExample-WGS84](images/BoundingBoxExample_WGS84.PNG)
+|![BoundingBoxExample-WGS84](images/BoundingBoxExample_WGS84.png)
 
 ### Example 2: Create a Bounding Box GeoLayer - NAD83 Zone 14N ###
 
@@ -83,7 +83,7 @@ After running the command, the following GeoLayer is registered within the GeoPr
 
 |BoundingBoxExample: displayed in red (transparent)|
 |-|
-|![BoundingBoxExample-NAD83UTMZ14N](images/BoundingBoxExample_UTMZ14N.PNG)
+|![BoundingBoxExample-NAD83UTMZ14N](images/BoundingBoxExample_UTMZ14N.png)
 
 
 ## Troubleshooting ##

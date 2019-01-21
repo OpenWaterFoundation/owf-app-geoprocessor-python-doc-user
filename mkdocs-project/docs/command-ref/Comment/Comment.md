@@ -39,5 +39,5 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [CommentBlockStart - `/*`](../CommentBlockStart/CommentBlockStart) command
-* [CommentBlockEnd - `*/`](../CommentBlockEnd/CommentBlockEnd) command
+* [CommentBlockStart - `/*`](../CommentBlockStart/CommentBlockStart.md) command
+* [CommentBlockEnd - `*/`](../CommentBlockEnd/CommentBlockEnd.md) command
