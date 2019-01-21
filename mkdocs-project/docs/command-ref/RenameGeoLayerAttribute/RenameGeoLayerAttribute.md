@@ -14,7 +14,7 @@
 The `RenameGeoLayerAttribute` command renames a single attribute in a GeoLayer.
 
 * The new attribute name cannot be the same as an existing attribute name within the GeoLayer. 
-* It is highly recommended that the new attribute name is 10 characters or less. See [Esri Shapefile limitations](../../spatial-data-format-ref/EsriShapefile/EsriShapefile/#limitations).
+* It is highly recommended that the new attribute name is 10 characters or less. See [Esri Shapefile limitations](../../spatial-data-format-ref/EsriShapefile/EsriShapefile.md#limitations).
 
 ## Command Editor ##
 
@@ -46,7 +46,7 @@ Command Parameters
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/RenameGeoLayerAttribute).
 
 The following GeoLayer data is used in the example[^2]. 
-[^2]: The example assumes that the `ExampleGeoLayer` GeoLayer has *already* been read into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON) command.
+[^2]: The example assumes that the `ExampleGeoLayer` GeoLayer has *already* been read into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) command.
 
 **<p style="text-align: left;">
 Example GeoLayer Data
@@ -80,9 +80,7 @@ After running the command, the ExampleGeoLayer has the following attribute table
 |2|Bright|Gators|304|24|
 |3|Gunn|Colts|567|43|
 
-
 ## Troubleshooting ##
-
 
 ## See Also ##
 

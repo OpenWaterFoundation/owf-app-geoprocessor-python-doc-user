@@ -21,9 +21,7 @@ The following are resources that explain the specification:
 * [GeoJSON 2016 RFC 7964 specification](http://geojson.org/geojson-spec.html) - latest specification
 * [OWF / Learn GeoJSON](http://learn.openwaterfoundation.org/owf-learn-geojson/) - Open Water Foundation GeoJSON learning resource
 
-
 ## GeoJSON Files and Standard GeoLayer Properties ##
-
 
 The following summarizes handling of important data elements for GeoLayers:
 
@@ -39,4 +37,4 @@ The following are limitations of GeoJSON files:
 2. Although options exist, there is no common standard for symbology.
 3. Although options exist, there is no common standard for metadata.
 4. The JSON specification has some gaps, such as standard for handling `null` and `NaN`.
-5. Attributes without values are not written to the GeoJSON feature properites. 
+5. Attributes without values are not written to the GeoJSON feature properties. 

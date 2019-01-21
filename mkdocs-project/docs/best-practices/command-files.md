@@ -12,7 +12,7 @@ The command file folder will be set as the working folder (working directory) wh
 All other file locations should be specified relative to that folder.
 This allows the files to be shared with others without having to change file paths.
 6. Name GeoProcessor command files with `.gp` file extension.
-7. Use the [`StartLog`](../command-ref/StartLog/StartLog) command to troubleshoot.
+7. Use the [`StartLog`](../command-ref/StartLog/StartLog.md) command to troubleshoot.
 This creates a local log file that is managed with command file and related files.
 The command can be commented out if it significantly slows down processing or creates a large log file.
 The name of the log file should be the same as the command file, with `.log` appended (or a similar convention).

@@ -53,4 +53,4 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [CopyFile](../CopyFile/CopyFile) command
+* [CopyFile](../CopyFile/CopyFile.md) command

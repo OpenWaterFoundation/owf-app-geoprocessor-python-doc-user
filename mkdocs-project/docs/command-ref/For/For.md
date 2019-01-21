@@ -19,7 +19,7 @@ commands that support properties, using the `${Property}` notation.
 * a list of supplied values (specify using `ListProperty` parameter)
 * a sequence of integers or floating-point double precision numbers specified with start (`SequenceStart` parameter),
 end (`SequenceEnd` parameter), and increment (`SequenceIncrement` parameter)
-* values from a [Table](../../introduction#table) column 
+* values from a [Table](../../introduction/introduction.md#table) column 
 
 `For` commands can be nested. Status messages for the run mode are accumulated in each command.
 A limitation of using `For` with properties is that the command when edited may show GeoLayer
@@ -55,9 +55,9 @@ Command Parameters
 | `SequenceEnd` | Ending value when a sequence is specified for iteration, an integer or floating-point number (with decimal). | No default if sequence is used. |
 | `SequenceIncrement` | Increment for sequence iterator. | `1` or `1.0` depending on type for `SequenceStart`. |
 ||If iterating over a **TABLE** ...|
-| `TableID`|The table identifier, when specifying the iterator as a column from a table. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.|No default if table is used. |
-| `TableColumn`|The table column name, when specifying the iterator as a column from a table. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.|No default if table is used. |
-| `TablePropertyMap`|Specify the names of column names and corresponding processor property names to set. This allows other commands to access the values of those properties using [`${Property}` syntax](../../introduction/#geoprocessor-properties-property). <br><br> Specify using format: <br> `ColumnName1:PropertyName1,ColumnName2:PropertyName2`|None - only the iterator column value will be set as a property using `IteratorProperty`.|
+| `TableID`|The table identifier, when specifying the iterator as a column from a table. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.|No default if table is used. |
+| `TableColumn`|The table column name, when specifying the iterator as a column from a table. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.|No default if table is used. |
+| `TablePropertyMap`|Specify the names of column names and corresponding processor property names to set. This allows other commands to access the values of those properties using [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property). <br><br> Specify using format: <br> `ColumnName1:PropertyName1,ColumnName2:PropertyName2`|None - only the iterator column value will be set as a property using `IteratorProperty`.|
 
 
 ## Examples ##
@@ -89,6 +89,6 @@ EndFor(Name="Counties")
 
 ## See Also ##
 
-* [`EndFor`](../EndFor/EndFor) command
-* [`ListFiles`](../ListFiles/ListFiles) command
-* [`SetProperty`](../SetProperty/SetProperty) command (can be used to set list of strings for iteration)
+* [`EndFor`](../EndFor/EndFor.md) command
+* [`ListFiles`](../ListFiles/ListFiles.md) command
+* [`SetProperty`](../SetProperty/SetProperty.md) command (can be used to set list of strings for iteration)

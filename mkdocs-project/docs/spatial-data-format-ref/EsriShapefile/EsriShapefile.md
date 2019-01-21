@@ -21,7 +21,6 @@ An Esri Shapefile is a spatial data format that stores attribute and geometry in
 |`.sbx`|Provides optimization for spatial queries.|No|
 |`.cpg`|Provides the encoding.|No|
 
-
 The following are resources that explain the specification:
 
 * [ESRI Shapefile Technical Description](https://www.esri.com/library/whitepapers/pdfs/shapefile.pdf) - technical description
@@ -38,5 +37,3 @@ The following summarizes handling of important data elements for GeoLayers:
 
 1. Attribute field names cannot exceed 10 characters. 
 2. Date and time cannot be stored in one field.
-
-

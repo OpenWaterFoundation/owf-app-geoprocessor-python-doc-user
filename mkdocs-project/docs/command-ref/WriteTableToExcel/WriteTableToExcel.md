@@ -11,7 +11,7 @@
 
 ## Overview ##
 
-The `WriteTableToExcel` command writes a [Table](../../introduction#table) to an Excel file. 
+The `WriteTableToExcel` command writes a [Table](../../introduction/introduction.md#table) to an Excel file. 
 
 * The Table is written as a worksheet in an Excel workbook file. 
 * Can write to a new Excel workbook file or to an existing Excel workbook file. 
@@ -40,7 +40,7 @@ Command Parameters
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
 | `TableID` <br>  **_required_**| The identifier of the Table to write.| None - must be specified. |
-| `OutputFile` <br>  **_required_**| The name of the Excel workbook to write to (relative or absolute path). [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized. <br><br> Can be an existing or non-existing Excel file. If non-existing, the Excel workbook file (`.xlsx`) is created. | None - must be specified. |
+| `OutputFile` <br>  **_required_**| The name of the Excel workbook to write to (relative or absolute path). [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized. <br><br> Can be an existing or non-existing Excel file. If non-existing, the Excel workbook file (`.xlsx`) is created. | None - must be specified. |
 | `OutputWorksheet` <br>  **_required_**| The name of the worksheet that the Table will be written to. Can be an existing or non-existing worksheet. If existing, the worksheet will be overwritten with the Table data. |None - must be specified. |
 |`ColumnsToInclude`<br> *optional*| A comma-separated list of the [glob-sytle patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which columns to include in the Excel workbook file. <br><br> See [Determining Which Columns to Write](#determining-which-columns-to-write).| `*` <br><br> All columns are written. |  
 |`ColumnsToExclude`<br> *optional*| A comma-separated list of the [glob-sytle patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which columns to exclude in the Excel workbook file. <br><br> See [Determining Which Columns to Write](#determining-which-columns-to-write).| `'' (empty string)` <br><br> All columns are written. |
@@ -76,8 +76,6 @@ ExampleFolder
 | ---- |---|----|
 | ExampleFile1.xlsx |Excel Workbook|Clients, Products|
 
-
-
 ### Example 1: Write a Table to an Existing Excel Workbook (New Worksheet) ###
 
 ```
@@ -89,7 +87,6 @@ After running the command, the following Excel workbook files are within the Exa
 |Filename|File Type|Worksheets|
 | ---- |---|----|
 | ExampleFile1.xlsx |Excel Workbook|Clients, Products, Locations|
-
 
 ### Example 2: Write a Table to an Existing Excel Workbook (Existing Worksheet) ###
 
@@ -115,7 +112,6 @@ After running the command, the following Excel workbook files exist in the Examp
 | ---- |---|----|
 | ExampleFile1.xlsx |Excel Workbook|Clients, Products|
 | ExampleFile2.xlsx|Excel Workbook|Locations|
-
 
 ## Troubleshooting ##
 

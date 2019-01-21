@@ -56,7 +56,7 @@ Command Parameters
 
 * The `IncludeIntersectAttributes` parameter is always processed first. The`ExcludeIntersectAttributes` parameter is always processed second. 
 	* The `IncludeIntersectAttributes` *selects* all of the GeoLayer's attributes that follow the given patterns. By default (`*`) all of the GeoLayer's attributes are included. 
-	* The `ExcludeIntersectAttributes` *removes* all of the attributes *previously selected* from the `IncludeIntersectAttributes` parameter* that follow the given patterns. 
+	* The `ExcludeIntersectAttributes` *removes* all of the attributes *previously selected* from the `IncludeIntersectAttributes` parameter that follow the given patterns. 
 
 
 ## Examples ##
@@ -64,7 +64,7 @@ Command Parameters
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/IntersectGeoLayer).
 
 The following example GeoLayer data is from the automated tests[^1]. 
-[^1]: The examples assume that the GeoLayers have *already* been read into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON) command.
+[^1]: The examples assume that the GeoLayers have *already* been read into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) command.
 
 **<p style="text-align: left;">
 Example GeoLayer Data
@@ -93,11 +93,11 @@ After running the command, the following GeoLayer IDs are registered within the 
 
 |The `input_points` GeoLayer (represented by red stars) and the `polygon-co-counties` GeoLayer (displayed in light blue).|
 |-|
-|![point_intersectPolygons_beforeCommand](images/point_intersect_polygon_before.PNG)|
+|![point_intersectPolygons_beforeCommand](images/point_intersect_polygon_before.png)|
 
 |The `intersected_points` GeoLayer (represented by red stars) and the `polygon-co-counties` GeoLayer (displayed in light blue). Note that point features outside of the polygon features are excluded.|
 |-|
-|![point_intersectPolygons_afterCommand](images/point_intersect_polygon_after.PNG)|
+|![point_intersectPolygons_afterCommand](images/point_intersect_polygon_after.png)|
 
 ### Example 2: Use the `IncludeIntersectAttributes` Parameter ###
 
@@ -116,11 +116,11 @@ After running the command, the following GeoLayer IDs are registered within the 
 
 |The `input_lines` GeoLayer (displayed in red) and the `polygon-co-counties` GeoLayer (displayed in light blue).|
 |-|
-|![line_intersectPolygons_beforeCommand](images/line_intersect_polygon_before.PNG)|
+|![line_intersectPolygons_beforeCommand](images/line_intersect_polygon_before.png)|
 
 |The `intersected_lines` GeoLayer (represented in various colors to display the created features) and the `polygon-co-counties` GeoLayer (displayed in light blue). Note that each line crossing polygon boundaries have been split into two features. |
 |-|
-|![point_intersectPolygons_afterCommand](images/line_intersect_polygon_after.PNG)|
+|![point_intersectPolygons_afterCommand](images/line_intersect_polygon_after.png)|
 
 
 ## Troubleshooting ##
@@ -129,4 +129,3 @@ After running the command, the following GeoLayer IDs are registered within the 
 ## See Also ##
 
 - The IntersectGeoLayer command uses the QGIS processing algorithm [`qgis:intersection`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vector_overlay_tools.html#intersection)
-

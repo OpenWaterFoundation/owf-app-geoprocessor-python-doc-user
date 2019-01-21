@@ -11,7 +11,7 @@
 
 ## Overview ##
 
-The `ReadTableFromExcel` command reads a [Table](../../introduction#table) from an Excel file. 
+The `ReadTableFromExcel` command reads a [Table](../../introduction/introduction.md#table) from an Excel file. 
 
 * The Excel worksheet to read can be specified. 
 * All rows and columns from the Excel worksheet are read into the Table. 
@@ -35,7 +35,7 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `InputFile` <br>  **_required_**| The Excel workbook file (`.xls` or `.xlsx`) with the Excel worksheet to read (relative or absolute path). [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.| None - must be specified. |
+| `InputFile` <br>  **_required_**| The Excel workbook file (`.xls` or `.xlsx`) with the Excel worksheet to read (relative or absolute path). [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
 | `Worksheet` <br> *optional*| The name of the Excel worksheet within the Excel workbook to read.|The first worksheet in the Excel workbook.|
 | `TableID` <br> *optional*| A Table identifier. Refer to [documentation](../../best-practices/table-identifiers.md) for best practices for naming Table identifiers.|The `Worksheet`.|
 |`IfTableIDExists`<br> *optional*|The action that occurs if the `TableID` already exists within the GeoProcessor. <br><br> `Replace` : The existing Table within the GeoProcessor is overwritten with the new Table. No warning is logged.<br><br> `ReplaceAndWarn`: The existing Table within the GeoProcessor is overwritten with the new Table. A warning is logged. <br><br> `Warn` : The new Table is not created. A warning is logged. <br><br> `Fail` : The new Table is not created. A fail message is logged. | `Replace` | 
@@ -103,9 +103,7 @@ After running the command, the following Table IDs are registered within the Geo
 |------|
 |Products|
 
-
 ## Troubleshooting ##
-
 
 ## See Also ##
 

@@ -45,4 +45,4 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [If](../If/If) command
+* [If](../If/If.md) command

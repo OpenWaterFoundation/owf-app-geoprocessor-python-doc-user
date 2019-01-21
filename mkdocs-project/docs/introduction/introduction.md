@@ -2,7 +2,7 @@
 
 This section of the documentation provides background information about the GeoProcessor and
 concepts that are used throughout the documentation.
-See the [Getting Started](../getting-started/getting-started) section for information
+See the [Getting Started](../getting-started/getting-started.md) section for information
 about using the software.
 
 * [Need for the GeoProcessor](#need-for-the-geoprocessor)
@@ -73,7 +73,7 @@ The following image illustrates the main features of the UI.
 ![ui-example](images/ui-example.png)
 
 **<p style="text-align: center;">
-GeoProcessor User Interface
+GeoProcessor User Interface (<a href="../images/ui-example.png">see full-size image</a>)
 </p>**
 
 The following summarize UI features:
@@ -109,7 +109,7 @@ A command file can be run multiple times to perform the same task on new data.
 
 Each command performs a unit of work and by design the functionality of each command is limited.
 This allows commands to be used in various combinations to achieve maximum flexibility.
-The commands are documented in the [Command Reference](../command-ref/overview)
+The commands are documented in the [Command Reference](../command-ref/overview.md)
 (see also the list of commands under the Command Reference in the page navigation menu on the left).
 
 A typical workflow is as follows:
@@ -140,7 +140,7 @@ and new parameters to be added to existing commands.
 
 The GeoProcessor reads spatial data from multiple sources (e.g., files, geodatabases, web services) and
 converts the spatial data into in-memory representations.
-See the [Spatial Data Format Reference](../spatial-data-format-ref/overview) for more information about supported data sources.
+See the [Spatial Data Format Reference](../spatial-data-format-ref/overview.md) for more information about supported data sources.
 
 ### GeoLayer ###
 
@@ -152,7 +152,7 @@ A GeoLayer has the following characteristics:
 
 * The GeoProcessor commands assign unique identifiers to GeoLayers as they are read so that
 commands can use the identifiers to access GeoLayers.
-See [best practices for GeoLayer identifiers](../best-practices/geolayer-identifiers).
+See [best practices for GeoLayer identifiers](../best-practices/geolayer-identifiers.md).
 * The features in a GeoLayer must be of a single type (e.g., point, line, polygon).
 * The GeoLayer has a coordinate reference system corresponding to the datum,
 projection, and units of coordinates in the features.
@@ -163,7 +163,7 @@ The ability to process rasters (grids) may be added in the future.
 
 The GeoProcessor maintains a list of general properties that provide useful data such
 as the working directory, date/time when processing started, and properties assigned
-by commands such as [`SetProperty`](../command-ref/SetProperty/SetProperty). 
+by commands such as [`SetProperty`](../command-ref/SetProperty/SetProperty.md). 
 Some properties are automatically assigned at the start of processing
 and others are assigned as commands are run.
 
@@ -179,7 +179,7 @@ SomeCommand(OutputFile="${OutputFolder}\someFile")
 
 Processor properties provide additional flexibility in controlling workflows.
 Properties are fundamental to workflow logic commands such as 
-by commands such as [`For`](../command-ref/For/For) and [`If`](../command-ref/If/If). 
+by commands such as [`For`](../command-ref/For/For.md) and [`If`](../command-ref/If/If.md). 
 
 The following are variants of property notation:
 
@@ -214,7 +214,7 @@ A Table object always has an index column that is created once a tabular dataset
 
 * The GeoProcessor commands assign unique identifiers to Tables as they are read so that
 commands can use the identifiers to access Tables.
-See [best practices for Table identifiers](../best-practices/table-identifiers/).
+See [best practices for Table identifiers](../best-practices/table-identifiers.md).
 * The [For](../command-ref/For/For/) command can iterate over the rows of a Table and assign column cell values to GeoProcessor properties. 
 
 ### DataStore ###
@@ -236,7 +236,7 @@ Datastores have the following characteristics:
 * Datastores may require credentials to access data.
 * Datastores are opened to establish a connection and can be closed to free resources.
 
-The GeoProcessor provides the [`OpenDataStore`](../command-ref/OpenDataStore/OpenDataStore) command to open a datastore connection at run-time,
+The GeoProcessor provides the [`OpenDataStore`](../command-ref/OpenDataStore/OpenDataStore.md) command to open a datastore connection at run-time,
 and other commands are used to read from and write to datastores.
 This is useful to run automated workflows.
 In the future, the ability to configure datastore connections for use at software startup will be enabled,

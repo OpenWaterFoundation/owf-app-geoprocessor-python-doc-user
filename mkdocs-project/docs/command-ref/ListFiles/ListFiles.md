@@ -14,7 +14,7 @@
 The `ListFiles` command lists the files and folders within a folder or a URL. 
 
 * Can specify to list only files, only folders or  both files and folders. 
-* Output is a list assigned to a [GeoProcessor property](../../introduction/#geoprocessor-properties-property). Requires a property name. 
+* Output is a list assigned to a [GeoProcessor property](../../introduction/introduction.md#geoprocessor-properties-property). Requires a property name. 
 * Can specify [glob-style patterns](https://en.wikipedia.org/wiki/Glob_(programming)) to include or exclude items within the output list.
 
 ## Command Editor ##
@@ -34,11 +34,11 @@ ListFiles(Parameter="Value",...)
 Command Parameters
 </p>**
 
-|**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+|**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
 |`Folder` <br>  *see Default*|The path of the folder of interest (relative or absolute). | **_Required_** if `URL` parameter is not specified. |
 |`URL` <br> *see Default*| The URL of interest. | **_Required_** if `Folder` parameter is not specified. |
-|`ListProperty`<br> **_required_**|A [property](../../introduction/#geoprocessor-properties-property) name to hold the output list.|None - must be specified.|
+|`ListProperty`<br> **_required_**|A [property](../../introduction/introduction.md#geoprocessor-properties-property) name to hold the output list.|None - must be specified.|
 |`IncludePatterns`<br> *optional*|A list of comma-separated [glob-style patterns](https://en.wikipedia.org/wiki/Glob_(programming)) that filter which items to include in the output list. |`*` <br> All files/folders are included.|
 |`ExcludePatterns`<br> *optional*|A list of comma-separated [glob-style patterns](https://en.wikipedia.org/wiki/Glob_(programming)) that filter which items to exclude in the output list.|`''` <br>No files/folders are excluded.|
 |`ListFiles`<br> *optional*|Boolean <br><br> If `True`, files will be listed. <br> If `False`, files will *not* be listed.|`True`|
@@ -54,4 +54,4 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-- The source content of the URL is read using the the Python [urllib2](https://docs.python.org/2/library/urllib2.html) library.
+- The source content of the URL is read using the Python [urllib2](https://docs.python.org/2/library/urllib2.html) library.

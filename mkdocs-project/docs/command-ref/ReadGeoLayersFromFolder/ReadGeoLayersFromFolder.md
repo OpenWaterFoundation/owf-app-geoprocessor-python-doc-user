@@ -11,9 +11,9 @@
 
 ## Overview ##
 
-The `ReadGeoLayersFromFolder` command reads one or more [GeoLayer(s)](../../introduction#geolayer) from a local folder. 
+The `ReadGeoLayersFromFolder` command reads one or more [GeoLayer(s)](../../introduction/introduction.md#geolayer) from a local folder. 
 
-* By default, each spatial data file ([GeoJSON]((../../spatial-data-format-ref/GeoJSON/GeoJSON)) or [Esri Shapefile](../../spatial-data-format-ref/EsriShapefile/EsriShapefile)) within the folder is read as a single GeoLayer.
+* By default, each spatial data file ([GeoJSON](../../spatial-data-format-ref/GeoJSON/GeoJSON.md)) or [Esri Shapefile](../../spatial-data-format-ref/EsriShapefile/EsriShapefile.md)) within the folder is read as a single GeoLayer.
 
 ## Command Editor ##
 
@@ -68,7 +68,7 @@ ExampleFolder
 ReadGeoLayersFromFolder(SpatialDataFolder = "ExampleFolder")
 ```
 
-After running the command, the following GeoLayer IDs are registered within the GeoProcessor. ExampleFile3 is not included within the registered GeoLayer IDs because `ExampleFile3.txt` is not a [supported spatial data file](../../spatial-data-format-ref/overview). 
+After running the command, the following GeoLayer IDs are registered within the GeoProcessor. ExampleFile3 is not included within the registered GeoLayer IDs because `ExampleFile3.txt` is not a [supported spatial data file](../../spatial-data-format-ref/overview.md). 
 
 |Registered GeoLayer IDs|
 |------|

@@ -35,14 +35,12 @@ Command Parameters
 | `GeoLayerID` <br> **_required_** | The ID of the GeoLayer with the attribute to be removed. | None - must be specified. |
 | `AttributeNames` <br> **_required_** | The names of the attributes to be removed. Separated by commas. Case-specific.| None - must be specified. |
 
-
-
 ## Examples ##
 
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/RemoveGeoLayerAttributes).
 
 The following GeoLayer data is used in the example[^2]. 
-[^2]: The example assumes that the `ExampleGeoLayer` GeoLayer has *already* been read into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON) command.
+[^2]: The example assumes that the `ExampleGeoLayer` GeoLayer has *already* been read into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) command.
 
 **<p style="text-align: left;">
 Example GeoLayer Data
@@ -76,11 +74,9 @@ After running the command, the ExampleGeoLayer has the following attribute table
 |2|Bright|24|
 |3|Gunn|43|
 
-
 ## Troubleshooting ##
-
 
 ## See Also ##
 
 - GeoLayer attributes are removed using the [`QGIS QGSVectorDataProvider Class`](https://qgis.org/api/classQgsVectorDataProvider.html). See [documentation](https://docs.qgis.org/latest/en/docs/pyqgis_developer_cookbook/vector.html#adding-and-removing-fields) for examples on utilizing the `QgsVectorDataProvider` class in the PyQGIS environment.
-- See parallel GeoProcessor command [AddGeoLayerAttribute](../AddGeoLayerAttribute/AddGeoLayerAttribute)
+- See parallel GeoProcessor command [AddGeoLayerAttribute](../AddGeoLayerAttribute/AddGeoLayerAttribute.md)

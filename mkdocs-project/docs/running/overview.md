@@ -15,7 +15,7 @@ The GeoProcessor is distributed as a Python virtual environment to isolate the G
 from other Python software on the computer, and to protect the computer's Python installation(s) from
 changes introduced by installing the GeoProcessor.
 
-The [Appendix - Installing](../appendix-install/install) documentation describes how to download
+The [Appendix - Installing](../appendix-install/install.md) documentation describes how to download
 and install the GeoProcessor software.  In summary, the following are the main steps:
 
 1. Access the software download page with a web browser.  **Need to provide link.**
@@ -32,11 +32,11 @@ More details are provided by following the link for the GeoProcessor Variant in 
 
 | **GeoProcessor Variant**                     | **Program(s)** | **Description** |
 | -------------------------------------------- | -------------- | --------------- |
-| [User interface](ui)                         | `gpui.bat` (Windows) and `gpui` (Linux) | Run the user interface. |    
-| [Command line (batch)](cl-batch)             | `gp.bat` (Windows) and `gp` (Linux) | Run `gp --commands commandFile`. |    
-| [Command line (interpreter)](cl-interpreter) | `gp.bat` (Windows) and `gp` (Linux) | Default when `gp` is run. |    
-| [Test framework user interface](gptest)      | `gptestui.bat` (Windows) and `gptestui` (Linux) | Run the test framework user interface. |    
-| [Test framework command line](gptest)        | `gptest.bat` (Windows) and `gptest` (Linux) | Run the test framework command line:  `gptest --commands commandFile`. |    
+| [User interface](ui.md)                         | `gpui.bat` (Windows) and `gpui` (Linux) | Run the user interface. |    
+| [Command line (batch)](cl-batch.md)             | `gp.bat` (Windows) and `gp` (Linux) | Run `gp --commands commandFile`. |    
+| [Command line (interpreter)](cl-interpreter.md) | `gp.bat` (Windows) and `gp` (Linux) | Default when `gp` is run. |    
+| [Testing framework user interface](gptest.md)      | `gptestui.bat` (Windows) and `gptestui` (Linux) | Run the testing framework user interface. |    
+| [Testing framework command line](gptest.md)        | `gptest.bat` (Windows) and `gptest` (Linux) | Run the testing framework command line:  `gptest --commands commandFile`. |    
 
 ## GeoProcessor `gp` Program Options ##
 

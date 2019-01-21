@@ -12,9 +12,9 @@
 ## Overview ##
 
 The `StartRegressionTestResultsReport` command starts a report file (and optionally results table) to be written to as regression tests are run.
-The [CreateRegressionTestCommandFile](../CreateRegressionTestCommandFile/CreateRegressionTestCommandFile) command automatically
+The [CreateRegressionTestCommandFile](../CreateRegressionTestCommandFile/CreateRegressionTestCommandFile.md) command automatically
 inserts this command and is the preferred way to set up automated tests.
-The [RunCommands](../RunCommands/RunCommands) commands will write to this file (and optionally results table) if available.
+The [RunCommands](../RunCommands/RunCommands.md) commands will write to this file (and optionally results table) if available.
 
 ## Command Editor ##
 
@@ -45,6 +45,6 @@ Command Parameters
 
 ## See Also ##
 
-* [CreateRegressionTestCommandFile](../CreateRegressionTestCommandFile/CreateRegressionTestCommandFile) command
-* [RunCommands](../RunCommands/RunCommands) command
-* [WriteCommandSummaryToFile](../WriteCommandSummaryToFile/WriteCommandSummaryToFile) command
+* [CreateRegressionTestCommandFile](../CreateRegressionTestCommandFile/CreateRegressionTestCommandFile.md) command
+* [RunCommands](../RunCommands/RunCommands.md) command
+* [WriteCommandSummaryToFile](../WriteCommandSummaryToFile/WriteCommandSummaryToFile.md) command

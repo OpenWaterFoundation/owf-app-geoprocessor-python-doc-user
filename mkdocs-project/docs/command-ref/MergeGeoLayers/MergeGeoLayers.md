@@ -12,7 +12,7 @@
 
 ## Overview ##
 
-The `MergeGeoLayers` command merges two or more [GeoLayers](../../introduction#geolayer) into one GeoLayer. 
+The `MergeGeoLayers` command merges two or more [GeoLayers](../../introduction/introduction.md#geolayer) into one GeoLayer. 
 
 * The attributes of the input GeoLayers are retained within the output GeoLayer.
 * The features of the input GeoLayers are retained within the output GeoLayer.
@@ -21,7 +21,7 @@ The `MergeGeoLayers` command merges two or more [GeoLayers](../../introduction#g
 * The attribute names of the output GeoLayer can be specified. See `AttributeMap` parameter. 
 * The value `0` will be assigned as the attribute value to features in the output GeoLayer attribute table that do not have attribute values. 
 
-![MergeGeoLayers](images/MergeGeoLayers_input_output.PNG)
+![MergeGeoLayers](images/MergeGeoLayers_input_output.png)
 
 ## Command Editor ##
 
@@ -42,7 +42,7 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-|`GeoLayerIDs` <br>  **_required_**| A comma-separated list of the identifiers of the GeoLayers to merge. <br><br> *GeoLayerID1, GeoLayerID2, ...* <br> <br>Can also be `*` where all GeoLayers registered within the GeoProcessor are merged. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.| None - must be specified. |
+|`GeoLayerIDs` <br>  **_required_**| A comma-separated list of the identifiers of the GeoLayers to merge. <br><br> *GeoLayerID1, GeoLayerID2, ...* <br> <br>Can also be `*` where all GeoLayers registered within the GeoProcessor are merged. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
 |`OutputGeoLayerID` <br> **_required_**| A GeoLayer identifier for the output GeoLayer. Refer to [documentation](../../best-practices/geolayer-identifiers.md) for best practices on naming GeoLayer identifiers.|None - must be specified. |
 |`AttributeMap` <br> _optional_| Specify new names for the output geolayer attributes. <br><br> *OriginalAttributeName1:MergedAttributeName1, OriginalAttributeName2:MergedAttributeName2* <br><br> See the [Attribute Map](#attribute-map) section for more information.|Empty attribute map. <br><br>All attributes in the input GeoLayers are retained within the output GeoLayer.|
 |`IfGeoLayerIDExists`<br> *optional*|The action that occurs if the `OutputGeoLayerID` already exists within the GeoProcessor. <br><br> `Replace` : The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. No warning is logged.<br><br> `ReplaceAndWarn`: The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. A warning is logged.<br><br>`Warn` : The existing GeoLayer is not changed. A warning is logged. <br><br> `Fail` : The existing GeoLayer is not changed. A fail message is logged. | `Replace` | 
@@ -80,7 +80,7 @@ AttributeMap = "KEY1:VALUE1, KEY2:VALUE2"
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/MergeGeoLayers).
 
 The following GeoLayer data are used in the examples[^2]. 
-[^2]: The examples assume that the `ExampleGeoLayer1` and `ExampleGeoLayer2` GeoLayers have *already* been read into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON) command.
+[^2]: The examples assume that the `ExampleGeoLayer1` and `ExampleGeoLayer2` GeoLayers have *already* been read into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) command.
 
 **<p style="text-align: left;">
 Example GeoLayer Data
@@ -137,8 +137,6 @@ Attribute Table of `MergedOutput`
 |1|0|0|Woodrow|Bulldogs|
 |2|0|0|Eastern|Rams|
 |3|0|0|River Mill|Eagles|
-
-
 
 ### Example 2:  Merge With an Attribute Map ###
 

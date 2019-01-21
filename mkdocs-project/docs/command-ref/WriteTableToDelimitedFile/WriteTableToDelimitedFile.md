@@ -11,14 +11,13 @@
 
 ## Overview ##
 
-The `WriteTableToDelimitedFile` command writes a [Table](../../introduction#table) to a [delimited file](https://en.wikipedia.org/wiki/Delimiter-separated_values).
+The `WriteTableToDelimitedFile` command writes a [Table](../../introduction/introduction.md#table) to a [delimited file](https://en.wikipedia.org/wiki/Delimiter-separated_values).
 
 * Can specify the delimiter. See the `Delimiter` parameter. 
 * Can specify which Table columns to write to the delimited file. See the `IncludeColumns` and the `ExcludeColumns` parameters.
 * Can specify to include or exclude the Table's header row. See the `WriteHeaderRow` parameter. 
 * Can specify to include or exclude the Table's index column. See the `WriteIndexColumn` parameter.
 * Can sort the Table's records. See the `SortingColumn` and `SortingOrder` parameter. 
-
 
 ## Command Editor ##
 
@@ -40,7 +39,7 @@ Command Parameters
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
 |`TableID` <br>  **_required_**| The identifier of the Table to write.| None - must be specified. |
-|`OutputFile` <br> **_required_**| The output delimited file (relative or absolute path). [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized. | None - must be specified. |
+|`OutputFile` <br> **_required_**| The output delimited file (relative or absolute path). [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized. | None - must be specified. |
 |`Delimiter` <br> *optional*| The delimiter of the output delimited file. Must be a single character. |`,`|
 |`IncludeColumns`<br> *optional*| A comma-separated list of the [glob-style patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which columns to include in the delimited file. <br><br> See [Determining Which Columns to Write](#determining-which-columns-to-write).| `*` <br><br> All columns are written. |  
 |`ExcludeColumns`<br> *optional*| A comma-separated list of the [glob-style patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which columns to exclude in the delimited file. <br><br> See [Determining Which Columns to Write](#determining-which-columns-to-write).| No columns are excluded.|

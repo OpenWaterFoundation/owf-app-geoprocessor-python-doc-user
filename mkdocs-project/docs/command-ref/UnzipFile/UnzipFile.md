@@ -35,9 +35,9 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `File` <br>  **_required_**| The file to be unzipped (relative or absolute path). [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.| None - must be specified. |
+| `File` <br>  **_required_**| The file to be unzipped (relative or absolute path). [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
 | `FileType` <br>  *optional*|The file format of the input `File`. The following file formats are currently accepted. <br><br> `TAR`: a [.tar file](https://en.wikipedia.org/wiki/Tar_(computing)). <br> `ZIP`: A [.zip file](https://en.wikipedia.org/wiki/Zip_(file_format)).| Determined from the `File`'s extension. |
-|`OutputFolder`  <br>  *optional*|The name of the destination folder. The extracted files are saved here. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.|The parent folder of the `File`.|
+|`OutputFolder`  <br>  *optional*|The name of the destination folder. The extracted files are saved here. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.|The parent folder of the `File`.|
 |`DeleteFile` <br>  *optional*|Boolean. <br><br> If `True`, the compressed file is deleted after the extraction. <br> If `False`, the compressed file remains after the extraction. |`False`|
 
 
@@ -103,11 +103,8 @@ After running the command, the following files are written to the `ExampleSubFol
 |ExampleFile1.geojson|
 |ExampleFile2.txt|
 
-
-
-
 ## Troubleshooting ##
 
 ## See Also ##
 
-* [WebGet](../WebGet/WebGet) command
+* [WebGet](../WebGet/WebGet.md) command

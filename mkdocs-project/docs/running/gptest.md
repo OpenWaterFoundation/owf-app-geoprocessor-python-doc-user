@@ -21,7 +21,7 @@ Examples of using the testing framework are:
 * tests to confirm that a workflow is valid, for example by running a subset of a large analysis
 or to confirm that a snapshot of the large analysis is correct
 * test to confirm that a command line program gives expected results (see the
-[`RunProgram`](../command-ref/RunProgram/RunProgram) command)
+[`RunProgram`](../command-ref/RunProgram/RunProgram.md) command)
 
 ## Installation ##
 
@@ -29,7 +29,7 @@ The normal GeoProcessor run programs (`gp.bat` and `gpui.bat` on Windows, and `g
 QGIS or ArcGIS Proo software is installed,
 and provide full access to geoprocessing commands.
 However, the testing framework included in the GeoProcessor is also useful in stand-alone mode without relying on GIS software.
-The [installation instructions](../appendix-install/install) explain how to install the test framework version,
+The [installation instructions](../appendix-install/install.md) explain how to install the test framework version,
 which installs testing framework run programs
 (`gptest.bat` and `gptestui` on Windows, and `gptest` and `gptestui` on Linux).
 In summary, installing the testing framework will install a Python virtual environment that isolates

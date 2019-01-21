@@ -27,7 +27,7 @@ The log file exists in the following locations:
 	+ Linux:  `/home/user/.owf-gp/log/gp_user.log`
 	+ Cygwin:  `/cygdrive/C/Users/user/.owf-gp/log/gp_user.log` (different files from Windows)
 	+ Git Bash (MinGW):  `/c/Users/user/.owf-gp/log/gp_user.log` (same files as Windows)
-* File specified by the GeoProcessor [StartLog](../command-ref/StartLog/StartLog) command.
+* File specified by the GeoProcessor [StartLog](../command-ref/StartLog/StartLog.md) command.
 
 The log file contains a sequential record of log messages for application startup followed by
 output from running the commands, as shown in the following example.
@@ -65,7 +65,7 @@ INFO|geoprocessor|gp line 190|ProgramVersionNumber = None
 ```
 The GeoProcessor UI allows the log file to be displayed using the ***Tools / View Log File*** menu.
 
-Log files created by the [StartLog](../command-ref/StartLog/StartLog) command
+Log files created by the [StartLog](../command-ref/StartLog/StartLog.md) command
 are also typically listed in ***Results / Output Files***.
 
 ## Command Status/Log ##
@@ -75,8 +75,9 @@ which indicate problems that need to be resolved.
 A command flagged with red X or yellow warning symbol can be reviewed to determine problems.
 
 ![ui-warnings](images/ui-with-warnings.png)
+
 **<p style="text-align: center;">
-GeoProcessor User Interface showing Warning and Failure Indicators
+GeoProcessor User Interface showing Warning and Failure Indicators (<a href="../images/ui-with-warnings.png">see full-size image</a>)
 </p>**
 
 A command's log can be displayed by mousing over the icon at the left of the commands list or
@@ -88,8 +89,9 @@ mode is used to generation information used by other command editors.
 Run issues are generated when a command is run.
 
 ![ui-warnings](images/command-status.png)
+
 **<p style="text-align: center;">
-Command Status Log Summary
+Command Status Log Summary (<a href="../images/command-status.png">see full-size image</a>)
 </p>**
 
 ## Specific Issues ##
