@@ -97,7 +97,7 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 
 | **Command Name**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** |
 | ---------------- | --------------- |
-| [`# comment`](HashComment/HashComment.md) | Single line comment. |
+| [`# comment`](Comment/Comment.md) | Single line comment. |
 | [`/* comment block start`](CommentBlockStart/CommentBlockStart.md) | Start of multi-line comment block. |
 | [`*/ comment block end`](CommentBlockEnd/CommentBlockEnd.md) | End of multi-line comment block. |
 | [`EndIf`](EndIf/EndIf.md) | Indicate the end of an `If` block. |

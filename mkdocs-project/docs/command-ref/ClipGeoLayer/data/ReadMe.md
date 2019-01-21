@@ -44,4 +44,4 @@
 # Appendix A
 
 ## `Select by expression` button
-![select_by_expression](../images/QGIS-selectByExpression-btn.PNG)
+![select_by_expression](../images/QGIS-selectByExpression-btn.png)
