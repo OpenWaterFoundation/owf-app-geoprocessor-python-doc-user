@@ -30,18 +30,17 @@ ReadGeoLayerFromFGDB(Parameter="Value",...)
 Command Parameters
 </p>**
 
-| **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| **Default** |
+| **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| **Default** |
 | --------------|-----------------|----------------- |
 | `SpatialDataFolder` <br>  **_required_**| The file geodatabse to read (must end in `.gdb`). | None - must be specified. |
 | `ReadOnlyOneFeatureClass` <br>  **_required_**| Boolean <br><br> If `TRUE`, only **one** feature class will be read as a GeoLayer. Must specify a valid feature class name. <br> If `FALSE`, **one or more** feature classes will be read as GeoLayers. Can specify the `Subset_Pattern` to select which feature classes to read.|
 |`IfGeoLayerIDExists`<br> *optional*|The action that occurs if the `GeoLayerID` already exists within the GeoProcessor. <br><br> `Replace` : The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. No warning is logged.<br><br> `ReplaceAndWarn`: The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. A warning is logged. <br><br> `Warn` : The new GeoLayer is not created. A warning is logged. <br><br> `Fail` : The new GeoLayer is not created. A fail message is logged.| `Replace` |
 ||**IF** `ReadOnlyOneFeatureClass` **is TRUE ...**||
-| `Feature Class` <br>  **_required_**| The name of the feature class within the file geodatabase to read. [`${Property}` syntax](../../introduction/introducion.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
-| `GeoLayerID`  <br> **_required_**| A GeoLayer identifier. [Formatting characters](../../introduction/introducion.md#geolayer-property-format-specifiers) and [`${Property}` syntax](../../introduction/introducion.md#geoprocessor-properties-property) are recognized. Refer to [documentation](../../best-practices/geolayer-identifiers.md) for best practices on naming GeoLayer identifiers.| None - must be specified. |
+| `Feature Class` <br>  **_required_**| The name of the feature class within the file geodatabase to read. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
+| `GeoLayerID`  <br> **_required_**| A GeoLayer identifier. [Formatting characters](../../introduction/introduction.md#geolayer-property-format-specifiers) and [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) are recognized. Refer to [documentation](../../best-practices/geolayer-identifiers.md) for best practices on naming GeoLayer identifiers.| None - must be specified. |
 ||**IF** `ReadOnlyOneFeatureClass` **is FALSE ...**||
 | `GeoLayerID_prefix`  <br> *optional* | A GeoLayer identifier prefix. <br><br> GeoLayers read from a file geodatabase have an identifier in the `GeoLayerID_prefix`_`FeatureClass` format.| No prefix is used. The GeoLayerID is the name of the feature class. |
 | `Subset_Pattern` 	 <br> *optional*| The [glob-style](https://en.wikipedia.org/wiki/Glob_(programming)) pattern (e.g., `CO_*` or `*_[MC]O`) of feature classes to read from the file geodatabase.| No pattern is used. All feature classes within the file geodatabase are read.|
-
 
 ## Examples ##
 

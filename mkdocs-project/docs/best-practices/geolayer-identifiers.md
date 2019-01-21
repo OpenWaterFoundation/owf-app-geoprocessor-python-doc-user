@@ -4,7 +4,7 @@ This documentation provides best practices for GeoLayer identifiers.
 
 ## Overview ##
 
-The main function of the GeoProcessor is to process [GeoLayers](../../introduction.md#geolayer):
+The main function of the GeoProcessor is to process [GeoLayers](../introduction/introduction.md#geolayer):
 
 1. The GeoProcessor reads in GeoLayers.
 2. The GeoProcessor manipulates GeoLayers. 
