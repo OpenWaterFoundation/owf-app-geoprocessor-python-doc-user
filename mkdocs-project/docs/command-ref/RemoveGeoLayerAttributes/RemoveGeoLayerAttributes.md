@@ -17,7 +17,11 @@ The `RemoveGeoLayerAttributes` command removes one or more attributes from a Geo
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![RemoveGeoLayerAttributes](RemoveGeoLayerAttributes.png)
+
+**<p style="text-align: center;">
+`RemoveGeoLayerAttributes` Command Editor (<a href="../RemoveGeoLayerAttributes.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

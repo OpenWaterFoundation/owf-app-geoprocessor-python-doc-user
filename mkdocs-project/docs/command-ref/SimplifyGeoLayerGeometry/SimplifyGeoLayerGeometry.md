@@ -18,12 +18,15 @@ The `SimplifyGeoLayerGeometry` command decreases the number of vertices within t
 * The file size of the simplified GeoLayer will be smaller than the input GeoLayer.
 * The spatial accuracy of the simplified GeoLayer be less precise than the input GeoLayer. 
 
-
 ## Command Editor ##
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![SimplifyGeoLayerGeometry](SimplifyGeoLayerGeometry.png)
+
+**<p style="text-align: center;">
+`SimplifyGeoLayerGeometry` Command Editor (<a href="../SimplifyGeoLayerGeometry.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

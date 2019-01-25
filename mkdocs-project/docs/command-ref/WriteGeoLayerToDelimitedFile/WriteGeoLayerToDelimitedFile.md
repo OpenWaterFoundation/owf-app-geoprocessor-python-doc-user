@@ -23,7 +23,11 @@ The `WriteGeoLayerToDelimitedFile` command writes a [GeoLayer](../../introductio
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![WriteGeoLayerToDelimitedFile](WriteGeoLayerToDelimitedFile.png)
+
+**<p style="text-align: center;">
+`WriteGeoLayerToDelimitedFile` Command Editor (<a href="../WriteGeoLayerToDelimitedFile.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

@@ -22,7 +22,11 @@ The `ReadTableFromDelimitedFile` command reads a [Table](../../introduction/intr
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![ReadTableFromDelimitedFile](ReadTableFromDelimitedFile.png)
+
+**<p style="text-align: center;">
+`ReadTableFromDelimitedFile` Command Editor (<a href="../ReadTableFromDelimitedFile.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 
@@ -38,7 +42,7 @@ Command Parameters
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
 |`InputFile` <br> **_required_**| The delimited file (relative or absolute path) to read. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized. | None - must be specified. |
-|`TableID` <br> *required*| A Table identifier. Refer to [documentation](../../best-practices/table-identifiers.md) for best practices on naming Table identifiers.|None - must be specified. |
+|`TableID` <br> **required**| A Table identifier. Refer to [documentation](../../best-practices/table-identifiers.md) for best practices on naming Table identifiers.|None - must be specified. |
 |`Delimiter` <br> *optional*| The delimiter character of the input delimited file.|`,` (*comma*)|
 |`HeaderLines` <br> *optional*|The number of rows representing non-data comments. These columns are not included in the output Table data values.|`0`|
 |`NullValues` <br> *optional*|A list of values within the delimited file that should br converted to `NULL` values. The Python `None` will be used internally.|Empty table cell is assumed to be an empty string for string columns and `None` for other data types.|

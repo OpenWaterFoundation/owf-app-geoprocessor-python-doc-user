@@ -30,7 +30,11 @@ The `IntersectGeoLayer` command extracts the overlapping portions of features in
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![IntersectGeoLayer](IntersectGeoLayer.png)
+
+**<p style="text-align: center;">
+`IntersectGeoLayer` Command Editor (<a href="../IntersectGeoLayer.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

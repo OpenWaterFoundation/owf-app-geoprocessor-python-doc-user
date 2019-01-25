@@ -24,7 +24,11 @@ The `ClipGeoLayer` command clips an input [GeoLayer](../../introduction/introduc
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![ClipGeoLayer](ClipGeoLayer.png)
+
+**<p style="text-align: center;">
+`ClipGeoLayer` Command Editor (<a href="../ClipGeoLayer.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

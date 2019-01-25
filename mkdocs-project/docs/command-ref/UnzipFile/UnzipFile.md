@@ -20,7 +20,11 @@ The `UnzipFile` command unzips a compressed file.
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![UnzipFile](UnzipFile.png)
+
+**<p style="text-align: center;">
+`UnzipFile` Command Editor (<a href="../UnzipFile.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

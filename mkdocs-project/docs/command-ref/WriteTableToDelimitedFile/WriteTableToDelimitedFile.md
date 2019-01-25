@@ -23,7 +23,11 @@ The `WriteTableToDelimitedFile` command writes a [Table](../../introduction/intr
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![WriteTableToDelimitedFile](WriteTableToDelimitedFile.png)
+
+**<p style="text-align: center;">
+`WriteTableToDelimitedFile` Command Editor (<a href="../WriteTableToDelimitedFile.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

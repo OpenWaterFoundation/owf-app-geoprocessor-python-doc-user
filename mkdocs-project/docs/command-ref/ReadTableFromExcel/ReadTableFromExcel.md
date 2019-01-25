@@ -20,7 +20,11 @@ The `ReadTableFromExcel` command reads a [Table](../../introduction/introduction
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![ReadTableFromExcel](ReadTableFromExcel.png)
+
+**<p style="text-align: center;">
+`ReadTableFromExcel` Command Editor (<a href="../ReadTableFromExcel.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

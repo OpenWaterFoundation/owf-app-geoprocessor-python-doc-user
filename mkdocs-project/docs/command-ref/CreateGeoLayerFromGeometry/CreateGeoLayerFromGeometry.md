@@ -24,7 +24,11 @@ The `CreateGeoLayerFromGeometry` creates a new GeoLayer from input geometry data
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![CreateGeoLayerFromGeometry](CreateGeoLayerFromGeometry.png)
+
+**<p style="text-align: center;">
+`CreateGeoLayerFromGeometry` Command Editor (<a href="../CreateGeoLayerFromGeometry.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

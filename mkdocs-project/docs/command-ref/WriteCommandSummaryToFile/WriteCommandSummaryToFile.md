@@ -19,7 +19,11 @@ Currently only HTML format output file is supported.
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![WriteCommandSummaryToFile](WriteCommandSummaryToFile.png)
+
+**<p style="text-align: center;">
+`WriteCommandSummaryToFile` Command Editor (<a href="../WriteCommandSummaryToFile.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

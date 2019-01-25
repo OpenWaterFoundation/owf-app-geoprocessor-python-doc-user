@@ -19,7 +19,11 @@ The `ReadGeoLayersFromFolder` command reads one or more [GeoLayer(s)](../../intr
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![ReadGeoLayersFromFolder](ReadGeoLayersFromFolder.png)
+
+**<p style="text-align: center;">
+`ReadGeoLayersFromFolder` Command Editor (<a href="../ReadGeoLayersFromFolder.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

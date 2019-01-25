@@ -25,7 +25,11 @@ The `WriteGeoLayerToKML` command writes a [GeoLayer](../../introduction/introduc
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![WriteGeoLayerToKML](WriteGeoLayerToKML.png)
+
+**<p style="text-align: center;">
+`WriteGeoLayerToKML` Command Editor (<a href="../WriteGeoLayerToKML.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

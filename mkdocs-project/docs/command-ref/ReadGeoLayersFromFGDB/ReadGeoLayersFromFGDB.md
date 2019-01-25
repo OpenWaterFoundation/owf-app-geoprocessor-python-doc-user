@@ -17,7 +17,11 @@ The `ReadGeoLayersFromFGDB` command reads one or more [GeoLayer(s)](../../introd
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![ReadGeoLayersFromFGDB](ReadGeoLayersFromFGDB.png)
+
+**<p style="text-align: center;">
+`ReadGeoLayersFromFGDB` Command Editor (<a href="../ReadGeoLayersFromFGDB.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

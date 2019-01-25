@@ -24,7 +24,11 @@ The `WriteTableToExcel` command writes a [Table](../../introduction/introduction
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![WriteTableToExcel](WriteTableToExcel.png)
+
+**<p style="text-align: center;">
+`WriteTableToExcel` Command Editor (<a href="../WriteTableToExcel.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 
