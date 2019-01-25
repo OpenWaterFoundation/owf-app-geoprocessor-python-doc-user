@@ -19,7 +19,11 @@ The `FreeGeoLayers` command removes one or more [GeoLayers](../../introduction/i
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![FreeGeoLayers](FreeGeoLayers.png)
+
+**<p style="text-align: center;">
+`FreeGeoLayers` Command Editor (<a href="../FreeGeoLayers.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

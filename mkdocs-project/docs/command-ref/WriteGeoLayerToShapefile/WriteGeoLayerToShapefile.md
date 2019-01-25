@@ -20,7 +20,11 @@ The `WriteGeoLayerToShapefile` command writes a [GeoLayer](../../introduction/in
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![WriteGeoLayerToShapefile](WriteGeoLayerToShapefile.png)
+
+**<p style="text-align: center;">
+`WriteGeoLayerToShapefile` Command Editor (<a href="../WriteGeoLayerToShapefile.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

@@ -21,7 +21,11 @@ The `ListFiles` command lists the files and folders within a folder or a URL.
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![ListFiles](ListFiles.png)
+
+**<p style="text-align: center;">
+`ListFiles` Command Editor (<a href="../ListFiles.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

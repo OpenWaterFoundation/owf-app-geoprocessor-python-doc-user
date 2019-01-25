@@ -21,7 +21,11 @@ The `WriteGeoLayerToGeoJSON` command writes a [GeoLayer](../../introduction/intr
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![WriteGeoLayerToGeoJSON](WriteGeoLayerToGeoJSON.png)
+
+**<p style="text-align: center;">
+`WriteGeoLayerToGeoJSON` Command Editor (<a href="../WriteGeoLayerToGeoJSON.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

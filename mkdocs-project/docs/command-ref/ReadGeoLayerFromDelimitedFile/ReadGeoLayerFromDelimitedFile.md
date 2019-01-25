@@ -21,7 +21,11 @@ The `ReadGeoLayerFromDelimitedFile` command reads a [GeoLayer](../../introductio
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![ReadGeoLayerFromDelimitedFile](ReadGeoLayerFromDelimitedFile.png)
+
+**<p style="text-align: center;">
+`ReadGeoLayerFromDelimitedFile` Command Editor (<a href="../ReadGeoLayerFromDelimitedFile.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

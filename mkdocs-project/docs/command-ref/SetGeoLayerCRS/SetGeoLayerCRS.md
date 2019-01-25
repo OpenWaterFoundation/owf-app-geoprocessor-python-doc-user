@@ -23,7 +23,11 @@ The `SetGeoLayerCRS` command sets the [coordinate reference system (CRS)](https:
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![SetGeoLayerCRS](SetGeoLayerCRS.png)
+
+**<p style="text-align: center;">
+`SetGeoLayerCRS` Command Editor (<a href="../SetGeoLayerCRS.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

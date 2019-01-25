@@ -27,7 +27,11 @@ The `MergeGeoLayers` command merges two or more [GeoLayers](../../introduction/i
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![MergeGeoLayers](MergeGeoLayers.png)
+
+**<p style="text-align: center;">
+`MergeGeoLayers` Command Editor (<a href="../MergeGeoLayers.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

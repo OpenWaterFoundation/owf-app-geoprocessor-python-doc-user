@@ -25,7 +25,11 @@ The `CopyGeoLayer` command copies a GeoLayer to a new GeoLayer, optionally conts
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![CopyGeoLayer](CopyGeoLayer.png)
+
+**<p style="text-align: center;">
+`CopyGeoLayer` Command Editor (<a href="../CopyGeoLayer.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

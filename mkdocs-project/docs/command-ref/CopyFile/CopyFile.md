@@ -17,7 +17,11 @@ The `CopyFile` command copies a source file to a destination.
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![CopyFile](CopyFile.png)
+
+**<p style="text-align: center;">
+`CopyFile` Command Editor (<a href="../CopyFile.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

@@ -25,7 +25,11 @@ The following functionality is provided:
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![SetGeoLayerProperty](SetGeoLayerProperty.png)
+
+**<p style="text-align: center;">
+`SetGeoLayerProperty` Command Editor (<a href="../SetGeoLayerProperty.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

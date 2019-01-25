@@ -20,7 +20,11 @@ The `RenameGeoLayerAttribute` command renames a single attribute in a GeoLayer.
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![RenameGeoLayerAttribute](RenameGeoLayerAttribute.png)
+
+**<p style="text-align: center;">
+`RenameGeoLayerAttribute` Command Editor (<a href="../RenameGeoLayerAttribute.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

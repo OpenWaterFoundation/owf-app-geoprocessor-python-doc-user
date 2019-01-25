@@ -25,7 +25,11 @@ property on specific GeoLayer. The following functionality is provided:
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![SetProperty](SetProperty.png)
+
+**<p style="text-align: center;">
+`SetProperty` Command Editor (<a href="../SetProperty.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

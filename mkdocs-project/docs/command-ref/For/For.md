@@ -31,7 +31,11 @@ until commands are run.
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![For](For.png)
+
+**<p style="text-align: center;">
+`For` Command Editor (<a href="../For.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

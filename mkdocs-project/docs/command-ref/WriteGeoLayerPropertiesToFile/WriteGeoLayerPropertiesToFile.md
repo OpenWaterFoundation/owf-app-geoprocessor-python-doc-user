@@ -34,7 +34,11 @@ Property File Formats
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+![WriteGeoLayerPropertiesToFile](WriteGeoLayerPropertiesToFile.png)
+
+**<p style="text-align: center;">
+`WriteGeoLayerPropertiesToFile` Command Editor (<a href="../WriteGeoLayerPropertiesToFile.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 
