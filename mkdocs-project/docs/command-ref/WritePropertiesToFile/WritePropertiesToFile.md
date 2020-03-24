@@ -34,7 +34,9 @@ Property File Formats
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![WritePropertiesToFile](WritePropertiesToFile.png)
+</p>**
 
 **<p style="text-align: center;">
 `WritePropertiesToFile` Command Editor (<a href="../WritePropertiesToFile.png">see full-size image</a>)
@@ -53,9 +55,11 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `OutputFile` | The property file to write, as an absolute path or relative to the command file, can use `${Property}`. | None - must be specified. |
+| `OutputFile`<br>**required** | The property file to write, as an absolute path or relative to the command file, can use `${Property}`. | None - must be specified. |
 | `IncludeProperties` | The names of properties to write, separated by commas.  The `*` wildcard can be used to indicate multiple properties. | If not specified, all processor properties will be written. |
-| `WriteMode` | Indicates how the file should be written:<ul><li>`Append` – append the properties to the file without checking for matches (create the file if it does not exist).</li><li>`Overwrite` – overwrite the properties file.</ul> | `Overwrite` |
+| `WriteMode` | Indicates how the file should be written:<ul><li>`Append` – append the properties to the file without checking for matches (create the file if it does not exist).</li><li>`Overwrite` – overwrite the properties file.</li></ul> | `Overwrite` |
+| `FileFormat` | The file format to write:<ul><li>`NameValue` - see above</li><li>`NameTypeValue` - see above</li><li>`NameTypeValuePython` - see above</li></ul> | `NameValue` |
+| `SortOrder` | Sort order for properties:<ul><li>`Ascending` - sort in ascending order</li><li>`Descending` - sort in descending order</li></ul> | `Ascending` |
 
 ## Examples ##
 
@@ -65,5 +69,5 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [SetProperty](../SetProperty/SetProperty.md) command
-* [SetPropertyFromGeoLayer](../SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md) command
+* [`SetProperty`](../SetProperty/SetProperty.md) command
+* [`SetPropertyFromGeoLayer`](../SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md) command

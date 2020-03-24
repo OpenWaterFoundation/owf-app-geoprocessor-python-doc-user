@@ -25,7 +25,9 @@ property on specific GeoLayer. The following functionality is provided:
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![SetProperty](SetProperty.png)
+</p>**
 
 **<p style="text-align: center;">
 `SetProperty` Command Editor (<a href="../SetProperty.png">see full-size image</a>)
@@ -45,10 +47,9 @@ Command Parameters
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
 | `PropertyName`<br>**required** | The property name. | None - must be specified. |
-| `PropertyType`<br>**required** | The property type as `bool`, `float`, `int`, or `str`. | None - must be specified. |
+| `PropertyType`<br>**required** | The property type as:<ul><li>`bool`</li><li>`float`</li><li>`int`</li><li>`str`</li></ul>. | None - must be specified. |
 | `PropertyValue` | The property value, as a string that can convert to the given type. | Either `PropertyValue` or `PropertyValues` must be specified. |
 | `PropertyValues` | The property values, as a list of string.  Currently, comma-separated values are supported with optional surrounding `[  ]`. In the future single-quoted strings will be supported to allow commas in the strings.  Strings are stripped of surrounding whitespace. | Either `PropertyValue` or `PropertyValues` must be specified. |
-
 
 ## Examples ##
 
@@ -58,5 +59,5 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [SetPropertyFromGeoLayer](../SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md) command
-* [WritePropertiesToFile](../WritePropertiesToFile/WritePropertiesToFile.md) command
+* [`SetPropertyFromGeoLayer`](../SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md) command
+* [`WritePropertiesToFile`](../WritePropertiesToFile/WritePropertiesToFile.md) command

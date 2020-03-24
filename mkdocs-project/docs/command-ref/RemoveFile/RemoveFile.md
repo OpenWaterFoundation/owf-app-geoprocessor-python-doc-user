@@ -21,7 +21,9 @@ the file is being used by another process).
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![RemoveFile](RemoveFile.png)
+</p>**
 
 **<p style="text-align: center;">
 `RemoveFile` Command Editor (<a href="../RemoveFile.png">see full-size image</a>)
@@ -40,10 +42,9 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `SourceFile` | The name of the file to delete.  Can be specified using `${Property}`. | None - must be specified. |
-| `IfSourceFileNotFound` | Indicate an action if the source file is not found:  `Ignore` (ignore the missing file and do not warn), `Warn` (generate a warning message), `Fail` (generate a failure message) | `Warn` |
-| `RemoveIfFolder` | Boolean. If `TRUE` and the `SourceFile` is a folder/file geodatabase, it will be removed. If `FALSE` and the `SourceFile` is a folder/file geodatabase, it will not be removed.| `False`|
-
+| `SourceFile`<br>**required** | The name of the file to delete.  Can be specified using `${Property}`. | None - must be specified. |
+| `IfSourceFileNotFound` | Indicate an action if the source file is not found:<ul><li> `Ignore` - ignore the missing file and do not warn</li><li>`Warn` - generate a warning message</li><li>`Fail` - generate a failure message</li></ul> | `Warn` |
+| `RemoveIfFolder` | Indicates whether folder should be remove:<ul><li>`True` - if the `SourceFile` is a folder/file geodatabase, it will be removed</li><li>`False` - if `SourceFile` is a folder/file geodatabase, it will not be removed.</li></ul> | `False`|
 
 ## Examples ##
 
@@ -53,4 +54,4 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [CopyFile](../CopyFile/CopyFile.md) command
+* [`CopyFile`](../CopyFile/CopyFile.md) command

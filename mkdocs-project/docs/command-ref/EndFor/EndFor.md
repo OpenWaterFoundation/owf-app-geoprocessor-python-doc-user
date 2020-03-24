@@ -19,7 +19,9 @@ determine the start and end of the block.
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![EndFor](EndFor.png)
+</p>**
 
 **<p style="text-align: center;">
 `EndFor` Command Editor (<a href="../EndFor.png">see full-size image</a>)
@@ -38,8 +40,7 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `Name` | The name that will be matched with the name of an `For` command to indicate the block of commands in the loop. | None - must be specified. |
-
+| `Name`<br>**required** | The name that will be matched with the name of an `For` command to indicate the block of commands in the loop. | None - must be specified. |
 
 ## Examples ##
 

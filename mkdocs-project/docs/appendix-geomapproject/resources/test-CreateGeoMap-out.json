@@ -1,0 +1,129 @@
+{
+  "geoMapProjectId": "TestGeoMapProject",
+  "name": "TestGeoMapProject",
+  "description": "Test geomap project.",
+  "properties": {
+    "effectiveDateTime": "2020-01-01T00:00",
+    "author": "me",
+    "saveDateTime": "TBD",
+    "fileFormatVersion": "TBD"
+  },
+  "geoMaps": [
+    {
+      "geoMapId": "TestGeoMap",
+      "name": "TestGeoMap",
+      "description": "Test map",
+      "dataPath": ".",
+      "crs": "EPSG:4326",
+      "properties": {
+        "TestProperty": "property value",
+        "testint": "5",
+        "initialExtent": "TBD",
+        "minimumExtent": "TBD",
+        "maximumExtent": "TBD"
+      },
+      "geoLayers": [
+        {
+          "geoLayerId": "TestPolygonLayer",
+          "name": "Test PolygonLayer",
+          "description": "Test polygon layer",
+          "crs": "EPSG:4326",
+          "geometryType": "WKT:Polygon",
+          "sourcePath": "results/TestPolygonLayer.geojson",
+          "properties": {
+            "testProperty1": "value1",
+            "testProperty2": "another property"
+          }
+        },
+        {
+          "geoLayerId": "TestLineLayer",
+          "name": "TestLineLayer",
+          "description": "Test line layer",
+          "crs": "EPSG:4326",
+          "geometryType": "WKT:LineString",
+          "sourcePath": "results/TestLineLayer.geojson",
+          "properties": {}
+        },
+        {
+          "geoLayerId": "TestPointLayer",
+          "name": "TestPointLayer",
+          "description": "Test point layer",
+          "crs": "EPSG:4326",
+          "geometryType": "WKT:Point",
+          "sourcePath": "results/TestPointLayer.geojson",
+          "properties": {}
+        }
+      ],
+      "geoLayerViewGroups": [
+        {
+          "geoLayerViewGroupId": "TestGeoLayerViewGroupPolygons",
+          "name": "Test GeoLayerViewGroupPolygons",
+          "description": "Test layer view group for polygons",
+          "properties": {},
+          "geoLayerViews": [
+            {
+              "geoLayerViewId": "TestPolygonLayer1",
+              "name": "Test polygon layer",
+              "description": "",
+              "geoLayerId": "TestPolygonLayer",
+              "properties": {},
+              "geoLayerSymbol": {
+                "name": "",
+                "description": "",
+                "classificationType": "SingleSymbol",
+                "classificationAttribute": "",
+                "properties": {
+                  "color": "255,165,0",
+                  "outlineColor": "black",
+                  "size": "9",
+                  "sizeUnits": "pixels",
+                  "opacity": "1.0",
+                  "lineWide": "1",
+                  "fillOpacity": ".8"
+                }
+              }
+            }
+          ]
+        },
+        {
+          "geoLayerViewGroupId": "TestGeoLayerViewGroupLines",
+          "name": "Test GeoLayerViewGroupLines",
+          "description": "Test layer view group for lines",
+          "properties": {},
+          "geoLayerViews": [
+            {
+              "geoLayerViewId": "TestLineLayer1",
+              "name": "Test line layer",
+              "description": "",
+              "geoLayerId": "TestLineLayer",
+              "properties": {},
+              "geoLayerSymbol": {
+                "name": "",
+                "description": "",
+                "classificationType": "Categorized",
+                "classificationAttribute": "",
+                "properties": {}
+              }
+            }
+          ]
+        },
+        {
+          "geoLayerViewGroupId": "TestGeoLayerViewGroupPoints",
+          "name": "Test GeoLayerViewGroupPoints",
+          "description": "Test layer view group for points",
+          "properties": {},
+          "geoLayerViews": [
+            {
+              "geoLayerViewId": "TestPointLayer1",
+              "name": "Test point layer 1",
+              "description": "",
+              "geoLayerId": "TestPointLayer",
+              "properties": {},
+              "geoLayerSymbol": null
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

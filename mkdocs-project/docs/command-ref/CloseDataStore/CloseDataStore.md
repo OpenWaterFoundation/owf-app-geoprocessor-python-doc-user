@@ -43,9 +43,8 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 | --------------|-----------------|----------------- |
-|`DataStoreID`<br>**_required_**|The ID of the DataStore to close. Can be specified using `${Property}`.| None - must be specified.|
-|`StatusMessage`<br>*optional*| A status message to display when the datastore information is viewed. The status may be reset if the connection is automatically restored, for example when a subsequent database interaction occurs. Can be specified using `${Property}`.| DataStore [`DataStoreID`] has been closed.|
-
+|`DataStoreID`<br>**required**|The ID of the DataStore to close. Can be specified using `${Property}`.| None - must be specified.|
+|`StatusMessage`| A status message to display when the datastore information is viewed. The status may be reset if the connection is automatically restored, for example when a subsequent database interaction occurs. Can be specified using `${Property}`.| DataStore [`DataStoreID`] has been closed.|
 
 ## Examples ##
 

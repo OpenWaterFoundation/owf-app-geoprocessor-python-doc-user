@@ -3,7 +3,8 @@
 This reference section of the documentation provides information about GeoProcessor commands.
 
 * [Command Overview](#command-overview)
-* [Commands for Processing Spatial Data Layers](#commands-for-processing-spatial-data-layers)
+* [Commands for Processing Vector Spatial Data Layers](#commands-for-processing-vector-spatial-data-layers)
+* [Commands for Processing Raster Spatial Data Layers](#commands-for-processing-raster-spatial-data-layers)
 * [Commands for Processing Tables](#commands-for-processing-tables)
 * [ Commands for Processing DataStores](#commands-for-processing-datastores)
 * [Commands to Control Running](#commands-to-control-running)
@@ -46,7 +47,7 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 7. Blank lines are allowed and will be handled as [`Blank`](Blank/Blank.md) commands.
 8. Unknown commands are handled as [`UnknownCommand`](UnknownCommand/UnknownCommand.md) commands.
 
-## Commands for Processing Spatial Data Layers ##
+## Commands for Processing Vector Spatial Data Layers ##
 
 | **Command Name**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** |
 | ---------------- | --------------- |
@@ -64,6 +65,7 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 | [`ReadGeoLayersFromFolder`](ReadGeoLayersFromFolder/ReadGeoLayersFromFolder.md) | Read GeoLayers from a folder. |
 | [`RemoveGeoLayerAttributes`](RemoveGeoLayerAttributes/RemoveGeoLayerAttributes.md) | Remove one or more attributes from a GeoLayer. |
 | [`RenameGeoLayerAttribute`](RenameGeoLayerAttribute/RenameGeoLayerAttribute.md) | Rename a GeoLayer's attribute. |
+| [`RunOgrProgram`](RunOgrProgram/RunOgrProgram.md) | Run an OGR command line program. |
 | [`SetGeoLayerCRS`](SetGeoLayerCRS/SetGeoLayerCRS.md) | Sets a GeoLayer's coordinate reference system. |
 | [`SetGeoLayerProperty`](SetGeoLayerProperty/SetGeoLayerProperty.md) | Set a GeoGeoLayer property. |
 | [`SimplifyGeoLayerGeometry`](SimplifyGeoLayerGeometry/SimplifyGeoLayerGeometry.md) | Decreases the verticies in a polygon or line GeoLayer.  |
@@ -71,6 +73,14 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 | [`WriteGeoLayerToGeoJSON`](WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON.md) | Write GeoLayer to a file in GeoJSON format. |
 | [`WriteGeoLayerToKML`](WriteGeoLayerToKML/WriteGeoLayerToKML.md) | Write GeoLayer to a file in KML format. |
 | [`WriteGeoLayerToShapefile`](WriteGeoLayerToShapefile/WriteGeoLayerToShapefile.md) | Write GeoLayer to a file in Shapefile format. |
+
+## Commands for Processing Raster Spatial Data Layers ##
+
+| **Command Name**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** |
+| ---------------- | --------------- |
+| [`CreateRasterGeoLayer`](CreateRasterGeoLayer/CreateRasterGeoLayer.md) | Create a raster spatial data layer. |
+| [`ReadRasterGeoLayerFile`](ReadRasterGeoLayerFile/ReadRasterGeoLayerFile.md) | Read a raster spatial data layer file. |
+| [`RunGdalProgram`](RunGdalProgram/RunGdalProgram.md) | Run a GDAL command line program. |
 
 ## Commands for Processing Tables ##
 
@@ -105,6 +115,8 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 | [`For`](For/For.md) | Indicate the start of a `For` block. |
 | [`If`](If/If.md) | Indicate the start of an `If` block. |
 | [`RunCommands`](RunCommands/RunCommands.md) | Run a command file, useful to automate running all tests or a multi-step workflow. |
+| [`RunGdalProgram`](RunGdalProgram/RunGdalProgram.md) | Run a GDAL command line program. |
+| [`RunOgrProgram`](RunOgrProgram/RunOgrProgram.md) | Run an OGR command line program. |
 | [`RunProgram`](RunProgram/RunProgram.md) | Run a program. |
 | [`SetProperty`](SetProperty/SetProperty.md) | Set a GeoProcessor property. |
 | [`SetPropertyFromGeoLayer`](SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md) | Set a GeoProcessor property from a GeoLayer property. |

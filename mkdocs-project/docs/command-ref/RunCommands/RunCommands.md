@@ -38,7 +38,9 @@ More options to hand off logging from one file to another may be implemented in 
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![RunCommands](RunCommands.png)
+</p>**
 
 **<p style="text-align: center;">
 `RunCommands` Command Editor (<a href="../RunCommands.png">see full-size image</a>)
@@ -58,7 +60,7 @@ Command Parameters
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
 | `CommandFile` | The command file to run. A path relative to the master command file can be specified.  Can use `${Property}`. | None - must be specified. |
-| `ExpectedStatus` | Used for testing – indicates the expected status from the command, one of: <ul><li>`Unknown`</li><li>`Success`</li><li>`Warning`</li><li>`Failure`</li></ul><br> If this parameter is NOT used, the command log messages from commands that are run will be appended to the `RunCommands` command log.  However, using this parameter will not append those messages – this is used in automated testing to allow a successful test even when there are warning and failure messages. | `Success` |
+| `ExpectedStatus` | Used for testing – indicates the expected status from the command, one of:<ul><li>`Unknown`</li><li>`Success`</li><li>`Warning`</li><li>`Failure`</li></ul><br> If this parameter is NOT used, the command log messages from commands that are run will be appended to the `RunCommands` command log.  However, using this parameter will not append those messages – this is used in automated testing to allow a successful test even when there are warning and failure messages. | `Success` |
 
 ## Examples ##
 
@@ -68,7 +70,7 @@ Command Parameters
 
 ## See Also ##
 
-* [CreateRegressionTestCommandFile](../CreateRegressionTestCommandFile/CreateRegressionTestCommandFile.md) command
-* [RunProgram](../RunProgram/RunProgram.md) command
-* [StartRegressionTestResultsReport](../StartRegressionTestResultsReport/StartRegressionTestResultsReport.md) command
-* [WriteCommandSummaryToFile](../WriteCommandSummaryToFile/WriteCommandSummaryToFile.md) command
+* [`CreateRegressionTestCommandFile`](../CreateRegressionTestCommandFile/CreateRegressionTestCommandFile.md) command
+* [`RunProgram`](../RunProgram/RunProgram.md) command
+* [`StartRegressionTestResultsReport`](../StartRegressionTestResultsReport/StartRegressionTestResultsReport.md) command
+* [`WriteCommandSummaryToFile`](../WriteCommandSummaryToFile/WriteCommandSummaryToFile.md) command

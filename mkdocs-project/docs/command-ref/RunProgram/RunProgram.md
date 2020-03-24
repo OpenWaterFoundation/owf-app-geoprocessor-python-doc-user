@@ -39,7 +39,9 @@ Limitations of the command are as follows and will be addressed in future softwa
 The following dialog is used to edit the command and illustrates the command syntax
 when running a program in a command shell configured with environment variables.
 
+**<p style="text-align: center;">
 ![RunProgram](RunProgram.png)
+</p>**
 
 **<p style="text-align: center;">
 `RunProgram` Command Editor (<a href="../RunProgram.png">see full-size image</a>)
@@ -74,4 +76,4 @@ Command Parameters
 
 ## See Also ##
 
-* [RunCommands](../RunCommands/RunCommands.md) command
+* [`RunCommands`](../RunCommands/RunCommands.md) command

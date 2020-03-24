@@ -19,7 +19,13 @@ Additional text before the comment indicator is allowed.
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+**<p style="text-align: center;">
+![CommentBlockEnd](CommentBlockEnd.png)
+</p>**
+
+**<p style="text-align: center;">
+Comment Block End Command Editor (<a href="../CommentBlockEnd.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

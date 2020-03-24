@@ -24,7 +24,9 @@ The `WriteTableToExcel` command writes a [Table](../../introduction/introduction
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![WriteTableToExcel](WriteTableToExcel.png)
+</p>**
 
 **<p style="text-align: center;">
 `WriteTableToExcel` Command Editor (<a href="../WriteTableToExcel.png">see full-size image</a>)
@@ -43,25 +45,25 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `TableID` <br>  **_required_**| The identifier of the Table to write.| None - must be specified. |
-| `OutputFile` <br>  **_required_**| The name of the Excel workbook to write to (relative or absolute path). [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized. <br><br> Can be an existing or non-existing Excel file. If non-existing, the Excel workbook file (`.xlsx`) is created. | None - must be specified. |
-| `OutputWorksheet` <br>  **_required_**| The name of the worksheet that the Table will be written to. Can be an existing or non-existing worksheet. If existing, the worksheet will be overwritten with the Table data. |None - must be specified. |
-|`ColumnsToInclude`<br> *optional*| A comma-separated list of the [glob-sytle patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which columns to include in the Excel workbook file. <br><br> See [Determining Which Columns to Write](#determining-which-columns-to-write).| `*` <br><br> All columns are written. |  
-|`ColumnsToExclude`<br> *optional*| A comma-separated list of the [glob-sytle patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which columns to exclude in the Excel workbook file. <br><br> See [Determining Which Columns to Write](#determining-which-columns-to-write).| `'' (empty string)` <br><br> All columns are written. |
-|`WriteIndexColumn`<br> *optional*| Boolean. <br><br> If `TRUE`, the Table's index column is *included* in the output Excel file. <br> If `FALSE`, the Table's index column is *not included* in the output Excel file.|`TRUE`|
+| `TableID` <br>**required**| The identifier of the Table to write.| None - must be specified. |
+| `OutputFile` <br>**required**| The name of the Excel workbook to write to (relative or absolute path). [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized. <br><br> Can be an existing or non-existing Excel file. If non-existing, the Excel workbook file (`.xlsx`) is created. | None - must be specified. |
+| `OutputWorksheet` <br>**required**| The name of the worksheet that the Table will be written to. Can be an existing or non-existing worksheet. If existing, the worksheet will be overwritten with the Table data. |None - must be specified. |
+|`ColumnsToInclude`| A comma-separated list of the [glob-sytle patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which columns to include in the Excel workbook file. <br><br> See [Determining Which Columns to Write](#determining-which-columns-to-write).| `*` <br><br> All columns are written. |  
+|`ColumnsToExclude`| A comma-separated list of the [glob-sytle patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which columns to exclude in the Excel workbook file. <br><br> See [Determining Which Columns to Write](#determining-which-columns-to-write).| All columns are written. |
+|`WriteIndexColumn`| Indicate whether to write an index column:<ul><li>`True` - the Table's index column is included in the output Excel file.</li><li>`False` - the Table's index column is not included in the output Excel file.</li></ul>|`True`|
 
 ### Determining Which Columns to Write
 
 * The `ColumnsToInclude` parameter is always processed first. The`ColumnsToExclude` parameter is always processed second. 
-	* The `ColumnsToInclude` *selects* all of the Table's columns that follow the given patterns. By default (`*`) all of the Table's columns are included. 
-	* The `ColumnsToExclude` *removes* all of the columns *previously selected from the `ColumnsToInclude` parameter* that follow the given patterns. 
+	* The `ColumnsToInclude` selects all of the Table's columns that follow the given patterns. By default (`*`) all of the Table's columns are included. 
+	* The `ColumnsToExclude` removes all of the columns previously selected from the `ColumnsToInclude` parameter that follow the given patterns. 
 
 ## Examples ##
 
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/WriteTableToExcel).
 
-The following Table data are used in the examples[^1]. 
-[^1]: The examples assume that the `ExampleTable1` and `ExampleTable2` Tables have *already* been read into the GeoProcessor.
+The following Table data are used in the examples. 
+The examples assume that the `ExampleTable1` and `ExampleTable2` Tables have *already* been read into the GeoProcessor.
 
 **<p style="text-align: left;">
 Example Table Data
@@ -125,5 +127,5 @@ The capability to write a table to an *existing* Excel workbook file in `.xls` f
 
 ## See Also ##
 
-- The Tables are written using the [`Pandas Python library`](https://pandas.pydata.org/). 
-- See parallel GeoProcessor command [ReadTableFromExcel](../ReadTableFromExcel/ReadTableFromExcel.md)
+* The Tables are written using the [`Pandas Python library`](https://pandas.pydata.org/). 
+* See parallel GeoProcessor command [`ReadTableFromExcel`](../ReadTableFromExcel/ReadTableFromExcel.md)

@@ -16,12 +16,13 @@ command in a command file, in order to persistently record the results of proces
 to name the log file the same as the command file, with an additional `.log` extension, and this convention
 is enforced by default.
 
-
 ## Command Editor ##
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![StartLog](StartLog.png)
+</p>**
 
 **<p style="text-align: center;">
 `StartLog` Command Editor (<a href="../StartLog.png">see full-size image</a>)
@@ -40,8 +41,7 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `LogFile` | The name of the file to write.  Can be specified using `${Property}`. | None - must be specified. |
-
+| `LogFile`<br>**required** | The name of the file to write.  Can be specified using `${Property}`. | None - must be specified. |
 
 ## Examples ##
 
@@ -51,4 +51,4 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [Message](../Message/Message.md) command - can be used to write messages to the log file
+* [`Message`](../Message/Message.md) command - can be used to write messages to the log file

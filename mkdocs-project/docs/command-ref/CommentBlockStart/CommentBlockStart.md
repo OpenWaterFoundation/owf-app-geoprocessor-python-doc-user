@@ -19,7 +19,13 @@ Additional text after the comment indicator is allowed.
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+**<p style="text-align: center;">
+![CommentBlockStart](CommentBlockStart.png)
+</p>**
+
+**<p style="text-align: center;">
+Comment Block Start Command Editor (<a href="../CommentBlockStart.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

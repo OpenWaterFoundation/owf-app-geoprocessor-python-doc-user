@@ -25,7 +25,9 @@ Currently, the command will fail in this case.
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![SetPropertyFromGeoLayer](SetPropertyFromGeoLayer.png)
+</p>**
 
 **<p style="text-align: center;">
 `SetPropertyFromGeoLayer` Command Editor (<a href="../SetPropertyFromGeoLayer.png">see full-size image</a>)
@@ -44,9 +46,9 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | -----------------------|--------------------------------------------------------|-------------------------- |
-| `GeoLayerID`           | The GeoLayer Identifier, can use `${Property}` syntax. | None - must be specified. |
-| `GeoLayerPropertyName` | The name of the GeoLayer property.                     | None - must be specified. |
-| `PropertyName`         | The GeoProcessor property name.                        | None - must be specified. |
+| `GeoLayerID`<br>**required**| The GeoLayer Identifier, can use `${Property}` syntax. | None - must be specified. |
+| `GeoLayerPropertyName`<br>**required**| The name of the GeoLayer property. | None - must be specified. |
+| `PropertyName`<br>**required**| The GeoProcessor property name. | None - must be specified. |
 
 ## Examples ##
 
@@ -56,5 +58,5 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [SetProperty](../SetProperty/SetProperty.md) command
-* [SetGeoLayerProperty](../SetGeoLayerProperty/SetGeoLayerProperty.md) command
+* [`SetProperty`](../SetProperty/SetProperty.md) command
+* [`SetGeoLayerProperty`](../SetGeoLayerProperty/SetGeoLayerProperty.md) command

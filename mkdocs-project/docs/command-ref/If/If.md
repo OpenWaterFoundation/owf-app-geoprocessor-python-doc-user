@@ -53,7 +53,9 @@ Future enhancements to the `If` command may include:
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![If](If.png)
+</p>**
 
 **<p style="text-align: center;">
 `If` Command Editor (<a href="../If.png">see full-size image</a>)

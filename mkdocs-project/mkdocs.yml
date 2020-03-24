@@ -21,6 +21,9 @@ nav:
 - Reference - Commands:
   - Overview: command-ref/overview.md
   - AddGeoLayerAttribute: command-ref/AddGeoLayerAttribute/AddGeoLayerAttribute.md
+  - AddGeoLayerViewGroupToGeoMap: command-ref/AddGeoLayerViewGroupToGeoMap/AddGeoLayerViewGroupToGeoMap.md
+  - AddGeoLayerViewToGeoMap: command-ref/AddGeoLayerViewToGeoMap/AddGeoLayerViewToGeoMap.md
+  - AddGeoMapToGeoMapProject: command-ref/AddGeoMapToGeoMapProject/AddGeoMapToGeoMapProject.md
   - Blank: command-ref/Blank/Blank.md  
   - ClipGeoLayer: command-ref/ClipGeoLayer/ClipGeoLayer.md
   - CloseDataStore: command-ref/CloseDataStore/CloseDataStore.md
@@ -31,9 +34,12 @@ nav:
   - CopyFile: command-ref/CopyFile/CopyFile.md
   - CopyGeoLayer: command-ref/CopyGeoLayer/CopyGeoLayer.md
   - CreateGeoLayerFromGeometry: command-ref/CreateGeoLayerFromGeometry/CreateGeoLayerFromGeometry.md
+  - CreateGeoMap: command-ref/CreateGeoMap/CreateGeoMap.md
+  - CreateGeoMapProject: command-ref/CreateGeoMapProject/CreateGeoMapProject.md
   - CreateRegressionTestCommandFile: command-ref/CreateRegressionTestCommandFile/CreateRegressionTestCommandFile.md
   - EndFor: command-ref/EndFor/EndFor.md
   - EndIf: command-ref/EndIf/EndIf.md
+  - Exit: command-ref/Exit/Exit.md
   - For: command-ref/For/For.md
   - FreeGeoLayers: command-ref/FreeGeoLayers/FreeGeoLayers.md  
   - If: command-ref/If/If.md
@@ -54,10 +60,15 @@ nav:
   - RemoveGeoLayerAttributes: command-ref/RemoveGeoLayerAttributes/RemoveGeoLayerAttributes.md
   - RenameGeoLayerAttribute: command-ref/RenameGeoLayerAttribute/RenameGeoLayerAttribute.md
   - RunCommands: command-ref/RunCommands/RunCommands.md
+  - RunGdalProgram: command-ref/RunGdalProgram/RunGdalProgram.md
+  - RunOgrProgram: command-ref/RunOgrProgram/RunOgrProgram.md
   - RunProgram: command-ref/RunProgram/RunProgram.md
   - RunSql: command-ref/RunSql/RunSql.md
   - SetGeoLayerCRS: command-ref/SetGeoLayerCRS/SetGeoLayerCRS.md
   - SetGeoLayerProperty: command-ref/SetGeoLayerProperty/SetGeoLayerProperty.md  
+  - SetGeoLayerViewCategorizedSymbol: command-ref/SetGeoLayerViewCategorizedSymbol/SetGeoLayerViewCategorizedSymbol.md
+  - SetGeoLayerViewGraduatedSymbol`: command-ref/SetGeoLayerViewGraduatedSymbol/SetGeoLayerViewGraduatedSymbol.md
+  - SetGeoLayerViewSingleSymbol: command-ref/SetGeoLayerViewSingleSymbol/SetGeoLayerViewSingleSymbol.md
   - SetProperty: command-ref/SetProperty/SetProperty.md
   - SetPropertyFromGeoLayer: command-ref/SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md
   - SimplifyGeoLayerGeometry: command-ref/SimplifyGeoLayerGeometry/SimplifyGeoLayerGeometry.md  
@@ -72,6 +83,7 @@ nav:
   - WriteGeoLayerToGeoJSON: command-ref/WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON.md
   - WriteGeoLayerToKML: command-ref/WriteGeoLayerToKML/WriteGeoLayerToKML.md
   - WriteGeoLayerToShapefile: command-ref/WriteGeoLayerToShapefile/WriteGeoLayerToShapefile.md
+  - WriteGeoMapProjectToJSON: command-ref/WriteGeoMapProjectToJSON/WriteGeoMapProjectToJSON.md
   - WritePropertiesToFile: command-ref/WritePropertiesToFile/WritePropertiesToFile.md
   - WriteTableToDataStore: command-ref/WriteTableToDataStore/WriteTableToDataStore.md
   - WriteTableToDelimitedFile: command-ref/WriteTableToDelimitedFile/WriteTableToDelimitedFile.md
@@ -84,6 +96,7 @@ nav:
   - KML: spatial-data-format-ref/KML/KML.md
 - Reference - Resources: resources/resources.md
 - Appendix - Installing: appendix-install/install.md
+- Appendix - GeoMapProject: appendix-geomapproject/geomapproject.md
 - Appendix - Release Notes:
   - Release Notes: appendix-release-notes/release-notes.md
   - Version 1: appendix-release-notes/release-notes-1.md
@@ -95,6 +108,12 @@ copyright:  Copyright Open Water Foundation
 # Use extra CSS to customize styles, based on theme
 extra_css:
   - 'css/extra-material-theme.css'
+# ------------------------------------------------
+# Google Analytics
+# - see:  https://squidfunk.github.io/mkdocs-material/getting-started/#google-analytics
+google_analytics:
+ - 'UA-135465513-1'
+ - auto
 # ------------------------------------------------
 markdown_extensions:
   - footnotes

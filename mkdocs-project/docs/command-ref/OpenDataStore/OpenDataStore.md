@@ -20,21 +20,22 @@ data access from:
 <a name="parameters"></a>
 <a name="configfile"></a>
 
-The `OpenDataStore` command can also be used to open an existing DataStore previously closed with the [`CloseDataStore`](../CloseDataStore/CloseDataStore.md) command. 
+The `OpenDataStore` command can also be used to open an existing
+DataStore previously closed with the [`CloseDataStore`](../CloseDataStore/CloseDataStore.md) command. 
 
-- Set the `DataStoreID` parameter to the ID of the closed DataStore. 
-- Set the `IfDataStoreIDExists` parameter to `Open`. 
-	
+* Set the `DataStoreID` parameter to the ID of the closed DataStore. 
+* Set the `IfDataStoreIDExists` parameter to `Open`. 
+
 A new DataStore can be opened in 2 ways: 
 
 1. Parameters configure datastore
-	- the DataStore configurations (*Database Dialect, Database Server, etc.*) are set via command parameters  
-	- the `DataStoreID`, `DatabaseServer`, `DatabaseDialect`, `DatabaseName`, `DatabaseUser` and `DatabasePassword` parameters are **_required_**
-	- the `IfDataStoreIDExists` and `DatabasePort` parameters are *optional*
+	* the DataStore configurations (*Database Dialect, Database Server, etc.*) are set via command parameters  
+	* the `DataStoreID`, `DatabaseServer`, `DatabaseDialect`, `DatabaseName`, `DatabaseUser` and `DatabasePassword` parameters are **required**
+	* the `IfDataStoreIDExists` and `DatabasePort` parameters are optional
 2. Configuration file configures datastore 
-	- the DataStore configurations (*Database Dialect, Database Server, etc.*) are set via a configuration file
-	- the `DataStoreID` and `ConfigFile` parameters are **_required_**
-	- the `IfDataStoreIDExists` parameter is *optional*
+	* the DataStore configurations (*Database Dialect, Database Server, etc.*) are set via a configuration file
+	* the `DataStoreID` and `ConfigFile` parameters are **required**
+	* the `IfDataStoreIDExists` parameter is optional
 
 DataStore features in the GeoProcessor currently focus on relational databases that can
 be queried to return tabular datasets.
@@ -48,8 +49,7 @@ for cases where a DataStore needs to be available for the entire software sessio
 For security reasons, the account name and password used for the connection should generally **not** be directly
 included in the command parameters.  This is less of an issue for read-only `guest` accounts.
 To allow flexibility, use the `${env:Property}` notation to specify that the parameter value
-is taken from an environment variable, and set the environment variable dynamically in the
-run-time environment.
+is taken from an environment variable, and set the environment variable dynamically in the run-time environment.
 
 Database DataStores are implemented using [Pandas Python](https://pandas.pydata.org/)  package
 [Data Frame](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.DataFrame.html#pandas.DataFrame), 
@@ -68,7 +68,6 @@ Database DataStores are implemented using [Pandas Python](https://pandas.pydata.
 |[`Oracle`](http://docs.sqlalchemy.org/en/latest/dialects/oracle.html)|-|Not Supported|
 |[`SQLite`](http://docs.sqlalchemy.org/en/latest/dialects/sqlite.html)|-|Not Supported|
 |[`Sybase`](http://docs.sqlalchemy.org/en/latest/dialects/sybase.html)|5000|Not Supported|
-
 
 ## Command Editor ##
 
@@ -89,17 +88,15 @@ Command Parameters
 
 |**Parameter Scope**|**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|
 |----| --------------|-----------------|----------------- |
-|All|`DataStoreID`<br>**_required_**|Identifier to assign to the DataStore. This allows the DataStore to be used with other commands. Can be specified using `${Property}`.|None - must be specified.|
-|All|`IfDataStoreIDExists`<br>*optional*|The action that occurs if the `DataStoreID` already exists within the GeoProcessor. <br><br> `Replace`: The existing DataStore within the GeoProcessor is overwritten with the new DataStore. No warning is logged.<br><br> `Open`: The existing DataStore is opened if closed. No warning is logged. <br><br>`ReplaceAndWarn`: The existing DataStore within the GeoProcessor is overwritten with the new DataStore. A warning is logged. <br><br> `Warn` : The new DataStore is not created. A warning is logged. <br><br> `Fail` : The new DataStore is not created. A fail message is logged.  | `Replace` | 
-|[Parameters configure datastore](#parameters)|`DatabaseServer`<br>**_required_**| The database server name or IP address.  Can be specified using `${Property}`.| None - must be specified.|
-|[Parameters configure datastore](#parameters)|`DatabaseDialect`<br>**_required_**| The database dialect, used to format the database connection URL for the matching database driver software. <br><br>See the [table](#sqlalchemy-database-dialects) above for a list of supported dialects.| None - must be specified.|
-|[Parameters configure datastore](#parameters)|`DatabaseName`<br>**_required_**| The name of the database.  Can be specified using `${Property}`.|None - must be specified.|
-|[Parameters configure datastore](#parameters)|`DatabaseUser`<br>**_required_**|The database user.  A read-only "guest" (or similar) account should be used for read-only operations, if possible.  Can be specified using `${Property}`.|None - must be specified.|
-|[Parameters configure datastore](#parameters)|`DatabasePassword`<br>**_required_**|The database password.  Can be specified using `${Property}`.|None - must be specified.|
+|All|`DataStoreID`<br>**required**|Identifier to assign to the DataStore. This allows the DataStore to be used with other commands. Can be specified using `${Property}`.|None - must be specified.|
+|All|`IfDataStoreIDExists`|The action that occurs if the `DataStoreID` already exists within the GeoProcessor:<ul><li>`Replace` - The existing DataStore within the GeoProcessor is replaced with the new DataStore. No warning is logged.</li><li>`Open` - The existing DataStore is opened if closed. No warning is logged.</li><li>`ReplaceAndWarn` - The existing DataStore within the replaced is replaced with the new DataStore. A warning is logged.</li><li>`Warn` - The new DataStore is not created. A warning is logged.</li><li>`Fail` - The new DataStore is not created. A fail message is logged.</li></ul> | `Replace` | 
+|[Parameters configure datastore](#parameters)|`DatabaseServer`<br>**required**| The database server name or IP address.  Can be specified using `${Property}`.| None - must be specified.|
+|[Parameters configure datastore](#parameters)|`DatabaseDialect`<br>**required**| The database dialect, used to format the database connection URL for the matching database driver software. <br><br>See the [table](#sqlalchemy-database-dialects) above for a list of supported dialects.| None - must be specified.|
+|[Parameters configure datastore](#parameters)|`DatabaseName`<br>**required**| The name of the database.  Can be specified using `${Property}`.|None - must be specified.|
+|[Parameters configure datastore](#parameters)|`DatabaseUser`<br>**required**|The database user.  A read-only "guest" (or similar) account should be used for read-only operations, if possible.  Can be specified using `${Property}`.|None - must be specified.|
+|[Parameters configure datastore](#parameters)|`DatabasePassword`<br>**required**|The database password.  Can be specified using `${Property}`.|None - must be specified.|
 |[Parameters configure datastore](#parameters)|`DatabasePort`<br>*optional*|The database port.<br><br>See the [table](#sqlalchemy-database-dialects) above for the database default ports.|The default port for the `DatabaseDialect`.|
-|[Configuration file configures datastore](#configfile)|`ConfigFile`<br>**_required_**|The path (relative or absolute) to the file containing the database configurations.|None - must be specified.|
-
-
+|[Configuration file configures datastore](#configfile)|`ConfigFile`<br>**required**|The path (relative or absolute) to the file containing the database configurations.|None - must be specified.|
 
 ## Examples ##
 

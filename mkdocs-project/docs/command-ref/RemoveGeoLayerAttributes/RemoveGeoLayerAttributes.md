@@ -17,7 +17,9 @@ The `RemoveGeoLayerAttributes` command removes one or more attributes from a Geo
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![RemoveGeoLayerAttributes](RemoveGeoLayerAttributes.png)
+</p>**
 
 **<p style="text-align: center;">
 `RemoveGeoLayerAttributes` Command Editor (<a href="../RemoveGeoLayerAttributes.png">see full-size image</a>)
@@ -36,15 +38,16 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `GeoLayerID` <br> **_required_** | The ID of the GeoLayer with the attribute to be removed. | None - must be specified. |
-| `AttributeNames` <br> **_required_** | The names of the attributes to be removed. Separated by commas. Case-specific.| None - must be specified. |
+| `GeoLayerID` <br> **required** | The ID of the GeoLayer with the attribute to be removed. | None - must be specified. |
+| `AttributeNames` <br> **required** | The names of the attributes to be removed. Separated by commas. Case-specific.| None - must be specified. |
 
 ## Examples ##
 
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/RemoveGeoLayerAttributes).
 
-The following GeoLayer data is used in the example[^2]. 
-[^2]: The example assumes that the `ExampleGeoLayer` GeoLayer has *already* been read into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) command.
+The following GeoLayer data is used in the example. 
+The example assumes that the `ExampleGeoLayer` GeoLayer has already been read into the
+GeoProcessor with the [`ReadGeoLayerFromGeoJSON`](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) command.
 
 **<p style="text-align: left;">
 Example GeoLayer Data
@@ -82,5 +85,7 @@ After running the command, the ExampleGeoLayer has the following attribute table
 
 ## See Also ##
 
-- GeoLayer attributes are removed using the [`QGIS QGSVectorDataProvider Class`](https://qgis.org/api/classQgsVectorDataProvider.html). See [documentation](https://docs.qgis.org/latest/en/docs/pyqgis_developer_cookbook/vector.html#adding-and-removing-fields) for examples on utilizing the `QgsVectorDataProvider` class in the PyQGIS environment.
-- See parallel GeoProcessor command [AddGeoLayerAttribute](../AddGeoLayerAttribute/AddGeoLayerAttribute.md)
+* GeoLayer attributes are removed using the [`QGIS QGSVectorDataProvider Class`](https://qgis.org/api/classQgsVectorDataProvider.html).
+See [documentation](https://docs.qgis.org/latest/en/docs/pyqgis_developer_cookbook/vector.html#adding-and-removing-fields)
+for examples on utilizing the `QgsVectorDataProvider` class in the PyQGIS environment.
+* [`AddGeoLayerAttribute`](../AddGeoLayerAttribute/AddGeoLayerAttribute.md) command

@@ -11,13 +11,16 @@
 
 ## Overview ##
 
-The `ReadGeoLayersFromFGDB` command reads one or more [GeoLayer(s)](../../introduction/introduction.md#geolayer) from an [Esri File Geodatabase](../../spatial-data-format-ref/EsriFileGeodatabase/EsriFileGeodatabase.md).
+The `ReadGeoLayersFromFGDB` command reads one or more [GeoLayer(s)](../../introduction/introduction.md#geolayer)
+from an [Esri File Geodatabase](../../spatial-data-format-ref/EsriFileGeodatabase/EsriFileGeodatabase.md).
 
 ## Command Editor ##
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![ReadGeoLayersFromFGDB](ReadGeoLayersFromFGDB.png)
+</p>**
 
 **<p style="text-align: center;">
 `ReadGeoLayersFromFGDB` Command Editor (<a href="../ReadGeoLayersFromFGDB.png">see full-size image</a>)
@@ -36,21 +39,22 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| **Default** |
 | --------------|-----------------|----------------- |
-| `SpatialDataFolder` <br>  **_required_**| The file geodatabse to read (must end in `.gdb`). | None - must be specified. |
-| `ReadOnlyOneFeatureClass` <br>  **_required_**| Boolean <br><br> If `TRUE`, only **one** feature class will be read as a GeoLayer. Must specify a valid feature class name. <br> If `FALSE`, **one or more** feature classes will be read as GeoLayers. Can specify the `Subset_Pattern` to select which feature classes to read.|
-|`IfGeoLayerIDExists`<br> *optional*|The action that occurs if the `GeoLayerID` already exists within the GeoProcessor. <br><br> `Replace` : The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. No warning is logged.<br><br> `ReplaceAndWarn`: The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. A warning is logged. <br><br> `Warn` : The new GeoLayer is not created. A warning is logged. <br><br> `Fail` : The new GeoLayer is not created. A fail message is logged.| `Replace` |
+| `SpatialDataFolder` <br>**required**| The file geodatabse to read (must end in `.gdb`). | None - must be specified. |
+| `ReadOnlyOneFeatureClass` <br>**required**| Boolean <br><br> If `TRUE`, only **one** feature class will be read as a GeoLayer. Must specify a valid feature class name. <br> If `FALSE`, **one or more** feature classes will be read as GeoLayers. Can specify the `Subset_Pattern` to select which feature classes to read.|
+|`IfGeoLayerIDExists` | The action that occurs if the `GeoLayerID` already exists within the GeoProcessor:<ul><li>`Replace` - The existing GeoLayer within the GeoProcessor is replaced with the new GeoLayer. No warning is logged.</li><li>`ReplaceAndWarn` - The existing GeoLayer within the GeoProcessor is replaced with the new GeoLayer. A warning is logged.</li><li>`Warn` - The new GeoLayer is not created. A warning is logged.</li><li>`Fail` - The new GeoLayer is not created. A fail message is logged.</li></ul>| `Replace` |
 ||**IF** `ReadOnlyOneFeatureClass` **is TRUE ...**||
-| `Feature Class` <br>  **_required_**| The name of the feature class within the file geodatabase to read. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
-| `GeoLayerID`  <br> **_required_**| A GeoLayer identifier. [Formatting characters](../../introduction/introduction.md#geolayer-property-format-specifiers) and [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) are recognized. Refer to [documentation](../../best-practices/geolayer-identifiers.md) for best practices on naming GeoLayer identifiers.| None - must be specified. |
+| `Feature Class` <br>**required**| The name of the feature class within the file geodatabase to read. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
+| `GeoLayerID`  <br>**required**| A GeoLayer identifier. [Formatting characters](../../introduction/introduction.md#geolayer-property-format-specifiers) and [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) are recognized. Refer to [documentation](../../best-practices/geolayer-identifiers.md) for best practices on naming GeoLayer identifiers.| None - must be specified. |
 ||**IF** `ReadOnlyOneFeatureClass` **is FALSE ...**||
-| `GeoLayerID_prefix`  <br> *optional* | A GeoLayer identifier prefix. <br><br> GeoLayers read from a file geodatabase have an identifier in the `GeoLayerID_prefix`_`FeatureClass` format.| No prefix is used. The GeoLayerID is the name of the feature class. |
-| `Subset_Pattern` 	 <br> *optional*| The [glob-style](https://en.wikipedia.org/wiki/Glob_(programming)) pattern (e.g., `CO_*` or `*_[MC]O`) of feature classes to read from the file geodatabase.| No pattern is used. All feature classes within the file geodatabase are read.|
+| `GeoLayerID_prefix` | A GeoLayer identifier prefix. <br><br> GeoLayers read from a file geodatabase have an identifier in the `GeoLayerID_prefix_FeatureClass` format.| No prefix is used. The GeoLayerID is the name of the feature class. |
+| `Subset_Pattern` | The [glob-style](https://en.wikipedia.org/wiki/Glob_(programming)) pattern (e.g., `CO_*` or `*_[MC]O`) of feature classes to read from the file geodatabase.| No pattern is used. All feature classes within the file geodatabase are read.|
 
 ## Examples ##
 
-The following folder, `ExampleFolder`[^1], and its contents are used for the examples. 
-
-[^1]: *The `ExampleFolder` is not an actual existing folder. It is used in this documentation to explain how the `ReadGeoLayersFromFGDB` command interacts with similar, existing folders on your local machine.*
+The following folder, `ExampleFolder`, and its contents are used for the examples. 
+The `ExampleFolder` is not an actual existing folder.
+It is used in this documentation to explain how the `ReadGeoLayersFromFGDB`
+command interacts with similar, existing folders on the computer.
 
 **<p style="text-align: left;">
 ExampleFolder
@@ -106,7 +110,9 @@ After running the command, the following GeoLayer IDs are registered within the 
 ReadGeoLayersFromFGDB(SpatialDataFolder = "ExampleFolder/ExampleFileGDB.gdb", Subset_Pattern = "*3")
 ```
 
-After running the command, the following GeoLayer IDs are registered within the GeoProcessor. ExampleFeatureClass1 and ExampleFeatureClass2 are not included in the registered GeoLayer IDs becasue the `Subset_Pattern` parameter only includes feature classes that end in `3`. 
+After running the command, the following GeoLayer IDs are registered within the GeoProcessor.
+`ExampleFeatureClass1` and `ExampleFeatureClass2` are not included in the registered GeoLayer IDs
+becasue the `Subset_Pattern` parameter only includes feature classes that end in `3`. 
 
 |Registered GeoLayer IDs|
 |------|
@@ -114,10 +120,13 @@ After running the command, the following GeoLayer IDs are registered within the 
 
 ## Troubleshooting ##
 
-- Requires GDAL/OGR 1.11.0+
-- Requires [ESRI FileGDB driver](http://www.gdal.org/drv_filegdb.html) to be installed within QGIS environment
-- TODO egiles 2018-01-12 Link to QGIS install instructions that clarify how to install OGR_FileGDB library from [this resource](https://gis.stackexchange.com/questions/26285/file-geodatabase-gdb-support-in-qgis) -- this should be in the install/deploy instructions
+* Requires GDAL/OGR 1.11.0+
+* Requires [ESRI FileGDB driver](http://www.gdal.org/drv_filegdb.html) to be installed within QGIS environment
+* TODO egiles 2018-01-12 Link to QGIS install instructions that clarify how to install OGR_FileGDB library from
+[this resource](https://gis.stackexchange.com/questions/26285/file-geodatabase-gdb-support-in-qgis) - this should be in the install/deploy instructions.
 
 ## See Also ##
 
-- The GeoLayers are read using the [`QGIS QgsVectorLayer Class`](https://qgis.org/api/classQgsVectorLayer.html). See [documentation](https://docs.qgis.org/2.14/en/docs/pyqgis_developer_cookbook/loadlayer.html#vector-layers) for examples on utilizing the `QgsVectorLayer` class in the PyQGIS environment.
+* The GeoLayers are read using the [`QGIS QgsVectorLayer Class`](https://qgis.org/api/classQgsVectorLayer.html).
+See [documentation](https://docs.qgis.org/2.14/en/docs/pyqgis_developer_cookbook/loadlayer.html#vector-layers)
+for examples on utilizing the `QgsVectorLayer` class in the PyQGIS environment.
