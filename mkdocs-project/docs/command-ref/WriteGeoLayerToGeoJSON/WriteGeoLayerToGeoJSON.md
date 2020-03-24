@@ -11,7 +11,8 @@
 
 ## Overview ##
 
-The `WriteGeoLayerToGeoJSON` command writes a [GeoLayer](../../introduction/introduction.md#geolayer) to a file in [GeoJSON format](../../spatial-data-format-ref/GeoJSON/GeoJSON.md).
+The `WriteGeoLayerToGeoJSON` command writes a [GeoLayer](../../introduction/introduction.md#geolayer)
+to a file in [GeoJSON format](../../spatial-data-format-ref/GeoJSON/GeoJSON.md).
 
 * The attributes of the GeoLayer are retained within the output GeoJSON file. 
 * The coordinate reference system can be specified. 
@@ -21,7 +22,9 @@ The `WriteGeoLayerToGeoJSON` command writes a [GeoLayer](../../introduction/intr
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![WriteGeoLayerToGeoJSON](WriteGeoLayerToGeoJSON.png)
+</p>**
 
 **<p style="text-align: center;">
 `WriteGeoLayerToGeoJSON` Command Editor (<a href="../WriteGeoLayerToGeoJSON.png">see full-size image</a>)
@@ -40,19 +43,18 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `GeoLayerID` <br>  **_required_**| The identifier of the GeoLayer to write. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
-| `OutputFile` <br> **_required_**| The output GeoJSON file (relative or absolute path). [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized. | None - must be specified. |
-|`OutputCRS`<br> *optional*|The [coordinate reference system](https://en.wikipedia.org/wiki/Spatial_reference_system) of the output GeoJSON. [EPSG or ESRI code format](http://spatialreference.org/ref/epsg/) required (e.g. [`EPSG:4326`](http://spatialreference.org/ref/epsg/4326/), [`EPSG:26913`](http://spatialreference.org/ref/epsg/nad83-utm-zone-13n/), [`ESRI:102003`](http://spatialreference.org/ref/esri/usa-contiguous-albers-equal-area-conic/)). <br><br>If the output CRS is different than the CRS of the GeoLayer, the output GeoJSON is reprojected to the new CRS.|The GeoLayer's CRS.|  
-|`OutputPrecision`<br> *optional*| The number of decimal points to include in the output GeoJSON file's coordinates. Must be a positive [integer](https://en.wikipedia.org/wiki/Integer) at or between 0 and 15. <br><br> The precision of coordinate values can greatly impact the size of the file and precision of drawing the features. For example, a higher `OutputPrecision` value increases the output GeoJSON file size and increases the geometry's precision.[^1]| 5 | 
-
-[^1]: For further explanation, look at the chart under the *Precision* section of the [Decimal degrees Wikipedia page](https://en.wikipedia.org/wiki/Decimal_degrees).
+| `GeoLayerID` <br>**required**| The identifier of the GeoLayer to write. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
+| `OutputFile` <br>**required**| The output GeoJSON file (relative or absolute path). [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized. | None - must be specified. |
+|`OutputCRS` |The [coordinate reference system](https://en.wikipedia.org/wiki/Spatial_reference_system) of the output GeoJSON. [EPSG or ESRI code format](http://spatialreference.org/ref/epsg/) required (e.g. [`EPSG:4326`](http://spatialreference.org/ref/epsg/4326/), [`EPSG:26913`](http://spatialreference.org/ref/epsg/nad83-utm-zone-13n/), [`ESRI:102003`](http://spatialreference.org/ref/esri/usa-contiguous-albers-equal-area-conic/)). <br><br>If the output CRS is different than the CRS of the GeoLayer, the output GeoJSON is reprojected to the new CRS.|The GeoLayer's CRS.|  
+|`OutputPrecision` | The number of decimal points to include in the output GeoJSON file's coordinates. Must be a positive [integer](https://en.wikipedia.org/wiki/Integer) at or between 0 and 15. <br><br> The precision of coordinate values can greatly impact the size of the file and precision of drawing the features. For example, a higher `OutputPrecision` value increases the output GeoJSON file size and increases the geometry's precision.  For further explanation, look at the chart under the *Precision* section of the [Decimal degrees Wikipedia page](https://en.wikipedia.org/wiki/Decimal_degrees). | 5 |
 
 ## Examples ##
 
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/WriteGeoLayerToGeoJSON).
 
-The following GeoLayer data are used in the examples[^2]. 
-[^2]: The examples assume that the `ExampleGeoLayer1` and `ExampleGeoLayer2` GeoLayers have *already* been read into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) command.
+The following GeoLayer data are used in the examples. 
+The examples assume that the `ExampleGeoLayer1` and `ExampleGeoLayer2` GeoLayers have already been
+read into the GeoProcessor with the [`ReadGeoLayerFromGeoJSON`](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) command.
 
 **<p style="text-align: left;">
 Example GeoLayer Data
@@ -60,8 +62,8 @@ Example GeoLayer Data
 
 |GeoLayerID|Coordinate Reference System (CRS)|
 | ---- | ----|
-| ExampleGeoLayer1  | EPGS:4326	(WGS84) |
-| ExampleGeoLayer2	| EPSG:26913 (NAD83 UTM Zone 13N) |
+| ExampleGeoLayer1 | EPGS:4326	(WGS84) |
+| ExampleGeoLayer2 | EPSG:26913 (NAD83 UTM Zone 13N) |
 
 ### Example 1: Write a GeoLayer to a GeoJSON File ###
 
@@ -125,7 +127,6 @@ After running the commands, the following GeoJSON files are written to the `Exam
 "geometry":{"type": "Point", "coordinates": [ -1.3, 0.5]}}]
 }
 ```
----
 
 ---
 **ExampleFile1_05.geojson File Content**
@@ -140,11 +141,12 @@ After running the commands, the following GeoJSON files are written to the `Exam
 "geometry":{"type": "Point", "coordinates": [ -1.33333, 0.52194]}}]
 }
 ```
----
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-- The GeoLayer is written using the [`QGIS QgsVectorFileWriter Class`](https://qgis.org/api/classQgsVectorFileWriter.html). See [documentation](https://docs.qgis.org/2.14/en/docs/pyqgis_developer_cookbook/vector.html#writing-vector-layers) for examples on utilizing the `QGSVectorFileWriter` class in the PyQGIS environment.
-- See parallel GeoProcessor command [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md)
+* The GeoLayer is written using the [`QGIS QgsVectorFileWriter Class`](https://qgis.org/api/classQgsVectorFileWriter.html).
+See [documentation](https://docs.qgis.org/2.14/en/docs/pyqgis_developer_cookbook/vector.html#writing-vector-layers)
+for examples on utilizing the `QGSVectorFileWriter` class in the PyQGIS environment.
+* [`ReadGeoLayerFromGeoJSON`](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) command

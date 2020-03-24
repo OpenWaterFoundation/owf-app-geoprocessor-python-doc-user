@@ -21,7 +21,9 @@ processing. See also the [`If`](../If/If.md) command, which can be used to check
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![Message](Message.png)
+</p>**
 
 **<p style="text-align: center;">
 `Message` Command Editor (<a href="../Message.png">see full-size image</a>)
@@ -40,9 +42,8 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `Message` | The message to print.  Can be specified using `${Property}`. | None - must be specified. |
+| `Message`<br>**required** | The message to print.  Can be specified using `${Property}`. | None - must be specified. |
 | `CommandStatus` | Indicate the status that should result from running the command:  `SUCCESS`, `WARNING`, `FAILURE` | `SUCCESS` |
-
 
 ## Examples ##
 

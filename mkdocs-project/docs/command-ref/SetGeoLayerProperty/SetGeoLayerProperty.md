@@ -16,16 +16,22 @@ The property will be available to subsequent commands that support using `${gl:P
 One use for GeoLayer properties is to pass a layer property to the processor using
 [`SetPropertyFromGeoLayer`](../SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md) commands to control processing logic.
 GeoLayer properties may not be supported by spatial data formats and therefore may only be useful to control processing.
-The following functionality is provided:
+The command sets a GeoLayer property to a value of one of the following types:
 
-* Set a property to a specified value, where the property can be a Python primitive type: `bool`, `float`,
-`int`, or `str`.
+| **Type** | **Description** |
+| -- | -- |
+| `bool` | Boolean value `False` or `True`. |
+| `float` | Floating point number. |
+| `int` | Integer number. |
+| `str` | String. |
 
 ## Command Editor ##
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![SetGeoLayerProperty](SetGeoLayerProperty.png)
+</p>**
 
 **<p style="text-align: center;">
 `SetGeoLayerProperty` Command Editor (<a href="../SetGeoLayerProperty.png">see full-size image</a>)
@@ -44,11 +50,10 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `GeoLayerID` | The GeoLayer identifier, can use `${Property}`. | None - must be specified. |
-| `PropertyName` | The property name. | None - must be specified. |
-| `PropertyType` | The property type as `bool`, `float`, `int`, or `str`. | None - must be specified. |
-| `PropertyValue` | The property value, as a string that can convert to the given type. | None - must be specified. |
-
+| `GeoLayerID`<br>**required** | The GeoLayer identifier, can use `${Property}`. | None - must be specified. |
+| `PropertyName`<br>**required** | The property name. | None - must be specified. |
+| `PropertyType`<br>**required** | The property type as `bool`, `float`, `int`, or `str`. | None - must be specified. |
+| `PropertyValue`<br>**required** | The property value, as a string that can convert to the given type. | None - must be specified. |
 
 ## Examples ##
 
@@ -58,4 +63,5 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [SetPropertyFromGeoLayer](../SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md) command.
+* [`SetProperty`](../SetProperty/SetProperty.md) command.
+* [`SetPropertyFromGeoLayer`](../SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md) command.

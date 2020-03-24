@@ -12,6 +12,8 @@ about using the software.
 	+ [GeoProcessor Properties - `${Property}`](#geoprocessor-properties-property)
 	+ [Spatial Data Sources and Formats](#spatial-data-sources-and-formats)
 	+ [GeoLayer](#geolayer)
+	+ [GeoMap](#geomap)
+	+ [GeoMapProject](#geomapproject)
 	+ [Table](#table)
 	+ [DataStore](#datastore)
 * [Alternatives to the GeoProcessor](#alternatives-to-the-geoprocessor)
@@ -144,20 +146,68 @@ See the [Spatial Data Format Reference](../spatial-data-format-ref/overview.md) 
 
 ### GeoLayer ###
 
-An important GeoProcessor data object is the GeoLayer, which corresponds to a spatial data layer containing
-"features" (geometry or shape data), "attributes" (properties associated with each feature), built-in
-layer properties such as coordinate reference system (projection),
+An important GeoProcessor data object is the GeoLayer, which corresponds to a spatial data.
+The GeoProcessor handles vector and raster layers.
+A vector layer contains
+"features" (geometry or shape data), "attributes" (properties associated with each feature),
+built-in layer properties such as coordinate reference system (CRS, projection),
 and additional properties assigned during processing.
+A raster layer contains a grid of data values, CRS, properties, and other data.
 A GeoLayer has the following characteristics:
 
-* The GeoProcessor commands assign unique identifiers to GeoLayers as they are read so that
-commands can use the identifiers to access GeoLayers.
+* The GeoProcessor commands assign unique identifiers to GeoLayers, a "GeoLayerID",
+as layers are read or created so that commands can use the identifiers to access GeoLayers.
 See [best practices for GeoLayer identifiers](../best-practices/geolayer-identifiers.md).
 * The features in a GeoLayer must be of a single type (e.g., point, line, polygon).
 * The GeoLayer has a coordinate reference system corresponding to the datum,
 projection, and units of coordinates in the features.
-* Currently the GeoProcessor only handles vector layers.
-The ability to process rasters (grids) may be added in the future.
+* GeoLayers can have input path (file or URL) and format, in-memory representation, and output path.
+Different commands and tool may operate on in-memory representation or files.
+
+## GeoMap ##
+
+A GeoMap is a configurations for a map, to be displayed in the GeoProcessor and web applications.
+See the [GeoMapPropject section](#geomapproject) for overview of maps.
+Each
+
+## GeoMapProject ##
+
+A GeoMapProject defines configurations for maps, to be displayed in the GeoProcessor and web applications.
+It is conceptually equivalent to QGIS (`qgs`) and ArcGIS map projects (`mxd`) file. 
+However, the GeoProcess GeoMapProject is a light-weight JSON file that contains relatively minimal configuration information.
+It is envisioned that GeoMapProjects will be used to define map configurations for the following cases,
+which will be implemented over time:
+
+| **GeoMapProject Type** | **Description** |
+| -- | -- |
+| `Dashboard` | An application that has several maps, typically accessible by menus or other user interface components. |
+| `Grid` | A grid (matrix) of maps, for example showing different times. |
+| `SingleMap` | A single GeoMap is included in the GeoMapProject, for typical "single page web applications" where a single map display dominates the application. |
+| `Story` | A sequence of maps that are referenced in a story. |
+
+A GeoMapProject is created using the
+[`CreateGeoMapProject`](../command-ref/CreateGeoMapProject/CreateGeoMapProject) command
+and related commands and is written to a file using the 
+[`WriteGeoMapProjectToJSON`](../command-ref/WriteGeoMapProjectToJSON/WriteGeoMapProjectToJSON) command.
+
+The contents of the command are consistent with the top-level `GeoMapProject` instance and hierarchy of objects, as follows,
+which are written using the standard Python `json` package.
+
+```
+GeoMapProject                     # Top-level object containing a list of GeoMap.
+   GeoMap []                      # List of GeoMap, each of which can stand alone.
+      GeoLayer []                 # List of all GeoLayer used in a GeoMap.
+      GeoLayerViewGroup []        # List of GeoLayerViewGroup in a GeoMap, used for legend groups.
+        GeoLayerView              # A GeoLayerView assigns a GeoSymbol to a GeoLayer, for viewing.
+           GeoLayer               # Reference to a layer in GeoLayer list (above).
+           GeoSymbol              # Symbol used to visualize the layer.
+```
+
+A GeoMapProject can be used by other software, such as web mapping applications, to display maps.
+Consequently, the GeoProcessor can be used to automate map creation,
+which can help scale a prototype map to more locations.
+
+See the [GeoMapProject Appendix](../appendix-geomapproject/geomapproject.md).
 
 ### GeoProcessor Properties - `${Property}` ###
 

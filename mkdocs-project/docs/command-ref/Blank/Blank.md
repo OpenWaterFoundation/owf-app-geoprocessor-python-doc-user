@@ -11,13 +11,19 @@
 
 ## Overview ##
 
-The `Blank` is a placeholder for blank lines, which contain only whitespace characters (spaces and tabs).
+The `Blank` is a placeholder for empty lines.
 
 ## Command Editor ##
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+**<p style="text-align: center;">
+![Blank](Blank.png)
+</p>**
+
+**<p style="text-align: center;">
+Empty Line Command Editor (<a href="../Blank.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 

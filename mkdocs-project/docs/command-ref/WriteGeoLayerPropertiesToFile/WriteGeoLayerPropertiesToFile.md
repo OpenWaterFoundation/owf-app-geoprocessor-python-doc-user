@@ -34,7 +34,9 @@ Property File Formats
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![WriteGeoLayerPropertiesToFile](WriteGeoLayerPropertiesToFile.png)
+</p>**
 
 **<p style="text-align: center;">
 `WriteGeoLayerPropertiesToFile` Command Editor (<a href="../WriteGeoLayerPropertiesToFile.png">see full-size image</a>)
@@ -53,9 +55,10 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------------|-----------------|----------------- |
-| `GeoLayerID`        | The GeoLayer identifier, can use `${Property}`. | None - must be specified. |
-| `OutputFile`        | The property file to write, as an absolute path or relative to the command file, can use `${Property}`. | None - must be specified. |
+| `GeoLayerID`<br>**required**| The GeoLayer identifier, can use `${Property}`. | None - must be specified. |
+| `OutputFile`<br>**required**| The property file to write, as an absolute path or relative to the command file, can use `${Property}`. | None - must be specified. |
 | `IncludeProperties` | The names of properties to write, separated by commas.  The `*` wildcard can be used to indicate multiple properties. | If not specified, all processor properties will be written. |
+| `FileFormat` | The file format to write:<ul><li>`NameValue` - see above</li><li>`NameTypeValue` - see above</li><li>`NameTypeValuePython` - see above</li></ul> | `NameValue` |
 | `WriteMode`         | Indicates how the file should be written:<ul><li>`Append` – append the properties to the file without checking for matches (create the file if it does not exist).</li><li>`Overwrite` – overwrite the properties file.</ul> | `Overwrite` |
 
 ## Examples ##
@@ -66,5 +69,5 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [SetGeoLayerProperty](../SetGeoLayerProperty/SetGeoLayerProperty.md) command
-* [SetPropertyFromGeoLayer](../SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md) command
+* [`SetGeoLayerProperty`](../SetGeoLayerProperty/SetGeoLayerProperty.md) command
+* [`SetPropertyFromGeoLayer`](../SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md) command

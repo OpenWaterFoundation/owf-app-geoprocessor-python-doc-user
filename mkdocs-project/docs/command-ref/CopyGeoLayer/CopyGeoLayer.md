@@ -11,21 +11,23 @@
 
 ## Overview ##
 
-The `CopyGeoLayer` command copies a GeoLayer to a new GeoLayer, optionally contstraining the copy to a subset of the original features.
+The `CopyGeoLayer` command copies a GeoLayer to a new GeoLayer,
+optionally constraining the copy to a subset of the original features.
 
 * The input GeoLayer's coordinate reference system is retained in the copied GeoLayer. 
 * The input GeoLayer's attributes are retained in the copied GeoLayer. 
 * The copied GeoLayer's source path is an empty string. 
 * The CopyGeoLayer command has **querying** capabilities. 
-	* The copied GeoLayer can retain a subset of the original GeoLayer's features.
-	* The copied GeoLayer can retain a subset of the original GeoLayer's attributes.
-
+	+ The copied GeoLayer can retain a subset of the original GeoLayer's features.
+	+ The copied GeoLayer can retain a subset of the original GeoLayer's attributes.
 
 ## Command Editor ##
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![CopyGeoLayer](CopyGeoLayer.png)
+</p>**
 
 **<p style="text-align: center;">
 `CopyGeoLayer` Command Editor (<a href="../CopyGeoLayer.png">see full-size image</a>)
@@ -42,29 +44,29 @@ CopyGeoLayer(Parameter="Value",...)
 Command Parameters
 </p>**
 
-| **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `GeoLayerID` <br> **_required_** | The ID of the GeoLayer to be copied. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.| None - must be specified. |
-| `IncludeAttributes` <br>*optional* |  A comma-separated list of the [glob-style patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which attributes to include in the copied GeoLayer. <br><br> See [Determining which Attributes to Copy](#determining-which-attributes-to-copy).|`*` <br><br> All attributes are copied.|
-| `ExcludeAttributes` <br>*optional* | A comma-separated list of the [glob-sytle patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which attributes to exclude in the copied GeoLayer. <br><br> See [Determining which Attributes to Copy](#determining-which-attributes-to-copy).| `'' (empty string)` <br><br> All attributes are copied. |  
-|`IncludeFeaturesIf` <br>*optional* | An attribute query specifying features to include in the copied GeoLayer. Expression syntax and capabilities follows [QGIS Expression](https://docs.qgis.org/2.8/en/docs/user_manual/working_with_vector/expression.html) standards. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.|All features are copied.|
-| `CopiedGeoLayerID` <br>*optional* | The ID of the copied GeoLayer. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.| `GeoLayerID`_copy |
-|`IfGeoLayerIDExists`<br> *optional*|The action that occurs if the `CopiedGeoLayerID` already exists within the GeoProcessor. <br><br> `Replace` : The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. No warning is logged.<br><br> `ReplaceAndWarn`: The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. A warning is logged. <br><br> `Warn` : The new GeoLayer is not created. A warning is logged. <br><br> `Fail` : The new GeoLayer is not created. A fail message is logged. | `Replace` | 
-
+| `GeoLayerID` <br> **required** | The ID of the GeoLayer to be copied. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.| None - must be specified. |
+| `IncludeAttributes` |  A comma-separated list of the [glob-style patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which attributes to include in the copied GeoLayer. <br><br> See [Determining which Attributes to Copy](#determining-which-attributes-to-copy).|`*` <br><br> All attributes are copied.|
+| `ExcludeAttributes` | A comma-separated list of the [glob-sytle patterns](https://en.wikipedia.org/wiki/Glob_(programming)) filtering which attributes to exclude in the copied GeoLayer. <br><br> See [Determining which Attributes to Copy](#determining-which-attributes-to-copy).| All attributes are copied. |  
+|`IncludeFeaturesIf` | An attribute query specifying features to include in the copied GeoLayer. Expression syntax and capabilities follows [QGIS Expression](https://docs.qgis.org/3.10/en/docs/user_manual/working_with_vector/expression.html) standards. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.|All features are copied.|
+| `OutputGeoLayerID` | The ID of the copied GeoLayer. [`${Property}` syntax](../../introduction/#geoprocessor-properties-property) is recognized.| `GeoLayerID_copy` |
+| `Name` | Name of the output GeoLayer. | `OutputGeoLayerID` |
+| `Description` | Description for the output GeoLayer. | |
+|`IfGeoLayerIDExists` |The action that occurs if the `OutputGeoLayerID` already exists within the GeoProcessor. <br><br> `Replace` : The existing GeoLayer within the GeoProcessor is replaced with the new GeoLayer. No warning is logged.<br><br> `ReplaceAndWarn`: The existing GeoLayer within the GeoProcessor is replaced with the new GeoLayer. A warning is logged. <br><br> `Warn` : The new GeoLayer is not created. A warning is logged. <br><br> `Fail` : The new GeoLayer is not created. A fail message is logged. | `Replace` | 
 
 ### Determining Which Attributes to Copy
 
 * The `IncludeAttributes` parameter is always processed first. The`ExcludeAttributes` parameter is always processed second. 
-	* The `IncludeAttributes` *selects* all of the GeoLayer's attributes that follow the given patterns. By default (`*`) all of the GeoLayer's attributes are included. 
-	* The `ExcludeAttributes` *removes* all of the attributes *previously selected from the `IncludeAttributes` parameter* that follow the given patterns. 
-
+	+ The `IncludeAttributes` selects all of the GeoLayer's attributes that follow the given patterns. By default (`*`) all of the GeoLayer's attributes are included. 
+	+ The `ExcludeAttributes` removes all of the attributes previously selected from the `IncludeAttributes` parameter that follow the given patterns. 
 
 ## Examples ##
 
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/CopyGeoLayer).
 
-The following GeoLayer data is used in the examples[^2]. 
-[^2]: The examples assume that the `ExampleGeoLayer` GeoLayer has *already* been read into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) command.
+The following GeoLayer data is used in the examples. 
+The examples assume that the `ExampleGeoLayer` GeoLayer has *already* been read into the GeoProcessor with the [`ReadGeoLayerFromGeoJSON`](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) command.
 
 **<p style="text-align: left;">
 Example GeoLayer Data
@@ -97,10 +99,10 @@ After running the command, the following GeoLayers are registered within the Geo
 | ExampleGeoLayer|
 | ExampleGeoLayer_copy|
 
-### Example 2: Copy a GeoLayer With Defined `CopiedGeoLayerID` Parameter###
+### Example 2: Copy a GeoLayer With Defined `OutputGeoLayerID` Parameter###
 
 ```
-CopyGeoLayer(GeoLayerID="ExampleGeoLayer", CopiedGeoLayerID="copiedExample")
+CopyGeoLayer(GeoLayerID="ExampleGeoLayer",OutputGeoLayerID="copiedExample")
 ```
 
 After running the command, the following GeoLayers are registered within the GeoProcessor.
@@ -110,14 +112,12 @@ After running the command, the following GeoLayers are registered within the Geo
 | ExampleGeoLayer| 
 | copiedExample|
 
-
 ### Example 3: Include a Subset of Attributes ###
 
 ```
-CopyGeoLayer(GeoLayerID="ExampleGeoLayer", IncludeAttributes="id, mascot", CopiedGeoLayerID="ExampleGeoLayer_output1")
-CopyGeoLayer(GeoLayerID="ExampleGeoLayer", IncludeAttributes="s*, *d", CopiedGeoLayerID="ExampleGeoLayer_output2")
+CopyGeoLayer(GeoLayerID="ExampleGeoLayer",IncludeAttributes="id, mascot",OutputGeoLayerID="ExampleGeoLayer_output1")
+CopyGeoLayer(GeoLayerID="ExampleGeoLayer",IncludeAttributes="s*,*d",OutputGeoLayerID="ExampleGeoLayer_output2")
 ```
-
 After running the command, the following GeoLayers are registered within the GeoProcessor.
 
 |GeoLayerID|
@@ -169,8 +169,6 @@ ExampleGeoLayer_copy Attribute Table
 |304|
 |567|
 
-
-
 ### Example 5: Include a Subset of Features ###
 
 ```
@@ -194,6 +192,5 @@ ExampleGeoLayer_copy Attribute Table
 |3|Gunn|Colts|567|43|
 
 ## Troubleshooting ##
-
 
 ## See Also ##

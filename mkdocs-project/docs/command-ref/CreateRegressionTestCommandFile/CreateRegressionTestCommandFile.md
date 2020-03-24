@@ -13,8 +13,8 @@
 
 The `CreateRegressionTestCommandFile` command is used for software testing and validation of workflow processes.
 The command creates a command file that includes a
-[StartRegressionTestResultsReport](../StartRegressionTestResultsReport/StartRegressionTestResultsReport.md) and multiple
-[RunCommands](../RunCommands/RunCommands.md) commands.
+[`StartRegressionTestResultsReport`](../StartRegressionTestResultsReport/StartRegressionTestResultsReport.md) and multiple
+[`RunCommands`](../RunCommands/RunCommands.md) commands.
 A starting search folder is provided and all files that match the given pattern (by convention `test-*.gp`)
 are assumed to be command files that can be run to test the software.
 The resulting command file is a test suite comprised of all the individual tests and can be used
@@ -36,7 +36,9 @@ Property File Formats
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![CreateRegressionTestCommandFile](CreateRegressionTestCommandFile.png)
+</p>**
 
 **<p style="text-align: center;">
 `CreateRegressionTestCommandFile` Command Editor (<a href="../CreateRegressionTestCommandFile.png">see full-size image</a>)
@@ -55,8 +57,8 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `SearchFolder` | The folder to search for regression test command files.  All subfolders will also be searched.  Can use `${Property}`. | None - must be specified. |
-| `OutputFile` | The property file to write, as an absolute path or relative to the command file, can use `${Property}`. | None - must be specified. |
+| `SearchFolder`<br>**required** | The folder to search for regression test command files.  All subfolders will also be searched.  Can use `${Property}`. | None - must be specified. |
+| `OutputFile`<br>**required** | The property file to write, as an absolute path or relative to the command file, can use `${Property}`. | None - must be specified. |
 | `FilenamePattern` | Pattern to find GeoProcessor command files, using `*` wildcards. | `test-*.gp` |
 
 ## Examples ##
@@ -67,6 +69,6 @@ Command Parameters
 
 ## See Also ##
 
-* [RunCommands](../RunCommands/RunCommands.md) command
-* [StartRegressionTestResultsReport](../StartRegressionTestResultsReport/StartRegressionTestResultsReport.md) command
-* [WriteCommandSummaryToFile](../WriteCommandSummaryToFile/WriteCommandSummaryToFile.md) command
+* [`RunCommands`](../RunCommands/RunCommands.md) command
+* [`StartRegressionTestResultsReport`](../StartRegressionTestResultsReport/StartRegressionTestResultsReport.md) command
+* [`WriteCommandSummaryToFile`](../WriteCommandSummaryToFile/WriteCommandSummaryToFile.md) command

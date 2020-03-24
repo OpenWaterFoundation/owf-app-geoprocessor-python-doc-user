@@ -19,7 +19,9 @@ Currently only HTML format output file is supported.
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![WriteCommandSummaryToFile](WriteCommandSummaryToFile.png)
+</p>**
 
 **<p style="text-align: center;">
 `WriteCommandSummaryToFile` Command Editor (<a href="../WriteCommandSummaryToFile.png">see full-size image</a>)
@@ -38,7 +40,7 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `OutputFile` | The output file to write, as an absolute path or relative to the command file.  Can use `${Property}`. | None - must be specified. |
+| `OutputFile`<br>**required** | The output file to write, as an absolute path or relative to the command file.  Can use `${Property}`. | None - must be specified. |
 
 ## Examples ##
 
@@ -48,6 +50,6 @@ Command Parameters
 
 ## See Also ##
 
-* [CreateRegressionTestCommandFile](../CreateRegressionTestCommandFile/CreateRegressionTestCommandFile.md) command
-* [RunCommands](../RunCommands/RunCommands.md) command
-* [StartRegressionTestResultsReport](../StartRegressionTestResultsReport/StartRegressionTestResultsReport.md) command
+* [`CreateRegressionTestCommandFile`](../CreateRegressionTestCommandFile/CreateRegressionTestCommandFile.md) command
+* [`RunCommands`](../RunCommands/RunCommands.md) command
+* [`StartRegressionTestResultsReport`](../StartRegressionTestResultsReport/StartRegressionTestResultsReport.md) command

@@ -19,7 +19,9 @@ The `FreeGeoLayers` command removes one or more [GeoLayers](../../introduction/i
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![FreeGeoLayers](FreeGeoLayers.png)
+</p>**
 
 **<p style="text-align: center;">
 `FreeGeoLayers` Command Editor (<a href="../FreeGeoLayers.png">see full-size image</a>)
@@ -38,15 +40,15 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `GeoLayerIDs` <br>  **_required_**| A comma-separated list of the IDs of the GeoLayers to free. <br><br> Can also be `*` where all GeoLayers registered within the GeoProcessor are removed.| None - must be specified. |
-
+| `GeoLayerIDs` <br> **required**| A comma-separated list of the IDs of the GeoLayers to free. <br><br> Can also be `*` where all GeoLayers registered within the GeoProcessor are removed.| None - must be specified. |
 
 ## Examples ##
 
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/FreeGeoLayers).
 
-The following GeoLayer data are used in the example[^1]. 
-[^1]: The example assume that the GeoLayers have *already* been read into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) command.
+The following GeoLayer data are used in the example.
+The example assume that the GeoLayers have already been read
+into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) command.
 
 **<p style="text-align: left;">
 Example GeoLayer Data
@@ -69,7 +71,6 @@ After running the command, the following GeoLayer IDs are registered within the 
 |GeoLayer ID|
 | ---- |
 | ExampleGeoLayer1  |
-
 
 ## Troubleshooting ##
 

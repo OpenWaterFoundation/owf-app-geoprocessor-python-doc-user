@@ -20,7 +20,9 @@ The `UnzipFile` command unzips a compressed file.
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![UnzipFile](UnzipFile.png)
+</p>**
 
 **<p style="text-align: center;">
 `UnzipFile` Command Editor (<a href="../UnzipFile.png">see full-size image</a>)
@@ -39,19 +41,18 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `File` <br>  **_required_**| The file to be unzipped (relative or absolute path). [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
-| `FileType` <br>  *optional*|The file format of the input `File`. The following file formats are currently accepted. <br><br> `TAR`: a [.tar file](https://en.wikipedia.org/wiki/Tar_(computing)). <br> `ZIP`: A [.zip file](https://en.wikipedia.org/wiki/Zip_(file_format)).| Determined from the `File`'s extension. |
-|`OutputFolder`  <br>  *optional*|The name of the destination folder. The extracted files are saved here. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.|The parent folder of the `File`.|
-|`DeleteFile` <br>  *optional*|Boolean. <br><br> If `True`, the compressed file is deleted after the extraction. <br> If `False`, the compressed file remains after the extraction. |`False`|
-
+| `File` <br> **required**| The file to be unzipped (relative or absolute path). [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
+| `FileType` <br> |The file format of the input `File`. The following file formats are currently accepted. <br><br> `TAR`: a [.tar file](https://en.wikipedia.org/wiki/Tar_(computing)). <br> `ZIP`: A [.zip file](https://en.wikipedia.org/wiki/Zip_(file_format)).| Determined from the `File`'s extension. |
+|`OutputFolder` |The name of the destination folder. The extracted files are saved here. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.|The parent folder of the `File`.|
+|`DeleteFile` | Indicates whether to delete the file after unzipping:<ul><li>`True` - the compressed file is deleted after the extraction.</li><li>`False` - the compressed file remains after the extraction.</li></ul>| `False`|
 
 ## Examples ##
 
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/UnzipFile).
 
-The following folder, `ExampleFolder`[^1], and its contents are used for the examples. 
-
-[^1]: *The `ExampleFolder` is not an actual existing folder. It is used in this documentation to explain how the `UnzipFile` command interacts with similar, existing folders on your local machine.*
+The following folder, `ExampleFolder`, and its contents are used for the examples. 
+The `ExampleFolder` is not an actual existing folder.
+It is used in this documentation to explain how the `UnzipFile` command interacts with similar, existing folders on your local machine.
 
 **<p style="text-align: left;">
 ExampleFolder
@@ -86,13 +87,11 @@ After running the command, the following files are written to the `ExampleFolder
 |ExampleFile.zip |
 |ExampleSubFolder|
 
-
 ### Example 2: Unzip a Zip File to a Different Folder ###
 
 ```
 UnzipFile(File = "ExampleFolder/ExampleFile.zip", OutputFolder = "ExampleFolder/ExampleSubFolder")
 ```
-
 After running the command, the following files are written to the `ExampleFolder`. 
 
 |ExampleFolder|
@@ -111,4 +110,4 @@ After running the command, the following files are written to the `ExampleSubFol
 
 ## See Also ##
 
-* [WebGet](../WebGet/WebGet.md) command
+* [`WebGet`](../WebGet/WebGet.md) command

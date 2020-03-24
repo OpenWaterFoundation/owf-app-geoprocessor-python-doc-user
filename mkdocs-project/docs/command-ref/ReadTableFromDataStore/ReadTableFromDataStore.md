@@ -31,7 +31,6 @@ One of the following three selection methods can be specified:
 	* This is useful if the SQL statement is also used by other tools, is long, or contains special characters such as
 	double quotes that have meaning in command syntax.
 	* Complex SQL statements can be documented with comments in the file. 
-	
 
 ## Command Editor ##
 
@@ -52,23 +51,24 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-|`DataStoreID` <br> **_required_**| The ID of a database DataStore to read. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized. | None - must be specified. |
+|`DataStoreID` <br> **required**| The ID of a database DataStore to read. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized. | None - must be specified. |
 ||**MUST SELECT `1` OF THE FOLLOWING `3` PARAMETERS ... **||
 |`DataStoreTable` | The name of the database table to read when querying a single table. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.<br><br>If specified, do not specify `Sql` or `SqlFile`.|None|
 |`Sql`|The SQL string that will be used to query the database. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.<br><br> If specified, do not specify `DataStoreTable` or `SqlFile`.|None|
 |`SqlFile`|The name of the file containing an SQL string to execute. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.<br><br>If specified, do not specify `DataStoreTable` or `Sql`.|None|
-|`TableID` <br> **_required_**| A Table identifier for the table to be created to contain results. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.  Refer to [documentation](../../best-practices/table-identifiers.md) for best practices on naming Table identifiers.|None - must be specified. |
-|`Top` <br> *optional*| An integer to indicate the number of rows that should be returned. Must be a positive integer. <br><br> *This parameter is only used when `DataStoreTable` is specified. The `Top` value is ignored if the `Sql` or `SqlFile` parameters are specified. The SQL to be executed can include `Top` to achieve a similar result.*|All rows are returned.|
-|`IncludeColumns` <br> *optional*|A list of glob-style patterns to determine the DataStore table columns to read. <br><br> See [Determining which Columns to Read](#determining-which-columns-to-read).<br><br> *This parameter is only used when `DataStoreTable` is specified. The `IncludeColumns` value is ignored if the `Sql` or `SqlFile` parameters are specified.*|`*` <br><br> All columns are read.|
-|`ExcludeColumns` <br> *optional*|A list of glob-style patterns to determine the DataStore table columns to NOT read. <br><br> See [Determining which Columns to Read](#determining-which-columns-to-read).<br><br> *This parameter is only used when `DataStoreTable` is specified. The `ExcludeColumns` value is ignored if the `Sql` or `SqlFile` parameters are specified.*|No columns are excluded.|
-|`IfTableIDExists`<br> *optional*|The action that occurs if the `TableID` already exists within the GeoProcessor. <br><br> `Replace` : The existing Table within the GeoProcessor is overwritten with the new Table. No warning is logged.<br><br> `ReplaceAndWarn`: The existing Table within the GeoProcessor is overwritten with the new Table. A warning is logged. <br><br> `Warn` : The new Table is not created. A warning is logged. <br><br> `Fail` : The new Table is not created. A fail message is logged. | `Replace` | 
+|`TableID` <br> **required**| A Table identifier for the table to be created to contain results. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.  Refer to [documentation](../../best-practices/table-identifiers.md) for best practices on naming Table identifiers.|None - must be specified. |
+|`Top`| An integer to indicate the number of rows that should be returned. Must be a positive integer. <br><br> *This parameter is only used when `DataStoreTable` is specified. The `Top` value is ignored if the `Sql` or `SqlFile` parameters are specified. The SQL to be executed can include `Top` to achieve a similar result.*|All rows are returned.|
+|`IncludeColumns`|A list of glob-style patterns to determine the DataStore table columns to read. <br><br> See [Determining which Columns to Read](#determining-which-columns-to-read).<br><br> *This parameter is only used when `DataStoreTable` is specified. The `IncludeColumns` value is ignored if the `Sql` or `SqlFile` parameters are specified.*|`*` <br><br> All columns are read.|
+|`ExcludeColumns`|A list of glob-style patterns to determine the DataStore table columns to NOT read. <br><br> See [Determining which Columns to Read](#determining-which-columns-to-read).<br><br> *This parameter is only used when `DataStoreTable` is specified. The `ExcludeColumns` value is ignored if the `Sql` or `SqlFile` parameters are specified.*|No columns are excluded.|
+|`IfTableIDExists`|The action that occurs if the `TableID` already exists within the GeoProcessor.<ul><li>`Replace` - The existing Table within the GeoProcessor is replaced with the new Table. No warning is logged.</li><li>`ReplaceAndWarn` - The existing Table within the GeoProcessor is replaced with the new Table. A warning is logged.</li><li>`Warn` - The new Table is not created. A warning is logged.</li><li>`Fail` : The new Table is not created. A fail message is logged.</li></ul> | `Replace` | 
 
 ### Determining Which Columns to Read
+
 * The `IncludeColumns` parameter is always processed first. The`ExcludeColumns` parameter is always processed second. 
-	* The `IncludeColumns` *selects* all of the DataStore's database table columns that follow the given patterns. By default (`*`) all of the database's table columns are read.
-	* The `ExcludeColumns` *removes* all of the columns previously selected from the `IncludeColumns` parameter that follow the given patterns. 
+	+ The `IncludeColumns` selects all of the DataStore's database table columns that follow the given patterns. By default (`*`) all of the database's table columns are read.
+	+ The `ExcludeColumns` removes all of the columns previously selected from the `IncludeColumns` parameter that follow the given patterns. 
 	By default, none of the *previously selected* columns are removed.
-	
+
 ## Examples ##
 
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ReadTableFromDataStore).
@@ -81,5 +81,5 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [OpenDataStore](../OpenDataStore/OpenDataStore.md) command
-* [WriteTableToDataStore](../WriteTableToDataStore/WriteTableToDataStore.md) command
+* [`OpenDataStore`](../OpenDataStore/OpenDataStore.md) command
+* [`WriteTableToDataStore`](../WriteTableToDataStore/WriteTableToDataStore.md) command

@@ -24,7 +24,9 @@ The `ClipGeoLayer` command clips an input [GeoLayer](../../introduction/introduc
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![ClipGeoLayer](ClipGeoLayer.png)
+</p>**
 
 **<p style="text-align: center;">
 `ClipGeoLayer` Command Editor (<a href="../ClipGeoLayer.png">see full-size image</a>)
@@ -43,20 +45,22 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `InputGeoLayerID` <br>  **_required_**| The ID of the input GeoLayer.| None - must be specified. |
-| `ClippingGeoLayerID` <br> **_required_**| The ID of the clipping GeoLayer. The clipping GeoLayer must be contain polygon geometry.| None - must be specified. |
-| `OutputGeoLayerID` <br> *optional*| A GeoLayer identifier for the output GeoLayer. Refer to [documentation](../../best-practices/geolayer-identifiers.md) for best practices on naming GeoLayer identifiers.| `InputGeoLayerID` \_clippedBy\_ `ClippingGeoLayerID`|
-|`IfGeoLayerIDExists`<br> *optional*|The action that occurs if the `OutputGeoLayerID` already exists within the GeoProcessor. <br><br> `Replace` : The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. No warning is logged.<br><br> `ReplaceAndWarn`: The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. A warning is logged.<br><br>`Warn` : The ClipGeoLayer command does not run. A warning is logged. <br><br> `Fail` : The ClipGeoLayer command does not run. A fail message is logged. | `Replace` | 
-
+| `InputGeoLayerID` <br>  **required**| The ID of the input GeoLayer.| None - must be specified. |
+| `ClippingGeoLayerID` <br> **required**| The ID of the clipping GeoLayer. The clipping GeoLayer must be contain polygon geometry.| None - must be specified. |
+| `OutputGeoLayerID` | A GeoLayer identifier for the output GeoLayer. Refer to [documentation](../../best-practices/geolayer-identifiers.md) for best practices on naming GeoLayer identifiers.| `InputGeoLayerID` `_clippedBy_` `ClippingGeoLayerID`|
+| `Name` | Name of the output GeoLayer. | `OutputGeoLayerID` |
+| `Description` | Description for the output GeoLayer. | |
+|`IfGeoLayerIDExists`|The action that occurs if the `OutputGeoLayerID` already exists within the GeoProcessor:<ul><li>`Replace` - The existing GeoLayer within the GeoProcessor is relaced with the new GeoLayer. No warning is logged.</li><li>`ReplaceAndWarn` - The existing GeoLayer within the GeoProcessor is replaced with the new GeoLayer. A warning is logged.</li><li>`Warn` - The ClipGeoLayer command does not run. A warning is logged.</li><li>`Fail` - The ClipGeoLayer command does not run. A fail message is logged.</li></ul> | `Replace` | 
 
 ## Examples ##
 
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ClipGeoLayer).
 
-The following GeoLayer data are used in the examples[^1]. 
-[^1]: The examples assume that the `floodplains-FEMA-CO-4326` and `countyBoundary-CDOT-Park-4326` GeoLayers have *already* been read into the GeoProcessor with the [ReadGeoLayerFromGeoJSON](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) command.
+The following GeoLayer data are used in the examples.
+The examples assume that the `floodplains-FEMA-CO-4326` and `countyBoundary-CDOT-Park-4326` GeoLayers have
+already been read into the GeoProcessor with the [`ReadGeoLayerFromGeoJSON`](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) command.
 
-**<p style="text-align: left;">
+**<p style="text-align: center;">
 Example GeoLayer Data
 </p>**
 
@@ -85,9 +89,9 @@ Below is an image of the input and output products of the `ClipGeoLayer` command
 
 * The bottom image shows the `Park County floodplains layer` (output clipped GeoLayer) with the outline of the `Park County Boundary layer`. 
 
+**<p style="text-align: center;">
 ![COFloodplain_countyPark_overlay](images/clip_process.png)
-
-
+</p>**
 
 ### Example 2: Assign a Unique GeoLayer ID to the Output###
 
@@ -102,15 +106,17 @@ After running the command, the following GeoLayer IDs are registered within the 
 |GeoLayer ID|Description|Image|
 | ---- |  ----- | ---- |
 | `floodplains-FEMA-CO-4326` |The input GeoLayer. Colorado floodplains provided by FEMA. Projected in WGS84 (EPSG:4326).|![co_floodplains](images/floodplains-FEMA-CO-4326.png)|
-| `countyBoundary-CDOT-Park-4326`	|The clipping GeoLayer. Park County Boundary provided by CDOT. Projected in WGS84 (EPSG:4326).|![park_county](images/countyboundary-CDOT-Park-4326.png)|
+| `countyBoundary-CDOT-Park-4326` |The clipping GeoLayer. Park County Boundary provided by CDOT. Projected in WGS84 (EPSG:4326).|![park_county](images/countyboundary-CDOT-Park-4326.png)|
 | `floodplains-FEMA-Park-4326`|The output (clipped) GeoLayer. Park County floodplains provided by FEMA. Projected in WGS84 (EPSG:4326).|![park_floodplains](images/floodplains-FEMA-Park-4326.png)|
 
 ## Troubleshooting ##
 
-- There is a bug within QGIS version `2.18.1` that causes an error. 
-	- The clip process will only work for one feature. All other features within the input GeoLayer will not be included in the output GeoLayer.
-	- More information is available at [Stack Exchange - Why general.runalg("qgis:linestopolygons"...) work only over first feature?](https://gis.stackexchange.com/questions/219857/why-general-runalgqgislinestopolygons-work-only-over-first-feature).
+* There is a bug within QGIS version `2.18.1` that causes an error.  **This should not be an issue with the current version of QGIS and GeoProcessor.**
+	+ The clip process will only work for one feature.
+	All other features within the input GeoLayer will not be included in the output GeoLayer.
+	+ More information is available at
+	[Stack Exchange - Why general.runalg("qgis:linestopolygons"...) work only over first feature?](https://gis.stackexchange.com/questions/219857/why-general-runalgqgislinestopolygons-work-only-over-first-feature).
 
 ## See Also ##
 
-- The ClipGeoLayer command uses the QGIS processing algorithm [`qgis:clip`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vector_overlay_tools.html#clip). 
+* The ClipGeoLayer command uses the QGIS processing algorithm [`qgis:clip`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vector_overlay_tools.html#clip). 

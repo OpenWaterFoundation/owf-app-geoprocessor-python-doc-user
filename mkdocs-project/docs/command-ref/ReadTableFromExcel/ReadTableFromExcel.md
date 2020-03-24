@@ -20,7 +20,9 @@ The `ReadTableFromExcel` command reads a [Table](../../introduction/introduction
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![ReadTableFromExcel](ReadTableFromExcel.png)
+</p>**
 
 **<p style="text-align: center;">
 `ReadTableFromExcel` Command Editor (<a href="../ReadTableFromExcel.png">see full-size image</a>)
@@ -39,19 +41,18 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `InputFile` <br>  **_required_**| The Excel workbook file (`.xls` or `.xlsx`) with the Excel worksheet to read (relative or absolute path). [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
-| `Worksheet` <br> *optional*| The name of the Excel worksheet within the Excel workbook to read.|The first worksheet in the Excel workbook.|
-| `TableID` <br> *optional*| A Table identifier. Refer to [documentation](../../best-practices/table-identifiers.md) for best practices for naming Table identifiers.|The `Worksheet`.|
-|`IfTableIDExists`<br> *optional*|The action that occurs if the `TableID` already exists within the GeoProcessor. <br><br> `Replace` : The existing Table within the GeoProcessor is overwritten with the new Table. No warning is logged.<br><br> `ReplaceAndWarn`: The existing Table within the GeoProcessor is overwritten with the new Table. A warning is logged. <br><br> `Warn` : The new Table is not created. A warning is logged. <br><br> `Fail` : The new Table is not created. A fail message is logged. | `Replace` | 
-
+| `InputFile` <br>**required**| The Excel workbook file (`.xls` or `.xlsx`) with the Excel worksheet to read (relative or absolute path). [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
+| `Worksheet` | The name of the Excel worksheet within the Excel workbook to read.|The first worksheet in the Excel workbook.|
+| `TableID` | A Table identifier. Refer to [documentation](../../best-practices/table-identifiers.md) for best practices for naming Table identifiers.|The `Worksheet`.|
+|`IfTableIDExists` | The action that occurs if the `TableID` already exists within the GeoProcessor:<ul><li>`Replace` - The existing Table within the GeoProcessor is replaced with the new Table. No warning is logged.</li><li>`ReplaceAndWarn` - The existing Table within the GeoProcessor is replaced with the new Table. A warning is logged.</li><li>`Warn` - The new Table is not created. A warning is logged.</li><li>`Fail` - The new Table is not created. A fail message is logged.</li></ul> | `Replace` | 
 
 ## Examples ##
 
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ReadTableFromExcel).
 
-The following folder, `ExampleFolder`[^1], and its contents are used for the examples. 
-
-[^1]: *The `ExampleFolder` is not an actual existing folder. It is used in this documentation to explain how the `ReadTableFromExcel` command interacts with similar, existing folders on your local machine.*
+The following folder, `ExampleFolder`, and its contents are used for the examples. 
+The `ExampleFolder` is not an actual existing folder.
+It is used in this documentation to explain how the `ReadTableFromExcel` command interacts with similar, existing folders on your local machine.
 
 **<p style="text-align: left;">
 ExampleFolder
@@ -69,7 +70,6 @@ ExampleFile1 Excel Workbook
 | ---- |
 |Clients  |
 |Products |
-
 
 ### Example 1: Read a Table from the first Worksheet of an Excel File ###
 
@@ -111,5 +111,5 @@ After running the command, the following Table IDs are registered within the Geo
 
 ## See Also ##
 
-- The Tables are read using the [`Pandas Python library`](https://pandas.pydata.org/). 
-- See parallel GeoProcessor command [WriteTableToExcel](../WriteTableToExcel/WriteTableToExcel.md)
+* The Tables are read using the [`Pandas Python library`](https://pandas.pydata.org/). 
+* [`WriteTableToExcel`](../WriteTableToExcel/WriteTableToExcel.md) command

@@ -11,10 +11,11 @@
 
 ## Overview ##
 
-The RunSql command executes a [Structured Query Language (SQL)](https://en.wikipedia.org/wiki/SQL) statement on the specified [DataStore](../../introduction/introduction.md#datastore).
+The RunSql command executes a [Structured Query Language (SQL)](https://en.wikipedia.org/wiki/SQL)
+statement on the specified [DataStore](../../introduction/introduction.md#datastore).
 
-- This command cannot be used with web service datastores because the underlying software relies on a database to execute the SQL statement. 
-- This command is useful when a database task needs to be automated in sequence with other GeoProcessor commands. 
+* This command cannot be used with web service datastores because the underlying software relies on a database to execute the SQL statement. 
+* This command is useful when a database task needs to be automated in sequence with other GeoProcessor commands. 
 
 The SQL statement can be specified in the following ways:
 
@@ -32,11 +33,11 @@ The SQL statement can be specified in the following ways:
 
 General constraints on executing the statement are as follows:
 
-- The table, views, and procedures being queried must be readable (some databases restrict direct access to data and require using stored procedures).
-- Any SQL statement can be run; consequently, suitable authentication and permissions should be in place to protect against unintended changes to the database
-- SQL syntax varies between database software so care should be take to use standard SQL if possible.
-- Results from the statement such as rows modified currently are not displayed, although status and errors will be shown and added to the log file. 
-Use the [ReadTableFromDataStore](../ReadTableFromDataStore/ReadTableFromDataStore.md) command to process statements that return a result set.
+* The table, views, and procedures being queried must be readable (some databases restrict direct access to data and require using stored procedures).
+* Any SQL statement can be run; consequently, suitable authentication and permissions should be in place to protect against unintended changes to the database
+* SQL syntax varies between database software so care should be take to use standard SQL if possible.
+* Results from the statement such as rows modified currently are not displayed, although status and errors will be shown and added to the log file. 
+Use the [`ReadTableFromDataStore`](../ReadTableFromDataStore/ReadTableFromDataStore.md) command to process statements that return a result set.
 
 ## Command Editor ##
 
@@ -75,7 +76,7 @@ Command Parameters
 
 ## See Also ##
 
-* [OpenDataStore](../OpenDataStore/OpenDataStore.md) command
-* [ReadTableFromDataStore](../ReadTableFromDataStore/ReadTableFromDataStore.md) command
-* [WriteTableToDataStore](../WriteTableToDataStore/WriteTableToDataStore.md) command
+* [`OpenDataStore`](../OpenDataStore/OpenDataStore.md) command
+* [`ReadTableFromDataStore`](../ReadTableFromDataStore/ReadTableFromDataStore.md) command
+* [`WriteTableToDataStore`](../WriteTableToDataStore/WriteTableToDataStore.md) command
 * [W3schools SQL Tutorial](https://www.w3schools.com/sql/)

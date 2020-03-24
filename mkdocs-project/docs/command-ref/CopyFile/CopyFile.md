@@ -17,7 +17,9 @@ The `CopyFile` command copies a source file to a destination.
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![CopyFile](CopyFile.png)
+</p>**
 
 **<p style="text-align: center;">
 `CopyFile` Command Editor (<a href="../CopyFile.png">see full-size image</a>)
@@ -36,10 +38,9 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `SourceFile` | The name of the source file to delete.  Can be specified using `${Property}`. | None - must be specified. |
-| `DestinationFile` | The name of the destination file.  Can be specified using `${Property}`. | None - must be specified. |
+| `SourceFile`<br>**required** | The name of the source file to delete.  Can be specified using `${Property}`. | None - must be specified. |
+| `DestinationFile`<br>**required** | The name of the destination file.  Can be specified using `${Property}`. | None - must be specified. |
 | `IfSourceFileNotFound` | Indicate an action if the source file is not found:  `Ignore` (ignore the missing file and do not warn), `Warn` (generate a warning message), `Fail` (generate a failure message) | `Warn` |
-
 
 ## Examples ##
 

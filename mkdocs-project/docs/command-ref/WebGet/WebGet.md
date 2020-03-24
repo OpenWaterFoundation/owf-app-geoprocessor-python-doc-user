@@ -21,7 +21,9 @@ The `WebGet` command downloads a file or other web resource from a URL source. C
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![WebGet](WebGet.png)
+</p>**
 
 **<p style="text-align: center;">
 `WebGet` Command Editor (<a href="../WebGet.png">see full-size image</a>)
@@ -40,10 +42,10 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `URL` <br>  **_required_**| The URL of the resource to download. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
-| `OutputFile` <br> *optional*| The output file path (relative or absolute). [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized. [Formatting character (%f)](../../introduction/introduction.md#geolayer-property-format-specifiers) is recognized. If already existing, the output file will be overwritten.| Same filename as source. Saved to the parent folder of the `.gp` workflow. |
-|`Username` <br> *optional*| A valid username to access a private URL file.|`None` - the URL is downloaded as a public file.|
-|`Password` <br> *optional*| A valid password to access a private URL file.|`None` - the URL is downloaded as a public file.|
+| `URL` <br>**required**| The URL of the resource to download. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
+| `OutputFile` | The output file path (relative or absolute). [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized. [Formatting character (%f)](../../introduction/introduction.md#geolayer-property-format-specifiers) is recognized. If already existing, the output file will be overwritten.| Same filename as source. Saved to the parent folder of the `.gp` workflow. |
+|`Username` | A valid username to access a private URL file.|`None` - the URL is downloaded as a public file.|
+|`Password` | A valid password to access a private URL file.|`None` - the URL is downloaded as a public file.|
 
 ## Examples ##
 
@@ -77,5 +79,5 @@ ExampleOutputFolder
 
 ## See Also ##
 
-- The files are downloaded using the Python [Requests](http://docs.python-requests.org/en/master/) library.
-* [ListFiles](../ListFiles/ListFiles.md) command
+* The files are downloaded using the Python [Requests](http://docs.python-requests.org/en/master/) library.
+* [`ListFiles`](../ListFiles/ListFiles.md) command

@@ -12,9 +12,12 @@
 
 ## Overview ##
 
-The `SimplifyGeoLayerGeometry` command decreases the number of vertices within the geometries for each feature of a [GeoLayer](../../introduction/introduction.md#geolayer). This command is useful when the file size of a GeoLayer is too large. 
+The `SimplifyGeoLayerGeometry` command decreases the number of vertices within the geometries
+for each feature of a [GeoLayer](../../introduction/introduction.md#geolayer).
+This command is useful when the file size of a GeoLayer is too large. 
 
-* This command is designed to simplify GeoLayers with `LINE` or `POLYGON` geometry by removing unnecessary vertices. GeoLayers with `POINT` geometry *cannot* be simplified with this command.
+* This command is designed to simplify GeoLayers with `LINE` or `POLYGON` geometry by removing unnecessary vertices.
+GeoLayers with `POINT` geometry *cannot* be simplified with this command.
 * The file size of the simplified GeoLayer will be smaller than the input GeoLayer.
 * The spatial accuracy of the simplified GeoLayer be less precise than the input GeoLayer. 
 
@@ -22,7 +25,9 @@ The `SimplifyGeoLayerGeometry` command decreases the number of vertices within t
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![SimplifyGeoLayerGeometry](SimplifyGeoLayerGeometry.png)
+</p>**
 
 **<p style="text-align: center;">
 `SimplifyGeoLayerGeometry` Command Editor (<a href="../SimplifyGeoLayerGeometry.png">see full-size image</a>)
@@ -41,19 +46,20 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `GeoLayerID` <br>  **_required_**| The ID of the GeoLayer to be simplified.| None - must be specified. |
-| `Tolerance`  <br>  **_required_**| The `ε` variable in the `Douglas–Peucker algorithm`. <br><br>Units are the same as the distance units of the GeoLayer's coordinate reference system. For example, `WGS84 EPSG:4326` uses decimal degrees and `NAD83 Zone13N EPSG:26913` uses meters. [^1] <br><br> Refer to the [Douglas–Peucker Algorithm](#douglas-peuker-algorithim) section for more information. |None - must be specified. |
-| `SimplifyMethod` <br> *optional* | The simplification method used to simplify the GeoLayer. <br><br> `DouglasPeucker` : Use the [Douglas-Peucker algorithm](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm) to simplify the GeoLayer.|`DouglasPeucker`|
-| `SimplifiedGeoLayerID` <br> *optional* | A GeoLayer identifier for the output simplified GeoLayer. Refer to [documentation](http://127.0.0.1:8000/best-practices/geolayer-identifiers/) for best practices on naming GeoLayer identifiers.|`GeoLayerID`\_simple\_`Tolerance`|
-|`IfGeoLayerIDExists`<br> *optional*|The action that occurs if the `SimplifiedGeoLayerID` already exists within the GeoProcessor. <br><br> `Replace` : The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. No warning is logged.<br><br> `ReplaceAndWarn`: The existing GeoLayer within the GeoProcessor is overwritten with the new GeoLayer. A warning is logged.<br><br>`Warn` : The SimplifyGeoLayerGeometry command does not run. A warning is logged. <br><br> `Fail` : The SimplifyGeoLayerGeometry command does not run. A fail message is logged. | `Replace` | 
-
-[^1]: Units for common coordinate reference systems can be looked up at the [epsg.io site](http://epsg.io/). 
+| `GeoLayerID` <br>**required**| The ID of the GeoLayer to be simplified.| None - must be specified. |
+| `Tolerance`  <br>**required**| The `ε` variable in the `Douglas–Peucker algorithm`. <br><br>Units are the same as the distance units of the GeoLayer's coordinate reference system. For example, `WGS84 EPSG:4326` uses decimal degrees and `NAD83 Zone13N EPSG:26913` uses meters. Units for common coordinate reference systems can be looked up at the [epsg.io site](http://epsg.io/).<br><br> Refer to the [Douglas–Peucker Algorithm](#douglas-peuker-algorithim) section for more information. |None - must be specified. |
+| `SimplifyMethod` | The simplification method used to simplify the GeoLayer:<ul><li>`DouglasPeucker` - Use the [Douglas-Peucker algorithm](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm) to simplify the GeoLayer.</li></ul>|`DouglasPeucker`|
+| `SimplifiedGeoLayerID`| A GeoLayer identifier for the output simplified GeoLayer. Refer to [documentation](http://127.0.0.1:8000/best-practices/geolayer-identifiers/) for best practices on naming GeoLayer identifiers.|`GeoLayerID``_simple_``Tolerance`|
+|`IfGeoLayerIDExists`|The action that occurs if the `SimplifiedGeoLayerID` already exists within the GeoProcessor:<ul><li>`Replace` - The existing GeoLayer within the GeoProcessor is replaced with the new GeoLayer. No warning is logged.</li><li>`ReplaceAndWarn` - The existing GeoLayer within the GeoProcessor is replaced with the new GeoLayer. A warning is logged.</li><li>`Warn` - The `SimplifyGeoLayerGeometry` command does not run. A warning is logged.</li><li>`Fail` - The `SimplifyGeoLayerGeometry` command does not run. A fail message is logged.</li></ul> | `Replace` | 
 
 ## Douglas–Peucker Algorithm
 
-The `SimplifyGeoLayerGeometry` command simplifies the features of a GeoLayer with the [`Douglas–Peucker algorithim`](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm). 
+The `SimplifyGeoLayerGeometry` command simplifies the features of a GeoLayer with the
+[`Douglas–Peucker algorithim`](https://en.wikipedia.org/wiki/Ramer%E2%80%93Douglas%E2%80%93Peucker_algorithm). 
 
-A line is specified by multiple points (coordinates) in sequence.  The algorithm discards points as long as the resulting shift in the line connecting remaining points does not exceed the tolerance.  A very small tolerance would only discard points that are "extra" points along a straight line.
+A line is specified by multiple points (coordinates) in sequence.
+The algorithm discards points as long as the resulting shift in the line connecting remaining points does not exceed the tolerance.
+A very small tolerance would only discard points that are "extra" points along a straight line.
 
 #### Additional Resources
 
@@ -65,8 +71,8 @@ A line is specified by multiple points (coordinates) in sequence.  The algorithm
 
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/SimplifyGeoLayerGeometry).
 
-The following GeoLayer data are used in the examples[^2]. Note that these examples correspond to the automated tests. 
-[^2]: The examples assume that the GeoLayer has *already* been read into the GeoProcessor from a file. 
+The following GeoLayer data are used in the examples.
+The examples assume that the GeoLayer has *already* been read into the GeoProcessor from a file. 
 
 **<p style="text-align: left;">
 Example GeoLayer Data
@@ -74,13 +80,13 @@ Example GeoLayer Data
 
 |GeoLayer ID|CRS|File Size (if written out to GeoJSON)|
 | ---- | ---|---|
-|`SummitCounty`[^3]|EPSG:26913 (NAD83 UTM Zone 13N)|90 KB|
-[^3]: This example GeoLayer is from the `polygon_summit_co_nad83_utm_z13n.geojson` test data file.
+|`SummitCounty`|EPSG:26913 (NAD83 UTM Zone 13N)|90 KB|
+
+This example GeoLayer is from the `polygon_summit_co_nad83_utm_z13n.geojson` test data file.
 
 |`SummitCounty`|
 |-|
 |![Original_GeoLayer](images/Original_Polgyon.png)|
-
 
 ### Example 1: Simplify a GeoLayer (Small Tolerance)###
 
@@ -124,4 +130,5 @@ After running the command, the following GeoLayer IDs are registered within the 
 
 ## See Also ##
 
-- The GeoLayer is simplified using the QGIS processing algorithm  [`qgis:simplifygeometries`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vector_geometry_tools.html#simplify-geometries). 
+* The GeoLayer is simplified using the QGIS processing algorithm
+[`qgis:simplifygeometries`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vector_geometry_tools.html#simplify-geometries). 

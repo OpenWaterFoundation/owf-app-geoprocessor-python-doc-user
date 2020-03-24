@@ -12,15 +12,17 @@
 ## Overview ##
 
 The `StartRegressionTestResultsReport` command starts a report file (and optionally results table) to be written to as regression tests are run.
-The [CreateRegressionTestCommandFile](../CreateRegressionTestCommandFile/CreateRegressionTestCommandFile.md) command automatically
+The [`CreateRegressionTestCommandFile`](../CreateRegressionTestCommandFile/CreateRegressionTestCommandFile.md) command automatically
 inserts this command and is the preferred way to set up automated tests.
-The [RunCommands](../RunCommands/RunCommands.md) commands will write to this file (and optionally results table) if available.
+The [`RunCommands`](../RunCommands/RunCommands.md) commands will write to this file (and optionally results table) if available.
 
 ## Command Editor ##
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
+**<p style="text-align: center;">
 ![StartRegressionTestResultsReport](StartRegressionTestResultsReport.png)
+</p>**
 
 **<p style="text-align: center;">
 `StartRegressionTestResultsReport` Command Editor (<a href="../StartRegressionTestResultsReport.png">see full-size image</a>)
@@ -39,7 +41,7 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `OutputFile` | The regression results report file to write, as an absolute path or relative to the command file.  Can use `${Property}`. | None - must be specified. |
+| `OutputFile`<br>**required** | The regression results report file to write, as an absolute path or relative to the command file.  Can use `${Property}`. | None - must be specified. |
 
 ## Examples ##
 
@@ -49,6 +51,6 @@ Command Parameters
 
 ## See Also ##
 
-* [CreateRegressionTestCommandFile](../CreateRegressionTestCommandFile/CreateRegressionTestCommandFile.md) command
-* [RunCommands](../RunCommands/RunCommands.md) command
-* [WriteCommandSummaryToFile](../WriteCommandSummaryToFile/WriteCommandSummaryToFile.md) command
+* [`CreateRegressionTestCommandFile`](../CreateRegressionTestCommandFile/CreateRegressionTestCommandFile.md) command
+* [`RunCommands`](../RunCommands/RunCommands.md) command
+* [`WriteCommandSummaryToFile`](../WriteCommandSummaryToFile/WriteCommandSummaryToFile.md) command

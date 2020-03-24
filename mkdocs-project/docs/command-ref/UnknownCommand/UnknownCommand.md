@@ -11,13 +11,20 @@
 
 ## Overview ##
 
-The `UnknownCommand` is used to store commands that are not recognized as valid commands.
+The `UnknownCommand` is used for commands that are not recognized as valid commands.
+The command string can be edited but the processor will generate a warning when running.
 
 ## Command Editor ##
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
-**Need to implement UI.**
+**<p style="text-align: center;">
+![UnknownCommand](UnknownCommand.png)
+</p>**
+
+**<p style="text-align: center;">
+Unknown Command Editor (<a href="../UnknownCommand.png">see full-size image</a>)
+</p>**
 
 ## Command Syntax ##
 
@@ -31,4 +38,4 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [Blank](../Blank/Blank.md) command - used for commands that only contain whitespace
+* [Blank](../Blank/Blank.md) command - used for empty lines
