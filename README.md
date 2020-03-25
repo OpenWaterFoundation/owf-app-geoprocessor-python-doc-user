@@ -2,19 +2,20 @@
 
 This repository contains the [Open Water Foundation (OWF)](http://openwaterfoundation.org/) GeoProcessor software user documentation.
 The documentation is written for the layperson in order to encourage use of the OWF GeoProcessor.
+See the following resources:
 
-See the deployed [OWF / Learn GeoProcessor](http://learn.openwaterfoundation.org/owf-app-geoprocessor-python-doc-user/) documentation.
+* Published [GeoProcessor User Documentation](http://software.openwaterfoundation.org/geoprocessor/latest/doc-user/).
+* Published [GeoProcessor Developer Documentation](http://software.openwaterfoundation.org/geoprocessor/latest/doc-dev/).
+* [GeoProcessor download page](http://software.openwaterfoundation.org/geoprocessor/).
 
 ## GeoProcessor Software ##
 
 The OWF GeoProcessor software is a Python application and supporting modules that runs [QGIS](https://qgis.org) Python modules
-and other code to process spatial data.  The OWF GeoProcessor is under development and is being tested internally at OWF,
-with the expectation that it will be released publicly as an open source project in early 2019 and gain functionality and maturity in 2019.
-The priority of development is the testing framework, GeoProcessor for QGIS, and then GeoProcessor for ArcGIS Pro,
-due to project demands and resource limitations.
+and other code to process spatial data.  The OWF GeoProcessor is under development and is being tested internally at OWF
+on multiple projects.
 The OWF GeoProcessor is designed to provide the following functionality:
 
-1. Command-based workflow language similar to [TSTool Software](http://openwaterfoundation.org/software-tools/tstool),
+1. Command-based workflow language similar to [TSTool Software](http://software.openwaterfoundation.org),
 but focusing on processing spatial data layers.
 2. General commands similar to TSTool, such as file manipulation, logic controls such as `For` and `If` commands,
 and support for processor properties to allow dynamic scripting.
@@ -22,10 +23,11 @@ and support for processor properties to allow dynamic scripting.
 and coordinate system conversion.
 	1. Leverage QGIS functionality.
 	2. Commands beyond what QGIS provides.
-3. Built-in testing framework, which is used to run functional tests, suitable for software developers and also
+4. Commands to automate creation of map configuration files, which allow developing web applications that use the maps.
+5. Built-in testing framework, which is used to run functional tests, suitable for software developers and also
 non-programmers who want to validate processing workflows.
-4. Multiple run modes including batch, command shell interpreter, user interface, HTTP server.
-5. Integration with other tools to leverage the strengths of those tools.
+6. Multiple run modes including batch, command shell interpreter, user interface, HTTP server.
+7. Integration with other tools such as TSTool, R, GDAL, and ORG, to leverage the strengths of those tools.
 
 The goal is to allow software users to install QGIS, install the OWF GeoProcessor software,
 and begin automating simple to complex geoprocessing tasks.
@@ -85,7 +87,7 @@ provide in-line table of contents on pages, where appropriate, to facilitate rev
 
 ## License ##
 
-Copyright by the Open Water Foundation (2017-2019).
+Copyright by the Open Water Foundation (2017-2020).
 The documentation is licensed under the
 [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
@@ -103,19 +105,6 @@ Contribute to the documentation as follows:
 
 This repository is maintained by the [Open Water Foundation](http://openwaterfoundation.org/).
 
-* Steve Malers, Open Water Foundation (@smalers)
-* Justin Rentie, Open Water Foundation (@jurentie)
-
-## Contributors ##
-
-Contributors in addition to the maintainers include:
-
-* Emma Giles (@egiles16)
-
 ## Release Notes ##
 
-The following release notes indicate the update history for documentation, with GitHub repository issue indicated, if applicable.
-
-* 2018-12-26 - significant updates based on full review
-* 2018-01-08 - [1] add documentation for `CompareFiles` command.
-* 2018-01-02 - Initial content.
+See the [software release notes](http://software.openwaterfoundation.org/geoprocessor/) for appropriate software version.
