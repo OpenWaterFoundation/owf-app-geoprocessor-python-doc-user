@@ -2,6 +2,7 @@
   "geoMapProjectId": "TestGeoMapProject",
   "name": "TestGeoMapProject",
   "description": "Test geomap project.",
+  "projectType": "SingleMap",
   "properties": {
     "effectiveDateTime": "2020-01-01T00:00",
     "author": "me",

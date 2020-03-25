@@ -9,8 +9,10 @@
 
 ## Changes in Version 1.3.0 ##
 
-* ![bug](bug.png) [1.3.0] Fix so that run status for comments is `SUCCESS`.
+* ![bug](bug.png) [1.3.0] Fix issues where command status was not displaying properly in
+areas to the left and right of the main command list.
 * ![change](change.png) [1.3.0] Significant overall cleanup of code to implement more robust design.
+Error handling is more robust.
 * ![change](change.png) [1.3.0] Improve command editor user interactions.
 * ![change](change.png) [1.3.0] Split developer documentation out of main repository.
 See published [Developer Documentation](http://software.openwaterfoundation.org/geoprocessor/latest/doc-dev/).
@@ -18,8 +20,10 @@ See published [Developer Documentation](http://software.openwaterfoundation.org/
 command to more correctly reflect line difference count,
 and add `LineDiffCountProperty` and `FileDiffProperty` parameters.
 * ![new](new.png) [1.3.0] Enable cut/copy/paste functionality for editing the command list.
-* ![new](new.png) [1.3.0] Enable the command editor for the [empty lines](../command-ref/Blank/Blank.md) 
-* ![new](new.png) [1.3.0] Add [CreateGeoMap](../command-ref/CreateGeoMap/CreateGeoMap.md) command to create map configurations.
+* ![new](new.png) [1.3.0] Enable the command editor for the [empty lines](../command-ref/Blank/Blank.md).
+* ![new](new.png) [1.3.0] Add [CreateGeoMap](../command-ref/CreateGeoMap/CreateGeoMap.md),
+[CreateGeoMapProject](../command-ref/CreateGeoMapProject/CreateGeoMapProject.md), and related commands
+to automate creation of map configurations.
 * ![new](new.png) [1.3.0] Enable the command editor for the [unknown commands](../command-ref/UnknownCommand/UnknownCommand.md) 
 
 ## Changes in Version 1.2.0 ##

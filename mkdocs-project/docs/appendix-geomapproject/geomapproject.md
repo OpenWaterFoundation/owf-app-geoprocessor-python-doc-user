@@ -31,14 +31,18 @@ GeoProcessor commands available in the ***Map Processing*** commands menu automa
 so that maps can be recreated and scaled to various locations.
 
 It is envisioned that GeoMapProjects will be used to define map configurations for the following cases,
-which will be implemented over time:
+which will be implemented over time, as described in the following table.
+
+**<p style="text-align: center;">
+GeoMapProject Project Types
+</p>**
 
 | **GeoMapProject Type** | **Description** |
 | -- | -- |
-| `Dashboard` | An application that has several maps, typically accessible by menus or other user interface components. |
-| `Grid` | A grid (matrix) of maps, for example showing different times. |
-| `SingleMap` | A single [GeoMap](#geomap) is included in the [GeoMapProject](#geomapproject), for typical "single page web applications" where a single map display dominates the application.  In this case the [GeoMapProject](#geomapproject) `geoMaps` list can onl contain one [GeoMap](#geomap). |
-| `Story` | A sequence of maps that are referenced in a story. |
+| `Dashboard` | An application that has several maps, typically accessible by menus or other user interface components.  The [Poudre Information Platform](https://github.com/OpenWaterFoundation/owf-app-poudre-dashboard-ng) is an example. The application would have an additional configuration file to indicate how maps are used in the dashboard. |
+| `Grid` | A grid (matrix) of maps, for example showing different times.  For example, see the [California Drought visualization](https://www.latimes.com/local/lanow/la-me-g-california-drought-map-htmlstory.html).  Additional layout properties may be needed to define how the grid is laid out.  Because of the resources needed for each map, it may make sense to initially display the maps as a grid of images and then have links to maps similar to a dashboard. |
+| `SingleMap` | A single [GeoMap](#geomap) is included in the [GeoMapProject](#geomapproject), for typical "single page web applications" where a single map display dominates the application.  In this case the [GeoMapProject](#geomapproject) `geoMaps` list can onl contain one [GeoMap](#geomap). For example, the [CDSS SNODAS Tools](http://snodas.cdss.state.co.us/app/index.html) is an example of a single map application (in this case it does not use the new GeoMapProject design). |
+| `Story` | A sequence of maps that are referenced in a story. For example, see [stories that OWF has created](http://stories.openwaterfoundation.org/). |
 
 A GeoMapProject is created using the
 [`CreateGeoMapProject`](../command-ref/CreateGeoMapProject/CreateGeoMapProject) command
@@ -66,10 +70,14 @@ which can help scale a prototype map to more locations.
 
 The following are examples of GeoViewProject files.
 
-| **Example** | **Description** |
-| -- | -- |
-| [Basic Example](resources/test-CreateGeoMap-out.json) | Output of [automated test](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ListFiles) for [`CreateGeoMapProject`](../command-ref/CreateGeoMapProject/CreateGeoMapProject) command. |
-| | More examples will be added in the future, with links to workflows that created the GeoMapProject files. |
+**<p style="text-align: center;">
+GeoMapProject Example JSON Files
+</p>**
+
+| **Example** | **Project Type** | **Description** |
+| -- | -- | -- |
+| [Basic Example](resources/test-CreateGeoMap-out.json) | `Dashboard` | Output of [automated test](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ListFiles) for [`CreateGeoMapProject`](../command-ref/CreateGeoMapProject/CreateGeoMapProject) command. |
+| | | More examples will be added in the future, with links to workflows that created the GeoMapProject files. |
 
 ## Specification ##
 
