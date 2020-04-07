@@ -14,20 +14,20 @@ A summary table is provided, with links to details for major versions.
 
 ## Version Numbering Convention ##
 
-GeoProcessor versioning generally adheres to the following pattern.
+GeoProcessor versioning generally adheres to the following pattern, consistent with [Semantic Versioning](https://semver.org/).
 The version may be incremented in source code but does not become official until a public software release is made.
 
 ```
-Major.Minor.Maintenance
+Major.Minor.Patch.Modifier
 ```
 where:
 
 * `Major` is a number indicating a major change to the software,
-such as underlying platform or change to the overall design
-* `Minor` is a number indicating a minor change to the software, such as a new feature
-* `Maintenance` is a number indicating a maintenance release,
-for example to fix a bug in an existing component
-* The version may also be followed by another indicator such as "beta" to indicate a beta release
+such as underlying platform or change to the overall design.
+* `Minor` is a number indicating a minor change to the software, such as a new feature.
+* `Patch` (or maintenance) is a number indicating a maintenance release,
+for example to fix a bug in an existing component without adding significant new functionality.
+* `Modifier` is a modified such as "dev" to indicate a development version that is undergoing changes.
 
 ## Issue Legend ##
 
@@ -57,11 +57,12 @@ GeoProcessor Version History Summary (most current at top)
 
 |**GeoProcessor Version(s)**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|**Summary of Major Changes in Version**|**Release Date**|
 |--|--|--|
+|1.3.0|Many enhancements and fixes, currently ongoing as a "dev" release. | |
 |1.2.0|Fix Windows installer bugs, enable comment editing, various cleanup.|2019-01-10|
 |1.1.0|Add Windows installer, various cleanup.|          |
 |1.0.0|Initial release with core geoprocessing functionality and testing framework.|          |
 
 ## Known Limitations ##
 
-* ![limitation](limitation.png) The GeoProcessor features are initially focusing on vector spatial data.
-Raster layer features are envisioned for the future and will be implemented as resources allow.
+* ![limitation](limitation.png) The GeoProcessor features initially focused on vector spatial data.
+Raster layer features are being added.

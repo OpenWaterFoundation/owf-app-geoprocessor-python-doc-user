@@ -69,30 +69,32 @@ This allows the software and workflows to be tested.
 
 The GeoProcessor can be run in batch mode.
 However, for many users, the GeoProcessor user interface (UI) will be the primary way to run workflows.
-Command files may be created and maintained using the UI, and subsequently run in batch mode.
+Command files may be created and maintained using the UI, and subsequently run in batch mode if needed.
 The following image illustrates the main features of the UI.
 
-![ui-example](images/ui-example.png)
-
 **<p style="text-align: center;">
-GeoProcessor User Interface (<a href="../images/ui-example.png">see full-size image</a>)
+![GeoProcessor-main](images/GeoProcessor-main.png)
 </p>**
 
-The following summarize UI features:
+**<p style="text-align: center;">
+GeoProcessor User Interface (<a href="../images/GeoProcessor-main.png">see full-size image</a>)
+</p>**
+
+The following summarizes UI features:
 
 * Menus at the top allow previously saved command files to be read,
-and new commands can be created.
-* The ***Commands*** area displays the current command file.
+and new command files can be created.
+* The ***Commands*** area displays the current command file:
 	+ The window title indicates the name of the command file and whether it has been modified.
 	+ Labels above the ***Commands*** area indicate the number of commands and count of commands
 	with failures and warnings.
-	+ Commands can be edited by double-clicking on a command or using the right-click popup menu.
+	+ Commands can be edited by double-clicking on a command or using the right-click popup ***Edit*** menu.
 	Command editor dialogs are provided to edit each command.
-	At a minimum, command editors show a list of parameters for the command
+	Most command editors show a list of parameters for the command
 	and some commands have more detailed editors.
 	+ All or selected commands can be run using the ***Run Selected Commands*** and ***Run All Commands*** buttons
-	at the end of the ***Commands*** area.
-	+ Commands are provided to automate many tasks.
+	below of the ***Commands*** area.
+	+ The ***Commands*** menus provide many commands to automate processing spatial data, tables, and other data.
 * Results are displayed in the ***Results*** area, with output shown for each major output type.
 	+ GeoLayers can be shown on a map and the layer's attribute table (properties for each layer feature) can be displayed.
 	+ Output files can be viewed.
@@ -108,6 +110,7 @@ The GeoProcessor provides access to spatial data processing tools via commands.
 Each line in a command file corresponds to a command.
 The commands are saved in a text command file, which can be edited and resaved.
 A command file can be run multiple times to perform the same task on new data.
+By default, command files use `.gp` file extension.
 
 Each command performs a unit of work and by design the functionality of each command is limited.
 This allows commands to be used in various combinations to achieve maximum flexibility.
@@ -118,7 +121,8 @@ A typical workflow is as follows:
 
 1. Read GeoLayers from one or more sources.
 2. Perform geospatial processing and/or analysis on the GeoLayers.
-3. Output modified versions of the GeoLayers, and/or other representations of data such as analysis results.
+3. Output modified versions of the GeoLayers, and/or other information products.
+4. Optionally, automate creation of map configuration files, for use in other applications.
 
 The above simple workflow can be scaled to process large amounts of data.
 
@@ -127,12 +131,21 @@ For example, the following workflow, taken from a
 illustrates how to clip a spatial data layer (GeoLayer) to a boundary:
 
 ```
+StartLog(LogFile="results/test-ClipGeoLayer-linesAsInput.gp.log")
+# Test clipping a lines geojson layer by a polygon geojson layer
+# Remove the result line geojson files from the last run of the test, if existing
+RemoveFile(SourceFile="results/test-ClipGeoLayer-linesAsInput-out.geojson",IfSourceFileNotFound="Ignore")
 # Read the lines geojson (input GeoLayer) and the polygon geojson (clipping GeoLayer)
-ReadGeoLayerFromGeoJSON(SpatialDataFile="data/input_lines.geojson")
-ReadGeoLayerFromGeoJSON(SpatialDataFile="data/clipping_polygon.geojson")
-# Clip the lines GeoLayerID by the clippling polygon 
-ClipGeoLayer(InputGeoLayerID="input_lines", ClippingGeoLayerID="clipping_polygon")
-WriteGeoLayerToGeoJSON(GeoLayerID="input_lines_clippedBy_clipping_polygon", OutputFile="results/test-ClipGeoLayer-linesAsInput-out")
+ReadGeoLayerFromGeoJSON(InputFile="data/input_lines.geojson",GeoLayerID="input_lines")
+ReadGeoLayerFromGeoJSON(InputFile="data/clipping_polygon.geojson",GeoLayerID="clipping_polygon")
+# Clip the lines GeoLayerID by the clippling polygon
+ClipGeoLayer(InputGeoLayerID="input_lines",ClippingGeoLayerID="clipping_polygon",OutputGeoLayerID="input_lines_clippedBy_clipping_polygon")
+# Uncomment the next line to reproduce the expected results
+# WriteGeoLayerToGeoJSON(GeoLayerID="input_lines_clippedBy_clipping_polygon",OutputFile="expected-results/test-ClipGeoLayer-linesAsInput-out.geojson")
+# Write the line and polygon Geolayers to a GeoJSON file
+WriteGeoLayerToGeoJSON(GeoLayerID="input_lines_clippedBy_clipping_polygon",OutputFile="results/test-ClipGeoLayer-linesAsInput-out.geojson")
+# Compare the results to the expected results
+CompareFiles(InputFile1="results/test-ClipGeoLayer-linesAsInput-out.geojson",InputFile2="expected-results/test-ClipGeoLayer-linesAsInput-out.geojson",IfDifferent="Warn")
 ```
 
 The syntax of commands is simple and flexible, which allows new commands to be added,
@@ -143,6 +156,7 @@ and new parameters to be added to existing commands.
 The GeoProcessor reads spatial data from multiple sources (e.g., files, geodatabases, web services) and
 converts the spatial data into in-memory representations.
 See the [Spatial Data Format Reference](../spatial-data-format-ref/overview.md) for more information about supported data sources.
+Support for additional data sources and formats will be added over time.
 
 ### GeoLayer ###
 
@@ -167,16 +181,20 @@ Different commands and tool may operate on in-memory representation or files.
 ## GeoMap ##
 
 A GeoMap is a configurations for a map, to be displayed in the GeoProcessor and web applications.
-See the [GeoMapPropject section](#geomapproject) for overview of maps.
-Each
+See the [GeoMapProject section](#geomapproject) for overview of maps.
+Each GeoMapProject can contain one or more maps, which each contain one or more groups of GeoLayerView,
+which include GeoLayer and symbol information.
 
 ## GeoMapProject ##
 
 A GeoMapProject defines configurations for maps, to be displayed in the GeoProcessor and web applications.
 It is conceptually equivalent to QGIS (`qgs`) and ArcGIS map projects (`mxd`) file. 
-However, the GeoProcess GeoMapProject is a light-weight JSON file that contains relatively minimal configuration information.
-It is envisioned that GeoMapProjects will be used to define map configurations for the following cases,
-which will be implemented over time:
+However, the GeoProcessor GeoMapProject is a light-weight JSON file that contains relatively minimal configuration information.
+GeoMapProjects are used to define map configurations for the following cases, which support various applications.
+
+**<p style="text-align: center;">
+GeoMapProject Types
+</p>**
 
 | **GeoMapProject Type** | **Description** |
 | -- | -- |
@@ -186,9 +204,9 @@ which will be implemented over time:
 | `Story` | A sequence of maps that are referenced in a story. |
 
 A GeoMapProject is created using the
-[`CreateGeoMapProject`](../command-ref/CreateGeoMapProject/CreateGeoMapProject) command
+[`CreateGeoMapProject`](../command-ref/CreateGeoMapProject/CreateGeoMapProject.md) command
 and related commands and is written to a file using the 
-[`WriteGeoMapProjectToJSON`](../command-ref/WriteGeoMapProjectToJSON/WriteGeoMapProjectToJSON) command.
+[`WriteGeoMapProjectToJSON`](../command-ref/WriteGeoMapProjectToJSON/WriteGeoMapProjectToJSON.md) command.
 
 The contents of the command are consistent with the top-level `GeoMapProject` instance and hierarchy of objects, as follows,
 which are written using the standard Python `json` package.

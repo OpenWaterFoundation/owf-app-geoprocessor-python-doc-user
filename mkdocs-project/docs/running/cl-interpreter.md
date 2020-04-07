@@ -7,12 +7,18 @@ The following are considerations specific to this variant.
 * When the interpreter is run, the prompt `gp> ` is shown on the command line until the interpreter is exited.
 * The interpreter is the default run mode when `gp` is run without `--ui` or `--commands commandFile`.
 
+Additional functionality will be added over time.
+
 The following interpreter commands are recognized:
+
+**<p style="text-align: center;">
+GeoProcessor Interpreter Commands
+</p>**
 
 | **Interpreter Command** | **Type**    | **Description** |
 | ----------------------- | ----------- | --------------- |
 | `exit`                  | Control     | Exit the interpreter. |
 | `help`                  | Information | Print interpreter commands that are available. |
 | `run command-file.gp`   | Run mode    | Run a command file. |
-| `printenv`              | Information | Print information including the working folder. |
+| `printenv`              | Information | Print information including the working folder, useful for troubleshooting. |
 | `ui`                    | Run mode    | Start the user interface. |

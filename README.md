@@ -54,7 +54,7 @@ mkdocs-project/       Typical MkDocs project for this documentation.
 ## Development Environment ##
 
 The development environment for contributing to this project requires installation of Python, MkDocs, and Material MkDocs theme.
-Python 3 has been used for development.
+Python 3 is used for development.
 See the [OWF / Learn MkDocs](http://learn.openwaterfoundation.org/owf-learn-mkdocs/)
 documentation for information about installing these tools.
 
@@ -91,7 +91,7 @@ Copyright by the Open Water Foundation (2017-2020).
 The documentation is licensed under the
 [Creative Commons Attribution 4.0 International License](https://creativecommons.org/licenses/by/4.0/).
 
-The GeoProcessor software is licensed using the GPL v3 (or later) license
+The GeoProcessor software is licensed using the GPL v3 (or later) license.
 See the [GeoProcessor software repository](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python) for more information.
 
 ## Contributing ##
@@ -107,4 +107,4 @@ This repository is maintained by the [Open Water Foundation](http://openwaterfou
 
 ## Release Notes ##
 
-See the [software release notes](http://software.openwaterfoundation.org/geoprocessor/) for appropriate software version.
+See the GeoProcessor [software release notes](http://software.openwaterfoundation.org/geoprocessor/) for appropriate software version.

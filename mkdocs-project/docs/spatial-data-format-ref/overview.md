@@ -9,6 +9,16 @@ More detailed information is available for each format.
 Support for additional formats will be added over time and some commands may support additional
 formats due to underlying software features.
 
+The GeoProcessor is also able to run command line software such as GDAL and OGR programs,
+which support many formats. See:
+
+* [`RunGdalProgram`](../command-ref/RunOgrProgram/RunOgrProgram.md)
+* [`RunOgrProgram`](../command-ref/RunOgrProgram/RunOgrProgram.md)
+
+**<p style="text-align: center;">
+GeoProcessor Supported Spatial Data Formats
+</p>**
+
 | **Format Name**                                                       | **Type**        | **Comment** |
 | --------------------------------------------------------------------- | --------------- | ----------- |
 | [(Esri) File Geodatabase](EsriFileGeodatabase/EsriFileGeodatabase.md) | Custom database | |

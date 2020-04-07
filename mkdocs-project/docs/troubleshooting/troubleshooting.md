@@ -1,8 +1,9 @@
 # GeoProcessor / Troubleshooting #
 
-The GeoProcessor is a Python application that uses Python modules:
+The GeoProcessor is a Python application that uses Python modules, including:
 
-* GeoProcessor components such as commands
+* GeoProcessor UI that uses PyQt
+* GeoProcessor commands and processing libraries
 * software that is part of the underlying GIS software (QGIS and ArcGIS Pro, depending on GeoProcessor version)
 * third-party Python packages
 
@@ -12,6 +13,7 @@ The following topics are useful for troubleshooting software issues:
 * [Log File](#log-file)
 * [Command Status/Log](#command-statuslog)
 * [Specific Issues](#specific-issues)
+* [Software Startup Issues](#software-startup-issues)
 * [Repository Issue Tracking](#repository-issue-tracking)
 
 --------------------
@@ -22,18 +24,20 @@ The GeoProcessor uses the Python logging features to create a log file that is h
 However, although log files may be helpful to software developers, they can be difficult for others to understand.
 The log file exists in the following locations:
 
-* User's home folder GeoProcessor files, for example:
-	+ Windows: `C:\Users\user\.owf-gp\log\gp_user.log`
-	+ Linux:  `/home/user/.owf-gp/log/gp_user.log`
-	+ Cygwin:  `/cygdrive/C/Users/user/.owf-gp/log/gp_user.log` (different files from Windows)
-	+ Git Bash (MinGW):  `/c/Users/user/.owf-gp/log/gp_user.log` (same files as Windows)
+* Startup log file in user's home folder GeoProcessor files, for example (`1` indicates the GeoProcessor major version):
+	+ Windows: `C:\Users\user\.owf-gp\1\logs\gp_user.log`
+	+ Linux:  `/home/user/.owf-gp/1/logs/gp_user.log`
+	+ Cygwin:  `/cygdrive/C/Users/user/.owf-gp/1/logs/gp_user.log` (different files from Windows)
+	+ Git Bash (MinGW):  `/c/Users/user/.owf-gp/1/logs/gp_user.log` (same files as Windows)
 * File specified by the GeoProcessor [StartLog](../command-ref/StartLog/StartLog.md) command.
+
+The log files can be viewed using the ***Tools / View Log File*** and ***Tools / View Startup Log File*** menu items.
 
 The log file contains a sequential record of log messages for application startup followed by
 output from running the commands, as shown in the following example.
 The first part of the line indicates the message type, which can be one of the following,
 shown in increasing severity and therefore decreasing frequency:  `DEBUG`, `INFO`, `WARNING`, `ERROR`, and `CRITICAL`.
-In other words, one should expect very few `CRITICAL` messages.  Any message of level `WARNING`, `ERROR`, or `CRITICAL`
+Typically, one should expect very few or no `CRITICAL` messages.  Any message of level `WARNING`, `ERROR`, or `CRITICAL`
 should be dealt with because they can lead to a proliferation of problems in later commands.
 
 ```txt
@@ -66,7 +70,8 @@ INFO|geoprocessor|gp line 190|ProgramVersionNumber = None
 The GeoProcessor UI allows the log file to be displayed using the ***Tools / View Log File*** menu.
 
 Log files created by the [StartLog](../command-ref/StartLog/StartLog.md) command
-are also typically listed in ***Results / Output Files***.
+are also typically listed in ***Results / Output Files*** in the
+[GeoProcessor test repository](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test).
 
 ## Command Status/Log ##
 
@@ -74,7 +79,9 @@ The GeoProcessor user interface displays command-specific warning messages,
 which indicate problems that need to be resolved.
 A command flagged with red X or yellow warning symbol can be reviewed to determine problems.
 
+**<p style="text-align: center;">
 ![ui-warnings](images/ui-with-warnings.png)
+</p>**
 
 **<p style="text-align: center;">
 GeoProcessor User Interface showing Warning and Failure Indicators (<a href="../images/ui-with-warnings.png">see full-size image</a>)
@@ -88,7 +95,9 @@ Discovery issues are not currently used but may be implemented in the future to 
 mode is used to generation information used by other command editors.
 Run issues are generated when a command is run.
 
+**<p style="text-align: center;">
 ![ui-warnings](images/command-status.png)
+</p>**
 
 **<p style="text-align: center;">
 Command Status Log Summary (<a href="../images/command-status.png">see full-size image</a>)
@@ -96,11 +105,19 @@ Command Status Log Summary (<a href="../images/command-status.png">see full-size
 
 ## Specific Issues ##
 
-Insert here troubleshooting information for specific known issues as such issues are identified.
+Information will be inserted here for specific known issues as such issues are identified.
+
+## Software Startup Issues ##
+
+Software startup issues may result from unforseen bugs or software component version conflicts.
+Contact support via the repository issues page to report issues.
+
+* See the [GeoProcessor repository issues page](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python/issues)
+* See the [GeoProcessor Developer Documentation Troubleshooting](http://software.openwaterfoundation.org/geoprocessor/latest/doc-dev/troubleshooting/troubleshooting/) documentation
 
 ## Repository Issue Tracking ##
 
 An issue may be due to a software bug or planned enhancement.
 See the [GeoProcessor GitHub repository issues](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python/issues)
 for a list of know issues.
-New issues can be added to alert developers.
+New bugs and feature requests can be added to alert developers.

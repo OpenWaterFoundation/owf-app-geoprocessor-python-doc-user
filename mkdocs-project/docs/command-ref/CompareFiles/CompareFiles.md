@@ -29,6 +29,10 @@ A warning can be generated if a difference is detected or if no differences are 
 ## Command Editor ##
 
 The following dialog is used to edit the command and illustrates the command syntax.
+If both input files exist and the `C:\Program Files\KDiff3\kdiff3.exe` program exists,
+the ***View Diff*** button will be enabled to display a visual difference.
+The KDiff3 software is one option for a visual difference program.
+In the future, a `DiffProgram` property will be used with GeoProcessor configuration file (future feature).
 
 **<p style="text-align: center;">
 ![CompareFiles](CompareFiles.png)
