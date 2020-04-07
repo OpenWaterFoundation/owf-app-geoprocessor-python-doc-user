@@ -1,16 +1,16 @@
 # GeoProcessor / Best Practices / GeoLayer Identifiers #
 
-This documentation provides best practices for GeoLayer identifiers.
+This documentation provides best practices for GeoLayer identifiers (GeoLayerIDs).
 
 ## Overview ##
 
-The main function of the GeoProcessor is to process [GeoLayers](../introduction/introduction.md#geolayer):
+One of the main functions of the GeoProcessor is to process [GeoLayers](../introduction/introduction.md#geolayer):
 
 1. The GeoProcessor reads in GeoLayers.
 2. The GeoProcessor manipulates GeoLayers. 
 3. The GeoProcessor writes out GeoLayers. 
 
-Each GeoLayer is assigned a unique identifier (the GeoLayer ID) and commands that process GeoLayers
+Each GeoLayer is assigned a unique identifier (the GeoLayerID) and commands that process GeoLayers
 typically have a `GeoLayerID` parameter (or variations if multiple layers are processed).
 The `GeoLayerID` is the means by which a command communicates with the GeoProcessor to retrieve a GeoLayer to manipulate.
 
@@ -43,6 +43,9 @@ appropriate if different layers would otherwise have the same identifier
 
 The above parts can be used in combination as appropriate, with parts omitted if not relevant or redundant.
 Dashes are used instead of spaces and uppercase/lowercase can be used for readability.
+
+**Additional variants on GeoLayerID will be added in the future as new GeoProcessor features are added,
+for example handling time series of layers.**
 
 ### Examples ###
 

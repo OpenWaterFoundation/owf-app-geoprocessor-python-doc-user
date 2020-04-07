@@ -9,7 +9,7 @@
 ## Overview ##
 
 The GeoProcessor includes a testing framework, which is used to test the GeoProcessor itself
-(see the [Developer Documentation](http://learn.openwaterfoundation.org/owf-app-geoprocessor-python-doc-dev/dev-tasks/dev-tasks#testing))
+(see the [Developer Documentation](http://software.openwaterfoundation.org/geoprocessor/latest/doc-dev/dev-tasks/testing/))
 by running tests in the [test repository](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test).
 The test framework can also be used to automate testing of command file workflows,
 for example to validate other software and processes.
@@ -29,6 +29,10 @@ The normal GeoProcessor run programs (`gp.bat` and `gpui.bat` on Windows, and `g
 QGIS or ArcGIS Proo software is installed,
 and provide full access to geoprocessing commands.
 However, the testing framework included in the GeoProcessor is also useful in stand-alone mode without relying on GIS software.
+
+**The standalone testing framework (`gptest`) is currently not under active development.  Use the normal GeoProcessor for testing.
+The `gptest` variable may be removed in the future.**
+
 The [installation instructions](../appendix-install/install.md) explain how to install the test framework version,
 which installs testing framework run programs
 (`gptest.bat` and `gptestui` on Windows, and `gptest` and `gptestui` on Linux).
@@ -37,11 +41,12 @@ the GoeProcessor software from other Python installations on the system.
 
 ## Running the Testing Framework ##
 
+**The standalone testing framework (`gptest`) is currently not under active development.  Use the normal GeoProcessor for testing.
+The `gptest` variable may be removed in the future.**
+
 The GeoProcessor testing framework is run using:
 
 * Command line:  `gptest.bat` on ![windows](../images/windows-32.png) Windows and `gptest` on ![linux](../images/linux-32.png) Linux
 * User interface (UI):  `gptestui.bat` on ![windows](../images/windows-32.png) Windows and `gptestui` on ![linux](../images/linux-32.png) Linux
 
 The above programs are located in the `scripts` folder of the GeoProcessor virtual environment.
-
-**Need to update this section if the installer implements menus or other features to streamline starting the software.**

@@ -11,10 +11,13 @@
 
 * ![bug](bug.png) [1.3.0] Fix issues where command status was not displaying properly in
 areas to the left and right of the main command list.
+* ![bug](bug.png) [1.3.0] Fix issues caused by the GeoProcessor run scripts not handling QGIS long term release.
+The runs scripts now handle OSGeo4W and standalone QGIS installers and detect long term release folders
+for Python modules.  The QGIS release is also checked when running in development and deployed environments.
 * ![change](change.png) [1.3.0] Significant overall cleanup of code to implement more robust design.
 Error handling is more robust.
 * ![change](change.png) [1.3.0] Improve command editor user interactions.
-* ![change](change.png) [1.3.0] Split developer documentation out of main repository.
+* ![change](change.png) [1.3.0] Split developer documentation out of the main code repository.
 See published [Developer Documentation](http://software.openwaterfoundation.org/geoprocessor/latest/doc-dev/).
 * ![change](change.png) [1.3.0] Update the [`CompareFiles`](../command-ref/CompareFiles/CompareFiles.md)
 command to more correctly reflect line difference count,
