@@ -48,7 +48,8 @@ Command Parameters
 | `GeoMapID` <br> **required** | The ID of the existing GeoMap. | None - must be specified. |
 | `GeoLayerViewGroupID` <br> **required** | The ID of the existing GeoLayerViewGroup. | None - must be specified. |
 | `GeoLayerViewID` <br> **required** | The ID of the existing GeoLayerView. | None - must be specified. |
-| `Name` | Name of the new GeoLayerViewGroup, used to label the group in the map legend. | None - must be specified. |
+| `Name` | Name of the symbol, to help with managing symbols. | |
+| `Description` | Description of the symbol, to help with managing symbols. | |
 | `Properties` | Properties for the symbol using syntax `Property1:Value1,Property2,'Value 2'`.  Single quotes are used around values when the value contains special characters such as comma and spaces.  See the [GeoMapProject](../../appendix-geomapproject/geomapproject.md) documentation a list of properties. |  |
 
 ## Examples ##
