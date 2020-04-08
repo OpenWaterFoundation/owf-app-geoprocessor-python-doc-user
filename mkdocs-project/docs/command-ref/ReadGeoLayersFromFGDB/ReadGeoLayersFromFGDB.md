@@ -37,17 +37,20 @@ ReadGeoLayerFromFGDB(Parameter="Value",...)
 Command Parameters
 </p>**
 
-| **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| **Default** |
+| **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;| **Default** |
 | --------------|-----------------|----------------- |
-| `SpatialDataFolder` <br>**required**| The file geodatabse to read (must end in `.gdb`). | None - must be specified. |
-| `ReadOnlyOneFeatureClass` <br>**required**| Boolean <br><br> If `TRUE`, only **one** feature class will be read as a GeoLayer. Must specify a valid feature class name. <br> If `FALSE`, **one or more** feature classes will be read as GeoLayers. Can specify the `Subset_Pattern` to select which feature classes to read.|
-|`IfGeoLayerIDExists` | The action that occurs if the `GeoLayerID` already exists within the GeoProcessor:<ul><li>`Replace` - The existing GeoLayer within the GeoProcessor is replaced with the new GeoLayer. No warning is logged.</li><li>`ReplaceAndWarn` - The existing GeoLayer within the GeoProcessor is replaced with the new GeoLayer. A warning is logged.</li><li>`Warn` - The new GeoLayer is not created. A warning is logged.</li><li>`Fail` - The new GeoLayer is not created. A fail message is logged.</li></ul>| `Replace` |
+| `InputFolder`<br>**required** | The file geodatabase to read (must end in `.gdb`). | None - must be specified. |
+| `ReadOnlyOneFeatureClass`<br>**required** | Boolean <br><br> If `TRUE`, only **one** feature class will be read as a GeoLayer. Must specify a valid feature class name. <br> If `FALSE`, **one or more** feature classes will be read as GeoLayers. Can specify the `Subset_Pattern` to select which feature classes to read.|
+| `IfGeoLayerIDExists` | The action that occurs if the `GeoLayerID` already exists within the GeoProcessor:<ul><li>`Replace` - The existing GeoLayer within the GeoProcessor is replaced with the new GeoLayer. No warning is logged.</li><li>`ReplaceAndWarn` - The existing GeoLayer within the GeoProcessor is replaced with the new GeoLayer. A warning is logged.</li><li>`Warn` - The new GeoLayer is not created. A warning is logged.</li><li>`Fail` - The new GeoLayer is not created. A fail message is logged.</li></ul>| `Replace` |
 ||**IF** `ReadOnlyOneFeatureClass` **is TRUE ...**||
-| `Feature Class` <br>**required**| The name of the feature class within the file geodatabase to read. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
-| `GeoLayerID`  <br>**required**| A GeoLayer identifier. [Formatting characters](../../introduction/introduction.md#geolayer-property-format-specifiers) and [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) are recognized. Refer to [documentation](../../best-practices/geolayer-identifiers.md) for best practices on naming GeoLayer identifiers.| None - must be specified. |
+| `Feature Class` <br>**required** | The name of the feature class within the file geodatabase to read. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
+| `GeoLayerID`  <br>**required** | A GeoLayer identifier. [Formatting characters](../../introduction/introduction.md#geolayer-property-format-specifiers) and [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) are recognized. Refer to [documentation](../../best-practices/geolayer-identifiers.md) for best practices on naming GeoLayer identifiers.| None - must be specified. |
 ||**IF** `ReadOnlyOneFeatureClass` **is FALSE ...**||
 | `GeoLayerID_prefix` | A GeoLayer identifier prefix. <br><br> GeoLayers read from a file geodatabase have an identifier in the `GeoLayerID_prefix_FeatureClass` format.| No prefix is used. The GeoLayerID is the name of the feature class. |
-| `Subset_Pattern` | The [glob-style](https://en.wikipedia.org/wiki/Glob_(programming)) pattern (e.g., `CO_*` or `*_[MC]O`) of feature classes to read from the file geodatabase.| No pattern is used. All feature classes within the file geodatabase are read.|
+| `Subset_Pattern` | The [glob-style](https://en.wikipedia.org/wiki/Glob_(programming)) pattern (e.g., `CO_*` or `*_[MC]O`) of feature classes to read from the file geodatabase.| No pattern is used. All feature classes within the file geodatabase are read. |
+| `Name` | Name of the output GeoLayer. | Feature class name. |
+| `Description` | Description for the output GeoLayer. | |
+| `Properties` | Additional properties to assign to the GeoLayer, using format: `prop1:value1,prop2:'string with space'`.  Can use `${Property}` notation.  | No additional properties are assigned. |
 
 ## Examples ##
 
@@ -62,7 +65,7 @@ ExampleFolder
 
 |Filename|File Type|
 | ---- | ----|
-| ExampleFileGDB.gdb    | Esri File Geodatabase	|
+| ExampleFileGDB.gdb | Esri File Geodatabase |
 
 **<p style="text-align: left;">
 ExampleFileGDB.gdb
@@ -79,7 +82,7 @@ ExampleFileGDB.gdb
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ReadGeoLayersFromFGDB).
 
 ```
-ReadGeoLayersFromFGDB(SpatialDataFolder = "ExampleFolder/ExampleFileGDB.gdb")
+ReadGeoLayersFromFGDB(InputFolder="ExampleFolder/ExampleFileGDB.gdb")
 ```
 
 After running the command, the following GeoLayer IDs are registered within the GeoProcessor. 
@@ -93,7 +96,7 @@ After running the command, the following GeoLayer IDs are registered within the 
 ### Example 2: Add a Prefix to the GeoLayer IDs ###
 
 ```
-ReadGeoLayersFromFGDB(SpatialDataFolder = "ExampleFolder/ExampleFileGDB.gdb", GeoLayerID_Prefix = "StateData")
+ReadGeoLayersFromFGDB(InputFolder="ExampleFolder/ExampleFileGDB.gdb",GeoLayerID_Prefix="StateData")
 ```
 
 After running the command, the following GeoLayer IDs are registered within the GeoProcessor. Each of the registered GeoLayer IDs include the `StateData` prefix.
@@ -104,10 +107,10 @@ After running the command, the following GeoLayer IDs are registered within the 
 |StateData_ExampleFeatureClass2|
 |StateData_ExampleFeatureClass3|
 
-### Example 3: Read a Subset of Feature Classes From a File Geodatabase###
+### Example 3: Read a Subset of Feature Classes From a File Geodatabase ###
 
 ```
-ReadGeoLayersFromFGDB(SpatialDataFolder = "ExampleFolder/ExampleFileGDB.gdb", Subset_Pattern = "*3")
+ReadGeoLayersFromFGDB(InputFolder="ExampleFolder/ExampleFileGDB.gdb",Subset_Pattern="*3")
 ```
 
 After running the command, the following GeoLayer IDs are registered within the GeoProcessor.
