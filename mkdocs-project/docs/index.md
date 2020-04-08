@@ -31,11 +31,11 @@ The following image illustrates the main interface for editing and running workf
 and visualizing results.
 
 **<p style="text-align: center;">
-![GeoProcessor-main](../introduction/images/GeoProcessor-main.png)
+![GeoProcessor-main](images/GeoProcessor-main.png)
 </p>**
 
 **<p style="text-align: center;">
-GeoProcessor Main Window (<a href="../introduction/images/GeoProcessor-main.png">see full-size image</a>)
+GeoProcessor Main Window (<a href="../images/GeoProcessor-main.png">see full-size image</a>)
 </p>**
 
 The GeoProcessor software is installed in parallel with the following
