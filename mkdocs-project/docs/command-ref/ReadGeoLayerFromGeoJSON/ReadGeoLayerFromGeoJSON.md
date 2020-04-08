@@ -14,9 +14,6 @@
 The `ReadGeoLayerFromGeoJSON` command reads a [GeoLayer](../../introduction/introduction.md#geolayer)
 from a file in [GeoJSON format](../../spatial-data-format-ref/GeoJSON/GeoJSON.md). 
 
-* The coordinate reference system of the GeoJSON file is retained within the GeoLayer.
-* The attributes of the GeoJSON file are retained within the GeoLayer.
-
 ## Command Editor ##
 
 The following dialog is used to edit the command and illustrates the command syntax.
@@ -42,9 +39,10 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `SpatialDataFile` <br>**required**| The GeoJSON file to read (relative or absolute path). [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
+| `InputFile`<br>**required**| The GeoJSON file to read (relative or absolute path). [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
 | `GeoLayerID` | A GeoLayer identifier. [Formatting characters](../../introduction/introduction.md#geolayer-property-format-specifiers) and [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized. Refer to [documentation](../../best-practices/geolayer-identifiers.md) for best practices on naming GeoLayer identifiers.| The GeoJSON filename without the leading path and without the file extension. (Formatting character `%f`)|
-|`IfGeoLayerIDExists`<br> *optional*|The action that occurs if the `GeoLayerID` already exists within the GeoProcessor:<ul><li>`Replace` - The existing GeoLayer within the GeoProcessor is replaced with the new GeoLayer. No warning is logged.</li><li>`ReplaceAndWarn` - The existing GeoLayer within the GeoProcessor is replaced with the new GeoLayer. A warning is logged.</li><li>`Warn` - The new GeoLayer is not created. A warning is logged.</li><li>`Fail` - The new GeoLayer is not created. A fail message is logged.</li></ul> | `Replace` | 
+| `Properties` | Additional properties to assign to the GeoLayer, using format: `prop1:value1,prop2:'string with space'`.  Can use `${Property}` notation.  | No additional properties are assigned. |
+| `IfGeoLayerIDExists` | The action that occurs if the `GeoLayerID` already exists within the GeoProcessor:<ul><li>`Replace` - The existing GeoLayer within the GeoProcessor is replaced with the new GeoLayer. No warning is logged.</li><li>`ReplaceAndWarn` - The existing GeoLayer within the GeoProcessor is replaced with the new GeoLayer. A warning is logged.</li><li>`Warn` - The new GeoLayer is not created. A warning is logged.</li><li>`Fail` - The new GeoLayer is not created. A fail message is logged.</li></ul> | `Replace` | 
 
 ## Examples ##
 
@@ -61,13 +59,13 @@ ExampleFolder
 
 |Filename|File Type|
 | ---- | ----|
-| ExampleFile1.geojson  | GeoJSON	|
-| ExampleFile2.geojson	| GeoJSON	|
+| ExampleFile1.geojson | GeoJSON |
+| ExampleFile2.geojson | GeoJSON |
 
 ### Example 1: Read a GeoLayer from a GeoJSON File ###
 
 ```
-ReadGeoLayerFromGeoJSON(SpatialDataFile = "ExampleFolder/ExampleFile1.geojson")
+ReadGeoLayerFromGeoJSON(InputFile="ExampleFolder/ExampleFile1.geojson")
 ```
 
 After running the command, the following GeoLayer IDs are registered within the GeoProcessor. 
@@ -79,7 +77,7 @@ After running the command, the following GeoLayer IDs are registered within the 
 ### Example 2: Assign a Unique GeoLayer ID###
 
 ```
-ReadGeoLayerFromGeoJSON(SpatialDataFile = "ExampleFolder/ExampleFile1.geojson", GeoLayerID = "StateBoundary")
+ReadGeoLayerFromGeoJSON(InputFile="ExampleFolder/ExampleFile1.geojson",GeoLayerID="StateBoundary")
 ```
 
 After running the command, the following GeoLayer IDs are registered within the GeoProcessor. 

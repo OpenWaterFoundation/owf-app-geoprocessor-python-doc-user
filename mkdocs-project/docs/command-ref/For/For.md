@@ -86,7 +86,7 @@ In this example the county name is used in GeoLayer filenames.
 SetProperty(PropertyName="CountyList",PropertyType="str",PropertyValues="Adams,Washington,Jefferson")
 For(Name="Counties",IteratorProperty="County",ListProperty="CountyList")
   # Process a file for each county
-  ReadGeoLayerFromGeoJSON(SpatialDataFile="${County}-census.geojson",GeoLayerID=${County}-census-population")
+  ReadGeoLayerFromGeoJSON(InputFile="${County}-census.geojson",GeoLayerID=${County}-census-population")
 EndFor(Name="Counties")
 ```
 
