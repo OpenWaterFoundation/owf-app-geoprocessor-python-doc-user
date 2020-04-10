@@ -17,6 +17,7 @@ This documentation describes the specification of the GeoMapProject.
 		- [GeoLayerSymbol Properties for Categorized Classification Type](#geolayersymbol-properties-for-categorized-classification-type)
 		- [GeoLayerSymbol Properties for Graduated Classification Type](#geolayersymbol-properties-for-graduated-classification-type)
 		- [GeoLayerSymbol Properties for Single Symbol Classification Type](#geolayersymbol-properties-for-single-symbol-classification-type)
+	+ [GeoLayerViewEventHandler](#geolayervieweventhandler)
 	+ [Color](#color)
 * [History of Specification](#history-of-specification)
 
@@ -65,6 +66,27 @@ GeoMapProject                     # Top-level object containing a list of GeoMap
 A GeoMapProject can be used by other software, such as web mapping applications, to display maps.
 Consequently, the GeoProcessor can be used to automate map creation,
 which can help scale a prototype map to more locations.
+
+Using a map configuration file in an application typically consists of the following software functionality,
+in increasing level of complexity:
+
+1. Display the map layers with correct symbology, legend, etc.
+The core data in a GeoMap are intended to support this functionality.
+2. Allow read-only interaction with map layers.
+For example, mouse over or click on features or markers on the map and perform
+other actions such as displaying layer properties or related data visualizations.
+See the [GeoLayerViewEventHandler](#geolayervieweventhandler) documentation.
+3. Allow additional analysis that may add additional attributes to existing layers or add new layers.
+This functionality must be coded in the application as either reusable components
+or custom application code.
+4. Edit data interactively, saving back to the original data layer, a copy,
+or some other data management software.
+This functionality must be coded in the application as either reusable components
+or custom application code.
+
+The GeoProcessor will be enhanced over time to implement additional functionality
+for the higher numbered functionality levels,
+for example to provide map displays for GeoMap configurations.
 
 ## Examples ##
 
@@ -243,9 +265,11 @@ GeoLayer Built-in Data Elements
 | `description` | A longer description (up to a few sentences), suitable for display on a catalog of layers.  | |
 | `geoLayerId` | Unique GeoLayer identifier, typically without whitespace, for example: `IrrigatedLands2010`. | None - must be specified. |
 | `geometryType` | Geometry type in format similar to `WKT:Polygon`, which is used to determine which [GeoLayerSymbol](#geolayersymbol) properties are relevant.  See the [WKT Documentation](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry). | None - must be specified. |
+| `history` | A list of strings indicating how the layer was processed by the GeoProcessor, useful to troubleshoot processing issues. | |
+| `layerType` | Layer type: <ul><li>`Raster` - a raster layer</li><li>`Vector` - a vector layer</li></ul>The layer type is useful to help applications know how to process the layer. | None - must be specified. |
 | `name` | Short name, suitable for display in applications, for example: `Irrigated Lands, 2010`. | None - must be specified. |
 | `properties` | An open-ended list of elements to provide additional properties (see table below). | |
-| `sourcePath` | The path to the source layer data as a file or URL path.  Although it can be a full path (for example when retrieving data from remote servers), it is usually specified relative to a folder in the [GeoMap](#geomap) `dataPath` folders when publishing a self-contained website.  This provides flexibility in storing and accessing layers in applications. | None - must be specified. |
+| `sourcePath` | The path to the source layer data as a file or URL path.  Although it can be a full path (for example when retrieving data from remote servers), it is usually specified relative to a folder in the [GeoMap](#geomap) `dataPath` folders when publishing a self-contained website.  This provides flexibility in storing and accessing layers in applications.  If the layer was written during processing, then the output file path is used.  Otherwise, the layer input file path is used. | None - must be specified. |
 
 The following are recognized GeoLayer properties.
 
@@ -412,6 +436,44 @@ The following color ramps are recognized ([see Java GRColorTable class used in T
 | **Color Ramp Name** | **Description** |
 | -- | -- |
 | -- | Need to define. |
+
+### GeoLayerViewEventHandler ###
+
+The [GeoLayerView](#geolayerview) part of the GeoMapProject configuration can contain event handling information,
+as added by the [`SetGeoLayerViewEventHandler`](../command-ref/SetGeoLayerViewEventHandler/SetGeoLayerViewEventHandler.md) command.
+The goal is to include general configuration information that can inform an application's behavior
+and minimize the amount of hard-coding or custom configuration of the application.
+
+For example, general web application components can be developed to read a GeoMapProject and implement
+basic event handling and features such as:
+
+Event handler information can also be used to define custom application behavior that goes beyond
+default functionality, where the event handler properties must be further interpreted in the application.
+The GeoProcessor does not place restrictions on how event types or properties are defined,
+but a consistent convention should be used.
+
+The following are built-in GeoLayerViewEventHandler data members.
+
+**<p style="text-align: center;">
+GeoLayerViewEventHandler Built-in Data Elements
+</p>**
+
+| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| -- | -- | -- |
+| `eventType` | An event type string, for example `MouseOver` or `MouseClicked`, which indicates an event type that should be handled by applications.  The implementing application software should match event types for the technology being used with this event type and then use associated properties to perform functionality in the application.  For example, a property may indicate a template display name to use when a map layer feature is moused over or clicked on. | Noe - must be specified. |
+| `name` | Short name, suitable to identify an event handler, which makes the map configuration more readable. | |
+| `description` | A longer description (up to a few sentences), which makes the map configuration more readable.  | |
+| `properties` | An open-ended list of elements to provide additional properties (see table below). | |
+
+The following are recognized GeoLayerViewEventHandler properties.
+
+**<p style="text-align: center;">
+GeoLayerViewEventHandler Properties in `properties` JSON Element
+</p>**
+
+| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
+| -- | -- | -- |
+| | Currently no properties are defined.  Conventions need to be established. | |
 
 ### Color Table ###
 
