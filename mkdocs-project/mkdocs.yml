@@ -53,6 +53,8 @@ nav:
   - ReadGeoLayerFromShapefile: command-ref/ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile.md
   - ReadGeoLayersFromFGDB: command-ref/ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB.md
   - ReadGeoLayersFromFolder: command-ref/ReadGeoLayersFromFolder/ReadGeoLayersFromFolder.md
+  - ReadRasterGeoLayerFromTileMapService: command-ref/ReadRasterGeoLayerFromTileMapService/ReadRasterGeoLayerFromTileMapService.md
+  - ReadRasterGeoLayerFromWebMapService: command-ref/ReadRasterGeoLayerFromWebMapService/ReadRasterGeoLayerFromWebMapService.md
   - ReadTableFromDataStore: command-ref/ReadTableFromDataStore/ReadTableFromDataStore.md
   - ReadTableFromDelimitedFile: command-ref/ReadTableFromDelimitedFile/ReadTableFromDelimitedFile.md
   - ReadTableFromExcel: command-ref/ReadTableFromExcel/ReadTableFromExcel.md
@@ -67,6 +69,7 @@ nav:
   - SetGeoLayerCRS: command-ref/SetGeoLayerCRS/SetGeoLayerCRS.md
   - SetGeoLayerProperty: command-ref/SetGeoLayerProperty/SetGeoLayerProperty.md  
   - SetGeoLayerViewCategorizedSymbol: command-ref/SetGeoLayerViewCategorizedSymbol/SetGeoLayerViewCategorizedSymbol.md
+  - SetGeoLayerViewEventHandler: command-ref/SetGeoLayerViewEventHandler/SetGeoLayerViewEventHandler.md
   - SetGeoLayerViewGraduatedSymbol`: command-ref/SetGeoLayerViewGraduatedSymbol/SetGeoLayerViewGraduatedSymbol.md
   - SetGeoLayerViewSingleSymbol: command-ref/SetGeoLayerViewSingleSymbol/SetGeoLayerViewSingleSymbol.md
   - SetProperty: command-ref/SetProperty/SetProperty.md

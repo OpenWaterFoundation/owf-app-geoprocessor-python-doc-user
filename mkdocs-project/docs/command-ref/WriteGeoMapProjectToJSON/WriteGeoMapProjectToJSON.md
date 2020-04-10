@@ -17,6 +17,12 @@ which can be used as input to web mapping application or other software.
 * See the [CreateGeoMap](../CreateGeoMap/CreateGeoMap.md) command documentation for guidance on creating maps
 * See the [GeoMapProject](../../appendix-geomapproject/geomapproject.md) documentation for background and file format specification.
 
+The output `sourcePath` for each GeoLayer is determined as follows:
+
+1. If the GeoLayer was written, then the output location is used.
+2. If the GeoLayer was not written, then the input location is used if not `MEMORY`.
+Therefore, layers that were created in memory must be written in order for the path to be known in the map configuration file.
+
 ## Command Editor ##
 
 The following dialog is used to edit the command and illustrates the command syntax.
