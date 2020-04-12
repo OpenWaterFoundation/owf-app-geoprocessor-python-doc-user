@@ -18,24 +18,39 @@ This documentation describes the specification of the GeoMapProject.
 		- [GeoLayerSymbol Properties for Graduated Classification Type](#geolayersymbol-properties-for-graduated-classification-type)
 		- [GeoLayerSymbol Properties for Single Symbol Classification Type](#geolayersymbol-properties-for-single-symbol-classification-type)
 	+ [GeoLayerViewEventHandler](#geolayervieweventhandler)
-	+ [Color](#color)
+	+ [Encoded Data](#encoded-data)
+		- [Color](#color)
+		- [Color Ramp](#color-ramp)
+		- [Color Table](#color-table)
+		- [DateTime](#datetime)
+		- [Extent](#extent)
 * [History of Specification](#history-of-specification)
 
 -----------------
 
 ## Introduction ##
 
-A GeoMapProject defines configurations for maps, to be displayed in the GeoProcessor and web applications.
-It is conceptually equivalent to QGIS (`qgs`) and ArcGIS map projects (`mxd`) file. 
-However, the GeoProcess GeoMapProject is a light-weight JSON file that contains relatively minimal configuration information.
+A GeoMapProject defines configurations for maps, to be displayed in the GeoProcessor, web applications, and other software.
+It is conceptually equivalent to QGIS (`qgs`) and ArcGIS (`mxd) map project file. 
+However, the GeoProcessor GeoMapProject is a light-weight JSON file that contains relatively minimal configuration information.
 GeoProcessor commands available in the ***Map Processing*** commands menu automate creating GeoMapProjects,
 so that maps can be recreated and scaled to various locations.
 
-It is envisioned that GeoMapProjects will be used to define map configurations for the following cases,
-which will be implemented over time, as described in the following table.
+The following diagram illustrates components that comprise a GeoMapProject.
 
 **<p style="text-align: center;">
-GeoMapProject Project Types
+![GeoMapProject-diagram](images/GeoMapProject-diagram.png)
+</p>**
+
+**<p style="text-align: center;">
+GeoMapProject Components (<a href="../images/GeoMapProject-diagram.png">see full-size image</a>)
+</p>**
+
+It is envisioned that GeoMapProjects will be used to define map configurations for the types
+described in the following table, and other types added over time.
+
+**<p style="text-align: center;">
+GeoMapProject Types
 </p>**
 
 | **GeoMapProject Type** | **Description** |
@@ -61,6 +76,7 @@ GeoMapProject                     # Top-level object containing a list of GeoMap
         GeoLayerView              # A GeoLayerView assigns a GeoSymbol to a GeoLayer, for viewing.
            GeoLayer               # Reference to a layer in GeoLayer list (above).
            GeoSymbol              # Symbol used to visualize the layer.
+           EventHandler []        # One or more event handlers to respond to map interactions
 ```
 
 A GeoMapProject can be used by other software, such as web mapping applications, to display maps.
@@ -148,6 +164,7 @@ GeoMapProject Properties in `properties` JSON Element
 | -- | -- | -- |
 | `author` | Name of author or organization. | |
 | `effectiveDateTime` | Effective date/time of the GeoMapProject, before which the project does not apply, using ISO-8601 date/time, for example `2020-07-03T00:00:00`. | Always effective. |
+| `enabled` | Indicates whether the map project is enabled, specified as boolean `true` or `false`.  If `false`, application code can ignore the map project or read in but indicate as disabled. | `true` |
 | `fileFormatVersion` | Version of the of the GeoMapProject JSON file in notation `Major.Minor.Micro`. | |
 | `expiresDateTime` | Date/time when the project expires, as an ISO-8601 date/time string. | Never expires. |
 | `saveDateTime` | Date/time when the project was created. | |
@@ -157,7 +174,11 @@ GeoMapProject Properties in `properties` JSON Element
 
 A GeoMap is a collection of [GeoLayerViewGroup](#geolayerviewgroup) (layer groups as list of [GeoLayerView](#geolayerview)),
 organized in logical order and using appropriate symbols.
-For convenience, a unique list of [GeoLayer](#geolayer) is maintained and the [GeoLayer](#geolayer) are referred to in [GeoLayerView](#geolayerview).
+For convenience, a unique list of [GeoLayer](#geolayer) is maintained as a GeoMap data element
+and the specific [GeoLayer](#geolayer) are referred to in [GeoLayerView](#geolayerview).
+This provides the opportunity for software applications to read the layers once and share between views,
+rather than re-reading the layers multiple times (for example for political boundaries, rivers,
+transportation networks, etc.).
 
 The following are built-in GeoMap data members.
 
@@ -184,15 +205,22 @@ GeoMap Properties in `properties` JSON Element
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
 | -- | -- | -- |
-| `initialExtent` | Initial displayed map extent in format:  **TBD**.  This is used for the initial map display. | Initial map extent.|
-| `maximumExtent` | Maximum displayed map extent in format:  **TBD**.  This limits how far out the map can zoom out. | Maximum map extent.|
-| `minimumExtent` | Minimum displayed map extent in format:  **TBD**.  This limits how far out the map can zoom in. | Minimum map extent.|
+| `enabled` | Indicates whether the map is enabled, specified as boolean `true` or `false`.  If `false`, application code can ignore the map or read in but indicate as disabled. | `true` |
+| `extentInitial` | Initial displayed map extent.  See [Extent](#extent) section. | Typically, display all layer data.|
+| `extentMaximum` | Maximum displayed map extent.  See [Extent](#extent) section. | No limit.|
+| `extentMinimum` | Minimum displayed map extent.  See [Extent](#extent) section. | No limit.|
+| `geoLayerView.`<br>`selectInitial.`<br>`default` | Default for [GeoLayerView](#geolayerview) and [GeoLayerViewGroup](#geolayerviewgroup) `selectedInitial` property value.  This property value should typically be set as follows: <ul><li>`true` - for simple map with few layers because most layers should be selected for display; layer views to **not** display will use `selectedInitial=false`</li><li>`false` - for complex map with many layers because most layers should **not** be selected for display; layer views to display will use `selectedInitial=true`</li></ul>| `true` - all GeoLayerViewGroup and GeoLayerView will be selected for initial display. |
 
 ### GeoLayerViewGroup ###
 
-A GeoLayerViewGroup is a list of [GeoLayerView](#geolayerview) and corresponds to a group in a map legend.
-Because of this limited role, a GeoLayerViewGroup has limited data values.
+A GeoLayerViewGroup is a list of [GeoLayerView](#geolayerview) and corresponds to a group of layers in a map legend.
+A group is often used to group layers of similar contents, such as:
 
+* similar data from different sources or versions
+* base maps
+* temporal meaning, for example series of layers for different date/times, or multiple layers for a single date/time
+
+Because of the limited role of a group, a GeoLayerViewGroup has limited data values.
 The following are built-in GeoLayerViewGroup data members.
 
 **<p style="text-align: center;">
@@ -201,10 +229,10 @@ GeoLayerViewGroup Built-in Data Elements
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
 | -- | -- | -- |
+| `description` | A longer description (up to a few sentences), suitable for display on a catalog of views.  | |
 | `geoLayerViewGroupId` | Unique GeoLayerViewGroup identifier, typically without whitespace, for example: `IrrigatedLands`. | None - must be specified. |
 | `geoLayerViews` | An array (Python list) of [GeoLayerView](#geolayerview) for all the layer views used in the group. | |
 | `name` | Short name, suitable for display in applications, for example: `Irrigated Lands`. | None - must be specified. |
-| `description` | A longer description (up to a few sentences), suitable for display on a catalog of views.  | |
 | `properties` | An open-ended list of elements to provide additional properties (see table below). | |
 
 The following are recognized GeoLayerViewGroup properties.
@@ -213,9 +241,11 @@ The following are recognized GeoLayerViewGroup properties.
 GeoLayerViewGroup Properties in `properties` JSON Element
 </p>**
 
-| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
+| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | -- | -- | -- |
-| | Currently no additional GeoLayerViewGroup properties are defined. | |
+| `enabled` | Indicates whether the GeoLayerViewGroup is enabled, specified as boolean `true` or `false`.  If `false`, application code can ignore the group or read in but indicate as disabled. | `true` |
+| `selectBehavior` | Indicates how selections for the group should occur:<ul><li>`Any` - zero or more layer views can be selected</li><li>`Single` - zero or one layer view can be selected at a time (selecting a layer view will automatically deselect other layer views in the group).</li><li>`Custom` - a custom tool is implemented to select layer views, envisioned for complex applications</li></ul> | `Any` |
+| `selectedInitial` | Indicates whether the GeoLayerViewGroup is selected for display when the map is initially displayed, specified as boolean `true` or `false`. | See GeoMap `geoLayerView.`<br>`selectedInitial.`<br>`default`|
 
 ### GeoLayerView ###
 
@@ -230,11 +260,12 @@ GeoLayerView Built-in Data Elements
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
 | -- | -- | -- |
+| `description` | A longer description (up to a few sentences), suitable for display on a catalog of views.  The value can be the same as the associated [GeoLayer](#geolayer), or provide a different value for display purposes. | |
+| `eventHandlers` | A list of [GeoLayerViewEventHandler](#geolayervieweventhandler), which indicate how events on a GeoLayerView should be handled.  | |
 | `geoLayerId` | Unique [GeoLayer](#geolayer) identifier associated with the view, matching a value in the [GeoMap](#geomap) `geoLayers` list. | None - must be specified. |
 | `geoLayerSymbol` | Symbol properties used to display the layer in the view. See the [GeoLayerSymbol](#geolayersymbol) properties below.|  |
 | `geoLayerViewId` | Unique GeoLayerView identifier, typically without whitespace, for example: `IrrigatedLands2010`.  The value can be the same as the associated [GeoLayer](#geolayer), or provide a different value for display purposes.  | None - must be specified. |
 | `name` | Short name, suitable for display in applications, for example: `Irrigated Lands, 2010`.  The value can be the same as the associated [GeoLayer](#geolayer), or provide a different value for display purposes. | None - must be specified. |
-| `description` | A longer description (up to a few sentences), suitable for display on a catalog of views.  The value can be the same as the associated [GeoLayer](#geolayer), or provide a different value for display purposes. | |
 | `properties` | An open-ended list of elements to provide additional properties (see table below). | |
 
 The following are recognized GeoLayerView properties.
@@ -243,9 +274,10 @@ The following are recognized GeoLayerView properties.
 GeoLayerView Properties in `properties` JSON Element
 </p>**
 
-| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
+| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | -- | -- | -- |
-| | Currently no additional GeoLayerViewGroup properties are defined. | |
+| `enabled` | Indicates whether the GeoLayerView is enabled, specified as boolean `true` or `false`.  If `false`, application code can ignore the layer view or read in but indicate as disabled. | `true` |
+| `selectedInitial` | Indicates whether the GeoLayerViewGroup is selected for display when the map is initially displayed, specified as boolean `true` or `false`. | See GeoMap `geoLayerView.`<br>`selectedInitial.`<br>`default`|
 
 ### GeoLayer ###
 
@@ -392,27 +424,83 @@ SingleSymbol GeoLayerSymbol Properties in `properties` JSON Element
 | `fillColor` | Fill color for the symbol as recognized color (see [Colors](#colors)). | |
 | `outlineColor` | Outline color for the symbol as recognized color (see [Colors](#colors)). | |
 
-## Color ##
+### GeoLayerViewEventHandler ###
 
-Color is specified in properties in several ways, including single colors, color ramps, color tables, and opacity.
-The following describes how to specify properties for various cases.
+The [GeoLayerView](#geolayerview) part of the GeoMapProject configuration can contain event handling information,
+as added by the [`SetGeoLayerViewEventHandler`](../command-ref/SetGeoLayerViewEventHandler/SetGeoLayerViewEventHandler.md) command.
+The goal is to include general configuration information that can inform an application's behavior
+and minimize the amount of hard-coding or custom configuration of the application.
 
-### Single Color ###
+For example, general web application components can be developed to read a GeoMapProject and implement
+basic event handling and features such as:
 
-Single colors can be specified using a named color, RGB triplet, or hex code.
-An RGB color can be specified similar to the following (red):
+Event handler information can also be used to define custom application behavior that goes beyond
+default functionality, where the event handler properties must be further interpreted in the application.
+The GeoProcessor does not place restrictions on how event types or properties are defined,
+but a consistent convention should be used.
 
-```
-255,0,0
-```
+The following are built-in GeoLayerViewEventHandler data members.
 
-An RGB hex color can be specified similar to the following (red)
+**<p style="text-align: center;">
+GeoLayerViewEventHandler Built-in Data Elements
+</p>**
 
-```
-#ff0000
-```
+| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| -- | -- | -- |
+| `eventType` | An event type string, for example `MouseOver` or `MouseClicked`, which indicates an event type that should be handled by applications.  The implementing application software should match event types for the technology being used with this event type and then use associated properties to perform functionality in the application.  For example, a property may indicate a template display name to use when a map layer feature is moused over or clicked on. | None - must be specified. |
+| `name` | Short name, suitable to identify an event handler, which makes the map configuration more readable. | |
+| `description` | A longer description (up to a few sentences), which makes the map configuration more readable.  | |
+| `properties` | An open-ended list of elements to provide additional properties (see table below). | |
 
-Named colors that are recognized are as follows (**need to link to web resource rather than relisting
+The following are recognized GeoLayerViewEventHandler properties.
+
+**<p style="text-align: center;">
+GeoLayerViewEventHandler Properties in `properties` JSON Element
+</p>**
+
+| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
+| -- | -- | -- |
+| | Currently no properties are defined.  Conventions need to be established. | |
+
+
+## Encoded Data ##
+
+Encoded data objects are typically self-contained data objects that lend themselves to representation in a standard text format.
+Rather than attempting to break the encoded data into a complex definition in JSON,
+the objects are encoded as a string that can be represented as a JSON string value.
+Standard application code can then be implemented to decode the text representation for use in the application.
+
+There are often multiple representations for such objects due to multiple standards,
+implementations in software, and practical solutions.
+Consequently, for this specification, an optional `specification`: specifier may be used at the
+beginning of encoded value to provide guidance on the encoding format,
+where the word `specification` will vary depending on the specification.
+For example `WKT:` is used when the following value is a well known text geometry value.
+
+Software that consumes map project files must then have logic to handle the different encodings,
+indicate support in documentation, and implement suitable warnings and error handling when an encoding is not supported,
+
+### Color ###
+
+A color value may be used in various ways, for example for foreground, background, fill, outline, text, etc.
+
+The following table describes recognized color encodings.
+Several common formats are used as defaults and should be handled by software.
+For example, a string starting with `#` can easily be detected as hex code string.
+
+**Need to describe how to describe opacity/transparency, alpha channel, etc.**
+
+**<p style="text-align: center;">
+Color Encoding Specifications
+</p>**
+
+| **Encoding Specification** | **Description** | **Example** |
+| -- | -- | -- |
+| **default** | Red/green/blue text triplet with numerical values 0-255: `r,g,b`. | For red: `255,0,0` |
+| **default** | Red/green/blue hex triplet: `#rrggbb`. | For red: `xff0000` |
+| **default** | Named colors (see table below).  **This color representatio is less safe because color names may not be standardized and recognized in all software tools.** | For red: `red` |
+
+The following table lists recognized named colors (**need to link to web resource rather than relisting
 here - not sure how consistent named colors are so maybe pick a few and rely on RGB and hex for others**):
 
 **<p style="text-align: center;">
@@ -437,56 +525,59 @@ The following color ramps are recognized ([see Java GRColorTable class used in T
 | -- | -- |
 | -- | Need to define. |
 
-### GeoLayerViewEventHandler ###
-
-The [GeoLayerView](#geolayerview) part of the GeoMapProject configuration can contain event handling information,
-as added by the [`SetGeoLayerViewEventHandler`](../command-ref/SetGeoLayerViewEventHandler/SetGeoLayerViewEventHandler.md) command.
-The goal is to include general configuration information that can inform an application's behavior
-and minimize the amount of hard-coding or custom configuration of the application.
-
-For example, general web application components can be developed to read a GeoMapProject and implement
-basic event handling and features such as:
-
-Event handler information can also be used to define custom application behavior that goes beyond
-default functionality, where the event handler properties must be further interpreted in the application.
-The GeoProcessor does not place restrictions on how event types or properties are defined,
-but a consistent convention should be used.
-
-The following are built-in GeoLayerViewEventHandler data members.
-
-**<p style="text-align: center;">
-GeoLayerViewEventHandler Built-in Data Elements
-</p>**
-
-| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
-| -- | -- | -- |
-| `eventType` | An event type string, for example `MouseOver` or `MouseClicked`, which indicates an event type that should be handled by applications.  The implementing application software should match event types for the technology being used with this event type and then use associated properties to perform functionality in the application.  For example, a property may indicate a template display name to use when a map layer feature is moused over or clicked on. | Noe - must be specified. |
-| `name` | Short name, suitable to identify an event handler, which makes the map configuration more readable. | |
-| `description` | A longer description (up to a few sentences), which makes the map configuration more readable.  | |
-| `properties` | An open-ended list of elements to provide additional properties (see table below). | |
-
-The following are recognized GeoLayerViewEventHandler properties.
-
-**<p style="text-align: center;">
-GeoLayerViewEventHandler Properties in `properties` JSON Element
-</p>**
-
-| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
-| -- | -- | -- |
-| | Currently no properties are defined.  Conventions need to be established. | |
-
 ### Color Table ###
 
 A color table defines colors that should be used for specific input values or ranges.
+A color table is typically used with graduated or category classification type.
 A color table is specified using value limits and associated color.
 Quite often, a color table corresponds to a standard data representation,
 for example temperature, rain, snow, or other scale.
 
 **Need to describe how to define in JSON.  Do units need to be considered such as specifying English and SI units for range breaks?**
 
-### Opacity and Transparency ###
+### DateTime ###
 
-**Need to describe how defined, 0 to 1, 0 to 255 alpha channel, etc.**
+Date/time strings are typically saved in JSON as simple strings.
+This may be sufficient or it may be desirable to indicate that the value should be parsed as an actual date or date/time object in application code.
+The following is an idea that may be implemented at some point but is currently just an idea.
+Currently, standard date/time formats and application code that can handle is assumed.
+Some technologies provide special features to handle date/times when serializing/deserializing and simple strings are sufficient.
+
+A "cast" or "type" syntax may be implemented, such as:
+
+```
+"effectiveTime": "DateTime('2020-04-01')"
+```
+
+If necessary, the specification type can also be used, for example:
+
+```
+"effectiveTime": "DateTime('ISO-8601:2020-04-01')"
+```
+
+### Extent ###
+
+An extent is a region on a map, typically used for a display extent.
+For example, a map has an initial extent to be shown when the map is first displayed.
+The extent is typically defined as an unprojected (geographic) "rectangular" area.
+Software must then determine how best to display the extent considering:
+
+* projection to the map's CRS, so that the full extent will be displayed without cutting off
+* perhaps buffering the extent so that the extent does not abut the edge of visible display - for example add 5% buffer
+
+Where possible, software should allow for extent coordinates being specified in any order, for example for `MinMax` and `WKT` encodings.
+The following extent encodings are recognized.
+
+**<p style="text-align: center;">
+Extent Encoding Specifications
+</p>**
+
+| **Encoding Specification** | **Description** | **Example** |
+| -- | -- | -- |
+| **default** | `MinMax` without the specification string. | `-105,40,-104,41` |
+| `MinMax:` | Define the extent as minimum and maximum coordinates of a bounding box (`XMin,YMin,XMax,YMax`), in geographic coordinates. | `MinMax:-105,40,-104,41` |
+| `WKT:` | Define the extent as a [well known text geometry](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry), using geographic coordinates. | Rectangle defined as a WKT polygon:  `WKT:POLYGON((0 0, 10 0, 10 10, 0 10))` |
+| `ZoomLevel:` | Define the extent as a zoom level, which is common for web applications, using format `Longitude,Latitude,ZoomLevel` and geographic coordinates.  The zoom level depends on the application and may be required to be an integer. For example, see:  <ul><li> [Leaflet zoom levels](https://leafletjs.com/examples/zoom-levels/)</li><li>[Google Maps zoom levels](https://developers.google.com/maps/documentation/javascript/interaction)</ul>| `ZoomLevel:-105.084419,40.585258,5` |
 
 ## History of Specification ##
 
@@ -498,4 +589,4 @@ Built-in Data Elements
 
 | **Version** | **Changes**
 | -- | -- |
-| 0.1.0 | Initial version being developed by the Open Water Foundation (in process). |
+| 0.1.0 | Initial version being developed by the Open Water Foundation (in process), being developed by coordinating GeoProcessor and web application development. |
