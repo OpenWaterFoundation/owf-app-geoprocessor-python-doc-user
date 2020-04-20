@@ -62,6 +62,7 @@ Command Parameters
 | `Description` | Description for the new GeoMap. | None - must be specified. |
 |`CRS` <br> **required** | The [coordinate reference system](https://en.wikipedia.org/wiki/Spatial_reference_system) of the new GeoMap. [EPSG or ESRI code format](http://spatialreference.org/ref/epsg/) required (e.g. [`EPSG:4326`](http://spatialreference.org/ref/epsg/4326/), [`EPSG:26913`](http://spatialreference.org/ref/epsg/nad83-utm-zone-13n/), [`ESRI:102003`](http://spatialreference.org/ref/esri/usa-contiguous-albers-equal-area-conic/)). |None - must be specified. |
 | `DataPath` | A comma-separated list of file system or URL folders containing data for layers.  The folders should be relative to the location of the GeoMapProject file. | `.` |
+| `Properties` | Additional properties to assign to the GeoMap, using format: `prop1:value1,prop2:'string with space'`.  Can use `${Property}` notation.  | No additional properties are assigned. |
 |`IfGeoMapIDExists`|The action that occurs if the `NewGeoMapID` already exists within the GeoProcessor:<ul><li>`Replace` - The existing GeoMap within the GeoProcessor is replaced with the new GeoMap. No warning is logged.</li><li>`ReplaceAndWarn` - The existing GeoMap within the GeoProcessor is replaced with the new GeoMap. A warning is logged.</li><li>`Warn` - The new GeoMap is not created. A warning is logged.</li><li>`Fail` - The new GeoMap is not created. A fail message is logged.</li></ul> | `Replace` | 
 
 ## Examples ##
