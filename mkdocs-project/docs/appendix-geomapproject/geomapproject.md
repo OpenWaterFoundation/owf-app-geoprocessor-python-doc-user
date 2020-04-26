@@ -24,6 +24,10 @@ This documentation describes the specification of the GeoMapProject.
 		- [Color Table](#color-table)
 		- [DateTime](#datetime)
 		- [Extent](#extent)
+* [Web Mapping Application Integration](#web-mapping-application-integration)
+	+ [Web Application Data Workflow](#web-application-data-workflow)
+	+ [Web Application Event Handling](#web-application-event-handling)
+	+ [Web Application Deployment](#web-application-deployment)
 * [History of Specification](#history-of-specification)
 
 -----------------
@@ -578,6 +582,153 @@ Extent Encoding Specifications
 | `MinMax:` | Define the extent as minimum and maximum coordinates of a bounding box (`XMin,YMin,XMax,YMax`), in geographic coordinates. | `MinMax:-105,40,-104,41` |
 | `WKT:` | Define the extent as a [well known text geometry](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry), using geographic coordinates. | Rectangle defined as a WKT polygon:  `WKT:POLYGON((0 0, 10 0, 10 10, 0 10))` |
 | `ZoomLevel:` | Define the extent as a zoom level, which is common for web applications, using format `Longitude,Latitude,ZoomLevel` and geographic coordinates.  The zoom level depends on the application and may be required to be an integer. For example, see:  <ul><li> [Leaflet zoom levels](https://leafletjs.com/examples/zoom-levels/)</li><li>[Google Maps zoom levels](https://developers.google.com/maps/documentation/javascript/interaction)</ul>| `ZoomLevel:-105.084419,40.585258,5` |
+
+## Web Mapping Application Integration ##
+
+A primary purpose of a GeoMapProject is to define maps for a web application.
+Creating a web application involves the following major design considerations:
+
+1. How to organize data for the application, including map layers and supporting data such as time series.
+2. How to handle events in the application, for example to click on a feature in a map and display related data.
+3. How to deploy the application, for example to handle multiple software versions, target location,
+and effective time (snapshots) of the data in the application.
+
+The following sections provide a information to help guide implementation design.
+
+### Web Application Data Workflow ###
+
+The overall workflow for implementing a web application must consider how data are handled, including:
+
+* how will the application identify data objects?
+* how will the application find data in files and web services?
+* how will data be prepared initially and updated over time?
+* how will users access the original data, should they decide to download and do their own analysis?
+
+The following figure illustrates a general workflow for a web applicaiton,
+using software tools developed by the Open Water Foundation.
+
+**<p style="text-align: center;">
+![web-application-workflow](images/web-application-workflow.png)
+</p>**
+
+**<p style="text-align: center;">
+Web Mapping Application Workflow Summary (<a href="../images/web-application-workflow.png">see full-size image</a>)
+</p>**
+
+In this design, it is assumed that source data (as indicated by
+the ***Source Data*** area in the upper-left corner of the diagram)
+is generally available from public sources such as downloadable files and public web services.
+Files may be directly usable in a web application, such as GeoJSON map layers,
+or may require additional processing.
+Significant computational and/or human effort may also be needed in some cases to processing input data,
+for example if a model needs to be run and its output post-processed into useful forms.
+
+Rather than manually process data, it is helpful to automate processing so that
+processing can be repeated when needed,
+as represented in the ***Workflow*** portion of the above diagram (lower left corner).
+Automated processes can be documented and quality control can be implemented.
+The Open Water Foundation typically uses the TSTool software for time series,
+and is developing the GeoProcessor software for spatial data processing.
+See the [OWF software website](http://software.openwaterfoundation.org/) for more information.
+Other tools can of course be used to process data, depending on requirements and staff skills.
+TSTool and GeoProcessor use "command files" to define workflow processing,
+and such files can be maintained in a repository to track changes in workflow logic over time.
+The results of running the command files are written to folders that can be used by the web application.
+For example, for an Angular application, the `assets/` folder can contain the data files used by the application.
+These files should be ignored in version control repositories because they may be large files
+and can be regenerated when needed.
+The above diagram indicates this transfer of data from the workflow-focused area on the left
+to the application data area on the right.
+This approach allows "heavy" processing to be done by TSTool, GeoProcessor, and other tools,
+rather than writing complex code in a web application.
+It is also possible that source data are directly available that do not require processing;
+however, operational constraints such as web service performance and throttling
+may limit how much data can be effectively retrieved from source data to support a web application.
+
+The web application, as indicated by ***Application*** on the right side of the above diagram,
+is typically developed and tested on a local computer and then deployed to the cloud,
+for example as a public static website.
+The application can also be deployed using versions to allow for additional testing and roll-out.
+This approach allows cloud infrastructure such as Amazon Web Services (AWS),
+Google Cloud Platform (GDP), and Microsoft Azure to do the heavy lifting of serving
+web application software and data files to web browsers and other tools.
+The design of each web application must consider many factors and depends on the features of the
+software tools that are used..
+The GeoMapProject is intended to help with application development by indicating how
+map data are organized, provide properties for displaying data,
+and describing basic event handling hooks so that mapping applications can provide interactive features.
+It is difficult to write software that can generically handle any configuration and
+therefore custom application code may be needed.
+The next section describes how event handling is supported by GeoMapProject configurations.
+
+### Web Application Event Handling ###
+
+A GeoMapProject configuration file optionally contains [GeoLayerViewEventHandler](#geolayervieweventhandler) data.
+The GeoMapProject specification is not intended to describe software functionality in detail,
+given that such functionality will vary based on software technologies that are used.
+Instead, the event handler specification is intended to help indicate which data support
+events (such as mouse click on a feature) and provide general guidance on the action that should occur.
+Properties can be defined to help the application respond accordingly.
+The following diagram illustrates the basic workflow for event handling.
+
+**<p style="text-align: center;">
+![web-application-event-handling](images/web-application-event-handling.png)
+</p>**
+
+**<p style="text-align: center;">
+Web Application Event Handling Summary (<a href="../images/web-application-event-handling.png">see full-size image</a>)
+</p>**
+
+The application data files include GeoMapProject configuration files,
+which contain [GeoLayerViewEventHandler](#geolayervieweventhandler) data (right side of the above figure).
+
+The event handler data are used by the application to know that it should be listing for events
+and also how to respond to events.
+For example, an event handler associate with a [GeoLayerView](#geolayerview) for a point layer might indicate
+that clicking on a feature should display a graph for that feature using a named template.
+Or, a popup may be displayed that lets the user select which graph type or other visualization to display
+from a list of choices.
+The template can be created in application files and can be accessed when the event is triggered.
+Additional event handler properties, or information in the template,
+can help indicate how to access other data.
+For example, an attribute in the map layer may contain the station identifier,
+which is then used to find a data file and is inserted in a graph template to label the station in a graph's title.
+It is typical that basic integration can be implemented in a straightforward manner;
+however, it is often the case that data require
+specific handling and more effort, for example to reformat identifiers, handle missing values, etc.
+
+Examples and guidelines for how to integrate GeoMapProject configurations with applications will evolve over time.
+The Open Water Foundation is developing a number of web applications and expects that
+a general web mapping application will be made available that can be used with configuration as input,
+with no additional programming.
+
+### Web Application Deployment ###
+
+Deploying a web application consists of copying the application software, webpage content, and supporting data to a web location. 
+Domain Name Service (DNS) records can be configured to allow accessing the website using a "nice" URL,
+which improves the user experience.
+
+The Open Water Foundation typically deploys web applications as public static websites, which require only cloud storage
+and minimal configuration.
+Deployment does require considering a number of factors that impact the URL that will be used to access the application.
+The following table summarizes some of these considerations.
+
+**<p style="text-align: center;">
+Web Application Deployment URL Considerations
+</p>**
+
+| **Issue** | **Recommendation** |
+| -- | -- |
+| Different versions of the application may need to be available. | Use the version in the URL, for example `http://app.somedomain.org/latest/` and `http://app.somedomain.org/0.7.0.dev/`. Each version will have a corresponding folder in cloud storage. |
+| Application is specific to a location with different configurations, for example a state. | Use the location in the URL, for example `http://app.somedomain.org/co/` and if version is used `http://app.somedomain.org/co/latest`.  Each location will have a corressponding folder in cloud storage. In this example the location is used before the version because it is assumed that the version is updated on a different schedule for each location.  There may be significant variations in data for each location, requiring different workflows.  A similar approach could be taken for deployments for specific clients/customers. |
+| Multiple applications may be served for the same domain. | For example, rather than creating separate DNS subdomains for an oranization, the following URL patterns might be used:  `http://apps.somedomain.org/app1/latest` or `http://apps.somedomain.org/app1/co/latest`.  In this case, the cloud storage may have a folder for `apps` under which multiple applications are deployed.  The disadvantages to this approach are that URLs are longer and management of deployed files may be more difficult. |
+
+Cloud storage is generally cheap and therefore a web application can be deployed to as many URLs and web storage folders as needed.
+On the other hand, if the application is written in a way that allows selection of a location (such as a state) within the application,
+then a single copy of the application can be deployed,
+In this approach, updating the software for one location will impact all locations, which has benefits and disadvantages.
+
+The deployment strategy that is ultimately chosen should support the business model and support strategy for application users.
 
 ## History of Specification ##
 
