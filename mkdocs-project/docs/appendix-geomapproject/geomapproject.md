@@ -74,13 +74,13 @@ which are written using the standard Python `json` package.
 
 ```
 GeoMapProject                     # Top-level object containing a list of GeoMap.
-   GeoMap []                      # List of GeoMap, each of which can stand alone.
-      GeoLayer []                 # List of all GeoLayer used in a GeoMap.
-      GeoLayerViewGroup []        # List of GeoLayerViewGroup in a GeoMap, used for legend groups.
+   GeoMap [ ]                     # List of GeoMap, each of which can stand alone.
+      GeoLayer [ ]                # List of all GeoLayer used in a GeoMap.
+      GeoLayerViewGroup [ ]       # List of GeoLayerViewGroup in a GeoMap, used for legend groups.
         GeoLayerView              # A GeoLayerView assigns a GeoSymbol to a GeoLayer, for viewing.
            GeoLayer               # Reference to a layer in GeoLayer list (above).
            GeoSymbol              # Symbol used to visualize the layer.
-           EventHandler []        # One or more event handlers to respond to map interactions
+           EventHandler [ ]       # One or more event handlers to respond to map interactions
 ```
 
 A GeoMapProject can be used by other software, such as web mapping applications, to display maps.
@@ -132,12 +132,23 @@ data exists in separate GeoJSON or other files).
 
 The properties described in the following sections include built-in data members and
 open-ended properties dictionary corresponding to `properties` data member for each object type.
+The following guidelines are used when creating the specification:
 
-**It is expected that additional work on the specification is needed,
-for example to define the syntax for symbol color ramps.
+1. Built-in properties are generally those that define the "physical" structure of the data,
+without which the data model would not make sense.
+In contrast, optional free-format properties provide additional granularity and flexibility in the model
+to support variations in map configurations and the tools that use the maps.
+The determination of whether a property is built-in or optional is subject to interpretation and opinion,
+but hopefully the specification is reasonable.
+2. Free-form properties are generally represented as quoted strings and must be parsed by consuming software.
+Data types other than strings,
+and encoded strings, may be implemented to help minimize errors and facilitate parsing.
+
+**It is expected that the specification will evolve, for example to define the syntax for symbol color ramps.
 These details will be addressed as quickly as possible
 through changes to this documentation and Python GeoProcessor code
-in order to converge on a workable specification.**
+in order to converge on a workable specification.
+The goal is to arrive at a stable specification quickly and use in production software on many projects.**
 
 ### GeoMapProject ###
 
@@ -164,14 +175,16 @@ The following are recognized GeoMapProject properties.
 GeoMapProject Properties in `properties` JSON Element
 </p>**
 
-| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
+| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
 | -- | -- | -- |
 | `author` | Name of author or organization. | |
 | `effectiveDateTime` | Effective date/time of the GeoMapProject, before which the project does not apply, using ISO-8601 date/time, for example `2020-07-03T00:00:00`. | Always effective. |
 | `enabled` | Indicates whether the map project is enabled, specified as boolean `true` or `false`.  If `false`, application code can ignore the map project or read in but indicate as disabled. | `true` |
-| `fileFormatVersion` | Version of the of the GeoMapProject JSON file in notation `Major.Minor.Micro`. | |
+| `specificationVersion` | Version of the of the GeoMapProject JSON file specification in format `Major.Minor.Micro`.  **This property may be moved to a built-in property that is auto-generated.** | |
+| `specificationFlavor` | Flavor of the specification, used to provide some flexibility to consuming applications.  If specified, only `Generic` and `Leaflet` is currently recognized.  The specification flavor applies to free-form properties, for example to provide properties that are not generic but are used by a specific technology. The flavor for a property is indicated in property tables below, if applicable. **This property may or may not be kept depending on whether the generic properties are supported in common packages.** | `Generic` |
 | `expiresDateTime` | Date/time when the project expires, as an ISO-8601 date/time string. | Never expires. |
 | `saveDateTime` | Date/time when the project was created. | |
+| `version` | GeoMapProject version, used to track edits to the project. | |
 | | Additional properties can be added. | |
 
 ### GeoMap ###
@@ -248,6 +261,7 @@ GeoLayerViewGroup Properties in `properties` JSON Element
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | -- | -- | -- |
 | `enabled` | Indicates whether the GeoLayerViewGroup is enabled, specified as boolean `true` or `false`.  If `false`, application code can ignore the group or read in but indicate as disabled. | `true` |
+| `isBackground` | Indicates whether the GeoLayerViewGroup contains background layers (`false` or `true`), in which all [GeoLayer](#geolayer) should be background layers. | `false` |
 | `selectBehavior` | Indicates how selections for the group should occur:<ul><li>`Any` - zero or more layer views can be selected</li><li>`Single` - zero or one layer view can be selected at a time (selecting a layer view will automatically deselect other layer views in the group).</li><li>`Custom` - a custom tool is implemented to select layer views, envisioned for complex applications</li></ul> | `Any` |
 | `selectedInitial` | Indicates whether the GeoLayerViewGroup is selected for display when the map is initially displayed, specified as boolean `true` or `false`. | See GeoMap `geoLayerView.`<br>`selectedInitial.`<br>`default`|
 
@@ -281,6 +295,7 @@ GeoLayerView Properties in `properties` JSON Element
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | -- | -- | -- |
 | `enabled` | Indicates whether the GeoLayerView is enabled, specified as boolean `true` or `false`.  If `false`, application code can ignore the layer view or read in but indicate as disabled. | `true` |
+| `refreshInterval` | The time interval to automatically refresh the layer and redraw the map, used because data in the layer will have changed and do not want to force the user to reload the application or page.  The format should be specified similar to `15Minute` or `12Hour`.  The behavior should be as follows:<ul><li>if the interval is less than an hour, then the initial refresh will occur at the `0` minute of the hour and at `refreshInterval` thereafter</li><li>if the interval is >= an hour but less than a day, then the initial refresh will occur at 0 hour of the day and at `refreshInterval` seconds thereafter</li><li>if the required interval is >= `1Day`, select an hour interval such as `8Hour` or `12Hour` to achieve the desired result</ul>  The refresh interval should be specified as a value that will result in predictable update times, such as every 15 minutes or every 12 hours so that refresh interval for different `GeoLayerView` are synchronized.  Additional properties may be enabled in the future to provide more flexibility. | `0` (no refresh) |
 | `selectedInitial` | Indicates whether the GeoLayerViewGroup is selected for display when the map is initially displayed, specified as boolean `true` or `false`. | See GeoMap `geoLayerView.`<br>`selectedInitial.`<br>`default`|
 
 ### GeoLayer ###
@@ -315,11 +330,30 @@ GeoLayer Properties in `properties` JSON Element
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
 | -- | -- | -- |
-| | Currently no properties are defined.  Source data often provide metadata or other information. | |
+| `attribution` | Simple text or HTML content that will be used to provide attribution for the layer. | |
+| `isBackground` | Indicates whether the layer is a background layer (`false` or `true`), in which case it should typically be part of a [GeoLayerViewGroup](#geolayerviewgroup) that contains only background layers. | `false` |
 
 ### GeoLayerSymbol ###
 
 A GeoLayerSymbol stores properties used to display a layer, depending on the classification type for data.
+Symbol property names and values have been determined from experience and by reviewing common web mapping
+libraries, including
+[Leaflet](https://leafletjs.com/reference-1.6.0.html),
+[Google Maps](https://developers.google.com/maps/documentation/javascript/tutorial),
+and [ Esri JavaScript API](https://developers.arcgis.com/javascript/3/jsapi/),
+with important properties compared below for context.
+
+| **Symbol Property** | **GeoProcessor** | **Leaflet** | **Google Maps** | **Esri JavaScript API** |
+| -- | -- | -- | -- | -- |
+| Outline/stroke color | `color` | `color` | `strokeColor` | color |
+| Outline/stroke opacity | `opacity` | `opacity` | `strokeOpacity` | |
+| Outline/stroke line width | `weight`, pixels | `weight`, pixels | `strokeWeight`, pixels | `width` for lines, pixels |
+| Fill color | `fillColor` | `fillColor` | `fillColor` | Fill symbol, color |
+| Fill opacity | `fillOpacity` | `fillOpacity` | `fillOpacity` | |
+| Marker (image) | `symbolImage` | [`Icon`](https://leafletjs.com/reference-1.6.0.html#icon) object |  | |
+| Symbol type (non-image) | `symbolType` | Built in [`CircleMarker`](https://leafletjs.com/reference-1.6.0.html#circlemarker), other shapes how? | | |
+| Symbol size | `symbolSize`, pixels | Built in [`CircleMarker`](https://leafletjs.com/reference-1.6.0.html#circlemarker) radius, pixels | | |
+
 The following symbol classification types are recognized:
 
 * `Categorized` - each unique value for a specific layer attribute is visualized with specific properties
@@ -338,6 +372,11 @@ The feature type also indicates which properties are used.
 	+ [GeoLayerSymbol Properties for Graduated Classification Type](#geolayersymbol-properties-for-graduated-classification-type)
 	+ [GeoLayerSymbol Properties for Single Symbol Classification Type](#geolayersymbol-properties-for-single-symbol-classification-type)
 
+See also:
+
+* [Leaflet symbol properties](https://leafletjs.com/reference-1.6.0.html#path)
+* [GeoView Project, used with TSTool software](http://opencdss.state.co.us/tstool/latest/doc-user/appendix-geoview/geoview/#geoview-configuration-the-geoview-project-file)
+
 **<p style="text-align: center;">
 GeoLayerSymbol Built-in Data Elements
 </p>**
@@ -347,6 +386,61 @@ GeoLayerSymbol Built-in Data Elements
 | `name` | Symbol name, for example to allow re-use of standard symbol definitions, for example:  `WaterBodies`. | |
 | `description` | A longer description (up to a few sentences), suitable for display on a catalog of symbols.  | |
 | `classificationType` | The symbol classification type, which is used to determine other properties that are relevant:<ul><li>`Categorized` - unique (typically integer or string) attribute values are drawn similarly</li><li>`Graduated` - a (typically numeric) attribute value is used to look up color from a color ramp or table</li><li>`SingleSymbol` - same symbol is used for all features</li></ul> | `SingleSymbol` |
+
+#### GeoLayerSymbol Properties for Point Feature Type ####
+
+The following GeoLayerSymbol properties can be used with [GeoLayer](#geolayer) `geometryType=Point`.
+Use one of the following approaches:
+
+* `symbolImage` - specify an image file and related properties (`symbolSize`)
+* `symbolShape` - specify a symbol shape (vector shape) and related properties (`symbolSize` and most rendering properties)
+
+**<p style="text-align: center;">
+SingleSymbol GeoLayerSymbol Properties in `properties` JSON Element
+</p>**
+
+| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
+| -- | -- | -- |
+| `color` | Outline color for the point symbol, hexadecimal color is preferred (see [Colors](#colors)). | **need to evaluate if default color guidelines should be provided**|
+| `fillColor` | Fill color for the symbol, hexadecimal color is preferred (see [Colors](#colors)). | `fillColor` |
+| `fillOpacity` | Opacity of the `fillColor` (`1.0` for solid, `0.0` for transparent). | `0.2` (recommended) |
+| `opacity` | Opacity of the `color` (`1.0` for solid, 0.0 for transparent). | `1.0` |
+| `symbolImage` | Path to image file to use for the symbol, in `png` format (**need to list other supported formats**). | |
+| `symbolSVG` | Path to SVG file to use for the symbol (**not sure if this is possile or handle through `symbolShape` and built-in code)**. | |
+| `symbolShape` | Symbol shape (simple or complex vector shape):<ul><li>`Circle`</li></ul> (**need to enable more symbol types**) | `Circle` |
+| `symbolSize` | Size (width) of the symbol in `sizeUnits`, used with image and shape symbols. | `6` (**need to evaluate**) |
+| `sizeUnits` | Units of `symbolSize`: `pixels` | `pixels` |
+| `weight` | Width of symbol outline, pixels, `0` to not draw outline. | `3` (recommended) |
+
+#### GeoLayerSymbol Properties for Line Feature Type ####
+
+The following GeoLayerSymbol properties can be used with [GeoLayer](#geolayer) `geometryType=WKT:LineString`.
+
+**<p style="text-align: center;">
+SingleSymbol GeoLayerSymbol Properties in `properties` JSON Element
+</p>**
+
+| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
+| -- | -- | -- |
+| `color` | Color for the line, hexadecimal color is preferred (see [Colors](#colors)). | **need to evaluate if default color guidelines should be provided**|
+| `opacity` | Opacity of the line `color` (`1.0` for solid, `0.0` for transparent). | `1.0` |
+| `weight` | Width of line, pixels. | `3` (recommended) |
+
+#### GeoLayerSymbol Properties for Polygon Feature Type ####
+
+The following GeoLayerSymbol properties can be used with [GeoLayer](#geolayer) `geometryType=WKT:Polygon`.
+
+**<p style="text-align: center;">
+SingleSymbol GeoLayerSymbol Properties in `properties` JSON Element
+</p>**
+
+| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
+| -- | -- | -- |
+| `color` | Outline color for polygons, hexadecimal color is preferred (see [Colors](#colors))`. | **need to evaluate if default color guidelines should be provided**|
+| `fillColor` | Fill color for polygons, hexadecimal color is preferred (see [Colors](#colors)). | `fillColor` |
+| `fillOpacity` | Opacity of the `fillColor` (`1.0` for solid, `0.0` for transparent). | `0.2` (recommended) |
+| `opacity` | Opacity of the `color` (`1.0` for solid, `0.0` for transparent). | `1.0` |
+| `weight` | Width of polygon outline, pixels, `0` to not draw outline. | `3` (recommended) |
 
 #### GeoLayerSymbol Properties for Categorized Classification Type ####
 
@@ -386,46 +480,6 @@ SingleSymbol GeoLayerSymbol Properties in `properties` JSON Element
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
 | -- | -- | -- |
 | `color` | Color for the symbol as recognized color (see [Colors](#colors)). | |
-| `outlineColor` | Outline color for the symbol as recognized color (see [Colors](#colors)). | |
-
-#### GeoLayerSymbol Properties for Point Feature Type ####
-
-The following GeoLayerSymbol properties can be used with [GeoLayer](#geolayer) `geometryType=Point`.
-
-**<p style="text-align: center;">
-SingleSymbol GeoLayerSymbol Properties in `properties` JSON Element
-</p>**
-
-| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
-| -- | -- | -- |
-| `color` | Color for the symbol as recognized color (see [Colors](#colors)). | |
-| `outlineColor` | Outline color for the symbol as recognized color (see [Colors](#colors)). | |
-
-#### GeoLayerSymbol Properties for Line Feature Type ####
-
-The following GeoLayerSymbol properties can be used with [GeoLayer](#geolayer) `geometryType=WKT:LineString`.
-
-**<p style="text-align: center;">
-SingleSymbol GeoLayerSymbol Properties in `properties` JSON Element
-</p>**
-
-| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
-| -- | -- | -- |
-| `color` | Color for the symbol as recognized color (see [Colors](#colors)). | |
-| `outlineColor` | Outline color for the symbol as recognized color (see [Colors](#colors)). | |
-
-#### GeoLayerSymbol Properties for Polygon Feature Type ####
-
-The following GeoLayerSymbol properties can be used with [GeoLayer](#geolayer) `geometryType=WKT:Polygon`.
-
-**<p style="text-align: center;">
-SingleSymbol GeoLayerSymbol Properties in `properties` JSON Element
-</p>**
-
-| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
-| -- | -- | -- |
-| `color` | Color for the symbol as recognized color (see [Colors](#colors)), used for both `fillColor` and `outlineColor`. | |
-| `fillColor` | Fill color for the symbol as recognized color (see [Colors](#colors)). | |
 | `outlineColor` | Outline color for the symbol as recognized color (see [Colors](#colors)). | |
 
 ### GeoLayerViewEventHandler ###
