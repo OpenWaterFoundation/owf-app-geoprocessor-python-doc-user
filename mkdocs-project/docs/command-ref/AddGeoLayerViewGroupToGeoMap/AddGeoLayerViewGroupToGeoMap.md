@@ -48,9 +48,9 @@ Command Parameters
 | `Name` | Name of the new GeoLayerViewGroup, used to label the group in the map legend. | None - must be specified. |
 | `Description` | Description for the new GeoLayerViewGroup. | |
 | `Properties` | Properties for the GeoLayerViewGroup using syntax `Property1:Value1,Property2,'Value 2'`.  Single quotes are used around values when the value contains special characters such as comma and spaces.  See the [GeoMapProject](../../appendix-geomapproject/geomapproject.md) documentation a list of properties. |  |
-| `InsertPosition` | The position to insert the GeoLayerViewGroup:<ul><li>`Top` - top of the list (will be drawn on top).</li><li>`Bottom` - bottom of the list (will be drawn on the bottom).</li></ul> | `Bottom` | 
-| `InsertBefore` | The GeoLayerViewGroupID to insert before. | |
-| `InsertAfter` | The GeoLayerViewGroupID to insert after. | |
+| `InsertPosition` | The position to insert the GeoLayerViewGroup:<ul><li>`Top` - top of the list (will be drawn on top).</li><li>`Bottom` - bottom of the list (will be drawn on the bottom).</li></ul> **The groups will be rendered in the opposite order of the list. The last group added to the map will be rendered first.** | `Bottom` | 
+| `InsertBefore` | The GeoLayerViewGroupID to insert before. **The groups will be rendered in the opposite order of the list. The last group added to the map will be rendered first.** | See `InsertPosition` default. |
+| `InsertAfter` | The GeoLayerViewGroupID to insert after. **The groups will be rendered in the opposite order of the list. The last group added to the map will be rendered first.** | See `InsertPosition` default. |
 
 ## Examples ##
 

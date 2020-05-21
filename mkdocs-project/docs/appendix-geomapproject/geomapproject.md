@@ -212,7 +212,7 @@ GeoMap Built-in Data Elements
 | `geoMapId` | Unique [GeoMap](#geomap) identifier, typically without whitespace, for example: `MyMap`. | None - must be specified. |
 | `name` | Short name, suitable for display in applications, for example: `Agricultural Data`. | None - must be specified. |
 | `geoLayers` | An array (Python list) of [GeoLayer](#geolayer) for all the layers used in the map.  The [GeoLayer](#geolayer) in this list are referred to by `geoLayerId` in other elements such as layers referenced in [GeoLayerView](#geolayerview).| |
-| `geoLayerViewGroups` | An array (Python list) of [GeoLayerViewGroup](#geolayerviewgroup).  One or more layer views can be contained in the [GeoMapProject](#geomapproject). | |
+| `geoLayerViewGroups` | An array (Python list) of [GeoLayerViewGroup](#geolayerviewgroup).  One or more layer views can be contained in the [GeoMapProject](#geomapproject).  The first group in the list will be displayed at the top of the legend and be rendered last when processing groups.  The last group in the list will be displayed at the bottom of the legend and be rendered first when processing layer groups. | |
 | `properties` | An open-ended list of elements to provide additional properties (see table below). | |
 
 The following are recognized GeoMap properties.
@@ -249,7 +249,7 @@ GeoLayerViewGroup Built-in Data Elements
 | -- | -- | -- |
 | `description` | A longer description (up to a few sentences), suitable for display on a catalog of views.  | |
 | `geoLayerViewGroupId` | Unique GeoLayerViewGroup identifier, typically without whitespace, for example: `IrrigatedLands`. | None - must be specified. |
-| `geoLayerViews` | An array (Python list) of [GeoLayerView](#geolayerview) for all the layer views used in the group. | |
+| `geoLayerViews` | An array (Python list) of [GeoLayerView](#geolayerview) for all the layer views used in the group.  The first layer view in the list will be displayed at the top of the legend (in the group) and be rendered last when processing layer views (in the group).  The last layer view in the list will be displayed at the bottom of the legend (in the group) and be rendered first when processing layer views (in the group). | |
 | `name` | Short name, suitable for display in applications, for example: `Irrigated Lands`. | None - must be specified. |
 | `properties` | An open-ended list of elements to provide additional properties (see table below). | |
 

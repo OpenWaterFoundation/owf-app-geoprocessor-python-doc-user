@@ -49,9 +49,9 @@ Command Parameters
 | `Name` | Name of the new GeoLayerView, used to label the layer in the map legend. | None - must be specified. |
 | `Description` | Description for the new GeoLayerView. | |
 | `Properties` | Additional properties to assign to the GeoLayerView, using format: `prop1:value1,prop2:'string with space'`.  Can use `${Property}` notation.  | No additional properties are assigned. |
-| `InsertPosition` | The position to insert the GeoLayerView within the GeoLayerViewGroup:<ul><li>`Top` - top of the list (will be drawn on top).</li><li>`Bottom` - bottom of the list (will be drawn on the bottom).</li></ul> | `Bottom` | 
-| `InsertBefore` | The GeoLayerViewID to insert before. | |
-| `InsertAfter` | The GeoLayerViewID to insert after. | |
+| `InsertPosition` | The position to insert the GeoLayerView within the GeoLayerViewGroup:<ul><li>`Top` - top of the list (will be drawn on top).</li><li>`Bottom` - bottom of the list (will be drawn on the bottom).</li></ul>  **The layers will be rendered in the opposite order of the list. The last layers added to the group will be rendered first.** | `Bottom` | 
+| `InsertBefore` | The GeoLayerViewID to insert before. **The layers will be rendered in the opposite order of the list. The last layers added to the group will be rendered first.** | See the `InsertPosition` default. |
+| `InsertAfter` | The GeoLayerViewID to insert after. **The layers will be rendered in the opposite order of the list. The last layers added to the group will be rendered first.** | See the `InsertPosition` default. |
 
 ## Examples ##
 
