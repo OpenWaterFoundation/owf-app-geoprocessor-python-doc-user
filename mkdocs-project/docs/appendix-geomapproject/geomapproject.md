@@ -395,7 +395,7 @@ GeoLayerSymbol Built-in Data Elements
 The following GeoLayerSymbol properties can be used with [GeoLayer](#geolayer) `geometryType=Point`.
 Use one of the following approaches:
 
-* `symbolImage` - specify an image file and related properties (`symbolSize`), which will result in a "marker" at the symbol, for example ![symbolFile](images/symbolFile.png)
+* `symbolImage` or `buildinSymbolImage`- specify an image file and related properties (`symbolSize`), which will result in a "marker" at the symbol, for example ![default-marker](images/default-marker.png)
 * `symbolShape` - specify a symbol shape (vector shape) and related properties (`symbolSize` and most rendering properties), for example ![symbolShape](images/symbolShape.png)
 * `symbolSVG` - path to SVG file to use for the symbol (**not sure if this is possile or handle through `symbolShape` and built-in code)**
 
@@ -403,12 +403,21 @@ The following properties are used for `classificationType=SingleSymbol`.
 See the property tables for each classification type for details.
 
 **<p style="text-align: center;">
-Point Geometry Type GeoLayerSymbol Properties when `symbolFile` is used in `properties` JSON Element
+Point Geometry Type GeoLayerSymbol Properties when `symbolFile` or `builtinSymbolFile` is used in `properties` JSON Element
 </p>**
 
-| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
+| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
 | -- | -- | -- |
-| `symbolImage` | Path to image file to use for the symbol, in `png` format (**need to list other supported formats**).  If the specified filename does not contain a file extension, then a built-in image/marker is used, one of:<ul><li>`default` - upside down waterdrop</li></ul> | Specify as `default` to use the default symbol. |
+| `builtinSymbolImage` | Path to built-in image file to use for the symbol.  `png` files are typically used.  Built-in images are found in the `/img/` folder.  See below for a list of available built-in images. |
+| `symbolImage` | Path to image file to use for the symbol.  `png` files are typically used.  Image files are typically found in the `/img/` folder under the application files. |
+
+**<p style="text-align: center;">
+Built-in Image Files for use as `builtinSymbolImage` Property Value
+</p>**
+
+| **`builtinSymbolImage` Property Value** | **Description** |
+| -- | -- |
+| `/img/default-marker.png` | Upside down blue "water drop". |
 
 **<p style="text-align: center;">
 Point Geometry Type GeoLayerSymbol Properties when `symbolShape` is used in `properties` JSON Element

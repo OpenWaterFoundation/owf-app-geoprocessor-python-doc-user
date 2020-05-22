@@ -14,6 +14,12 @@
 The `ReadGeoLayerFromGeoJSON` command reads a [GeoLayer](../../introduction/introduction.md#geolayer)
 from a file in [GeoJSON format](../../spatial-data-format-ref/GeoJSON/GeoJSON.md). 
 
+The command is able to read original (2008) GeoJSON specification and
+latest [RFC 7946 specification](https://tools.ietf.org/html/rfc7946).
+Therefore, the command can be used with
+[`WriteGeoLayerToGeoJSON`](../WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON.md)
+command to convert a GeoJSON file from old to new specification.
+
 ## Command Editor ##
 
 The following dialog is used to edit the command and illustrates the command syntax.
