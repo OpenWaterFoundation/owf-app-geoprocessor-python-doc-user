@@ -399,7 +399,7 @@ Use one of the following approaches:
 * `symbolShape` - specify a symbol shape (vector shape) and related properties (`symbolSize` and most rendering properties), for example ![symbolShape](images/symbolShape.png)
 * `symbolSVG` - path to SVG file to use for the symbol (**not sure if this is possile or handle through `symbolShape` and built-in code)**
 
-The following properties are used directly for `classificationType=SingleSymbol`.
+The following properties are used for `classificationType=SingleSymbol`.
 See the property tables for each classification type for details.
 
 **<p style="text-align: center;">
@@ -414,16 +414,33 @@ Point Geometry Type GeoLayerSymbol Properties when `symbolFile` is used in `prop
 Point Geometry Type GeoLayerSymbol Properties when `symbolShape` is used in `properties` JSON Element
 </p>**
 
-| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
-| -- | -- | -- |
-| `color` | Outline color for the point symbol, hexadecimal color is preferred (see [Colors](#colors)).  | **Need to evaluate if default color guidelines should be provided.**|
-| `fillColor` | Fill color for the symbol, hexadecimal color is preferred (see [Colors](#colors)). | `color` |
-| `fillOpacity` | Opacity of the `fillColor` (`1.0` for solid, `0.0` for transparent). | `0.2` (recommended) |
-| `opacity` | Opacity of the `color` (`1.0` for solid, 0.0 for transparent). | `1.0` |
-| `symbolShape` | Symbol shape (simple or complex vector shape):<ul><li>`Circle`</li><li>`Diamond`</li><li>`Square`</li><li>`TriangleDown`</li><li>`TriangleUp`</li><li>`X`</li><li>**need to enable more symbol types similar to TSTool graphs.**</li></ul> | `Circle` |
-| `symbolSize` | Size (width) of the symbol in `sizeUnits`, used with image and shape symbols. | `6` (**need to evaluate**) |
-| `sizeUnits` | Units of `symbolSize`: `pixels` | `pixels` |
-| `weight` | Width of symbol outline, pixels, `0` to not draw outline. | `3` (recommended) |
+| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Outline/Fill** | **Description** | **Default** |
+| -- | -- | -- | -- |
+| `color` | Outline | Outline color for the point symbol, hexadecimal color is preferred (see [Colors](#colors)).  | **Need to evaluate if default color guidelines should be provided.**|
+| `fillColor` | Fill | Fill color for the symbol, hexadecimal color is preferred (see [Colors](#colors)). | `color` |
+| `fillOpacity` | Fill | Opacity of the `fillColor` (`1.0` for solid, `0.0` for transparent). | `0.2` (recommended) |
+| `opacity` | Outline | Opacity of the `color` (`1.0` for solid, 0.0 for transparent). | `1.0` |
+| `symbolShape` | | Symbol shape (simple or complex vector shape).  See the table below. | `Circle` |
+| `symbolSize` | | Size (width) of the symbol in `sizeUnits`, used with image and shape symbols. | `6` (**need to evaluate**) |
+| `sizeUnits` | | Units of `symbolSize`: `pixels` | `pixels` |
+| `weight` | Outline | Width of symbol outline, pixels, `0` to not draw outline. | `3` (recommended) |
+
+The following are values for `symbolShape`.
+Each shape is drawn as a vector shape with outline (see `color` and `weight` above) and fill (see `fillColor` property above).
+
+**<p style="text-align: center;">
+`symbolShape` Values
+</p>**
+
+| **`symbolShape` Value** | **Description** |
+| -- | -- |
+| `Circle` | Circle. |
+| `Diamond` | Diamond. |
+| `Triangle-Down` | Triangle with point on bottom. |
+| `Triangle-Up` | Triangle with point on top. |
+| `Square` | Square. |
+| `X` | X (diagonally-crossed lines). |
+| Others to be implemented | See [TSTool `SymbolStyle` property](http://opencdss.state.co.us/tstool/latest/doc-user/appendix-tsview/tsview/#time-series-product-reference). |
 
 #### GeoLayerSymbol Properties for Line Geometry Type ####
 
