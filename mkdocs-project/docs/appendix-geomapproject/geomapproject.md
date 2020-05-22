@@ -395,25 +395,32 @@ GeoLayerSymbol Built-in Data Elements
 The following GeoLayerSymbol properties can be used with [GeoLayer](#geolayer) `geometryType=Point`.
 Use one of the following approaches:
 
-* `symbolImage` - specify an image file and related properties (`symbolSize`)
-* `symbolShape` - specify a symbol shape (vector shape) and related properties (`symbolSize` and most rendering properties)
+* `symbolImage` - specify an image file and related properties (`symbolSize`), which will result in a "marker" at the symbol, for example ![symbolFile](images/symbolFile.png)
+* `symbolShape` - specify a symbol shape (vector shape) and related properties (`symbolSize` and most rendering properties), for example ![symbolShape](images/symbolShape.png)
+* `symbolSVG` - path to SVG file to use for the symbol (**not sure if this is possile or handle through `symbolShape` and built-in code)**
 
 The following properties are used directly for `classificationType=SingleSymbol`.
 See the property tables for each classification type for details.
 
 **<p style="text-align: center;">
-Point Geometry Type GeoLayerSymbol Properties in `properties` JSON Element
+Point Geometry Type GeoLayerSymbol Properties when `symbolFile` is used in `properties` JSON Element
 </p>**
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
 | -- | -- | -- |
-| `color` | Outline color for the point symbol, hexadecimal color is preferred (see [Colors](#colors)).  | **need to evaluate if default color guidelines should be provided**|
-| `fillColor` | Fill color for the symbol, hexadecimal color is preferred (see [Colors](#colors)). | `fillColor` |
+| `symbolImage` | Path to image file to use for the symbol, in `png` format (**need to list other supported formats**).  If the specified filename does not contain a file extension, then a built-in image/marker is used, one of:<ul><li>`default` - upside down waterdrop</li></ul> | Specify as `default` to use the default symbol. |
+
+**<p style="text-align: center;">
+Point Geometry Type GeoLayerSymbol Properties when `symbolShape` is used in `properties` JSON Element
+</p>**
+
+| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
+| -- | -- | -- |
+| `color` | Outline color for the point symbol, hexadecimal color is preferred (see [Colors](#colors)).  | **Need to evaluate if default color guidelines should be provided.**|
+| `fillColor` | Fill color for the symbol, hexadecimal color is preferred (see [Colors](#colors)). | `color` |
 | `fillOpacity` | Opacity of the `fillColor` (`1.0` for solid, `0.0` for transparent). | `0.2` (recommended) |
 | `opacity` | Opacity of the `color` (`1.0` for solid, 0.0 for transparent). | `1.0` |
-| `symbolImage` | Path to image file to use for the symbol, in `png` format (**need to list other supported formats**). | |
-| `symbolSVG` | Path to SVG file to use for the symbol (**not sure if this is possile or handle through `symbolShape` and built-in code)**. | |
-| `symbolShape` | Symbol shape (simple or complex vector shape):<ul><li>`Circle`</li></ul> (**need to enable more symbol types**) | `Circle` |
+| `symbolShape` | Symbol shape (simple or complex vector shape):<ul><li>`Circle`</li><li>`Diamond`</li><li>`Square`</li><li>`TriangleDown`</li><li>`TriangleUp`</li><li>`X`</li><li>**need to enable more symbol types similar to TSTool graphs.**</li></ul> | `Circle` |
 | `symbolSize` | Size (width) of the symbol in `sizeUnits`, used with image and shape symbols. | `6` (**need to evaluate**) |
 | `sizeUnits` | Units of `symbolSize`: `pixels` | `pixels` |
 | `weight` | Width of symbol outline, pixels, `0` to not draw outline. | `3` (recommended) |
