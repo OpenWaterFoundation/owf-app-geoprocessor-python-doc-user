@@ -14,6 +14,9 @@
 The `ReadRasterGeoLayerFromWebMapService` command reads a [GeoLayer](../../introduction/introduction.md#geolayer)
 from a [Web Map Service](https://en.wikipedia.org/wiki/Web_Map_Service).
 
+This command is currently only used to make the GeoProcessor aware of a WMS layer to allow creating maps.
+The URL for the WMS is used in the map configuration file.
+
 ## Command Editor ##
 
 The following dialog is used to edit the command and illustrates the command syntax.
@@ -54,4 +57,4 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [`ReadRasterGeoLayerFromWebMapService`](../ReadRasterGeoLayerFromWebMapService/ReadRasterGeoLayerFromWebMapService.md) command
+* [`ReadRasterGeoLayerFromTileMapService`](../ReadRasterGeoLayerFromTileMapService/ReadRasterGeoLayerFromTileMapService.md) command

@@ -33,6 +33,7 @@ nav:
   - CompareFiles: command-ref/CompareFiles/CompareFiles.md
   - CopyFile: command-ref/CopyFile/CopyFile.md
   - CopyGeoLayer: command-ref/CopyGeoLayer/CopyGeoLayer.md
+  - CreateFolder: command-ref/CreateFolder/CreateFolder.md
   - CreateGeoLayerFromGeometry: command-ref/CreateGeoLayerFromGeometry/CreateGeoLayerFromGeometry.md
   - CreateGeoMap: command-ref/CreateGeoMap/CreateGeoMap.md
   - CreateGeoMapProject: command-ref/CreateGeoMapProject/CreateGeoMapProject.md
@@ -48,11 +49,15 @@ nav:
   - MergeGeoLayers: command-ref/MergeGeoLayers/MergeGeoLayers.md
   - Message: command-ref/Message/Message.md
   - OpenDataStore: command-ref/OpenDataStore/OpenDataStore.md
+  - QgisAlgorithmHelp: command-ref/QgisAlgorithmHelp/QgisAlgorithmHelp.md
+  - RasterizeGeoLayer: command-ref/RasterizeGeoLayer/RasterizeGeoLayer.md
   - ReadGeoLayerFromDelimitedFile: command-ref/ReadGeoLayerFromDelimitedFile/ReadGeoLayerFromDelimitedFile.md
   - ReadGeoLayerFromGeoJSON: command-ref/ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md
   - ReadGeoLayerFromShapefile: command-ref/ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile.md
   - ReadGeoLayersFromFGDB: command-ref/ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB.md
   - ReadGeoLayersFromFolder: command-ref/ReadGeoLayersFromFolder/ReadGeoLayersFromFolder.md
+  - ReadGeoLayersFromGeoPackage: command-ref/ReadGeoLayersFromGeoPackage/ReadGeoLayersFromGeoPackage.md
+  - ReadRasterGeoLayerFromFile: command-ref/ReadRasterGeoLayerFromFile/ReadRasterGeoLayerFromFile.md
   - ReadRasterGeoLayerFromTileMapService: command-ref/ReadRasterGeoLayerFromTileMapService/ReadRasterGeoLayerFromTileMapService.md
   - ReadRasterGeoLayerFromWebMapService: command-ref/ReadRasterGeoLayerFromWebMapService/ReadRasterGeoLayerFromWebMapService.md
   - ReadTableFromDataStore: command-ref/ReadTableFromDataStore/ReadTableFromDataStore.md
@@ -75,6 +80,7 @@ nav:
   - SetProperty: command-ref/SetProperty/SetProperty.md
   - SetPropertyFromGeoLayer: command-ref/SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md
   - SimplifyGeoLayerGeometry: command-ref/SimplifyGeoLayerGeometry/SimplifyGeoLayerGeometry.md  
+  - SplitGeoLayerByAttribute: command-ref/SplitGeoLayerByAttribute/SplitGeoLayerByAttribute.md  
   - StartLog: command-ref/StartLog/StartLog.md
   - StartRegressionTestResultsReport: command-ref/StartRegressionTestResultsReport/StartRegressionTestResultsReport.md
   - UnknownCommand: command-ref/UnknownCommand/UnknownCommand.md
@@ -88,6 +94,7 @@ nav:
   - WriteGeoLayerToShapefile: command-ref/WriteGeoLayerToShapefile/WriteGeoLayerToShapefile.md
   - WriteGeoMapProjectToJSON: command-ref/WriteGeoMapProjectToJSON/WriteGeoMapProjectToJSON.md
   - WritePropertiesToFile: command-ref/WritePropertiesToFile/WritePropertiesToFile.md
+  - WriteRasterGeoLayerToFile: command-ref/WriteRasterGeoLayerToFile/WriteRasterGeoLayerToFile.md
   - WriteTableToDataStore: command-ref/WriteTableToDataStore/WriteTableToDataStore.md
   - WriteTableToDelimitedFile: command-ref/WriteTableToDelimitedFile/WriteTableToDelimitedFile.md
   - WriteTableToExcel: command-ref/WriteTableToExcel/WriteTableToExcel.md  
@@ -96,6 +103,8 @@ nav:
   - Esri File Geodatabase: spatial-data-format-ref/EsriFileGeodatabase/EsriFileGeodatabase.md
   - Esri Shapefile: spatial-data-format-ref/EsriShapefile/EsriShapefile.md
   - GeoJSON: spatial-data-format-ref/GeoJSON/GeoJSON.md
+  - GeoPackage: spatial-data-format-ref/GeoPackage/GeoPackage.md
+  - GeoTIFF: spatial-data-format-ref/GeoTIFF/GeoTIFF.md
   - KML: spatial-data-format-ref/KML/KML.md
 - Reference - Resources: resources/resources.md
 - Appendix - Installing: appendix-install/install.md

@@ -42,6 +42,8 @@ define maps and graph configurations.  The InfoMapper is used to develop and tes
 
 A GeoMapProject file is conceptually equivalent to QGIS (`qgs`) and ArcGIS (`mxd`) map project file. 
 However, the GeoProcessor GeoMapProject is a light-weight JSON file that contains relatively minimal configuration information.
+It does not contain configuration for application user interface - this must be handled by the application.
+The GeoMapProject specification is tested with the GeoProcessor (to create GeoMapProject) and InfoMapper (to use the configuration).
 GeoProcessor commands available in the ***Map Processing*** commands menu automate creating GeoMapProjects,
 so that maps can be recreated and scaled to various locations.
 
@@ -64,9 +66,9 @@ GeoMapProject Types
 
 | **GeoMapProject Type** | **Description** |
 | -- | -- |
+| `SingleMap` | A single [GeoMap](#geomap) is included in the [GeoMapProject](#geomapproject), for typical "single page web applications" where a single map display dominates the application.  In this case the [GeoMapProject](#geomapproject) `geoMaps` list can onl contain one [GeoMap](#geomap). For example, the [CDSS SNODAS Tools](http://snodas.cdss.state.co.us/app/index.html) is an example of a single map application (in this case it does not use the new GeoMapProject design). **This is the current focus and is used with the InfoMapper software, where each map in the InfoMapper corresponds to a GeoMapProject.  Other map project types may be be demonstrated in the future.** |
 | `Dashboard` | An application that has several maps, typically accessible by menus or other user interface components.  The [Poudre Information Platform](https://github.com/OpenWaterFoundation/owf-app-poudre-dashboard-ng) is an example. The application would have an additional configuration file to indicate how maps are used in the dashboard. |
 | `Grid` | A grid (matrix) of maps, for example showing different times.  For example, see the [California Drought visualization](https://www.latimes.com/local/lanow/la-me-g-california-drought-map-htmlstory.html).  Additional layout properties may be needed to define how the grid is laid out.  Because of the resources needed for each map, it may make sense to initially display the maps as a grid of images and then have links to maps similar to a dashboard. |
-| `SingleMap` | A single [GeoMap](#geomap) is included in the [GeoMapProject](#geomapproject), for typical "single page web applications" where a single map display dominates the application.  In this case the [GeoMapProject](#geomapproject) `geoMaps` list can onl contain one [GeoMap](#geomap). For example, the [CDSS SNODAS Tools](http://snodas.cdss.state.co.us/app/index.html) is an example of a single map application (in this case it does not use the new GeoMapProject design). |
 | `Story` | A sequence of maps that are referenced in a story. For example, see [stories that OWF has created](http://stories.openwaterfoundation.org/). |
 
 A GeoMapProject is created using the
@@ -115,7 +117,7 @@ for example to provide map displays for GeoMap configurations.
 
 ## Examples ##
 
-The following are examples of GeoViewProject files.
+The following are examples of GeoMapProject files.
 
 **<p style="text-align: center;">
 GeoMapProject Example JSON Files
@@ -126,9 +128,21 @@ GeoMapProject Example JSON Files
 | [Basic Example](resources/test-CreateGeoMap-out.json) | `Dashboard` | Output of [automated test](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ListFiles) for [`CreateGeoMapProject`](../command-ref/CreateGeoMapProject/CreateGeoMapProject) command. |
 | | | More examples will be added in the future, with links to workflows that created the GeoMapProject files. |
 
+The following are examples of applications that use GeoMapProject files.
+
+**<p style="text-align: center;">
+Example Applications that use GeoMapProject Files
+</p>**
+
+| **Website** | **Software** | **Description** |
+| -- | -- | -- |
+| [Poudre Basin Information](http://poudre.openwaterfoundation.org/latest/) | InfoMapper | Local scale river basin information portal with many simple maps. |
+| [Upper Colorado Water Allocation Model](http://opencdss.openwaterfoundation.org/datasets/colorado/2015/) | InfoMapper | Large river basin modeling dataset visualization with background information maps and multi-layer dataset maps. |
+
+
 ## Specification ##
 
-The GeoViewMapProject specification can be understood by reviewing the JSON format for GeoViewProject.
+The GeoViewMapProject specification can be understood by reviewing the JSON format for GeoMapProject.
 This format is a serialized form of the in-memory Python objects in GeoProcessor software,
 although the JSON file elements are slightly different from in-memory object attributes due to naming conventions
 (e.g., `GeoLayer.geolayer_id` and `GeoLayer.id` in Python becomes `geoLayerId` in JSON)
@@ -322,7 +336,7 @@ GeoLayer Built-in Data Elements
 | `geoLayerId` | Unique GeoLayer identifier, typically without whitespace, for example: `IrrigatedLands2010`. | None - must be specified. |
 | `geometryType` | Geometry type in format similar to `WKT:Polygon`, which is used to determine which [GeoLayerSymbol](#geolayersymbol) properties are relevant.  See the [WKT Documentation](https://en.wikipedia.org/wiki/Well-known_text_representation_of_geometry). | None - must be specified. |
 | `history` | A list of strings indicating how the layer was processed by the GeoProcessor, useful to troubleshoot processing issues. | |
-| `layerType` | Layer type: <ul><li>`Raster` - a raster layer</li><li>`Vector` - a vector layer</li></ul>The layer type is useful to help applications know how to process the layer. | None - must be specified. |
+| `layerType` | Layer type: <ul><li>`Raster` - a raster layer, which contains data values (elevation, etc.) and georeferencing information</li><li>`RasterImage` - **(Proposed)** a subset of raster layer type consisting of a pixel-based image, which requires providing anchoring points to georeference the image on the map</li><li>`Vector` - a vector layer</li></ul>The layer type is useful to help applications know how to process the layer. | None - must be specified. |
 | `name` | Short name, suitable for display in applications, for example: `Irrigated Lands, 2010`. | None - must be specified. |
 | `properties` | An open-ended list of elements to provide additional properties (see table below). | |
 | `sourcePath` | The path to the source layer data as a file or URL path.  Although it can be a full path (for example when retrieving data from remote servers), it is usually specified relative to a folder in the [GeoMap](#geomap) `dataPath` folders when publishing a self-contained website.  This provides flexibility in storing and accessing layers in applications.  If the layer was written during processing, then the output file path is used.  Otherwise, the layer input file path is used. | None - must be specified. |

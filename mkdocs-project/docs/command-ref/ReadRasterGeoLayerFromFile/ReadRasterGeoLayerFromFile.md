@@ -1,4 +1,4 @@
-# GeoProcessor / Command / ReadRasterGeoLayerFromTileMapService #
+# GeoProcessor / Command / ReadRasterGeoLayerFromFile #
 
 * [Overview](#overview)
 * [Command Editor](#command-editor)
@@ -11,22 +11,21 @@
 
 ## Overview ##
 
-The `ReadRasterGeoLayerFromTileMapService` command reads a [GeoLayer](../../introduction/introduction.md#geolayer)
-from a [Tile Map Service](https://en.wikipedia.org/wiki/Tile_Map_Service) (TMS).
+The `ReadRasterGeoLayerFromFile` command reads a raster [GeoLayer](../../introduction/introduction.md#geolayer)
+from a raster file.
+The file extension indicates the file format, for example `tif` for GeoTiff.
 
-This command is currently only used to make the GeoProcessor aware of a TMS layer to allow creating maps.
-The URL for the TMS is used in the map configuration file.
 
 ## Command Editor ##
 
 The following dialog is used to edit the command and illustrates the command syntax.
 
 **<p style="text-align: center;">
-![ReadRasterGeoLayerFromTileMapService](ReadRasterGeoLayerFromTileMapService.png)
+![ReadRasterGeoLayerFromFile](ReadRasterGeoLayerFromFile.png)
 </p>**
 
 **<p style="text-align: center;">
-`ReadRasterGeoLayerFromTileMapService` Command Editor (<a href="../ReadRasterGeoLayerFromTileMapService.png">see full-size image</a>)
+`ReadRasterGeoLayerFromFile` Command Editor (<a href="../ReadRasterGeoLayerFromFile.png">see full-size image</a>)
 </p>**
 
 ## Command Syntax ##
@@ -34,7 +33,7 @@ The following dialog is used to edit the command and illustrates the command syn
 The command syntax is as follows:
 
 ```text
-ReadRasterGeoLayerFromTileMapService(Parameter="Value",...)
+ReadRasterGeoLayerFromFile(Parameter="Value",...)
 ```
 **<p style="text-align: center;">
 Command Parameters
@@ -42,7 +41,7 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `InputUrl`<br>**required**| The Tile Map Service (WMS) URL to read. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
+| `InputFile`<br>**required** | The file to read. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
 | `GeoLayerID` | A GeoLayer identifier. [Formatting characters](../../introduction/introduction.md#geolayer-property-format-specifiers) and [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized. Refer to [documentation](../../best-practices/geolayer-identifiers.md) for best practices on naming GeoLayer identifiers.| None - must be specified. |
 | `Name` | Name of the output GeoLayer. | `GeoLayerID` |
 | `Description` | Description for the output GeoLayer. | |
@@ -51,10 +50,10 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ReadRasterGeoLayerFromTileMapService).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ReadRasterGeoLayerFromFile).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* [`ReadRasterGeoLayerFromWebMapService`](../ReadRasterGeoLayerFromWebMapService/ReadRasterGeoLayerFromWebMapService.md) command
+* [`WriteRasterGeoLayerToFile`](../WriteRasterGeoLayerToFile/WriteRasterGeoLayerToFile.md) command
