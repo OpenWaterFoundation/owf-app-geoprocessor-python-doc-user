@@ -22,12 +22,24 @@ See published [Developer Documentation](http://software.openwaterfoundation.org/
 * ![change](change.png) [1.3.0] Update the [`CompareFiles`](../command-ref/CompareFiles/CompareFiles.md)
 command to more correctly reflect line difference count,
 and add `LineDiffCountProperty` and `FileDiffProperty` parameters.
+* ![change](change.png) [1.3.0] Update the [`WebGet`](../command-ref/WebGet/WebGet.md) command to have
+`Timeout` and `ResonseCodeProperty` parameters.
+* ![change](change.png) [1.3.0] Update the [`Unzip`](../command-ref/Unzip/Unzip.md) command to have
+`IfFolderDoesNotExist` parameter.
 * ![new](new.png) [1.3.0] Enable cut/copy/paste functionality for editing the command list.
 * ![new](new.png) [1.3.0] Enable the command editor for the [empty lines](../command-ref/Blank/Blank.md).
-* ![new](new.png) [1.3.0] Add [CreateGeoMap](../command-ref/CreateGeoMap/CreateGeoMap.md),
-[CreateGeoMapProject](../command-ref/CreateGeoMapProject/CreateGeoMapProject.md), and related commands
+* ![new](new.png) [1.3.0] Add [`CreateGeoMap`](../command-ref/CreateGeoMap/CreateGeoMap.md),
+[`CreateGeoMapProject`](../command-ref/CreateGeoMapProject/CreateGeoMapProject.md), and related commands
 to automate creation of map configurations.
-* ![new](new.png) [1.3.0] Enable the command editor for the [unknown commands](../command-ref/UnknownCommand/UnknownCommand.md) 
+* ![new](new.png) [1.3.0] Add [`ReadGeoLayersFromGeoPackage`](../command-ref/ReadGeoLayersFromGeoPackage/ReadGeoLayersFromGeoPackage.md) command
+* ![new](new.png) [1.3.0] Add [`ReadRasterGeoLayerFromFile`](../command-ref/ReadRasterGeoLayerFromFile/ReadRasterGeoLayerFromFile.md) command
+* ![new](new.png) [1.3.0] Add [`ReadRasterGeoLayerFromTileMapService`](../command-ref/ReadRasterGeoLayerFromTileMapService/ReadRasterGeoLayerFromTileMapService.md) command
+* ![new](new.png) [1.3.0] Add [`ReadRasterGeoLayerFromWebMapService`](../command-ref/ReadRasterGeoLayerFromWebMapService/ReadRasterGeoLayerFromWebMapService.md) command
+* ![new](new.png) [1.3.0] Add [`RunGdalProgram`](../command-ref/RunGdalProgram/RunGdalProgram.md) command
+* ![new](new.png) [1.3.0] Add [`RunOgrProgram`](../command-ref/RunOgrProgram/RunOgrProgram.md) command
+* ![new](new.png) [1.3.0] Add [`SplitGeoLayerByAttribute`](../command-ref/SplitGeoLayerByAttribute/SplitGeoLayerByAttribute.md) command
+* ![new](new.png) [1.3.0] Enable the command editor for the [unknown commands](../command-ref/UnknownCommand/UnknownCommand.md) command
+* ![new](new.png) [1.3.0] Add [`WriteRasterGeoLayerToFile`](../command-ref/WriteRasterGeoLayerToFile/WriteRasterGeoLayerToFile.md) command
 
 ## Changes in Version 1.2.0 ##
 

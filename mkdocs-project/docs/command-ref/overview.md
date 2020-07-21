@@ -6,7 +6,7 @@ This reference section of the documentation provides information about GeoProces
 * [Commands for Processing Vector Spatial Data Layers](#commands-for-processing-vector-spatial-data-layers)
 * [Commands for Processing Raster Spatial Data Layers](#commands-for-processing-raster-spatial-data-layers)
 * [Commands for Processing Tables](#commands-for-processing-tables)
-* [ Commands for Processing DataStores](#commands-for-processing-datastores)
+* [Commands for Processing DataStores](#commands-for-processing-datastores)
 * [Commands to Control Running](#commands-to-control-running)
 * [Commands for Handling Files](#commands-for-handling-files)
 * [Commands for Messages and Logging](#commands-for-messages-and-logging)
@@ -63,12 +63,14 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 | [`ReadGeoLayerFromShapefile`](ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile.md) | Read a GeoLayer from a file in Shapefile format. |
 | [`ReadGeoLayersFromFGDB`](ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB.md) | Read one or more GeoLayers from a file geodatabase. |
 | [`ReadGeoLayersFromFolder`](ReadGeoLayersFromFolder/ReadGeoLayersFromFolder.md) | Read GeoLayers from a folder. |
+| [`ReadGeoLayersFromGeoPackage`](ReadGeoLayersFromGeoPackage/ReadGeoLayersFromGeoPackage.md) | Read GeoLayers from a GeoPackage file. |
 | [`RemoveGeoLayerAttributes`](RemoveGeoLayerAttributes/RemoveGeoLayerAttributes.md) | Remove one or more attributes from a GeoLayer. |
 | [`RenameGeoLayerAttribute`](RenameGeoLayerAttribute/RenameGeoLayerAttribute.md) | Rename a GeoLayer's attribute. |
 | [`RunOgrProgram`](RunOgrProgram/RunOgrProgram.md) | Run an OGR command line program. |
 | [`SetGeoLayerCRS`](SetGeoLayerCRS/SetGeoLayerCRS.md) | Sets a GeoLayer's coordinate reference system. |
 | [`SetGeoLayerProperty`](SetGeoLayerProperty/SetGeoLayerProperty.md) | Set a GeoGeoLayer property. |
 | [`SimplifyGeoLayerGeometry`](SimplifyGeoLayerGeometry/SimplifyGeoLayerGeometry.md) | Decreases the verticies in a polygon or line GeoLayer.  |
+| [`SplitGeoLayerByAttribute`](SplitGeoLayerByAttribute/SplitGeoLayerByAttribute.md) | Split a vector GeoLayer into separate layers using an attribute. |
 | [`WriteGeoLayerToDelimitedFile`](WriteGeoLayerToDelimitedFile/WriteGeoLayerToDelimitedFile.md) | Write GeoLayer to a file in delimited file format. |
 | [`WriteGeoLayerToGeoJSON`](WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON.md) | Write GeoLayer to a file in GeoJSON format. |
 | [`WriteGeoLayerToKML`](WriteGeoLayerToKML/WriteGeoLayerToKML.md) | Write GeoLayer to a file in KML format. |
@@ -79,8 +81,12 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 | **Command Name**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** |
 | ---------------- | --------------- |
 | [`CreateRasterGeoLayer`](CreateRasterGeoLayer/CreateRasterGeoLayer.md) | Create a raster spatial data layer. |
-| [`ReadRasterGeoLayerFile`](ReadRasterGeoLayerFile/ReadRasterGeoLayerFile.md) | Read a raster spatial data layer file. |
+| [`ReadRasterGeoLayerFromFile`](ReadRasterGeoLayerFromFile/ReadRasterGeoLayerFromFile.md) | Read a raster spatial data layer file. |
+| [`ReadRasterGeoLayerFromTileMapService`](ReadRasterGeoLayerFromTileMapService/ReadRasterGeoLayerFromTileMapService.md) | Read a raster spatial data layer from a tile map service. |
+| [`ReadRasterGeoLayerFromWebMapService`](ReadRasterGeoLayerFromWebMapService/ReadRasterGeoLayerFromWebMapService.md) | Read a raster spatial data layer from a web map service. |
 | [`RunGdalProgram`](RunGdalProgram/RunGdalProgram.md) | Run a GDAL command line program. |
+| [`RasterizeGeoLayer`](RasterizeGeoLayer/RasterizeGeoLayer.md) | Create a raster GeoLayer from a vector GeoLayer. |
+| [`WriteRasterGeoLayerToFile`](WriteRasterGeoLayerToFile/ReadRasterGeoLayerToFile.md) | Write a raster spatial data layer file. |
 
 ## Commands for Processing Tables ##
 
@@ -118,6 +124,7 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 | [`RunGdalProgram`](RunGdalProgram/RunGdalProgram.md) | Run a GDAL command line program. |
 | [`RunOgrProgram`](RunOgrProgram/RunOgrProgram.md) | Run an OGR command line program. |
 | [`RunProgram`](RunProgram/RunProgram.md) | Run a program. |
+| [`QgisAlgorithmHelp`](QgsAlgorithmHelp/QgsAlgorithmHelp.md) | Print QGIS algorithm list and help. |
 | [`SetProperty`](SetProperty/SetProperty.md) | Set a GeoProcessor property. |
 | [`SetPropertyFromGeoLayer`](SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md) | Set a GeoProcessor property from a GeoLayer property. |
 
@@ -125,7 +132,8 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 
 | **Command Name**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** |
 | ---------------- | --------------- |
-| [`CopyFile`](CopyFile/CopyFile.md) | Copy a file to a new file. |
+| [`CopyFile`](CopyFile/CopyFile.md) | Copy a file. |
+| [`CreateFolder`](CreateFolder/CreateFolder.md) | Create a folder. |
 | [`ListFiles`](ListFiles/ListFiles.md) | List the files and folder within a folder or a URL. |
 | [`RemoveFile`](RemoveFile/RemoveFile.md) | Remove a file. |
 | [`UnzipFile`](UnzipFile/UnzipFile.md) | Unzip a file. |
