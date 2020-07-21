@@ -24,7 +24,7 @@ command to more correctly reflect line difference count,
 and add `LineDiffCountProperty` and `FileDiffProperty` parameters.
 * ![change](change.png) [1.3.0] Update the [`WebGet`](../command-ref/WebGet/WebGet.md) command to have
 `Timeout` and `ResonseCodeProperty` parameters.
-* ![change](change.png) [1.3.0] Update the [`Unzip`](../command-ref/Unzip/Unzip.md) command to have
+* ![change](change.png) [1.3.0] Update the [`UnzipFile`](../command-ref/UnzipFile/UnzipFile.md) command to have
 `IfFolderDoesNotExist` parameter.
 * ![new](new.png) [1.3.0] Enable cut/copy/paste functionality for editing the command list.
 * ![new](new.png) [1.3.0] Enable the command editor for the [empty lines](../command-ref/Blank/Blank.md).

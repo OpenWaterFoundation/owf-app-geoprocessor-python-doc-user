@@ -14,6 +14,7 @@ This documentation describes the specification of the GeoMapProject.
 		- [GeoLayerSymbol Properties for Point Geometry Type](#geolayersymbol-properties-for-point-geometry-type)
 		- [GeoLayerSymbol Properties for Line Geometry Type](#geolayersymbol-properties-for-line-geometry-type)
 		- [GeoLayerSymbol Properties for Polygon Geometry Type](#geolayersymbol-properties-for-polygon-geometry-type)
+		- [GeoLayerSymbol Properties for Raster Layer Type](#geolayersymbol-properties-for-raster-layer-type)
 		- [GeoLayerSymbol Properties for Single Symbol Classification Type](#geolayersymbol-properties-for-single-symbol-classification-type)
 		- [GeoLayerSymbol Properties for Categorized Classification Type](#geolayersymbol-properties-for-categorized-classification-type)
 		- [GeoLayerSymbol Properties for Graduated Classification Type](#geolayersymbol-properties-for-graduated-classification-type)
@@ -319,7 +320,7 @@ GeoLayerView Properties in `properties` JSON Element
 
 ### GeoLayer ###
 
-A GeoLayer corresponds to a vector or raster spatial data file, such as a GeoJSON file, shapefile, KML, raster file (TIF, etc), or other format.
+A GeoLayer corresponds to a vector or raster spatial data file, such as a GeoJSON file, shapefile, KML, raster file (GeoTIFF, etc), or other format.
 Each GeoLayer in a [GeoMap](#geomap) is listed in the `geoLayers` list of the [GeoMap](#geomap).
 Each [GeoLayerView](#geolayerview) in a [GeoMap](#geomap) refers to the [GeoMap](#geomap) using its `geoLayerId` value.
 
@@ -386,6 +387,7 @@ The layer geometry type also indicates which properties are used.
 	+ [GeoLayerSymbol Properties for Point Geometry Type](#geolayersymbol-properties-for-point-geometry-type)
 	+ [GeoLayerSymbol Properties for Line Geometry Type](#geolayersymbol-properties-for-line-geometry-type)
 	+ [GeoLayerSymbol Properties for Polygon Geometry Type](#geolayersymbol-properties-for-polygon-geometry-type)
+	+ [GeoLayerSymbol Properties for Raster Layer Type](#geolayersymbol-properties-for-raster-layer-type)
 * Properties by classification type (in order of complexity):
 	+ [GeoLayerSymbol Properties for Single Symbol Classification Type](#geolayersymbol-properties-for-single-symbol-classification-type)
 	+ [GeoLayerSymbol Properties for Categorized Classification Type](#geolayersymbol-properties-for-categorized-classification-type)
@@ -413,7 +415,7 @@ GeoLayerSymbol Built-in Data Elements
 The following GeoLayerSymbol properties can be used with [GeoLayer](#geolayer) `geometryType=Point`.
 Use one of the following approaches:
 
-* `symbolImage` or `buildinSymbolImage`- specify an image file and related properties (`symbolSize`), which will result in a "marker" at the symbol, for example ![default-marker](images/default-marker.png)
+* `symbolImage` or `builtinSymbolImage`- specify an image file and related properties (`symbolSize`), which will result in a "marker" at the symbol, for example ![default-marker](images/default-marker.png)
 * `symbolShape` - specify a symbol shape (vector shape) and related properties (`symbolSize` and most rendering properties), for example ![symbolShape](images/symbolShape.png)
 * `symbolSVG` - path to SVG file to use for the symbol (**not sure if this is possile or handle through `symbolShape` and built-in code)**
 
@@ -505,10 +507,34 @@ Polygon Geometry Type  GeoLayerSymbol Properties in `properties` JSON Element
 | `opacity` | Opacity of the `color` (`1.0` for solid, `0.0` for transparent). | `1.0` |
 | `weight` | Width of polygon outline, pixels, `0` to not draw outline. | `3` (recommended) |
 
+#### GeoLayerSymbol Properties for Raster Layer Type ####
+
+The following GeoLayerSymbol properties can be used with [GeoLayer](#geolayer) `layerType=Raster`.
+Image raster layers by default are displayed with the color information that is included in the image file.
+
+See also the sections for Classification Type,
+which describe how to provide classificatin type for raster layers.
+
+**<p style="text-align: center;">
+Raster Layer Type  GeoLayerSymbol Properties in `properties` JSON Element
+</p>**
+
+| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
+| -- | -- | -- |
+| `color` | Outline color for polygons, hexadecimal color is preferred (see [Colors](#colors))`. **Currently ignored.** | **need to evaluate if default color guidelines should be provided**|
+| `fillColor` | Fill color for polygons, hexadecimal color is preferred (see [Colors](#colors)). | Applications, such as InfoMapper, may default to grayscale or other color pallette. |
+| `fillOpacity` | Opacity of the `fillColor` (`1.0` for solid, `0.0` for transparent). | `0.2` (recommended, although applications such as InfoMapper may have different default) |
+| `opacity` | Opacity of the `color` (`1.0` for solid, `0.0` for transparent). **Currently ignored.** | `1.0` |
+| `weight` | Width of polygon outline, pixels, `0` to not draw outline. **Currently ignored.** | `3` (recommended) |
+
 #### GeoLayerSymbol Properties for Single Symbol Classification Type ####
 
 The single symbol classification is the simplest classification because it results
 in all features being drawn with the same symbol and no attribute analysis.
+
+Categorized classification can also be used for a raster layer,
+where the same symbol properties are used for a cell's color, opacity, etc.
+
 The following examples illustrate single symbol classification for different geometry types:
 
 **<p style="text-align: center;">
@@ -517,9 +543,11 @@ SingleSymbol Classification Examples
 
 | **Layer Geometry Type** | **Example** |
 | -- | -- |
-| Point (stream stations) | ![images/example-map-singlesymbol-point](images/example-map-singlesymbol-point.png) |
+| Point (stream stations) when `symbolImage` or `builtinSymbolImage` is specified | ![images/example-map-singlesymbol-point](images/example-map-singlesymbol-point-image.png) |
+| Point (stream stations) when `symbolShape` is specified | ![images/example-map-singlesymbol-point-shape](images/example-map-singlesymbol-point-shape.png) |
 | Line (streams) | ![images/example-map-singlesymbol-line](images/example-map-singlesymbol-line.png) |
 | Polygon (ditch service areas) | ![images/example-map-singlesymbol-polygon](images/example-map-singlesymbol-polygon.png) |
+| Raster | **Need to generate image** |
 
 The following GeoLayerSymbol properties can be used with GeoLayerSymbol `classificationType=SingleSymbol`
 and indicate how to determine color from layer data values.
@@ -540,7 +568,10 @@ for example for integer, string, and boolean types.
 Because a different color can be used for each unique attribute value,
 this classification is easiest to use and understand when the attribute has a reasonably small number of unique values.
 Otherwise, a graduated classification may be better suited for specifying color and other symbol properties.
-The following examples illustrate categorized symbol classification for different geometry types:
+
+Categorized classification can also be used for a raster layer, where a cell's data value is evaluated to determine color, opacity, etc.
+
+The following examples illustrate categorized symbol classification for different geometry types.
 
 **<p style="text-align: center;">
 Categorized Classification Examples
@@ -551,6 +582,7 @@ Categorized Classification Examples
 | Point (stream station conditions) | **Need to generate image** |
 | Line (stream conditions) | **Need to generate image** |
 | Polygon (water districts) | ![images/example-map-categorized-polygon](images/example-map-categorized-polygon.png) |
+| Raster | **Need to generate image** |
 
 The following GeoLayerSymbol properties can be used with GeoLayerSymbol `classificationType=Categorized`
 and indicate how to determine color and other properties from layer data values.
@@ -566,12 +598,14 @@ Categorized GeoLayerSymbol Properties in `properties` JSON Element
 | `classificationTable` | **Support for storing tables in GeoMapProject file may be added.** | |
 
 The file used with `classificationFile` property lists the symbol property for each category.
-A comma-separated-value file is used where the column headings correspond to the properties (**could also allow JSON**), for example:
+A comma-separated-value file is used where the column headings correspond to the properties, as shown below.
+A `value` of `*` can be specified for values that are not otherwise matched (otherwise a software application's default color/symbol will be used).
 
 ```
 # Style file for irrigated lands categorized classification (using crop type for symbol)
 value,color,opacity,fillColor,fillOpacity,weight,label
 "Corn",#FFFF00,1.0,#FFFF00,0.2,3,"Corn"
+*,#000000,1.0,#000000,0.2,3,"Other"
 ```
 
 #### GeoLayerSymbol Properties for Graduated Classification Type ####
@@ -582,6 +616,9 @@ or with a layer attribute that has a large number of unique values
 Ranges of values must be specified
 and colors within the range may be constant, or gradually change using a "color ramp".
 Currently, only a single color within a range is supported.
+
+Categorized classification can also be used for a raster layer, where a cell's data value is evaluated to determine color, opacity, etc.
+
 The following examples illustrate graduated symbol classification for different geometry types:
 
 **<p style="text-align: center;">
@@ -593,6 +630,7 @@ Graduated Classification Examples
 | Point (stream station conditions) | **Need to generate image** |
 | Line (stream conditions) | **Need to generate image** |
 | Polygon (water districts) | **Need to generate image** |
+| Raster | **Need to generate image** |
 
 The following GeoLayerSymbol properties can be used with GeoLayerSymbol `classificationType=Graduated`
 and indicate how to determine color from layer data values.
