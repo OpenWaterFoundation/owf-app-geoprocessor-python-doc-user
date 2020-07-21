@@ -37,6 +37,7 @@ nav:
   - CreateGeoLayerFromGeometry: command-ref/CreateGeoLayerFromGeometry/CreateGeoLayerFromGeometry.md
   - CreateGeoMap: command-ref/CreateGeoMap/CreateGeoMap.md
   - CreateGeoMapProject: command-ref/CreateGeoMapProject/CreateGeoMapProject.md
+  - CreateRasterGeoLayer: command-ref/CreateRasterGeoLayer/CreateRasterGeoLayer.md
   - CreateRegressionTestCommandFile: command-ref/CreateRegressionTestCommandFile/CreateRegressionTestCommandFile.md
   - EndFor: command-ref/EndFor/EndFor.md
   - EndIf: command-ref/EndIf/EndIf.md

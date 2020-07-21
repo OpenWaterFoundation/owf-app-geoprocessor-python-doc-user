@@ -86,7 +86,7 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 | [`ReadRasterGeoLayerFromWebMapService`](ReadRasterGeoLayerFromWebMapService/ReadRasterGeoLayerFromWebMapService.md) | Read a raster spatial data layer from a web map service. |
 | [`RunGdalProgram`](RunGdalProgram/RunGdalProgram.md) | Run a GDAL command line program. |
 | [`RasterizeGeoLayer`](RasterizeGeoLayer/RasterizeGeoLayer.md) | Create a raster GeoLayer from a vector GeoLayer. |
-| [`WriteRasterGeoLayerToFile`](WriteRasterGeoLayerToFile/ReadRasterGeoLayerToFile.md) | Write a raster spatial data layer file. |
+| [`WriteRasterGeoLayerToFile`](WriteRasterGeoLayerToFile/WriteRasterGeoLayerToFile.md) | Write a raster spatial data layer file. |
 
 ## Commands for Processing Tables ##
 
@@ -124,7 +124,7 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 | [`RunGdalProgram`](RunGdalProgram/RunGdalProgram.md) | Run a GDAL command line program. |
 | [`RunOgrProgram`](RunOgrProgram/RunOgrProgram.md) | Run an OGR command line program. |
 | [`RunProgram`](RunProgram/RunProgram.md) | Run a program. |
-| [`QgisAlgorithmHelp`](QgsAlgorithmHelp/QgsAlgorithmHelp.md) | Print QGIS algorithm list and help. |
+| [`QgisAlgorithmHelp`](QgisAlgorithmHelp/QgisAlgorithmHelp.md) | Print QGIS algorithm list and help. |
 | [`SetProperty`](SetProperty/SetProperty.md) | Set a GeoProcessor property. |
 | [`SetPropertyFromGeoLayer`](SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md) | Set a GeoProcessor property from a GeoLayer property. |
 
