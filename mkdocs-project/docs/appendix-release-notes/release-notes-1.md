@@ -14,6 +14,8 @@ areas to the left and right of the main command list.
 * ![bug](bug.png) [1.3.0] Fix issues caused by the GeoProcessor run scripts not handling QGIS long term release.
 The runs scripts now handle OSGeo4W and standalone QGIS installers and detect long term release folders
 for Python modules.  The QGIS release is also checked when running in development and deployed environments.
+* ![bug](bug.png) [1.3.0] Fix [`RunProgram`](../command-ref/RunProgram/RunProgram.md) to run programs
+directly and with command shell.
 * ![change](change.png) [1.3.0] Significant overall cleanup of code to implement more robust design.
 Error handling is more robust.
 * ![change](change.png) [1.3.0] Improve command editor user interactions.
