@@ -55,6 +55,7 @@ nav:
   - ReadGeoLayerFromDelimitedFile: command-ref/ReadGeoLayerFromDelimitedFile/ReadGeoLayerFromDelimitedFile.md
   - ReadGeoLayerFromGeoJSON: command-ref/ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md
   - ReadGeoLayerFromShapefile: command-ref/ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile.md
+  - ReadGeoLayerFromWebFeatureService: command-ref/ReadGeoLayerFromWebFeatureService/ReadGeoLayerFromWebFeatureService.md
   - ReadGeoLayersFromFGDB: command-ref/ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB.md
   - ReadGeoLayersFromFolder: command-ref/ReadGeoLayersFromFolder/ReadGeoLayersFromFolder.md
   - ReadGeoLayersFromGeoPackage: command-ref/ReadGeoLayersFromGeoPackage/ReadGeoLayersFromGeoPackage.md

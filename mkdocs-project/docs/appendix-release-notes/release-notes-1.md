@@ -16,6 +16,8 @@ The runs scripts now handle OSGeo4W and standalone QGIS installers and detect lo
 for Python modules.  The QGIS release is also checked when running in development and deployed environments.
 * ![bug](bug.png) [1.3.0] Fix [`RunProgram`](../command-ref/RunProgram/RunProgram.md) to run programs
 directly and with command shell.
+* ![change](change.png) [1.3.0] Add `inputFormat` and `inputPath` to layer results list.
+Add `sourceFormat` to GeoMapProject file.
 * ![change](change.png) [1.3.0] Significant overall cleanup of code to implement more robust design.
 Error handling is more robust.
 * ![change](change.png) [1.3.0] Improve command editor user interactions.
@@ -25,7 +27,7 @@ See published [Developer Documentation](http://software.openwaterfoundation.org/
 command to more correctly reflect line difference count,
 and add `LineDiffCountProperty` and `FileDiffProperty` parameters.
 * ![change](change.png) [1.3.0] Update the [`WebGet`](../command-ref/WebGet/WebGet.md) command to have
-`Timeout` and `ResonseCodeProperty` parameters.
+`Timeout` and `ResponseCodeProperty` parameters.
 * ![change](change.png) [1.3.0] Update the [`UnzipFile`](../command-ref/UnzipFile/UnzipFile.md) command to have
 `IfFolderDoesNotExist` parameter.
 * ![new](new.png) [1.3.0] Enable cut/copy/paste functionality for editing the command list.
@@ -33,6 +35,7 @@ and add `LineDiffCountProperty` and `FileDiffProperty` parameters.
 * ![new](new.png) [1.3.0] Add [`CreateGeoMap`](../command-ref/CreateGeoMap/CreateGeoMap.md),
 [`CreateGeoMapProject`](../command-ref/CreateGeoMapProject/CreateGeoMapProject.md), and related commands
 to automate creation of map configurations.
+* ![new](new.png) [1.3.0] Add [`ReadGeoLayerFromWebFeatureService`](../command-ref/ReadGeoLayerFromWebFeatureService/ReadGeoLayerFromWebFeatureService.md) command
 * ![new](new.png) [1.3.0] Add [`ReadGeoLayersFromGeoPackage`](../command-ref/ReadGeoLayersFromGeoPackage/ReadGeoLayersFromGeoPackage.md) command
 * ![new](new.png) [1.3.0] Add [`ReadRasterGeoLayerFromFile`](../command-ref/ReadRasterGeoLayerFromFile/ReadRasterGeoLayerFromFile.md) command
 * ![new](new.png) [1.3.0] Add [`ReadRasterGeoLayerFromTileMapService`](../command-ref/ReadRasterGeoLayerFromTileMapService/ReadRasterGeoLayerFromTileMapService.md) command
