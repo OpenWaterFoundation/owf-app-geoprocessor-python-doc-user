@@ -43,7 +43,7 @@ geographic information system (GIS) software frameworks,
 which provide spatial data processing functionality via Python libraries:
 
 * free and open source [QGIS](https://qgis.org/en/site/) - **standalone QGIS the primary version for development**
-* commercial [ArcGIS Pro](https://pro.arcgis.com/en/pro-app/) - **ArcGIS Pro version has been prototyped and will receive more attention in the future**
+* commercial [ArcGIS Pro](https://pro.arcgis.com/en/pro-app/) - **ArcGIS Pro version has been prototyped**
 
 The GeoProcessor is particularly useful when workflows need to be standardized as part
 of a business process or analysis effort.

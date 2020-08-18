@@ -61,6 +61,7 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 | [`ReadGeoLayerFromDelimitedFile`](ReadGeoLayerFromDelimitedFile/ReadGeoLayerFromDelimitedFile.md) | Read a GeoLayer from a file in delimited file format. |
 | [`ReadGeoLayerFromGeoJSON`](ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) | Read a GeoLayer from a file in GeoJSON format. |
 | [`ReadGeoLayerFromShapefile`](ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile.md) | Read a GeoLayer from a file in Shapefile format. |
+| [`ReadGeoLayerFromWebFeatureService`](ReadGeoLayerFromWebFeatureService/ReadGeoLayerFromWebFeatureService.md) | Read a GeoLayer from an OGC Web Feature Service . |
 | [`ReadGeoLayersFromFGDB`](ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB.md) | Read one or more GeoLayers from a file geodatabase. |
 | [`ReadGeoLayersFromFolder`](ReadGeoLayersFromFolder/ReadGeoLayersFromFolder.md) | Read GeoLayers from a folder. |
 | [`ReadGeoLayersFromGeoPackage`](ReadGeoLayersFromGeoPackage/ReadGeoLayersFromGeoPackage.md) | Read GeoLayers from a GeoPackage file. |
