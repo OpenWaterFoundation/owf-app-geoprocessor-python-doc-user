@@ -58,4 +58,4 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 ## See Also ##
 
 * [`ReadRasterGeoLayerFromTileMapService`](../ReadRasterGeoLayerFromTileMapService/ReadRasterGeoLayerFromTileMapService.md) command
-* [`ReadRasterGeoLayerFromWebMapService`](../ReadRasterGeoLayerFromTileMapService/ReadRasterGeoLayerFromWebMapService.md) command
+* [`ReadRasterGeoLayerFromWebMapService`](../ReadRasterGeoLayerFromMapService/ReadRasterGeoLayerFromWebMapService.md) command
