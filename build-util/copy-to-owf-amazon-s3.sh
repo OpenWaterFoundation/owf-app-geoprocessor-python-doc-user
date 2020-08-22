@@ -65,9 +65,9 @@ getVersion() {
   microVersion=$(grep -m 1 app_version_micro $versionFile | grep -v str | cut -d '=' -f 2 | tr -d " " | tr -d '"')
   modVersion=$(grep -m 1 app_version_mod $versionFile | grep -v str | cut -d '=' -f 2 | tr -d " " | tr -d '"')
   # Form the version from the parts, will be globally visible
-  if [ "${modVersion}" == "" ]; then
+  if [ -z "${modVersion}" -o "${modVersion}" == "" ]; then
     version="${majorVersion}.${minorVersion}.${microVersion}"
-  else:
+  else
     version="${majorVersion}.${minorVersion}.${microVersion}.${modVersion}"
   fi
   echo "Determined version=${version}"
@@ -123,7 +123,8 @@ if [ -n "${version}" ]; then
   echo "Uploading documentation to:  ${s3VersionFolder}"
   read -p "Continue [Y/n/q]? " answer
   if [ -z "${answer}" -o "${answer}" = "y" -o "${answer}" = "Y" ]; then 
-    aws s3 sync ../mkdocs-project/site ${s3VersionFolder} ${dryrun} --delete --profile "$awsProfile"
+    echo aws s3 sync ../mkdocs-project/site ${s3VersionFolder} ${dryrun} --delete --profile "${awsProfile}"
+    aws s3 sync ../mkdocs-project/site ${s3VersionFolder} ${dryrun} --delete --profile "${awsProfile}"
     exitStatusVersion=$?
   elif [ "${answer}" = "q" ]; then 
     exit 0
