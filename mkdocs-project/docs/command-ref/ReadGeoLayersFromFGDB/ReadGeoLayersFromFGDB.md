@@ -44,6 +44,7 @@ Command Parameters
 | `IfGeoLayerIDExists` | The action that occurs if the `GeoLayerID` already exists within the GeoProcessor:<ul><li>`Replace` - The existing GeoLayer within the GeoProcessor is replaced with the new GeoLayer. No warning is logged.</li><li>`ReplaceAndWarn` - The existing GeoLayer within the GeoProcessor is replaced with the new GeoLayer. A warning is logged.</li><li>`Warn` - The new GeoLayer is not created. A warning is logged.</li><li>`Fail` - The new GeoLayer is not created. A fail message is logged.</li></ul>| `Replace` |
 ||**IF** `ReadOnlyOneFeatureClass` **is TRUE ...**||
 | `Feature Class` <br>**required** | The name of the feature class within the file geodatabase to read. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
+| `Query` | An SQL-like string to filter the features read from the geodatabase. | |
 | `GeoLayerID`  <br>**required** | A GeoLayer identifier. [Formatting characters](../../introduction/introduction.md#geolayer-property-format-specifiers) and [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) are recognized. Refer to [documentation](../../best-practices/geolayer-identifiers.md) for best practices on naming GeoLayer identifiers.| None - must be specified. |
 ||**IF** `ReadOnlyOneFeatureClass` **is FALSE ...**||
 | `GeoLayerID_prefix` | A GeoLayer identifier prefix. <br><br> GeoLayers read from a file geodatabase have an identifier in the `GeoLayerID_prefix_FeatureClass` format.| No prefix is used. The GeoLayerID is the name of the feature class. |
@@ -123,13 +124,8 @@ becasue the `Subset_Pattern` parameter only includes feature classes that end in
 
 ## Troubleshooting ##
 
-* Requires GDAL/OGR 1.11.0+
-* Requires [ESRI FileGDB driver](http://www.gdal.org/drv_filegdb.html) to be installed within QGIS environment
-* TODO egiles 2018-01-12 Link to QGIS install instructions that clarify how to install OGR_FileGDB library from
-[this resource](https://gis.stackexchange.com/questions/26285/file-geodatabase-gdb-support-in-qgis) - this should be in the install/deploy instructions.
-
 ## See Also ##
 
 * The GeoLayers are read using the [`QGIS QgsVectorLayer Class`](https://qgis.org/api/classQgsVectorLayer.html).
-See [documentation](https://docs.qgis.org/2.14/en/docs/pyqgis_developer_cookbook/loadlayer.html#vector-layers)
+See [documentation](https://docs.qgis.org/3.10/en/docs/pyqgis_developer_cookbook/loadlayer.html#vector-layers)
 for examples on utilizing the `QgsVectorLayer` class in the PyQGIS environment.

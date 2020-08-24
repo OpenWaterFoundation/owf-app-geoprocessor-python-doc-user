@@ -1,11 +1,19 @@
 # GeoProcessor / Release Notes / Version 1 #
 
-* [Changes in Version 1.3.0](#changes-in-version-1-3-0)
-* [Changes in Version 1.2.0](#changes-in-version-1-2-0)
-* [Changes in Version 1.1.0](#changes-in-version-1-1-0)
-* [Changes in Version 1.0.0](#changes-in-version-1-0-0)
+* [Changes in Version 1.4.0](#changes-in-version-140)
+* [Changes in Version 1.3.0](#changes-in-version-130)
+* [Changes in Version 1.2.0](#changes-in-version-120)
+* [Changes in Version 1.1.0](#changes-in-version-110)
+* [Changes in Version 1.0.0](#changes-in-version-100)
 
 ----------
+
+## Changes in Version 1.4.0 ##
+
+* ![change](change.png) [1.4.0] Update the
+[`ReadGeoLayersFromFGDB`](../command-ref/ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB.md) command
+to include `Query` parameter, to limit the features read from input.
+* ![new](new.png) [1.4.0] Add [`FTPGet`](../command-ref/FTPGet/FTPGet.md) command.
 
 ## Changes in Version 1.3.0 ##
 
@@ -16,7 +24,7 @@ The runs scripts now handle OSGeo4W and standalone QGIS installers and detect lo
 for Python modules.  The QGIS release is also checked when running in development and deployed environments.
 * ![bug](bug.png) [1.3.0] Fix [`RunProgram`](../command-ref/RunProgram/RunProgram.md) to run programs
 directly and with command shell.
-* ![change](change.png) [1.3.0] Add `inputFormat` and `inputPath` to layer results list.
+* ![change](change.png) [1.3.0] Add `inputFormat` and `inputPath` to layer ***Results / GeoLayers*** list.
 Add `sourceFormat` to GeoMapProject file.
 * ![change](change.png) [1.3.0] Significant overall cleanup of code to implement more robust design.
 Error handling is more robust.

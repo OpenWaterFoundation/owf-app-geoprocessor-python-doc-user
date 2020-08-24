@@ -56,9 +56,8 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 ### Example 1: Using the `%f` Formatting Character in the `OutputFile` Parameter###
 
 ```
-WebGet(URL = "https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.cpg", OutputFile = "ExampleOutputFolder/NewFilename")
-WebGet(URL = "https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.cpg", OutputFile = "ExampleOutputFolder/%f")
-
+WebGet(URL = "https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.cpg",OutputFile="ExampleOutputFolder/NewFilename")
+WebGet(URL = "https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.cpg",OutputFile="ExampleOutputFolder/%f")
 ```
 
 The two commands download the same [data file](https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.cpg). 
@@ -71,4 +70,5 @@ The two commands download the same [data file](https://rmgsc.cr.usgs.gov/outgoin
 ## See Also ##
 
 * The files are downloaded using the Python [Requests](http://docs.python-requests.org/en/master/) library.
+* [`FTPGet`](../FTPGet/FTPGet.md) command
 * [`ListFiles`](../ListFiles/ListFiles.md) command

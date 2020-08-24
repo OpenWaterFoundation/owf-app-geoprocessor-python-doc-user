@@ -135,6 +135,7 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 | ---------------- | --------------- |
 | [`CopyFile`](CopyFile/CopyFile.md) | Copy a file. |
 | [`CreateFolder`](CreateFolder/CreateFolder.md) | Create a folder. |
+| [`FTPGet`](FTPGet/FTPGet.md) | Retrieve 1+ files from an FTP site. |
 | [`ListFiles`](ListFiles/ListFiles.md) | List the files and folder within a folder or a URL. |
 | [`RemoveFile`](RemoveFile/RemoveFile.md) | Remove a file. |
 | [`UnzipFile`](UnzipFile/UnzipFile.md) | Unzip a file. |
