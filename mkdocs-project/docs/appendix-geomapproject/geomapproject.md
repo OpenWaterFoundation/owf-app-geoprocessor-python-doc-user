@@ -189,7 +189,7 @@ GeoMapProject Built-in Data Elements
 | `properties` | An open-ended list of elements to provide additional properties (see table below). | |
 | `projectType` | The GeoMapProject type, for example `Dashboard`, `Grid`, `SingleMap`, or `Story`. | |
 
-The following are recognized GeoMapProject properties.
+The following are recognized GeoMapProject properties that can be specified in the `properties` list.
 
 **<p style="text-align: center;">
 GeoMapProject Properties in `properties` JSON Element
@@ -234,7 +234,7 @@ GeoMap Built-in Data Elements
 | `geoLayerViewGroups` | An array (Python list) of [GeoLayerViewGroup](#geolayerviewgroup).  One or more layer views can be contained in the [GeoMapProject](#geomapproject).  The first group in the list will be displayed at the top of the legend and be rendered last when processing groups.  The last group in the list will be displayed at the bottom of the legend and be rendered first when processing layer groups. | |
 | `properties` | An open-ended list of elements to provide additional properties (see table below). | |
 
-The following are recognized GeoMap properties.
+The following are recognized GeoMap properties that can be specified in the `properties` list.
 
 **<p style="text-align: center;">
 GeoMap Properties in `properties` JSON Element
@@ -242,6 +242,7 @@ GeoMap Properties in `properties` JSON Element
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
 | -- | -- | -- |
+| `docPath` | Path to a Markdown file with documentation for the map, typically containing an overview and list of layer view groups in the map.  If a relative path, the location is relative to the GeoMapProject file. | No documentation will be available. |
 | `enabled` | Indicates whether the map is enabled, specified as boolean `true` or `false`.  If `false`, application code can ignore the map or read in but indicate as disabled. | `true` |
 | `extentInitial` | Initial displayed map extent.  See [Extent](#extent) section. | Typically, display all layer data.|
 | `extentMaximum` | Maximum displayed map extent.  See [Extent](#extent) section. | No limit.|
@@ -272,7 +273,7 @@ GeoLayerViewGroup Built-in Data Elements
 | `name` | Short name, suitable for display in applications, for example: `Irrigated Lands`. | None - must be specified. |
 | `properties` | An open-ended list of elements to provide additional properties (see table below). | |
 
-The following are recognized GeoLayerViewGroup properties.
+The following are recognized GeoLayerViewGroup properties that can be specified in the `properties` list.
 
 **<p style="text-align: center;">
 GeoLayerViewGroup Properties in `properties` JSON Element
@@ -280,7 +281,9 @@ GeoLayerViewGroup Properties in `properties` JSON Element
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | -- | -- | -- |
+| `docPath` | Path to a Markdown file with documentation for the layer view group, typically containing an overview and list of layers in the group.  Documentation for layer view groups is typically used when documentation for layer views is not used, for example if repetitive.  If a relative path, the location is relative to the GeoMapProject file. | No documentation will be available. |
 | `enabled` | Indicates whether the GeoLayerViewGroup is enabled, specified as boolean `true` or `false`.  If `false`, application code can ignore the group or read in but indicate as disabled. | `true` |
+| `expandedInitial` | Indicates whether the group is expanded when the map initially displays.  If `expandedInitial=false` the, group is collapsed. | `true` for all groups except `false` for background maps group. |
 | `isBackground` | Indicates whether the GeoLayerViewGroup contains background layers (`false` or `true`), in which all [GeoLayer](#geolayer) should be background layers. | `false` |
 | `selectBehavior` | Indicates how selections for the group should occur:<ul><li>`Any` - zero or more layer views can be selected</li><li>`Single` - zero or one layer view can be selected at a time (selecting a layer view will automatically deselect other layer views in the group).</li><li>`Custom` - a custom tool is implemented to select layer views, envisioned for complex applications</li></ul> | `Any` |
 | `selectedInitial` | Indicates whether the GeoLayerViewGroup is selected for display when the map is initially displayed, specified as boolean `true` or `false`. | See GeoMap `geoLayerView.`<br>`selectedInitial.`<br>`default`|
@@ -306,7 +309,7 @@ GeoLayerView Built-in Data Elements
 | `name` | Short name, suitable for display in applications, for example: `Irrigated Lands, 2010`.  The value can be the same as the associated [GeoLayer](#geolayer), or provide a different value for display purposes. | None - must be specified. |
 | `properties` | An open-ended list of elements to provide additional properties (see table below). | |
 
-The following are recognized GeoLayerView properties.
+The following are recognized GeoLayerView properties that can be specified in the `properties` list.
 
 **<p style="text-align: center;">
 GeoLayerView Properties in `properties` JSON Element
@@ -314,7 +317,9 @@ GeoLayerView Properties in `properties` JSON Element
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | -- | -- | -- |
+| `docPath` | Path to a Markdown file with documentation for the layer view, typically containing an overview and information about the layer source.  If a relative path, the location is relative to the GeoMapProject file. | No documentation will be available. |
 | `enabled` | Indicates whether the GeoLayerView is enabled, specified as boolean `true` or `false`.  If `false`, application code can ignore the layer view or read in but indicate as disabled. | `true` |
+| `highlightEnabled` | Indicates whether the features of the layer will be highlighted when hovered over:  `false` or `true`.  The highlight color for features is yellow. | `false` |
 | `refreshInterval` | The time interval to automatically refresh the layer and redraw the map, used because data in the layer will have changed and do not want to force the user to reload the application or page.  The format should be specified similar to `15Minute` or `12Hour`.  The behavior should be as follows:<ul><li>if the interval is less than an hour, then the initial refresh will occur at the `0` minute of the hour and at `refreshInterval` thereafter</li><li>if the interval is >= an hour but less than a day, then the initial refresh will occur at 0 hour of the day and at `refreshInterval` seconds thereafter</li><li>if the required interval is >= `1Day`, select an hour interval such as `8Hour` or `12Hour` to achieve the desired result</ul>  The refresh interval should be specified as a value that will result in predictable update times, such as every 15 minutes or every 12 hours so that refresh interval for different `GeoLayerView` are synchronized.  Additional properties may be enabled in the future to provide more flexibility. | `0` (no refresh) |
 | `selectedInitial` | Indicates whether the GeoLayerViewGroup is selected for display when the map is initially displayed, specified as boolean `true` or `false`. | See GeoMap `geoLayerView.`<br>`selectedInitial.`<br>`default`|
 
@@ -343,7 +348,7 @@ GeoLayer Built-in Data Elements
 | `sourceFormat` | The layer format, which informs software applications about how to read the layer.  In some cases it is possible to infer the format from a file extension.  However, in other cases, such as web service URLs, determining the format maybe difficult and the `sourceFormat` is required. The source format will be assigned when a layer is read and will match the short name for [GDAL vector driver](https://gdal.org/drivers/vector/index.html) or [GDAL raster driver](https://gdal.org/drivers/raster/index.html), with spaces removed. The value is set automatically by the [`ReadRasterGeoLayerFromTileMapService`](../command-ref/ReadRasterGeoLayerFromTileMapService/ReadRasterGeoLayerFromTileMapService.md) command - see for a list of useful tile service URLs. | From commands. |
 | `sourcePath` | The path to the source layer data as a file or URL path.  Although it can be a full path (for example when retrieving data from remote servers), it is usually specified relative to a folder in the [GeoMap](#geomap) `dataPath` folders when publishing a self-contained website.  This provides flexibility in storing and accessing layers in applications.  If the layer was written during processing, then the output file path is used.  Otherwise, the layer input file path is used. | None - must be specified. |
 
-The following are recognized GeoLayer properties.
+The following are recognized GeoLayer properties that can be specified in the `properties` list.
 
 **<p style="text-align: center;">
 GeoLayer Properties in `properties` JSON Element
