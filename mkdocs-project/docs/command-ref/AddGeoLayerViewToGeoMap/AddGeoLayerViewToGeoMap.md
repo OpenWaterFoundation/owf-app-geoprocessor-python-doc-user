@@ -43,8 +43,8 @@ Command Parameters
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
 | `GeoLayerID` <br> **required** | The ID of the existing GeoLayer. | None - must be specified. |
-| `GeoMapID` <br> **required** | The ID of the existing GeoMap. | None - must be specified. |
-| `GeoLayerViewGroupID` <br> **required** | The ID of the existing GeoLayerViewGroup. | None - must be specified. |
+| `GeoMapID` | The ID of the existing GeoMap. | The ID of the last added GeoMap. |
+| `GeoLayerViewGroupID` | The ID of the existing GeoLayerViewGroup. | The ID of the last added GeoLayerViewGroup. |
 | `GeoLayerViewID` <br> **required** | The ID of the new GeoLayerView. | None - must be specified. |
 | `Name` | Name of the new GeoLayerView, used to label the layer in the map legend. | None - must be specified. |
 | `Description` | Description for the new GeoLayerView. | |

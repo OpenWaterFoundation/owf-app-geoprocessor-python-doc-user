@@ -22,7 +22,7 @@ a map configuration file can interpret event handlers at startup to route events
 The resulting application event handlers can then use the event handler properties defined by this command
 to implement functionality.
 For example, a property can be defined to tell the application what "template" view to display when a map layer feature is
-moused over or clicked on.
+hovered over or clicked on.
 A point layer for streamflow stations might implement an event handler for the following types,
 and multiple event handlers can e added for a GeoLayerView.
 
@@ -37,10 +37,10 @@ Possible Event Types
 
 | **Event Type** | **Description** |
 | -- | -- |
-| `MouseOver` | Indicates mousing over a map layer feature or marker. |
-| `MouseClick` | Indicates clicking on a map layer feature or marker. |
+| `hover` | Indicates hovering over a map layer feature or marker. |
+| `click` | Indicates clicking on a map layer feature or marker. |
 
-The `Properties` can be used to define additional event properties, such as whether a key press is required with a mouse event.
+The `Properties` can be used to define additional event properties, such as whether a key press is required with a click event.
 `Properties` can also be used to define actions to be taken
 Additional guidelines and recommendations will be added as this command is used in projects.
 
@@ -69,8 +69,8 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `GeoMapID` <br> **required** | The ID of the existing GeoMap. | None - must be specified. |
-| `GeoLayerViewGroupID` <br> **required** | The ID of the existing GeoLayerViewGroup. | None - must be specified. |
+| `GeoMapID` | The ID of the existing GeoMap. | The ID of the last added GeoMap. |
+| `GeoLayerViewGroupID` | The ID of the existing GeoLayerViewGroup. | The ID of the last added GeoLayerViewGroup. |
 | `GeoLayerViewID` <br> **required** | The ID of the existing GeoLayerView. | None - must be specified. |
 | `EventType`<br>**required** | Type of event to be handled. | None - must be specified. |
 | `Name` | Name of the event handler, to help with managing event handlers. | |

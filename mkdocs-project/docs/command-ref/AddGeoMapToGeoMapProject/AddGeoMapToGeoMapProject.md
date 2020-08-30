@@ -41,7 +41,7 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `GeoMapProjectID` <br> **required** | The ID of the new GeoMapProjectID. | None - must be specified. |
+| `GeoMapProjectID` | The ID of the new GeoMapProjectID. | The ID of the last added GeoMapProject. |
 | `GeoMapID` <br> **required** | The ID of the GeoMap. | None - must be specified. |
 | `InsertPosition` | The position to insert the GeoMap:<ul><li>`Top` - top of the list (will be drawn on top).</li><li>`Bottom` - bottom of the list (will be drawn on the bottom).</li></ul> | `Bottom` | 
 | `InsertBefore` | The GeoMapID to insert before. | |
