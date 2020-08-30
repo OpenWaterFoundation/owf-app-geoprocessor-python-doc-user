@@ -45,8 +45,8 @@ Command Parameters
 
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `GeoMapID` <br> **required** | The ID of the existing GeoMap. | None - must be specified. |
-| `GeoLayerViewGroupID` <br> **required** | The ID of the existing GeoLayerViewGroup. | None - must be specified. |
+| `GeoMapID` | The ID of the existing GeoMap. | The ID of the last added GeoMap. |
+| `GeoLayerViewGroupID` | The ID of the existing GeoLayerViewGroup. | The ID of the last added GeoLayerViewGroup. |
 | `GeoLayerViewID` <br> **required** | The ID of the existing GeoLayerView. | None - must be specified. |
 | `Name` | Name of the symbol, to help with managing symbols. | |
 | `Description` | Description of the symbol, to help with managing symbols. | |

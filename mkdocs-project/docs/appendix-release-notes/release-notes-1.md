@@ -10,6 +10,15 @@
 
 ## Changes in Version 1.4.0 ##
 
+* ![change](change.png) [1.4.0] Change the following commands to accept more defaults for identifiers,
+in order to simplify creating maps:
+	+ [`AddGeoLayerViewGroupToGeoMap`](../command-ref/AddGeoLayerViewGroupToGeoMap/AddGeoLayerViewGroupToGeoMap.md)
+	+ [`AddGeoLayerViewToGeoMap`](../command-ref/AddGeoLayerViewToGeoMap/AddGeoLayerViewToGeoMap.md)
+	+ [`AddGeoMapToGeoMapProject`](../command-ref/AddGeoMapToGeoMapProject/AddGeoMapToGeoMapProject.md)
+	+ [`SetGeoLayerViewCategorizedSymbol`](../command-ref/SetGeoLayerViewCategorizedSymbol/SetGeoLayerViewCategorizedSymbol.md)
+	+ [`SetGeoLayerViewEventHandler`](../command-ref/SetGeoLayerViewEventHandler/SetGeoLayerViewEventHandler.md)
+	+ [`SetGeoLayerViewGraduatedSymbol`](../command-ref/SetGeoLayerViewGraduatedSymbol/SetGeoLayerViewGraduatedSymbol.md)
+	+ [`SetGeoLayerViewSingleSymbol`](../command-ref/SetGeoLayerViewSingleSymbol/SetGeoLayerViewSingleSymbol.md)
 * ![change](change.png) [1.4.0] Update the
 [`ReadGeoLayersFromFGDB`](../command-ref/ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB.md) command
 to include `Query` parameter, to limit the features read from input.
