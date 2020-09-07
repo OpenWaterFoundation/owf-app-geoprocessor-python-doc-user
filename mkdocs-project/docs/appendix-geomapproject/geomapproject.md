@@ -322,6 +322,7 @@ GeoLayerView Properties in `properties` JSON Element
 | `highlightEnabled` | Indicates whether the features of the layer will be highlighted when hovered over:  `false` or `true`.  The highlight color for features is yellow. | `false` |
 | `refreshInterval` | The time interval to automatically refresh the layer and redraw the map, used because data in the layer will have changed and do not want to force the user to reload the application or page.  The format should be specified similar to `15Minute` or `12Hour`.  The behavior should be as follows:<ul><li>if the interval is less than an hour, then the initial refresh will occur at the `0` minute of the hour and at `refreshInterval` thereafter</li><li>if the interval is >= an hour but less than a day, then the initial refresh will occur at 0 hour of the day and at `refreshInterval` seconds thereafter</li><li>if the required interval is >= `1Day`, select an hour interval such as `8Hour` or `12Hour` to achieve the desired result</ul>  The refresh interval should be specified as a value that will result in predictable update times, such as every 15 minutes or every 12 hours so that refresh interval for different `GeoLayerView` are synchronized.  Additional properties may be enabled in the future to provide more flexibility. | `0` (no refresh) |
 | `selectedInitial` | Indicates whether the GeoLayerViewGroup is selected for display when the map is initially displayed, specified as boolean `true` or `false`. | See GeoMap `geoLayerView.`<br>`selectedInitial.`<br>`default`|
+| `separatorBefore` | If set to `true`, a horizontal separator line will be included before the layer in the legend, used with background layers.  This is useful for grouping related background layers. | `false` |
 
 ### GeoLayer ###
 
@@ -434,8 +435,9 @@ Point Geometry Type GeoLayerSymbol Properties when `symbolFile` or `builtinSymbo
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
 | -- | -- | -- |
-| `builtinSymbolImage` | Path to built-in image file to use for the symbol.  `png` files are typically used.  Built-in images are found in the `/img/` folder.  See below for a list of available built-in images. |
-| `symbolImage` | Path to image file to use for the symbol.  `png` files are typically used.  Image files are typically found in the `/img/` folder under the application files. |
+| `builtinSymbolImage` | Path to built-in image file to use for the symbol.  `png` files are typically used.  Built-in images are found in the `/img/` folder.  See below for a list of available built-in images. | |
+| `imageAnchorPoint` | Used if `symbolImage` is specified. The location of the anchor point (the "pin point") on the symbol, which will be aligned with point feature coordinate, by using image width and height: <ul><li>`Center` - anchor point is at the image center</li><li>`UpperLeft` - anchor point is the upper left corner of the image</li><li>`Top` - anchor point is on the top edge of the image, centered horizontally</li><li>`UpperRight` - anchor point is at the upper right corner of the image</li><li>`Right` - anchor point is on right edge of the image, centered vertically</li><li>`LowerRight` - anchor point is at the lower right corner of image</li><li>`Bottom` - anchor point is on the bottom edge of the image, centered horizontally</li><li>`LowerLeft` - anchor point is at the lower left corner of the image</li><li>`Left` - anchor point is on left edge of image, centered vertically</li></ul>| Depends on the software application.  For example `UpperLeft` is the default for Leaflet, which is used by the InfoMapper software. |
+| `symbolImage` | Path to the image file to use for the symbol. `png` files are typically used. Image files should be named with the end of the filename indicating the width and height of the image, for example `imagename-32x37.png` or `imagename_32x37.png`.  The width and height are used to position the image on maps.  Use the `imageAnchorPoint` property to indicate the anchor point location on the image ("pin point").  | Image files are typically found in the `/img/` folder under the application files, for example `/assets/app/img` folder used with the InfoMapper software. |
 
 **<p style="text-align: center;">
 Built-in Image Files for use as `builtinSymbolImage` Property Value
@@ -443,7 +445,7 @@ Built-in Image Files for use as `builtinSymbolImage` Property Value
 
 | **`builtinSymbolImage` Property Value** | **Description** |
 | -- | -- |
-| `/img/default-marker.png` | Upside down blue "water drop". |
+| Varies by application.  For example, see `app-default/img/default-marker*.png` files used with InfoMapper. | Upside down blue "water drop". |
 
 **<p style="text-align: center;">
 Point Geometry Type GeoLayerSymbol Properties when `symbolShape` is used in `properties` JSON Element
@@ -475,7 +477,7 @@ Each shape is drawn as a vector shape with outline (see `color` and `weight` abo
 | `Triangle-Up` | Triangle with point on top. |
 | `Square` | Square. |
 | `X` | X (diagonally-crossed lines). |
-| Others to be implemented | See [TSTool `SymbolStyle` property](http://opencdss.state.co.us/tstool/latest/doc-user/appendix-tsview/tsview/#time-series-product-reference). |
+| Others to be implemented | See [TSTool `SymbolStyle` property](http://opencdss.state.co.us/tstool/latest/doc-user/appendix-tsview/tsview/#time-series-product-reference) for examples. |
 
 #### GeoLayerSymbol Properties for Line Geometry Type ####
 
