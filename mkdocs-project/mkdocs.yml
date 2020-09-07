@@ -105,10 +105,12 @@ nav:
   - Overview: spatial-data-format-ref/overview.md
   - Esri File Geodatabase: spatial-data-format-ref/EsriFileGeodatabase/EsriFileGeodatabase.md
   - Esri Shapefile: spatial-data-format-ref/EsriShapefile/EsriShapefile.md
+  - Esri WFS: spatial-data-format-ref/EsriWFS/EsriWFS.md
   - GeoJSON: spatial-data-format-ref/GeoJSON/GeoJSON.md
   - GeoPackage: spatial-data-format-ref/GeoPackage/GeoPackage.md
   - GeoTIFF: spatial-data-format-ref/GeoTIFF/GeoTIFF.md
   - KML: spatial-data-format-ref/KML/KML.md
+  - OGS WMTS: spatial-data-format-ref/OGC-WMTS/OGC-WMTS.md
 - Reference - Resources: resources/resources.md
 - Appendix - Installing: appendix-install/install.md
 - Appendix - GeoMapProject: appendix-geomapproject/geomapproject.md
