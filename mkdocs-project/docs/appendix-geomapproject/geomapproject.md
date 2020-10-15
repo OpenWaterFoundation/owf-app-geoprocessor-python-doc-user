@@ -359,6 +359,7 @@ GeoLayer Properties in `properties` JSON Element
 | -- | -- | -- |
 | `attribution` | Simple text or HTML content that will be used to provide attribution for the layer. | |
 | `isBackground` | Indicates whether the layer is a background layer (`false` or `true`), in which case it should typically be part of a [GeoLayerViewGroup](#geolayerviewgroup) that contains only background layers. | `false` |
+| `zoomLevelMax` | The maximum (largest value) supported by the layer can be specified to allow software applications to constrain map views from zooming past the maximum zoom level that is supported for the layer.  This property is typically only used with background layers that only have tiles for a range of zoom levels.  For example, set to `16.5` for USGS Topo layer.  The InfoMapper tool displays the zoom level and can be used to evaluate a value for this property when display issues arise. | Software controls - typically no limit. |
 
 ### GeoLayerSymbol ###
 
