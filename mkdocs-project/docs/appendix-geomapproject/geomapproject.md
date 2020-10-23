@@ -696,20 +696,75 @@ Additional classification types or enhancement to the above classification types
 ### GeoLayerViewEventHandler ###
 
 The [GeoLayerView](#geolayerview) part of the GeoMapProject configuration can contain event handling information,
-as added by the [`SetGeoLayerViewEventHandler`](../command-ref/SetGeoLayerViewEventHandler/SetGeoLayerViewEventHandler.md) command.
-The goal is to include general configuration information that can inform an application's behavior
-and minimize the amount of hard-coding or custom configuration of the application.
+which allows the map configuration file to define actions taken when a user interacts with a map.
 
-For example, general web application components can be developed to read a GeoMapProject and implement
-basic event handling and features such as:
+For example, general web application components, such as used in the InfoMapper,
+can be developed to read a GeoMapProject and implement basic event handling and features such as:
 
 * display information in a popup when hovering over a layer feature
 * display information in a popup when clicking on a layer feature
 
 Event handler information can also be used to define custom application behavior that goes beyond
 default functionality, where the event handler properties must be further interpreted in the application.
-The GeoProcessor does not place restrictions on how event types or properties are defined,
-but a consistent convention should be used.
+An example is hovering over a river segment, which causes all upstream segments to highlight.
+The GeoProcessor allows for flexibility on how event types and properties are defined;
+however, a consistent convention should be used.
+
+Defining an event consists of creating two pieces of configuration:
+
+1. An event handler for a GeoLayerView, which is included in the GeoMapProject file.
+See the `eventHandlers` element in the JSON example below
+and the
+[`SetGeoLayerViewEventHandler`](../command-ref/SetGeoLayerViewEventHandler/SetGeoLayerViewEventHandler.md) GeoProcessor command.
+2. An event configuration file, which defines the details of the event.
+Examples are provided below and are documented in more detail in
+the [InfoMapper software Map Event Configuration Files](http://software.openwaterfoundation.org/infomapper/latest/doc-user/appendix-install/map-event-config-files/)
+documentation.
+
+The following is an example of an InfoMapper event handler definition for a GeoLayerView for a county layer,
+which allows a county polygon to be clicked on to display the feature attributes and a button
+to graph the county population.  The event handler is defined with the
+GeoProcessor comand:
+
+```
+SetGeoLayerViewEventHandler(GeoLayerViewID="CountiesLayerView",EventType="click",Properties="popupConfigPath:graphs/county-popup-config.json")
+```
+
+The resulting map configuration file produced by GeoProcessor contains the `eventHandlers` data element, as shown below:
+
+```
+"geoLayerViews": [
+  {
+    "geoLayerViewId": "CountiesLayerView",
+    "name": "Colorado Counties",
+    "description": "Colorado Counties",
+    "geoLayerId": "CountiesLayer",
+    "properties": {
+      "docPath": "layers/counties.md"
+    },
+    "geoLayerSymbol": {
+      "name": "Colorize counties",
+      "description": "Show each county the same color except those that overlap the Poudre",
+      "classificationType": "Categorized",
+      "classificationAttribute": "county",
+      "properties": {
+        "classificationType": "categorized",
+        "classificationFile": "layers/counties-classify-county.csv"
+      }
+    },
+    "eventHandlers": [
+      {
+        "eventType": "click",
+        "name": "",
+        "description": "",
+        "properties": {
+          "eventConfigPath": "graphs/county-popup-config.json"
+        }
+      }
+    ]
+  }
+]
+```
 
 The following are built-in GeoLayerViewEventHandler data members.
 
@@ -732,7 +787,7 @@ GeoLayerViewEventHandler Properties in `properties` JSON Element for `hover` Eve
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
 | -- | -- | -- |
-| `popupConfigPath` | Path to configuration file for popup dialog configuration. | Display all layer feature properties using default formatting in non-scrollable popup.  Scrolling is avoided in order to allow quickly reviewing feature attributes. |
+| `eventConfigPath` | Path to configuration file for hover event configuration. | Display all layer feature properties using default formatting in non-scrollable popup.  Scrolling should not be implemented in order to allow quickly reviewing feature attributes as the mouse is hovered over various features. |
 
 The following are GeoLayerViewEventHandler properties for `click` event type, as implemented in the InfoMapper web application.
 
@@ -742,12 +797,39 @@ GeoLayerViewEventHandler Properties in `properties` JSON Element for `click` Eve
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
 | -- | -- | -- |
-| `popupConfigPath` | Path to configuration file for popup dialog configuration. | Display all layer feature properties using default formatting in a scrollable popup. |
+| `eventConfigPath` | Path to configuration file for click event configuration. | Display all layer feature properties using default formatting in a scrollable popup. |
+| `popupConfigPath` | **This property has been replaced by the `eventConfigPath` property.** Path to configuration file for click event configuration. | Display layer feature properties in a scrollable popup. |
 
-The following is an example popup configuration file, in this case as implemented for the InfoMapper software,
-which illustrates how an application can implement an event handler.
-See the [InfoMapper documentation](http://software.openwaterfoundation.org/infomapper/latest/doc-user/)
-for current specification.
+The event configuration file specified by the `eventConfigPath` property (`county-popup-config.json` in the above example)
+is a JSON file that currently is not created by GeoProcessor and may be specific to a software application.
+The following is an example event configuration file for InfoMapper,
+which lists all map feature attributes and displays a button to create a graph of population.
+See the [InfoMapper documentation](http://software.openwaterfoundation.org/infomapper/latest/doc-user/) for detailed documentation for the file format.
+
+```
+{
+  "id" : "county-popup-config",
+  "name": "County popup configuration",
+  "description":  "List all attributes and provide buttons to graph time series.",
+  "layerAttributes" : {
+    "include" : [ "*" ],
+    "exclude" : [],
+    "formats": []
+  },
+  "actions": [
+      {
+        "label" : "Population",
+        "action" : "displayTimeSeries",
+        "resourcePath" : "graphs/county-population-graph-config.json",
+        "downloadFile" : "${featureAttribute:county}.toMixedCase().replace(' ','')-population-total.csv"
+      }
+  ]
+}
+
+```
+
+The following is an example event configuration file to display multiple buttons,
+each of which, when pressed, displays a graph.
 
 ```
 {
@@ -763,22 +845,22 @@ for current specification.
       {
         "action" : "graph",
         "label" : "Demand",
-        "productPath" : "graphs/diversion-DiversionDemand-graph-config.json"
+        "resourcePath" : "graphs/diversion-DiversionDemand-graph-config.json"
       },
       {
         "action" : "graph",
         "label" : "Historical",
-        "productPath" : "graphs/diversion-DiversionHistorical-graph-config.json"
+        "resourcePath" : "graphs/diversion-DiversionHistorical-graph-config.json"
       },
       {
         "action" : "graph",
         "label" : "Available Flow",
-        "productPath" : "graphs/diversion-Available_Flow-graph-config.json"
+        "resourcePath" : "graphs/diversion-Available_Flow-graph-config.json"
       },
       {
         "action" : "graph",
         "label" : "Combination",
-        "productPath" : "graphs/diversion-combination-graph-config.json"
+        "resourcePath" : "graphs/diversion-combination-graph-config.json"
       }
   ]
 }
