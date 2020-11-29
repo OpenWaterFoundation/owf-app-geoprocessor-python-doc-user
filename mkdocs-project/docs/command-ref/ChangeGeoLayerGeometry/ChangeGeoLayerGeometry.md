@@ -54,5 +54,5 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* The QGIS [`qgis:linestopolygons`](https://docs.qgis.org/linestopolygons/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#lines-to-polygons) processing algorithm is used to process the layer
+* This command uses the QGIS [`qgis:linestopolygons`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#lines-to-polygons) processing algorithm
 * [`CreateGeoLayerFromGeometry`](../CreateGeoLayerFromGeometry/CreateGeoLayerFromGeometry.md) command

@@ -42,7 +42,7 @@ Command Parameters
 | --------------|-----------------|----------------- |
 | `GeoLayerID`<br>**required**| The identifier of the input GeoLayer. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
 | `Bands`<br>**required**| A list of bands to include in output, separated by commas. | None - must be specified. |
-| `OutputGeoLayerID` | The identifier of the output GeoLayer. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| Original GeoLayer will be updated.  |
+| `OutputGeoLayerID` | The identifier of the output GeoLayer. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| Original GeoLayer will be updated. |
 
 ## Examples ##
 
@@ -52,5 +52,5 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* The QGIS [`gdal:rearrange_bands`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/gdal/rasterconversion.html#rearrange-bands) processing algorithm is used to process the layer
+* This command uses the QGIS [`gdal:rearrange_bands`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/gdal/rasterconversion.html#rearrange-bands) processing algorithm
 * [`WriteRasterGeoLayerToFile`](../WriteRasterGeoLayerToFile/WriteRasterGeoLayerToFile.md) command

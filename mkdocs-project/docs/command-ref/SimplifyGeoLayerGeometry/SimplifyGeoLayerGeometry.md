@@ -130,4 +130,4 @@ After running the command, the following GeoLayer IDs are registered within the 
 
 ## See Also ##
 
-* The QGIS [`qgis:simplifygeometries`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#simplify) processing algorithm is used to process the layer
+* This command uses the QGIS [`qgis:simplifygeometries`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#simplify) processing algorithm

@@ -184,4 +184,4 @@ Attribute Table of `MergedOutput`
 
 ## See Also ##
 
-* The QGIS [`qgis:mergevectorlayers`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vector_general_tools.html#merge-vector-layers) processing algorithm is used to process the layer
+* This command uses the QGIS [`qgis:mergevectorlayers`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#merge-vector-layers) processing algorithm
