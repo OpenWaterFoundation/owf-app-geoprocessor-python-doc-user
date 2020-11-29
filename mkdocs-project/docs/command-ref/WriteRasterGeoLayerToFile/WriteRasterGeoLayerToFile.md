@@ -61,5 +61,5 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* The QGIS [`gdal:translate`](https://docs.qgis.org/translate/en/docs/user_manual/processing_algs/gdal/rasterconversion.html#translate-convert-format) processing algorithm is used to process the layer
+* This command uses the QGIS [`gdal:translate`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/gdal/rasterconversion.html#translate-convert-format) processing algorithm
 * [`ReadRasterGeoLayerFromFile`](../ReadRasterGeoLayerFromFile/ReadRasterGeoLayerFromFile.md) command
