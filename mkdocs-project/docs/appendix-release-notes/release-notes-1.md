@@ -11,19 +11,19 @@
 
 ## Changes in Version 1.5.0 ##
 
-* ![new](new.png) [1.5.0] Add [`ChangeGeoLayerGeometry`](../ChangeGeoLayerGeometry/ChangeGeoLayerGeometry.md) command.
-* ![new](new.png) [1.5.0] Add [`ChangeRasterGeoLayerCRS`](../ChangeRasterGeoLayerCRS/ChangeRasterGeoLayerCRS.md) command.
-* ![new](new.png) [1.5.0] Add [`RemoveGeoLayerFeatures`](../RemoveGeoLayerFeatures/RemoveGeoLayerFeatures.md) command.
-* ![new](new.png) [1.5.0] Add [`ReadGeoLayerFromKML`](../ReadGeoLayerFromKML/ReadGeoLayerFromKML.md) command.
-* ![new](new.png) [1.5.0] Add [`RearrangeRasterGeoLayerBands`](../RearrangeRasterGeoLayerBands/RearrangeRasterGeoLayerBands.md) command.
 * ![change](change.png) [1.5.0] Improve error handling when QGIS algorithms are called via the processing package.
 The user interface will indicate warnings and errors.
 * ![change](change.png) [1.5.0] Multiple results windows can now be opened for maps and attribute tables.
 Previously a single window could be opened and would be replaced for each view.
-* ![change](change.png) [1.5.0] Update [`ReadTableFromDelimitedFile`](../ReadTableFromDelimitedFile/ReadTableFromDelimitedFile.md)
+* ![change](change.png) [1.5.0] Update [`ReadTableFromDelimitedFile`](../command-ref/ReadTableFromDelimitedFile/ReadTableFromDelimitedFile.md)
 command to work with new table design.
-* ![change](change.png) [1.5.0] Update [`WriteRasterGeoLayerToFile`](../WriteRasterGeoLayerToFile/WriteRasterGeoLayerToFile.md)
+* ![change](change.png) [1.5.0] Update [`WriteRasterGeoLayerToFile`](../command-ref/WriteRasterGeoLayerToFile/WriteRasterGeoLayerToFile.md)
 command to use the GDAL `transform` algorithm, which ensures that format and CRS can be changed
+* ![new](new.png) [1.5.0] Add [`ChangeGeoLayerGeometry`](../command-ref/ChangeGeoLayerGeometry/ChangeGeoLayerGeometry.md) command.
+* ![new](new.png) [1.5.0] Add [`ChangeRasterGeoLayerCRS`](../command-ref/ChangeRasterGeoLayerCRS/ChangeRasterGeoLayerCRS.md) command.
+* ![new](new.png) [1.5.0] Add [`RemoveGeoLayerFeatures`](../command-ref/RemoveGeoLayerFeatures/RemoveGeoLayerFeatures.md) command.
+* ![new](new.png) [1.5.0] Add [`ReadGeoLayerFromKML`](../command-ref/ReadGeoLayerFromKML/ReadGeoLayerFromKML.md) command.
+* ![new](new.png) [1.5.0] Add [`RearrangeRasterGeoLayerBands`](../command-ref/RearrangeRasterGeoLayerBands/RearrangeRasterGeoLayerBands.md) command.
 
 ## Changes in Version 1.4.0 ##
 
