@@ -98,6 +98,4 @@ See [Stack Exchange - ExtendedData and Description coexisting in the same placem
 
 ## See Also ##
 
-* The GeoLayer is written using the [`QGIS QgsVectorFileWriter Class`](https://qgis.org/api/classQgsVectorFileWriter.html).
-See [documentation](https://docs.qgis.org/2.14/en/docs/pyqgis_developer_cookbook/vector.html#writing-vector-layers)
-for examples on utilizing the `QGSVectorFileWriter` class in the PyQGIS environment.
+* The GeoLayer is written using the [GDAL KML driver](https://gdal.org/drivers/vector/kml.html#vector-kml)

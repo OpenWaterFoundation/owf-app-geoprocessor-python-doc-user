@@ -20,6 +20,7 @@ The following are resources that explain the specification:
 * [geopackage.org](http://geopackage.org/) - specification website
 * [OGC GeoPackage Encoding Standard](https://www.ogc.org/standards/geopackage) - GeoPackage specification
 * [GeoPackage (Wikipedia)](https://en.wikipedia.org/wiki/GeoPackage)
+* [GDAL GeoPackage driver](https://gdal.org/drivers/vector/gpkg.html#vector-gpkg)
 * [OWF / Learn GeoPackage](http://learn.openwaterfoundation.org/owf-learn-geopackage/) - Open Water Foundation GeoPackage learning resource
 
 ## GeoPackage Files and Standard GeoLayer Properties ##

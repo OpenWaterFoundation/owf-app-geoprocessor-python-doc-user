@@ -19,6 +19,7 @@ The following are resources that explain the specification:
 * [geojson.org](http://geojson.org/) - specification originator
 * [GeoJSON 2008 specification](http://geojson.org/geojson-spec.html) - original specification
 * [GeoJSON 2016 RFC 7964 specification](http://geojson.org/geojson-spec.html) - latest specification
+* [GDAL GeoJSON driver](https://gdal.org/drivers/vector/geojson.html#vector-geojson)
 * [OWF / Learn GeoJSON](http://learn.openwaterfoundation.org/owf-learn-geojson/) - Open Water Foundation GeoJSON learning resource
 
 ## GeoJSON Files and Standard GeoLayer Properties ##

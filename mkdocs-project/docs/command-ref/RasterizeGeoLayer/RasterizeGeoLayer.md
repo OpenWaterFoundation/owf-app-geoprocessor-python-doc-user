@@ -101,7 +101,5 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* QGIS rasterize documentation:
-	+ [QGIS latest rasterize algorithm](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/gdal/vectorconversion.html#rasterize-overwrite-with-attribute) documentation.
-	+ [QGIS 3.10 rasterize algorithm](https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/gdal/vectorconversion.html#rasterize-overwrite-with-attribute) documentation.
+* The QGIS [`gdal:rasterize`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/gdal/vectorconversion.html#rasterize-vector-to-raster) processing algorithm is used to process the layer
 * [`ReadRasterGeoLayerFromFile`](../ReadRasterGeoLayerFromFile/ReadRasterGeoLayerFromFile.md) command

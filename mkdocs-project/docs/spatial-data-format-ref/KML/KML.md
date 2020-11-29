@@ -14,6 +14,7 @@ The following are resources that explain the specification:
 
 * [Google's KML Reference Guide](https://developers.google.com/kml/documentation/kmlreference)
 * [OGC KML Standards](http://www.opengeospatial.org/standards/kml)
+* [GDAL KML driver](https://gdal.org/drivers/vector/kml.html#vector-kml)
 
 ## Limitations ##
 

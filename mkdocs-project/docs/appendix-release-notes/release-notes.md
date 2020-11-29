@@ -56,11 +56,12 @@ GeoProcessor Version History Summary (most current at top)
 </p>**
 
 |**GeoProcessor Version(s)**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;|**Summary of Major Changes in Version**|**Release Date**|
-|--|--|--|
-|1.3.0|Many enhancements and fixes, currently ongoing as a "dev" release. | |
-|1.2.0|Fix Windows installer bugs, enable comment editing, various cleanup.|2019-01-10|
-|1.1.0|Add Windows installer, various cleanup.|          |
-|1.0.0|Initial release with core geoprocessing functionality and testing framework.|          |
+| -- | -- | -- |
+| 1.5.0 | Additional support for raster data processing. | 2020-11-28 |
+| 1.4.1 | Updates consistent with InfoMapper map configuration file creation. | 2020-09-24 |
+| 1.2.0 | Fix Windows installer bugs, enable comment editing, various cleanup. | 2019-01-10 |
+| 1.1.0 | Add Windows installer, various cleanup.| |
+| 1.0.0 | Initial release with core geoprocessing functionality and testing framework.| |
 
 ## Known Limitations ##
 

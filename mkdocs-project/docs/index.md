@@ -24,8 +24,10 @@ The GeoProcessor software provides features that:
 * provide an integrated testing framework to validate the GeoProcessor software and workflows
 
 The GeoProcessor is similar in design to the
-[TSTool (Time Series Tool)](http://opencdss.state.co.us/opencdss/tstool/) software
-that OWF has developed for the State of Colorado.
+TSTool (Time Series Tool) software,
+which  OWF has developed for the State of Colorado to automate time series processing.
+See the [OWF Software website](http://software.openwaterfoundation.org/) and the
+[OpenCDSS TSTool web page](http://opencdss.state.co.us/opencdss/tstool/).
 
 The following image illustrates the main interface for editing and running workflows,
 and visualizing results.
@@ -45,6 +47,9 @@ which provide spatial data processing functionality via Python libraries:
 * free and open source [QGIS](https://qgis.org/en/site/) - **standalone QGIS the primary version for development**
 * commercial [ArcGIS Pro](https://pro.arcgis.com/en/pro-app/) - **ArcGIS Pro version has been prototyped**
 
+The GeoProcessor can be used to create web maps for the OWF InfoMapper software (see the
+[OWF Software website](http://software.openwaterfoundation.org/)).
+
 The GeoProcessor is particularly useful when workflows need to be standardized as part
 of a business process or analysis effort.
 The workflows can be shared with team members working in different
@@ -62,7 +67,7 @@ The [Open Water Foundation](http://openwaterfoundation.org) is a nonprofit socia
 on developing and supporting open source software for water resources, so that organizations can make better decisions about water.
 OWF also works to advance open data tools and implementation.
 
-See also the [Open Water Foundation website](http://openwaterfoundation.org) website.
+See also the [Open Water Foundation website](http://openwaterfoundation.org).
 
 ## How to Use this Documentation ##
 

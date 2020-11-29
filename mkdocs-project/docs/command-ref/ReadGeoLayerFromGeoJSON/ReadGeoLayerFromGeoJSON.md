@@ -98,7 +98,5 @@ After running the command, the following GeoLayer IDs are registered within the 
 
 ## See Also ##
 
-* The GeoLayers are read using the [`QGIS QgsVectorLayer Class`](https://qgis.org/api/classQgsVectorLayer.html).
-See [documentation](https://docs.qgis.org/2.14/en/docs/pyqgis_developer_cookbook/loadlayer.html#vector-layers)
-for examples on utilizing the `QgsVectorLayer` class in the PyQGIS environment.
+* The GeoLayers are read using the [GDAL GeoJSON driver](https://gdal.org/drivers/vector/geojson.html#vector-geojson)
 * [`WriteGeoLayerToGeoJSON`](../WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON.md) command
