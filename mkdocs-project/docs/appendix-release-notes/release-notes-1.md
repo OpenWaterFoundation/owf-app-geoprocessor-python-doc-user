@@ -1,5 +1,6 @@
 # GeoProcessor / Release Notes / Version 1 #
 
+* [Changes in Version 1.5.0](#changes-in-version-150)
 * [Changes in Version 1.4.0](#changes-in-version-140)
 * [Changes in Version 1.3.0](#changes-in-version-130)
 * [Changes in Version 1.2.0](#changes-in-version-120)
@@ -7,6 +8,22 @@
 * [Changes in Version 1.0.0](#changes-in-version-100)
 
 ----------
+
+## Changes in Version 1.5.0 ##
+
+* ![new](new.png) [1.5.0] Add [`ChangeGeoLayerGeometry`](../ChangeGeoLayerGeometry/ChangeGeoLayerGeometry.md) command.
+* ![new](new.png) [1.5.0] Add [`ChangeRasterGeoLayerCRS`](../ChangeRasterGeoLayerCRS/ChangeRasterGeoLayerCRS.md) command.
+* ![new](new.png) [1.5.0] Add [`RemoveGeoLayerFeatures`](../RemoveGeoLayerFeatures/RemoveGeoLayerFeatures.md) command.
+* ![new](new.png) [1.5.0] Add [`ReadGeoLayerFromKML`](../ReadGeoLayerFromKML/ReadGeoLayerFromKML.md) command.
+* ![new](new.png) [1.5.0] Add [`RearrangeRasterGeoLayerBands`](../RearrangeRasterGeoLayerBands/RearrangeRasterGeoLayerBands.md) command.
+* ![change](change.png) [1.5.0] Improve error handling when QGIS algorithms are called via the processing package.
+The user interface will indicate warnings and errors.
+* ![change](change.png) [1.5.0] Multiple results windows can now be opened for maps and attribute tables.
+Previously a single window could be opened and would be replaced for each view.
+* ![change](change.png) [1.5.0] Update [`ReadTableFromDelimitedFile`](../ReadTableFromDelimitedFile/ReadTableFromDelimitedFile.md)
+command to work with new table design.
+* ![change](change.png) [1.5.0] Update [`WriteRasterGeoLayerToFile`](../WriteRasterGeoLayerToFile/WriteRasterGeoLayerToFile.md)
+command to use the GDAL `transform` algorithm, which ensures that format and CRS can be changed
 
 ## Changes in Version 1.4.0 ##
 

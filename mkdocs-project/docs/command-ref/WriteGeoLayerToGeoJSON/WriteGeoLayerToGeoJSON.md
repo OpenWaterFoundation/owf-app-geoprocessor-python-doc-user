@@ -113,8 +113,5 @@ ExampleOutputFolder
 
 ## See Also ##
 
-* The GeoLayer is written using the [`QGIS QgsVectorFileWriter Class`](https://qgis.org/api/classQgsVectorFileWriter.html).
-See [documentation](https://docs.qgis.org/2.14/en/docs/pyqgis_developer_cookbook/vector.html#writing-vector-layers)
-for examples on utilizing the `QGSVectorFileWriter` class in the PyQGIS environment.
-* See the [GeoJSON driver properties](https://gdal.org/drivers/vector/geojson.html)
+* The GeoLayer is written using the [GDAL GeoJSON driver](https://gdal.org/drivers/vector/geojson.html)
 * [`ReadGeoLayerFromGeoJSON`](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) command

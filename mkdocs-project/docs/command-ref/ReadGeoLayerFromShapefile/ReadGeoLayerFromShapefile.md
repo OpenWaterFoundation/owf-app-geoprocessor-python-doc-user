@@ -99,7 +99,5 @@ After running the command, no GeoLayerIDs are registered within the GeoProcessor
 
 ## See Also ##
 
-* The GeoLayers are read using the [`QGIS QgsVectorLayer Class`](https://qgis.org/api/classQgsVectorLayer.html).
-See [documentation](https://docs.qgis.org/2.14/en/docs/pyqgis_developer_cookbook/loadlayer.html#vector-layers)
-for examples on utilizing the `QgsVectorLayer` class in the PyQGIS environment.
+* The GeoLayer is read using the [GDAL Shapefile driver](https://gdal.org/drivers/vector/shapefile.html#vector-shapefile).
 * [`WriteGeoLayerToShapefile`](../WriteGeoLayerToShapefile/WriteGeoLayerToShapefile.md) command

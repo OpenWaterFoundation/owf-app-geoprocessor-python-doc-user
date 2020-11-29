@@ -126,6 +126,4 @@ becasue the `Subset_Pattern` parameter only includes feature classes that end in
 
 ## See Also ##
 
-* The GeoLayers are read using the [`QGIS QgsVectorLayer Class`](https://qgis.org/api/classQgsVectorLayer.html).
-See [documentation](https://docs.qgis.org/3.10/en/docs/pyqgis_developer_cookbook/loadlayer.html#vector-layers)
-for examples on utilizing the `QgsVectorLayer` class in the PyQGIS environment.
+* The GeoLayers are read using the [GDAL ESRI File Geodatabase (OpenFileGDB) driver`](https://gdal.org/drivers/vector/openfilegdb.html#vector-openfilegdb)

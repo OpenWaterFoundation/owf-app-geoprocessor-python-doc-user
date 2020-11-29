@@ -46,10 +46,16 @@ Command Parameters
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
 |`InputFile` <br>**required**| The delimited file (relative or absolute path) to read. [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized. | None - must be specified. |
-|`TableID` <br> **required**| A Table identifier. Refer to [documentation](../../best-practices/table-identifiers.md) for best practices on naming Table identifiers.|None - must be specified. |
 |`Delimiter` | The delimiter character of the input delimited file.|`,` (*comma*)|
-|`HeaderLines` |The number of rows representing non-data comments. These columns are not included in the output Table data values.|`0`|
-|`NullValues` |A list of values within the delimited file that should be converted to `NULL` values. The Python `None` will be used internally.|Empty table cell is assumed to be an empty string for string columns and `None` for other data types.|
+|`TableID` <br> **required**| A Table identifier. Refer to [documentation](../../best-practices/table-identifiers.md) for best practices on naming Table identifiers.|None - must be specified. |
+|`SkipLines` | Indicates the number of lines in the file to skip, which otherwise would interfere with reading row data. Individual row numbers and ranges can be specified, for example: 1,5-6,17 | No lines re skipped. |
+|`HeaderLines` | **Proposed but not yet implemented.** Indicate the rows that include header information, which should be used for column names. Currently this should only be one row, although a range may be fully supported in the future. If the column names are not found in the file, use the `ColumnNames` parameter. | First non-comment data line is used for column names unless `ColumnNames` is provided. |
+|`ColumnNames` | Column names, separated by commas. Use this parameter when column names are not provided in the data file with the `HeaderLinees` parameter (or `HeaderLines` default behavior). | |
+|`FloatColumns` | List of comma-separated column names for columns that should be treated as containing floating-point values. Can be specified using `${Property}`. | Automatically determine column types from data. |
+|`IntegerColumns` | List of comma-separated column names for columns that should be treated as containing integer values. Can be specified using `${Property}`. | Automatically determine column types from data. |
+|`TextColumns` | List of comma-separated column names for columns that should be treated as containing text values. Can be specified using `${Property}`. | Automatically determine column types from data. |
+|`Top` | Specify the number of data rows to read, useful when prototyping an analysis process. | Process all rows. |
+|`RowCountProperty` | The name of the property to set to the number of rows read, useful for looping and error-checks. | Don't set property. |
 |`IfTableIDExists` |The action that occurs if the `TableID` already exists within the GeoProcessor.<ul><li>`Replace` - The existing Table within the GeoProcessor is replaced with the new Table. No warning is logged.</li><li>`ReplaceAndWarn` - The existing Table within the GeoProcessor is replaced with the new Table. A warning is logged.</li><li>`Warn` - The new Table is not created. A warning is logged.</li><li>`Fail` - The new Table is not created. A fail message is logged.</li></ul> | `Replace` | 
 
 ## Examples ##

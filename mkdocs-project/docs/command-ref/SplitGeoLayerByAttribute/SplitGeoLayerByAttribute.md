@@ -63,7 +63,5 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* QGIS 3.10 split vector layer documentation:
-	+ [QGIS latest split vector layer](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#split-vector-layer) documentation
-	+ [QGIS 3.10 split vector layer](https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#split-vector-layer) documentation
+* The QGIS [`qgis:splitvectorlayer`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#split-vector-layer) processing algorithm is used to process the layer
 * [GeoPackage file](../../spatial-data-format-ref/GeoPackage/GeoPackage.md) format

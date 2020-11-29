@@ -15,6 +15,7 @@ The following are resources that explain the specification:
 
 * [GeoTIFF (Wikipedia)](https://en.wikipedia.org/wiki/GeoTIFF)
 * [OGC GeoTIFF Standard](https://www.ogc.org/standards/geotiff)
+* [GDAL GeoTIFF driver](https://gdal.org/drivers/raster/gtiff.html#raster-gtiff)
 
 ## GeoTIFF Files and Standard GeoLayer Properties ##
 

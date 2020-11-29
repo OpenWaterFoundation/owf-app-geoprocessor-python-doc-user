@@ -25,6 +25,8 @@ nav:
   - AddGeoLayerViewToGeoMap: command-ref/AddGeoLayerViewToGeoMap/AddGeoLayerViewToGeoMap.md
   - AddGeoMapToGeoMapProject: command-ref/AddGeoMapToGeoMapProject/AddGeoMapToGeoMapProject.md
   - Blank: command-ref/Blank/Blank.md  
+  - ChangeGeoLayerGeometry: command-ref/ChangeGeoLayerGeometry/ChangeGeoLayerGeometry.md
+  - ChangeRasterGeoLayerCRS: command-ref/ChangeRasterGeoLayerCRS/ChangeRasterGeoLayerCRS.md
   - ClipGeoLayer: command-ref/ClipGeoLayer/ClipGeoLayer.md
   - CloseDataStore: command-ref/CloseDataStore/CloseDataStore.md
   - Comment: command-ref/Comment/Comment.md
@@ -55,6 +57,7 @@ nav:
   - RasterizeGeoLayer: command-ref/RasterizeGeoLayer/RasterizeGeoLayer.md
   - ReadGeoLayerFromDelimitedFile: command-ref/ReadGeoLayerFromDelimitedFile/ReadGeoLayerFromDelimitedFile.md
   - ReadGeoLayerFromGeoJSON: command-ref/ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md
+  - ReadGeoLayerFromKML: command-ref/ReadGeoLayerFromKML/ReadGeoLayerFromKML.md
   - ReadGeoLayerFromShapefile: command-ref/ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile.md
   - ReadGeoLayerFromWebFeatureService: command-ref/ReadGeoLayerFromWebFeatureService/ReadGeoLayerFromWebFeatureService.md
   - ReadGeoLayersFromFGDB: command-ref/ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB.md
@@ -66,9 +69,11 @@ nav:
   - ReadTableFromDataStore: command-ref/ReadTableFromDataStore/ReadTableFromDataStore.md
   - ReadTableFromDelimitedFile: command-ref/ReadTableFromDelimitedFile/ReadTableFromDelimitedFile.md
   - ReadTableFromExcel: command-ref/ReadTableFromExcel/ReadTableFromExcel.md
+  - RearrangeRasterGeoLayerBands: command-ref/RearrangeRasterGeoLayerBands/RearrangeRasterGeoLayerBands.md
   - RemoveFile: command-ref/RemoveFile/RemoveFile.md
   - RemoveGeoLayerAttributes: command-ref/RemoveGeoLayerAttributes/RemoveGeoLayerAttributes.md
   - RenameGeoLayerAttribute: command-ref/RenameGeoLayerAttribute/RenameGeoLayerAttribute.md
+  - RemoveGeoLayerFeatures: command-ref/RemoveGeoLayerFeatures/RemoveGeoLayerFeatures.md
   - RunCommands: command-ref/RunCommands/RunCommands.md
   - RunGdalProgram: command-ref/RunGdalProgram/RunGdalProgram.md
   - RunOgrProgram: command-ref/RunOgrProgram/RunOgrProgram.md

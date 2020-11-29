@@ -15,6 +15,7 @@ The following are resources that explain the specification:
 
 * [Web Map Tile Service (Wikipedia)](https://en.wikipedia.org/wiki/Web_Map_Tile_Service)
 * [OGC WMTS Standard](https://www.ogc.org/standards/wmts)
+* [GDAL OGC WMS driver](https://gdal.org/drivers/raster/wmts.html#raster-wmts)
 
 WMTS are accessed by providing a URL to software, with placeholders for coordinates.
 The software provides the coordinates as the map is panned and zoomed,

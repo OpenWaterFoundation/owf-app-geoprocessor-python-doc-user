@@ -59,4 +59,5 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
+* GeoLayers are read usin the [GDAL GeoPackage driver](https://gdal.org/drivers/vector/gpkg.html#vector-gpkg).
 * [GeoPackage](../../spatial-data-format-ref/GeoPackage/GeoPackage.md) format

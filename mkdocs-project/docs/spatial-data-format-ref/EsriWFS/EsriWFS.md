@@ -20,6 +20,7 @@ The following are resources that explain the specification:
 * [Web Feature Service on Wikipedia](https://en.wikipedia.org/wiki/Web_Feature_Service#:~:text=The%20basic%20Web%20Feature%20Service,web%20feature%20server%20using%20HTTP.)
 * [OGC Web Feature Service](https://www.ogc.org/standards/wfs) interface standard
 * [ArcGIS REST API](https://developers.arcgis.com/rest/services-reference/query-feature-service-layer-.htm)
+* [GDAL OGC WFS driver](https://gdal.org/drivers/vector/wfs.html#vector-wfs)
 
 Use of the Esri WFS API may be complicated and require special software,
 especially to query service metadata, handle paging of data records,

@@ -44,6 +44,8 @@ and can be easily viewed on GitHub or other version control cloud platforms.
 The GeoProcessor is designed to handle large datasets and workflows,
 with features to evaluate and troubleshoot performance.
 Often, a workflow can be processed on a limited dataset and can then be scaled to process large datasets.
+For example, the GeoProcessor can read controlling data from tables and repeat the same
+analysis steps for each item in a table.
 
 * The cost of commercial software may be a barrier to adopting geographic information system (GIS) tools,
 in particular for organizations that use the software on a limited basis.
@@ -84,7 +86,7 @@ The following summarizes UI features:
 
 * Menus at the top allow previously saved command files to be read,
 and new command files can be created.
-* The ***Commands*** area displays the current command file:
+* The ***Commands*** area in the middle displays the current command file:
 	+ The window title indicates the name of the command file and whether it has been modified.
 	+ Labels above the ***Commands*** area indicate the number of commands and count of commands
 	with failures and warnings.
@@ -95,7 +97,7 @@ and new command files can be created.
 	+ All or selected commands can be run using the ***Run Selected Commands*** and ***Run All Commands*** buttons
 	below of the ***Commands*** area.
 	+ The ***Commands*** menus provide many commands to automate processing spatial data, tables, and other data.
-* Results are displayed in the ***Results*** area, with output shown for each major output type.
+* Results are displayed in the ***Results*** area at the bottom, with output shown for each major output type.
 	+ GeoLayers can be shown on a map and the layer's attribute table (properties for each layer feature) can be displayed.
 	+ Output files can be viewed.
 	+ Tables can be viewed.
@@ -200,7 +202,7 @@ GeoMapProject Types
 | -- | -- |
 | `Dashboard` | An application that has several maps, typically accessible by menus or other user interface components. |
 | `Grid` | A grid (matrix) of maps, for example showing different times. |
-| `SingleMap` | A single GeoMap is included in the GeoMapProject, for typical "single page web applications" where a single map display dominates the application. |
+| `SingleMap` | A single GeoMap is included in the GeoMapProject, for typical "single page web applications" where a single map display dominates the application. **This is currently the only project type that is supported.  Multiple `SingleMap` maps can be included in an InfoMapper configuration.**|
 | `Story` | A sequence of maps that are referenced in a story. |
 
 A GeoMapProject is created using the

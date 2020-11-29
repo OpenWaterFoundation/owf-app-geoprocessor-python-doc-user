@@ -58,15 +58,17 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 | [`FreeGeoLayers`](FreeGeoLayers/FreeGeoLayers.md) | Removes one or more GeoLayers from the GeoProcessor. |
 | [`IntersectGeoLayer`](IntersectGeoLayer/IntersectGeoLayer.md) | Intersects a GeoLayer by another GeoLayer. |
 | [`MergeGeoLayers`](MergeGeoLayers/MergeGeoLayers.md) | Merge multiple GeoLayers into one GeoLayer. |
-| [`ReadGeoLayerFromDelimitedFile`](ReadGeoLayerFromDelimitedFile/ReadGeoLayerFromDelimitedFile.md) | Read a GeoLayer from a file in delimited file format. |
-| [`ReadGeoLayerFromGeoJSON`](ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) | Read a GeoLayer from a file in GeoJSON format. |
-| [`ReadGeoLayerFromShapefile`](ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile.md) | Read a GeoLayer from a file in Shapefile format. |
-| [`ReadGeoLayerFromWebFeatureService`](ReadGeoLayerFromWebFeatureService/ReadGeoLayerFromWebFeatureService.md) | Read a GeoLayer from an OGC Web Feature Service . |
+| [`ReadGeoLayerFromDelimitedFile`](ReadGeoLayerFromDelimitedFile/ReadGeoLayerFromDelimitedFile.md) | Read a GeoLayer from a delimited format file. |
+| [`ReadGeoLayerFromGeoJSON`](ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) | Read a GeoLayer from a GeoJSON format file. |
+| [`ReadGeoLayerFromKML`](ReadGeoLayerFromKML/ReadGeoLayerFromKML.md) | Read a GeoLayer from a KML format file. |
+| [`ReadGeoLayerFromShapefile`](ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile.md) | Read a GeoLayer from a Shapefile format file. |
+| [`ReadGeoLayerFromWebFeatureService`](ReadGeoLayerFromWebFeatureService/ReadGeoLayerFromWebFeatureService.md) | Read a GeoLayer from an OGC Web Feature Service. |
 | [`ReadGeoLayersFromFGDB`](ReadGeoLayersFromFGDB/ReadGeoLayersFromFGDB.md) | Read one or more GeoLayers from a file geodatabase. |
 | [`ReadGeoLayersFromFolder`](ReadGeoLayersFromFolder/ReadGeoLayersFromFolder.md) | Read GeoLayers from a folder. |
 | [`ReadGeoLayersFromGeoPackage`](ReadGeoLayersFromGeoPackage/ReadGeoLayersFromGeoPackage.md) | Read GeoLayers from a GeoPackage file. |
 | [`RemoveGeoLayerAttributes`](RemoveGeoLayerAttributes/RemoveGeoLayerAttributes.md) | Remove one or more attributes from a GeoLayer. |
 | [`RenameGeoLayerAttribute`](RenameGeoLayerAttribute/RenameGeoLayerAttribute.md) | Rename a GeoLayer's attribute. |
+| [`RemoveGeoLayerFeatures`](RemoveGeoLayerFeatures/RemoveGeoLayerFeatures.md) | Remove one or more features from a GeoLayer. |
 | [`RunOgrProgram`](RunOgrProgram/RunOgrProgram.md) | Run an OGR command line program. |
 | [`SetGeoLayerCRS`](SetGeoLayerCRS/SetGeoLayerCRS.md) | Sets a GeoLayer's coordinate reference system. |
 | [`SetGeoLayerProperty`](SetGeoLayerProperty/SetGeoLayerProperty.md) | Set a GeoGeoLayer property. |
@@ -81,6 +83,7 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 
 | **Command Name**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** |
 | ---------------- | --------------- |
+| [`ChangeRasterGeoLayerCRS`](ChangeRasterGeoLayerCRS/ChangeRasterGeoLayerCRS.md) | Change a raster layer CRS. |
 | [`CreateRasterGeoLayer`](CreateRasterGeoLayer/CreateRasterGeoLayer.md) | Create a raster spatial data layer. |
 | [`ReadRasterGeoLayerFromFile`](ReadRasterGeoLayerFromFile/ReadRasterGeoLayerFromFile.md) | Read a raster spatial data layer file. |
 | [`ReadRasterGeoLayerFromTileMapService`](ReadRasterGeoLayerFromTileMapService/ReadRasterGeoLayerFromTileMapService.md) | Read a raster spatial data layer from a tile map service. |
@@ -170,7 +173,9 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 
 ## QGIS Cross-Reference ##
 
-QGIS provides [algorithms](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/index.html) and [plugins](https://plugins.qgis.org/) to process spatial data. Below is a table relating the existing QGIS algorithms to the equivalent GeoProcessor command. 
+QGIS provides [algorithms](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/index.html)
+and [plugins](https://plugins.qgis.org/) to process spatial data.
+Below is a table relating the existing QGIS algorithms to the equivalent GeoProcessor command. 
 
 |QGIS Algorithm/Plugin| `A`lgorithm or `P`lugin |Description|Equivalent GeoProcessor Command(s)|Comment/Status|
 |----|:---:|---|---|---|

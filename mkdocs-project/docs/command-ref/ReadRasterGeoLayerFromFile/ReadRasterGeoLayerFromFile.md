@@ -56,4 +56,5 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
+* GeoLayers are read using the [GDAL driver](https://gdal.org/drivers/raster/index.html) for the file extension.
 * [`WriteRasterGeoLayerToFile`](../WriteRasterGeoLayerToFile/WriteRasterGeoLayerToFile.md) command
