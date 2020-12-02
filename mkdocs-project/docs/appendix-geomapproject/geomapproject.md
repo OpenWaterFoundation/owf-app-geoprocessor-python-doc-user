@@ -525,16 +525,19 @@ See also the sections for Classification Type,
 which describe how to provide classificatin type for raster layers.
 
 **<p style="text-align: center;">
-Raster Layer Type  GeoLayerSymbol Properties in `properties` JSON Element
+Raster Layer Type GeoLayerSymbol Properties in `properties` JSON Element
 </p>**
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
 | -- | -- | -- |
+| | **General rendering Properties** | |
 | `color` | Outline color for polygons, hexadecimal color is preferred (see [Colors](#colors))`. **Currently ignored.** | **need to evaluate if default color guidelines should be provided**|
 | `fillColor` | Fill color for polygons, hexadecimal color is preferred (see [Colors](#colors)). | Applications, such as InfoMapper, may default to grayscale or other color pallette. |
 | `fillOpacity` | Opacity of the `fillColor` (`1.0` for solid, `0.0` for transparent). | `0.2` (recommended, although applications such as InfoMapper may have different default) |
 | `opacity` | Opacity of the `color` (`1.0` for solid, `0.0` for transparent). **Currently ignored.** | `1.0` |
 | `weight` | Width of polygon outline, pixels, `0` to not draw outline. **Currently ignored.** | `3` (recommended) |
+| | **Other Properties** | |
+| `rasterResolution` | Used with Leaflet raster package.  Higher number means more detail?  **Need to describe.** | `32` |
 
 #### GeoLayerSymbol Properties for Single Symbol Classification Type ####
 
@@ -578,7 +581,8 @@ Because a different color can be used for each unique attribute value,
 this classification is easiest to use and understand when the attribute has a reasonably small number of unique values.
 Otherwise, a graduated classification may be better suited for specifying color and other symbol properties.
 
-Categorized classification can also be used for a raster layer, where a cell's data value is evaluated to determine color, opacity, etc.
+Categorized classification can also be used for a raster layer,
+where a raster band's cell data value is evaluated to determine color, opacity, etc.
 
 The following examples illustrate categorized symbol classification for different geometry types.
 
@@ -591,7 +595,7 @@ Categorized Classification Examples
 | Point (stream station conditions) | **Need to generate image** |
 | Line (stream conditions) | **Need to generate image** |
 | Polygon (water districts) | ![images/example-map-categorized-polygon](images/example-map-categorized-polygon.png) |
-| Raster | **Need to generate image** |
+| Raster (year of land development) | ![images/example-map-categorized-raster](images/example-map-categorized-raster.png) |
 
 The following GeoLayerSymbol properties can be used with GeoLayerSymbol `classificationType=Categorized`
 and indicate how to determine color and other properties from layer data values.
@@ -602,7 +606,7 @@ Categorized GeoLayerSymbol Properties in `properties` JSON Element
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
 | -- | -- | -- |
-| `classificationAttribute`<br>**required** | The layer attribute to use for classification. | None - must be specified. |
+| `classificationAttribute`<br>**required** | <ul><li>**Vector layer**: The layer attribute to use for classification</li><li>**Raster layer**: the band (`1` to number of bands) to use for classification</li></ul> | None - must be specified. |
 | `classificationFile` | Path to the classification file, which lists symbol properties for each category.  See below for format. | If not specified, a sequence of colors is used to for outline and fill for each category. |
 | `classificationTable` | **Support for storing tables in GeoMapProject file may be added.** | |
 
@@ -611,7 +615,7 @@ A comma-separated-value file is used where the column headings correspond to the
 A `value` of `*` can be specified for values that are not otherwise matched (otherwise a software application's default color/symbol will be used).
 
 ```
-# Style file for irrigated lands categorized classification (using crop type for symbol)
+# Style file for irrigated lands categorized classification (using crop type for symbol).
 value,color,opacity,fillColor,fillOpacity,weight,label
 "Corn",#FFFF00,1.0,#FFFF00,0.2,3,"Corn"
 *,#000000,1.0,#000000,0.2,3,"Other"
@@ -809,7 +813,7 @@ See the [InfoMapper documentation](http://software.openwaterfoundation.org/infom
 ```
 {
   "id" : "county-popup-config",
-  "name": "County popup configuration",
+  "name": "County event configuration",
   "description":  "List all attributes and provide buttons to graph time series.",
   "layerAttributes" : {
     "include" : [ "*" ],
@@ -834,7 +838,7 @@ each of which, when pressed, displays a graph.
 ```
 {
   "id" : "diversion-popup-config",
-  "name": "Diversion popup configuration",
+  "name": "Diversion event configuration",
   "description":  "List main attributes and provide buttons to graph time series.",
   "layerAttributes" : {
     "include" : [ "*" ],
@@ -867,7 +871,30 @@ each of which, when pressed, displays a graph.
 ```
 
 **<p style="text-align: center;">
-Example popup configuration file to describe how a click event on a map feature can display a graph for that feature.
+Example event configuration file to describe how a click event on a map feature can display a graph for that feature
+</p>**
+
+The following is an example of an event handler configuration file associated with a raster layer.
+In this case the configuration file is an indicator that the InfoMapper hover and click popup should show
+the cell value for raster band indicated in GeoProcessor symbol commands.
+
+```
+{
+  "id" : "cameron-peak-sbs-raster-event-config",
+  "name": "Hover and click event handlers for cameron-peak-sbs-raster",
+  "description":  "Display only important user-understandable attributes.",
+  "layerAttributes" : {
+    "include" : [ "*" ],
+    "exclude" : [],
+    "formats": []
+  },
+  "actions": [
+  ]
+}
+```
+
+**<p style="text-align: center;">
+Example event configuration file to describe how a hover and click event on raster layer will display cell values for a raster band
 </p>**
 
 ## Encoded Data ##
@@ -1036,6 +1063,7 @@ See the [OWF software website](http://software.openwaterfoundation.org/) for mor
 Other tools can of course be used to process data, depending on requirements and staff skills.
 TSTool and GeoProcessor use "command files" to define workflow processing,
 and such files can be maintained in a repository to track changes in workflow logic over time.
+
 The results of running the command files are written to folders that can be used by the web application.
 For example, for an Angular application, the `assets/` folder can contain the data files used by the application.
 These files should be ignored in version control repositories because they may be large files
@@ -1055,8 +1083,9 @@ The application can also be deployed using versions to allow for additional test
 This approach allows cloud infrastructure such as Amazon Web Services (AWS),
 Google Cloud Platform (GDP), and Microsoft Azure to do the heavy lifting of serving
 web application software and data files to web browsers and other tools.
+
 The design of each web application must consider many factors and depends on the features of the
-software tools that are used..
+software tools that are used.
 The GeoMapProject is intended to help with application development by indicating how
 map data are organized, provide properties for displaying data,
 and describing basic event handling hooks so that mapping applications can provide interactive features.
@@ -1066,12 +1095,15 @@ The next section describes how event handling is supported by GeoMapProject conf
 
 ### Web Application Event Handling ###
 
-A GeoMapProject configuration file optionally contains [GeoLayerViewEventHandler](#geolayervieweventhandler) data.
+A GeoMapProject configuration file optionally contains [GeoLayerViewEventHandler](#geolayervieweventhandler) data,
+which describe how map interactions should trigger events,
+for example to show information popups for a selected map feature.
+
 The GeoMapProject specification is not intended to describe software functionality in detail,
-given that such functionality will vary based on software technologies that are used.
-Instead, the event handler specification is intended to help indicate which data support
-events (such as mouse click on a feature) and provide general guidance on the action that should occur.
-Properties can be defined to help the application respond accordingly.
+given that such functionality will vary based on software technologies that are used (for example InfoMapper).
+Instead, the event handler specification defines general functionality that can be implemented to
+interact with map layers, such as mouse hover or click on a feature.
+Properties can be defined to help the application respond to events with appropriate actions.
 The following diagram illustrates the basic workflow for event handling.
 
 **<p style="text-align: center;">
@@ -1104,6 +1136,23 @@ Examples and guidelines for how to integrate GeoMapProject configurations with a
 The Open Water Foundation is developing a number of web applications and expects that
 a general web mapping application will be made available that can be used with configuration as input,
 with no additional programming.
+
+#### InfoMapper Event Handler Example ####
+
+The InfoMapper software relies on event handlers on a GeoLayerView
+in map configuration files to control how the user interface displays data for each layer.
+The following is an example of GeoProcessor commands to set event handler
+for hover and click events, which currently requires two GeoProcessor commands:
+
+```
+SetGeoLayerViewEventHandler(GeoLayerViewID="StreamReachesLayerView",EventType="hover",Name="Hover event",Description="Hover event configuration",Properties="eventConfigPath:layers/stream-reaches-event-config.json")
+SetGeoLayerViewEventHandler(GeoLayerViewID="StreamReachesLayerView",EventType="click",Name="Click event",Description="Click event configuration",Properties="eventConfigPath:layers/stream-reaches-event-config.json")
+```
+
+The event handler configuration files are currently not part of the GeoMapProject configuration file,
+but may be integrated in the future.
+See the [InfoMapper Map Event Configuration File](http://software.openwaterfoundation.org/infomapper/latest/doc-user/appendix-install/map-event-config-file/)
+documentation for details on event configuration files.
 
 ### Web Application Deployment ###
 
