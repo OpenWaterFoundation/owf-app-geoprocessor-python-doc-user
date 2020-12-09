@@ -537,7 +537,7 @@ Raster Layer Type GeoLayerSymbol Properties in `properties` JSON Element
 | `opacity` | Opacity of the `color` (`1.0` for solid, `0.0` for transparent). **Currently ignored.** | `1.0` |
 | `weight` | Width of polygon outline, pixels, `0` to not draw outline. **Currently ignored.** | `3` (recommended) |
 | | **Other Properties** | |
-| `rasterResolution` | Used with Leaflet raster package.  Higher number means more detail?  **Need to describe.** | `32` |
+| `rasterResolution` | Used with [Leaflet raster package](https://github.com/GeoTIFF/georaster-layer-for-leaflet).  The following is from the author:  The resolution number is how many samples to take across and down a dataset for each map tile.  Typical tiles are 256x256 pixels and higher resolution are 512x512 pixels.  For general use, use a lower resolution such as `64`.  For faster computers, use a higher resolution such as `256`. | `64` |
 
 #### GeoLayerSymbol Properties for Single Symbol Classification Type ####
 
@@ -650,7 +650,7 @@ and indicate how to determine color from layer data values.
 The colors and other properties for graduated classification should be specified in one of the following ways:
 
 * `classificationFile` - use a file that defines classification breaks in the data value and corresponding color
-* `classificationRamp` - use a standard ramp to transition colors and other properties between values - **need to define this - category symbols are more important for development**
+* `classificationRamp` - use a standard ramp to transition colors and other properties between values (**proposed - need to define this - category symbols are more important for development**)
 
 See also:
 
@@ -663,15 +663,19 @@ Graduated GeoLayerSymbol Properties in `properties` JSON Element
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
 | -- | -- | -- |
-| `classificationAttribute`<br>**required** | The layer attribute to use for classification. | None - must be specified. |
+| `classificationAttribute`<br>**required** | <ul><li>**Vector layer**: The layer attribute to use for classification</li><li>**Raster layer**: the band (`1` to number of bands) to use for classification</li></ul> | None - must be specified. |
 | `classificationFile` | Path to the classification file, which lists symbol properties for each graduated value range.  See below for format. | If not specified, a sequence of colors is used to for outline and fill for each category. |
-| `classificationRamp` | **Need to define this.** | |
+| `classificationRamp` | **Proposed - need to define this.** | |
 
 The file used with `classificationFile` property lists the symbol property for each graduation break.
-A comma-separated-value file is used where the column headings correspond to the properties (**could also allow JSON**), for example:
+A comma-separated-value file is used where the column headings correspond to the properties, for example:
 
 ```
-# Classification file for municipal boundaries categorized classification (using population for symbol)
+# Classification file for municipal boundaries categorized classification
+# (using attribute for municipality population in 2010 for symbol).
+# Value from attribute is compared as follows to determine symbol:
+#  value >= valueMin
+#  value < valueMax
 valueMin,valueMax,color,opacity,fillColor,fillOpacity,weight
 -Infinity,2000,#FFFF00,1.0,#FFFF00,0.2,3
 2000,5000,#FFFF00,1.0,#FFFF00,0.2,3
@@ -687,6 +691,15 @@ in order to ensure that the value falls into one range:
 
 * the value is >= `valueMin`
 * the value is < `valueMax`
+
+Unlike categorized symbol legend, which is labeled with the specific value,
+the graduated symbol legend in applications should by default show the range of values by default,
+for example ***2000 - 5000*** and ***5000 - 25000***.
+There may be confusion about how to interpret the endpoints in each range so may need to
+add the greater than and less than symbols or use tooltips.
+For general visualization it is not that important unless data values do actually fall on the edge values.
+If a `label` column is found in the classification file, then the specified values should be
+used for labels in the legend.
 
 #### GeoLayerSymbol Properties for Other Classification Types ####
 
