@@ -48,10 +48,19 @@ Command Parameters
 | `GeoLayerViewID` <br> **required** | The ID of the new GeoLayerView. | None - must be specified. |
 | `Name` | Name of the new GeoLayerView, used to label the layer in the map legend. | None - must be specified. |
 | `Description` | Description for the new GeoLayerView. | |
-| `Properties` | Additional properties to assign to the GeoLayerView, using format: `prop1:value1,prop2:'string with space'`.  Can use `${Property}` notation.  | No additional properties are assigned. |
+| `Properties` | Additional properties to assign to the GeoLayerView, using format: `prop1:value1,prop2:'string with space'`. Can use `${Property}` notation. See table below. | No additional properties are assigned. |
 | `InsertPosition` | The position to insert the GeoLayerView within the GeoLayerViewGroup:<ul><li>`Top` - top of the list (will be drawn on top).</li><li>`Bottom` - bottom of the list (will be drawn on the bottom).</li></ul>  **The layers will be rendered in the opposite order of the list. The last layers added to the group will be rendered first.** | `Bottom` | 
 | `InsertBefore` | The GeoLayerViewID to insert before. **The layers will be rendered in the opposite order of the list. The last layers added to the group will be rendered first.** | See the `InsertPosition` default. |
 | `InsertAfter` | The GeoLayerViewID to insert after. **The layers will be rendered in the opposite order of the list. The last layers added to the group will be rendered first.** | See the `InsertPosition` default. |
+
+**<p style="text-align: center;">
+`properties` Used with InfoMapper
+</p>**
+
+| **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
+| --------------|-----------------|----------------- |
+| `docPath` | Path to Markdown file for layer documentation, typically having the same name as the layer file with `.md` extension. | No documentation for layer. |
+| `hasVisualization` | Indicate whether the layer has a visualization accessible when features are selected.  A property value of `true` can be used when a layer has an attribute that is a URL to access a data visualization, which will result in `hasVisualization=true` being set on `click` event handler. | Check event handlers for click event actions. |
 
 ## Examples ##
 
