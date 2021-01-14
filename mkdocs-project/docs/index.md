@@ -3,6 +3,7 @@
 This is the user documentation for the Open Water Foundation (OWF) GeoProcessor software.
 
 * [Introduction](#introduction)
+* [Integration with InfoMapper Software](#integration-with-infomapper-software)
 * [About the Open Water Foundation](#about-the-open-water-foundation)
 * [How to Use this Documentation](#how-to-use-this-documentation)
 * [Downloads](#downloads)
@@ -60,6 +61,16 @@ Workflow "command files" can be managed in a version control system such as Git/
 that changes to workflows are tracked.
 
 Additional GeoProcessor product information can be found in the [Introduction](introduction/introduction.md).
+
+## Integration With InfoMapper Software ##
+
+One of the main uses of the GeoProcessor is to prepare map configuration files for the
+[InfoMapper software](http://software.openwaterfoundation.org/infomapper/latest/doc-user/),
+developed by the Open Water Foundation.
+The [GeoMapProject configuration file specification](appendix-geomapproject/geomapproject.md)
+has been developed in conjunction with GeoProcessor to streamline creation of web mapping applications
+using the InfoMapper.
+Where appropriate, the GeoProcessor documentation includes information relevant to InfoMapper.
 
 ## About the Open Water Foundation ##
 

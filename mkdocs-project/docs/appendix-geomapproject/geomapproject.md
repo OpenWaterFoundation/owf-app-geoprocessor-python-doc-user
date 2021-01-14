@@ -371,7 +371,7 @@ libraries, including
 and [ Esri JavaScript API](https://developers.arcgis.com/javascript/3/jsapi/),
 with important properties compared below for context.
 
-| **Symbol Property** | **GeoProcessor** | **Leaflet** | **Google Maps** | **Esri JavaScript API** |
+| **Symbol Property** | **GeoProcessor** | **Leaflet** | **Google Maps**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Esri JavaScript API** |
 | -- | -- | -- | -- | -- |
 | Outline/stroke color | `color` | `color` | `strokeColor` | color |
 | Outline/stroke opacity | `opacity` | `opacity` | `strokeOpacity` | |
@@ -384,9 +384,13 @@ with important properties compared below for context.
 
 The following symbol classification types are recognized:
 
-* `Categorized` - each unique value for a specific layer attribute is visualized with specific properties
-* `Graduated` - a specific layer attribute's value is visualized using a graduated color ramp or assigned colors
-* `SingleSymbol` - layer features are drawn using the same symbol
+* `Categorized` - each unique value for a specific layer attribute is visualized with specific properties,
+useful for text and integer attributes
+* `Graduated` - a specific layer attribute's value is visualized using a graduated color
+ramp or colors assigned to ranges of values,
+suitable for numbers, in particular floating point numbers
+* `SingleSymbol` - layer features are drawn using the same symbol,
+useful when all features in a layer should be viewed similarly, such as rivers
 
 Consequently, the properties for the symbol vary depending on the symbol classification type, as described in the following tables.
 The layer geometry type also indicates which properties are used. 
@@ -436,9 +440,9 @@ Point Geometry Type GeoLayerSymbol Properties when `symbolFile` or `builtinSymbo
 
 | **Property**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default** |
 | -- | -- | -- |
-| `builtinSymbolImage` | Path to built-in image file to use for the symbol.  `png` files are typically used.  Built-in images are found in the `/img/` folder.  See below for a list of available built-in images. | |
+| `builtinSymbolImage` | Path to built-in image file to use for the symbol.  `png` files are typically used.  For InfoMapper, built-in images are found in the `/img/` folder.  See below for a list of available built-in images. | |
 | `imageAnchorPoint` | Used if `symbolImage` is specified. The location of the anchor point (the "pin point") on the symbol, which will be aligned with point feature coordinate, by using image width and height: <ul><li>`Center` - anchor point is at the image center</li><li>`UpperLeft` - anchor point is the upper left corner of the image</li><li>`Top` - anchor point is on the top edge of the image, centered horizontally</li><li>`UpperRight` - anchor point is at the upper right corner of the image</li><li>`Right` - anchor point is on right edge of the image, centered vertically</li><li>`LowerRight` - anchor point is at the lower right corner of image</li><li>`Bottom` - anchor point is on the bottom edge of the image, centered horizontally</li><li>`LowerLeft` - anchor point is at the lower left corner of the image</li><li>`Left` - anchor point is on left edge of image, centered vertically</li></ul>| Depends on the software application.  For example `UpperLeft` is the default for Leaflet, which is used by the InfoMapper software. |
-| `symbolImage` | Path to the image file to use for the symbol. `png` files are typically used. Image files should be named with the end of the filename indicating the width and height of the image, for example `imagename-32x37.png` or `imagename_32x37.png`.  The width and height are used to position the image on maps.  Use the `imageAnchorPoint` property to indicate the anchor point location on the image ("pin point").  | Image files are typically found in the `/img/` folder under the application files, for example `/assets/app/img` folder used with the InfoMapper software. |
+| `symbolImage` | Path to the image file to use for the symbol. `png` files are typically used. Image files should be named with the end of the filename indicating the width and height of the image, for example `imagename-32x37.png` or `imagename_32x37.png`.  The width and height are used to position the image on maps.  Use the `imageAnchorPoint` property to indicate the anchor point location on the image ("pin point").  | For InfoMapper, image files are typically found in the `/img/` folder under the application files, for example `/assets/app/img` folder. |
 
 **<p style="text-align: center;">
 Built-in Image Files for use as `builtinSymbolImage` Property Value
@@ -590,12 +594,12 @@ The following examples illustrate categorized symbol classification for differen
 Categorized Classification Examples
 </p>**
 
-| **Layer Geometry Type** | **Example** |
+| **Layer Geometry Type** | **Example Rendered Layer and Legend** |
 | -- | -- |
 | Point (stream station conditions) | **Need to generate image** |
 | Line (stream conditions) | **Need to generate image** |
-| Polygon (water districts) | ![images/example-map-categorized-polygon](images/example-map-categorized-polygon.png) |
-| Raster (year of land development) | ![images/example-map-categorized-raster](images/example-map-categorized-raster.png) |
+| Polygon (water districts) | ![images/example-map-categorized-polygon](images/example-map-categorized-polygon.png) ![example-map-categorized-polygon-legend.png](images/example-map-categorized-polygon-legend.png) |
+| Raster (whether irrigated, integer value) | ![images/example-map-categorized-raster](images/example-map-categorized-raster.png) ![images/example-map-categorized-raster-integer-legend](images/example-map-categorized-raster-integer-legend.png) |
 
 The following GeoLayerSymbol properties can be used with GeoLayerSymbol `classificationType=Categorized`
 and indicate how to determine color and other properties from layer data values.
@@ -612,13 +616,26 @@ Categorized GeoLayerSymbol Properties in `properties` JSON Element
 
 The file used with `classificationFile` property lists the symbol property for each category.
 A comma-separated-value file is used where the column headings correspond to the properties, as shown below.
-A `value` of `*` can be specified for values that are not otherwise matched (otherwise a software application's default color/symbol will be used).
+A `value` of `*` can be specified for values that are not otherwise matched
+(otherwise a software application's default color/symbol will be used).
 
 ```
 # Style file for irrigated lands categorized classification (using crop type for symbol).
 value,color,opacity,fillColor,fillOpacity,weight,label
 "Corn",#FFFF00,1.0,#FFFF00,0.2,3,"Corn"
 *,#000000,1.0,#000000,0.2,3,"Other"
+```
+
+The following example is for raster layer shown in the example image above.
+
+```
+# Category classification table for Irrigation raster.
+# - the value corresponds to raster data value
+# 1 - Not irrigated - no color and totally opaque (see through)
+# 2 - Irrigated - lime green so can see
+value,label,color,opacity,fillColor,fillOpacity,weight
+1,1 - Not irrigated,#000000,0.0,#000000,0.0,2
+2,2 - Irrigated,#00ff00,1.0,#00ff00,0.3,2
 ```
 
 #### GeoLayerSymbol Properties for Graduated Classification Type ####
@@ -638,12 +655,12 @@ The following examples illustrate graduated symbol classification for different 
 Graduated Classification Examples
 </p>**
 
-| **Layer Geometry Type** | **Example** |
+| **Layer Geometry Type** | **Example Rendered Layer and Legend** |
 | -- | -- |
 | Point (stream station conditions) | **Need to generate image** |
 | Line (stream conditions) | **Need to generate image** |
 | Polygon (water districts) | **Need to generate image** |
-| Raster | **Need to generate image** |
+| Raster (year of land development, integer values, grouped into 5-year ranges) | ![images/example-map-categorized-raster](images/example-map-graduated-raster.png) ![images/example-map-graduated-raster-integer-legend](images/example-map-graduated-raster-integer-legend.png) |
 
 The following GeoLayerSymbol properties can be used with GeoLayerSymbol `classificationType=Graduated`
 and indicate how to determine color from layer data values.
@@ -667,12 +684,16 @@ Graduated GeoLayerSymbol Properties in `properties` JSON Element
 | `classificationFile` | Path to the classification file, which lists symbol properties for each graduated value range.  See below for format. | If not specified, a sequence of colors is used to for outline and fill for each category. |
 | `classificationRamp` | **Proposed - need to define this.** | |
 
-The file used with `classificationFile` property lists the symbol property for each graduation break.
-A comma-separated-value file is used where the column headings correspond to the properties, for example:
+The file used with `classificationFile` property lists the values for each graduation range.
+A comma-separated-value file is used where the column headings correspond to the properties for the symbol, for example
+as shown below.  Note that unlike categorized classification file, which uses `value` column,
+the graduated classification uses `valueMin` and `valueMax` columns to represent value ranges.
+
+##### Example: Floating Point Values with Default Operators #####
 
 ```
 # Classification file for municipal boundaries categorized classification
-# (using attribute for municipality population in 2010 for symbol).
+# (using attribute for municipality population for symbol).
 # Value from attribute is compared as follows to determine symbol:
 #  value >= valueMin
 #  value < valueMax
@@ -684,22 +705,97 @@ valueMin,valueMax,color,opacity,fillColor,fillOpacity,weight
 50000,250000,#FFFF00,1.0,#FFFF00,0.2,3
 250000,500000,#FFFF00,1.0,#FFFF00,0.2,3
 500000,Infinity,#FFFF00,1.0,#FFFF00,0.2,3
+# Use black for NoData
+NoData,NoData,#000000,1.0,#000000,0.2,3
 ```
 
-The value indicates which row (range) of the style file will be used, as follows,
-in order to ensure that the value falls into one range:
+The data value for the layer (vector layer attribute or raster layer band)
+indicates which row (range) of the classification file will be used.
+Web applications use JavaScript, which only uses floating point numbers (no integers,
+see: [JavaScript Numbers](https://www.w3schools.com/js/js_numbers.asp)).
+Consequently, the following general default behavior
+is implemented in order to ensure that the value falls into one range:
 
-* the value is >= `valueMin`
-* the value is < `valueMax`
+* the value is > `valueMin`
+* the value is <= `valueMax`
 
 Unlike categorized symbol legend, which is labeled with the specific value,
-the graduated symbol legend in applications should by default show the range of values by default,
-for example ***2000 - 5000*** and ***5000 - 25000***.
-There may be confusion about how to interpret the endpoints in each range so may need to
-add the greater than and less than symbols or use tooltips.
-For general visualization it is not that important unless data values do actually fall on the edge values.
-If a `label` column is found in the classification file, then the specified values should be
-used for labels in the legend.
+the graduated symbol range should be shown in the label, for example:
+
+**Need an image.**
+
+If the default legend behavior is not appropriate,
+it can be customized using operators and labels as described in the following section.
+
+##### Example: Integer Values with Operators #####
+
+The default behavior described in the previous section works well with floating point numbers.
+However, for integer data values, the ranges have discrete integer values
+and there is not a need for `>` and `<` signs for ranges, except for end values.
+Therefore, the classification file supports specifying the operator in front of `valueMin` and `valueMax`
+and cofiguration of `label` column,
+which can be used to define more appropriate labels.
+
+Each row of the classification file has a default operator for each `valueMin` and `valueMax` that
+can be `<`, `<=`, `>`, or `>=`.
+If not specified, the operator is interpreted as discussed in the previous section.
+These values can also be provided in the classification file using the following rules.
+
+1. Operator for values is handled as follows:
+    1. `valueMin`:
+        1. If `valueMin` operator is not specified, assume an operator `>` for any number.
+        2. Else if `valueMin` operator is specified, use it.
+    2. `valueMax`:
+        1. If `valueMax` operator is not specified, assume an operator `<=` for any number.
+        2. Else if `valueMax` operator is specified, use it.
+2. When drawing the labels in the legend:
+    1. For default legend, if an operator includes `=` (or equivalent), then there is no need to show an operator to the left of the value.
+    2. For `valueMin` if the operator does not include the `=` (or equivalent) show the operator to the left of `valueMin`
+    3. For `valueMax` if the operator does not include the `=` (or equivalent) show the operator to the left of `valueMax`
+    4. For ranges on the end, interpret `-Infinity` and `Infinity` and show only one value with consistent operator.
+
+The following illustrates a classification file where operators are specified for values and a `label` column
+is used to configure labels.
+The goal is to show discrete ranges of integer values.
+The `${valueMin}` and `${valueMax}` syntax can be used to format the legend with minimum and maximum values
+and avoid typos if text is used.
+
+```
+# Category classification table for Municipal Land Development raster.
+# - the value corresponds to raster data value for year
+# - set colors to indicate red for most immediate development pressure
+valueMin,valueMax,color,opacity,fillColor,fillOpacity,weight,label
+# 2018 Current - Black (might change to gray)
+-Infinity,<=2018,#000000,1.0,#000000,0.3,2,"<= ${valueMax}"
+# 2019-2020 Near-term red
+>=2019,<=2020,#ff0000,1.0,#ff0000,0.3,2,"${valueMin} - ${valueMax}"
+# 2021-2025 red-orange
+>=2021,<=2025,#ff4500,1.0,#ff4500,0.3,2,"${valueMin} - ${valueMax}"
+# 2026-2030 orange
+>=2026,<=2030,#ffa500,1.0,#ffa500,0.3,2,"${valueMin} - ${valueMax}"
+# 2031-2035 orange-yellow
+>=2031,<=2035,#f8d568,1.0,#f8d568,0.3,2,"${valueMin} - ${valueMax}"
+# 2036-2040 yellow
+>=2036,<=2040,#ffff00,1.0,#ffff00,0.3,2,"${valueMin} - ${valueMax}"
+# 2041-2045 yellow-green
+>=2041,<=2045,#adff2f,1.0,#adff2f,0.3,2,"${valueMin} - ${valueMax}"
+# 2046-2050 green
+>=2046,Infinity,#00ff00,1.0,#00ff00,0.3,2,">= ${valueMin}"
+# No data value for raster - fully transparent
+Nodata,Nodata,#ffffff,1.0,#ffffff,0.0,0,"No data"
+# Can also use * for data value to match all other values,
+# similar to category symbol.
+```
+
+The resulting legend is shown below:
+
+**<p style="text-align: center;">
+![example-map-graduated-raster-integer-legend.png](images/example-map-graduated-raster-integer-legend.png)
+</p>**
+
+**<p style="text-align: center;">
+Integer Raster Graduated Symbol Classification Legend
+</p>**
 
 #### GeoLayerSymbol Properties for Other Classification Types ####
 
