@@ -645,7 +645,7 @@ or with a layer attribute that has a large number of unique values
 (for example for integer and string types) that would result in a large number of colors if category classification is used.
 Ranges of values must be specified
 and colors within the range may be constant, or gradually change using a "color ramp".
-Currently, only a single color within a range is supported.
+Currently, only a single color for a range is supported (not a continuous ramp).
 
 Categorized classification can also be used for a raster layer, where a cell's data value is evaluated to determine color, opacity, etc.
 
@@ -659,7 +659,7 @@ Graduated Classification Examples
 | -- | -- |
 | Point (stream station conditions) | **Need to generate image** |
 | Line (stream conditions) | **Need to generate image** |
-| Polygon (water districts) | **Need to generate image** |
+| Polygon (US Drought Monitor) | ![images/example-map-categorized-polygon](images/example-map-graduated-polygon.png) ![images/example-map-graduated-polygon-legend](images/example-map-graduated-polygon-legend.png) |
 | Raster (year of land development, integer values, grouped into 5-year ranges) | ![images/example-map-categorized-raster](images/example-map-graduated-raster.png) ![images/example-map-graduated-raster-integer-legend](images/example-map-graduated-raster-integer-legend.png) |
 
 The following GeoLayerSymbol properties can be used with GeoLayerSymbol `classificationType=Graduated`
