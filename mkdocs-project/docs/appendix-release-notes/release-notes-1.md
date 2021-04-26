@@ -15,6 +15,8 @@
 The user interface will indicate warnings and errors.
 * ![change](change.png) [1.5.0] Multiple results windows can now be opened for maps and attribute tables.
 Previously a single window could be opened and would be replaced for each view.
+* ![change](change.png) [1.5.0] Update [`ListFiles`](../command-ref/ListFiles/ListFiles.md)
+command to have `ListCount` and `ListProperty1` parameters.
 * ![change](change.png) [1.5.0] Update [`ReadTableFromDelimitedFile`](../command-ref/ReadTableFromDelimitedFile/ReadTableFromDelimitedFile.md)
 command to work with new table design.
 * ![change](change.png) [1.5.0] Update [`WriteRasterGeoLayerToFile`](../command-ref/WriteRasterGeoLayerToFile/WriteRasterGeoLayerToFile.md)
