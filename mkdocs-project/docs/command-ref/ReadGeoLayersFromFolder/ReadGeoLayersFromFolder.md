@@ -14,7 +14,7 @@
 The `ReadGeoLayersFromFolder` command reads one or more [GeoLayer(s)](../../introduction/introduction.md#geolayer) from a local folder. 
 
 * By default, each spatial data file ([GeoJSON](../../spatial-data-format-ref/GeoJSON/GeoJSON.md))
-or [Esri Shapefile](../../spatial-data-format-ref/EsriShapefile/EsriShapefile.md)) within the folder is read as a single GeoLayer.
+  or [Esri Shapefile](../../spatial-data-format-ref/EsriShapefile/EsriShapefile.md)) within the folder is read as a single GeoLayer.
 
 ## Command Editor ##
 

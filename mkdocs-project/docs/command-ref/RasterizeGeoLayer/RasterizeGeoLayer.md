@@ -23,12 +23,12 @@ The rasterize output file is read as the raster GeoLayer if the `GeoLayerID` par
 The rasterization occurs using one of the following approaches:
 
 1. `RasterUnits=GeoUnits`:
-	* output units will be the units of the input vector layer, for example degrees if geographic coordinates
-	* specify `CellWidth` and `CellHeight` parameters as the cell dimensions,
-	where the values will be in the input layer's geographic units (e.g., degrees)
+    * output units will be the units of the input vector layer, for example degrees if geographic coordinates
+    * specify `CellWidth` and `CellHeight` parameters as the cell dimensions,
+      where the values will be in the input layer's geographic units (e.g., degrees)
 2. `RasterUnits=Pixel`:
-	* output units will be pixels, such as for an image
-	* specify `RasterWidth` and `RasterHeight` parameters as the total width and height of the image, in pixels
+    * output units will be pixels, such as for an image
+    * specify `RasterWidth` and `RasterHeight` parameters as the total width and height of the image, in pixels
 
 The underlying software may retain a lock on the file.
 The `RasterizeGeoLayer` command attempts to remove the output file before running (to ensure that output is current)

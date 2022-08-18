@@ -10,7 +10,7 @@ The following are basic tasks to use the GeoProcessor:
 
 * [Conceptualize a Workflow](#conceptualize-a-workflow)
 * [Create a Command Workflow](#create-a-command-workflow)
-	+ [Best Practices for Command Files](#best-practices-for-command-files)
+    + [Best Practices for Command Files](#best-practices-for-command-files)
 * [Run the Command Workflow using the GeoProcessor](#run-the-command-workflow-using-the-geoprocessor)
 * [View Results](#view-results)
 * [Refine the Command Workflow](#refine-the-command-workflow)
@@ -83,17 +83,17 @@ After successfully running a command workflow, the output files should have been
 Errors will be indicated as follows:
 
 * in the user interface as warning and error icons next to commands - mouse over the indicator on the left
-to see a summary of the issues or left-click on a command in the command list and use the 
+  to see a summary of the issues or left-click on a command in the command list and use the 
 
 ![ui-command-list-errors](images/ui-command-list-errors.png)
 
 * in the command shell window if run in batch mode - use the scrollbar to review warning messages
 * the log file created by the [`StartLog`](../command-ref/StartLog/StartLog.md) command, if the command is used
 * the startup log file found in the `.owf-gp/1/logs` folder in the user's files (or similar, where `1` is the GeoProcessor major version)
-	+ `C:\Users\user\.owf-gp\1\logs` on Windows (or similar)
-	+ `/home/user/.owf-gp/1/logs` on Linux (or similar)
-	+ `/cygdrive/C/Users/user/.owf-gp/1/logs` on Cygdri (or similar)ve
-	+ this file is closed when the [`StartLog`](../command-ref/StartLog/StartLog.md) command is run
+    + `C:\Users\user\.owf-gp\1\logs` on Windows (or similar)
+    + `/home/user/.owf-gp/1/logs` on Linux (or similar)
+    + `/cygdrive/C/Users/user/.owf-gp/1/logs` on Cygdri (or similar)ve
+    + this file is closed when the [`StartLog`](../command-ref/StartLog/StartLog.md) command is run
 * use the ***Tools / View Log File*** and ***Tools / View Startup Log File*** menus to view log files.
 
 See also the [Troubleshooting](../troubleshooting/troubleshooting.md) section of the documentation.
@@ -104,16 +104,16 @@ The results from running the commands can be viewed in various ways depending on
 for example:
 
 1. **Spatial data layers focus** - if the focus of the workflow is to create spatial data layers,
-then it may be most effective to view the layers in the ***Results / GeoLayers*** tab.
-For example, right-click on a layer and view as a map or attribute table.
+   then it may be most effective to view the layers in the ***Results / GeoLayers*** tab.
+   For example, right-click on a layer and view as a map or attribute table.
 2. **Output product focus** - if the focus of the workflow is to create an output product that
-may require more effort to view, such as a complex map or mapping tool, other software may need to be used.
-For example, the spatial data files created by the workflow may be viewed in a web application or other software.
+   may require more effort to view, such as a complex map or mapping tool, other software may need to be used.
+   For example, the spatial data files created by the workflow may be viewed in a web application or other software.
 3. **Testing focus** - if the focus of the workflow is testing, then important results are the warning and failure indicators
-for [`CompareFiles`](../command-ref/CompareFiles/CompareFiles.md)
-and the test summary output from commands like
-[`StartRegressionTestResultsReport`](../command-ref/StartRegressionTestResultsReport/StartRegressionTestResultsReport.md)
-(output files are listed in the ***Results / Output Files*** tab).
+   for [`CompareFiles`](../command-ref/CompareFiles/CompareFiles.md)
+   and the test summary output from commands like
+   [`StartRegressionTestResultsReport`](../command-ref/StartRegressionTestResultsReport/StartRegressionTestResultsReport.md)
+   (output files are listed in the ***Results / Output Files*** tab).
 
 An appropriate combination of GeoProcessor features and other software tools should be used to view results to
 ensure that the workflow is correct and that results are useful.

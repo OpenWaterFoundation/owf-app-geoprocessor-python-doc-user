@@ -21,22 +21,22 @@ Select the GeoProcessor variant that is most appropriate.
 Multiple GoeProcessor variants and versions can be installed at the same time.
 
 * **GeoProcessor, for use with QGIS**:
-	+ **This version is actively being developed and is recommended.**
-	+ Uses QGIS as the geographic information system (GIS) framework, and uses Python 3 packaged with QGIS.
-	**The standalone QGIS installer is recommended rather than OSGeo4W installation.**
-	+ GeoProcessor software is installed outside of QGIS software files using a Python virtual environment.
-	+ Includes all GeoProcessor functionality.
+    + **This version is actively being developed and is recommended.**
+    + Uses QGIS as the geographic information system (GIS) framework, and uses Python 3 packaged with QGIS.
+      **The standalone QGIS installer is recommended rather than OSGeo4W installation.**
+    + GeoProcessor software is installed outside of QGIS software files using a Python virtual environment.
+    + Includes all GeoProcessor functionality.
 * **GeoProcessor, for use with ArcGIS Pro**
-	+ **This version has been prototyped but is not actively under development, mainly due to resource constraints.
-	It will be released in the future.**
-	+ Uses ArcGIS Pro as the geographic information system (GIS) framework, and uses Python 3 packaged with ArcGIS Pro.
-	+ GeoProcessor software is installed outside of ArcGIS Pro software files using a Python virtual environment.
-	+ Includes all GeoProcessor functionality.
+    + **This version has been prototyped but is not actively under development, mainly due to resource constraints.
+      It will be released in the future.**
+    + Uses ArcGIS Pro as the geographic information system (GIS) framework, and uses Python 3 packaged with ArcGIS Pro.
+    + GeoProcessor software is installed outside of ArcGIS Pro software files using a Python virtual environment.
+    + Includes all GeoProcessor functionality.
 * **Testing framework (no QGIS or ArcGIS dependencies)**:
-	+ **This version was previously developed but is no longer under active development.**
-	+ Includes the GeoProcessor testing framework, which can be used to test software (is also included in above versions).
-	+ QGIS and ArcGIS Pro components are omitted from the GeoProcessor test framework distribution (no GIS software dependencies).
-	+ Can be used to automate tests for software and processing workflows.
+    + **This version was previously developed but is no longer under active development.**
+    + Includes the GeoProcessor testing framework, which can be used to test software (is also included in above versions).
+    + QGIS and ArcGIS Pro components are omitted from the GeoProcessor test framework distribution (no GIS software dependencies).
+    + Can be used to automate tests for software and processing workflows.
 
 ## Install GeoProcessor, for use with QGIS ##
 
@@ -44,10 +44,10 @@ The full GeoProcessor installation for QGIS requires that a consistent version o
 The GeoProcessor software will be updated over time to support new QGIS versions.
 
 1. See the [GeoProcessor Download page](http://software.openwaterfoundation.org/geoprocessor/) for a list of available GeoProcessor installers,
-which indicate the QGIS version that is required.  Follow the instructions on the site to download and install the GeoProcessor.
+   which indicate the QGIS version that is required.  Follow the instructions on the site to download and install the GeoProcessor.
 2. If not already installed, download and install an appropriate version of QGIS.
-See the [OWF / Learn QGIS](http://learn.openwaterfoundation.org/owf-learn-qgis/install-qgis/install-qgis/) documentation for how to install QGIS.
-It is OK to install multiple standalone QGIS versions, as long as one matches the GeoProcessor requirement.
+   See the [OWF / Learn QGIS](http://learn.openwaterfoundation.org/owf-learn-qgis/install-qgis/install-qgis/) documentation for how to install QGIS.
+   It is OK to install multiple standalone QGIS versions, as long as one matches the GeoProcessor requirement.
 
 It is generally best if the the GeoProcessor installer QGIS version and installed QGIS version are the same
 to ensure that there are no incompatibilities.
@@ -113,14 +113,14 @@ The main decisions are to pick the variant/version of the GeoProcessor to instal
 and indicate where to install.  Consider the following:
 
 * The GeoProcessor installer filename (e.g., `gptest-1.0.0-cyg-venv.tar.gz`) indicates information about the software,
-in this example that the installer is for the test framework, the version is `1.0.0`,
-and the software is packaged for Cygwin.
+  in this example that the installer is for the test framework, the version is `1.0.0`,
+  and the software is packaged for Cygwin.
 * The installer process first installs files to the `/tmp` folder and then moves to the requested installation folder.
 * It is possible to install multiple versions of the GeoProcessor, in order to freeze the software for a project
-and allow transition to newer versions over time.
-In this case, the installation folder should include the version number.
-However, the QGIS and ArcGIS Pro variants will depend on QGIS and ArcGIS Pro software installed in the
-standard location and those frameworks may or may not allow multiple versions to be installed.
+  and allow transition to newer versions over time.
+  In this case, the installation folder should include the version number.
+  However, the QGIS and ArcGIS Pro variants will depend on QGIS and ArcGIS Pro software installed in the
+  standard location and those frameworks may or may not allow multiple versions to be installed.
 
 Example output from running the `download-gp.sh` script to install the test framework on Cygwin is shown below
 (the output will change as the installer process is refined so the following may not exactly match what you see):

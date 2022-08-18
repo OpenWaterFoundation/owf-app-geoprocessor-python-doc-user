@@ -16,23 +16,23 @@ This command can be used to manage workflow where multiple commands files are ru
 and is also used extensively for testing, where a test suite consists of running separate test case command files.
 
 * Command files that are run can themselves include `RunCommands` commands.
-Each command file that is run has knowledge if its initial working directory and
-relative paths referenced in the command file are relative to this directory.
-This allows a master command file to reside in a different location than the individual command files that are being run.
-The current working directory is reset to that of the command file being run.
+  Each command file that is run has knowledge if its initial working directory and
+  relative paths referenced in the command file are relative to this directory.
+  This allows a master command file to reside in a different location than the individual command files that are being run.
+  The current working directory is reset to that of the command file being run.
 * Datastores from the parent command processor are by default passed to the child command processor,
-which allows database connections can be opened once and shared.
-(Database Datastores are a feature that will be enabled in the future.)
+  which allows database connections can be opened once and shared.
+  (Database Datastores are a feature that will be enabled in the future.)
 * Currently the properties from the parent command file are NOT applied to the
-initial conditions when running the command file.
-Therefore, global properties like input and output period are reset to defaults before running the command file.
-A future enhancement may implement a command parameter to indicate whether to share the properties with the parent processor.
-The output from the command is also not added to the parent processor.
-Again, a future enhancement may be to append output so that one final set of output is generated.
+  initial conditions when running the command file.
+  Therefore, global properties like input and output period are reset to defaults before running the command file.
+  A future enhancement may implement a command parameter to indicate whether to share the properties with the parent processor.
+  The output from the command is also not added to the parent processor.
+  Again, a future enhancement may be to append output so that one final set of output is generated.
 * There is currently no special handling of log files; consequently,
-if the main command file opens a log file and then a command file is run that opens a new log file,
-the main log file will be closed.
-More options to hand off logging from one file to another may be implemented in the future.
+  if the main command file opens a log file and then a command file is run that opens a new log file,
+  the main log file will be closed.
+  More options to hand off logging from one file to another may be implemented in the future.
 
 ## Command Editor ##
 

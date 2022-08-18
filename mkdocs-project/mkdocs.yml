@@ -44,6 +44,7 @@ nav:
   - EndFor: command-ref/EndFor/EndFor.md
   - EndIf: command-ref/EndIf/EndIf.md
   - Exit: command-ref/Exit/Exit.md
+  - FixGeoLayer: command-ref/FixGeoLayer/FixGeoLayer.md
   - For: command-ref/For/For.md
   - FreeGeoLayers: command-ref/FreeGeoLayers/FreeGeoLayers.md  
   - FTPGet: command-ref/FTPGet/FTPGet.md

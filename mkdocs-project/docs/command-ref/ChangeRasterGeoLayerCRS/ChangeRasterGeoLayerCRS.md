@@ -53,5 +53,5 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* This command uses the QGIS [`gdal:warpreproject`](https://docs.qgis.org/3.16/en/docs/user_manual/processing_algs/gdal/rasterprojections.html#warp-reproject) processing algorithm
+* This command uses the QGIS [`gdal:warpreproject`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/gdal/rasterprojections.html#warp-reproject) processing algorithm
 * [`WriteRasterGeoLayerToFile`](../WriteRasterGeoLayerToFile/WriteRasterGeoLayerToFile.md) command

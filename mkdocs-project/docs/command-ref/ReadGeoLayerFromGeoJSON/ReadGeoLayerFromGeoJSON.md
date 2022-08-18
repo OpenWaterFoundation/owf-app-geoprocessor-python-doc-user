@@ -12,7 +12,7 @@
 ## Overview ##
 
 The `ReadGeoLayerFromGeoJSON` command reads a [GeoLayer](../../introduction/introduction.md#geolayer)
-from a file in [GeoJSON format](../../spatial-data-format-ref/GeoJSON/GeoJSON.md). 
+from a file or URL in [GeoJSON format](../../spatial-data-format-ref/GeoJSON/GeoJSON.md). 
 
 The command is able to read original (2008) GeoJSON specification and
 latest [RFC 7946 specification](https://tools.ietf.org/html/rfc7946).
@@ -45,7 +45,7 @@ Command Parameters
 
 |**Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
-| `InputFile`<br>**required**| The GeoJSON file to read (relative or absolute path). [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
+| `InputFile`<br>**required**| The GeoJSON file or URL to read (relative or absolute path). [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized.| None - must be specified. |
 | `GeoLayerID` | A GeoLayer identifier. [Formatting characters](../../introduction/introduction.md#geolayer-property-format-specifiers) and [`${Property}` syntax](../../introduction/introduction.md#geoprocessor-properties-property) is recognized. Refer to [documentation](../../best-practices/geolayer-identifiers.md) for best practices on naming GeoLayer identifiers.| The GeoJSON filename without the leading path and without the file extension. (Formatting character `%f`)|
 | `Name` | Name of the output GeoLayer. | `NewGeoLayerID` |
 | `Description` | Description for the output GeoLayer. | |
@@ -56,24 +56,10 @@ Command Parameters
 
 See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ReadGeoLayerFromGeoJSON).
 
-The following folder, `ExampleFolder`, and its contents are used for the examples. 
-The `ExampleFolder` is not an actual existing folder.
-It is used in this documentation to explain how the [`ReadGeoLayerFromGeoJSON`](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md)
-command interacts with similar, existing folders on your local machine.
-
-**<p style="text-align: left;">
-ExampleFolder
-</p>**
-
-|Filename|File Type|
-| ---- | ----|
-| ExampleFile1.geojson | GeoJSON |
-| ExampleFile2.geojson | GeoJSON |
-
 ### Example 1: Read a GeoLayer from a GeoJSON File ###
 
 ```
-ReadGeoLayerFromGeoJSON(InputFile="ExampleFolder/ExampleFile1.geojson")
+ReadGeoLayerFromGeoJSON(InputFile="ExampleFile1.geojson")
 ```
 
 After running the command, the following GeoLayer IDs are registered within the GeoProcessor. 
@@ -85,7 +71,7 @@ After running the command, the following GeoLayer IDs are registered within the 
 ### Example 2: Assign a Unique GeoLayer ID###
 
 ```
-ReadGeoLayerFromGeoJSON(InputFile="ExampleFolder/ExampleFile1.geojson",GeoLayerID="StateBoundary")
+ReadGeoLayerFromGeoJSON(InputFile="ExampleFile1.geojson",GeoLayerID="StateBoundary")
 ```
 
 After running the command, the following GeoLayer IDs are registered within the GeoProcessor. 

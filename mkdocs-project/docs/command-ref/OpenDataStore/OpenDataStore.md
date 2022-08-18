@@ -29,13 +29,13 @@ DataStore previously closed with the [`CloseDataStore`](../CloseDataStore/CloseD
 A new DataStore can be opened in 2 ways: 
 
 1. Parameters configure datastore
-	* the DataStore configurations (*Database Dialect, Database Server, etc.*) are set via command parameters  
-	* the `DataStoreID`, `DatabaseServer`, `DatabaseDialect`, `DatabaseName`, `DatabaseUser` and `DatabasePassword` parameters are **required**
-	* the `IfDataStoreIDExists` and `DatabasePort` parameters are optional
+    * the DataStore configurations (*Database Dialect, Database Server, etc.*) are set via command parameters  
+    * the `DataStoreID`, `DatabaseServer`, `DatabaseDialect`, `DatabaseName`, `DatabaseUser` and `DatabasePassword` parameters are **required**
+    * the `IfDataStoreIDExists` and `DatabasePort` parameters are optional
 2. Configuration file configures datastore 
-	* the DataStore configurations (*Database Dialect, Database Server, etc.*) are set via a configuration file
-	* the `DataStoreID` and `ConfigFile` parameters are **required**
-	* the `IfDataStoreIDExists` parameter is optional
+    * the DataStore configurations (*Database Dialect, Database Server, etc.*) are set via a configuration file
+    * the `DataStoreID` and `ConfigFile` parameters are **required**
+    * the `IfDataStoreIDExists` parameter is optional
 
 DataStore features in the GeoProcessor currently focus on relational databases that can
 be queried to return tabular datasets.

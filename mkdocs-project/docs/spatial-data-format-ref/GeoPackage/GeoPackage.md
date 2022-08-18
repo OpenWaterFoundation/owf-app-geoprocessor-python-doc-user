@@ -35,5 +35,5 @@ The following summarizes handling of important data elements for GeoLayers:
 The following are limitations of GeoPackage files:
 
 1. GeoProcessor built-in commands may not fully support all GeoPackage features.
-More functionality is being enabled over time.
-GDAL and other software can be called if GeoProcessor is limited.
+   More functionality is being enabled over time.
+   GDAL and other software can be called if GeoProcessor is limited.

@@ -29,6 +29,6 @@ The following summarizes handling of important data elements for GeoLayers:
 The following are limitations of GeoTIFF files:
 
 1. GeoProcessor built-in commands do not yet handle complex files and analysis,
-although GDAL and other programs can be called directly.
-The focus in GeoProcessor is initially to handle simple raster data,
-such as an array of data values that can be color-coded for visualization.
+   although GDAL and other programs can be called directly.
+   The focus in GeoProcessor is initially to handle simple raster data,
+   such as an array of data values that can be color-coded for visualization.

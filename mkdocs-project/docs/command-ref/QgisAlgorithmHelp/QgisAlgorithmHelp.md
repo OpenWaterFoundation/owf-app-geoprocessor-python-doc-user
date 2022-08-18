@@ -53,4 +53,4 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [QGIS 3.10 algorithm documentation](https://docs.qgis.org/3.10/en/docs/user_manual/processing_algs/index.html)
+* [QGIS algorithm documentation](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/index.html)

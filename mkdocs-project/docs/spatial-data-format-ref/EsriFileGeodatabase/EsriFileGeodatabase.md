@@ -29,4 +29,4 @@ Only feature classes within a file geodatabase are read into the GeoProcessor as
 ## Limitations ##
 
 1. Although options such as QGIS exist, full read/write features for file GeoDatabases are limited.
-Read-only access is generally better supported.
+   Read-only access is generally better supported.

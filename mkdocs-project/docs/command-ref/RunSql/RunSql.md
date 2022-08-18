@@ -20,16 +20,16 @@ statement on the specified [DataStore](../../introduction/introduction.md#datast
 The SQL statement can be specified in the following ways:
 
 1. **Specify a SQL select statement**
-	* SQL must be valid for the database (syntax may vary based on database software).
-	* SQL syntax is not checked for validity and error messages from the database
-	may be difficult to interpret.
+    * SQL must be valid for the database (syntax may vary based on database software).
+    * SQL syntax is not checked for validity and error messages from the database
+      may be difficult to interpret.
 2. **Specify an SQL select statement in a file**
-	* Similar to the above option; however, the SQL statement is read from a file. 
-	* This is useful if the SQL statement is also used by other tools, is long, or contains special characters such as
-	double quotes that have meaning in command syntax.
+    * Similar to the above option; however, the SQL statement is read from a file. 
+    * This is useful if the SQL statement is also used by other tools, is long, or contains special characters such as
+      double quotes that have meaning in command syntax.
 3. **Specify a procedure to run**
-	* Available procedures are listed and can be selected.
-	* This method is **not** currently enabled.
+    * Available procedures are listed and can be selected.
+    * This method is **not** currently enabled.
 
 General constraints on executing the statement are as follows:
 
@@ -37,7 +37,7 @@ General constraints on executing the statement are as follows:
 * Any SQL statement can be run; consequently, suitable authentication and permissions should be in place to protect against unintended changes to the database
 * SQL syntax varies between database software so care should be take to use standard SQL if possible.
 * Results from the statement such as rows modified currently are not displayed, although status and errors will be shown and added to the log file. 
-Use the [`ReadTableFromDataStore`](../ReadTableFromDataStore/ReadTableFromDataStore.md) command to process statements that return a result set.
+  Use the [`ReadTableFromDataStore`](../ReadTableFromDataStore/ReadTableFromDataStore.md) command to process statements that return a result set.
 
 ## Command Editor ##
 

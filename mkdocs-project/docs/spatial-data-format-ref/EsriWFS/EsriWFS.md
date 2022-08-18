@@ -72,28 +72,30 @@ The GeoService option uses the
 and allows output to multiple formats, including GeoJSON.  The full URL (second URL below) can be used with the
 [`ReadGeoLayerFromGeoJSON`](../../command-ref/ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) command to retrieve the FWS as GeoJSON.
 
-* Query builder with URL ending in `query`: [https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services/Public_Wildfire_Perimeters_View/FeatureServer/0/query](https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services/Public_Wildfire_Perimeters_View/FeatureServer/0/query)
-* Query URL from builder, with only key parameters - **clicking on URL may return a large GeoJSON response**: [https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services/Public_Wildfire_Perimeters_View/FeatureServer/0/query?resultType=standard&geometry=-170.0%2C17.5%2C-64.0%2C71.5&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelContains&outFields=*&geometryPrecision=5&f=geojson](https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services/Public_Wildfire_Perimeters_View/FeatureServer/0/query?resultType=standard&geometry=-170.0%2C17.5%2C-64.0%2C71.5&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelContains&outFields=*&geometryPrecision=5&f=geojson)
+* Query builder with URL ending in `query`:
+  [https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services/Public_Wildfire_Perimeters_View/FeatureServer/0/query](https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services/Public_Wildfire_Perimeters_View/FeatureServer/0/query)
+* Query URL from builder, with only key parameters - **clicking on URL may return a large GeoJSON response**:
+  [https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services/Public_Wildfire_Perimeters_View/FeatureServer/0/query?resultType=standard&geometry=-170.0%2C17.5%2C-64.0%2C71.5&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelContains&outFields=*&geometryPrecision=5&f=geojson](https://services3.arcgis.com/T4QMspbfLg3qTGWY/ArcGIS/rest/services/Public_Wildfire_Perimeters_View/FeatureServer/0/query?resultType=standard&geometry=-170.0%2C17.5%2C-64.0%2C71.5&geometryType=esriGeometryEnvelope&inSR=4326&spatialRel=esriSpatialRelContains&outFields=*&geometryPrecision=5&f=geojson)
 
 Advantages of the GeoService query approach are:
 
 * Provides many query options to control feature selection and output format
 * Provides several output formats, including GeoJSON
 * Precision of coordinates in GeoJSON output can be specified,
-thereby controlling the size of the file
+  thereby controlling the size of the file
 
 Disadvantages of the GeoService query approach are:
 
 * The number of features returned may be restricted to a maximum (e.g., 1000 for this example, when the actual number of features is 1,243),
-which may limit use in some applications.
-Although API documentation explains ways to overcome this limitation,
-it may not be possible without changing the dataset properties on the server.
+  which may limit use in some applications.
+  Although API documentation explains ways to overcome this limitation,
+  it may not be possible without changing the dataset properties on the server.
 * The query builder that is provided for the URL
-(URL ending in `query` without query parameters) is complex
-and by default creates a URL containing all parameters,
-even if they have no values.
+  (URL ending in `query` without query parameters) is complex
+  and by default creates a URL containing all parameters,
+  even if they have no values.
 * The documentation for the API can be difficult to understand,
-including default values and interactions between parameters.
+  including default values and interactions between parameters.
 
 ### GeoJSON Dataset
 
@@ -112,12 +114,12 @@ Advantages of the GeoJSON dataset approach are:
 Disadvantages of the GeoJSON dataset approach are:
 
 * If the dataset covers an area that is larger than necessary,
-there is no way to filter the result via the URL,
-unless smaller datasets are published.
-The alternative is to use the FWS `query` API,
-especially if the number of features is less than the maximum allowed for a query.
+  there is no way to filter the result via the URL,
+  unless smaller datasets are published.
+  The alternative is to use the FWS `query` API,
+  especially if the number of features is less than the maximum allowed for a query.
 * there is no way to control the GeoJSON contents, such as precision on coordinates and
-filtering attributes, which can lead to larger file sizes
+  filtering attributes, which can lead to larger file sizes
 
 ## Esri FWS and Standard GeoLayer Properties ##
 

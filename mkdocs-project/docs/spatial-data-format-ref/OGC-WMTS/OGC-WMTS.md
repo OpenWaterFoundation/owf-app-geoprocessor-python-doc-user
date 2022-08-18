@@ -36,5 +36,5 @@ The following summarizes handling of important data elements for GeoLayers:
 The following are limitations of OGC WMTS files:
 
 1. WMTS access requires internet.
-However, it is possible to build a local dataset.
+   However, it is possible to build a local dataset.
 2. Different service providers may require a key to access services.

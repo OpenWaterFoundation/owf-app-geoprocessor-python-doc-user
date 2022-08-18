@@ -17,7 +17,7 @@ for each feature of a [GeoLayer](../../introduction/introduction.md#geolayer).
 This command is useful when the file size of a GeoLayer is too large. 
 
 * This command is designed to simplify GeoLayers with `LINE` or `POLYGON` geometry by removing unnecessary vertices.
-GeoLayers with `POINT` geometry *cannot* be simplified with this command.
+  GeoLayers with `POINT` geometry *cannot* be simplified with this command.
 * The file size of the simplified GeoLayer will be smaller than the input GeoLayer.
 * The spatial accuracy of the simplified GeoLayer be less precise than the input GeoLayer. 
 

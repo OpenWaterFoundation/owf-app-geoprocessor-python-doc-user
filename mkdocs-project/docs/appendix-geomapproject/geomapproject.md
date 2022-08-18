@@ -5,31 +5,31 @@ This documentation describes the specification of the GeoMapProject.
 * [Introduction](#introduction)
 * [Examples](#examples)
 * [Specification](#specification)
-	+ [GeoMapProject](#geomapproject)
-	+ [GeoMap](#geomap)
-	+ [GeoLayerViewGroup](#geolayerviewgroup)
-	+ [GeoLayerView](#geolayerview)
-	+ [GeoLayer](#geolayer)
-	+ [GeoLayerSymbol](#geolayersymbol) - in order of complexity:
-		- [GeoLayerSymbol Properties for Point Geometry Type](#geolayersymbol-properties-for-point-geometry-type)
-		- [GeoLayerSymbol Properties for Line Geometry Type](#geolayersymbol-properties-for-line-geometry-type)
-		- [GeoLayerSymbol Properties for Polygon Geometry Type](#geolayersymbol-properties-for-polygon-geometry-type)
-		- [GeoLayerSymbol Properties for Raster Layer Type](#geolayersymbol-properties-for-raster-layer-type)
-		- [GeoLayerSymbol Properties for Single Symbol Classification Type](#geolayersymbol-properties-for-single-symbol-classification-type)
-		- [GeoLayerSymbol Properties for Categorized Classification Type](#geolayersymbol-properties-for-categorized-classification-type)
-		- [GeoLayerSymbol Properties for Graduated Classification Type](#geolayersymbol-properties-for-graduated-classification-type)
-		+ [GeoLayerSymbol Properties for Other Classification Types](#geolayersymbol-properties-for-other-classification-types)
-	+ [GeoLayerViewEventHandler](#geolayervieweventhandler)
-	+ [Encoded Data](#encoded-data)
-		- [Color](#color)
-		- [Color Ramp](#color-ramp)
-		- [Color Table](#color-table)
-		- [DateTime](#datetime)
-		- [Extent](#extent)
+    + [GeoMapProject](#geomapproject)
+    + [GeoMap](#geomap)
+    + [GeoLayerViewGroup](#geolayerviewgroup)
+    + [GeoLayerView](#geolayerview)
+    + [GeoLayer](#geolayer)
+    + [GeoLayerSymbol](#geolayersymbol) - in order of complexity:
+        - [GeoLayerSymbol Properties for Point Geometry Type](#geolayersymbol-properties-for-point-geometry-type)
+        - [GeoLayerSymbol Properties for Line Geometry Type](#geolayersymbol-properties-for-line-geometry-type)
+        - [GeoLayerSymbol Properties for Polygon Geometry Type](#geolayersymbol-properties-for-polygon-geometry-type)
+        - [GeoLayerSymbol Properties for Raster Layer Type](#geolayersymbol-properties-for-raster-layer-type)
+        - [GeoLayerSymbol Properties for Single Symbol Classification Type](#geolayersymbol-properties-for-single-symbol-classification-type)
+        - [GeoLayerSymbol Properties for Categorized Classification Type](#geolayersymbol-properties-for-categorized-classification-type)
+        - [GeoLayerSymbol Properties for Graduated Classification Type](#geolayersymbol-properties-for-graduated-classification-type)
+        + [GeoLayerSymbol Properties for Other Classification Types](#geolayersymbol-properties-for-other-classification-types)
+    + [GeoLayerViewEventHandler](#geolayervieweventhandler)
+    + [Encoded Data](#encoded-data)
+        - [Color](#color)
+        - [Color Ramp](#color-ramp)
+        - [Color Table](#color-table)
+        - [DateTime](#datetime)
+        - [Extent](#extent)
 * [Web Mapping Application Integration](#web-mapping-application-integration)
-	+ [Web Application Data Workflow](#web-application-data-workflow)
-	+ [Web Application Event Handling](#web-application-event-handling)
-	+ [Web Application Deployment](#web-application-deployment)
+    + [Web Application Data Workflow](#web-application-data-workflow)
+    + [Web Application Event Handling](#web-application-event-handling)
+    + [Web Application Deployment](#web-application-deployment)
 * [History of Specification](#history-of-specification)
 
 -----------------
@@ -99,18 +99,18 @@ Using a map configuration file in an application typically consists of the follo
 in increasing level of complexity:
 
 1. Display the map layers with correct symbology, legend, etc.
-The core data in a GeoMap are intended to support this functionality.
+   The core data in a GeoMap are intended to support this functionality.
 2. Allow read-only interaction with map layers.
-For example, mouse over or click on features or markers on the map and perform
-other actions such as displaying layer properties or related data visualizations.
-See the [GeoLayerViewEventHandler](#geolayervieweventhandler) documentation.
+   For example, mouse over or click on features or markers on the map and perform
+   other actions such as displaying layer properties or related data visualizations.
+   See the [GeoLayerViewEventHandler](#geolayervieweventhandler) documentation.
 3. Allow additional analysis that may add additional attributes to existing layers or add new layers.
-This functionality must be coded in the application as either reusable components
-or custom application code.
+   This functionality must be coded in the application as either reusable components
+   or custom application code.
 4. Edit data interactively, saving back to the original data layer, a copy,
-or some other data management software.
-This functionality must be coded in the application as either reusable components
-or custom application code.
+   or some other data management software.
+   This functionality must be coded in the application as either reusable components
+   or custom application code.
 
 The GeoProcessor will be enhanced over time to implement additional functionality
 for the higher numbered functionality levels,
@@ -155,14 +155,14 @@ open-ended properties dictionary corresponding to `properties` data member for e
 The following guidelines are used when creating the specification:
 
 1. Built-in properties are generally those that define the "physical" structure of the data,
-without which the data model would not make sense.
-In contrast, optional free-format properties provide additional granularity and flexibility in the model
-to support variations in map configurations and the tools that use the maps.
-The determination of whether a property is built-in or optional is subject to interpretation and opinion,
-but hopefully the specification is reasonable.
+   without which the data model would not make sense.
+   In contrast, optional free-format properties provide additional granularity and flexibility in the model
+   to support variations in map configurations and the tools that use the maps.
+   The determination of whether a property is built-in or optional is subject to interpretation and opinion,
+   but hopefully the specification is reasonable.
 2. Free-form properties are generally represented as quoted strings and must be parsed by consuming software.
-Data types other than strings,
-and encoded strings, may be implemented to help minimize errors and facilitate parsing.
+   Data types other than strings,
+   and encoded strings, may be implemented to help minimize errors and facilitate parsing.
 
 **It is expected that the specification will evolve, for example to define the syntax for symbol color ramps.
 These details will be addressed as quickly as possible
@@ -385,26 +385,26 @@ with important properties compared below for context.
 The following symbol classification types are recognized:
 
 * `Categorized` - each unique value for a specific layer attribute is visualized with specific properties,
-useful for text and integer attributes
+  useful for text and integer attributes
 * `Graduated` - a specific layer attribute's value is visualized using a graduated color
-ramp or colors assigned to ranges of values,
-suitable for numbers, in particular floating point numbers
+  ramp or colors assigned to ranges of values,
+  suitable for numbers, in particular floating point numbers
 * `SingleSymbol` - layer features are drawn using the same symbol,
-useful when all features in a layer should be viewed similarly, such as rivers
+  useful when all features in a layer should be viewed similarly, such as rivers
 
 Consequently, the properties for the symbol vary depending on the symbol classification type, as described in the following tables.
 The layer geometry type also indicates which properties are used. 
 
 * Properties by geometry type:
-	+ [GeoLayerSymbol Properties for Point Geometry Type](#geolayersymbol-properties-for-point-geometry-type)
-	+ [GeoLayerSymbol Properties for Line Geometry Type](#geolayersymbol-properties-for-line-geometry-type)
-	+ [GeoLayerSymbol Properties for Polygon Geometry Type](#geolayersymbol-properties-for-polygon-geometry-type)
-	+ [GeoLayerSymbol Properties for Raster Layer Type](#geolayersymbol-properties-for-raster-layer-type)
+    + [GeoLayerSymbol Properties for Point Geometry Type](#geolayersymbol-properties-for-point-geometry-type)
+    + [GeoLayerSymbol Properties for Line Geometry Type](#geolayersymbol-properties-for-line-geometry-type)
+    + [GeoLayerSymbol Properties for Polygon Geometry Type](#geolayersymbol-properties-for-polygon-geometry-type)
+    + [GeoLayerSymbol Properties for Raster Layer Type](#geolayersymbol-properties-for-raster-layer-type)
 * Properties by classification type (in order of complexity):
-	+ [GeoLayerSymbol Properties for Single Symbol Classification Type](#geolayersymbol-properties-for-single-symbol-classification-type)
-	+ [GeoLayerSymbol Properties for Categorized Classification Type](#geolayersymbol-properties-for-categorized-classification-type)
-	+ [GeoLayerSymbol Properties for Graduated Classification Type](#geolayersymbol-properties-for-graduated-classification-type)
-	+ [GeoLayerSymbol Properties for Other Classification Types](#geolayersymbol-properties-for-other-classification-types)
+    + [GeoLayerSymbol Properties for Single Symbol Classification Type](#geolayersymbol-properties-for-single-symbol-classification-type)
+    + [GeoLayerSymbol Properties for Categorized Classification Type](#geolayersymbol-properties-for-categorized-classification-type)
+    + [GeoLayerSymbol Properties for Graduated Classification Type](#geolayersymbol-properties-for-graduated-classification-type)
+    + [GeoLayerSymbol Properties for Other Classification Types](#geolayersymbol-properties-for-other-classification-types)
 
 See also:
 
@@ -667,12 +667,15 @@ and indicate how to determine color from layer data values.
 The colors and other properties for graduated classification should be specified in one of the following ways:
 
 * `classificationFile` - use a file that defines classification breaks in the data value and corresponding color
-* `classificationRamp` - use a standard ramp to transition colors and other properties between values (**proposed - need to define this - category symbols are more important for development**)
+* `classificationRamp` - use a standard ramp to transition colors and other properties between values
+  (**proposed - need to define this - category symbols are more important for development**)
 
 See also:
 
-* [QGIS: Inconsistent intervals for similar labels in graduated classification](https://github.com/qgis/QGIS/issues/29852) - points out consistancy issues with graduated classification breaks
-* [Esri: ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/3/jshelp/inside_renderers.html) - indicates that breaks are >= minimum and < maximum value in a category, using `-Infinity` and `Infinity` to bound
+* [QGIS: Inconsistent intervals for similar labels in graduated classification](https://github.com/qgis/QGIS/issues/29852) - points out
+  consistancy issues with graduated classification breaks
+* [Esri: ArcGIS API for JavaScript](https://developers.arcgis.com/javascript/3/jshelp/inside_renderers.html) - indicates that
+  breaks are >= minimum and < maximum value in a category, using `-Infinity` and `Infinity` to bound
 
 **<p style="text-align: center;">
 Graduated GeoLayerSymbol Properties in `properties` JSON Element
@@ -733,7 +736,7 @@ The default behavior described in the previous section works well with floating 
 However, for integer data values, the ranges have discrete integer values
 and there is not a need for `>` and `<` signs for ranges, except for end values.
 Therefore, the classification file supports specifying the operator in front of `valueMin` and `valueMax`
-and cofiguration of `label` column,
+and configuration of `label` column,
 which can be used to define more appropriate labels.
 
 Each row of the classification file has a default operator for each `valueMin` and `valueMax` that
@@ -826,13 +829,12 @@ however, a consistent convention should be used.
 Defining an event consists of creating two pieces of configuration:
 
 1. An event handler for a GeoLayerView, which is included in the GeoMapProject file.
-See the `eventHandlers` element in the JSON example below
-and the
-[`SetGeoLayerViewEventHandler`](../command-ref/SetGeoLayerViewEventHandler/SetGeoLayerViewEventHandler.md) GeoProcessor command.
+   See the `eventHandlers` element in the JSON example below and the
+   [`SetGeoLayerViewEventHandler`](../command-ref/SetGeoLayerViewEventHandler/SetGeoLayerViewEventHandler.md) GeoProcessor command.
 2. An event configuration file, which defines the details of the event.
-Examples are provided below and are documented in more detail in
-the [InfoMapper software Map Event Configuration Files](http://software.openwaterfoundation.org/infomapper/latest/doc-user/appendix-install/map-event-config-files/)
-documentation.
+   Examples are provided below and are documented in more detail in
+   the [InfoMapper software Map Event Configuration Files](http://software.openwaterfoundation.org/infomapper/latest/doc-user/appendix-install/map-event-config-files/)
+   documentation.
 
 The following is an example of an InfoMapper event handler definition for a GeoLayerView for a county layer,
 which allows a county polygon to be clicked on to display the feature attributes and a button
@@ -1130,7 +1132,7 @@ Creating a web application involves the following major design considerations:
 1. How to organize data for the application, including map layers and supporting data such as time series.
 2. How to handle events in the application, for example to click on a feature in a map and display related data.
 3. How to deploy the application, for example to handle multiple software versions, target location,
-and effective time (snapshots) of the data in the application.
+  and effective time (snapshots) of the data in the application.
 
 The following sections provide a information to help guide implementation design.
 

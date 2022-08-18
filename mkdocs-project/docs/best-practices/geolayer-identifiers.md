@@ -34,12 +34,12 @@ where:
 * `DataType` indicates the content of the spatial data
 * `SourceAgency` is the acronym of the agency that developed the spatial data, if available
 * `Extent` describes the spatial extent of the spatial data, if appropriate, for example:
-	+ state abbreviation
-	+ county name or code
+    + state abbreviation
+    + county name or code
 * `EffectiveDate` is the date that the spatial data is effective (a publishing date or version may also be appropriate)
 * `Scenario` is an additional identifier part to indicate a scenario, if appropriate
 * `CoordinateReferenceSystem` is the coordinate reference system of the spatial data (in EPSG/ESRI code),
-appropriate if different layers would otherwise have the same identifier
+  appropriate if different layers would otherwise have the same identifier
 
 The above parts can be used in combination as appropriate, with parts omitted if not relevant or redundant.
 Dashes are used instead of spaces and uppercase/lowercase can be used for readability.

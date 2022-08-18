@@ -17,8 +17,8 @@ from a [delimited file](https://en.wikipedia.org/wiki/Delimiter-separated_values
 * The coordinate reference system of the geometry within the delimited file must be correctly defined.
 * The attributes of the delimited file are retained within the attribute table of the GeoLayer.
 * `POINT`, `LINE` and `POLYGON` data can be read from a delimited file.
-To read `LINE` and `POLYGON` data,
-the delimited file must have a column specifying the geometry in [well-known text](https://en.wikipedia.org/wiki/Well-known_text).
+  To read `LINE` and `POLYGON` data,
+  the delimited file must have a column specifying the geometry in [well-known text](https://en.wikipedia.org/wiki/Well-known_text).
 
 ## Command Editor ##
 
