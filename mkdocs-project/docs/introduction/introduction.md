@@ -8,14 +8,14 @@ about using the software.
 * [Need for the GeoProcessor](#need-for-the-geoprocessor)
 * [User Interface Overview](#user-interface-overview)
 * [Concepts](#concepts)
-	+ [GeoProcessor Commands and Workflows](#geoprocessor-commands-and-workflows)
-	+ [GeoProcessor Properties - `${Property}`](#geoprocessor-properties-property)
-	+ [Spatial Data Sources and Formats](#spatial-data-sources-and-formats)
-	+ [GeoLayer](#geolayer)
-	+ [GeoMap](#geomap)
-	+ [GeoMapProject](#geomapproject)
-	+ [Table](#table)
-	+ [DataStore](#datastore)
+    + [GeoProcessor Commands and Workflows](#geoprocessor-commands-and-workflows)
+    + [GeoProcessor Properties - `${Property}`](#geoprocessor-properties-property)
+    + [Spatial Data Sources and Formats](#spatial-data-sources-and-formats)
+    + [GeoLayer](#geolayer)
+    + [GeoMap](#geomap)
+    + [GeoMapProject](#geomapproject)
+    + [Table](#table)
+    + [DataStore](#datastore)
 * [Alternatives to the GeoProcessor](#alternatives-to-the-geoprocessor)
 * [Next Steps](#next-steps)
 
@@ -27,45 +27,45 @@ The GeoProcessor has been created to meet needs related to geospatial data proce
 software and process validation.
 
 * There is often a need to automate processing of spatial data, ranging from simple to complex tasks.
-Existing tools can be complex to understand and may not provide needed functionality.
+  Existing tools can be complex to understand and may not provide needed functionality.
 
 * There is a need to support "programming" without having to learn a programming language.
-The GeoProcessor allows people to program a workflow using pre-built commands that do not
-require programming Python or another language.
-The GeoProcessor workflow uses "programming by convention" that relies on using
-unique identifiers for data objects, and common processing commands.
+  The GeoProcessor allows people to program a workflow using pre-built commands that do not
+  require programming Python or another language.
+  The GeoProcessor workflow uses "programming by convention" that relies on using
+  unique identifiers for data objects, and common processing commands.
 
 * There is often a need to share and version control workflows.
-GeoProcessor workflows are simple text files that can be shared, for example by email or zip file.
-Because workflows are text files, they can also be version-controlled in software such as Git,
-and can be easily viewed on GitHub or other version control cloud platforms.
+  GeoProcessor workflows are simple text files that can be shared, for example by email or zip file.
+  Because workflows are text files, they can also be version-controlled in software such as Git,
+  and can be easily viewed on GitHub or other version control cloud platforms.
 
 * There is a need to easily scale processing.
-The GeoProcessor is designed to handle large datasets and workflows,
-with features to evaluate and troubleshoot performance.
-Often, a workflow can be processed on a limited dataset and can then be scaled to process large datasets.
-For example, the GeoProcessor can read controlling data from tables and repeat the same
-analysis steps for each item in a table.
+  The GeoProcessor is designed to handle large datasets and workflows,
+  with features to evaluate and troubleshoot performance.
+  Often, a workflow can be processed on a limited dataset and can then be scaled to process large datasets.
+  For example, the GeoProcessor can read controlling data from tables and repeat the same
+  analysis steps for each item in a table.
 
 * The cost of commercial software may be a barrier to adopting geographic information system (GIS) tools,
-in particular for organizations that use the software on a limited basis.
-The GeoProcessor is intended as a production tool for those who use free open source QGIS software.
-OWF is also developing an ArcGIS Pro version of the GeoProcessor for organizations that have invested in Esri software.
+  in particular for organizations that use the software on a limited basis.
+  The GeoProcessor is intended as a production tool for those who use free open source QGIS software.
+  OWF is also developing an ArcGIS Pro version of the GeoProcessor for organizations that have invested in Esri software.
 
 * There is a need for tools that can automate spatial data processing without requiring extensive GIS skills.
-The GeoProcessor is designed to present geoprocessing workflows using terminology
-that make sense even without extensive GIS experience.
+  The GeoProcessor is designed to present geoprocessing workflows using terminology
+  that make sense even without extensive GIS experience.
 
 * There is also a need to "normalize" geospatial data processing,
-meaning do the same task whether or not QGIS or ArcGIS are used.
-The QGIS and ArcGIS versions of the GeoProcessor are being developed to provide the same (or very similar)
-functionality using a common command language that can be used with either GIS product.
+  meaning do the same task whether or not QGIS or ArcGIS are used.
+  The QGIS and ArcGIS versions of the GeoProcessor are being developed to provide the same (or very similar)
+  functionality using a common command language that can be used with either GIS product.
 
 * There is a need to facilitate testing and validation of workflows.
-The GeoProcessor has a built-in functional test feature that allows
-workflows used by developers to be the same as for users.
-Consequently, testing in different environments is simplified.
-This allows the software and workflows to be tested.
+  The GeoProcessor has a built-in functional test feature that allows
+  workflows used by developers to be the same as for users.
+  Consequently, testing in different environments is simplified.
+  This allows the software and workflows to be tested.
 
 ## User Interface Overview ##
 
@@ -85,22 +85,22 @@ GeoProcessor User Interface (<a href="../images/GeoProcessor-main.png">see full-
 The following summarizes UI features:
 
 * Menus at the top allow previously saved command files to be read,
-and new command files can be created.
+  and new command files can be created.
 * The ***Commands*** area in the middle displays the current command file:
-	+ The window title indicates the name of the command file and whether it has been modified.
-	+ Labels above the ***Commands*** area indicate the number of commands and count of commands
-	with failures and warnings.
-	+ Commands can be edited by double-clicking on a command or using the right-click popup ***Edit*** menu.
-	Command editor dialogs are provided to edit each command.
-	Most command editors show a list of parameters for the command
-	and some commands have more detailed editors.
-	+ All or selected commands can be run using the ***Run Selected Commands*** and ***Run All Commands*** buttons
-	below of the ***Commands*** area.
-	+ The ***Commands*** menus provide many commands to automate processing spatial data, tables, and other data.
+    + The window title indicates the name of the command file and whether it has been modified.
+    + Labels above the ***Commands*** area indicate the number of commands and count of commands
+      with failures and warnings.
+    + Commands can be edited by double-clicking on a command or using the right-click popup ***Edit*** menu.
+      Command editor dialogs are provided to edit each command.
+      Most command editors show a list of parameters for the command
+      and some commands have more detailed editors.
+    + All or selected commands can be run using the ***Run Selected Commands*** and ***Run All Commands*** buttons
+      below of the ***Commands*** area.
+    + The ***Commands*** menus provide many commands to automate processing spatial data, tables, and other data.
 * Results are displayed in the ***Results*** area at the bottom, with output shown for each major output type.
-	+ GeoLayers can be shown on a map and the layer's attribute table (properties for each layer feature) can be displayed.
-	+ Output files can be viewed.
-	+ Tables can be viewed.
+    + GeoLayers can be shown on a map and the layer's attribute table (properties for each layer feature) can be displayed.
+    + Output files can be viewed.
+    + Tables can be viewed.
 
 ## Concepts ##
 
@@ -172,13 +172,13 @@ A raster layer contains a grid of data values, CRS, properties, and other data.
 A GeoLayer has the following characteristics:
 
 * The GeoProcessor commands assign unique identifiers to GeoLayers, a "GeoLayerID",
-as layers are read or created so that commands can use the identifiers to access GeoLayers.
-See [best practices for GeoLayer identifiers](../best-practices/geolayer-identifiers.md).
+  as layers are read or created so that commands can use the identifiers to access GeoLayers.
+  See [best practices for GeoLayer identifiers](../best-practices/geolayer-identifiers.md).
 * The features in a GeoLayer must be of a single type (e.g., point, line, polygon).
 * The GeoLayer has a coordinate reference system corresponding to the datum,
-projection, and units of coordinates in the features.
+  projection, and units of coordinates in the features.
 * GeoLayers can have input path (file or URL) and format, in-memory representation, and output path.
-Different commands and tool may operate on in-memory representation or files.
+  Different commands and tool may operate on in-memory representation or files.
 
 ## GeoMap ##
 
@@ -283,8 +283,8 @@ For display purposes, columns are formatted using a consistent width, justificat
 A Table object always has an index column that is created once a tabular dataset is read into the GeoProcessor. The added index column (row labels) has no column name and is a sequential list of integers (starting at 0). It is used as the row identifiers in the GeoProcessor. All commands that write a Table from the GeoProcessor to a tabular format include a `WriteIndexColumn` parameter. Set this parameter to `TRUE` to include this added index column in the output data file. Set this parameter to `FALSE` to exclude this added index column in the output data file. 
 
 * The GeoProcessor commands assign unique identifiers to Tables as they are read so that
-commands can use the identifiers to access Tables.
-See [best practices for Table identifiers](../best-practices/table-identifiers.md).
+  commands can use the identifiers to access Tables.
+  See [best practices for Table identifiers](../best-practices/table-identifiers.md).
 * The [For](../command-ref/For/For/) command can iterate over the rows of a Table and assign column cell values to GeoProcessor properties. 
 
 ### DataStore ###
@@ -318,11 +318,11 @@ Alternatives to the GeoProcessor should be considered where the GeoProcessor doe
 The goal of the GeoProcessor is to provide significant automated geoprocessing functionality that scales to large workflows. 
 More recent versions of the following documentation may be available.
 
-* [QGIS processing framework](https://docs.qgis.org/2.8/en/docs/user_manual/processing/index.html) - the built-in QGIS workflow environment
+* [QGIS processing framework](https://docs.qgis.org/latest/en/docs/user_manual/processing/index.html) - the built-in QGIS workflow environment
 * [Esri ArcGIS Desktop Model Builder](http://pro.arcgis.com/en/pro-app/help/analysis/geoprocessing/modelbuilder/modelbuilder-tutorial.htm) - the
-built-in ArcGIS Desktop workflow environment
+  built-in ArcGIS Desktop workflow environment
 * [Esri ArcGIS Pro Model Builder](http://pro.arcgis.com/en/pro-app/help/analysis/geoprocessing/modelbuilder/modelbuilder-changes-in-arcgis-pro.htm) - the
-built-in ArcGIS Pro workflow environment
+  built-in ArcGIS Pro workflow environment
 
 ## Next Steps
 

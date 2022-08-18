@@ -21,7 +21,7 @@ The output `sourcePath` for each GeoLayer is determined as follows:
 
 1. If the GeoLayer was written, then the output location is used.
 2. If the GeoLayer was not written, then the input location is used if not `MEMORY`.
-Therefore, layers that were created in memory must be written in order for the path to be known in the map configuration file.
+   Therefore, layers that were created in memory must be written in order for the path to be known in the map configuration file.
 
 ## Command Editor ##
 

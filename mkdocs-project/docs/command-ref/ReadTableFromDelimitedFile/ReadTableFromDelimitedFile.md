@@ -18,7 +18,7 @@ from a [delimited file](https://en.wikipedia.org/wiki/Delimiter-separated_values
 * Use the `Delimiter` parameter to specify the delimiter of the delimited file. 
 * Use the `HeaderLines` parameter to specify the number of initial lines representing non-data comments. 
 * Use the `NullValues` parameter to specify the string values within the delimited file that should
-be converted to `NULL` values. The Python `None` will be used internally.
+  be converted to `NULL` values. The Python `None` will be used internally.
 
 ## Command Editor ##
 

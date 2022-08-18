@@ -25,10 +25,10 @@ However, although log files may be helpful to software developers, they can be d
 The log file exists in the following locations:
 
 * Startup log file in user's home folder GeoProcessor files, for example (`1` indicates the GeoProcessor major version):
-	+ Windows: `C:\Users\user\.owf-gp\1\logs\gp_user.log`
-	+ Linux:  `/home/user/.owf-gp/1/logs/gp_user.log`
-	+ Cygwin:  `/cygdrive/C/Users/user/.owf-gp/1/logs/gp_user.log` (different files from Windows)
-	+ Git Bash (MinGW):  `/c/Users/user/.owf-gp/1/logs/gp_user.log` (same files as Windows)
+    + Windows: `C:\Users\user\.owf-gp\1\logs\gp_user.log`
+    + Linux:  `/home/user/.owf-gp/1/logs/gp_user.log`
+    + Cygwin:  `/cygdrive/C/Users/user/.owf-gp/1/logs/gp_user.log` (different files from Windows)
+    + Git Bash (MinGW):  `/c/Users/user/.owf-gp/1/logs/gp_user.log` (same files as Windows)
 * File specified by the GeoProcessor [StartLog](../command-ref/StartLog/StartLog.md) command.
 
 The log files can be viewed using the ***Tools / View Log File*** and ***Tools / View Startup Log File*** menu items.

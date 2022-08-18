@@ -6,4 +6,4 @@ The following are considerations specific to this variant:
 
 * Run in batch mode using a command line: `gp --commands command-file.gp`
 * The folder for the command file is set as the working directory (working folder),
-which is used to convert relative paths in commands to absolute paths.
+  which is used to convert relative paths in commands to absolute paths.

@@ -60,8 +60,8 @@ Command Parameters
 ### Determining Which Columns to Write
 
 * The `IncludeColumns` parameter is always processed first. The `ExcludeColumns` parameter is always processed second. 
-	* The `IncludeColumns` selects all of the Table's columns that follow the given patterns. By default (`*`) all of the Table's columns are included. 
-	* The `ExcludeColumns` removes all of the columns previously selected from the `IncludeColumns` parameter that follow the given patterns. 
+    + The `IncludeColumns` selects all of the Table's columns that follow the given patterns. By default (`*`) all of the Table's columns are included. 
+    + The `ExcludeColumns` removes all of the columns previously selected from the `IncludeColumns` parameter that follow the given patterns. 
 
 ## Examples ##
 

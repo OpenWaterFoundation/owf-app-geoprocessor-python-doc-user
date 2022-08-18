@@ -10,6 +10,8 @@ This is the user documentation for the Open Water Foundation (OWF) GeoProcessor 
 * [License](#license)
 * [Source Repository on GitHub](#source-repository-on-github)
 
+**This documentation has been updated for GeoProcessor 1.5.0.**
+
 ---------------
 
 ## Introduction ##

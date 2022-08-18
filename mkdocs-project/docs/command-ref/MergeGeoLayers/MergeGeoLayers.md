@@ -61,18 +61,18 @@ The `MergeGeoLayers` command merges multiple GeoLayers into one GeoLayer.
 
 * The input attribute tables are merged into one output attribute table. 
 * By default, if the attribute tables from the input GeoLayers are different,
-the attribute table of the output GeoLayer will contain the attributes from
+  the attribute table of the output GeoLayer will contain the attributes from
 **ALL** input layers. See [Example 1](#example-1-merge-without-an-attribute-map). 
 
 There are times, however, when attributes with *different* names from *different* input GeoLayers should be converged. 
 
 * This can be accomplished with the `AttributeMap` parameter. 
 * In [Example 2](#example-1-merge-with-an-attribute-map),
-the high schools attribute (`high_sch`) from `ExampleGeoLayer1` and the elementary schools
-attribute (`elem_sch`) from `ExampleGeoLayer2` both contain names of schools. 
+  the high schools attribute (`high_sch`) from `ExampleGeoLayer1` and the elementary schools
+  attribute (`elem_sch`) from `ExampleGeoLayer2` both contain names of schools. 
     + When merging the input GeoLayers, it is possible to `"map"` the high schools and elementary schools attributes together.
-	The output is a single attribute called `Schools` containing the information from both the
-	`high_sch` attribute and the `elem_sch` attribute.
+      The output is a single attribute called `Schools` containing the information from both the
+      `high_sch` attribute and the `elem_sch` attribute.
 
 ### How to Build an Attribute Map ###
 
@@ -86,7 +86,7 @@ AttributeMap = "KEY1:VALUE1, KEY2:VALUE2"
 * Each `KEY` is an attribute from one of the `INPUT` GeoLayers. 
 * Each `VALUE` is a new name that the `KEY` attribute will be renamed to in the the `OUTPUT` `MERGED` GeoLayer.
 * If an attribute from an `INPUT` GeoLayer is not listed as a `KEY` in the attribute map,
-the attribute name will be retained in the `OUTPUT MERGED` GeoLayer.
+  the attribute name will be retained in the `OUTPUT MERGED` GeoLayer.
 * More than one key-value pairs can have the `SAME` `VALUE`.
 
 ## Examples ##

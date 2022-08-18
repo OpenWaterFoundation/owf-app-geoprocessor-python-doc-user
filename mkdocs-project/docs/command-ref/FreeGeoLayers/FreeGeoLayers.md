@@ -56,11 +56,11 @@ Example GeoLayer Data
 
 |GeoLayer ID|
 | ---- | 
-| ExampleGeoLayer1  |
-| ExampleGeoLayer2	| 
-| ExampleGeoLayer3 	|
+| ExampleGeoLayer1 |
+| ExampleGeoLayer2 | 
+| ExampleGeoLayer3 |
 
-### Example 1: Free GeoLayers###
+### Example 1: Free GeoLayers ###
 
 ```
 FreeGeoLayers(GeoLayerIDs = "ExampleGeoLayer2, ExampleGeoLayer3")

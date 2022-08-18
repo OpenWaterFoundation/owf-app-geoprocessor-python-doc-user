@@ -17,7 +17,7 @@ This command can be used to:
 
 * reuse a datastore ID within a workflow
 * simulate dropped database connections 
-(for example when the GeoProcessor does not read from or write to database for a period due to user inaction).
+  (for example when the GeoProcessor does not read from or write to database for a period due to user inaction).
 
 Closing a datastore frees the underlying database connection resources for the datastore but keeps the
 instance of the datastore for tracking purposes.

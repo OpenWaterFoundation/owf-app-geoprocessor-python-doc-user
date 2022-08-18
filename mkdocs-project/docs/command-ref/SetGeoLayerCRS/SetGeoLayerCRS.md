@@ -62,9 +62,9 @@ Example GeoLayer Data
 |GeoLayer ID|CRS|
 | ---- | ---|
 | ExampleGeoLayer1 |EPSG:4326 (WGS84)|
-| ExampleGeoLayer2	|`None`|
+| ExampleGeoLayer2 |`None`|
 
-### Example 1: Reproject a GeoLayer###
+### Example 1: Reproject a GeoLayer ###
 
 ```
 SetGeoLayerCRS(GeoLayerID = "ExampleGeoLayer1", CRS = "EPSG:26913")
@@ -75,9 +75,9 @@ After running the command, the following GeoLayer IDs are registered within the 
 |GeoLayer ID|CRS|
 | ---- |---|
 | ExampleGeoLayer1  |EPSG:26913 (NAD83 UTM Zone 13N)|
-| ExampleGeoLayer2	|`None`|
+| ExampleGeoLayer2 |`None`|
 
-### Example 2: Define a GeoLayer's CRS###
+### Example 2: Define a GeoLayer's CRS ###
 
 ```
 SetGeoLayerCRS(GeoLayerID = "ExampleGeoLayer2", CRS = "EPSG:4326")
@@ -88,15 +88,15 @@ After running the command, the following GeoLayer IDs are registered within the 
 |GeoLayer ID|CRS|
 | ---- |---|
 | ExampleGeoLayer1  |EPSG:4326 (WGS84)|
-| ExampleGeoLayer2	|EPSG:4326 (WGS84)|
+| ExampleGeoLayer2 |EPSG:4326 (WGS84)|
 
 ## Troubleshooting ##
 
 ## See Also ##
 
 * The GeoLayer is reprojected using the QGIS
-[`qgis:reprojectlayer`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html?highlight=reprojectlayer#reproject-layer)
-processing algorithm
+  [`qgis:reprojectlayer`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html?highlight=reprojectlayer#reproject-layer)
+  processing algorithm
 * The GeoLayer's CRS is defined using the QGIS
-[`qgis:definecurrentprojection`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html?highlight=reprojectlayer#define-shapefile-projection)
-processing algorithm
+  [`qgis:definecurrentprojection`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html?highlight=reprojectlayer#define-shapefile-projection)
+  processing algorithm

@@ -42,7 +42,7 @@ Dashes are used instead of spaces and uppercase/lowercase can be used for readab
 
 TableID `Clients-DOLA-2017-Colorado` would represent a tabular layer that:
 
-* lists the avaialable clients (`Clients`) and their related attributes
+* lists the available clients (`Clients`) and their related attributes
 * is provided by Colorado Department of Local Affairs (`DOLA`)
 * is relevant for the 2017 year
 * spans the entire state of Colorado (`CO`)

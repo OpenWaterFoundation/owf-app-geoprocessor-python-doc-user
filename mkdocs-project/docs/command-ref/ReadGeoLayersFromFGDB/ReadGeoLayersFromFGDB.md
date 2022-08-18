@@ -116,7 +116,7 @@ ReadGeoLayersFromFGDB(InputFolder="ExampleFolder/ExampleFileGDB.gdb",Subset_Patt
 
 After running the command, the following GeoLayer IDs are registered within the GeoProcessor.
 `ExampleFeatureClass1` and `ExampleFeatureClass2` are not included in the registered GeoLayer IDs
-becasue the `Subset_Pattern` parameter only includes feature classes that end in `3`. 
+because the `Subset_Pattern` parameter only includes feature classes that end in `3`. 
 
 |Registered GeoLayer IDs|
 |------|

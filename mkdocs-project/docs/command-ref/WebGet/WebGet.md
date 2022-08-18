@@ -56,14 +56,16 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 ### Example 1: Using the `%f` Formatting Character in the `OutputFile` Parameter###
 
 ```
-WebGet(URL = "https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.cpg",OutputFile="ExampleOutputFolder/NewFilename")
-WebGet(URL = "https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.cpg",OutputFile="ExampleOutputFolder/%f")
+WebGet(URL="https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.cpg",OutputFile="ExampleOutputFolder/NewFilename")
+WebGet(URL="https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.cpg",OutputFile="ExampleOutputFolder/%f")
 ```
 
 The two commands download the same [data file](https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.cpg). 
 
-- The first command specifies a different filename using the `OutputFile` parameter. The name of the downloaded file is renamed to the specified filename. 
-- The second command utilizes the `%f` [formatting character](../../introduction/introduction.md#geolayer-property-format-specifiers) in the `OutputFile` parameter. The name of the downloaded file is the same as the URL filename.
+- The first command specifies a different filename using the `OutputFile` parameter.
+  The name of the downloaded file is renamed to the specified filename. 
+- The second command utilizes the `%f` [formatting character](../../introduction/introduction.md#geolayer-property-format-specifiers)
+  in the `OutputFile` parameter. The name of the downloaded file is the same as the URL filename.
 
 ## Troubleshooting ##
 

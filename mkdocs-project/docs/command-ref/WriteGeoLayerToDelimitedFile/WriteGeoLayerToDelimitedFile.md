@@ -11,7 +11,8 @@
 
 ## Overview ##
 
-The `WriteGeoLayerToDelimitedFile` command writes a [GeoLayer](../../introduction/introduction.md#geolayer) to a [delimited file](https://en.wikipedia.org/wiki/Delimiter-separated_values).
+The `WriteGeoLayerToDelimitedFile` command writes a
+[GeoLayer](../../introduction/introduction.md#geolayer) to a [delimited file](https://en.wikipedia.org/wiki/Delimiter-separated_values).
 
 * Each attribute of the GeoLayer is retained in a separate column of the output file. 
 * The geometry of the GeoLayer is retained in one or more columns of the output file. 
@@ -135,6 +136,6 @@ WKT, LakeName, AreaAcre
 ## See Also ##
 
 * The GeoLayer is written using the [`QGIS QgsVectorFileWriter Class`](https://qgis.org/api/classQgsVectorFileWriter.html).
-See [documentation](https://docs.qgis.org/2.14/en/docs/pyqgis_developer_cookbook/vector.html#writing-vector-layers)
-for examples on utilizing the `QGSVectorFileWriter` class in the PyQGIS environment.
+  See [documentation](https://docs.qgis.org/2.14/en/docs/pyqgis_developer_cookbook/vector.html#writing-vector-layers)
+  for examples on utilizing the `QGSVectorFileWriter` class in the PyQGIS environment.
 * [`ReadGeoLayerFromDelimitedFile`](../ReadGeoLayerFromDelimitedFile/ReadGeoLayerFromDelimitedFile.md)

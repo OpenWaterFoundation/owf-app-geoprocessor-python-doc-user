@@ -18,7 +18,7 @@ commands that support properties, using the `${Property}` notation.
 
 * a list of supplied values (specify using `ListProperty` parameter)
 * a sequence of integers or floating-point double precision numbers specified with start (`SequenceStart` parameter),
-end (`SequenceEnd` parameter), and increment (`SequenceIncrement` parameter)
+  end (`SequenceEnd` parameter), and increment (`SequenceIncrement` parameter)
 * values from a [Table](../../introduction/introduction.md#table) column 
 
 `For` commands can be nested. Status messages for the run mode are accumulated in each command.
@@ -74,13 +74,13 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 This simple example illustrates how to process a list of GeoLayers corresponding to counties:
 
 * The list of counties is specified as a property `CountyList`.
-Other commands can also be used to create a list.
+  Other commands can also be used to create a list.
 * The `For` command uses this property via its `ListProperty="CountyList"` parameter.
 * The `For` command `IteratorProperty="County"` parameter indicates which property will be used
-to iterate through the list items.
-The property value is set to the values in the list for each iteration.
+  to iterate through the list items.
+  The property value is set to the values in the list for each iteration.
 * Other commands can then use the syntax `${County}` to dynamically fill filenames, etc.
-In this example the county name is used in GeoLayer filenames.
+  In this example the county name is used in GeoLayer filenames.
 
 ```text
 SetProperty(PropertyName="CountyList",PropertyType="str",PropertyValues="Adams,Washington,Jefferson")

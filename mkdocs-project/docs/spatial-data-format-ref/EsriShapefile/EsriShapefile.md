@@ -8,7 +8,8 @@
 
 ## Overview ##
 
-An Esri Shapefile is a spatial data format that stores attribute and geometry information for a spatial feature dataset. A single shapefile is comprised of all or some of the following files:
+An Esri Shapefile is a spatial data format that stores attribute and geometry information for a spatial feature dataset.
+A single shapefile is comprised of all or some of the following files:
 
 |File Extension|Description|Required?|
 |----|-----|----|

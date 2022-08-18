@@ -55,8 +55,8 @@ Command Parameters
 ### Determining Which Columns to Write
 
 * The `ColumnsToInclude` parameter is always processed first. The`ColumnsToExclude` parameter is always processed second. 
-	* The `ColumnsToInclude` selects all of the Table's columns that follow the given patterns. By default (`*`) all of the Table's columns are included. 
-	* The `ColumnsToExclude` removes all of the columns previously selected from the `ColumnsToInclude` parameter that follow the given patterns. 
+    + The `ColumnsToInclude` selects all of the Table's columns that follow the given patterns. By default (`*`) all of the Table's columns are included. 
+    + The `ColumnsToExclude` removes all of the columns previously selected from the `ColumnsToInclude` parameter that follow the given patterns. 
 
 ## Examples ##
 
@@ -71,8 +71,8 @@ Example Table Data
 
 | Table ID|
 | ---- | 
-| ExampleTable1  | 
-| ExampleTable2	| 
+| ExampleTable1 | 
+| ExampleTable2 | 
 
 **<p style="text-align: left;">
 ExampleFolder
@@ -100,7 +100,8 @@ After running the command, the following Excel workbook files are within the Exa
 WriteTableToExcel(TableID = "ExampleTable2", OutputFile = "ExampleFolder/ExampleFile1.xlsx", OutputWorksheet = "Products")
 ```
 
-After running the command, the following Excel workbook files exist in the ExampleFolder. Note that the `Products` worksheet is overwritten with the data from the `ExampleTable2` table.
+After running the command, the following Excel workbook files exist in the ExampleFolder.
+Note that the `Products` worksheet is overwritten with the data from the `ExampleTable2` table.
 
 |Filename|File Type|Worksheets|
 | ---- |---|----|

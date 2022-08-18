@@ -19,7 +19,7 @@ The [Appendix - Installing](../appendix-install/install.md) documentation descri
 and install the GeoProcessor software.  In summary, the following are the main steps:
 
 1. Access the [GeoProcessor software download page](http://software.openwaterfoundation.org/geoprocessor/) with a web browser
-and follow installation instructions.  It will be necessary to install QGIS if not already installed.
+   and follow installation instructions.  It will be necessary to install QGIS if not already installed.
 2. Run the appropriate GeoProcessor variant program as described in the next section.
 
 ## GeoProcessor Variants to Run ##

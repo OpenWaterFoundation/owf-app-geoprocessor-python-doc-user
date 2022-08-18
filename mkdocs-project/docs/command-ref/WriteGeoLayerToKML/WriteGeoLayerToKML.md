@@ -16,15 +16,15 @@ to a file in [KML format](../../spatial-data-format-ref/KML/KML.md).
 
 * The attributes of the GeoLayer are retained within the output KML file. 
 * The coordinate reference system of the output KML file will always be projected in `WGS84` `(EPSG:4326)`. 
-	+ `Note that KML by specification uses only a single projection, EPSG:4326.
-	All OGR KML output will be presented in EPSG:4326.
-	As such OGR will create layers in the correct coordinate system and transform any
-	geometries.` - [`GDAL KML Driver Specifications`](http://www.gdal.org/drv_kml.html)
+    + `Note that KML by specification uses only a single projection, EPSG:4326.
+      All OGR KML output will be presented in EPSG:4326.
+      As such OGR will create layers in the correct coordinate system and transform any
+      geometries.` - [`GDAL KML Driver Specifications`](http://www.gdal.org/drv_kml.html)
 * Each GeoLayer feature is converted into a KML [placemark](https://developers.google.com/kml/documentation/kmlreference#description_146).
-	+ The placemark `<name>` elements can be specified by the values of a GeoLayer attribute.
-	+ The placemark `<description>` elements can be specified by the values of a GeoLayer attribute.
+    + The placemark `<name>` elements can be specified by the values of a GeoLayer attribute.
+    + The placemark `<description>` elements can be specified by the values of a GeoLayer attribute.
 * Symbology cannot be specified at this time. Additional control over symbology will be added in the future.
-The KML will adopt the default symbology of the program that is ingesting the file. 
+  The KML will adopt the default symbology of the program that is ingesting the file. 
 
 ## Command Editor ##
 
@@ -93,8 +93,8 @@ ExampleOutputFolder
 ## Troubleshooting ##
 
 * If an `PlacemarkDescriptionAttribute` is specified, the other GeoLayer attributes will not
-automatically display in a Google Earth pop-up.
-See [Stack Exchange - ExtendedData and Description coexisting in the same placemark?](https://gis.stackexchange.com/questions/157964/extendeddata-and-description-coexisting-in-the-same-placemark) 
+  automatically display in a Google Earth pop-up.
+  See [Stack Exchange - ExtendedData and Description coexisting in the same placemark?](https://gis.stackexchange.com/questions/157964/extendeddata-and-description-coexisting-in-the-same-placemark) 
 
 ## See Also ##
 

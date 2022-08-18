@@ -16,7 +16,8 @@ The `AddGeoLayerAttribute` command adds a single attribute to a single GeoLayer.
 * The attribute name and attribute type are specified.
 * By default, the attribute values of the added attribute are empty. 
 * The new attribute name cannot be the same as an existing attribute name within the GeoLayer. 
-* It is highly recommended that the new attribute name is 10 characters or less. See [Esri Shapefile limitations](../../spatial-data-format-ref/EsriShapefile/EsriShapefile.md#limitations).
+* It is highly recommended that the new attribute name is 10 characters or less.
+  See [Esri Shapefile limitations](../../spatial-data-format-ref/EsriShapefile/EsriShapefile.md#limitations).
 
 ## Command Editor ##
 

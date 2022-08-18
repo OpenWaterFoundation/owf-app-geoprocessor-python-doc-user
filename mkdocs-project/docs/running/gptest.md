@@ -19,9 +19,9 @@ Examples of using the testing framework are:
 
 * tests for commands - see the [GeoProcessor test repository](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test)
 * tests to confirm that a workflow is valid, for example by running a subset of a large analysis
-or to confirm that a snapshot of the large analysis is correct
+  or to confirm that a snapshot of the large analysis is correct
 * test to confirm that a command line program gives expected results (see the
-[`RunProgram`](../command-ref/RunProgram/RunProgram.md) command)
+  [`RunProgram`](../command-ref/RunProgram/RunProgram.md) command)
 
 ## Installation ##
 

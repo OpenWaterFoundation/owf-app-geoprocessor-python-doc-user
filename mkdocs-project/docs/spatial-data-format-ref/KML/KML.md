@@ -8,7 +8,9 @@
 
 ## Overview ##
 
-Keyhole Markup Language (KML) is an [Open Geospatial Consortium, Inc. (OGC)](http://www.opengeospatial.org/) international standard file format that allows geographic data to be consumed by a 2D or 3D earth browser. Popular earth browsers include [Google Earth](https://www.google.com/earth/) and [Google Maps](https://www.google.com/maps). 
+Keyhole Markup Language (KML) is an [Open Geospatial Consortium, Inc. (OGC)](http://www.opengeospatial.org/)
+international standard file format that allows geographic data to be consumed by a 2D or 3D earth browser.
+Popular earth browsers include [Google Earth](https://www.google.com/earth/) and [Google Maps](https://www.google.com/maps). 
 
 The following are resources that explain the specification:
 

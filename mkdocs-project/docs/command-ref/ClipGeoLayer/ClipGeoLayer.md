@@ -112,11 +112,11 @@ After running the command, the following GeoLayer IDs are registered within the 
 ## Troubleshooting ##
 
 * There is a bug within QGIS version `2.18.1` that causes an error.  **This should not be an issue with the current version of QGIS and GeoProcessor.**
-	+ The clip process will only work for one feature.
-	All other features within the input GeoLayer will not be included in the output GeoLayer.
-	+ More information is available at
-	[Stack Exchange - Why general.runalg("qgis:linestopolygons"...) work only over first feature?](https://gis.stackexchange.com/questions/219857/why-general-runalgqgislinestopolygons-work-only-over-first-feature).
+    + The clip process will only work for one feature.
+      All other features within the input GeoLayer will not be included in the output GeoLayer.
+    + More information is available at
+      [Stack Exchange - Why general.runalg("qgis:linestopolygons"...) work only over first feature?](https://gis.stackexchange.com/questions/219857/why-general-runalgqgislinestopolygons-work-only-over-first-feature).
 
 ## See Also ##
 
-* This command uses the QGIS [`qgis:clip`](https://docs.qgis.org/3.16/en/docs/user_manual/processing_algs/qgis/vectoroverlay.html#clip) processing algorithm
+* This command uses the QGIS [`qgis:clip`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectoroverlay.html#clip) processing algorithm

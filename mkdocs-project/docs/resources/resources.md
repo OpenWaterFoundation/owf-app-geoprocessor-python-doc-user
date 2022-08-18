@@ -11,8 +11,8 @@ The following are useful resources, in alphabetical order.
 ## QGIS ##
 
 *  QGIS - the OWF GeoProcessor depends on the QGIS software for spatial processing modules
-	+ [QGIS website](https://www.qgis.org)
-	+ [OWF / Learn QGIS](http://learn.openwaterfoundation.org/owf-learn-qgis/)
+    + [QGIS website](https://www.qgis.org)
+    + [OWF / Learn QGIS](http://learn.openwaterfoundation.org/owf-learn-qgis/)
 
 ## Markdown ##
 

@@ -32,6 +32,7 @@ The command syntax is as follows:
 ```text
 CreateFolder(Parameter="Value",...)
 ```
+
 **<p style="text-align: center;">
 Command Parameters
 </p>**

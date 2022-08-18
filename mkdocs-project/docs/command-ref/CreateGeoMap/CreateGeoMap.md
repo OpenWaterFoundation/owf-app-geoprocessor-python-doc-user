@@ -19,18 +19,18 @@ See the [GeoMapProject](../../appendix-geomapproject/geomapproject.md) documenta
 A GeoMap is typically created by calling the following commands in sequence:
 
 * Create a GeoMap:
-	+ `CreateGeoMap` - this command
+    + `CreateGeoMap` - this command
 * Add layer views groups with lists of layers, used to group layers in map legend:
-	+ [`AddGeoLayerViewGroupToGeoMap`](../AddGeoLayerViewGroupToGeoMap/AddGeoLayerViewGroupToGeoMap.md) - adds a group
-	+ [`AddGeoLayerViewToGeoMap`](../AddGeoLayerViewToGeoMap/AddGeoLayerViewToGeoMap.md) - adds a layer to map and group
-	+ Configure the symbol for each layer, using appropriate command:
-		- [`SetGeoLayerViewCategorizedSymbol`](../SetGeoLayerViewCategorizedSymbol/SetGeoLayerViewCategorizedSymbol.md) - categorized symbol
-		- [`SetGeoLayerViewGraduatedSymbol`](../SetGeoLayerViewGraduatedSymbol/SetGeoLayerViewGraduatedSymbol.md) - graduate symbol
-		- [`SetGeoLayerViewSingleSymbol`](../SetGeoLayerViewSingleSymbol/SetGeoLayerViewSingleSymbol.md) - single symbol
+    + [`AddGeoLayerViewGroupToGeoMap`](../AddGeoLayerViewGroupToGeoMap/AddGeoLayerViewGroupToGeoMap.md) - adds a group
+    + [`AddGeoLayerViewToGeoMap`](../AddGeoLayerViewToGeoMap/AddGeoLayerViewToGeoMap.md) - adds a layer to map and group
+    + Configure the symbol for each layer, using appropriate command:
+        - [`SetGeoLayerViewCategorizedSymbol`](../SetGeoLayerViewCategorizedSymbol/SetGeoLayerViewCategorizedSymbol.md) - categorized symbol
+        - [`SetGeoLayerViewGraduatedSymbol`](../SetGeoLayerViewGraduatedSymbol/SetGeoLayerViewGraduatedSymbol.md) - graduate symbol
+        - [`SetGeoLayerViewSingleSymbol`](../SetGeoLayerViewSingleSymbol/SetGeoLayerViewSingleSymbol.md) - single symbol
 * Create a GeoMapProject and add GeoMap(s) to it:
-	+ [`CreateGeoMapProject`](../CreateGeoMapProject/CreateGeoMapProject.md) - create a GeoMapProject
-	* [`AddGeoMapToGeoMapProject`](../AddGeoMapToGeoMapProject/AddGeoMapToGeoMapProject.md) - add a GeoMap to a GeoMapProject
-	* [`WriteGeoMapProjectToJSON`](../WriteGeoMapProjectToJSON/WriteGeoMapProjectToJSON.md) - save project for use with web application, etc.
+    + [`CreateGeoMapProject`](../CreateGeoMapProject/CreateGeoMapProject.md) - create a GeoMapProject
+    * [`AddGeoMapToGeoMapProject`](../AddGeoMapToGeoMapProject/AddGeoMapToGeoMapProject.md) - add a GeoMap to a GeoMapProject
+    * [`WriteGeoMapProjectToJSON`](../WriteGeoMapProjectToJSON/WriteGeoMapProjectToJSON.md) - save project for use with web application, etc.
 
 ## Command Editor ##
 

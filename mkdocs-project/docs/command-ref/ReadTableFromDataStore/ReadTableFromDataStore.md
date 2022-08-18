@@ -19,18 +19,18 @@ Selection criteria must be specified to indicate which data from the DataStore s
 One of the following three selection methods can be specified:
 
 1. **Specify a single database table or view to query**
-	* Specify a table or view within the DataStore database. 
-	* Use the `IncludeColumns` and the `ExcludeColumns` parameters to specify which columns within the database table/view to read.
-	* Use the `Top` parameter to limit the number of rows read from the DataStore table. 
+    * Specify a table or view within the DataStore database. 
+    * Use the `IncludeColumns` and the `ExcludeColumns` parameters to specify which columns within the database table/view to read.
+    * Use the `Top` parameter to limit the number of rows read from the DataStore table. 
 2. **Specify an SQL select statement**
-	* SQL must be valid for the database (syntax may vary based on database software).
-	* SQL syntax is not checked for validity and error messages from the database
-	may be difficult to interpret.
+    * SQL must be valid for the database (syntax may vary based on database software).
+    * SQL syntax is not checked for validity and error messages from the database
+      may be difficult to interpret.
 3. **Specify an SQL select statement in a file**
-	* Similar to the above option; however, the SQL statement is read from a file. 
-	* This is useful if the SQL statement is also used by other tools, is long, or contains special characters such as
-	double quotes that have meaning in command syntax.
-	* Complex SQL statements can be documented with comments in the file. 
+    * Similar to the above option; however, the SQL statement is read from a file. 
+    * This is useful if the SQL statement is also used by other tools, is long, or contains special characters such as
+      double quotes that have meaning in command syntax.
+    * Complex SQL statements can be documented with comments in the file. 
 
 ## Command Editor ##
 
@@ -65,9 +65,10 @@ Command Parameters
 ### Determining Which Columns to Read
 
 * The `IncludeColumns` parameter is always processed first. The`ExcludeColumns` parameter is always processed second. 
-	+ The `IncludeColumns` selects all of the DataStore's database table columns that follow the given patterns. By default (`*`) all of the database's table columns are read.
-	+ The `ExcludeColumns` removes all of the columns previously selected from the `IncludeColumns` parameter that follow the given patterns. 
-	By default, none of the *previously selected* columns are removed.
+    + The `IncludeColumns` selects all of the DataStore's database table columns that
+      follow the given patterns. By default (`*`) all of the database's table columns are read.
+    + The `ExcludeColumns` removes all of the columns previously selected from the `IncludeColumns` parameter that follow the given patterns. 
+      By default, none of the *previously selected* columns are removed.
 
 ## Examples ##
 
