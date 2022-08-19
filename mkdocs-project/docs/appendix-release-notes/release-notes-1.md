@@ -28,7 +28,8 @@
   command to use the GDAL `transform` algorithm, which ensures that format and CRS can be changed
 * ![new](new.png) [1.5.0] Add the [`ChangeGeoLayerGeometry`](../command-ref/ChangeGeoLayerGeometry/ChangeGeoLayerGeometry.md) command.
 * ![new](new.png) [1.5.0] Add the [`ChangeRasterGeoLayerCRS`](../command-ref/ChangeRasterGeoLayerCRS/ChangeRasterGeoLayerCRS.md) command.
-* ![new](new.png) [1.5.0] Add the [`FixGeoLayer`](../command-ref/FixGeoLayer/FixGeoLayer.md) command.
+* ![new](new.png) [1.5.0] Add the [`ExtractGeoLayer`](../command-ref/ExtractGeoLayer/ExtractGeoLayer.md) command to extract features from a layer using an intersection layer.
+* ![new](new.png) [1.5.0] Add the [`FixGeoLayer`](../command-ref/FixGeoLayer/FixGeoLayer.md) command to fix geometries.
 * ![new](new.png) [1.5.0] Add the [`RemoveGeoLayerFeatures`](../command-ref/RemoveGeoLayerFeatures/RemoveGeoLayerFeatures.md) command.
 * ![new](new.png) [1.5.0] Add the [`ReadGeoLayerFromKML`](../command-ref/ReadGeoLayerFromKML/ReadGeoLayerFromKML.md) command.
 * ![new](new.png) [1.5.0] Add the [`ReadGeoLayerFromKML`](../command-ref/ReadGeoLayerFromKML/ReadGeoLayerFromKML.md) command.
