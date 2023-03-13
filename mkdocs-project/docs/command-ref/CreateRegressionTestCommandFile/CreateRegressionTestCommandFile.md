@@ -1,11 +1,11 @@
 # GeoProcessor / Command / CreateRegressionTestCommandFile #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -17,7 +17,8 @@ The command creates a command file that includes a
 [`RunCommands`](../RunCommands/RunCommands.md) commands.
 A starting search folder is provided and all files that match the given pattern (by convention `test-*.gp`)
 are assumed to be command files that can be run to test the software.
-The resulting command file is a test suite comprised of all the individual tests and can be used
+
+The resulting command file (see the `OutputFile` parameter) is a test suite comprised of all the individual tests and can be used
 to verify software before release.
 The goal is to have all tests pass before software is released and not retain broken tests in the test repository.
 
@@ -58,17 +59,20 @@ Command Parameters
 | **Parameter**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** | **Default**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; |
 | --------------|-----------------|----------------- |
 | `SearchFolder`<br>**required** | The folder to search for regression test command files.  All subfolders will also be searched.  Can use `${Property}`. | None - must be specified. |
-| `OutputFile`<br>**required** | The property file to write, as an absolute path or relative to the command file, can use `${Property}`. | None - must be specified. |
 | `FilenamePattern` | Pattern to find GeoProcessor command files, using `*` wildcards. | `test-*.gp` |
+| `OutputFile`<br>**required** | The command file to write, which will contain [`RunCommands`](../RunCommands/RunCommands.md) commands for each test to run, and other supporting setup and end commands.  Can use `${Property}`. | None - must be specified. |
+| `SetupCommandFile` | A command file to insert into the front of the `OutputFile` to set up the tests. | |
+| `TestResultsFile`<br> | The name of the file to create containing test results. A relative path to the folder for `OutputFile` should be specified. The file will be used for the [`StartRegresionTestResultsReport(OutputFile=...)`](../StartRegressionTestResultsReport/StartRegressionTestResultsReport.md) command that is inserted in the command file that is created. A file with `nonum` in the name will also be created with spaces in the command test column, which allows comparison of results files to identify changes. | No output is created. |
+| `EndCommandFile` | An command file to insert at the end of the `OutputFile` to control output of test results. | |
 
 ## Examples ##
 
-* See the [Windows batch file used to generate tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/blob/master/test/suites/create/create-regression-test-command-file.gp).
+*   See the [GeoProcessor test suites](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/suites/).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* [`RunCommands`](../RunCommands/RunCommands.md) command
-* [`StartRegressionTestResultsReport`](../StartRegressionTestResultsReport/StartRegressionTestResultsReport.md) command
-* [`WriteCommandSummaryToFile`](../WriteCommandSummaryToFile/WriteCommandSummaryToFile.md) command
+*   [`RunCommands`](../RunCommands/RunCommands.md) command
+*   [`StartRegressionTestResultsReport`](../StartRegressionTestResultsReport/StartRegressionTestResultsReport.md) command
+*   [`WriteCommandSummaryToFile`](../WriteCommandSummaryToFile/WriteCommandSummaryToFile.md) command

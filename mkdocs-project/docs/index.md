@@ -1,16 +1,17 @@
 # GeoProcessor #
 
-This is the user documentation for the Open Water Foundation (OWF) GeoProcessor software.
+This is the user documentation for the Open Water Foundation (OWF) GeoProcessor software,
+which automates processing spatial data.
 
-* [Introduction](#introduction)
-* [Integration with InfoMapper Software](#integration-with-infomapper-software)
-* [About the Open Water Foundation](#about-the-open-water-foundation)
-* [How to Use this Documentation](#how-to-use-this-documentation)
-* [Downloads](#downloads)
-* [License](#license)
-* [Source Repository on GitHub](#source-repository-on-github)
+*   [Introduction](#introduction)
+*   [Integration with InfoMapper Software](#integration-with-infomapper-software)
+*   [About the Open Water Foundation](#about-the-open-water-foundation)
+*   [How to Use this Documentation](#how-to-use-this-documentation)
+*   [Downloads](#downloads)
+*   [License](#license)
+*   [Source Repository on GitHub](#source-repository-on-github)
 
-**This documentation has been updated for GeoProcessor 1.5.0.**
+**This documentation has been updated for GeoProcessor 1.6.0.**
 
 ---------------
 
@@ -18,19 +19,19 @@ This is the user documentation for the Open Water Foundation (OWF) GeoProcessor 
 
 The GeoProcessor software provides features that:
 
-* automate spatial data processing using a workflow command language with simple syntax
-* edit and run workflows, and display results
-* provide error handling and feedback
-* read, process, and write spatial data layers for various sources and formats
-* read, process, and write data tables for various formats
-* automate creation of map configurations, for use in other tools such as web applications
-* provide an integrated testing framework to validate the GeoProcessor software and workflows
+*   automate spatial data processing using a workflow command language with simple syntax
+*   edit and run workflows, and display results
+*   provide error handling and feedback
+*   read, process, and write spatial data layers for various sources and formats
+*   read, process, and write data tables for various formats
+*   automate creation of map configurations, for use in other tools such as web applications
+*   provide an integrated testing framework to validate the GeoProcessor software and workflows
 
 The GeoProcessor is similar in design to the
 TSTool (Time Series Tool) software,
 which  OWF has developed for the State of Colorado to automate time series processing.
-See the [OWF Software website](http://software.openwaterfoundation.org/) and the
-[OpenCDSS TSTool web page](http://opencdss.state.co.us/opencdss/tstool/).
+See the [OWF Software website](https://software.openwaterfoundation.org/) and the
+[OpenCDSS TSTool web page](https://opencdss.state.co.us/opencdss/tstool/).
 
 The following image illustrates the main interface for editing and running workflows,
 and visualizing results.
@@ -47,11 +48,11 @@ The GeoProcessor software is installed in parallel with the following
 geographic information system (GIS) software frameworks,
 which provide spatial data processing functionality via Python libraries:
 
-* free and open source [QGIS](https://qgis.org/en/site/) - **standalone QGIS the primary version for development**
-* commercial [ArcGIS Pro](https://pro.arcgis.com/en/pro-app/) - **ArcGIS Pro version has been prototyped**
+*   free and open source [QGIS](https://qgis.org/en/site/) - **standalone QGIS the primary version for development**
+*   commercial [ArcGIS Pro](https://pro.arcgis.com/en/pro-app/) - **ArcGIS Pro version has been prototyped**
 
 The GeoProcessor can be used to create web maps for the OWF InfoMapper software (see the
-[OWF Software website](http://software.openwaterfoundation.org/)).
+[OWF Software website](https://software.openwaterfoundation.org/)).
 
 The GeoProcessor is particularly useful when workflows need to be standardized as part
 of a business process or analysis effort.
@@ -67,7 +68,7 @@ Additional GeoProcessor product information can be found in the [Introduction](i
 ## Integration With InfoMapper Software ##
 
 One of the main uses of the GeoProcessor is to prepare map configuration files for the
-[InfoMapper software](http://software.openwaterfoundation.org/infomapper/latest/doc-user/),
+[InfoMapper software](https://software.openwaterfoundation.org/infomapper/latest/doc-user/),
 developed by the Open Water Foundation.
 The [GeoMapProject configuration file specification](appendix-geomapproject/geomapproject.md)
 has been developed in conjunction with GeoProcessor to streamline creation of web mapping applications
@@ -76,11 +77,11 @@ Where appropriate, the GeoProcessor documentation includes information relevant 
 
 ## About the Open Water Foundation ##
 
-The [Open Water Foundation](http://openwaterfoundation.org) is a nonprofit social enterprise that focuses
+The [Open Water Foundation](https://openwaterfoundation.org) is a nonprofit social enterprise that focuses
 on developing and supporting open source software for water resources, so that organizations can make better decisions about water.
 OWF also works to advance open data tools and implementation.
 
-See also the [Open Water Foundation website](http://openwaterfoundation.org).
+See also the [Open Water Foundation website](https://openwaterfoundation.org).
 
 ## How to Use this Documentation ##
 
@@ -100,19 +101,19 @@ Use the search feature to find documentation matching the search words.
 
 See also:
 
-* [Open Water Foundation / Learn website](http://learn.openwaterfoundation.org)
-* [Open Water Foundation / Learn QGIS](http://learn.openwaterfoundation.org/owf-learn-qgis/)
+*   [Open Water Foundation / Learn website](https://learn.openwaterfoundation.org)
+*   [Open Water Foundation / Learn QGIS](https://learn.openwaterfoundation.org/owf-learn-qgis/)
 
 ## Downloads ##
 
 The GeoProcessor software can be downloaded from:
 
-* [GeoProcessor download page](http://software.openwaterfoundation.org/geoprocessor/)
-* See also the [Open Water Foundation / sotftware](http://software.openwaterfoundation.org/)
+*   [GeoProcessor download page](https://software.openwaterfoundation.org/geoprocessor/)
+*   See also the [Open Water Foundation / sotftware](https://software.openwaterfoundation.org/)
 
 ## License ##
 
-The GeoProcessor sofware is licensed using GPL v3.
+The GeoProcessor software is licensed using GPL v3.
 
 The OWF GeoProcessor documentation is licensed under the
 [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0).
