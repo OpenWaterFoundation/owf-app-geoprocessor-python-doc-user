@@ -1,11 +1,11 @@
 # GeoProcessor / Command / FTPGet #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -53,12 +53,12 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/FTPGet).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/FTPGet).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* [`ListFiles`](../ListFiles/ListFiles.md) command
-* [`UnzipFile`](../UnzipFile/UnzipFile.md) command
-* [`WebGet`](../WebGet/WebGet.md) command
+*   [`ListFiles`](../ListFiles/ListFiles.md) command
+*   [`UnzipFile`](../UnzipFile/UnzipFile.md) command
+*   [`WebGet`](../WebGet/WebGet.md) command

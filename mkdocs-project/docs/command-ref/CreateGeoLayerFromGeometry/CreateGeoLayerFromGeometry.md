@@ -1,11 +1,11 @@
 # GeoProcessor / Command / CreateGeoLayerFromGeometry #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -13,16 +13,16 @@
 
 The `CreateGeoLayerFromGeometry` creates a new GeoLayer from input geometry data. 
 
-* This command is used to create a new GeoLayer on the fly.
-  For example, a bounding box can be created from coordinates.
-  The new GeoLayer can then be used to clip another GeoLayer to the desired bounding box.
-* The feature geometry is specified. 
-    + Can create a layer with one or more features.  
-    + Can create `POINT`, `LINE` or `POLYGON` geometry types. 
-    + Can use [`Well-Known Text`](https://en.wikipedia.org/wiki/Well-known_text),
-      [`Well-Known Binary`](https://en.wikipedia.org/wiki/Well-known_text#Well-known_binary) or
-      [`Bounding Box coordinates`](https://wiki.openstreetmap.org/wiki/Bounding_Box) to specify the geometry coordinates. 
-* The [coordinate reference system](https://en.wikipedia.org/wiki/Spatial_reference_system) is specified.
+*   This command is used to create a new GeoLayer on the fly.
+    For example, a bounding box can be created from coordinates.
+    The new GeoLayer can then be used to clip another GeoLayer to the desired bounding box.
+*   The feature geometry is specified. 
+    +   Can create a layer with one or more features.  
+    +   Can create `POINT`, `LINE` or `POLYGON` geometry types. 
+    +   Can use [`Well-Known Text`](https://en.wikipedia.org/wiki/Well-known_text),
+        [`Well-Known Binary`](https://en.wikipedia.org/wiki/Well-known_text#Well-known_binary) or
+        [`Bounding Box coordinates`](https://wiki.openstreetmap.org/wiki/Bounding_Box) to specify the geometry coordinates. 
+*   The [coordinate reference system](https://en.wikipedia.org/wiki/Spatial_reference_system) is specified.
 
 ## Command Editor ##
 
@@ -60,7 +60,7 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/CreateGeoLayerFromGeometry).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/CreateGeoLayerFromGeometry).
 
 ### Example 1: Create a Bounding Box GeoLayer - WGS84 ###
 

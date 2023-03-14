@@ -1,11 +1,11 @@
 # GeoProcessor / Command / ReadGeoLayerFromShapefile #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -46,7 +46,7 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ReadGeoLayerFromShapefile).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/ReadGeoLayerFromShapefile).
 
 **<p style="text-align: left;">
 ExampleFolder
@@ -99,5 +99,5 @@ After running the command, no GeoLayerIDs are registered within the GeoProcessor
 
 ## See Also ##
 
-* The GeoLayer is read using the [GDAL Shapefile driver](https://gdal.org/drivers/vector/shapefile.html#vector-shapefile).
-* [`WriteGeoLayerToShapefile`](../WriteGeoLayerToShapefile/WriteGeoLayerToShapefile.md) command
+*   The GeoLayer is read using the [GDAL Shapefile driver](https://gdal.org/drivers/vector/shapefile.html#vector-shapefile).
+*   [`WriteGeoLayerToShapefile`](../WriteGeoLayerToShapefile/WriteGeoLayerToShapefile.md) command

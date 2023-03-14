@@ -1,11 +1,11 @@
 # GeoProcessor / Command / WriteGeoLayerToDelimitedFile #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -14,11 +14,11 @@
 The `WriteGeoLayerToDelimitedFile` command writes a
 [GeoLayer](../../introduction/introduction.md#geolayer) to a [delimited file](https://en.wikipedia.org/wiki/Delimiter-separated_values).
 
-* Each attribute of the GeoLayer is retained in a separate column of the output file. 
-* The geometry of the GeoLayer is retained in one or more columns of the output file. 
-* The coordinate reference system can be specified. 
-* The geometry representation can be specified.
-* The delimiter can be specified.
+*   Each attribute of the GeoLayer is retained in a separate column of the output file. 
+*   The geometry of the GeoLayer is retained in one or more columns of the output file. 
+*   The coordinate reference system can be specified. 
+*   The geometry representation can be specified.
+*   The delimiter can be specified.
 
 ## Command Editor ##
 
@@ -53,7 +53,7 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/WriteGeoLayerToDelimitedFile).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/WriteGeoLayerToDelimitedFile).
 
 The following GeoLayer data are used in the examples. 
 The examples assume that the GeoLayers have already been read into the GeoProcessor from a file.
@@ -64,8 +64,8 @@ Example GeoLayer Data
 
 |GeoLayerID|Coordinate Reference System (CRS)|Geometry Type|
 | ---- | ----| ---|
-| ExampleGeoLayer1  | EPGS:4326	(WGS84) |`POINTS`|
-| ExampleGeoLayer2	| EPGS:4326	(WGS84) |`POLYGON`|
+| ExampleGeoLayer1 | EPGS:4326 (WGS84) |`POINTS`|
+| ExampleGeoLayer2 | EPGS:4326 (WGS84) |`POLYGON`|
 
 **<p style="text-align: left;">
 ExampleGeoLayer1 Attribute Table
@@ -101,8 +101,8 @@ ExampleOutputFolder
 
 |Filename|CRS|Delimiter|
 |------|---|---|
-|ExampleFile1_comma.csv|EPSG:4326 (WGS84)|`,`|
-|ExampleFile1_semicolon.csv|EPSG:4326 (WGS84)|`;`|
+|`ExampleFile1_comma.csv`|`EPSG:4326 (WGS84)`|`,`|
+|`ExampleFile1_semicolon.csv`|`EPSG:4326 (WGS84)`|`;`|
 
 ---
 **ExampleFile1_comma.csv File Content**
@@ -128,14 +128,13 @@ WriteGeoLayerToDelimitedFile(GeoLayerID = "ExampleGeoLayer2", OutputFile = "Exam
 ```
 WKT, LakeName, AreaAcre
 "POLYGON ((-1.54922894424674 0.143534994068802,-1.06287069988138 0.297746144721234,-0.99644128113879 -0.176749703440095,-1.41874258600237 -0.271648873072361,-1.41874258600237 -0.271648873072361,-1.54922894424674 0.143534994068802))", Arlington, 1939
-
 ```
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* The GeoLayer is written using the [`QGIS QgsVectorFileWriter Class`](https://qgis.org/api/classQgsVectorFileWriter.html).
-  See [documentation](https://docs.qgis.org/2.14/en/docs/pyqgis_developer_cookbook/vector.html#writing-vector-layers)
-  for examples on utilizing the `QGSVectorFileWriter` class in the PyQGIS environment.
-* [`ReadGeoLayerFromDelimitedFile`](../ReadGeoLayerFromDelimitedFile/ReadGeoLayerFromDelimitedFile.md)
+*   The GeoLayer is written using the [`QGIS QgsVectorFileWriter Class`](https://qgis.org/api/classQgsVectorFileWriter.html).
+    See [documentation](https://docs.qgis.org/2.14/en/docs/pyqgis_developer_cookbook/vector.html#writing-vector-layers)
+    for examples on utilizing the `QGSVectorFileWriter` class in the PyQGIS environment.
+*   [`ReadGeoLayerFromDelimitedFile`](../ReadGeoLayerFromDelimitedFile/ReadGeoLayerFromDelimitedFile.md)

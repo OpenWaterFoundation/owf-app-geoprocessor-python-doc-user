@@ -1,11 +1,11 @@
 # GeoProcessor / Command / IntersectGeoLayer #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -14,13 +14,13 @@
 The `IntersectGeoLayer` command extracts the overlapping portions of features in the input GeoLayer and the intersect GeoLayer.
 Features from the input GeoLayer are assigned the attributes of the overlapping features from both the input GeoLayer and the intersect GeoLayer. 
 
-* The output intersected GeoLayer retains the geometry type of the input GeoLayer.
-  For example, if the input GeoLayer is a `POINT` and the intersect GeoLayer is a `POLYGON`, the output GeoLayer will be a `POINT`. 
-* Features from the input GeoLayer that intersect with the intersect GeoLayer are
-  retained in the output GeoLayer. For example, the points within a polygon.
-* Features from the input GeoLayer that intersect multiple features of the intersect GeoLayer are clipped by the intersect features.
-  Consequently, the output will have 2+ features that correspond to parts of the original input feature.
-* Only GeoLayers with certain geometry type can be intersected. See the table below. 
+*   The output intersected GeoLayer retains the geometry type of the input GeoLayer.
+    For example, if the input GeoLayer is a `POINT` and the intersect GeoLayer is a `POLYGON`, the output GeoLayer will be a `POINT`. 
+*   Features from the input GeoLayer that intersect with the intersect GeoLayer are
+    retained in the output GeoLayer. For example, the points within a polygon.
+*   Features from the input GeoLayer that intersect multiple features of the intersect GeoLayer are clipped by the intersect features.
+    Consequently, the output will have 2+ features that correspond to parts of the original input feature.
+*   Only GeoLayers with certain geometry type can be intersected. See the table below. 
 
 | |The input GeoLayer geometry is <br>`POINT`|The input GeoLayer geometry is <br>`LINE`|The input GeoLayer geometry is <br>`POLGON`|
 |:-:|:-:|:-:|:-:|
@@ -62,15 +62,15 @@ Command Parameters
 
 ### Determining Which Attributes to Copy
 
-* The `IncludeIntersectAttributes` parameter is always processed first. The`ExcludeIntersectAttributes` parameter is always processed second. 
-    + The `IncludeIntersectAttributes` selects all of the GeoLayer's attributes that follow the given patterns.
-      By default (`*`) all of the GeoLayer's attributes are included. 
-    + The `ExcludeIntersectAttributes` removes all of the attributes previously
-      selected from the `IncludeIntersectAttributes` parameter that follow the given patterns. 
+*   The `IncludeIntersectAttributes` parameter is always processed first. The`ExcludeIntersectAttributes` parameter is always processed second. 
+    +   The `IncludeIntersectAttributes` selects all of the GeoLayer's attributes that follow the given patterns.
+        By default (`*`) all of the GeoLayer's attributes are included. 
+    +   The `ExcludeIntersectAttributes` removes all of the attributes previously
+        selected from the `IncludeIntersectAttributes` parameter that follow the given patterns. 
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/IntersectGeoLayer).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/IntersectGeoLayer).
 
 The following example GeoLayer data is from the automated tests.
 The examples assume that the GeoLayers have already been read into
@@ -137,4 +137,4 @@ After running the command, the following GeoLayer IDs are registered within the 
 
 ## See Also ##
 
-* This command uses the QGIS [`qgis:intersection`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectoroverlay.html#intersection) processing algorithm
+*   This command uses the QGIS [`qgis:intersection`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectoroverlay.html#intersection) processing algorithm

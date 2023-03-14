@@ -1,11 +1,11 @@
 # GeoProcessor / Command / If #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -26,14 +26,14 @@ specified with `${Property}` that
 evaluate to primitive types. The operator is one of the following (more functionality will be added in the
 future). For Booleans, False is less than True. For strings, A is less than Z, etc.
 
-* `<`
-* `<=`
-* `>`
-* `>=`
-* `==` (use this to test equality – do not use a single equal sign)
-* `!=`
-* `contains` (only for string comparison)
-* `!contains` (only for string comparison)
+*   `<`
+*   `<=`
+*   `>`
+*   `>=`
+*   `==` (use this to test equality – do not use a single equal sign)
+*   `!=`
+*   `contains` (only for string comparison)
+*   `!contains` (only for string comparison)
 
 All nested `If` commands must evaluate to true to execute the commands within the deepest level of
 nesting. Some commands set a property that
@@ -45,9 +45,9 @@ the result of evaluating an `If` block.
 
 Future enhancements to the `If` command may include:
 
-* Test whether a property is defined (or not).
-* Test whether a GeoLayerID is available.
-* Compare GeoLayer properties with other properties and values.
+*   Test whether a property is defined (or not).
+*   Test whether a GeoLayerID is available.
+*   Compare GeoLayer properties with other properties and values.
 
 ## Command Editor ##
 
@@ -80,7 +80,7 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/If).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/If).
 
 ### Example to Check Number Against Property ###
 
@@ -96,5 +96,5 @@ EndIf(Name="ExampleIf")
 
 ## See Also ##
 
-* [`EndIf`](../EndIf/EndIf.md) command
-* [`SetProperty`](../SetProperty/SetProperty.md) command
+*   [`EndIf`](../EndIf/EndIf.md) command
+*   [`SetProperty`](../SetProperty/SetProperty.md) command

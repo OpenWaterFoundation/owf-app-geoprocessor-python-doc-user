@@ -1,11 +1,11 @@
 # GeoProcessor / Command / WriteGeoLayerToShapefile #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -14,8 +14,8 @@
 The `WriteGeoLayerToShapefile` command writes a [GeoLayer](../../introduction/introduction.md#geolayer)
 to a file in [Esri Shapefile format](../../spatial-data-format-ref/EsriShapefile/EsriShapefile.md).
 
-* The attributes of the GeoLayer are retained within the output shapefile. 
-* The coordinate reference system can be specified. 
+*   The attributes of the GeoLayer are retained within the output shapefile. 
+*   The coordinate reference system can be specified. 
 
 ## Command Editor ##
 
@@ -49,7 +49,7 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/WriteGeoLayerToShapefile).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/WriteGeoLayerToShapefile).
 
 The following GeoLayer data are used in the examples.
 The examples assume that the `ExampleGeoLayer1` and `ExampleGeoLayer2` GeoLayers have already been read into
@@ -61,8 +61,8 @@ Example GeoLayer Data
 
 |GeoLayerID|Coordinate Reference System (CRS)|
 | ---- | ----|
-| ExampleGeoLayer1  | EPGS:4326	(WGS84) |
-| ExampleGeoLayer2	| EPSG:26913 (NAD83 UTM Zone 13N) |
+| ExampleGeoLayer1 | EPGS:4326 (WGS84) |
+| ExampleGeoLayer2 | EPSG:26913 (NAD83 UTM Zone 13N) |
 
 ### Example 1: Write a GeoLayer to a Shapefile ###
 
@@ -123,5 +123,5 @@ ExampleOutputFolder
 
 ## See Also ##
 
-* The GeoLayer is written using the [GDAL KML driver](https://gdal.org/drivers/vector/shapefile.html#vector-shapefile)
-* [`ReadGeoLayerFromShapefile`](../ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile.md) command
+*   The GeoLayer is written using the [GDAL KML driver](https://gdal.org/drivers/vector/shapefile.html#vector-shapefile)
+*   [`ReadGeoLayerFromShapefile`](../ReadGeoLayerFromShapefile/ReadGeoLayerFromShapefile.md) command

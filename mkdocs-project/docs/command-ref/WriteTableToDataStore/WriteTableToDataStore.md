@@ -1,11 +1,11 @@
 # GeoProcessor / Command / WriteTableToDataStore #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -20,18 +20,18 @@ Column mapping is available so that the Table column names do not need to match 
 
 **General constraints are as follows:**
 
-* the table being written must be writeable by the user specified for the database connection 
-* data types for table columns must be compatible with database data columns:
-    + internally an SQL statement is created in which data values are formatted as per the data type (e.g., strings are quoted);
-      consequently column types must be appropriate to generate correct formatting
-    + the full precision of floating point numbers is passed to the database 
-        - formatting for display will not apply to values written to the database
-* the specified table columns are written (all are written by default)
-* primary keys in the database table do not need to be specified 
-    + their values will be assigned automatically
-    + an error is thrown when specifying a primary key value 
-* table columns that correspond to related tables in the datastore table need to be mapped using the `DataStoreRelatedColumnsMap` command parameter
-    + **this is NOT currently enabled**
+*   the table being written must be writeable by the user specified for the database connection 
+*   data types for table columns must be compatible with database data columns:
+    +   internally an SQL statement is created in which data values are formatted as per the data type (e.g., strings are quoted);
+        consequently column types must be appropriate to generate correct formatting
+    +   the full precision of floating point numbers is passed to the database 
+        -   formatting for display will not apply to values written to the database
+*   the specified table columns are written (all are written by default)
+*   primary keys in the database table do not need to be specified 
+    +   their values will be assigned automatically
+    +   an error is thrown when specifying a primary key value 
+*   table columns that correspond to related tables in the datastore table need to be mapped using the `DataStoreRelatedColumnsMap` command parameter
+    +   **this is NOT currently enabled**
 
 ## Command Editor ##
 
@@ -63,21 +63,21 @@ Command Parameters
 
 ### Determining Which Columns to Process
 
-* The `IncludeColumns` parameter is always processed first. The`ExcludeColumns` parameter is always processed second. 
-    + The `IncludeColumns` selects all of the Table's columns that follow the given patterns. By default (`*`) all of the Table's columns are included. 
-    + The `ExcludeColumns` removes all of the columns previously selected from the `IncludeColumns` parameter that follow the given patterns. 
+*   The `IncludeColumns` parameter is always processed first. The`ExcludeColumns` parameter is always processed second. 
+    +   The `IncludeColumns` selects all of the Table's columns that follow the given patterns. By default (`*`) all of the Table's columns are included. 
+    +   The `ExcludeColumns` removes all of the columns previously selected from the `IncludeColumns` parameter that follow the given patterns. 
 
 ## Examples ##
 
 **The automated tests for this command have not yet been created.**
 
-** Currently in development queue.**
+**Currently in development queue.**
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/WriteTableToDataStore).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/WriteTableToDataStore).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* [`OpenDataStore`](../OpenDataStore/OpenDataStore.md) command
-* [`ReadTableFromDataStore`](../ReadTableFromDataStore/ReadTableFromDataStore.md) command
+*   [`OpenDataStore`](../OpenDataStore/OpenDataStore.md) command
+*   [`ReadTableFromDataStore`](../ReadTableFromDataStore/ReadTableFromDataStore.md) command

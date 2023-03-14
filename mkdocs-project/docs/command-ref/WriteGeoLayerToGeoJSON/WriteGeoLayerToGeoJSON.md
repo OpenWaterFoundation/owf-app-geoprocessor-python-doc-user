@@ -1,11 +1,11 @@
 # GeoProcessor / Command / WriteGeoLayerToGeoJSON #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -16,9 +16,9 @@ to a file in [GeoJSON format](../../spatial-data-format-ref/GeoJSON/GeoJSON.md),
 using [RFC 7946 specification](https://tools.ietf.org/html/rfc7946).
 The default format is minimalistic and is used with GeoProcessor automated tests.
 
-* The attributes of the GeoLayer are output as properties
-* The coordinate reference system defaults to `EPSG:4326` (WGS84)
-* The coordinate maximum precision can be specified (extra zeros will be omitted)
+*   The attributes of the GeoLayer are output as properties
+*   The coordinate reference system defaults to `EPSG:4326` (WGS84)
+*   The coordinate maximum precision can be specified (extra zeros will be omitted)
 
 In the future additional parameters will be added to further control output.
 
@@ -54,7 +54,7 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/WriteGeoLayerToGeoJSON).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/WriteGeoLayerToGeoJSON).
 
 The following GeoLayer data are used in the examples. 
 The examples assume that the `ExampleGeoLayer1` and `ExampleGeoLayer2` GeoLayers have already been
@@ -83,17 +83,29 @@ ExampleOutputFolder
 
 |Filename|File Type|CRS|Coordinate Precision|
 |------|---|---|---|
-|ExampleFile1.geojson|GeoJSON|EPSG:4326	(WGS84)|5|
+|ExampleFile1.geojson|GeoJSON|EPSG:4326 (WGS84)|5|
 |ExampleFile2.geojson|GeoJSON|EPSG:26913 (NAD83 UTM Zone 13N)|5|
 
 **ExampleFile1_01.geojson File Content**
 
 ```
 {
-"type":"FeatureCollection",
-"features":[
-{"type": "Feature", "properties": {"id":1},
-"geometry":{"type": "Point", "coordinates": [ -1.3, 0.5]}}]
+  "type":"FeatureCollection",
+  "features":[
+    {
+      "type": "Feature",
+      "properties": {
+        "id":1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.3,
+          0.5
+         ]
+       }
+     }
+  ]
 }
 ```
 
@@ -102,10 +114,22 @@ ExampleOutputFolder
 
 ```
 {
-"type":"FeatureCollection",
-"features":[
-{"type": "Feature", "properties": {"id":1},
-"geometry":{"type": "Point", "coordinates": [ -1.33333, 0.52194]}}]
+  "type":"FeatureCollection",
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "id":1
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.33333,
+          0.52194
+        ]
+      }
+    }
+  ]
 }
 ```
 
@@ -113,5 +137,5 @@ ExampleOutputFolder
 
 ## See Also ##
 
-* The GeoLayer is written using the [GDAL GeoJSON driver](https://gdal.org/drivers/vector/geojson.html)
-* [`ReadGeoLayerFromGeoJSON`](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) command
+*   The GeoLayer is written using the [GDAL GeoJSON driver](https://gdal.org/drivers/vector/geojson.html)
+*   [`ReadGeoLayerFromGeoJSON`](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) command

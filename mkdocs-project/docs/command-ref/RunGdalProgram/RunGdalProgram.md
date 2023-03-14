@@ -1,11 +1,11 @@
 # GeoProcessor / Command / RunGdalProgram #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -111,11 +111,11 @@ Command Parameters
 
 ## Examples ##
 
-* See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/RunGdalProgram).
+*   See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/RunGdalProgram).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* [`RunOgrProgram`](../RunOgrProgram/RunOgrProgram.md) command
-* [`RunProgram`](../RunProgram/RunProgram.md) command
+*   [`RunOgrProgram`](../RunOgrProgram/RunOgrProgram.md) command
+*   [`RunProgram`](../RunProgram/RunProgram.md) command

@@ -1,11 +1,11 @@
 # GeoProcessor / Command / SetProperty #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -17,9 +17,9 @@ parameters, for example to specify filenames more dynamically or use with `If` c
 command should not be confused with the `SetGeoLayerProperty` command, which sets a
 property on specific GeoLayer. The following functionality is provided:
 
-* Set a property to a specified value, where the property can be a Python primitive type: `bool`, `float`,
-`int`, or `str`.
-* Set a property as a list of `str`.
+*   Set a property to a specified value, where the property can be a Python primitive type: `bool`, `float`,
+    `int`, or `str`.
+*   Set a property as a list of `str`.
 
 ## Command Editor ##
 
@@ -53,11 +53,11 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/SetProperty).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/SetProperty).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* [`SetPropertyFromGeoLayer`](../SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md) command
-* [`WritePropertiesToFile`](../WritePropertiesToFile/WritePropertiesToFile.md) command
+*   [`SetPropertyFromGeoLayer`](../SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md) command
+*   [`WritePropertiesToFile`](../WritePropertiesToFile/WritePropertiesToFile.md) command

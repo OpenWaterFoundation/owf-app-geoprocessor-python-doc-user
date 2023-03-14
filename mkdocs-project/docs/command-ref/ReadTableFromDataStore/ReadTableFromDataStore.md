@@ -1,11 +1,11 @@
 # GeoProcessor / Command / ReadTableFromDataStore #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -18,19 +18,19 @@ Support for web service datastores may be added in the future.
 Selection criteria must be specified to indicate which data from the DataStore should be read into the Table. 
 One of the following three selection methods can be specified:
 
-1. **Specify a single database table or view to query**
-    * Specify a table or view within the DataStore database. 
-    * Use the `IncludeColumns` and the `ExcludeColumns` parameters to specify which columns within the database table/view to read.
-    * Use the `Top` parameter to limit the number of rows read from the DataStore table. 
-2. **Specify an SQL select statement**
-    * SQL must be valid for the database (syntax may vary based on database software).
-    * SQL syntax is not checked for validity and error messages from the database
-      may be difficult to interpret.
-3. **Specify an SQL select statement in a file**
-    * Similar to the above option; however, the SQL statement is read from a file. 
-    * This is useful if the SQL statement is also used by other tools, is long, or contains special characters such as
-      double quotes that have meaning in command syntax.
-    * Complex SQL statements can be documented with comments in the file. 
+1.  **Specify a single database table or view to query**
+    *   Specify a table or view within the DataStore database. 
+    *   Use the `IncludeColumns` and the `ExcludeColumns` parameters to specify which columns within the database table/view to read.
+    *   Use the `Top` parameter to limit the number of rows read from the DataStore table. 
+2.  **Specify an SQL select statement**
+    *   SQL must be valid for the database (syntax may vary based on database software).
+    *   SQL syntax is not checked for validity and error messages from the database
+        may be difficult to interpret.
+3.  **Specify an SQL select statement in a file**
+    *   Similar to the above option; however, the SQL statement is read from a file. 
+    *   This is useful if the SQL statement is also used by other tools, is long, or contains special characters such as
+        double quotes that have meaning in command syntax.
+    *   Complex SQL statements can be documented with comments in the file. 
 
 ## Command Editor ##
 
@@ -64,15 +64,15 @@ Command Parameters
 
 ### Determining Which Columns to Read
 
-* The `IncludeColumns` parameter is always processed first. The`ExcludeColumns` parameter is always processed second. 
-    + The `IncludeColumns` selects all of the DataStore's database table columns that
-      follow the given patterns. By default (`*`) all of the database's table columns are read.
-    + The `ExcludeColumns` removes all of the columns previously selected from the `IncludeColumns` parameter that follow the given patterns. 
-      By default, none of the *previously selected* columns are removed.
+*   The `IncludeColumns` parameter is always processed first. The`ExcludeColumns` parameter is always processed second. 
+    +   The `IncludeColumns` selects all of the DataStore's database table columns that
+        follow the given patterns. By default (`*`) all of the database's table columns are read.
+    +   The `ExcludeColumns` removes all of the columns previously selected from the `IncludeColumns` parameter that follow the given patterns. 
+        By default, none of the *previously selected* columns are removed.
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ReadTableFromDataStore).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/ReadTableFromDataStore).
 
 **The automated tests for this command have not yet been created.**
 
@@ -82,5 +82,5 @@ See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoproc
 
 ## See Also ##
 
-* [`OpenDataStore`](../OpenDataStore/OpenDataStore.md) command
-* [`WriteTableToDataStore`](../WriteTableToDataStore/WriteTableToDataStore.md) command
+*   [`OpenDataStore`](../OpenDataStore/OpenDataStore.md) command
+*   [`WriteTableToDataStore`](../WriteTableToDataStore/WriteTableToDataStore.md) command

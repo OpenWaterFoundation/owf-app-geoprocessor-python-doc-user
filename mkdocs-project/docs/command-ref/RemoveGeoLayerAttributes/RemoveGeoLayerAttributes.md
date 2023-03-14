@@ -1,11 +1,11 @@
 # GeoProcessor / Command / RemoveGeoLayerAttributes #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -43,7 +43,7 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/RemoveGeoLayerAttributes).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/RemoveGeoLayerAttributes).
 
 The following GeoLayer data is used in the example. 
 The example assumes that the `ExampleGeoLayer` GeoLayer has already been read into the
@@ -85,7 +85,7 @@ After running the command, the ExampleGeoLayer has the following attribute table
 
 ## See Also ##
 
-* GeoLayer attributes are removed using the [`QGIS QGSVectorDataProvider Class`](https://qgis.org/api/classQgsVectorDataProvider.html).
-  See [documentation](https://docs.qgis.org/latest/en/docs/pyqgis_developer_cookbook/vector.html#adding-and-removing-fields)
-  for examples on utilizing the `QgsVectorDataProvider` class in the PyQGIS environment.
-* [`AddGeoLayerAttribute`](../AddGeoLayerAttribute/AddGeoLayerAttribute.md) command
+*   GeoLayer attributes are removed using the [`QGIS QGSVectorDataProvider Class`](https://qgis.org/api/classQgsVectorDataProvider.html).
+    See [documentation](https://docs.qgis.org/latest/en/docs/pyqgis_developer_cookbook/vector.html#adding-and-removing-fields)
+    for examples on utilizing the `QgsVectorDataProvider` class in the PyQGIS environment.
+*   [`AddGeoLayerAttribute`](../AddGeoLayerAttribute/AddGeoLayerAttribute.md) command

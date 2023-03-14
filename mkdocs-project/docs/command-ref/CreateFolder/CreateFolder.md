@@ -1,11 +1,11 @@
 # GeoProcessor / Command / CreateFolder #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -45,11 +45,11 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/CreateFolder).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/CreateFolder).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* [CopyFile](../CopyFile/CopyFile.md) command
-* [RemoveFile](../RemoveFile/RemoveFile.md) command
+*   [CopyFile](../CopyFile/CopyFile.md) command
+*   [RemoveFile](../RemoveFile/RemoveFile.md) command

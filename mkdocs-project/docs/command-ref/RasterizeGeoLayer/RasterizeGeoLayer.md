@@ -1,11 +1,11 @@
 # GeoProcessor / Command / RasterizeGeoLayer #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -22,13 +22,13 @@ The rasterize output file is read as the raster GeoLayer if the `GeoLayerID` par
 
 The rasterization occurs using one of the following approaches:
 
-1. `RasterUnits=GeoUnits`:
-    * output units will be the units of the input vector layer, for example degrees if geographic coordinates
-    * specify `CellWidth` and `CellHeight` parameters as the cell dimensions,
-      where the values will be in the input layer's geographic units (e.g., degrees)
-2. `RasterUnits=Pixel`:
-    * output units will be pixels, such as for an image
-    * specify `RasterWidth` and `RasterHeight` parameters as the total width and height of the image, in pixels
+1.  `RasterUnits=GeoUnits`:
+    *   output units will be the units of the input vector layer, for example degrees if geographic coordinates
+    *   specify `CellWidth` and `CellHeight` parameters as the cell dimensions,
+        where the values will be in the input layer's geographic units (e.g., degrees)
+2.  `RasterUnits=Pixel`:
+    *   output units will be pixels, such as for an image
+    *   specify `RasterWidth` and `RasterHeight` parameters as the total width and height of the image, in pixels
 
 The underlying software may retain a lock on the file.
 The `RasterizeGeoLayer` command attempts to remove the output file before running (to ensure that output is current)
@@ -95,11 +95,11 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/RasterizeGeoLayer).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/RasterizeGeoLayer).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* This command uses the QGIS [`gdal:rasterize`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/gdal/vectorconversion.html#rasterize-vector-to-raster) processing algorithm
-* [`ReadRasterGeoLayerFromFile`](../ReadRasterGeoLayerFromFile/ReadRasterGeoLayerFromFile.md) command
+*  This command uses the QGIS [`gdal:rasterize`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/gdal/vectorconversion.html#rasterize-vector-to-raster) processing algorithm
+*  [`ReadRasterGeoLayerFromFile`](../ReadRasterGeoLayerFromFile/ReadRasterGeoLayerFromFile.md) command

@@ -1,11 +1,11 @@
 # GeoProcessor / Command / ReadGeoLayersFromFGDB #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -80,7 +80,7 @@ ExampleFileGDB.gdb
 
 ### Example 1: Read All Feature Classes from a File Geodatabase ###
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ReadGeoLayersFromFGDB).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/ReadGeoLayersFromFGDB).
 
 ```
 ReadGeoLayersFromFGDB(InputFolder="ExampleFolder/ExampleFileGDB.gdb")
@@ -104,9 +104,9 @@ After running the command, the following GeoLayer IDs are registered within the 
 
 |Registered GeoLayer IDs|
 |------|
-|StateData_ExampleFeatureClass1|
-|StateData_ExampleFeatureClass2|
-|StateData_ExampleFeatureClass3|
+|`StateData_ExampleFeatureClass1`|
+|`StateData_ExampleFeatureClass2`|
+|`StateData_ExampleFeatureClass3`|
 
 ### Example 3: Read a Subset of Feature Classes From a File Geodatabase ###
 
@@ -126,4 +126,4 @@ because the `Subset_Pattern` parameter only includes feature classes that end in
 
 ## See Also ##
 
-* The GeoLayers are read using the [GDAL ESRI File Geodatabase (OpenFileGDB) driver`](https://gdal.org/drivers/vector/openfilegdb.html#vector-openfilegdb)
+*   The GeoLayers are read using the [GDAL ESRI File Geodatabase (OpenFileGDB) driver`](https://gdal.org/drivers/vector/openfilegdb.html#vector-openfilegdb)

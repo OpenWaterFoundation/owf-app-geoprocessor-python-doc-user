@@ -15,6 +15,7 @@
 **Feature release including update from QGIS 3.10 to 3.22.16 LTR.**
 
 *   This version is being developed using QGIS 3.22.16 LTR and will be released when issues are resolved.
+*   Changed the GitHub default branch to `main` and updated command example links accordingly.
 *   ![bug](bug.png) [1.6.0] The visual diff features used in ***View / Command File Diff*** and the
     [`CompareFiles`](../command-ref/CompareFiles/CompareFiles.md) command have been updated to
     search for KDiff3 in `C:\Program Files\Kdiff3\kdiff3.exe` and
@@ -34,12 +35,12 @@
 *   ![change](change.png) [1.6.0] Fix so that when a new command file is opened:
     +   The progress bars in the lower right of the main interface are cleared.
     +   Status messages shown in the lower left of the main interface are now accurate.
-+   Update the [`CreateRegressionTestCommandFile`](../command-ref/CreateRegressionTestCommandFile/CreateRegressionTestCommandFile.md) command:
++   ![change](change.png) [1.6.0] Update the [`CreateRegressionTestCommandFile`](../command-ref/CreateRegressionTestCommandFile/CreateRegressionTestCommandFile.md) command:
     +   Add the `SetupCommandFile`, `EndCommandFile`, and `TestResultsFile` command parameters to provide more
         control over the workflow.
     +   An output file `nonum` in the name will be automatically created without test numbers,
         to allow comparison of different test results output files.
-+   Update the [`StartRegressionTestResultsReport`](../command-ref/StartRegressionTestResultsReport/StartRegressionTestResultsReport.md) command:
++   ![change](change.png) [1.6.0] Update the [`StartRegressionTestResultsReport`](../command-ref/StartRegressionTestResultsReport/StartRegressionTestResultsReport.md) command:
     +   After creating the normal report text file, a file with `nonum` in the name is created
         where the test numbers are replaced with spaces, to facilitate comparing one test run to a previous run.
 

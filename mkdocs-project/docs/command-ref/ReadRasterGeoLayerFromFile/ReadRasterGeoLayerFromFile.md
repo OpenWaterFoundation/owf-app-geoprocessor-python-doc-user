@@ -1,11 +1,11 @@
 # GeoProcessor / Command / ReadRasterGeoLayerFromFile #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -14,7 +14,6 @@
 The `ReadRasterGeoLayerFromFile` command reads a raster [GeoLayer](../../introduction/introduction.md#geolayer)
 from a raster file.
 The file extension indicates the file format, for example `tif` for GeoTiff.
-
 
 ## Command Editor ##
 
@@ -50,11 +49,11 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ReadRasterGeoLayerFromFile).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/ReadRasterGeoLayerFromFile).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* GeoLayers are read using the [GDAL driver](https://gdal.org/drivers/raster/index.html) for the file extension.
-* [`WriteRasterGeoLayerToFile`](../WriteRasterGeoLayerToFile/WriteRasterGeoLayerToFile.md) command
+*   GeoLayers are read using the [GDAL driver](https://gdal.org/drivers/raster/index.html) for the file extension.
+*   [`WriteRasterGeoLayerToFile`](../WriteRasterGeoLayerToFile/WriteRasterGeoLayerToFile.md) command

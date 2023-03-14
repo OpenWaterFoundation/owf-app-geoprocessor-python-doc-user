@@ -1,11 +1,11 @@
 # GeoProcessor / Command / Blank #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -31,10 +31,10 @@ Blank lines in command files are converted to `Blank` commands.
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/Blank).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/Blank).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* [UnknownCommand](../UnknownCommand/UnknownCommand.md) command - unknown commands that are not empty lines
+*   [UnknownCommand](../UnknownCommand/UnknownCommand.md) command - unknown commands that are not empty lines

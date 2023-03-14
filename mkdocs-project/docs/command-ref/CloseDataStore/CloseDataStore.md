@@ -1,11 +1,11 @@
 # GeoProcessor / Command / CloseDataStore #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -15,9 +15,9 @@ The `CloseDataStore` command closes a [DataStore's](../../introduction/introduct
 Closing the connection will cause subsequent interactions with the datastore's database to fail. 
 This command can be used to:
 
-* reuse a datastore ID within a workflow
-* simulate dropped database connections 
-  (for example when the GeoProcessor does not read from or write to database for a period due to user inaction).
+*   reuse a datastore ID within a workflow
+*   simulate dropped database connections 
+    (for example when the GeoProcessor does not read from or write to database for a period due to user inaction).
 
 Closing a datastore frees the underlying database connection resources for the datastore but keeps the
 instance of the datastore for tracking purposes.
@@ -50,12 +50,12 @@ Command Parameters
 
 **The automated tests for this command have not yet been created.**
 
-** Currently in development queue.**
+**Currently in development queue.**
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/CloseDataStore).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/CloseDataStore).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* [`OpenDataStore`](../OpenDataStore/OpenDataStore.md) command
+*   [`OpenDataStore`](../OpenDataStore/OpenDataStore.md) command

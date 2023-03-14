@@ -1,11 +1,11 @@
 # GeoProcessor / Command / WriteTableToExcel #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -13,12 +13,12 @@
 
 The `WriteTableToExcel` command writes a [Table](../../introduction/introduction.md#table) to an Excel file. 
 
-* The Table is written as a worksheet in an Excel workbook file. 
-* Can write to a new Excel workbook file or to an existing Excel workbook file. 
-* An Excel worksheet will be overwritten if the `OutputWorksheet` parameter value is the same as an existing worksheet name. 
-* Can specify which Table columns to write to the output Excel file. 
-* Can specify whether to include or exclude the Table's index column from the output Excel file.
-* Can write to `.xlsx` or `.xls` file format. 
+*   The Table is written as a worksheet in an Excel workbook file. 
+*   Can write to a new Excel workbook file or to an existing Excel workbook file. 
+*   An Excel worksheet will be overwritten if the `OutputWorksheet` parameter value is the same as an existing worksheet name. 
+*   Can specify which Table columns to write to the output Excel file. 
+*   Can specify whether to include or exclude the Table's index column from the output Excel file.
+*   Can write to `.xlsx` or `.xls` file format. 
 
 ## Command Editor ##
 
@@ -54,13 +54,13 @@ Command Parameters
 
 ### Determining Which Columns to Write
 
-* The `ColumnsToInclude` parameter is always processed first. The`ColumnsToExclude` parameter is always processed second. 
-    + The `ColumnsToInclude` selects all of the Table's columns that follow the given patterns. By default (`*`) all of the Table's columns are included. 
-    + The `ColumnsToExclude` removes all of the columns previously selected from the `ColumnsToInclude` parameter that follow the given patterns. 
+*   The `ColumnsToInclude` parameter is always processed first. The`ColumnsToExclude` parameter is always processed second. 
+    +   The `ColumnsToInclude` selects all of the Table's columns that follow the given patterns. By default (`*`) all of the Table's columns are included. 
+    +   The `ColumnsToExclude` removes all of the columns previously selected from the `ColumnsToInclude` parameter that follow the given patterns. 
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/WriteTableToExcel).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/WriteTableToExcel).
 
 The following Table data are used in the examples. 
 The examples assume that the `ExampleTable1` and `ExampleTable2` Tables have *already* been read into the GeoProcessor.
@@ -122,11 +122,11 @@ After running the command, the following Excel workbook files exist in the Examp
 
 ## Troubleshooting ##
 
-At the current time, you **cannot** write a table to an *existing* Excel workbook file in `.xls` format. 
-You **can** write a table to an *existing* Excel workbook file in `.xlsx` format. 
+At the current time, a table **cannot** be written to an *existing* Excel workbook file in `.xls` format. 
+A table **can** be written to an *existing* Excel workbook file in `.xlsx` format. 
 The capability to write a table to an *existing* Excel workbook file in `.xls` format will be enabled in the future. 
 
 ## See Also ##
 
-* The Tables are written using the [`Pandas Python library`](https://pandas.pydata.org/). 
-* See parallel GeoProcessor command [`ReadTableFromExcel`](../ReadTableFromExcel/ReadTableFromExcel.md)
+*   The Tables are written using the [`Pandas Python library`](https://pandas.pydata.org/). 
+*   See parallel GeoProcessor command [`ReadTableFromExcel`](../ReadTableFromExcel/ReadTableFromExcel.md)

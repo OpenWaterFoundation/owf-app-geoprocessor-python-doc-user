@@ -1,12 +1,12 @@
 # GeoProcessor / Command / MergeGeoLayers #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Attribute Map](#attribute-map)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Attribute Map](#attribute-map)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -14,12 +14,12 @@
 
 The `MergeGeoLayers` command merges two or more [GeoLayers](../../introduction/introduction.md#geolayer) into one GeoLayer. 
 
-* The attributes of the input GeoLayers are retained within the output GeoLayer.
-* The features of the input GeoLayers are retained within the output GeoLayer.
-* The input GeoLayers must be the same geometry (`POINT`, `LINE` or `POLYGON`).
-* The input GeoLayers must be projected in the same coordinate reference system.
-* The attribute names of the output GeoLayer can be specified. See `AttributeMap` parameter. 
-* The value `0` will be assigned as the attribute value to features in the output GeoLayer attribute table that do not have attribute values. 
+*   The attributes of the input GeoLayers are retained within the output GeoLayer.
+*   The features of the input GeoLayers are retained within the output GeoLayer.
+*   The input GeoLayers must be the same geometry (`POINT`, `LINE` or `POLYGON`).
+*   The input GeoLayers must be projected in the same coordinate reference system.
+*   The attribute names of the output GeoLayer can be specified. See `AttributeMap` parameter. 
+*   The value `0` will be assigned as the attribute value to features in the output GeoLayer attribute table that do not have attribute values. 
 
 **<p style="text-align: center;">
 ![MergeGeoLayers](images/MergeGeoLayers_input_output.png)
@@ -59,39 +59,39 @@ Command Parameters
 
 The `MergeGeoLayers` command merges multiple GeoLayers into one GeoLayer. 
 
-* The input attribute tables are merged into one output attribute table. 
-* By default, if the attribute tables from the input GeoLayers are different,
-  the attribute table of the output GeoLayer will contain the attributes from
-**ALL** input layers. See [Example 1](#example-1-merge-without-an-attribute-map). 
+*   The input attribute tables are merged into one output attribute table. 
+*   By default, if the attribute tables from the input GeoLayers are different,
+    the attribute table of the output GeoLayer will contain the attributes from
+    **ALL** input layers. See [Example 1](#example-1-merge-without-an-attribute-map). 
 
 There are times, however, when attributes with *different* names from *different* input GeoLayers should be converged. 
 
-* This can be accomplished with the `AttributeMap` parameter. 
-* In [Example 2](#example-1-merge-with-an-attribute-map),
-  the high schools attribute (`high_sch`) from `ExampleGeoLayer1` and the elementary schools
-  attribute (`elem_sch`) from `ExampleGeoLayer2` both contain names of schools. 
-    + When merging the input GeoLayers, it is possible to `"map"` the high schools and elementary schools attributes together.
-      The output is a single attribute called `Schools` containing the information from both the
-      `high_sch` attribute and the `elem_sch` attribute.
+*   This can be accomplished with the `AttributeMap` parameter. 
+*   In [Example 2](#example-1-merge-with-an-attribute-map),
+    the high schools attribute (`high_sch`) from `ExampleGeoLayer1` and the elementary schools
+    attribute (`elem_sch`) from `ExampleGeoLayer2` both contain names of schools. 
+    +   When merging the input GeoLayers, it is possible to `"map"` the high schools and elementary schools attributes together.
+        The output is a single attribute called `Schools` containing the information from both the
+        `high_sch` attribute and the `elem_sch` attribute.
 
 ### How to Build an Attribute Map ###
 
-* An attribute map is a comma-separated list of key-value pairs.
+*   An attribute map is a comma-separated list of key-value pairs.
 
 ```
 
 AttributeMap = "KEY1:VALUE1, KEY2:VALUE2"
 ```
 
-* Each `KEY` is an attribute from one of the `INPUT` GeoLayers. 
-* Each `VALUE` is a new name that the `KEY` attribute will be renamed to in the the `OUTPUT` `MERGED` GeoLayer.
-* If an attribute from an `INPUT` GeoLayer is not listed as a `KEY` in the attribute map,
-  the attribute name will be retained in the `OUTPUT MERGED` GeoLayer.
-* More than one key-value pairs can have the `SAME` `VALUE`.
+*   Each `KEY` is an attribute from one of the `INPUT` GeoLayers. 
+*   Each `VALUE` is a new name that the `KEY` attribute will be renamed to in the the `OUTPUT` `MERGED` GeoLayer.
+*   If an attribute from an `INPUT` GeoLayer is not listed as a `KEY` in the attribute map,
+    the attribute name will be retained in the `OUTPUT MERGED` GeoLayer.
+*   More than one key-value pairs can have the `SAME` `VALUE`.
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/MergeGeoLayers).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/MergeGeoLayers).
 
 The following GeoLayer data are used in the examples.
 The examples assume that the `ExampleGeoLayer1` and `ExampleGeoLayer2` GeoLayers have *already* been read
@@ -120,7 +120,7 @@ Attribute Table of `ExampleGeoLayer1`
 Attribute Table of `ExampleGeoLayer2`
 </p>**
 
-|id|elem_sch|mascot|
+|`id`|`elem_sch`|`mascot`|
 |--|--|--|
 |1|Woodrow|Bulldogs|
 |2|Eastern|Rams|
@@ -144,7 +144,7 @@ After running the command, the following the following GeoLayer IDs are register
 Attribute Table of `MergedOutput`
 </p>**
 
-|id|high_sch|Mascot|elem_sch|mascot|
+|`id`|`high_sch`|`Mascot`|`elem_sch`|`mascot`|
 |--|--|--|--|--|
 |1|Gunn|Colts|0|0|
 |2|Hill|Bears|0|0|
@@ -184,4 +184,4 @@ Attribute Table of `MergedOutput`
 
 ## See Also ##
 
-* This command uses the QGIS [`qgis:mergevectorlayers`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#merge-vector-layers) processing algorithm
+*   This command uses the QGIS [`qgis:mergevectorlayers`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#merge-vector-layers) processing algorithm
