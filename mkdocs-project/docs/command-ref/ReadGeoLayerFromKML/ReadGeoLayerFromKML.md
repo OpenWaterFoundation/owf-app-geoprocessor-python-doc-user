@@ -1,11 +1,11 @@
 # GeoProcessor / Command / ReadGeoLayerFromKML #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -49,10 +49,10 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ReadGeoLayerFromKML).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/ReadGeoLayerFromKML).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* The GeoLayers are read using the [GDAL KML driver](https://gdal.org/drivers/vector/kml.html#vector-kml).
+*   The GeoLayers are read using the [GDAL KML driver](https://gdal.org/drivers/vector/kml.html#vector-kml).

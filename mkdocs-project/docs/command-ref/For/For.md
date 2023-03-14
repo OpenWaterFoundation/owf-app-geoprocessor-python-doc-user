@@ -1,11 +1,11 @@
 # GeoProcessor / Command / For #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -16,10 +16,10 @@ commands. A processor property is set to the value of the iteration property and
 commands that support properties, using the `${Property}` notation.
 `For` commands can iterate over:
 
-* a list of supplied values (specify using `ListProperty` parameter)
-* a sequence of integers or floating-point double precision numbers specified with start (`SequenceStart` parameter),
-  end (`SequenceEnd` parameter), and increment (`SequenceIncrement` parameter)
-* values from a [Table](../../introduction/introduction.md#table) column 
+*   a list of supplied values (specify using `ListProperty` parameter)
+*   a sequence of integers or floating-point double precision numbers specified with start (`SequenceStart` parameter),
+    end (`SequenceEnd` parameter), and increment (`SequenceIncrement` parameter)
+*   values from a [Table](../../introduction/introduction.md#table) column 
 
 `For` commands can be nested. Status messages for the run mode are accumulated in each command.
 A limitation of using `For` with properties is that the command when edited may show GeoLayer
@@ -67,20 +67,20 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/For).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/For).
 
 ### Example to process data for a list of counties ###
 
 This simple example illustrates how to process a list of GeoLayers corresponding to counties:
 
-* The list of counties is specified as a property `CountyList`.
-  Other commands can also be used to create a list.
-* The `For` command uses this property via its `ListProperty="CountyList"` parameter.
-* The `For` command `IteratorProperty="County"` parameter indicates which property will be used
-  to iterate through the list items.
-  The property value is set to the values in the list for each iteration.
-* Other commands can then use the syntax `${County}` to dynamically fill filenames, etc.
-  In this example the county name is used in GeoLayer filenames.
+*   The list of counties is specified as a property `CountyList`.
+    Other commands can also be used to create a list.
+*   The `For` command uses this property via its `ListProperty="CountyList"` parameter.
+*   The `For` command `IteratorProperty="County"` parameter indicates which property will be used
+    to iterate through the list items.
+    The property value is set to the values in the list for each iteration.
+*   Other commands can then use the syntax `${County}` to dynamically fill filenames, etc.
+    In this example the county name is used in GeoLayer filenames.
 
 ```text
 SetProperty(PropertyName="CountyList",PropertyType="str",PropertyValues="Adams,Washington,Jefferson")
@@ -94,6 +94,6 @@ EndFor(Name="Counties")
 
 ## See Also ##
 
-* [`EndFor`](../EndFor/EndFor.md) command
-* [`ListFiles`](../ListFiles/ListFiles.md) command
-* [`SetProperty`](../SetProperty/SetProperty.md) command (can be used to set list of strings for iteration)
+*   [`EndFor`](../EndFor/EndFor.md) command
+*   [`ListFiles`](../ListFiles/ListFiles.md) command
+*   [`SetProperty`](../SetProperty/SetProperty.md) command (can be used to set list of strings for iteration)

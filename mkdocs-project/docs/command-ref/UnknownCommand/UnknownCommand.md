@@ -1,11 +1,11 @@
 # GeoProcessor / Command / UnknownCommand #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -32,10 +32,10 @@ Unrecognized commands in command files are converted to `UnknownCommand` command
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/UnknownCommand).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/UnknownCommand).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* [Blank](../Blank/Blank.md) command - used for empty lines
+*   [Blank](../Blank/Blank.md) command - used for empty lines

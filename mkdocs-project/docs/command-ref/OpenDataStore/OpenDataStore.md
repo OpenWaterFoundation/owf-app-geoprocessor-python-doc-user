@@ -1,11 +1,11 @@
 # GeoProcessor / Command / OpenDataStore #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -14,8 +14,8 @@
 The `OpenDataStore` command creates a generic [DataStore](../../introduction/introduction.md#datastore) to provide
 data access from:
 
-* a database
-* a web service
+*   a database
+*   a web service
 
 <a name="parameters"></a>
 <a name="configfile"></a>
@@ -23,19 +23,19 @@ data access from:
 The `OpenDataStore` command can also be used to open an existing
 DataStore previously closed with the [`CloseDataStore`](../CloseDataStore/CloseDataStore.md) command. 
 
-* Set the `DataStoreID` parameter to the ID of the closed DataStore. 
-* Set the `IfDataStoreIDExists` parameter to `Open`. 
+*   Set the `DataStoreID` parameter to the ID of the closed DataStore. 
+*   Set the `IfDataStoreIDExists` parameter to `Open`. 
 
 A new DataStore can be opened in 2 ways: 
 
-1. Parameters configure datastore
-    * the DataStore configurations (*Database Dialect, Database Server, etc.*) are set via command parameters  
-    * the `DataStoreID`, `DatabaseServer`, `DatabaseDialect`, `DatabaseName`, `DatabaseUser` and `DatabasePassword` parameters are **required**
-    * the `IfDataStoreIDExists` and `DatabasePort` parameters are optional
-2. Configuration file configures datastore 
-    * the DataStore configurations (*Database Dialect, Database Server, etc.*) are set via a configuration file
-    * the `DataStoreID` and `ConfigFile` parameters are **required**
-    * the `IfDataStoreIDExists` parameter is optional
+1.  Parameters configure datastore
+    *   the DataStore configurations (*Database Dialect, Database Server, etc.*) are set via command parameters  
+    *   the `DataStoreID`, `DatabaseServer`, `DatabaseDialect`, `DatabaseName`, `DatabaseUser` and `DatabasePassword` parameters are **required**
+    *   the `IfDataStoreIDExists` and `DatabasePort` parameters are optional
+2.  Configuration file configures datastore 
+    *   the DataStore configurations (*Database Dialect, Database Server, etc.*) are set via a configuration file
+    *   the `DataStoreID` and `ConfigFile` parameters are **required**
+    *   the `IfDataStoreIDExists` parameter is optional
 
 DataStore features in the GeoProcessor currently focus on relational databases that can
 be queried to return tabular datasets.
@@ -104,12 +104,12 @@ Command Parameters
 
 **Currently in development queue.**
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/OpenDataStore).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/OpenDataStore).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* [`CloseDataStore`](../CloseDataStore/CloseDataStore.md) - close a DataStore
-* [`ReadTableFromDataStore`](../ReadTableFromDataStore/ReadTableFromDataStore.md) - read a table from a DataStore
-* [`WriteTableToDataStore`](../WriteTableToDataStore/WriteTableToDataStore.md) - write a table to a DataStore
+*   [`CloseDataStore`](../CloseDataStore/CloseDataStore.md) - close a DataStore
+*   [`ReadTableFromDataStore`](../ReadTableFromDataStore/ReadTableFromDataStore.md) - read a table from a DataStore
+*   [`WriteTableToDataStore`](../WriteTableToDataStore/WriteTableToDataStore.md) - write a table to a DataStore

@@ -1,11 +1,11 @@
 # GeoProcessor / Command / WebGet #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -13,9 +13,9 @@
 
 The `WebGet` command downloads a file or other web resource from a URL source. Common uses of this command are:
 
-* Download data files
-* Query web services 
-* Can specify a username and password if the URL is secured.
+*   Download data files
+*   Query web services 
+*   Can specify a username and password if the URL is secured.
 
 ## Command Editor ##
 
@@ -51,7 +51,7 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/WebGet).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/WebGet).
 
 ### Example 1: Using the `%f` Formatting Character in the `OutputFile` Parameter###
 
@@ -62,15 +62,15 @@ WebGet(URL="https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mys
 
 The two commands download the same [data file](https://rmgsc.cr.usgs.gov/outgoing/GeoMAC/2015_fire_data/Florida/Mystery_Hammock_Wf/fl_mystery_hammock_wf_20150817_0000_dd83.cpg). 
 
-- The first command specifies a different filename using the `OutputFile` parameter.
-  The name of the downloaded file is renamed to the specified filename. 
-- The second command utilizes the `%f` [formatting character](../../introduction/introduction.md#geolayer-property-format-specifiers)
-  in the `OutputFile` parameter. The name of the downloaded file is the same as the URL filename.
+-   The first command specifies a different filename using the `OutputFile` parameter.
+    The name of the downloaded file is renamed to the specified filename. 
+-   The second command utilizes the `%f` [formatting character](../../introduction/introduction.md#geolayer-property-format-specifiers)
+    in the `OutputFile` parameter. The name of the downloaded file is the same as the URL filename.
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* The files are downloaded using the Python [Requests](http://docs.python-requests.org/en/master/) library.
-* [`FTPGet`](../FTPGet/FTPGet.md) command
-* [`ListFiles`](../ListFiles/ListFiles.md) command
+*   The files are downloaded using the Python [Requests](http://docs.python-requests.org/en/master/) library.
+*   [`FTPGet`](../FTPGet/FTPGet.md) command
+*   [`ListFiles`](../ListFiles/ListFiles.md) command

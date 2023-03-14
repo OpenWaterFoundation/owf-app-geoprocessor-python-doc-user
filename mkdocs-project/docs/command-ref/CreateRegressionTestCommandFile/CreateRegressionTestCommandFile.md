@@ -67,7 +67,7 @@ Command Parameters
 
 ## Examples ##
 
-*   See the [GeoProcessor test suites](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/suites/).
+*   See the [GeoProcessor test suites](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/suites/).
 
 ## Troubleshooting ##
 

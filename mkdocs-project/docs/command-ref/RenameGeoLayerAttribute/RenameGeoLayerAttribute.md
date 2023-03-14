@@ -1,11 +1,11 @@
 # GeoProcessor / Command / RenameGeoLayerAttribute #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -13,9 +13,9 @@
 
 The `RenameGeoLayerAttribute` command renames a single attribute in a GeoLayer.
 
-* The new attribute name cannot be the same as an existing attribute name within the GeoLayer. 
-* It is highly recommended that the new attribute name is 10 characters or less.
-  See [Esri Shapefile limitations](../../spatial-data-format-ref/EsriShapefile/EsriShapefile.md#limitations).
+*   The new attribute name cannot be the same as an existing attribute name within the GeoLayer. 
+*   It is highly recommended that the new attribute name is 10 characters or less.
+    See [Esri Shapefile limitations](../../spatial-data-format-ref/EsriShapefile/EsriShapefile.md#limitations).
 
 ## Command Editor ##
 
@@ -48,7 +48,7 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/RenameGeoLayerAttribute).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/RenameGeoLayerAttribute).
 
 The following GeoLayer data is used in the example. 
 The example assumes that the `ExampleGeoLayer` GeoLayer has already been read into the GeoProcessor
@@ -90,4 +90,4 @@ After running the command, the ExampleGeoLayer has the following attribute table
 
 ## See Also ##
 
-* GeoLayer attributes are renamed using the [`QGIS QGSVectorDataProvider Class`](https://qgis.org/api/classQgsVectorDataProvider.html).
+*   GeoLayer attributes are renamed using the [`QGIS QGSVectorDataProvider Class`](https://qgis.org/api/classQgsVectorDataProvider.html).

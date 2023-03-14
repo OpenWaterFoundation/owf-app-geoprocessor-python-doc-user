@@ -1,11 +1,11 @@
 # GeoProcessor / Command / WriteGeoLayerPropertiesToFile #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -14,9 +14,9 @@
 The `WriteGeoLayerPropertiesToFile` command writes GeoLayer properties to a file.
 Examples of using the command include:
 
-* creating tests to verify that properties are being set
-* passing information from the GeoProcessor to another program
-* storing persistent information for later use, such as the date/time that data were last downloaded from a web service
+*   creating tests to verify that properties are being set
+*   passing information from the GeoProcessor to another program
+*   storing persistent information for later use, such as the date/time that data were last downloaded from a web service
 
 A number of property formats are supported as listed in the following table.
 
@@ -63,11 +63,11 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/WriteGeoLayerPropertiesToFile).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/WriteGeoLayerPropertiesToFile).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* [`SetGeoLayerProperty`](../SetGeoLayerProperty/SetGeoLayerProperty.md) command
-* [`SetPropertyFromGeoLayer`](../SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md) command
+*   [`SetGeoLayerProperty`](../SetGeoLayerProperty/SetGeoLayerProperty.md) command
+*   [`SetPropertyFromGeoLayer`](../SetPropertyFromGeoLayer/SetPropertyFromGeoLayer.md) command

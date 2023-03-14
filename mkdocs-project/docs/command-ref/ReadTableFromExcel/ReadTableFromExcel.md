@@ -1,11 +1,11 @@
 # GeoProcessor / Command / ReadTableFromExcel #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -13,8 +13,8 @@
 
 The `ReadTableFromExcel` command reads a [Table](../../introduction/introduction.md#table) from an Excel file. 
 
-* The Excel worksheet to read can be specified. 
-* All rows and columns from the Excel worksheet are read into the Table. 
+*   The Excel worksheet to read can be specified. 
+*   All rows and columns from the Excel worksheet are read into the Table. 
 
 ## Command Editor ##
 
@@ -48,7 +48,7 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ReadTableFromExcel).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/ReadTableFromExcel).
 
 The following folder, `ExampleFolder`, and its contents are used for the examples. 
 The `ExampleFolder` is not an actual existing folder.
@@ -111,5 +111,5 @@ After running the command, the following Table IDs are registered within the Geo
 
 ## See Also ##
 
-* The Tables are read using the [`Pandas Python library`](https://pandas.pydata.org/). 
-* [`WriteTableToExcel`](../WriteTableToExcel/WriteTableToExcel.md) command
+*   The Tables are read using the [`Pandas Python library`](https://pandas.pydata.org/). 
+*   [`WriteTableToExcel`](../WriteTableToExcel/WriteTableToExcel.md) command

@@ -1,11 +1,11 @@
 # GeoProcessor / Command / WriteGeoLayerToKML #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -14,17 +14,17 @@
 The `WriteGeoLayerToKML` command writes a [GeoLayer](../../introduction/introduction.md#geolayer)
 to a file in [KML format](../../spatial-data-format-ref/KML/KML.md).
 
-* The attributes of the GeoLayer are retained within the output KML file. 
-* The coordinate reference system of the output KML file will always be projected in `WGS84` `(EPSG:4326)`. 
-    + `Note that KML by specification uses only a single projection, EPSG:4326.
-      All OGR KML output will be presented in EPSG:4326.
-      As such OGR will create layers in the correct coordinate system and transform any
-      geometries.` - [`GDAL KML Driver Specifications`](http://www.gdal.org/drv_kml.html)
-* Each GeoLayer feature is converted into a KML [placemark](https://developers.google.com/kml/documentation/kmlreference#description_146).
-    + The placemark `<name>` elements can be specified by the values of a GeoLayer attribute.
-    + The placemark `<description>` elements can be specified by the values of a GeoLayer attribute.
-* Symbology cannot be specified at this time. Additional control over symbology will be added in the future.
-  The KML will adopt the default symbology of the program that is ingesting the file. 
+*   The attributes of the GeoLayer are retained within the output KML file. 
+*   The coordinate reference system of the output KML file will always be projected in `WGS84` `(EPSG:4326)`. 
+    +   `Note that KML by specification uses only a single projection, EPSG:4326.
+        All OGR KML output will be presented in EPSG:4326.
+        As such OGR will create layers in the correct coordinate system and transform any
+        geometries.` - [`GDAL KML Driver Specifications`](http://www.gdal.org/drv_kml.html)
+*   Each GeoLayer feature is converted into a KML [placemark](https://developers.google.com/kml/documentation/kmlreference#description_146).
+    +   The placemark `<name>` elements can be specified by the values of a GeoLayer attribute.
+    +   The placemark `<description>` elements can be specified by the values of a GeoLayer attribute.
+*   Symbology cannot be specified at this time. Additional control over symbology will be added in the future.
+    The KML will adopt the default symbology of the program that is ingesting the file. 
 
 ## Command Editor ##
 
@@ -58,7 +58,7 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/WriteGeoLayerToKML).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/WriteGeoLayerToKML).
 
 The following GeoLayer data are used in the examples.
 The examples assume that the `ExampleGeoLayer1` and `ExampleGeoLayer2` GeoLayers have already been read into the GeoProcessor.
@@ -69,8 +69,8 @@ Example GeoLayer Data
 
 |GeoLayerID|Coordinate Reference System (CRS)|
 | ---- | ----|
-| ExampleGeoLayer1  | EPGS:4326	(WGS84) |
-| ExampleGeoLayer2	| EPSG:26913 (NAD83 UTM Zone 13N) |
+| ExampleGeoLayer1 | EPGS:4326 (WGS84) |
+| ExampleGeoLayer2 | EPSG:26913 (NAD83 UTM Zone 13N) |
 
 ### Example 1: Write a GeoLayer to a KML File ###
 
@@ -87,15 +87,15 @@ ExampleOutputFolder
 
 |Filename|File Type|CRS|
 |------|---|---|
-|ExampleFile1.kml|KML|EPSG:4326	(WGS84)|
-|ExampleFile2.kml|KML|EPSG:4326	(WGS84)|
+|ExampleFile1.kml|KML|EPSG:4326 (WGS84)|
+|ExampleFile2.kml|KML|EPSG:4326 (WGS84)|
 
 ## Troubleshooting ##
 
-* If an `PlacemarkDescriptionAttribute` is specified, the other GeoLayer attributes will not
-  automatically display in a Google Earth pop-up.
-  See [Stack Exchange - ExtendedData and Description coexisting in the same placemark?](https://gis.stackexchange.com/questions/157964/extendeddata-and-description-coexisting-in-the-same-placemark) 
+*   If an `PlacemarkDescriptionAttribute` is specified, the other GeoLayer attributes will not
+    automatically display in a Google Earth pop-up.
+    See [Stack Exchange - ExtendedData and Description coexisting in the same placemark?](https://gis.stackexchange.com/questions/157964/extendeddata-and-description-coexisting-in-the-same-placemark) 
 
 ## See Also ##
 
-* The GeoLayer is written using the [GDAL KML driver](https://gdal.org/drivers/vector/kml.html#vector-kml)
+*   The GeoLayer is written using the [GDAL KML driver](https://gdal.org/drivers/vector/kml.html#vector-kml)

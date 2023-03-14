@@ -1,11 +1,11 @@
 # GeoProcessor / Command / ReadGeoLayerFromDelimitedFile #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -14,11 +14,11 @@
 The `ReadGeoLayerFromDelimitedFile` command reads a [GeoLayer](../../introduction/introduction.md#geolayer)
 from a [delimited file](https://en.wikipedia.org/wiki/Delimiter-separated_values). 
 
-* The coordinate reference system of the geometry within the delimited file must be correctly defined.
-* The attributes of the delimited file are retained within the attribute table of the GeoLayer.
-* `POINT`, `LINE` and `POLYGON` data can be read from a delimited file.
-  To read `LINE` and `POLYGON` data,
-  the delimited file must have a column specifying the geometry in [well-known text](https://en.wikipedia.org/wiki/Well-known_text).
+*   The coordinate reference system of the geometry within the delimited file must be correctly defined.
+*   The attributes of the delimited file are retained within the attribute table of the GeoLayer.
+*   `POINT`, `LINE` and `POLYGON` data can be read from a delimited file.
+    To read `LINE` and `POLYGON` data,
+    the delimited file must have a column specifying the geometry in [well-known text](https://en.wikipedia.org/wiki/Well-known_text).
 
 ## Command Editor ##
 
@@ -58,11 +58,11 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ReadGeoLayerFromDelimitedFile).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/ReadGeoLayerFromDelimitedFile).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* The GeoLayer is read using the [GDAL CSV driver](https://gdal.org/drivers/vector/csv.html#vector-csv).
-* [`WriteGeoLayerToDelimitedFile`](../WriteGeoLayerToDelimitedFile/WriteGeoLayerToDelimitedFile.md) command
+*   The GeoLayer is read using the [GDAL CSV driver](https://gdal.org/drivers/vector/csv.html#vector-csv).
+*   [`WriteGeoLayerToDelimitedFile`](../WriteGeoLayerToDelimitedFile/WriteGeoLayerToDelimitedFile.md) command

@@ -1,11 +1,11 @@
 # GeoProcessor / Command / ListFiles #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -13,9 +13,9 @@
 
 The `ListFiles` command lists the files and folders within a folder or a URL. 
 
-* Can specify to list only files, only folders or  both files and folders. 
-* Output is a list assigned to a [GeoProcessor property](../../introduction/introduction.md#geoprocessor-properties-property). Requires a property name. 
-* Can specify [glob-style patterns](https://en.wikipedia.org/wiki/Glob_(programming)) to include or exclude items within the output list.
+*   Can specify to list only files, only folders or  both files and folders. 
+*   Output is a list assigned to a [GeoProcessor property](../../introduction/introduction.md#geoprocessor-properties-property). Requires a property name. 
+*   Can specify [glob-style patterns](https://en.wikipedia.org/wiki/Glob_(programming)) to include or exclude items within the output list.
 
 ## Command Editor ##
 
@@ -56,10 +56,10 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ListFiles).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/ListFiles).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* The source content of the URL is read using the Python [urllib2](https://docs.python.org/2/library/urllib2.html) library.
+*   The source content of the URL is read using the Python [urllib2](https://docs.python.org/2/library/urllib2.html) library.

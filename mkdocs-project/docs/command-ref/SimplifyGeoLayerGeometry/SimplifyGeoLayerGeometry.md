@@ -1,12 +1,12 @@
 # GeoProcessor / Command / SimplifyGeoLayerGeometry #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Douglas–Peucker Algorithm](#douglaspeucker-algorithm)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Douglas–Peucker Algorithm](#douglaspeucker-algorithm)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -16,10 +16,10 @@ The `SimplifyGeoLayerGeometry` command decreases the number of vertices within t
 for each feature of a [GeoLayer](../../introduction/introduction.md#geolayer).
 This command is useful when the file size of a GeoLayer is too large. 
 
-* This command is designed to simplify GeoLayers with `LINE` or `POLYGON` geometry by removing unnecessary vertices.
-  GeoLayers with `POINT` geometry *cannot* be simplified with this command.
-* The file size of the simplified GeoLayer will be smaller than the input GeoLayer.
-* The spatial accuracy of the simplified GeoLayer be less precise than the input GeoLayer. 
+*   This command is designed to simplify GeoLayers with `LINE` or `POLYGON` geometry by removing unnecessary vertices.
+    GeoLayers with `POINT` geometry *cannot* be simplified with this command.
+*   The file size of the simplified GeoLayer will be smaller than the input GeoLayer.
+*   The spatial accuracy of the simplified GeoLayer be less precise than the input GeoLayer. 
 
 ## Command Editor ##
 
@@ -63,13 +63,13 @@ A very small tolerance would only discard points that are "extra" points along a
 
 #### Additional Resources
 
-* [Spatial Analysis 1., Spatial Data Handling](http://www.tankonyvtar.hu/hu/tartalom/tamop425/0027_SAN1/ch01s05.html) 
-* [Reducing a Map Path Using Douglas-Peucker Algorithm](https://www.eandbsoftware.org/reducing-a-map-path-using-douglas-peucker-algorithm/)
-* [Polyline Simplification](https://www.codeproject.com/Articles/114797/Polyline-Simplification)
+*   [Spatial Analysis 1., Spatial Data Handling](http://www.tankonyvtar.hu/hu/tartalom/tamop425/0027_SAN1/ch01s05.html) 
+*   [Reducing a Map Path Using Douglas-Peucker Algorithm](https://www.eandbsoftware.org/reducing-a-map-path-using-douglas-peucker-algorithm/)
+*   [Polyline Simplification](https://www.codeproject.com/Articles/114797/Polyline-Simplification)
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/SimplifyGeoLayerGeometry).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/SimplifyGeoLayerGeometry).
 
 The following GeoLayer data are used in the examples.
 The examples assume that the GeoLayer has *already* been read into the GeoProcessor from a file. 
@@ -130,4 +130,4 @@ After running the command, the following GeoLayer IDs are registered within the 
 
 ## See Also ##
 
-* This command uses the QGIS [`qgis:simplifygeometries`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#simplify) processing algorithm
+*   This command uses the QGIS [`qgis:simplifygeometries`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#simplify) processing algorithm

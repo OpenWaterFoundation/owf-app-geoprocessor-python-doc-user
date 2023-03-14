@@ -1,11 +1,11 @@
 # GeoProcessor / Command / RemoveGeoLayerFeatures #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -50,10 +50,10 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/RemoveGeoLayerFeatures).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/RemoveGeoLayerFeatures).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* [`RemoveGeoLayerAttributes`](../RemoveGeoLayerAttributes/RemoveGeoLayerAttributes.md) command
+*   [`RemoveGeoLayerAttributes`](../RemoveGeoLayerAttributes/RemoveGeoLayerAttributes.md) command

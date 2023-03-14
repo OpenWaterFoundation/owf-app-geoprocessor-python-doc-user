@@ -1,11 +1,11 @@
 # GeoProcessor / Command / Comment Block Start `/*` #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -44,11 +44,11 @@ The commands between `/*` and `*/` lines will be recognized as commands but will
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/CommentBlockStart).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/CommentBlockStart).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* [Comment - `#`](../Comment/Comment.md) command
-* [CommentBlockEnd - `*/`](../CommentBlockEnd/CommentBlockEnd.md) command
+*   [Comment - `#`](../Comment/Comment.md) command
+*   [CommentBlockEnd - `*/`](../CommentBlockEnd/CommentBlockEnd.md) command

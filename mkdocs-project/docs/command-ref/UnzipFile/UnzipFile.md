@@ -1,11 +1,11 @@
 # GeoProcessor / Command / UnzipFile #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -13,8 +13,8 @@
 
 The `UnzipFile` command unzips a compressed file. 
 
-* The compressed file can contain one or more files and/or folders. 
-* Can unzip `zip` and `tar` files.
+*   The compressed file can contain one or more files and/or folders. 
+*   Can unzip `zip` and `tar` files.
 
 ## Command Editor ##
 
@@ -49,7 +49,7 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/UnzipFile).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/UnzipFile).
 
 ### Example 1: Unzip a Zip File to the Command File Folder ###
 
@@ -69,4 +69,4 @@ UnzipFile(File = "ExampleFolder/ExampleFile.zip",OutputFolder="ExampleFolder/Exa
 
 ## See Also ##
 
-* [`WebGet`](../WebGet/WebGet.md) command
+*   [`WebGet`](../WebGet/WebGet.md) command

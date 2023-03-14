@@ -1,11 +1,11 @@
 # GeoProcessor / Command / SetGeoLayerCRS #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -16,8 +16,8 @@ of a [GeoLayer](../../introduction/introduction.md#geolayer).
 
 This command:
 
-* Defines a coordinate reference system of a GeoLayer that has an `undefined` coordinate reference system.
-* Reprojects a GeoLayer with a `defined` coordinate reference system to a different coordinate reference system.
+*   Defines a coordinate reference system of a GeoLayer that has an `undefined` coordinate reference system.
+*   Reprojects a GeoLayer with a `defined` coordinate reference system to a different coordinate reference system.
 
 ## Command Editor ##
 
@@ -50,7 +50,7 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/SetGeoLayerCRS).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/SetGeoLayerCRS).
 
 The following GeoLayer data are used in the example. 
 The examples assume that the GeoLayers have already been read into the GeoProcessor from a file.
@@ -94,9 +94,9 @@ After running the command, the following GeoLayer IDs are registered within the 
 
 ## See Also ##
 
-* The GeoLayer is reprojected using the QGIS
-  [`qgis:reprojectlayer`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html?highlight=reprojectlayer#reproject-layer)
-  processing algorithm
-* The GeoLayer's CRS is defined using the QGIS
-  [`qgis:definecurrentprojection`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html?highlight=reprojectlayer#define-shapefile-projection)
-  processing algorithm
+*   The GeoLayer is reprojected using the QGIS
+    [`qgis:reprojectlayer`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html?highlight=reprojectlayer#reproject-layer)
+    processing algorithm
+*   The GeoLayer's CRS is defined using the QGIS
+    [`qgis:definecurrentprojection`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html?highlight=reprojectlayer#define-shapefile-projection)
+    processing algorithm

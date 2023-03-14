@@ -1,11 +1,11 @@
 # GeoProcessor / Command / ReadGeoLayersFromGeoPackage #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -53,11 +53,11 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ReadGeoLayersFromGeoPackage).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/ReadGeoLayersFromGeoPackage).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* GeoLayers are read usin the [GDAL GeoPackage driver](https://gdal.org/drivers/vector/gpkg.html#vector-gpkg).
-* [GeoPackage](../../spatial-data-format-ref/GeoPackage/GeoPackage.md) format
+*   GeoLayers are read usin the [GDAL GeoPackage driver](https://gdal.org/drivers/vector/gpkg.html#vector-gpkg).
+*   [GeoPackage](../../spatial-data-format-ref/GeoPackage/GeoPackage.md) format

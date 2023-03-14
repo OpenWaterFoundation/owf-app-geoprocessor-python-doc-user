@@ -1,11 +1,11 @@
 # GeoProcessor / Command / ClipGeoLayer #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -13,12 +13,12 @@
 
 The `ClipGeoLayer` command clips an input [GeoLayer](../../introduction/introduction.md#geolayer) by a second GeoLayer, the clipping GeoLayer. 
 
-* The output is a new GeoLayer containing the features within the input GeoLayer that intersect the features of the clipping GeoLayer. 
-* The output GeoLayer retains the attribute fields and values of the input GeoLayer. 
-* The output GeoLayer retains the coordinate reference system of the input GeoLayer. 
-* The input GeoLayer and the clipping GeoLayer must be projected in the same coordinate reference system. 
-* The input GeoLayer can have *one or more* features with *any* geometry (point, line or polygon).
-* The clipping GeoLayer can have *one or more* features but those features must be *polygons*.
+*   The output is a new GeoLayer containing the features within the input GeoLayer that intersect the features of the clipping GeoLayer. 
+*   The output GeoLayer retains the attribute fields and values of the input GeoLayer. 
+*   The output GeoLayer retains the coordinate reference system of the input GeoLayer. 
+*   The input GeoLayer and the clipping GeoLayer must be projected in the same coordinate reference system. 
+*   The input GeoLayer can have *one or more* features with *any* geometry (point, line or polygon).
+*   The clipping GeoLayer can have *one or more* features but those features must be *polygons*.
 
 ## Command Editor ##
 
@@ -54,7 +54,7 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ClipGeoLayer).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/ClipGeoLayer).
 
 The following GeoLayer data are used in the examples.
 The examples assume that the `floodplains-FEMA-CO-4326` and `countyBoundary-CDOT-Park-4326` GeoLayers have
@@ -85,9 +85,9 @@ After running the command, the following GeoLayer IDs are registered within the 
 
 Below is an image of the input and output products of the `ClipGeoLayer` command. 
 
-* The top image shows the `Colorado floodplains layer` (input GeoLayer) with the outline of the `Park County Boundary layer` (clipping GeoLayer). 
+*   The top image shows the `Colorado floodplains layer` (input GeoLayer) with the outline of the `Park County Boundary layer` (clipping GeoLayer). 
 
-* The bottom image shows the `Park County floodplains layer` (output clipped GeoLayer) with the outline of the `Park County Boundary layer`. 
+*   The bottom image shows the `Park County floodplains layer` (output clipped GeoLayer) with the outline of the `Park County Boundary layer`. 
 
 **<p style="text-align: center;">
 ![COFloodplain_countyPark_overlay](images/clip_process.png)
@@ -111,12 +111,12 @@ After running the command, the following GeoLayer IDs are registered within the 
 
 ## Troubleshooting ##
 
-* There is a bug within QGIS version `2.18.1` that causes an error.  **This should not be an issue with the current version of QGIS and GeoProcessor.**
-    + The clip process will only work for one feature.
-      All other features within the input GeoLayer will not be included in the output GeoLayer.
-    + More information is available at
-      [Stack Exchange - Why general.runalg("qgis:linestopolygons"...) work only over first feature?](https://gis.stackexchange.com/questions/219857/why-general-runalgqgislinestopolygons-work-only-over-first-feature).
+*   There is a bug within QGIS version `2.18.1` that causes an error.  **This should not be an issue with the current version of QGIS and GeoProcessor.**
+    +   The clip process will only work for one feature.
+        All other features within the input GeoLayer will not be included in the output GeoLayer.
+    +   More information is available at
+        [Stack Exchange - Why general.runalg("qgis:linestopolygons"...) work only over first feature?](https://gis.stackexchange.com/questions/219857/why-general-runalgqgislinestopolygons-work-only-over-first-feature).
 
 ## See Also ##
 
-* This command uses the QGIS [`qgis:clip`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectoroverlay.html#clip) processing algorithm
+*   This command uses the QGIS [`qgis:clip`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectoroverlay.html#clip) processing algorithm

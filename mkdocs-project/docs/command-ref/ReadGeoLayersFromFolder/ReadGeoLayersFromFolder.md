@@ -1,11 +1,11 @@
 # GeoProcessor / Command / ReadGeoLayersFromFolder #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -13,8 +13,8 @@
 
 The `ReadGeoLayersFromFolder` command reads one or more [GeoLayer(s)](../../introduction/introduction.md#geolayer) from a local folder. 
 
-* By default, each spatial data file ([GeoJSON](../../spatial-data-format-ref/GeoJSON/GeoJSON.md))
-  or [Esri Shapefile](../../spatial-data-format-ref/EsriShapefile/EsriShapefile.md)) within the folder is read as a single GeoLayer.
+*   By default, each spatial data file ([GeoJSON](../../spatial-data-format-ref/GeoJSON/GeoJSON.md))
+    or [Esri Shapefile](../../spatial-data-format-ref/EsriShapefile/EsriShapefile.md)) within the folder is read as a single GeoLayer.
 
 ## Command Editor ##
 
@@ -48,7 +48,7 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ReadGeoLayersFromFolder).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/ReadGeoLayersFromFolder).
 
 The following folder, `ExampleFolder`, and its contents are used for the examples. 
 The `ExampleFolder` is not an actual existing folder.
@@ -96,9 +96,9 @@ Each of the registered GeoLayer IDs include the `StateData` prefix.
 
 |Registered GeoLayer IDs|
 |------|
-|StateData_ExampleFile1|
-|StateData_ExampleFile2|
-|StateData_ExampleFile4|
+|`StateData_ExampleFile1`|
+|`StateData_ExampleFile2`|
+|`StateData_ExampleFile4`|
 
 ### Example 3: Read a Subset of Spatial Data Files from a Folder ###
 
@@ -107,7 +107,7 @@ ReadGeoLayersFromFolder(SpatialDataFolder = "ExampleFolder", Subset_Pattern = "*
 ```
 
 After running the command, the following GeoLayer IDs are registered within the GeoProcessor.
-`ExampleFile4` is not included in the registered GeoLayer IDs becasue the
+`ExampleFile4` is not included in the registered GeoLayer IDs because the
 `Subset_Pattern` parameter only includes files that end in `.geojson`. 
 
 |Registered GeoLayer IDs|
@@ -119,6 +119,6 @@ After running the command, the following GeoLayer IDs are registered within the 
 
 ## See Also ##
 
-* The GeoLayers are read using the [`QGIS QgsVectorLayer Class`](https://qgis.org/api/classQgsVectorLayer.html).
-See [documentation](https://docs.qgis.org/2.14/en/docs/pyqgis_developer_cookbook/loadlayer.html#vector-layers)
-for examples on utilizing the `QgsVectorLayer` class in the PyQGIS environment.
+*   The GeoLayers are read using the [`QGIS QgsVectorLayer Class`](https://qgis.org/api/classQgsVectorLayer.html).
+    See [documentation](https://docs.qgis.org/2.14/en/docs/pyqgis_developer_cookbook/loadlayer.html#vector-layers)
+    for examples on utilizing the `QgsVectorLayer` class in the PyQGIS environment.

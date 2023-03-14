@@ -2,17 +2,17 @@
 
 This reference section of the documentation provides information about GeoProcessor commands.
 
-* [Command Overview](#command-overview)
-* [Commands for Processing Vector Spatial Data Layers](#commands-for-processing-vector-spatial-data-layers)
-* [Commands for Processing Raster Spatial Data Layers](#commands-for-processing-raster-spatial-data-layers)
-* [Commands for Processing Tables](#commands-for-processing-tables)
-* [Commands for Processing DataStores](#commands-for-processing-datastores)
-* [Commands to Control Running](#commands-to-control-running)
-* [Commands for Handling Files](#commands-for-handling-files)
-* [Commands for Messages and Logging](#commands-for-messages-and-logging)
-* [Commands for Testing](#commands-for-testing)
-* [Utility Commands](#utility-commands)
-* [QGIS Cross-Reference](#qgis-cross-reference)
+*   [Command Overview](#command-overview)
+*   [Commands for Processing Vector Spatial Data Layers](#commands-for-processing-vector-spatial-data-layers)
+*   [Commands for Processing Raster Spatial Data Layers](#commands-for-processing-raster-spatial-data-layers)
+*   [Commands for Processing Tables](#commands-for-processing-tables)
+*   [Commands for Processing DataStores](#commands-for-processing-datastores)
+*   [Commands to Control Running](#commands-to-control-running)
+*   [Commands for Handling Files](#commands-for-handling-files)
+*   [Commands for Messages and Logging](#commands-for-messages-and-logging)
+*   [Commands for Testing](#commands-for-testing)
+*   [Utility Commands](#utility-commands)
+*   [QGIS Cross-Reference](#qgis-cross-reference)
 
 ---------------------------
 
@@ -31,21 +31,21 @@ CommandName(ParameterName1="ParameterValue1",ParameterName2="ParameterValue2",..
 
 The following are guidelines for commands:
 
-1. Commands always follow the convention of command name at start with a list of named parameters in parentheses.
-The only exceptions are:
-	1. Comments starting with `#`.
-	2. Block comments `/*` and `*/` that surround one or more command lines.
-	3. Command such as `Exit`, which will always have empty list of parameters in the parentheses.
-2. Commands are (currently) case-specific.  This may be relaxed in the future.
-3. Command and parameter names use mixed case where the first letter of each word is capitalized.
-4. Parameter values must generally be surrounded by double quotes, regardless of type.
-This convention may be relaxed in the future.
-5. Each command must exist on a single line.  [`#`](Comment/Comment.md) comment blocks can be edited as multiple lines.
-6. Spaces at the front of a command for indentation are allowed to improve logic presentation,
-such as code levels for [`For`](For/For.md) and [`If`](If/If.md) blocks.
-Tabs used for indentation are discouraged and may be prohibited in the future because tab width is ambiguous between different users and tools.
-7. Blank lines are allowed and will be handled as [`Blank`](Blank/Blank.md) commands.
-8. Unknown commands are handled as [`UnknownCommand`](UnknownCommand/UnknownCommand.md) commands.
+1.  Commands always follow the convention of command name at start with a list of named parameters in parentheses.
+    The only exceptions are:
+    1.  Comments starting with `#`.
+    2.  Block comments `/*` and `*/` that surround one or more command lines.
+    3.  Command such as `Exit`, which will always have empty list of parameters in the parentheses.
+2.  Commands are (currently) case-specific.  This may be relaxed in the future.
+3.  Command and parameter names use mixed case where the first letter of each word is capitalized.
+4.  Parameter values must generally be surrounded by double quotes, regardless of type.
+    This convention may be relaxed in the future.
+5.  Each command must exist on a single line.  [`#`](Comment/Comment.md) comment blocks can be edited as multiple lines.
+6.  Spaces at the front of a command for indentation are allowed to improve logic presentation,
+    such as code levels for [`For`](For/For.md) and [`If`](If/If.md) blocks.
+    Tabs used for indentation are discouraged and may be prohibited in the future because tab width is ambiguous between different users and tools.
+7.  Blank lines are allowed and will be handled as [`Blank`](Blank/Blank.md) commands.
+8.  Unknown commands are handled as [`UnknownCommand`](UnknownCommand/UnknownCommand.md) commands.
 
 ## Commands for Processing Vector Spatial Data Layers ##
 
@@ -156,7 +156,7 @@ Tabs used for indentation are discouraged and may be prohibited in the future be
 | **Command Name**&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; | **Description** |
 | ---------------- | --------------- |
 | [`CompareFiles`](CompareFiles/CompareFiles.md) | Compare files and optionally warn/fail if different/same. |
-| [`CreateRegressionTestCommandFile`](CreateRegressionTestCommandFile/CreateRegressionTestCommandFile.md) | Create a master command file to automate running all tests. |
+| [`CreateRegressionTestCommandFile`](CreateRegressionTestCommandFile/CreateRegressionTestCommandFile.md) | Create a command file to automate running all tests as a test suite. |
 | [`RunCommands`](RunCommands/RunCommands.md) | Used when running a test suite. |
 | [`StartRegressionTestResultsReport`](StartRegressionTestResultsReport/StartRegressionTestResultsReport.md) | Start (open) a file to receive regression test results. |
 | [`WriteCommandSummaryToFile`](WriteCommandSummaryToFile/WriteCommandSummaryToFile.md) | Write a summary of command log messages to a file. |

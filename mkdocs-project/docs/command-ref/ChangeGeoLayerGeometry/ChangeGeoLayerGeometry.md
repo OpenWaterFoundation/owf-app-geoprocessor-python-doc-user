@@ -1,11 +1,11 @@
 # GeoProcessor / Command / ChangeGeoLayerGeometry #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -48,11 +48,11 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ChangeGeoLayerGeometry).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/ChangeGeoLayerGeometry).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* This command uses the QGIS [`qgis:linestopolygons`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#lines-to-polygons) processing algorithm
-* [`CreateGeoLayerFromGeometry`](../CreateGeoLayerFromGeometry/CreateGeoLayerFromGeometry.md) command
+*   This command uses the QGIS [`qgis:linestopolygons`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectorgeometry.html#lines-to-polygons) processing algorithm
+*   [`CreateGeoLayerFromGeometry`](../CreateGeoLayerFromGeometry/CreateGeoLayerFromGeometry.md) command

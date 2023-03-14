@@ -1,11 +1,11 @@
 # GeoProcessor / Command / ReadGeoLayerFromGeoJSON #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -54,7 +54,7 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ReadGeoLayerFromGeoJSON).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/ReadGeoLayerFromGeoJSON).
 
 ### Example 1: Read a GeoLayer from a GeoJSON File ###
 
@@ -84,5 +84,5 @@ After running the command, the following GeoLayer IDs are registered within the 
 
 ## See Also ##
 
-* The GeoLayers are read using the [GDAL GeoJSON driver](https://gdal.org/drivers/vector/geojson.html#vector-geojson)
-* [`WriteGeoLayerToGeoJSON`](../WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON.md) command
+*   The GeoLayers are read using the [GDAL GeoJSON driver](https://gdal.org/drivers/vector/geojson.html#vector-geojson)
+*   [`WriteGeoLayerToGeoJSON`](../WriteGeoLayerToGeoJSON/WriteGeoLayerToGeoJSON.md) command

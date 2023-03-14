@@ -1,11 +1,11 @@
 # GeoProcessor / Command / SplitGeoLayerByAttribute #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -57,11 +57,11 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/SplitGeoLayerByAttribute).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/SplitGeoLayerByAttribute).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* This command uses the QGIS [`qgis:splitvectorlayer`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#split-vector-layer) processing algorithm
-* [GeoPackage file](../../spatial-data-format-ref/GeoPackage/GeoPackage.md) format
+*   This command uses the QGIS [`qgis:splitvectorlayer`](https://docs.qgis.org/latest/en/docs/user_manual/processing_algs/qgis/vectorgeneral.html#split-vector-layer) processing algorithm
+*   [GeoPackage file](../../spatial-data-format-ref/GeoPackage/GeoPackage.md) format

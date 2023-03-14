@@ -1,11 +1,11 @@
 # GeoProcessor / Command / ReadTableFromDelimitedFile #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -14,11 +14,11 @@
 The `ReadTableFromDelimitedFile` command reads a [Table](../../introduction/introduction.md#table)
 from a [delimited file](https://en.wikipedia.org/wiki/Delimiter-separated_values).
 
-* All rows and columns from the delimited file are read into the Table.
-* Use the `Delimiter` parameter to specify the delimiter of the delimited file. 
-* Use the `HeaderLines` parameter to specify the number of initial lines representing non-data comments. 
-* Use the `NullValues` parameter to specify the string values within the delimited file that should
-  be converted to `NULL` values. The Python `None` will be used internally.
+*   All rows and columns from the delimited file are read into the Table.
+*   Use the `Delimiter` parameter to specify the delimiter of the delimited file. 
+*   Use the `HeaderLines` parameter to specify the number of initial lines representing non-data comments. 
+*   Use the `NullValues` parameter to specify the string values within the delimited file that should
+    be converted to `NULL` values. The Python `None` will be used internally.
 
 ## Command Editor ##
 
@@ -60,10 +60,10 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/ReadTableFromDelimitedFile).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/ReadTableFromDelimitedFile).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* [`WriteTableToDelimitedFile`](../WriteTableToDelimitedFile/WriteTableToDelimitedFile.md) command
+*   [`WriteTableToDelimitedFile`](../WriteTableToDelimitedFile/WriteTableToDelimitedFile.md) command

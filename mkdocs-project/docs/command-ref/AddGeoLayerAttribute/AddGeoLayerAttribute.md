@@ -1,11 +1,11 @@
 # GeoProcessor / Command / AddGeoLayerAttribute #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -13,11 +13,11 @@
 
 The `AddGeoLayerAttribute` command adds a single attribute to a single GeoLayer.
 
-* The attribute name and attribute type are specified.
-* By default, the attribute values of the added attribute are empty. 
-* The new attribute name cannot be the same as an existing attribute name within the GeoLayer. 
-* It is highly recommended that the new attribute name is 10 characters or less.
-  See [Esri Shapefile limitations](../../spatial-data-format-ref/EsriShapefile/EsriShapefile.md#limitations).
+*   The attribute name and attribute type are specified.
+*   By default, the attribute values of the added attribute are empty. 
+*   The new attribute name cannot be the same as an existing attribute name within the GeoLayer. 
+*   It is highly recommended that the new attribute name is 10 characters or less.
+    See [Esri Shapefile limitations](../../spatial-data-format-ref/EsriShapefile/EsriShapefile.md#limitations).
 
 ## Command Editor ##
 
@@ -51,7 +51,7 @@ Command Parameters
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/AddGeoLayerAttribute).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/AddGeoLayerAttribute).
 
 The following GeoLayer data is used in the example.
 The example assumes that the `ExampleGeoLayer` GeoLayer has already been read into the
@@ -84,7 +84,7 @@ AddGeoLayerAttribute(GeoLayerID="ExampleGeoLayer", AttributeName="principal", At
 
 After running the commands, the ExampleGeoLayer has the following attribute table.
 
-|id|school|mascot|students|faculty|est_date|principal|
+|`id`|`school`|`mascot`|`students`|`faculty`|`est_date`|`principal`|
 |----|----|-----|-----|-----|---|----|
 |1|Hill|Bulldogs|546|42|
 |2|Bright|Gators|304|24|
@@ -94,5 +94,5 @@ After running the commands, the ExampleGeoLayer has the following attribute tabl
 
 ## See Also ##
 
-* GeoLayer attributes are added using the [`QGIS QGSVectorDataProvider Class`](https://qgis.org/api/classQgsVectorDataProvider.html).
-* [RemoveGeoLayerAttributes](../RemoveGeoLayerAttributes/RemoveGeoLayerAttributes.md) command
+*   GeoLayer attributes are added using the [`QGIS QGSVectorDataProvider Class`](https://qgis.org/api/classQgsVectorDataProvider.html).
+*   [RemoveGeoLayerAttributes](../RemoveGeoLayerAttributes/RemoveGeoLayerAttributes.md) command

@@ -1,11 +1,11 @@
 # GeoProcessor / Command / RunProgram #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -27,8 +27,8 @@ software’s data files exist, use absolute paths to files, or use the `${Workin
 
 Limitations of the command are as follows and will be addressed in future software updates:
 
-* There is currently no way to handle double quotes in the command line.
-* The command line must not exceed the length allowed by the operating system.
+*   There is currently no way to handle double quotes in the command line.
+*   The command line must not exceed the length allowed by the operating system.
 
 If the command line contains `>`, `<`, `|` or other special characters used by a shell,
 then specify `UseCommandShell=True`.
@@ -74,12 +74,12 @@ Command Parameters
 
 ## Examples ##
 
-* See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/RunProgram).
+*   See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/RunProgram).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* [`RunCommands`](../RunCommands/RunCommands.md) command
-* [`RunGdalProgram`](../RunGdalProgram/RunGdalProgram.md) command
-* [`RunOgrProgram`](../RunOgrProgram/RunOgrProgram.md) command
+*   [`RunCommands`](../RunCommands/RunCommands.md) command
+*   [`RunGdalProgram`](../RunGdalProgram/RunGdalProgram.md) command
+*   [`RunOgrProgram`](../RunOgrProgram/RunOgrProgram.md) command

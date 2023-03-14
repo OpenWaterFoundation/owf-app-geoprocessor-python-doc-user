@@ -1,11 +1,11 @@
 # GeoProcessor / Command / Comment `#` #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -65,15 +65,15 @@ The command syntax is as follows:
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/Comment).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/Comment).
 
 ## Troubleshooting ##
 
 ## See Also ##
 
-* [CommentBlockStart - `/*`](../CommentBlockStart/CommentBlockStart.md) command
-* [CommentBlockEnd - `*/`](../CommentBlockEnd/CommentBlockEnd.md) command
-* [`CreateRegressionTestCommandFile`](../CreateRegressionTestCommandFile/CreateRegressionTestCommandFile.md) command
-* [`Exit`](../Exit/Exit.md) command
-* [`If`](../If/If.md) command
-* [`RunCommands`](../RunCommands/RunCommands.md) command
+*   [CommentBlockStart - `/*`](../CommentBlockStart/CommentBlockStart.md) command
+*   [CommentBlockEnd - `*/`](../CommentBlockEnd/CommentBlockEnd.md) command
+*   [`CreateRegressionTestCommandFile`](../CreateRegressionTestCommandFile/CreateRegressionTestCommandFile.md) command
+*   [`Exit`](../Exit/Exit.md) command
+*   [`If`](../If/If.md) command
+*   [`RunCommands`](../RunCommands/RunCommands.md) command

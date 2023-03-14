@@ -1,11 +1,11 @@
 # GeoProcessor / Command / CopyGeoLayer #
 
-* [Overview](#overview)
-* [Command Editor](#command-editor)
-* [Command Syntax](#command-syntax)
-* [Examples](#examples)
-* [Troubleshooting](#troubleshooting)
-* [See Also](#see-also)
+*   [Overview](#overview)
+*   [Command Editor](#command-editor)
+*   [Command Syntax](#command-syntax)
+*   [Examples](#examples)
+*   [Troubleshooting](#troubleshooting)
+*   [See Also](#see-also)
 
 -------------------------
 
@@ -14,12 +14,12 @@
 The `CopyGeoLayer` command copies a GeoLayer to a new GeoLayer,
 optionally constraining the copy to a subset of the original features.
 
-* The input GeoLayer's coordinate reference system is retained in the copied GeoLayer. 
-* The input GeoLayer's attributes are retained in the copied GeoLayer. 
-* The copied GeoLayer's source path is an empty string. 
-* The CopyGeoLayer command has **querying** capabilities. 
-    + The copied GeoLayer can retain a subset of the original GeoLayer's features.
-    + The copied GeoLayer can retain a subset of the original GeoLayer's attributes.
+*   The input GeoLayer's coordinate reference system is retained in the copied GeoLayer. 
+*   The input GeoLayer's attributes are retained in the copied GeoLayer. 
+*   The copied GeoLayer's source path is an empty string. 
+*   The CopyGeoLayer command has **querying** capabilities. 
+    +   The copied GeoLayer can retain a subset of the original GeoLayer's features.
+    +   The copied GeoLayer can retain a subset of the original GeoLayer's attributes.
 
 ## Command Editor ##
 
@@ -57,15 +57,15 @@ Command Parameters
 
 ### Determining Which Attributes to Copy
 
-* The `IncludeAttributes` parameter is always processed first. The`ExcludeAttributes` parameter is always processed second. 
-    + The `IncludeAttributes` selects all of the GeoLayer's attributes that follow the given patterns.
-      By default (`*`) all of the GeoLayer's attributes are included. 
-    + The `ExcludeAttributes` removes all of the attributes previously selected from the
-      `IncludeAttributes` parameter that follow the given patterns. 
+*   The `IncludeAttributes` parameter is always processed first. The`ExcludeAttributes` parameter is always processed second. 
+    +   The `IncludeAttributes` selects all of the GeoLayer's attributes that follow the given patterns.
+        By default (`*`) all of the GeoLayer's attributes are included. 
+    +   The `ExcludeAttributes` removes all of the attributes previously selected from the
+        `IncludeAttributes` parameter that follow the given patterns. 
 
 ## Examples ##
 
-See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/master/test/commands/CopyGeoLayer).
+See the [automated tests](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test/tree/main/test/commands/CopyGeoLayer).
 
 The following GeoLayer data is used in the examples. 
 The examples assume that the `ExampleGeoLayer` GeoLayer has *already* been read into the GeoProcessor with the [`ReadGeoLayerFromGeoJSON`](../ReadGeoLayerFromGeoJSON/ReadGeoLayerFromGeoJSON.md) command.
@@ -98,8 +98,8 @@ After running the command, the following GeoLayers are registered within the Geo
 
 |GeoLayerID|
 | ---- |
-| ExampleGeoLayer|
-| ExampleGeoLayer_copy|
+| `ExampleGeoLayer`|
+| `ExampleGeoLayer_copy`|
 
 ### Example 2: Copy a GeoLayer With Defined `OutputGeoLayerID` Parameter###
 
@@ -124,9 +124,9 @@ After running the command, the following GeoLayers are registered within the Geo
 
 |GeoLayerID|
 | ---- |
-| ExampleGeoLayer| 
-| ExampleGeoLayer_output1|
-| ExampleGeoLayer_output2|
+| `ExampleGeoLayer`| 
+| `ExampleGeoLayer_output1`|
+| `ExampleGeoLayer_output2`|
 
 **<p style="text-align: left;">
 ExampleGeoLayer_output1 Attribute Table
@@ -158,8 +158,8 @@ After running the command, the following GeoLayers are registered within the Geo
 
 |GeoLayerID|
 | ---- |
-| ExampleGeoLayer| 
-| ExampleGeoLayer_copy|
+| `ExampleGeoLayer`| 
+| `ExampleGeoLayer_copy`|
 
 **<p style="text-align: left;">
 ExampleGeoLayer_copy Attribute Table
@@ -181,8 +181,8 @@ After running the command, the following GeoLayers are registered within the Geo
 
 |GeoLayerID|
 | ---- |
-| ExampleGeoLayer| 
-| ExampleGeoLayer_copy|
+| `ExampleGeoLayer`| 
+| `ExampleGeoLayer_copy`|
 
 **<p style="text-align: left;">
 ExampleGeoLayer_copy Attribute Table
