@@ -2,19 +2,19 @@
 
 The GeoProcessor is a Python application that uses Python modules, including:
 
-* GeoProcessor UI that uses PyQt
-* GeoProcessor commands and processing libraries
-* software that is part of the underlying GIS software (QGIS and ArcGIS Pro, depending on GeoProcessor version)
-* third-party Python packages
+*   GeoProcessor UI that uses PyQt
+*   GeoProcessor commands and processing libraries
+*   software that is part of the underlying GIS software (QGIS and ArcGIS Pro, depending on GeoProcessor version)
+*   third-party Python packages
 
 Consequently, errors can occur in various software components.
 The following topics are useful for troubleshooting software issues:
 
-* [Log File](#log-file)
-* [Command Status/Log](#command-statuslog)
-* [Specific Issues](#specific-issues)
-* [Software Startup Issues](#software-startup-issues)
-* [Repository Issue Tracking](#repository-issue-tracking)
+*   [Log File](#log-file)
+*   [Command Status/Log](#command-statuslog)
+*   [Specific Issues](#specific-issues)
+*   [Software Startup Issues](#software-startup-issues)
+*   [Repository Issue Tracking](#repository-issue-tracking)
 
 --------------------
 
@@ -24,12 +24,12 @@ The GeoProcessor uses the Python logging features to create a log file that is h
 However, although log files may be helpful to software developers, they can be difficult for others to understand.
 The log file exists in the following locations:
 
-* Startup log file in user's home folder GeoProcessor files, for example (`1` indicates the GeoProcessor major version):
-    + Windows: `C:\Users\user\.owf-gp\1\logs\gp_user.log`
-    + Linux:  `/home/user/.owf-gp/1/logs/gp_user.log`
-    + Cygwin:  `/cygdrive/C/Users/user/.owf-gp/1/logs/gp_user.log` (different files from Windows)
-    + Git Bash (MinGW):  `/c/Users/user/.owf-gp/1/logs/gp_user.log` (same files as Windows)
-* File specified by the GeoProcessor [StartLog](../command-ref/StartLog/StartLog.md) command.
+*   Startup log file in user's home folder GeoProcessor files, for example (`1` indicates the GeoProcessor major version):
+    +   Windows: `C:\Users\user\.owf-gp\1\logs\gp_user.log`
+    +   Linux:  `/home/user/.owf-gp/1/logs/gp_user.log`
+    +   Cygwin:  `/cygdrive/C/Users/user/.owf-gp/1/logs/gp_user.log` (different files from Windows)
+    +   Git Bash (MinGW):  `/c/Users/user/.owf-gp/1/logs/gp_user.log` (same files as Windows)
+*   File specified by the GeoProcessor [StartLog](../command-ref/StartLog/StartLog.md) command.
 
 The log files can be viewed using the ***Tools / View Log File*** and ***Tools / View Startup Log File*** menu items.
 
@@ -112,8 +112,8 @@ Information will be inserted here for specific known issues as such issues are i
 Software startup issues may result from unforseen bugs or software component version conflicts.
 Contact support via the repository issues page to report issues.
 
-* See the [GeoProcessor repository issues page](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python/issues)
-* See the [GeoProcessor Developer Documentation Troubleshooting](http://software.openwaterfoundation.org/geoprocessor/latest/doc-dev/troubleshooting/troubleshooting/) documentation
+*   See the [GeoProcessor repository issues page](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python/issues)
+*   See the [GeoProcessor Developer Documentation Troubleshooting](http://software.openwaterfoundation.org/geoprocessor/latest/doc-dev/troubleshooting/troubleshooting/) documentation
 
 ## Repository Issue Tracking ##
 

@@ -1,8 +1,8 @@
 # GeoProcessor / Running / Testing Framework
 
-* [Overview](#overview)
-* [Installation](#installation)
-* [Running the Testing Framework](#running-the-testing-framework)
+*   [Overview](#overview)
+*   [Installation](#installation)
+*   [Running the Testing Framework](#running-the-testing-framework)
 
 --------------
 
@@ -17,11 +17,11 @@ The GeoProcessor testing framework does not require additional Python programmin
 GeoProcessor commands that provide testing features.
 Examples of using the testing framework are:
 
-* tests for commands - see the [GeoProcessor test repository](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test)
-* tests to confirm that a workflow is valid, for example by running a subset of a large analysis
-  or to confirm that a snapshot of the large analysis is correct
-* test to confirm that a command line program gives expected results (see the
-  [`RunProgram`](../command-ref/RunProgram/RunProgram.md) command)
+*   tests for commands - see the [GeoProcessor test repository](https://github.com/OpenWaterFoundation/owf-app-geoprocessor-python-test)
+*   tests to confirm that a workflow is valid, for example by running a subset of a large analysis
+    or to confirm that a snapshot of the large analysis is correct
+*   test to confirm that a command line program gives expected results (see the
+    [`RunProgram`](../command-ref/RunProgram/RunProgram.md) command)
 
 ## Installation ##
 
@@ -46,7 +46,7 @@ The `gptest` variable may be removed in the future.**
 
 The GeoProcessor testing framework is run using:
 
-* Command line:  `gptest.bat` on ![windows](../images/windows-32.png) Windows and `gptest` on ![linux](../images/linux-32.png) Linux
-* User interface (UI):  `gptestui.bat` on ![windows](../images/windows-32.png) Windows and `gptestui` on ![linux](../images/linux-32.png) Linux
+*   Command line:  `gptest.bat` on ![windows](../images/windows-32.png) Windows and `gptest` on ![linux](../images/linux-32.png) Linux
+*   User interface (UI):  `gptestui.bat` on ![windows](../images/windows-32.png) Windows and `gptestui` on ![linux](../images/linux-32.png) Linux
 
 The above programs are located in the `scripts` folder of the GeoProcessor virtual environment.

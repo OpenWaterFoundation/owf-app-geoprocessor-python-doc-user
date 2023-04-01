@@ -1,8 +1,8 @@
 # GeoProcessor / GeoPackage
 
-* [Overview](#overview)
-* [GeoPackage Files and Standard GeoLayer Properties](#GeoPackage-files-and-standard-geolayer-properties)
-* [Limitations](#limitations)
+*   [Overview](#overview)
+*   [GeoPackage Files and Standard GeoLayer Properties](#GeoPackage-files-and-standard-geolayer-properties)
+*   [Limitations](#limitations)
 
 ----------------
 
@@ -17,23 +17,23 @@ as a web resource, for example to implement web mapping tools using [Leaflet](ht
 
 The following are resources that explain the specification:
 
-* [geopackage.org](http://geopackage.org/) - specification website
-* [OGC GeoPackage Encoding Standard](https://www.ogc.org/standards/geopackage) - GeoPackage specification
-* [GeoPackage (Wikipedia)](https://en.wikipedia.org/wiki/GeoPackage)
-* [GDAL GeoPackage driver](https://gdal.org/drivers/vector/gpkg.html#vector-gpkg)
-* [OWF / Learn GeoPackage](http://learn.openwaterfoundation.org/owf-learn-geopackage/) - Open Water Foundation GeoPackage learning resource
+*   [geopackage.org](http://geopackage.org/) - specification website
+*   [OGC GeoPackage Encoding Standard](https://www.ogc.org/standards/geopackage) - GeoPackage specification
+*   [GeoPackage (Wikipedia)](https://en.wikipedia.org/wiki/GeoPackage)
+*   [GDAL GeoPackage driver](https://gdal.org/drivers/vector/gpkg.html#vector-gpkg)
+*   [OWF / Learn GeoPackage](http://learn.openwaterfoundation.org/owf-learn-geopackage/) - Open Water Foundation GeoPackage learning resource
 
 ## GeoPackage Files and Standard GeoLayer Properties ##
 
 The following summarizes handling of important data elements for GeoLayers:
 
-* GeoLayer identifier can be assigned to a GeoPackage layer.
-* Coordinate reference system is consistent with GeoPackage CRS.
+*   GeoLayer identifier can be assigned to a GeoPackage layer.
+*   Coordinate reference system is consistent with GeoPackage CRS.
 
 ## Limitations ##
 
 The following are limitations of GeoPackage files:
 
-1. GeoProcessor built-in commands may not fully support all GeoPackage features.
-   More functionality is being enabled over time.
-   GDAL and other software can be called if GeoProcessor is limited.
+1.  GeoProcessor built-in commands may not fully support all GeoPackage features.
+    More functionality is being enabled over time.
+    GDAL and other software can be called if GeoProcessor is limited.
