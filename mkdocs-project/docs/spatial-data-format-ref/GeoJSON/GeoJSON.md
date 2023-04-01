@@ -1,8 +1,8 @@
 # GeoProcessor / GeoJSON
 
-* [Overview](#overview)
-* [GeoJSON Files and Standard GeoLayer Properties](#geojson-files-and-standard-geolayer-properties)
-* [Limitations](#limitations)
+*   [Overview](#overview)
+*   [GeoJSON Files and Standard GeoLayer Properties](#geojson-files-and-standard-geolayer-properties)
+*   [Limitations](#limitations)
 
 ----------------
 
@@ -16,26 +16,26 @@ The simple file format is generally simple to troubleshooting because the file c
 
 The following are resources that explain the specification:
 
-* [geojson.org](http://geojson.org/) - specification originator
-* [GeoJSON 2008 specification](http://geojson.org/geojson-spec.html) - original specification
-* [GeoJSON 2016 RFC 7964 specification](http://geojson.org/geojson-spec.html) - latest specification
-* [GDAL GeoJSON driver](https://gdal.org/drivers/vector/geojson.html#vector-geojson)
-* [OWF / Learn GeoJSON](http://learn.openwaterfoundation.org/owf-learn-geojson/) - Open Water Foundation GeoJSON learning resource
+*   [geojson.org](http://geojson.org/) - specification originator
+*   [GeoJSON 2008 specification](http://geojson.org/geojson-spec.html) - original specification
+*   [GeoJSON 2016 RFC 7964 specification](http://geojson.org/geojson-spec.html) - latest specification
+*   [GDAL GeoJSON driver](https://gdal.org/drivers/vector/geojson.html#vector-geojson)
+*   [OWF / Learn GeoJSON](http://learn.openwaterfoundation.org/owf-learn-geojson/) - Open Water Foundation GeoJSON learning resource
 
 ## GeoJSON Files and Standard GeoLayer Properties ##
 
 The following summarizes handling of important data elements for GeoLayers:
 
-* GeoLayer identifier...
-* Coordinate reference system...
-* Other?
+*   GeoLayer identifier...
+*   Coordinate reference system...
+*   Other?
 
 ## Limitations ##
 
 The following are limitations of GeoJSON files:
 
-1. Files can be very large because of verbose text representation.
-2. Although options exist, there is no common standard for symbology.
-3. Although options exist, there is no common standard for metadata.
-4. The JSON specification has some gaps, such as standard for handling `null` and `NaN`.
-5. Attributes without values are not written to the GeoJSON feature properties. 
+1.  Files can be very large because of verbose text representation.
+2.  Although options exist, there is no common standard for symbology.
+3.  Although options exist, there is no common standard for metadata.
+4.  The JSON specification has some gaps, such as standard for handling `null` and `NaN`.
+5.  Attributes without values are not written to the GeoJSON feature properties. 

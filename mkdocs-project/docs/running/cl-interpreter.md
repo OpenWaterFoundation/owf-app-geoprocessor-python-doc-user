@@ -4,8 +4,8 @@ The GeoProcessor can be run from the command line as an interpreter,
 which is helpful to guide the user in selecting appropriate options.
 The following are considerations specific to this variant.
 
-* When the interpreter is run, the prompt `gp> ` is shown on the command line until the interpreter is exited.
-* The interpreter is the default run mode when `gp` is run without `--ui` or `--commands commandFile`.
+*   When the interpreter is run, the prompt `gp> ` is shown on the command line until the interpreter is exited.
+*   The interpreter is the default run mode when `gp` is run without `--ui` or `--commands commandFile`.
 
 Additional functionality will be added over time.
 

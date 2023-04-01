@@ -1,8 +1,8 @@
 # GeoProcessor / Spatial Data Format Reference / Overview #
 
-* [Introduction](#introduction)
-* [Vector Data](#vector-data)
-* [Raster Data](#raster-data)
+*   [Introduction](#introduction)
+*   [Vector Data](#vector-data)
+*   [Raster Data](#raster-data)
 
 ----
 
@@ -22,16 +22,16 @@ such as GDAL and OGR support for many formats.
 The GeoProcessor is also able to run command line software such as GDAL and OGR programs,
 which support many formats. See:
 
-* [`RunGdalProgram`](../command-ref/RunOgrProgram/RunOgrProgram.md)
-* [`RunOgrProgram`](../command-ref/RunOgrProgram/RunOgrProgram.md)
+*   [`RunGdalProgram`](../command-ref/RunOgrProgram/RunOgrProgram.md)
+*   [`RunOgrProgram`](../command-ref/RunOgrProgram/RunOgrProgram.md)
 
 ## Vector Data ##
 
 The following vector data formats are supported by the GeoProcessor and are the focus of development and testing.
 Underlying software such as GDAL and OGR support additional formats. See also:
 
-* [GDAL Vector Drivers](https://gdal.org/drivers/vector/index.html) - comprehensive list of vector formats handled by OGR and GDAL software
-(QGIS version and corresponding GDAL version impacts support for formats)
+*   [GDAL Vector Drivers](https://gdal.org/drivers/vector/index.html) - comprehensive list of vector formats handled by OGR and GDAL software
+    (QGIS version and corresponding GDAL version impacts support for formats)
 
 **<p style="text-align: center;">
 GeoProcessor Supported Vector Data Formats
@@ -51,8 +51,8 @@ GeoProcessor Supported Vector Data Formats
 The following raster data formats are supported by the GeoProcessor and are the focus of development and testing.
 Underlying software used by the GeoProcessor such as GDAL programs support additional formats.  See also:
 
-* [GDAL Raster Drivers](https://gdal.org/drivers/raster/index.html) - comprehensive list of raster formats handled by GDAL software
-(QGIS version and corresponding GDAL version impacts support for formats)
+*   [GDAL Raster Drivers](https://gdal.org/drivers/raster/index.html) - comprehensive list of raster formats handled by GDAL software
+    (QGIS version and corresponding GDAL version impacts support for formats)
 
 **<p style="text-align: center;">
 GeoProcessor Supported Raster Data Formats

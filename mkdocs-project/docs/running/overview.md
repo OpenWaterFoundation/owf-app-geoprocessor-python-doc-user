@@ -2,9 +2,9 @@
 
 This documentation provides a reference for how to run the GeoProcessor software in different ways.
 
-* [GeoProcessor Installed Environment Overview](#geoprocessor-installed-environment-overview)
-* [GeoProcessor Variants to Run](#geoprocessor-variants-to-run)
-* [GeoProcessor `gp` Program Options](#geoprocessor-gp-program-options)
+*   [GeoProcessor Installed Environment Overview](#geoprocessor-installed-environment-overview)
+*   [GeoProcessor Variants to Run](#geoprocessor-variants-to-run)
+*   [GeoProcessor `gp` Program Options](#geoprocessor-gp-program-options)
 
 ----------------
 
@@ -18,9 +18,9 @@ changes introduced by installing the GeoProcessor.
 The [Appendix - Installing](../appendix-install/install.md) documentation describes how to download
 and install the GeoProcessor software.  In summary, the following are the main steps:
 
-1. Access the [GeoProcessor software download page](http://software.openwaterfoundation.org/geoprocessor/) with a web browser
-   and follow installation instructions.  It will be necessary to install QGIS if not already installed.
-2. Run the appropriate GeoProcessor variant program as described in the next section.
+1.  Access the [GeoProcessor software download page](http://software.openwaterfoundation.org/geoprocessor/) with a web browser
+    and follow installation instructions.  It will be necessary to install QGIS if not already installed.
+2.  Run the appropriate GeoProcessor variant program as described in the next section.
 
 ## GeoProcessor Variants to Run ##
 
